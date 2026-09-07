@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plata Marine</title>
+<meta name="description" content="Plata Marine vende tu barco a éxito, sin exclusiva y sin adelantos. Brokeraje náutico para particulares en Cataluña: valoración de mercado, anuncio en los portales náuticos, filtro de compradores, visita y papeleo hasta la transferencia.">
+<meta name="theme-color" content="#0E3042">
+<meta property="og:title" content="Plata Marine — vendemos tu barco, solo cobramos si se vende">
+<meta property="og:description" content="Brokeraje náutico para particulares en Cataluña. A éxito, sin exclusiva y sin adelantos.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230E3042'/%3E%3Cpath d='M8 38c6-6 10-6 16 0s10 6 16 0 10-6 16 0' stroke='%23B7C3CB' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Cpath d='M8 48c6-6 10-6 16 0s10 6 16 0 10-6 16 0' stroke='%23B7C3CB' stroke-width='4' fill='none' stroke-linecap='round' opacity='.5'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Plata Marine","description":"Brokeraje náutico: gestión de venta de embarcaciones de particulares en Cataluña, a éxito, sin exclusiva y sin adelantos.","telephone":"+34633742973","email":"plata.marine26@gmail.com","address":{"@type":"PostalAddress","streetAddress":"C/ Tetuán 92","postalCode":"08203","addressLocality":"Sabadell","addressRegion":"Barcelona","addressCountry":"ES"},"areaServed":"Cataluña","founder":{"@type":"Person","name":"Juan Morante"}}
+</script>
+<style>
+@font-face{font-family:"Archivo";src:url(archivo.woff2) format("woff2-variations");font-weight:100 900;font-stretch:62% 125%;font-style:normal;font-display:swap}
+@font-face{font-family:"Source Serif 4";src:url(source-serif-4.woff2) format("woff2-variations");font-weight:200 900;font-style:normal;font-display:swap}
+
+:root{
+  --paper:#F3F5F6;
+  --paper-2:#E9EDEF;
+  --ink:#0D1C27;
+  --ink-2:#44545F;
+  --sea:#17465F;
+  --sea-deep:#0E3042;
+  --plata:#B7C3CB;
+  --plata-2:#7F929E;
+  --brass:#B58A2C;
+  --wa:#128C7E;
+  --wa-hover:#0F7A6D;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --max:1120px;
+  --pad:clamp(20px,4vw,48px);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:17.5px;line-height:1.6;font-weight:400}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;color:var(--ink)}
+p{margin:0}
+a{color:var(--sea)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sea);display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--brass)}
+.measure{max-width:62ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.01em;padding:14px 22px;border-radius:4px;text-decoration:none;border:1px solid transparent;cursor:pointer;line-height:1;white-space:nowrap;transition:background-color .15s ease,border-color .15s ease}
+.btn-sea{background:var(--sea);color:var(--paper)}
+.btn-sea:hover{background:var(--sea-deep)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:var(--wa-hover)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--plata-2)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(243,245,246,.92);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--plata)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand svg{width:30px;height:30px;flex:none}
+.brand b{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:.08em;text-transform:uppercase}
+.brand b span{color:var(--sea);font-weight:600}
+.nav{display:none;gap:28px}
+.nav a{font-family:var(--display);font-weight:500;font-size:14px;letter-spacing:.02em;text-decoration:none;color:var(--ink-2)}
+.nav a:hover{color:var(--ink)}
+.top .btn{padding:10px 16px;font-size:14px}
+@media (min-width:820px){.nav{display:flex}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--plata)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,transparent 62%,#000 96%);mask-image:linear-gradient(to bottom,transparent 62%,#000 96%)}
+@media (min-width:820px){.hero canvas{-webkit-mask-image:linear-gradient(to bottom right,transparent 38%,#000 78%);mask-image:linear-gradient(to bottom right,transparent 38%,#000 78%)}}
+.hero .wrap{position:relative;padding-top:clamp(56px,9vw,112px);padding-bottom:clamp(56px,9vw,112px)}
+.hero h1{font-size:clamp(2.5rem,6.2vw,4.6rem);font-weight:700;font-stretch:90%;line-height:1;letter-spacing:-.015em;max-width:14ch;margin-top:22px}
+.hero h1 em{font-style:normal;color:var(--sea)}
+.hero .lead{font-size:clamp(1.1rem,1.6vw,1.3rem);line-height:1.55;color:var(--ink-2);margin-top:26px;max-width:58ch}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero .note{margin-top:18px;font-family:var(--display);font-size:13.5px;color:var(--ink-2);letter-spacing:.01em}
+
+/* sections */
+.sec{padding-top:clamp(56px,7vw,96px);padding-bottom:clamp(56px,7vw,96px);border-bottom:1px solid var(--plata)}
+.sec h2{font-size:clamp(1.75rem,3.2vw,2.5rem);font-weight:650;font-stretch:92%;line-height:1.08;letter-spacing:-.01em;margin-top:16px}
+.sec .intro{margin-top:18px;color:var(--ink-2);max-width:60ch}
+.alt{background:var(--paper-2)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:1fr;gap:0;margin-top:44px;border-top:1px solid var(--plata-2)}
+.step{padding:26px 0 28px;border-bottom:1px solid var(--plata);display:grid;grid-template-columns:64px 1fr;gap:8px 14px;align-items:start}
+.step .n{font-family:var(--display);font-weight:600;font-stretch:75%;font-size:2.6rem;line-height:.9;color:var(--plata-2);font-variant-numeric:tabular-nums;padding-top:4px}
+.step h3{font-size:1.2rem;font-weight:650;font-stretch:94%;line-height:1.2}
+.step p{grid-column:2;color:var(--ink-2);font-size:16.5px;margin-top:6px}
+@media (min-width:820px){
+  .steps{grid-template-columns:repeat(4,1fr);gap:0 32px}
+  .step{grid-template-columns:1fr;border-bottom:0;padding:28px 0 0}
+  .step .n{margin-bottom:18px}
+  .step h3{min-height:2.5em}
+  .step p{grid-column:1}
+}
+
+/* condiciones */
+.terms{display:grid;grid-template-columns:1fr;gap:0;margin-top:40px}
+.term{padding:24px 0;border-top:1px solid var(--plata-2)}
+.term h3{font-size:1.35rem;font-weight:700;font-stretch:90%;line-height:1.15}
+.term p{margin-top:10px;color:var(--ink-2);font-size:16.5px}
+.terms-foot{margin-top:28px;padding:18px 22px;border-left:3px solid var(--brass);background:var(--paper);color:var(--ink);font-size:16.5px;max-width:70ch}
+@media (min-width:820px){
+  .terms{grid-template-columns:repeat(3,1fr);gap:0 40px}
+  .term{border-top:1px solid var(--plata-2)}
+}
+
+/* barcos en venta */
+.boats{display:grid;grid-template-columns:1fr;gap:44px;margin-top:40px}
+.boat{display:flex;flex-direction:column;gap:16px}
+.gal .main{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:4px;background:var(--paper-2)}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
+.thumbs button{padding:0;border:2px solid transparent;border-radius:3px;overflow:hidden;background:var(--paper-2);cursor:pointer;aspect-ratio:4/3;display:block;width:100%}
+.thumbs button img{width:100%;height:100%;object-fit:cover;display:block}
+.thumbs button.on{border-color:var(--sea)}
+.boat-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px 20px;flex-wrap:wrap}
+.boat h3{font-size:1.5rem;font-weight:700;font-stretch:90%;line-height:1.1}
+.price{font-family:var(--display);font-weight:600;font-size:1.35rem;color:var(--sea);font-variant-numeric:tabular-nums;white-space:nowrap}
+.specs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 20px;margin:12px 0 0;padding:14px 0;border-top:1px solid var(--plata);border-bottom:1px solid var(--plata)}
+.specs dt{font-family:var(--display);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--plata-2);font-weight:600}
+.specs dd{margin:2px 0 0;font-size:16px}
+.desc{margin-top:14px;color:var(--ink-2);font-size:16px}
+.boat-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+@media (min-width:820px){.boats{grid-template-columns:1fr 1fr;gap:56px}}
+
+/* ficha */
+.ficha{margin-top:40px;border-top:1px solid var(--plata-2)}
+.ficha .row{display:grid;grid-template-columns:1fr;gap:4px 32px;padding:16px 0;border-bottom:1px solid var(--plata)}
+.ficha dt{font-family:var(--display);font-weight:600;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--sea);padding-top:5px}
+.ficha dd{margin:0;color:var(--ink)}
+.ficha dd small{display:block;color:var(--ink-2);font-size:15px;margin-top:2px}
+.ficha-foot{margin-top:22px;color:var(--ink-2);max-width:60ch}
+@media (min-width:640px){.ficha .row{grid-template-columns:200px 1fr}}
+
+/* formulario */
+.form-grid{display:grid;grid-template-columns:1fr;gap:18px 24px;margin-top:36px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field label{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.field label i{font-style:normal;color:var(--brass)}
+.field input,.field select{font-family:var(--serif);font-size:17px;color:var(--ink);background:#fff;border:1px solid var(--plata-2);border-radius:4px;padding:12px 14px;width:100%;appearance:none;-webkit-appearance:none;min-height:48px}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%2344545F' stroke-width='1.8'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.field input:focus,.field select:focus{border-color:var(--sea);outline:2px solid transparent;box-shadow:0 0 0 3px rgba(23,70,95,.15)}
+.field input::placeholder{color:#98A5AD}
+.form-actions{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:8px}
+.form-help{grid-column:1/-1;color:var(--ink-2);font-size:15.5px;max-width:64ch}
+.form-help b{font-weight:600;color:var(--ink)}
+@media (min-width:640px){
+  .form-grid{grid-template-columns:1fr 1fr}
+  .span2{grid-column:1/-1}
+}
+
+/* quién / contacto */
+.deep{background:var(--sea-deep);color:var(--paper);border-top:3px solid var(--plata);border-bottom:0}
+.deep .eyebrow{color:var(--plata)}
+.deep .eyebrow::before{background:var(--brass)}
+.deep h2{color:#fff}
+.deep .grid{display:grid;grid-template-columns:1fr;gap:40px;margin-top:8px}
+.deep .who p{color:#D5DDE2;margin-top:18px;max-width:58ch}
+.deep .who p+p{margin-top:14px}
+.contact{border-top:1px solid rgba(183,195,203,.35);padding-top:8px}
+.contact .row{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid rgba(183,195,203,.22);align-items:baseline}
+.contact dt{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--plata)}
+.contact dd{margin:0;color:#fff;font-size:17px}
+.contact dd a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
+.contact dd a:hover{border-bottom-color:#fff}
+.contact dd small{display:block;color:#B7C3CB;font-size:14.5px;margin-top:3px}
+.contact .btn{margin-top:22px}
+@media (min-width:820px){.deep .grid{grid-template-columns:1.1fr .9fr;gap:64px}}
+
+/* footer */
+.foot{background:var(--sea-deep);color:#B7C3CB;border-top:1px solid rgba(183,195,203,.25)}
+.foot .wrap{padding-top:28px;padding-bottom:40px;display:flex;flex-direction:column;gap:18px;font-size:14.5px}
+.foot details{max-width:78ch}
+.foot summary{cursor:pointer;font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#D5DDE2;list-style:none;display:inline-flex;align-items:center;gap:10px}
+.foot summary::-webkit-details-marker{display:none}
+.foot summary::after{content:"+";font-size:16px;color:var(--plata)}
+.foot details[open] summary::after{content:"–"}
+.foot details p{margin-top:12px;line-height:1.55;color:#B7C3CB}
+.foot details p+p{margin-top:8px}
+.foot .line{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;font-family:var(--display);font-size:13px;letter-spacing:.02em}
+.foot .line a{color:#D5DDE2;text-decoration:none}
+
+/* flotante móvil */
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:30;box-shadow:0 8px 24px rgba(13,28,39,.28)}
+@media (min-width:820px){.wa-float{display:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="Plata Marine, inicio">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#0E3042"/><path d="M8 38c6-6 10-6 16 0s10 6 16 0 10-6 16 0" stroke="#B7C3CB" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M8 48c6-6 10-6 16 0s10 6 16 0 10-6 16 0" stroke="#B7C3CB" stroke-width="4" fill="none" stroke-linecap="round" opacity=".5"/></svg>
+      <b>Plata <span>Marine</span></b>
+    </a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#como">Cómo trabajamos</a>
+      <a href="#condiciones">Condiciones</a>
+      <a href="#venta">En venta</a>
+      <a href="#barcos">Qué barcos</a>
+      <a href="#quien">Quién hay detrás</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20informaci%C3%B3n%20para%20vender%20mi%20barco." target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <canvas id="carta" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <p class="eyebrow">Brokeraje náutico · Barcelona</p>
+      <h1>Vendemos tu barco. <em>Solo cobramos si se vende.</em></h1>
+      <p class="lead">Gestión de venta de embarcaciones de particulares en Cataluña. Valoramos con el mercado en la mano, publicamos el anuncio en los portales náuticos, filtramos curiosos y llevamos la visita y el papeleo hasta la transferencia. Sin exclusiva y sin adelantos.</p>
+      <div class="cta">
+        <a class="btn btn-sea" href="#valora">Valora tu barco</a>
+        <a class="btn btn-ghost" href="#como">Cómo trabajamos</a>
+      </div>
+      <p class="note">Todo empieza con un WhatsApp y unas fotos. No hace falta que vengamos a verlo para empezar.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="como">
+    <div class="wrap">
+      <p class="eyebrow">Cómo trabajamos</p>
+      <h2>Cuatro pasos, y en ninguno tienes que perder una mañana.</h2>
+      <p class="intro">Trabajamos a distancia hasta que hay un comprador serio. Tú pones el barco y las fotos; nosotros, el mercado, el anuncio, el filtro y el papeleo.</p>
+      <ol class="steps" style="list-style:none;padding:0;margin-top:44px">
+        <li class="step">
+          <span class="n">1</span>
+          <h3>Nos pasas fotos y datos por WhatsApp</h3>
+          <p>Modelo, año, motor, horas, puerto y el precio que tienes en mente. Con eso empezamos.</p>
+        </li>
+        <li class="step">
+          <span class="n">2</span>
+          <h3>Te decimos dónde lo vemos de precio</h3>
+          <p>Comparamos tu barco con los que están en venta y con los que se están cerrando, en España y en el resto de Europa, y te proponemos precio de salida y de cierre.</p>
+        </li>
+        <li class="step">
+          <span class="n">3</span>
+          <h3>Lo publicamos y filtramos</h3>
+          <p>Anuncio bien hecho en los portales náuticos, con las fotos editadas y la ficha completa. Atendemos las consultas y descartamos a los curiosos.</p>
+        </li>
+        <li class="step">
+          <span class="n">4</span>
+          <h3>Visita, negociación y papeleo</h3>
+          <p>Acompañamos al comprador serio en la visita, negociamos contigo al lado y llevamos la documentación hasta la transferencia, cambio de lista incluido si hace falta.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec alt" id="condiciones">
+    <div class="wrap">
+      <p class="eyebrow">Condiciones</p>
+      <h2>Tres cosas claras antes de empezar.</h2>
+      <div class="terms">
+        <div class="term">
+          <h3>A éxito</h3>
+          <p>Los honorarios se pagan solo cuando el barco se vende, sobre el precio final. Si no se vende, no nos debes nada.</p>
+        </div>
+        <div class="term">
+          <h3>Sin exclusiva</h3>
+          <p>Puedes seguir vendiéndolo por tu cuenta o con quien quieras. Si lo vendes tú, no cobramos.</p>
+        </div>
+        <div class="term">
+          <h3>Sin adelantos</h3>
+          <p>Ni cuota de publicación ni gastos por anticipado. No pagas nada por empezar.</p>
+        </div>
+      </div>
+      <p class="terms-foot">Las condiciones quedan por escrito en una hoja de encargo de una página antes de publicar: qué hacemos, qué cobramos y durante cuánto tiempo. Sin letra pequeña.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="venta">
+    <div class="wrap">
+      <p class="eyebrow">Barcos en venta</p>
+      <h2>Lo que tenemos ahora mismo en gestión.</h2>
+      <p class="intro">Barcos de clientes que vendemos nosotros. Si te interesa alguno, escribe y concertamos la visita con el propietario.</p>
+      <div class="boats">
+        <article class="boat">
+          <div class="gal" data-imgs="monterey-278-ss-1,monterey-278-ss-2,monterey-278-ss-3,monterey-278-ss-4" data-alt="Monterey 278 SS fondeada en una cala de la Costa Brava"></div>
+          <div class="boat-body">
+            <div class="boat-head"><h3>Monterey 278 SS</h3><p class="price">49.990 €</p></div>
+            <dl class="specs">
+              <div><dt>Año</dt><dd>2011</dd></div>
+              <div><dt>Eslora</dt><dd>8,40 m · manga 2,59 m</dd></div>
+              <div><dt>Motor</dt><dd>Volvo Penta 5.7 GXi 320 cv, cola DuoProp, gasolina</dd></div>
+              <div><dt>Horas</dt><dd>350</dd></div>
+              <div><dt>Bandera</dt><dd>Española, 7ª lista</dd></div>
+              <div><dt>Ubicación</dt><dd>Costa Brava</dd></div>
+            </dl>
+            <p class="desc">Solo 350 horas e hibernada cada año fuera de temporada. Plataforma de baño ampliada, arco radar con toldos, solárium de proa convertible, wet bar con fregadero, baño independiente con WC marino, GPS/plotter Garmin, VHF con DSC, flaps Bennett, toma de 220 V a puerto y cargador de baterías. Se puede ver sin compromiso. Gastos de cambio de titularidad no incluidos.</p>
+            <div class="boat-cta">
+              <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20me%20interesa%20la%20Monterey%20278%20SS%20de%202011%20que%20ten%C3%A9is%20en%20venta.%20%C2%BFPodemos%20hablar%3F" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
+              <a class="btn btn-ghost" href="https://es.wallapop.com/item/monterey-278-ss-1237169008" target="_blank" rel="noopener">Ver anuncio</a>
+            </div>
+          </div>
+        </article>
+        <article class="boat">
+          <div class="gal" data-imgs="ranieri-azzurra-1,ranieri-azzurra-2,ranieri-azzurra-3" data-alt="Ranieri Azzurra de 5 metros fondeada cerca de la costa"></div>
+          <div class="boat-body">
+            <div class="boat-head"><h3>Ranieri Azzurra 5 m</h3><p class="price">11.990 €</p></div>
+            <dl class="specs">
+              <div><dt>Eslora</dt><dd>5 m</dd></div>
+              <div><dt>Motor</dt><dd>Johnson 60 cv, 4 tiempos</dd></div>
+              <div><dt>Bandera</dt><dd>Española, 7ª lista</dd></div>
+              <div><dt>Remolque</dt><dd>Opcional, 1.500 € más</dd></div>
+            </dl>
+            <p class="desc">Open en buen estado, ideal para paseo y pesca costera. Sonda instalada, bimini blanco y lista para navegar. Barco fácil de manejar y económico de mantener.</p>
+            <div class="boat-cta">
+              <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20me%20interesa%20la%20Ranieri%20Azzurra%20de%205%20m%20que%20ten%C3%A9is%20en%20venta.%20%C2%BFPodemos%20hablar%3F" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
+              <a class="btn btn-ghost" href="https://es.wallapop.com/item/ranieri-azzurra-5m-johnson-60cv-4t-1236215752" target="_blank" rel="noopener">Ver anuncio</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p class="ficha-foot">Los barcos entran y salen; si buscas algo concreto, dinos qué y te avisamos cuando lo tengamos.</p>
+    </div>
+  </section>
+
+  <section class="sec alt" id="barcos">
+    <div class="wrap">
+      <p class="eyebrow">Qué barcos trabajamos</p>
+      <h2>Barcos de particular con salida real en el mercado.</h2>
+      <p class="intro">No cogemos cualquier gestión. Buscamos barcos que se puedan vender bien y en un plazo razonable, porque solo cobramos si eso pasa.</p>
+      <dl class="ficha">
+        <div class="row"><dt>Tipo</dt><dd>Embarcaciones a motor: cruceros deportivos, day boats, cabinados, pilothouse, flybridge y semirrígidas grandes.</dd></div>
+        <div class="row"><dt>Año</dt><dd>2005 en adelante.</dd></div>
+        <div class="row"><dt>Precio</dt><dd>Sobre todo entre 45.000 y 250.000 €.<small>Por encima lo estudiamos caso por caso.</small></dd></div>
+        <div class="row"><dt>Zona</dt><dd>Cataluña: costa de Barcelona, Maresme, Costa Brava y Costa Daurada.</dd></div>
+        <div class="row"><dt>Vendedor</dt><dd>Particulares.</dd></div>
+        <div class="row"><dt>Marcas habituales</dt><dd>Beneteau, Jeanneau, Quicksilver, Sea Ray, Sessa, Cranchi, Axopar, De Antonio, Sealine, Faeton, Starfisher, Invictus, Bayliner, Monterey.</dd></div>
+      </dl>
+      <p class="ficha-foot">Si tu barco no encaja, escríbenos igual: te lo decimos y no te hacemos perder el tiempo.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="valora">
+    <div class="wrap">
+      <p class="eyebrow">Valora tu barco</p>
+      <h2>Cuéntanos qué barco tienes y te decimos dónde lo vemos.</h2>
+      <p class="intro">Rellena lo que sepas. Al enviar se abre tu WhatsApp con el mensaje ya preparado: lo revisas, lo mandas y adjuntas las fotos en el mismo chat.</p>
+      <form id="valoracion" class="form-grid" novalidate>
+        <div class="field span2">
+          <label for="modelo">Marca y modelo <i>*</i></label>
+          <input id="modelo" name="modelo" type="text" autocomplete="off" placeholder="Beneteau Flyer 8 Sundeck" required>
+        </div>
+        <div class="field">
+          <label for="anio">Año <i>*</i></label>
+          <input id="anio" name="anio" type="number" inputmode="numeric" min="1980" max="2026" placeholder="2021" required>
+        </div>
+        <div class="field">
+          <label for="eslora">Eslora (m)</label>
+          <input id="eslora" name="eslora" type="text" inputmode="decimal" placeholder="7,99">
+        </div>
+        <div class="field">
+          <label for="motor">Motor y potencia</label>
+          <input id="motor" name="motor" type="text" placeholder="Suzuki 350 cv">
+        </div>
+        <div class="field">
+          <label for="horas">Horas de motor</label>
+          <input id="horas" name="horas" type="text" inputmode="numeric" placeholder="180">
+        </div>
+        <div class="field">
+          <label for="puerto">Puerto o localidad <i>*</i></label>
+          <input id="puerto" name="puerto" type="text" placeholder="Port Ginesta" required>
+        </div>
+        <div class="field">
+          <label for="lista">Bandera y lista</label>
+          <select id="lista" name="lista">
+            <option value="">No lo sé</option>
+            <option>Española, 7ª lista</option>
+            <option>Española, 6ª lista</option>
+            <option>Bandera extranjera</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="precio">Precio que tienes en mente (€)</label>
+          <input id="precio" name="precio" type="text" inputmode="numeric" placeholder="87.000">
+        </div>
+        <div class="field">
+          <label for="nombre">Tu nombre <i>*</i></label>
+          <input id="nombre" name="nombre" type="text" autocomplete="given-name" placeholder="Pol" required>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-wa" type="submit">Enviar por WhatsApp</button>
+          <button class="btn btn-ghost" type="button" id="porEmail">Prefiero por email</button>
+        </div>
+        <p class="form-help"><b>Nada se envía desde esta web.</b> El formulario solo prepara el mensaje; lo mandas tú desde tu WhatsApp o tu correo, y hablas directamente con Juan.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="sec deep" id="quien">
+    <div class="wrap">
+      <div class="grid">
+        <div class="who">
+          <p class="eyebrow">Quién hay detrás</p>
+          <h2>Juan Morante</h2>
+          <p>Plata Marine es la marca náutica de Juan Morante, socio de Plata Garage, compraventa de vehículos de ocasión en Sabadell. Venimos de años valorando, anunciando, negociando y cerrando operaciones con el papeleo en regla, y aplicamos lo mismo a los barcos.</p>
+          <p>No prometemos plazos que no dependen de nadie. Lo que sí hacemos es poner el precio donde el mercado lo paga, presentar el barco como toca y atender a cada comprador hasta que la operación está cerrada.</p>
+        </div>
+        <div>
+          <dl class="contact">
+            <div class="row"><dt>WhatsApp</dt><dd><a href="https://wa.me/34633742973" target="_blank" rel="noopener">633 742 973</a><small>Escribe y te respondemos en horario de oficina.</small></dd></div>
+            <div class="row"><dt>Email</dt><dd><a href="mailto:plata.marine26@gmail.com">plata.marine26@gmail.com</a></dd></div>
+            <div class="row"><dt>Oficina</dt><dd>C/ Tetuán 92, 08203 Sabadell<small>Barcelona</small></dd></div>
+            <div class="row"><dt>Zona</dt><dd>Toda la costa catalana</dd></div>
+          </dl>
+          <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20informaci%C3%B3n%20para%20vender%20mi%20barco." target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <details>
+      <summary>Aviso legal y privacidad</summary>
+      <p>Titular de esta web: Juan Morante Cruz, NIF 77123920K, C/ Tetuán 92, 08203 Sabadell (Barcelona), plata.marine26@gmail.com.</p>
+      <p>Los datos que nos envíes por WhatsApp o correo se usan únicamente para valorar y gestionar la venta de tu embarcación y no se ceden a terceros salvo obligación legal. Puedes pedir acceso, rectificación o supresión de tus datos escribiendo a ese mismo correo.</p>
+      <p>Esta web no usa cookies ni herramientas de analítica. El formulario no envía nada a ningún servidor: prepara un mensaje que envías tú desde tu propio WhatsApp o correo.</p>
+    </details>
+    <div class="line">
+      <span>© 2026 Plata Marine · Sabadell, Barcelona</span>
+      <a href="#">Volver arriba</a>
+    </div>
+  </div>
+</footer>
+
+<a class="btn btn-wa wa-float" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20informaci%C3%B3n%20para%20vender%20mi%20barco." target="_blank" rel="noopener">WhatsApp</a>
+
+<script>
+var IMGS={"monterey-278-ss-1": "monterey-278-ss-1.jpg", "monterey-278-ss-2": "monterey-278-ss-2.jpg", "monterey-278-ss-3": "monterey-278-ss-3.jpg", "monterey-278-ss-4": "monterey-278-ss-4.jpg", "ranieri-azzurra-1": "ranieri-azzurra-1.jpg", "ranieri-azzurra-2": "ranieri-azzurra-2.jpg", "ranieri-azzurra-3": "ranieri-azzurra-3.jpg"};
+(function(){
+  var gals=document.querySelectorAll('.gal[data-imgs]');
+  for(var g=0;g<gals.length;g++){(function(gal){
+    var keys=gal.getAttribute('data-imgs').split(',');
+    var main=document.createElement('img'); main.className='main'; main.alt=gal.getAttribute('data-alt')||''; main.src=IMGS[keys[0]]||''; main.setAttribute('loading','lazy');
+    gal.appendChild(main);
+    if(keys.length<2) return;
+    var strip=document.createElement('div'); strip.className='thumbs';
+    keys.forEach(function(k,i){
+      var b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label','Foto '+(i+1)); if(i===0) b.className='on';
+      var im=document.createElement('img'); im.alt=''; im.src=IMGS[k]||''; im.setAttribute('loading','lazy'); b.appendChild(im);
+      b.addEventListener('click',function(){ main.src=IMGS[k]; var on=strip.querySelector('.on'); if(on) on.className=''; b.className='on'; });
+      strip.appendChild(b);
+    });
+    gal.appendChild(strip);
+  })(gals[g]);}
+})();
+
+(function(){
+  var c=document.getElementById('carta'); if(!c||!c.getContext) return;
+  var ctx=c.getContext('2d');
+  function draw(){
+    var host=c.parentNode.getBoundingClientRect();
+    var W=Math.max(320,host.width), H=Math.max(320,host.height);
+    var dpr=Math.min(window.devicePixelRatio||1,2);
+    c.width=W*dpr; c.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.clearRect(0,0,W,H);
+    var n=15;
+    for(var i=0;i<n;i++){
+      var t=i/(n-1);
+      var base=H*(0.06+0.94*Math.pow(t,1.3));
+      ctx.beginPath();
+      for(var x=0;x<=W;x+=5){
+        var y=base+Math.sin(x*0.0042+i*0.9)*13*(1-t*0.45)+Math.sin(x*0.0115+i*2.1)*4+Math.sin(x*0.0016+i*0.6)*24*t;
+        if(x===0){ctx.moveTo(x,y);}else{ctx.lineTo(x,y);}
+      }
+      ctx.strokeStyle='rgba(23,70,95,'+(0.09+0.07*t).toFixed(3)+')';
+      ctx.lineWidth=1; ctx.stroke();
+    }
+    var s=[[0.56,0.20,'7'],[0.71,0.32,'9'],[0.84,0.25,'12'],[0.63,0.48,'14'],[0.91,0.45,'18'],[0.76,0.61,'22'],[0.55,0.74,'27'],[0.88,0.76,'33'],[0.69,0.90,'40'],[0.95,0.92,'46']];
+    if(W>=820){
+      ctx.font='600 11px Archivo, Arial, sans-serif';
+      ctx.fillStyle='rgba(23,70,95,0.32)';
+      for(var k=0;k<s.length;k++){ctx.fillText(s[k][2],s[k][0]*W,s[k][1]*H);}
+    }
+  }
+  draw();
+  var to; window.addEventListener('resize',function(){clearTimeout(to);to=setTimeout(draw,150);});
+})();
+
+(function(){
+  var f=document.getElementById('valoracion'); if(!f) return;
+  var TEL='34633742973', MAIL='plata.marine26@gmail.com';
+  function v(id){var el=document.getElementById(id);return el?el.value.trim():'';}
+  function build(){
+    var lines=['Hola Juan, quiero que valores mi barco.'];
+    var barco=v('modelo'); if(v('anio')) barco+=' ('+v('anio')+')';
+    lines.push('Barco: '+barco);
+    var tec=[]; if(v('eslora')) tec.push('Eslora: '+v('eslora')+' m'); if(v('motor')) tec.push('Motor: '+v('motor')); if(v('horas')) tec.push(v('horas')+' h');
+    if(tec.length) lines.push(tec.join(' · '));
+    if(v('puerto')) lines.push('Puerto: '+v('puerto'));
+    if(v('lista')) lines.push('Bandera: '+v('lista'));
+    if(v('precio')) lines.push('Precio que tengo en mente: '+v('precio')+' €');
+    if(v('nombre')) lines.push('Soy '+v('nombre')+'.');
+    return lines.join('\n');
+  }
+  function valid(){
+    if(f.checkValidity()) return true;
+    f.reportValidity(); return false;
+  }
+  f.addEventListener('submit',function(e){
+    e.preventDefault(); if(!valid()) return;
+    var url='https://wa.me/'+TEL+'?text='+encodeURIComponent(build());
+    var w=window.open(url,'_blank','noopener'); if(!w) location.href=url;
+  });
+  document.getElementById('porEmail').addEventListener('click',function(){
+    if(!valid()) return;
+    location.href='mailto:'+MAIL+'?subject='+encodeURIComponent('Valoración de mi barco: '+v('modelo'))+'&body='+encodeURIComponent(build());
+  });
+})();
+</script>
+</body>
+</html>
