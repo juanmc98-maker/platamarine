@@ -9,7 +9,7 @@
 <meta property="og:title" content="Plata Marine — broker náutico: vendemos tu barco y te ayudamos a comprar el siguiente">
 <meta property="og:description" content="Compra y venta de embarcaciones de ocasión en Cataluña. Solo cobramos si se vende o si compras. Sin exclusiva y sin adelantos.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230E3042'/%3E%3Cpath d='M8 38c6-6 10-6 16 0s10 6 16 0 10-6 16 0' stroke='%23B7C3CB' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Cpath d='M8 48c6-6 10-6 16 0s10 6 16 0 10-6 16 0' stroke='%23B7C3CB' stroke-width='4' fill='none' stroke-linecap='round' opacity='.5'/%3E%3C/svg%3E">
+<link rel="icon" type="image/webp" href="logo-plata-marine.webp">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"Plata Marine","description":"Broker náutico en Barcelona: intermediación en la venta de embarcaciones de particulares y búsqueda de barcos de ocasión para compradores en Cataluña, España y Europa. A éxito, sin exclusiva y sin adelantos.","serviceType":["Venta de embarcaciones de ocasión","Búsqueda de barco para compradores"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios de intermediación náutica","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Gestión de venta de tu barco","description":"Valoración de mercado, anuncio en portales náuticos, filtro de compradores, visita, negociación y papeleo hasta la transferencia. Solo se cobra si el barco se vende."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Búsqueda de barco para compradores","description":"Búsqueda, filtro y análisis de embarcaciones de ocasión, revisión de documentación, negociación y acompañamiento hasta la compra. Solo se cobra si compras."}}]},"telephone":"+34633742973","email":"plata.marine26@gmail.com","address":{"@type":"PostalAddress","streetAddress":"C/ Tetuán 92","postalCode":"08203","addressLocality":"Sabadell","addressRegion":"Barcelona","addressCountry":"ES"},"areaServed":"Cataluña","founder":{"@type":"Person","name":"Juan Morante"}}
 </script>
@@ -58,10 +58,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 /* header */
 .top{position:sticky;top:0;z-index:20;background:rgba(243,245,246,.92);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--plata)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
-.brand svg{width:30px;height:30px;flex:none}
-.brand b{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:.08em;text-transform:uppercase}
-.brand b span{color:var(--sea);font-weight:600}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink);min-width:0}
+.brand-logo{display:block;height:38px;width:auto;max-width:180px;object-fit:contain}
+@media (min-width:820px){.brand-logo{height:42px;max-width:200px}}
 .nav{display:none;gap:28px}
 .nav a{font-family:var(--display);font-weight:500;font-size:14px;letter-spacing:.02em;text-decoration:none;color:var(--ink-2)}
 .nav a:hover{color:var(--ink)}
@@ -196,8 +195,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#" aria-label="Plata Marine, inicio">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#0E3042"/><path d="M8 38c6-6 10-6 16 0s10 6 16 0 10-6 16 0" stroke="#B7C3CB" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M8 48c6-6 10-6 16 0s10 6 16 0 10-6 16 0" stroke="#B7C3CB" stroke-width="4" fill="none" stroke-linecap="round" opacity=".5"/></svg>
-      <b>Plata <span>Marine</span></b>
+      <img class="brand-logo" src="logo-plata-marine.webp" alt="Plata Marine">
     </a>
     <nav class="nav" aria-label="Secciones">
       <a href="#como">Cómo trabajamos</a>
