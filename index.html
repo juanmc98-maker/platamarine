@@ -10,6 +10,10 @@
 <meta property="og:description" content="Compra y venta de embarcaciones de ocasión en Cataluña. Solo cobramos si se vende o si compras. Sin exclusiva y sin adelantos.">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/webp" href="logo-plata-marine.webp">
+<link rel="canonical" href="https://platamarine.com/">
+<meta property="og:url" content="https://platamarine.com/">
+<meta property="og:image" content="https://platamarine.com/logo-plata-marine.webp">
+<meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"Plata Marine","description":"Broker náutico en Barcelona: intermediación en la venta de embarcaciones de particulares y búsqueda de barcos de ocasión para compradores en Cataluña, España y Europa. A éxito, sin exclusiva y sin adelantos.","serviceType":["Venta de embarcaciones de ocasión","Búsqueda de barco para compradores"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios de intermediación náutica","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Gestión de venta de tu barco","description":"Valoración de mercado, anuncio en portales náuticos, filtro de compradores, visita, negociación y papeleo hasta la transferencia. Solo se cobra si el barco se vende."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Búsqueda de barco para compradores","description":"Búsqueda, filtro y análisis de embarcaciones de ocasión, revisión de documentación, negociación y acompañamiento hasta la compra. Solo se cobra si compras."}}]},"telephone":"+34633742973","email":"plata.marine26@gmail.com","address":{"@type":"PostalAddress","streetAddress":"C/ Tetuán 92","postalCode":"08203","addressLocality":"Sabadell","addressRegion":"Barcelona","addressCountry":"ES"},"areaServed":"Cataluña","founder":{"@type":"Person","name":"Juan Morante"}}
 </script>
@@ -188,6 +192,97 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 /* flotante móvil */
 .wa-float{position:fixed;right:16px;bottom:16px;z-index:30;box-shadow:0 8px 24px rgba(13,28,39,.28)}
 @media (min-width:820px){.wa-float{display:none}}
+
+
+/* V3 — navegación, conversión y acabado visual */
+:root{--radius:10px;--shadow:0 18px 45px rgba(13,28,39,.09)}
+section[id]{scroll-margin-top:78px}
+.btn{border-radius:7px;transition:transform .15s ease,background-color .15s ease,border-color .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-sea:hover,.btn-wa:hover{box-shadow:0 8px 22px rgba(13,28,39,.13)}
+.top{box-shadow:0 1px 0 rgba(13,28,39,.03)}
+.top .wrap{height:70px}
+.brand-logo{height:42px;max-width:210px}
+.nav{gap:20px;align-items:center}
+.nav a{white-space:nowrap}
+.top-cta{display:none}
+.menu-btn{display:inline-flex;width:42px;height:42px;align-items:center;justify-content:center;border:1px solid var(--plata);background:rgba(255,255,255,.55);border-radius:7px;cursor:pointer;color:var(--ink)}
+.menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:19px;height:2px;background:currentColor;border-radius:2px;content:"";position:relative;transition:.2s ease}
+.menu-btn span::before{position:absolute;top:-6px}
+.menu-btn span::after{position:absolute;top:6px}
+.menu-btn[aria-expanded="true"] span{background:transparent}
+.menu-btn[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.menu-btn[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+.mobile-nav{display:none;position:absolute;left:0;right:0;top:70px;background:rgba(243,245,246,.985);border-bottom:1px solid var(--plata);box-shadow:0 14px 30px rgba(13,28,39,.08)}
+.mobile-nav.open{display:block}
+.mobile-nav .wrap{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:0;padding-top:10px;padding-bottom:16px}
+.mobile-nav a{font-family:var(--display);font-size:14px;font-weight:600;text-decoration:none;color:var(--ink);padding:12px 6px;border-bottom:1px solid rgba(127,146,158,.18)}
+.mobile-nav .mobile-wide{grid-column:1/-1;margin-top:10px;border-bottom:0;padding:0}
+.mobile-nav .mobile-wide .btn{width:100%}
+@media (min-width:980px){.nav{display:flex}.menu-btn{display:none}.top-cta{display:inline-flex}.mobile-nav{display:none!important}}
+@media (max-width:979px){.nav{display:none}.top .wrap{gap:12px}.brand-logo{height:38px;max-width:175px}}
+
+.hero{background:radial-gradient(circle at 88% 20%,rgba(183,195,203,.22),transparent 35%),linear-gradient(180deg,#F7F9FA 0%,var(--paper) 100%)}
+.hero .wrap{padding-top:clamp(64px,8vw,106px);padding-bottom:clamp(58px,8vw,96px)}
+.hero h1{max-width:13ch}
+.trust-strip{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:26px;padding-top:22px;border-top:1px solid rgba(127,146,158,.4);max-width:720px}
+.trust-item{display:flex;align-items:center;gap:8px;font-family:var(--display);font-size:13px;font-weight:600;color:var(--ink-2)}
+.trust-item::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--brass);box-shadow:0 0 0 4px rgba(181,138,44,.09)}
+
+.service-switch{padding-top:0;padding-bottom:0;border-bottom:1px solid var(--plata);background:#fff}
+.service-switch .wrap{display:grid;grid-template-columns:1fr;max-width:var(--max);padding-top:0;padding-bottom:0}
+.service-card{padding:34px var(--pad);margin-left:calc(var(--pad) * -1);margin-right:calc(var(--pad) * -1);position:relative}
+.service-card+ .service-card{border-top:1px solid var(--plata)}
+.service-kicker{font-family:var(--display);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--sea)}
+.service-card h2{font-size:clamp(1.45rem,2.3vw,2rem);line-height:1.08;margin-top:10px}
+.service-card p{color:var(--ink-2);margin-top:12px;max-width:52ch}
+.service-card .btn{margin-top:20px}
+@media (min-width:780px){.service-switch .wrap{grid-template-columns:1fr 1fr}.service-card{margin:0;padding:38px 42px}.service-card:first-child{padding-left:0}.service-card:last-child{padding-right:0;padding-left:54px;border-left:1px solid var(--plata);border-top:0}}
+
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.sec-head .intro{margin-top:18px}
+.boats{gap:34px}
+.boat{gap:0;background:#fff;border:1px solid rgba(127,146,158,.28);border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 24px rgba(13,28,39,.045)}
+.gal{position:relative;background:var(--paper-2)}
+.gal .main{border-radius:0;transition:opacity .15s ease}
+.boat-body{padding:24px}
+.boat-status{position:absolute;top:14px;left:14px;z-index:2;background:rgba(14,48,66,.94);color:#fff;border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px);font-family:var(--display);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:7px 9px;border-radius:5px}
+.thumbs{padding:0 8px 8px;margin-top:0;background:#fff}
+.thumbs button{border-radius:4px}
+.price{font-size:1.5rem}
+.specs{margin-top:18px}
+.desc{line-height:1.55}
+.boat-cta .btn{flex:1 1 auto}
+
+.proof{display:grid;grid-template-columns:1fr;gap:18px;margin-top:36px}
+.proof-card{padding:24px;border:1px solid var(--plata);background:rgba(255,255,255,.48);border-radius:var(--radius)}
+.proof-card strong{display:block;font-family:var(--display);font-size:1.08rem;color:var(--ink);line-height:1.25}
+.proof-card p{margin-top:8px;color:var(--ink-2);font-size:16px}
+@media (min-width:780px){.proof{grid-template-columns:repeat(3,1fr)}}
+
+.faq{margin-top:36px;border-top:1px solid var(--plata-2)}
+.faq details{border-bottom:1px solid var(--plata)}
+.faq summary{cursor:pointer;list-style:none;padding:20px 38px 20px 0;font-family:var(--display);font-weight:650;position:relative;color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:18px;font-size:22px;color:var(--sea);font-weight:400}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 34px 20px 0;color:var(--ink-2);max-width:70ch}
+
+.form-grid{background:rgba(255,255,255,.5);border:1px solid rgba(127,146,158,.35);padding:clamp(20px,4vw,34px);border-radius:var(--radius)}
+.deep{background:linear-gradient(145deg,#0E3042 0%,#123C53 100%)}
+.contact{background:rgba(255,255,255,.035);padding:8px 20px 0;border:1px solid rgba(183,195,203,.22);border-radius:var(--radius)}
+
+@media (max-width:639px){
+  body{font-size:16.5px}
+  .hero .cta,.boat-cta,.form-actions{display:grid;grid-template-columns:1fr;width:100%}
+  .hero .cta .btn,.boat-cta .btn,.form-actions .btn{width:100%}
+  .hero h1{font-size:clamp(2.35rem,12vw,3.5rem)}
+  .specs{grid-template-columns:1fr}
+  .mobile-nav .wrap{grid-template-columns:1fr}
+  .mobile-nav .mobile-wide{grid-column:1}
+  .boat-body{padding:20px}
+}
+
 </style>
 </head>
 <body>
@@ -198,15 +293,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
       <img class="brand-logo" src="logo-plata-marine.webp" alt="Plata Marine">
     </a>
     <nav class="nav" aria-label="Secciones">
-      <a href="#como">Cómo trabajamos</a>
-      <a href="#condiciones">Condiciones</a>
       <a href="#venta">En venta</a>
-      <a href="#compra">Busco barco</a>
-      <a href="#barcos">Qué barcos</a>
-      <a href="#quien">Quién hay detrás</a>
+      <a href="#como">Vender</a>
+      <a href="#compra">Comprar</a>
+      <a href="#barcos">Qué trabajamos</a>
+      <a href="#quien">Quién soy</a>
     </nav>
-    <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20informaci%C3%B3n%20para%20vender%20mi%20barco." target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn btn-wa top-cta" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20hablar%20sobre%20una%20embarcaci%C3%B3n." target="_blank" rel="noopener">Hablar con Juan</a>
+    <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="mobileNav" aria-label="Abrir menú"><span></span></button>
   </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil">
+    <div class="wrap">
+      <a href="#venta">Barcos en venta</a>
+      <a href="#como">Quiero vender</a>
+      <a href="#compra">Busco barco</a>
+      <a href="#barcos">Qué trabajamos</a>
+      <a href="#valora">Valora tu barco</a>
+      <a href="#quien">Quién hay detrás</a>
+      <div class="mobile-wide"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20hablar%20sobre%20una%20embarcaci%C3%B3n." target="_blank" rel="noopener">Hablar con Juan por WhatsApp</a></div>
+    </div>
+  </nav>
 </header>
 
 <main>
@@ -222,6 +328,29 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
         <a class="btn btn-ghost" href="#compra">Busco barco</a>
       </div>
       <p class="note">Todo empieza con un WhatsApp y unas fotos. No hace falta que vengamos a verlo para empezar.</p>
+      <div class="trust-strip" aria-label="Ventajas de Plata Marine">
+        <span class="trust-item">A éxito</span>
+        <span class="trust-item">Sin exclusiva</span>
+        <span class="trust-item">Venta y búsqueda</span>
+        <span class="trust-item">Cataluña</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-switch" aria-label="Servicios de Plata Marine">
+    <div class="wrap">
+      <article class="service-card">
+        <p class="service-kicker">Para propietarios</p>
+        <h2>Quiero vender mi barco</h2>
+        <p>Valoración de mercado, anuncio, filtro de compradores, visita, negociación y documentación. Tú mantienes el control de la venta.</p>
+        <a class="btn btn-sea" href="#valora">Valorar mi barco</a>
+      </article>
+      <article class="service-card">
+        <p class="service-kicker">Para compradores</p>
+        <h2>Estoy buscando barco</h2>
+        <p>Definimos lo que buscas, filtramos el mercado y te acompañamos en el análisis, negociación y compra. Búsquedas desde 45.000 €.</p>
+        <a class="btn btn-ghost" href="#compra">Cómo funciona la búsqueda</a>
+      </article>
     </div>
   </section>
 
@@ -252,6 +381,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
           <p>Acompañamos al comprador serio en la visita, negociamos contigo al lado y llevamos la documentación hasta la transferencia, cambio de lista incluido si hace falta.</p>
         </li>
       </ol>
+      <div class="proof" aria-label="Qué aporta Plata Marine">
+        <div class="proof-card"><strong>Precio con mercado en la mano</strong><p>La salida se plantea con comparables reales, no con una cifra para conseguir la captación.</p></div>
+        <div class="proof-card"><strong>Filtro antes de la visita</strong><p>Atendemos consultas y dejamos la visita para cuando hay un comprador con intención real.</p></div>
+        <div class="proof-card"><strong>Operación acompañada</strong><p>Negociación, documentación y transferencia se trabajan hasta el cierre de la compraventa.</p></div>
+      </div>
     </div>
   </section>
 
@@ -280,11 +414,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
   <section class="sec" id="venta">
     <div class="wrap">
       <p class="eyebrow">Barcos en venta</p>
-      <h2>Lo que tenemos ahora mismo en gestión.</h2>
+      <h2>Embarcaciones reales que tenemos ahora mismo en gestión.</h2>
       <p class="intro">Barcos de clientes que vendemos nosotros. Si te interesa alguno, escribe y concertamos la visita con el propietario.</p>
       <div class="boats">
         <article class="boat">
-          <div class="gal" data-imgs="monterey-278-ss-1,monterey-278-ss-2,monterey-278-ss-3,monterey-278-ss-4" data-alt="Monterey 278 SS fondeada en una cala de la Costa Brava"></div>
+          <div class="gal" data-imgs="monterey-278-ss-1,monterey-278-ss-2,monterey-278-ss-3,monterey-278-ss-4" data-alt="Monterey 278 SS fondeada en una cala de la Costa Brava"><span class="boat-status">En gestión</span></div>
           <div class="boat-body">
             <div class="boat-head"><h3>Monterey 278 SS</h3><p class="price">49.990 €</p></div>
             <dl class="specs">
@@ -303,7 +437,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
           </div>
         </article>
         <article class="boat">
-          <div class="gal" data-imgs="ranieri-azzurra-1,ranieri-azzurra-2,ranieri-azzurra-3" data-alt="Ranieri Azzurra de 5 metros fondeada cerca de la costa"></div>
+          <div class="gal" data-imgs="ranieri-azzurra-1,ranieri-azzurra-2,ranieri-azzurra-3" data-alt="Ranieri Azzurra de 5 metros fondeada cerca de la costa"><span class="boat-status">En gestión</span></div>
           <div class="boat-body">
             <div class="boat-head"><h3>Ranieri Azzurra 5 m</h3><p class="price">11.990 €</p></div>
             <dl class="specs">
@@ -446,6 +580,20 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
     </div>
   </section>
 
+  <section class="sec" id="faq">
+    <div class="wrap">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2>Lo importante, antes de hablar.</h2>
+      <div class="faq">
+        <details><summary>¿Tengo que daros exclusiva para vender mi barco?</summary><p>No. Puedes seguir vendiéndolo por tu cuenta o con quien quieras. Si lo vendes tú, no nos debes honorarios.</p></details>
+        <details><summary>¿Cuándo cobra Plata Marine?</summary><p>En la gestión de venta, solo cuando el barco se vende. En el servicio de búsqueda, solo si acabas comprando. Las condiciones se pactan por escrito antes de empezar.</p></details>
+        <details><summary>¿Tenéis que venir a ver el barco para empezar a venderlo?</summary><p>No. Empezamos a distancia con fotos y datos. Nos desplazamos cuando hay una visita con un comprador serio.</p></details>
+        <details><summary>¿Podéis buscar un barco fuera de Cataluña?</summary><p>Sí para el servicio de compradores: revisamos mercado nacional y europeo. La gestión de venta de particulares se centra en Cataluña.</p></details>
+        <details><summary>¿Qué pasa si compro un barco que ya tenéis en cartera?</summary><p>Si compras una embarcación de nuestra propia cartera, no pagas honorarios como comprador.</p></details>
+      </div>
+    </div>
+  </section>
+
   <section class="sec deep" id="quien">
     <div class="wrap">
       <div class="grid">
@@ -462,7 +610,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
             <div class="row"><dt>Oficina</dt><dd>C/ Tetuán 92, 08203 Sabadell<small>Barcelona</small></dd></div>
             <div class="row"><dt>Zona</dt><dd>Toda la costa catalana</dd></div>
           </dl>
-          <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20informaci%C3%B3n%20para%20vender%20mi%20barco." target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+          <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20informaci%C3%B3n%20para%20vender%20mi%20barco." target="_blank" rel="noopener">Hablar con Juan por WhatsApp</a>
         </div>
       </div>
     </div>
@@ -487,6 +635,20 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 <a class="btn btn-wa wa-float" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20informaci%C3%B3n%20para%20vender%20mi%20barco." target="_blank" rel="noopener">WhatsApp</a>
 
 <script>
+
+(function(){
+  var btn=document.getElementById('menuBtn'), nav=document.getElementById('mobileNav');
+  if(!btn||!nav) return;
+  function close(){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Abrir menú');}
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú');
+  });
+  nav.addEventListener('click',function(e){if(e.target.closest('a')) close();});
+  window.addEventListener('resize',function(){if(window.innerWidth>=980) close();});
+})();
+
 var IMGS={"monterey-278-ss-1": "monterey-278-ss-1.jpg", "monterey-278-ss-2": "monterey-278-ss-2.jpg", "monterey-278-ss-3": "monterey-278-ss-3.jpg", "monterey-278-ss-4": "monterey-278-ss-4.jpg", "ranieri-azzurra-1": "ranieri-azzurra-1.jpg", "ranieri-azzurra-2": "ranieri-azzurra-2.jpg", "ranieri-azzurra-3": "ranieri-azzurra-3.jpg"};
 (function(){
   var gals=document.querySelectorAll('.gal[data-imgs]');
