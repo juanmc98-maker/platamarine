@@ -75,7 +75,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--plata)}
 .hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,transparent 62%,#000 96%);mask-image:linear-gradient(to bottom,transparent 62%,#000 96%)}
 @media (min-width:820px){.hero canvas{-webkit-mask-image:linear-gradient(to bottom right,transparent 38%,#000 78%);mask-image:linear-gradient(to bottom right,transparent 38%,#000 78%)}}
-.hero .wrap{position:relative;padding-top:clamp(56px,9vw,112px);padding-bottom:clamp(56px,9vw,112px)}
+.hero .wrap{position:relative}
 .hero h1{font-size:clamp(2.5rem,6.2vw,4.6rem);font-weight:700;font-stretch:90%;line-height:1;letter-spacing:-.015em;max-width:14ch;margin-top:22px}
 .hero h1 em{font-style:normal;color:var(--sea)}
 .hero .lead{font-size:clamp(1.1rem,1.6vw,1.3rem);line-height:1.55;color:var(--ink-2);margin-top:26px;max-width:58ch}
@@ -234,7 +234,7 @@ section[id]{scroll-margin-top:78px}
 @media (max-width:979px){.nav{display:none}.top .wrap{gap:12px}.brand-logo{height:38px;max-width:175px}}
 
 .hero{background:radial-gradient(circle at 88% 20%,rgba(183,195,203,.22),transparent 35%),linear-gradient(180deg,#F7F9FA 0%,var(--paper) 100%)}
-.hero .wrap{padding-top:clamp(64px,8vw,106px);padding-bottom:clamp(58px,8vw,96px)}
+.hero .wrap{padding-top:0;padding-bottom:0}
 .hero h1{max-width:13ch}
 .trust-strip{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:26px;padding-top:22px;border-top:1px solid rgba(127,146,158,.4);max-width:720px}
 .trust-item{display:flex;align-items:center;gap:8px;font-family:var(--display);font-size:13px;font-weight:600;color:var(--ink-2)}
@@ -304,22 +304,22 @@ section[id]{scroll-margin-top:78px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
 
 /* V4 — fotografía */
-.hero{background:var(--sea-deep);color:#fff;border-bottom:0;min-height:min(78vh,720px);display:flex;align-items:flex-end}
-.hero-bg{position:absolute;inset:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;display:block}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,48,66,.15) 0%,rgba(14,48,66,.35) 45%,rgba(14,48,66,.88) 100%)}
-.hero .wrap{width:100%;padding-top:clamp(120px,18vw,220px);padding-bottom:clamp(44px,6vw,72px)}
-.hero .eyebrow{color:var(--plata)}
-.hero h1{color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.25)}
-.hero h1 em{color:#fff;font-style:italic;font-family:var(--serif);font-weight:500}
-.hero .lead{color:#E3E9EC;max-width:52ch}
-.hero .note{color:#C9D3D9}
-.hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.55)}
-.hero .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
-.hero .btn-sea{background:var(--brass);color:#0D1C27}
-.hero .btn-sea:hover{background:#c99a33}
-.trust-strip{border-top-color:rgba(255,255,255,.28)}
-.trust-item{color:#E3E9EC}
+.hero{background:var(--paper);color:var(--ink);border-bottom:0;min-height:0;display:block}
+.hero-photo{position:relative;width:100%;height:clamp(220px,40vw,540px);overflow:hidden;background:var(--sea-deep)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;display:block}
+.hero-photo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--brass)}
+.hero-below{position:relative;overflow:hidden}.hero-below canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,transparent 30%,#000 90%);mask-image:linear-gradient(to bottom,transparent 30%,#000 90%)}@media (min-width:820px){.hero-below canvas{-webkit-mask-image:linear-gradient(to bottom right,transparent 38%,#000 78%);mask-image:linear-gradient(to bottom right,transparent 38%,#000 78%)}}
+.hero-text{position:relative;padding-top:clamp(36px,5vw,64px);padding-bottom:clamp(40px,6vw,72px)}
+.hero .eyebrow{color:var(--sea)}
+.hero h1{color:var(--ink);text-shadow:none}
+.hero h1 em{color:var(--sea);font-style:italic;font-family:var(--serif);font-weight:500}
+.hero .lead{color:var(--ink-2);max-width:52ch}
+.hero .note{color:var(--ink-2);font-family:var(--display);font-size:14px}
+.hero .btn-sea{background:var(--wa);color:#fff}
+.hero .btn-sea:hover{background:var(--wa-hover)}
+.trust-strip{border-top-color:var(--plata)}
+.trust-item{color:var(--ink-2)}
+@media (max-width:640px){.hero-photo{height:58vw;min-height:220px}.hero-photo img{object-position:50% 50%}.hero h1{font-size:2.1rem}}
 .service-img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius);display:block;margin-bottom:18px}
 .guias-cards{list-style:none;margin:32px 0 0;padding:0;display:grid;grid-template-columns:1fr;gap:18px}
 @media (min-width:640px){.guias-cards{grid-template-columns:1fr 1fr}}
@@ -368,17 +368,23 @@ section[id]{scroll-margin-top:78px}
 
 <main>
   <section class="hero">
-    <div class="hero-bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1568476612160-787b6a1d5fb1?auto=format&fit=crop&w=1800&q=70" alt="" fetchpriority="high"></div>
-    <div class="wrap">
-      <p class="eyebrow">Brokeraje náutico · Barcelona</p>
+    <div class="hero-photo" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1568476612160-787b6a1d5fb1?auto=format&fit=crop&w=1600&q=80"
+           srcset="https://images.unsplash.com/photo-1568476612160-787b6a1d5fb1?auto=format&fit=crop&w=800&h=560&q=80 800w, https://images.unsplash.com/photo-1568476612160-787b6a1d5fb1?auto=format&fit=crop&w=1600&q=80 1600w, https://images.unsplash.com/photo-1568476612160-787b6a1d5fb1?auto=format&fit=crop&w=2400&q=80 2400w"
+           sizes="100vw" alt="" fetchpriority="high">
+    </div>
+    <div class="hero-below">
+    <canvas id="carta" aria-hidden="true"></canvas>
+    <div class="wrap hero-text">
+      <p class="eyebrow">Brokeraje náutico · Cataluña</p>
       <h1>¿Vendes tu barco? <em>Hablemos.</em></h1>
       <p class="lead">Soy Juan Morante. Te ayudo a poner precio a tu barco, preparar el anuncio y encontrar comprador. Atiendo las consultas, organizo las visitas y negocio las ofertas contigo. Desde la primera conversación hasta la entrega.</p>
       <div class="cta">
-        <a class="btn btn-sea" href="#valora">Valora tu barco</a>
-        <a class="btn btn-ghost" href="#como">Cómo trabajamos</a>
+        <a class="btn btn-sea" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20una%20valoraci%C3%B3n%20gratuita%20de%20mi%20barco.%20Modelo%3A%20%20%7C%20A%C3%B1o%3A%20%20%7C%20Motor%20y%20horas%3A%20%20%7C%20Puerto%3A%20" target="_blank" rel="noopener">Valoración gratuita por WhatsApp</a>
+        <a class="btn btn-ghost" href="#como">Cómo trabajo</a>
         <a class="btn btn-ghost" href="#compra">Busco barco</a>
       </div>
-      <p class="note">Barcos de ocasión a motor en Cataluña. Atención directa de Juan Morante.</p>
+      <p class="note">Gratuita, confidencial y sin compromiso. Si tiene sentido, te llamo yo.</p>
       <div class="trust-strip" aria-label="Ventajas de Plata Marine">
         <span class="trust-item">Valoración de mercado</span>
         <span class="trust-item">Visitas con interés real</span>
@@ -386,19 +392,20 @@ section[id]{scroll-margin-top:78px}
         <span class="trust-item">Cataluña</span>
       </div>
     </div>
+    </div>
   </section>
 
   <section class="service-switch" aria-label="Servicios de Plata Marine">
     <div class="wrap">
       <article class="service-card">
-        <img class="service-img" src="https://images.unsplash.com/photo-1746266241182-f9a956c6184d?auto=format&fit=crop&w=900&q=70" alt="Proa de un barco a motor navegando por el Mediterráneo" loading="lazy">
+        <img class="service-img" src="https://images.unsplash.com/photo-1666018215790-867b14fe4822?auto=format&fit=crop&w=900&h=506&q=75" alt="Firma del contrato de compraventa de un barco" loading="lazy">
         <p class="service-kicker">Para propietarios</p>
         <h2>Quiero vender mi barco</h2>
         <p>Me cuentas qué barco tienes y estudiamos por cuánto tiene sentido anunciarlo. Me encargo de las consultas y las visitas; tú decides qué oferta aceptar.</p>
         <a class="btn btn-sea" href="#valora">Valorar mi barco</a>
       </article>
       <article class="service-card">
-        <img class="service-img" src="https://images.unsplash.com/photo-1746266240515-56ef25e2e8bd?auto=format&fit=crop&w=900&q=70" alt="Barcos fondeados en una cala de aguas claras" loading="lazy">
+        <img class="service-img" src="https://images.unsplash.com/photo-1760963720655-1041ceea4b1a?auto=format&fit=crop&w=900&h=506&q=75" alt="Pareja paseando por el puerto mirando barcos" loading="lazy">
         <p class="service-kicker">Para compradores</p>
         <h2>Estoy buscando barco</h2>
         <p>Cuéntame cómo lo vas a usar y cuánto quieres gastar. Busco opciones, te explico sus diferencias y te acompaño en la compra. Búsquedas desde 45.000 €.</p>
@@ -409,28 +416,28 @@ section[id]{scroll-margin-top:78px}
 
   <section class="sec" id="como">
     <div class="wrap">
-      <p class="eyebrow">Cómo trabajamos</p>
-      <h2>Así preparo la venta de tu barco.</h2>
-      <p class="intro">Empezamos con los datos y las fotos que me envíes. Te explico cómo veo el precio y qué necesitamos para anunciarlo. Cuando hay un interesado, hablo con él antes de concertar la visita.</p>
+      <p class="eyebrow">Cómo trabajo</p>
+      <h2>La venta de tu barco, en cuatro fases.</h2>
+      <p class="intro">Vender un barco hoy no es publicarlo en un portal y esperar. Es ponerle el precio correcto, presentarlo bien, filtrar a quien pregunta y cerrar sin sustos. Lo trabajo por fases, con un solo precio y una sola ficha, y en las cuatro hablas siempre conmigo.</p>
       <ol class="steps" style="list-style:none;padding:0;margin-top:44px">
         <li class="step">
           <span class="n">1</span>
-          <h3>Me cuentas qué barco tienes</h3>
-          <p>Modelo, año, motor, horas, puerto y precio que tienes en mente. También el mantenimiento y cualquier trabajo pendiente.</p>
+          <h3>Fase 1 · Diagnóstico y precio</h3>
+          <p>Modelo, año, motor, horas, puerto y precio que tienes en mente. Reviso el mantenimiento, los trabajos pendientes y los papeles que hay que tener a mano. Gratis y sin compromiso.</p>
         </li>
         <li class="step">
           <span class="n">2</span>
-          <h3>Acordamos el precio de salida</h3>
+          <h3>Fase 2 · Precio de salida por escrito</h3>
           <p>Comparo barcos similares y tengo en cuenta estado, mantenimiento y equipamiento. Te propongo un precio de salida y te explico por qué. Un precio anunciado no es un precio de venta confirmado.</p>
         </li>
         <li class="step">
           <span class="n">3</span>
-          <h3>Preparo el anuncio y atiendo las consultas</h3>
+          <h3>Fase 3 · Anuncio, consultas y visitas filtradas</h3>
           <p>Ordeno la información y las fotos para que el comprador sepa qué está viendo. Antes de organizar una visita, hablo con él sobre el barco que busca, su presupuesto y cuándo quiere comprar.</p>
         </li>
         <li class="step">
           <span class="n">4</span>
-          <h3>Te acompaño en la venta</h3>
+          <h3>Fase 4 · Oferta, papeles y entrega</h3>
           <p>Acompaño la visita, te traslado las ofertas y negocio lo que acordemos. Coordino contigo la documentación, los trámites necesarios y la entrega.</p>
         </li>
       </ol>
@@ -473,7 +480,7 @@ section[id]{scroll-margin-top:78px}
         <article class="boat">
           <div class="gal" data-imgs="monterey-278-ss-1,monterey-278-ss-2,monterey-278-ss-3,monterey-278-ss-4" data-alt="Monterey 278 SS fondeada en una cala de la Costa Brava"><span class="boat-status">En gestión</span></div>
           <div class="boat-body">
-            <div class="boat-head"><h3>Monterey 278 SS</h3><p class="price">49.990 €</p></div>
+            <div class="boat-head"><h3><a href="barcos/monterey-278-ss.html" style="color:inherit;text-decoration:none">Monterey 278 SS</a></h3><p class="price">49.990 €</p></div>
             <dl class="specs">
               <div><dt>Año</dt><dd>2011</dd></div>
               <div><dt>Eslora</dt><dd>8,40 m · manga 2,59 m</dd></div>
@@ -485,14 +492,14 @@ section[id]{scroll-margin-top:78px}
             <p class="desc">Solo 350 horas e hibernada cada año fuera de temporada. Plataforma de baño ampliada, arco radar con toldos, solárium de proa convertible, wet bar con fregadero, baño independiente con WC marino, GPS/plotter Garmin, VHF con DSC, flaps Bennett, toma de 220 V a puerto y cargador de baterías. Se puede ver sin compromiso. Gastos de cambio de titularidad no incluidos.</p>
             <div class="boat-cta">
               <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20me%20interesa%20la%20Monterey%20278%20SS%20de%202011%20que%20ten%C3%A9is%20en%20venta.%20%C2%BFPodemos%20hablar%3F" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
-              <a class="btn btn-ghost" href="https://es.wallapop.com/item/monterey-278-ss-1237169008" target="_blank" rel="noopener">Ver anuncio</a>
+              <a class="btn btn-ghost" href="barcos/monterey-278-ss.html">Ver ficha completa</a>
             </div>
           </div>
         </article>
         <article class="boat">
           <div class="gal" data-imgs="ranieri-azzurra-1,ranieri-azzurra-2,ranieri-azzurra-3" data-alt="Ranieri Azzurra de 5 metros fondeada cerca de la costa"><span class="boat-status">En gestión</span></div>
           <div class="boat-body">
-            <div class="boat-head"><h3>Ranieri Azzurra 5 m</h3><p class="price">11.990 €</p></div>
+            <div class="boat-head"><h3><a href="barcos/ranieri-azzurra-5m.html" style="color:inherit;text-decoration:none">Ranieri Azzurra 5 m</a></h3><p class="price">11.990 €</p></div>
             <dl class="specs">
               <div><dt>Eslora</dt><dd>5 m</dd></div>
               <div><dt>Motor</dt><dd>Johnson 60 cv, 4 tiempos</dd></div>
@@ -502,7 +509,7 @@ section[id]{scroll-margin-top:78px}
             <p class="desc">Open en buen estado, ideal para paseo y pesca costera. Sonda instalada, bimini blanco y lista para navegar. Barco fácil de manejar y económico de mantener.</p>
             <div class="boat-cta">
               <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20me%20interesa%20la%20Ranieri%20Azzurra%20de%205%20m%20que%20ten%C3%A9is%20en%20venta.%20%C2%BFPodemos%20hablar%3F" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
-              <a class="btn btn-ghost" href="https://es.wallapop.com/item/ranieri-azzurra-5m-johnson-60cv-4t-1236215752" target="_blank" rel="noopener">Ver anuncio</a>
+              <a class="btn btn-ghost" href="barcos/ranieri-azzurra-5m.html">Ver ficha completa</a>
             </div>
           </div>
         </article>
@@ -571,7 +578,7 @@ section[id]{scroll-margin-top:78px}
         <div class="row"><dt>Precio</dt><dd>Sobre todo entre 45.000 y 250.000 €.<small>Por encima lo estudiamos caso por caso.</small></dd></div>
         <div class="row"><dt>Zona</dt><dd>Cataluña: costa de Barcelona, Maresme, Costa Brava y Costa Daurada.</dd></div>
         <div class="row"><dt>Vendedor</dt><dd>Particulares.</dd></div>
-        <div class="row"><dt>Marcas habituales</dt><dd>Beneteau, Jeanneau, Quicksilver, Sea Ray, Sessa, Cranchi, Axopar, De Antonio, Sealine, Faeton, Starfisher, Invictus, Bayliner, Monterey.</dd></div>
+        <div class="row"><dt>Marcas habituales</dt><dd>Beneteau (Antares, Flyer, Monte Carlo, Gran Turismo, Swift Trawler), Jeanneau (Merry Fisher, Cap Camarat, Leader, NC), Quicksilver, Bayliner, Sea Ray, Monterey, Four Winns, Chaparral, Rinker, Regal, Sessa, Cranchi, Azimut, Absolute, Fiart, Rio, Salpa, Invictus, Ranieri, Saver, Karnic, De Antonio, Axopar, Faeton, Starfisher, Rodman, Astondoa, Sealine, Fairline, Princess, Sunseeker, Nimbus, Prestige, Bavaria, Galeon, Boston Whaler, Yamaha, Marlin, Nuova Jolly, Zodiac, Capelli, Lomac, BWA, Joker Boat, Sacs, Brig, Highfield y Zar.<small>Si tu barco no está en la lista, cuéntamelo igual: la lista es orientativa.</small></dd></div>
       </dl>
       <p class="ficha-foot">¿Necesita trabajos? También lo estudiamos si el estado y el precio permiten plantear una venta razonable. Cuéntame qué tiene pendiente.</p>
     </div>
@@ -643,7 +650,7 @@ section[id]{scroll-margin-top:78px}
         <li><a href="guias/lista-6-y-lista-7.html"><img src="https://images.unsplash.com/photo-1672939113905-49237296683a?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy"><span class="gc-body"><span class="gc-tag">Listas</span><strong>Lista 6ª y lista 7ª: qué cambia cuando compras o vendes</strong><span class="gc-more">Leer la guía →</span></span></a></li>
         <li><a href="guias/papeles-vender-barco-cambio-titularidad.html"><img src="https://images.unsplash.com/photo-1664463760781-f159dfe3af30?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy"><span class="gc-body"><span class="gc-tag">Papeleo</span><strong>Qué papeles necesitas para vender y cuánto cuesta el cambio de nombre</strong><span class="gc-more">Leer la guía →</span></span></a></li>
         <li><a href="guias/precio-barco-ocasion.html"><img src="https://images.unsplash.com/photo-1626266061368-46a8f578ddd6?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy"><span class="gc-body"><span class="gc-tag">Precio</span><strong>Cómo poner precio a un barco de ocasión</strong><span class="gc-more">Leer la guía →</span></span></a></li>
-        <li><a href="guias/que-mirar-comprar-barco-segunda-mano.html"><img src="https://images.unsplash.com/photo-1564855660853-b412e755d4d8?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy"><span class="gc-body"><span class="gc-tag">Compra</span><strong>Qué mirar al comprar un barco de segunda mano de 7 a 12 m</strong><span class="gc-more">Leer la guía →</span></span></a></li>
+        <li><a href="guias/que-mirar-comprar-barco-segunda-mano.html"><img src="https://images.unsplash.com/photo-1653467213163-3276a9da75b2?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy"><span class="gc-body"><span class="gc-tag">Compra</span><strong>Qué mirar al comprar un barco de segunda mano de 7 a 12 m</strong><span class="gc-more">Leer la guía →</span></span></a></li>
         <li><a href="guias/tipos-de-barco-a-motor.html"><img src="https://images.unsplash.com/photo-1674419404519-54fa8a774aa2?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy"><span class="gc-body"><span class="gc-tag">Tipos de barco</span><strong>Open, sundeck, pilothouse, cabinado, fly: cuál encaja contigo</strong><span class="gc-more">Leer la guía →</span></span></a></li>
       </ul>
       <p class="guias-more"><a class="btn btn-ghost" href="guias/">Ver todas las guías</a></p>
@@ -769,6 +776,38 @@ var IMGS={"monterey-278-ss-1": "monterey-278-ss-1.jpg", "monterey-278-ss-2": "mo
     if(!valid()) return;
     location.href='mailto:'+MAIL+'?subject='+encodeURIComponent('Valoración de mi barco: '+v('modelo'))+'&body='+encodeURIComponent(build());
   });
+})();
+
+(function(){
+  var c=document.getElementById('carta'); if(!c||!c.getContext) return;
+  var ctx=c.getContext('2d');
+  function draw(){
+    var host=c.parentNode.getBoundingClientRect();
+    var W=Math.max(320,host.width), H=Math.max(320,host.height);
+    var dpr=Math.min(window.devicePixelRatio||1,2);
+    c.width=W*dpr; c.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.clearRect(0,0,W,H);
+    var n=15;
+    for(var i=0;i<n;i++){
+      var t=i/(n-1);
+      var base=H*(0.06+0.94*Math.pow(t,1.3));
+      ctx.beginPath();
+      for(var x=0;x<=W;x+=5){
+        var y=base+Math.sin(x*0.0042+i*0.9)*13*(1-t*0.45)+Math.sin(x*0.0115+i*2.1)*4+Math.sin(x*0.0016+i*0.6)*24*t;
+        if(x===0){ctx.moveTo(x,y);}else{ctx.lineTo(x,y);}
+      }
+      ctx.strokeStyle='rgba(23,70,95,'+(0.09+0.07*t).toFixed(3)+')';
+      ctx.lineWidth=1; ctx.stroke();
+    }
+    var s=[[0.56,0.20,'7'],[0.71,0.32,'9'],[0.84,0.25,'12'],[0.63,0.48,'14'],[0.91,0.45,'18'],[0.76,0.61,'22'],[0.55,0.74,'27'],[0.88,0.76,'33'],[0.69,0.90,'40'],[0.95,0.92,'46']];
+    if(W>=820){
+      ctx.font='600 11px Archivo, Arial, sans-serif';
+      ctx.fillStyle='rgba(23,70,95,0.32)';
+      for(var k=0;k<s.length;k++){ctx.fillText(s[k][2],s[k][0]*W,s[k][1]*H);}
+    }
+  }
+  draw();
+  var to; window.addEventListener('resize',function(){clearTimeout(to);to=setTimeout(draw,150);});
 })();
 </script>
 </body>
