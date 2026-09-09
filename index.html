@@ -307,13 +307,13 @@ section[id]{scroll-margin-top:78px}
 /* V4 — fotografía */
 .hero{background:var(--paper);color:var(--ink);border-bottom:0;min-height:0;display:block}
 .hero-photo{position:relative;width:100%;height:calc(100vh - 70px);min-height:520px;max-height:860px;overflow:hidden;background:var(--sea-deep)}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;display:block}
+.hero-photo > img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;display:block}
 .hero-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,48,66,.25) 0%,rgba(14,48,66,.45) 60%,rgba(14,48,66,.7) 100%)}
 .hero-photo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--brass)}
 .hero-title{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 var(--pad);color:#fff}
-.hero-kicker{font-family:var(--display);font-weight:700;font-size:clamp(2.6rem,7vw,5.4rem);letter-spacing:-.02em;line-height:1;text-shadow:0 2px 30px rgba(0,0,0,.35)}
-.hero .hero-title h1{color:#fff;max-width:none;margin:16px 0 0;font-family:var(--serif);font-weight:400;font-size:clamp(1.15rem,2.4vw,1.7rem);letter-spacing:.06em;text-transform:uppercase;margin-top:16px;text-shadow:0 2px 20px rgba(0,0,0,.35)}
-.hero-sub{max-width:52ch;margin-top:16px;color:#E3E9EC;font-size:clamp(1rem,1.5vw,1.2rem);text-shadow:0 1px 14px rgba(0,0,0,.35)}
+.hero-logo{width:min(520px,60vw);max-width:520px;height:auto;display:block;filter:brightness(0) invert(1) drop-shadow(0 4px 24px rgba(0,0,0,.35))}
+.hero .hero-title h1{color:#fff;max-width:none;margin:26px 0 0;font-family:var(--serif);font-weight:300;font-size:clamp(1.3rem,2.8vw,2.1rem);letter-spacing:.22em;text-transform:uppercase;text-shadow:0 2px 20px rgba(0,0,0,.35)}
+.hero-sub{max-width:52ch;margin-top:14px;color:#E3E9EC;font-family:var(--display);font-weight:400;letter-spacing:.04em;font-size:clamp(.9rem,1.2vw,1.02rem);text-shadow:0 1px 14px rgba(0,0,0,.35)}
 .hero-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px}
 .btn-pill{border-radius:999px;padding:15px 28px;background:var(--wa);color:#fff;font-size:15px}
 .btn-pill:hover{background:var(--wa-hover)}
@@ -396,9 +396,9 @@ section[id]{scroll-margin-top:78px}
            srcset="https://images.unsplash.com/photo-1672939113788-820060bbc046?auto=format&fit=crop&w=800&h=900&q=80 800w, https://images.unsplash.com/photo-1672939113788-820060bbc046?auto=format&fit=crop&w=1600&q=80 1600w, https://images.unsplash.com/photo-1672939113788-820060bbc046?auto=format&fit=crop&w=2400&q=80 2400w"
            sizes="100vw" alt="" fetchpriority="high">
       <div class="hero-title">
-        <p class="hero-kicker">Plata Marine</p>
+        <img class="hero-logo" src="logo-plata-marine.png" alt="Plata Marine" width="2172" height="724">
         <h1>Broker náutico en Cataluña</h1>
-        <p class="hero-sub">Compra y venta de barcos a motor de 7 a 12 metros. Trato directo, a éxito y sin exclusiva.</p>
+        <p class="hero-sub">Compra y venta de barcos a motor de 5 a 24 metros en toda la costa catalana. Trato directo, a éxito y sin exclusiva.</p>
         <div class="hero-btns">
           <a class="btn btn-pill" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20una%20valoraci%C3%B3n%20gratuita%20de%20mi%20barco.%20Modelo%3A%20%20%7C%20A%C3%B1o%3A%20%20%7C%20Motor%20y%20horas%3A%20%20%7C%20Puerto%3A%20" target="_blank" rel="noopener">Valora tu barco gratis</a>
           <a class="btn btn-pill ghost" href="#venta">Barcos en venta</a>
