@@ -10,7 +10,8 @@
 <meta property="og:description" content="Habla con Juan Morante para vender tu barco o buscar el siguiente. Barcos a motor, atención directa y acompañamiento durante la compraventa.">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="logo-plata-marine.png">
-<link rel="canonical" href="https://platamarine.com/">
+<link rel="canonical" href="https://www.platamarine.com/">
+<script src="/analytics.js" defer></script>
 <meta property="og:url" content="https://platamarine.com/">
 <meta property="og:image" content="https://platamarine.com/logo-plata-marine.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -305,9 +306,25 @@ section[id]{scroll-margin-top:78px}
 
 /* V4 — fotografía */
 .hero{background:var(--paper);color:var(--ink);border-bottom:0;min-height:0;display:block}
-.hero-photo{position:relative;width:100%;height:clamp(220px,40vw,540px);overflow:hidden;background:var(--sea-deep)}
+.hero-photo{position:relative;width:100%;height:calc(100vh - 70px);min-height:520px;max-height:860px;overflow:hidden;background:var(--sea-deep)}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;display:block}
+.hero-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,48,66,.25) 0%,rgba(14,48,66,.45) 60%,rgba(14,48,66,.7) 100%)}
 .hero-photo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--brass)}
+.hero-title{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 var(--pad);color:#fff}
+.hero-kicker{font-family:var(--display);font-weight:700;font-size:clamp(2.6rem,7vw,5.4rem);letter-spacing:-.02em;line-height:1;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+.hero .hero-title h1{color:#fff;max-width:none;margin:16px 0 0;font-family:var(--serif);font-weight:400;font-size:clamp(1.15rem,2.4vw,1.7rem);letter-spacing:.06em;text-transform:uppercase;margin-top:16px;text-shadow:0 2px 20px rgba(0,0,0,.35)}
+.hero-sub{max-width:52ch;margin-top:16px;color:#E3E9EC;font-size:clamp(1rem,1.5vw,1.2rem);text-shadow:0 1px 14px rgba(0,0,0,.35)}
+.hero-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px}
+.btn-pill{border-radius:999px;padding:15px 28px;background:var(--wa);color:#fff;font-size:15px}
+.btn-pill:hover{background:var(--wa-hover)}
+.btn-pill.ghost{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.7);color:#fff;backdrop-filter:blur(4px)}
+.btn-pill.ghost:hover{background:rgba(255,255,255,.22)}
+.top .btn,.top-cta{border-radius:999px}
+.h1-like{font-family:var(--display);font-size:clamp(2.2rem,5vw,3.6rem);font-weight:700;font-stretch:90%;line-height:1;letter-spacing:-.015em;max-width:14ch;margin-top:22px;color:var(--ink)}
+.h1-like em{color:var(--sea);font-style:italic;font-family:var(--serif);font-weight:500}
+.wa-float{display:inline-flex!important;width:58px;height:58px;padding:0;border-radius:50%;font-size:0;background:#25D366}
+.wa-float::before{content:"";width:30px;height:30px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2z'/%3E%3C/svg%3E") center/contain no-repeat}
+@media (max-width:640px){.hero-photo{height:calc(100svh - 70px);min-height:480px}}
 .hero-below{position:relative;overflow:hidden}.hero-below canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,transparent 30%,#000 90%);mask-image:linear-gradient(to bottom,transparent 30%,#000 90%)}@media (min-width:820px){.hero-below canvas{-webkit-mask-image:linear-gradient(to bottom right,transparent 38%,#000 78%);mask-image:linear-gradient(to bottom right,transparent 38%,#000 78%)}}
 .hero-text{position:relative;padding-top:clamp(36px,5vw,64px);padding-bottom:clamp(40px,6vw,72px)}
 .hero .eyebrow{color:var(--sea)}
@@ -319,7 +336,6 @@ section[id]{scroll-margin-top:78px}
 .hero .btn-sea:hover{background:var(--wa-hover)}
 .trust-strip{border-top-color:var(--plata)}
 .trust-item{color:var(--ink-2)}
-@media (max-width:640px){.hero-photo{height:58vw;min-height:220px}.hero-photo img{object-position:50% 50%}.hero h1{font-size:2.1rem}}
 .service-img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius);display:block;margin-bottom:18px}
 .guias-cards{list-style:none;margin:32px 0 0;padding:0;display:grid;grid-template-columns:1fr;gap:18px}
 @media (min-width:640px){.guias-cards{grid-template-columns:1fr 1fr}}
@@ -332,6 +348,12 @@ section[id]{scroll-margin-top:78px}
 .guias-cards strong{font-family:var(--display);font-weight:650;font-stretch:94%;font-size:1.12rem;line-height:1.3}
 .gc-more{margin-top:auto;padding-top:8px;font-family:var(--display);font-weight:600;font-size:14px;color:var(--sea)}
 .guias-cards a:hover .gc-more{text-decoration:underline}
+.serv-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:36px}
+@media (min-width:640px){.serv-grid{grid-template-columns:1fr 1fr}}
+@media (min-width:980px){.serv-grid{grid-template-columns:repeat(4,1fr);gap:18px}}
+.serv{background:#fff;border:1px solid rgba(127,146,158,.28);border-radius:var(--radius);padding:20px 20px 22px}
+.serv strong{display:block;font-family:var(--display);font-weight:650;font-size:1.05rem;line-height:1.25}
+.serv p{margin-top:8px;color:var(--ink-2);font-size:15.5px;line-height:1.5}
 </style>
 </head>
 <body>
@@ -359,6 +381,7 @@ section[id]{scroll-margin-top:78px}
       <a href="#compra">Busco barco</a>
       <a href="#barcos">Qué trabajamos</a>
       <a href="#valora">Valora tu barco</a>
+      <a href="#servicios">Mecánico, seguro, gestoría…</a>
       <a href="guias/">Guías: impuestos, listas y papeleo</a>
       <a href="#quien">Quién hay detrás</a>
       <div class="mobile-wide"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20hablar%20sobre%20una%20embarcaci%C3%B3n." target="_blank" rel="noopener">Hablar con Juan por WhatsApp</a></div>
@@ -368,16 +391,25 @@ section[id]{scroll-margin-top:78px}
 
 <main>
   <section class="hero">
-    <div class="hero-photo" aria-hidden="true">
-      <img src="https://images.unsplash.com/photo-1568476612160-787b6a1d5fb1?auto=format&fit=crop&w=1600&q=80"
-           srcset="https://images.unsplash.com/photo-1568476612160-787b6a1d5fb1?auto=format&fit=crop&w=800&h=560&q=80 800w, https://images.unsplash.com/photo-1568476612160-787b6a1d5fb1?auto=format&fit=crop&w=1600&q=80 1600w, https://images.unsplash.com/photo-1568476612160-787b6a1d5fb1?auto=format&fit=crop&w=2400&q=80 2400w"
+    <div class="hero-photo">
+      <img src="https://images.unsplash.com/photo-1672939113788-820060bbc046?auto=format&fit=crop&w=1600&q=80"
+           srcset="https://images.unsplash.com/photo-1672939113788-820060bbc046?auto=format&fit=crop&w=800&h=900&q=80 800w, https://images.unsplash.com/photo-1672939113788-820060bbc046?auto=format&fit=crop&w=1600&q=80 1600w, https://images.unsplash.com/photo-1672939113788-820060bbc046?auto=format&fit=crop&w=2400&q=80 2400w"
            sizes="100vw" alt="" fetchpriority="high">
+      <div class="hero-title">
+        <p class="hero-kicker">Plata Marine</p>
+        <h1>Broker náutico en Cataluña</h1>
+        <p class="hero-sub">Compra y venta de barcos a motor de 7 a 12 metros. Trato directo, a éxito y sin exclusiva.</p>
+        <div class="hero-btns">
+          <a class="btn btn-pill" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20una%20valoraci%C3%B3n%20gratuita%20de%20mi%20barco.%20Modelo%3A%20%20%7C%20A%C3%B1o%3A%20%20%7C%20Motor%20y%20horas%3A%20%20%7C%20Puerto%3A%20" target="_blank" rel="noopener">Valora tu barco gratis</a>
+          <a class="btn btn-pill ghost" href="#venta">Barcos en venta</a>
+        </div>
+      </div>
     </div>
     <div class="hero-below">
     <canvas id="carta" aria-hidden="true"></canvas>
     <div class="wrap hero-text">
       <p class="eyebrow">Brokeraje náutico · Cataluña</p>
-      <h1>¿Vendes tu barco? <em>Hablemos.</em></h1>
+      <p class="h1-like">¿Vendes tu barco? <em>Hablemos.</em></p>
       <p class="lead">Soy Juan Morante. Te ayudo a poner precio a tu barco, preparar el anuncio y encontrar comprador. Atiendo las consultas, organizo las visitas y negocio las ofertas contigo. Desde la primera conversación hasta la entrega.</p>
       <div class="cta">
         <a class="btn btn-sea" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20una%20valoraci%C3%B3n%20gratuita%20de%20mi%20barco.%20Modelo%3A%20%20%7C%20A%C3%B1o%3A%20%20%7C%20Motor%20y%20horas%3A%20%20%7C%20Puerto%3A%20" target="_blank" rel="noopener">Valoración gratuita por WhatsApp</a>
@@ -398,14 +430,14 @@ section[id]{scroll-margin-top:78px}
   <section class="service-switch" aria-label="Servicios de Plata Marine">
     <div class="wrap">
       <article class="service-card">
-        <img class="service-img" src="https://images.unsplash.com/photo-1666018215790-867b14fe4822?auto=format&fit=crop&w=900&h=506&q=75" alt="Firma del contrato de compraventa de un barco" loading="lazy">
+        <img class="service-img" src="https://images.unsplash.com/photo-1587365001066-8263b7061a38?auto=format&fit=crop&w=900&h=506&q=75" alt="Barcos a motor amarrados en un puerto deportivo del Mediterráneo" loading="lazy">
         <p class="service-kicker">Para propietarios</p>
         <h2>Quiero vender mi barco</h2>
         <p>Me cuentas qué barco tienes y estudiamos por cuánto tiene sentido anunciarlo. Me encargo de las consultas y las visitas; tú decides qué oferta aceptar.</p>
         <a class="btn btn-sea" href="#valora">Valorar mi barco</a>
       </article>
       <article class="service-card">
-        <img class="service-img" src="https://images.unsplash.com/photo-1760963720655-1041ceea4b1a?auto=format&fit=crop&w=900&h=506&q=75" alt="Pareja paseando por el puerto mirando barcos" loading="lazy">
+        <img class="service-img" src="https://images.unsplash.com/photo-1733255666674-1e52cfc88fc8?auto=format&fit=crop&w=900&h=506&q=75" alt="Dos amigos navegando en un barco a motor por la costa mediterránea" loading="lazy">
         <p class="service-kicker">Para compradores</p>
         <h2>Estoy buscando barco</h2>
         <p>Cuéntame cómo lo vas a usar y cuánto quieres gastar. Busco opciones, te explico sus diferencias y te acompaño en la compra. Búsquedas desde 45.000 €.</p>
@@ -557,7 +589,7 @@ section[id]{scroll-margin-top:78px}
         </div>
         <div class="term">
           <h3>Desde 45.000 €</h3>
-          <p>Buscamos embarcaciones a partir de este presupuesto de compra.</p>
+          <p>Búsquedas a partir de este presupuesto. Importes menores, caso por caso: escríbeme y lo vemos.</p>
         </div>
       </div>
       <p class="terms-foot">Si compras un barco de nuestra cartera, no pagas honorarios como comprador. La revisión comercial no sustituye una inspección técnica: si hace falta, coordinamos un peritaje con un profesional independiente.</p>
@@ -657,6 +689,25 @@ section[id]{scroll-margin-top:78px}
     </div>
   </section>
 
+  <section class="sec alt" id="servicios">
+    <div class="wrap">
+      <p class="eyebrow">También te ayudo con</p>
+      <h2>Todo lo que rodea a la compraventa.</h2>
+      <p class="intro">Vender o comprar un barco casi nunca es solo firmar. Trabajo con profesionales de confianza en Cataluña y te pongo en contacto con quien haga falta, antes o después de la operación.</p>
+      <div class="serv-grid">
+        <div class="serv"><strong>Mecánica y taller</strong><p>Revisión previa a la venta, puesta a punto del motor, hibernación.</p></div>
+        <div class="serv"><strong>Peritaje</strong><p>Inspección técnica independiente antes de comprar u ofertar.</p></div>
+        <div class="serv"><strong>Refit y limpieza</strong><p>Tapicería, gelcoat, pulido y limpieza a fondo para que el barco luzca en la visita.</p></div>
+        <div class="serv"><strong>Seguro</strong><p>Póliza de recreo ajustada al barco y al uso, desde el día de la entrega.</p></div>
+        <div class="serv"><strong>Gestoría náutica</strong><p>Cambio de titularidad, ITP, cambio de lista, matriculación de importados.</p></div>
+        <div class="serv"><strong>Amarre y transporte</strong><p>Amarre en la costa catalana y transporte por carretera si el barco cambia de puerto.</p></div>
+        <div class="serv"><strong>Financiación</strong><p>Opciones de financiación para la compra, con entidades que financian embarcaciones.</p></div>
+        <div class="serv"><strong>Formación</strong><p>Escuelas náuticas para el título que te pida el barco que compras.</p></div>
+      </div>
+      <p class="terms-foot">Ninguno de estos servicios es obligatorio ni tiene coste por mi parte: te presento a quien lo hace bien y tú decides.</p>
+    </div>
+  </section>
+
   <section class="sec" id="faq">
     <div class="wrap">
       <p class="eyebrow">Preguntas frecuentes</p>
@@ -701,7 +752,7 @@ section[id]{scroll-margin-top:78px}
       <summary>Aviso legal y privacidad</summary>
       <p>Titular de esta web: Juan Morante Cruz, NIF 77123920K, C/ Tetuán 92, 08203 Sabadell (Barcelona), juan@platamarine.com.</p>
       <p>Los datos que nos envíes por WhatsApp o correo se usan únicamente para valorar y gestionar la venta de tu embarcación o la búsqueda del barco que quieres comprar, y no se ceden a terceros salvo obligación legal. Puedes pedir acceso, rectificación o supresión de tus datos escribiendo a ese mismo correo.</p>
-      <p>Esta web no usa cookies ni herramientas de analítica. El formulario no envía nada a ningún servidor: prepara un mensaje que envías tú desde tu propio WhatsApp o correo.</p>
+      <p>Cookies: esta web usa Google Analytics 4 solo para conocer qué páginas se visitan y mejorar el contenido, y únicamente si aceptas las cookies en el aviso que aparece al entrar (puedes elegir "Solo necesarias"). No hay publicidad ni se ceden datos a terceros con fines comerciales. El formulario no envía nada a ningún servidor: prepara un mensaje que envías tú desde tu propio WhatsApp o correo.</p>
     </details>
     <div class="line">
       <span>© 2026 Plata Marine · Sabadell, Barcelona</span>
