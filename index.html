@@ -302,6 +302,36 @@ section[id]{scroll-margin-top:78px}
 .mobile-nav{max-height:calc(100dvh - 70px);overflow-y:auto}
 @media(max-width:420px){.contact .row{grid-template-columns:1fr;gap:4px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+
+/* V4 — fotografía */
+.hero{background:var(--sea-deep);color:#fff;border-bottom:0;min-height:min(78vh,720px);display:flex;align-items:flex-end}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,48,66,.15) 0%,rgba(14,48,66,.35) 45%,rgba(14,48,66,.88) 100%)}
+.hero .wrap{width:100%;padding-top:clamp(120px,18vw,220px);padding-bottom:clamp(44px,6vw,72px)}
+.hero .eyebrow{color:var(--plata)}
+.hero h1{color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.25)}
+.hero h1 em{color:#fff;font-style:italic;font-family:var(--serif);font-weight:500}
+.hero .lead{color:#E3E9EC;max-width:52ch}
+.hero .note{color:#C9D3D9}
+.hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.55)}
+.hero .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.hero .btn-sea{background:var(--brass);color:#0D1C27}
+.hero .btn-sea:hover{background:#c99a33}
+.trust-strip{border-top-color:rgba(255,255,255,.28)}
+.trust-item{color:#E3E9EC}
+.service-img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius);display:block;margin-bottom:18px}
+.guias-cards{list-style:none;margin:32px 0 0;padding:0;display:grid;grid-template-columns:1fr;gap:18px}
+@media (min-width:640px){.guias-cards{grid-template-columns:1fr 1fr}}
+@media (min-width:980px){.guias-cards{grid-template-columns:repeat(3,1fr);gap:22px}}
+.guias-cards a{display:flex;flex-direction:column;height:100%;background:#fff;border:1px solid rgba(127,146,158,.28);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:var(--ink);box-shadow:0 8px 24px rgba(13,28,39,.045);transition:transform .15s ease,box-shadow .15s ease}
+.guias-cards a:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(13,28,39,.11)}
+.guias-cards img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.gc-body{display:flex;flex-direction:column;gap:8px;padding:18px 20px 20px;flex:1}
+.gc-tag{font-family:var(--display);font-weight:600;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--sea)}
+.guias-cards strong{font-family:var(--display);font-weight:650;font-stretch:94%;font-size:1.12rem;line-height:1.3}
+.gc-more{margin-top:auto;padding-top:8px;font-family:var(--display);font-weight:600;font-size:14px;color:var(--sea)}
+.guias-cards a:hover .gc-more{text-decoration:underline}
 </style>
 </head>
 <body>
@@ -338,7 +368,7 @@ section[id]{scroll-margin-top:78px}
 
 <main>
   <section class="hero">
-    <canvas id="carta" aria-hidden="true"></canvas>
+    <div class="hero-bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1663513628041-1ca7257e853d?auto=format&fit=crop&w=1800&q=70" alt="" fetchpriority="high"></div>
     <div class="wrap">
       <p class="eyebrow">Brokeraje náutico · Barcelona</p>
       <h1>¿Vendes tu barco? <em>Hablemos.</em></h1>
@@ -348,7 +378,7 @@ section[id]{scroll-margin-top:78px}
         <a class="btn btn-ghost" href="#como">Cómo trabajamos</a>
         <a class="btn btn-ghost" href="#compra">Busco barco</a>
       </div>
-      <p class="note">Barcos de ocasión a motor en Cataluña. Atención directa de Juan Morante, socio de Plata Garage.</p>
+      <p class="note">Barcos de ocasión a motor en Cataluña. Atención directa de Juan Morante.</p>
       <div class="trust-strip" aria-label="Ventajas de Plata Marine">
         <span class="trust-item">Valoración de mercado</span>
         <span class="trust-item">Visitas con interés real</span>
@@ -361,12 +391,14 @@ section[id]{scroll-margin-top:78px}
   <section class="service-switch" aria-label="Servicios de Plata Marine">
     <div class="wrap">
       <article class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1746266241182-f9a956c6184d?auto=format&fit=crop&w=900&q=70" alt="Proa de un barco a motor navegando por el Mediterráneo" loading="lazy">
         <p class="service-kicker">Para propietarios</p>
         <h2>Quiero vender mi barco</h2>
         <p>Me cuentas qué barco tienes y estudiamos por cuánto tiene sentido anunciarlo. Me encargo de las consultas y las visitas; tú decides qué oferta aceptar.</p>
         <a class="btn btn-sea" href="#valora">Valorar mi barco</a>
       </article>
       <article class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1746266240515-56ef25e2e8bd?auto=format&fit=crop&w=900&q=70" alt="Barcos fondeados en una cala de aguas claras" loading="lazy">
         <p class="service-kicker">Para compradores</p>
         <h2>Estoy buscando barco</h2>
         <p>Cuéntame cómo lo vas a usar y cuánto quieres gastar. Busco opciones, te explico sus diferencias y te acompaño en la compra. Búsquedas desde 45.000 €.</p>
@@ -606,13 +638,13 @@ section[id]{scroll-margin-top:78px}
       <p class="eyebrow">Guías de Plata Marine</p>
       <h2>Lo que conviene saber <em>antes</em> de comprar o vender.</h2>
       <p class="intro">Impuestos, listas, papeleo, precios e importación explicados en claro y con ejemplos reales. Las escribo yo con lo que veo cada semana en las operaciones que gestiono.</p>
-      <ul class="guias-list">
-        <li><a href="guias/impuesto-matriculacion-barcos.html"><span>Fiscalidad</span><strong>Impuesto de matriculación: por qué los 8 metros lo cambian todo</strong></a></li>
-        <li><a href="guias/lista-6-y-lista-7.html"><span>Listas</span><strong>Lista 6ª y lista 7ª: qué cambia cuando compras o vendes</strong></a></li>
-        <li><a href="guias/papeles-vender-barco-cambio-titularidad.html"><span>Papeleo</span><strong>Qué papeles necesitas para vender y cuánto cuesta el cambio de titularidad</strong></a></li>
-        <li><a href="guias/precio-barco-ocasion.html"><span>Precio</span><strong>Cómo poner precio a un barco de ocasión</strong></a></li>
-        <li><a href="guias/comprar-barco-francia-italia-matricular-espana.html"><span>Importación</span><strong>Comprar en Francia o Italia y matricular en España</strong></a></li>
-        <li><a href="guias/que-mirar-comprar-barco-segunda-mano.html"><span>Compra</span><strong>Qué mirar al comprar un barco de segunda mano de 7 a 12 m</strong></a></li>
+      <ul class="guias-cards">
+        <li><a href="guias/impuesto-matriculacion-barcos.html"><img src="https://images.unsplash.com/photo-1597276103002-1eaf7eef4e4e?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy"><span class="gc-body"><span class="gc-tag">Fiscalidad</span><strong>Impuesto de matriculación: por qué los 8 metros lo cambian todo</strong><span class="gc-more">Leer la guía →</span></span></a></li>
+        <li><a href="guias/lista-6-y-lista-7.html"><img src="https://images.unsplash.com/photo-1607888110444-deb33753908e?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy"><span class="gc-body"><span class="gc-tag">Listas</span><strong>Lista 6ª y lista 7ª: qué cambia cuando compras o vendes</strong><span class="gc-more">Leer la guía →</span></span></a></li>
+        <li><a href="guias/papeles-vender-barco-cambio-titularidad.html"><img src="https://images.unsplash.com/photo-1755594483726-d19aaf29740b?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy"><span class="gc-body"><span class="gc-tag">Papeleo</span><strong>Qué papeles necesitas para vender y cuánto cuesta el cambio de nombre</strong><span class="gc-more">Leer la guía →</span></span></a></li>
+        <li><a href="guias/precio-barco-ocasion.html"><img src="https://images.unsplash.com/photo-1646576509196-071cc6799c0a?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy"><span class="gc-body"><span class="gc-tag">Precio</span><strong>Cómo poner precio a un barco de ocasión</strong><span class="gc-more">Leer la guía →</span></span></a></li>
+        <li><a href="guias/que-mirar-comprar-barco-segunda-mano.html"><img src="https://images.unsplash.com/photo-1695035279245-db61bd599d0b?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy"><span class="gc-body"><span class="gc-tag">Compra</span><strong>Qué mirar al comprar un barco de segunda mano de 7 a 12 m</strong><span class="gc-more">Leer la guía →</span></span></a></li>
+        <li><a href="guias/tipos-de-barco-a-motor.html"><img src="https://images.unsplash.com/photo-1674419404519-54fa8a774aa2?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy"><span class="gc-body"><span class="gc-tag">Tipos de barco</span><strong>Open, sundeck, pilothouse, cabinado, fly: cuál encaja contigo</strong><span class="gc-more">Leer la guía →</span></span></a></li>
       </ul>
       <p class="guias-more"><a class="btn btn-ghost" href="guias/">Ver todas las guías</a></p>
     </div>
@@ -638,10 +670,9 @@ section[id]{scroll-margin-top:78px}
         <div class="who">
           <p class="eyebrow">Quién hay detrás</p>
           <h2>Juan Morante</h2>
-          <p>Soy Juan Morante, socio de <a href="https://www.platagarage.com/" target="_blank" rel="noopener">Plata Garage</a>, nuestro negocio de vehículos de ocasión en Sabadell. Mi día a día es hablar con propietarios y compradores, valorar vehículos y negociar operaciones. Además, tengo mi propio barco y navego por la costa catalana.</p>
+          <p>Soy Juan Morante. Vengo de la compraventa de vehículos, donde llevo años valorando, negociando y cerrando operaciones con particulares cada semana desde nuestra oficina de Sabadell (Plata Garage). Además, tengo mi propio barco y navego por la costa catalana.</p>
           <p>Con Plata Marine llevo esa experiencia comercial a la compraventa de barcos. Me encargo personalmente de la gestión y te explico lo que veo: qué precio tiene sentido, qué falta por comprobar y qué oferta merece la pena valorar.</p>
           <p>Quiero que, cuando vuelvas a cambiar de coche o de barco, sepas a quién llamar.</p>
-          <p><a href="https://www.platagarage.com/" target="_blank" rel="noopener">Conoce Plata Garage</a></p>
         </div>
         <div>
           <dl class="contact">
@@ -708,37 +739,6 @@ var IMGS={"monterey-278-ss-1": "monterey-278-ss-1.jpg", "monterey-278-ss-2": "mo
   })(gals[g]);}
 })();
 
-(function(){
-  var c=document.getElementById('carta'); if(!c||!c.getContext) return;
-  var ctx=c.getContext('2d');
-  function draw(){
-    var host=c.parentNode.getBoundingClientRect();
-    var W=Math.max(320,host.width), H=Math.max(320,host.height);
-    var dpr=Math.min(window.devicePixelRatio||1,2);
-    c.width=W*dpr; c.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
-    ctx.clearRect(0,0,W,H);
-    var n=15;
-    for(var i=0;i<n;i++){
-      var t=i/(n-1);
-      var base=H*(0.06+0.94*Math.pow(t,1.3));
-      ctx.beginPath();
-      for(var x=0;x<=W;x+=5){
-        var y=base+Math.sin(x*0.0042+i*0.9)*13*(1-t*0.45)+Math.sin(x*0.0115+i*2.1)*4+Math.sin(x*0.0016+i*0.6)*24*t;
-        if(x===0){ctx.moveTo(x,y);}else{ctx.lineTo(x,y);}
-      }
-      ctx.strokeStyle='rgba(23,70,95,'+(0.09+0.07*t).toFixed(3)+')';
-      ctx.lineWidth=1; ctx.stroke();
-    }
-    var s=[[0.56,0.20,'7'],[0.71,0.32,'9'],[0.84,0.25,'12'],[0.63,0.48,'14'],[0.91,0.45,'18'],[0.76,0.61,'22'],[0.55,0.74,'27'],[0.88,0.76,'33'],[0.69,0.90,'40'],[0.95,0.92,'46']];
-    if(W>=820){
-      ctx.font='600 11px Archivo, Arial, sans-serif';
-      ctx.fillStyle='rgba(23,70,95,0.32)';
-      for(var k=0;k<s.length;k++){ctx.fillText(s[k][2],s[k][0]*W,s[k][1]*H);}
-    }
-  }
-  draw();
-  var to; window.addEventListener('resize',function(){clearTimeout(to);to=setTimeout(draw,150);});
-})();
 
 (function(){
   var f=document.getElementById('valoracion'); if(!f) return;
