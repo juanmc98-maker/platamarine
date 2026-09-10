@@ -47,4 +47,22 @@
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
 })();
+/* Medición de contactos (solo si hay consentimiento: gtag ignora eventos sin GA cargado) */
+(function(){
+  function ev(name,params){try{if(window.gtag) gtag('event',name,params||{});}catch(e){}}
+  function where(el){var s=el.closest('section,header,footer,aside');return (s&&(s.id||s.className||s.tagName)||'').toString().slice(0,40);}
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a,button'); if(!a) return;
+    var href=a.getAttribute('href')||'';
+    if(href.indexOf('wa.me')>=0||href.indexOf('whatsapp')>=0){ev('click_whatsapp',{location:where(a),label:(a.textContent||'').trim().slice(0,60),page:location.pathname});}
+    else if(href.indexOf('mailto:')===0){ev('click_email',{location:where(a),page:location.pathname});}
+    else if(href.indexOf('tel:')===0){ev('click_phone',{location:where(a),page:location.pathname});}
+    else if(a.matches('a[href*="/barcos/"],a[href*="barcos/"]')&&!a.matches('nav a')){ev('click_boat',{label:href.slice(0,80),page:location.pathname});}
+  },true);
+  document.addEventListener('submit',function(e){
+    var f=e.target; if(!f||!f.id) return;
+    ev('form_submit',{form:f.id,page:location.pathname});
+  },true);
+  window.pmTrack=ev;
+})();
 
