@@ -70,7 +70,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .prose table{border-collapse:collapse;width:100%;font-size:.95em;margin:8px 0 22px}
 .prose th,.prose td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--plata)}
 .prose th{font-family:var(--display);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);font-weight:600}
-.tbl{overflow-x:auto}
+.tbl{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}.art .wrap>*{min-width:0}
 .aviso{margin:32px 0 0;padding:16px 20px;border:1px solid var(--plata);border-radius:4px;font-size:.92em;color:var(--ink-2)}
 .aside{position:sticky;top:84px;display:grid;gap:22px}
 .card{background:var(--sea-deep);color:#D5DDE2;padding:26px;border-radius:6px;border-top:3px solid var(--plata)}
