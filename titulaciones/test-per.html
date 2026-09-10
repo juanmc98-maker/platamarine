@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test de práctica del PER gratis, con explicaciones · Plata Marine</title>
+<meta name="description" content="Preguntas de práctica para el examen del PER, tipo test, ordenadas por unidad (balizamiento, RIPA, carta, navegación…) con la explicación de cada respuesta y corrección con los límites de errores del examen.">
+<link rel="canonical" href="https://www.platamarine.com/titulaciones/test-per.html">
+<link rel="icon" type="image/png" href="../logo-plata-marine.png">
+<meta property="og:title" content="Test de práctica del PER gratis, con explicaciones">
+<meta property="og:description" content="Preguntas de práctica para el examen del PER, tipo test, ordenadas por unidad (balizamiento, RIPA, carta, navegación…) con la explicación de cada respuesta y corrección con los límites de errores del examen.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.platamarine.com/titulaciones/test-per.html">
+<meta property="og:image" content="https://www.platamarine.com/logo-plata-marine.png">
+<link rel="stylesheet" href="../guias/guias.css">
+<style>
+.quiz{max-width:66ch}
+.qcard{background:#fff;border:1px solid rgba(127,146,158,.28);border-radius:10px;padding:22px 24px;margin:0 0 18px;box-shadow:0 8px 24px rgba(13,28,39,.045)}
+.qcard .tag{font-family:var(--display);font-weight:600;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--sea);display:block;margin-bottom:8px}
+.qcard h3{font-size:1.1rem;font-weight:650;line-height:1.3;margin:0 0 14px}
+.opt{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border:1px solid var(--plata);border-radius:6px;margin-bottom:8px;cursor:pointer;font-size:16px;line-height:1.4}
+.opt:hover{border-color:var(--sea)}
+.opt input{margin-top:4px}
+.qcard.ok{border-color:#2e8b57}.qcard.ko{border-color:#c0392b}
+.opt.right{background:#e9f6ee;border-color:#2e8b57}.opt.wrong{background:#fbeceb;border-color:#c0392b}
+.expl{margin-top:10px;font-size:15px;color:var(--ink-2);border-left:3px solid var(--brass);padding:6px 12px}
+.qbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 0 22px}
+.qbar .btn{cursor:pointer}
+.result{background:var(--sea-deep);color:#D5DDE2;padding:24px 26px;border-radius:6px;margin:0 0 22px}
+.result h2{color:#fff;font-size:1.5rem;margin:0 0 8px}
+.result table{width:100%;border-collapse:collapse;font-family:var(--display);font-size:14px;margin-top:12px}
+.result td{padding:5px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.result td:last-child{text-align:right}
+.mode{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 20px}
+.mode label{display:flex;gap:8px;align-items:center;font-family:var(--display);font-size:14px;border:1px solid var(--plata);border-radius:6px;padding:8px 12px;cursor:pointer;background:#fff}
+.hidden{display:none}
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Quiz", "name": "Test de práctica del PER", "educationalLevel": "Patrón de Embarcaciones de Recreo", "inLanguage": "es", "provider": {"@type": "Organization", "name": "Plata Marine"}}
+</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="Plata Marine, inicio"><img class="brand-logo" src="../logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="../barcos/">Barcos</a>
+      <a href="../#vender">Vender</a>
+      <a href="../#comprar">Comprar</a>
+      <a href="../guias/">Guías</a>
+      <a href="../actualidad/">Actualidad</a>
+      <a href="../titulaciones/" aria-current="page">Titulaciones</a>
+      <a href="../#juan">Sobre mí</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20he%20hecho%20el%20test%20del%20PER%20de%20tu%20web." target="_blank" rel="noopener">Hablar con Juan</a>
+  </div>
+</header>
+
+<main class="art">
+  <div class="wrap">
+    <article>
+      <header>
+        <p class="eyebrow">Titulaciones · Test de práctica</p>
+        <h1>Test de práctica del PER</h1>
+        <div class="meta"><span>Preguntas propias de Plata Marine</span><span>Actualizado septiembre 2026</span></div>
+        <p class="lead">Preguntas tipo test como las del examen, con cuatro opciones y la explicación de cada respuesta. Elige el modo, contesta y corrige. La corrección aplica los mismos límites que el examen real: 13 errores en total y las unidades eliminatorias de balizamiento, RIPA y carta.</p>
+      </header>
+
+      <div class="prose quiz" id="quiz">
+        <div class="mode" id="mode">
+          <label><input type="radio" name="mode" value="20" checked> Test corto: 20 preguntas</label>
+          <label><input type="radio" name="mode" value="all"> Todas las preguntas, por unidad</label>
+        </div>
+        <div class="qbar"><button class="btn btn-wa" id="start">Empezar el test</button></div>
+        <div id="result" class="result hidden"></div>
+        <div id="questions"></div>
+        <div class="qbar hidden" id="endbar"><button class="btn btn-wa" id="check">Corregir</button><button class="btn btn-ghost" id="again">Nuevo test</button></div>
+        <p class="aviso">Las preguntas son originales de Plata Marine, redactadas a partir del temario oficial del PER (RD 875/2014 y Resolución de 19 de diciembre de 2025). Son material de práctica: no son preguntas de exámenes oficiales ni los sustituyen. Si detectas un error, escríbeme y lo corrijo.</p>
+      </div>
+    </article>
+
+    <aside class="aside" aria-label="Contacto y navegación">
+      <div class="card">
+        <p class="eyebrow">¿Ya tienes el título y buscas barco?</p>
+        <h3>Cuéntame qué quieres navegar y te ayudo a encontrarlo.</h3>
+        <p>Trabajo con barcos a motor de 7 a 12 metros en Cataluña, a éxito y sin exclusiva.</p>
+        <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20tengo%20el%20PER%20y%20estoy%20buscando%20barco." target="_blank" rel="noopener">Hablar con Juan por WhatsApp</a>
+      </div>
+      <nav class="toc" aria-label="Contenido">
+        <p class="eyebrow">En esta página</p>
+        <ol>
+          <li><a href="#quiz">El test</a></li>
+        </ol>
+      </nav>
+      <div class="rel">
+        <p class="eyebrow">También te puede interesar</p>
+        <a href="./">Titulaciones náuticas: qué permite cada una</a>
+        <a href="../guias/tipos-de-barco-a-motor.html">Tipos de barco a motor</a>
+        <a href="../guias/">Todas las guías</a>
+      </div>
+    </aside>
+
+  </div>
+</main>
+<script>
+(function(){
+var Q=[{"u": 1, "q": "La parte del casco que queda por debajo de la línea de flotación se llama:", "o": ["Obra muerta", "Obra viva", "Francobordo", "Arrufo"], "a": 1, "e": "La obra viva es la parte sumergida; la obra muerta, la que queda por encima de la flotación."}, {"u": 1, "q": "La manga de una embarcación es:", "o": ["Su longitud total", "Su anchura máxima", "La altura desde la quilla a la cubierta", "La distancia de la flotación a la cubierta"], "a": 1, "e": "Manga = anchura máxima del casco. La eslora es la longitud y el puntal la altura."}, {"u": 1, "q": "El francobordo es la distancia vertical entre:", "o": ["La quilla y la flotación", "La flotación y la cubierta principal", "La cubierta y el tope del mástil", "La roda y el codaste"], "a": 1, "e": "El francobordo mide lo que sobresale el casco del agua; a más carga, menos francobordo."}, {"u": 1, "q": "Mirando hacia proa, la banda que queda a la derecha es:", "o": ["Babor", "Estribor", "Popa", "Través"], "a": 1, "e": "Estribor a la derecha (luz verde), babor a la izquierda (luz roja)."}, {"u": 1, "q": "Los imbornales sirven para:", "o": ["Ventilar la cámara del motor", "Desaguar el agua de cubierta al exterior", "Sujetar los cabos de amarre", "Fijar el molinete"], "a": 1, "e": "Son las aberturas por las que sale el agua embarcada en cubierta o bañera."}, {"u": 2, "q": "El nudo indicado para hacer una gaza fija que no se corre es:", "o": ["Ballestrinque", "Nudo llano", "As de guía", "Vuelta de rezón"], "a": 2, "e": "El as de guía forma una gaza fija fácil de deshacer incluso tras haber trabajado."}, {"u": 2, "q": "Un spring es un cabo de amarre que:", "o": ["Trabaja perpendicular al muelle", "Trabaja en diagonal y evita que el barco se desplace hacia proa o hacia popa", "Une la proa a la boya de amarre", "Se da desde la popa al ancla"], "a": 1, "e": "Los springs cruzan en diagonal y frenan el movimiento longitudinal; los traveses, la separación del muelle."}, {"u": 2, "q": "Al fondear con cadena en condiciones normales, la longitud a filar suele ser como mínimo:", "o": ["Igual a la profundidad", "El doble de la profundidad", "Tres veces la profundidad", "Diez veces la profundidad"], "a": 2, "e": "Como orientación, 3 veces la sonda con cadena y buen tiempo; más si hay viento o mar."}, {"u": 2, "q": "El orinque es:", "o": ["El cabo que une el ancla a la cadena", "Un cabo con boya unido a la cruz del ancla para poder recuperarla si se engancha", "La marca de la cadena cada 10 metros", "El freno del molinete"], "a": 1, "e": "El orinque señala la posición del ancla y permite izarla por la cruz si queda enganchada."}, {"u": 3, "q": "¿Cuántos chalecos salvavidas deben llevarse a bordo como mínimo?", "o": ["Dos", "La mitad de las plazas", "Uno por cada persona a bordo", "Uno por cada dos personas"], "a": 2, "e": "Un chaleco por cada persona autorizada a bordo, con tallas para niños, del tipo que corresponda a la zona de navegación."}, {"u": 3, "q": "Las bengalas de mano y demás señales pirotécnicas:", "o": ["No caducan", "Caducan y hay que renovarlas antes de la fecha del fabricante", "Solo caducan si se han mojado", "Se revisan cada 10 años"], "a": 1, "e": "Tienen fecha de caducidad; las caducadas no cuentan como equipo de seguridad en una inspección."}, {"u": 3, "q": "Ante un hombre al agua, lo primero es:", "o": ["Parar el motor y esperar", "Dar la voz de alarma, lanzar un aro y no perderlo de vista", "Llamar por radio antes de nada", "Virar 180º a toda máquina"], "a": 1, "e": "Alarma, flotabilidad y vigilancia continua; después se maniobra para recogerlo."}, {"u": 3, "q": "La zona de navegación que permite el mayor alejamiento de la costa a una embarcación de recreo es la:", "o": ["Zona 7", "Zona 4", "Zona 2", "Zona 1"], "a": 3, "e": "Las zonas van de la 1 (ilimitada) a la 7 (aguas protegidas); cada barco tiene asignada la suya."}, {"u": 4, "q": "Con el título de PER, a motor y sin ampliación, se puede gobernar hasta:", "o": ["8 m y 5 millas", "15 m y 12 millas de la costa", "24 m y 60 millas", "12 m y 12 millas"], "a": 1, "e": "PER: 15 m de eslora y 12 millas, además de la navegación interinsular en Baleares y Canarias."}, {"u": 4, "q": "La velocidad máxima habitual dentro de las aguas de un puerto es de:", "o": ["3 nudos", "6 nudos", "10 nudos", "No hay límite si no hay oleaje"], "a": 0, "e": "Salvo que la autoridad portuaria fije otra, la referencia son 3 nudos en aguas portuarias."}, {"u": 4, "q": "En una playa no balizada, en la franja de 200 metros desde la orilla:", "o": ["Está prohibido navegar", "Solo pueden navegar veleros", "No se puede navegar a más de 3 nudos", "Se puede navegar a cualquier velocidad si no hay bañistas"], "a": 2, "e": "Se puede navegar, pero a un máximo de 3 nudos y con precaución; en el resto del litoral la franja es de 50 m."}, {"u": 5, "q": "Entrando a puerto, una marca lateral roja de forma cilíndrica se deja por:", "o": ["Estribor", "Babor", "Cualquiera de las dos bandas", "Depende de la marea"], "a": 1, "e": "En la Región A (Europa), entrando a puerto: rojo a babor, verde a estribor."}, {"u": 5, "q": "Una marca cardinal Norte lleva como tope:", "o": ["Dos conos negros con los vértices hacia abajo", "Dos conos negros con los vértices hacia arriba", "Dos esferas negras", "Una esfera roja"], "a": 1, "e": "Norte: dos conos hacia arriba; las aguas navegables quedan al norte de la marca."}, {"u": 5, "q": "Una marca de aguas navegables (aguas seguras) se reconoce por:", "o": ["Franjas verticales rojas y blancas y una esfera roja como tope", "Franjas horizontales negras y rojas", "Color amarillo con una equis", "Color verde con un cono"], "a": 0, "e": "Indica que hay agua navegable a su alrededor; suele marcar el eje de un canal o la recalada."}, {"u": 5, "q": "Una marca de peligro aislado es:", "o": ["Amarilla con una equis", "Negra con una o más franjas rojas horizontales y dos esferas negras", "Roja y verde a franjas", "Blanca con una luz verde"], "a": 1, "e": "Se coloca sobre un peligro de poca extensión rodeado de agua navegable; se puede pasar por cualquier lado, con margen."}, {"u": 5, "q": "De noche, una marca cardinal Este muestra una luz blanca de:", "o": ["Centelleo continuo", "Tres centelleos", "Seis centelleos y un destello largo", "Nueve centelleos"], "a": 1, "e": "Como las horas de un reloj: Este 3, Sur 6 (+ destello largo), Oeste 9, Norte continuo."}, {"u": 6, "q": "Dos buques de propulsión mecánica a rumbos opuestos con riesgo de abordaje:", "o": ["Los dos caen a babor", "Los dos caen a estribor", "El más pequeño cede", "El más rápido cede"], "a": 1, "e": "Regla 14: en vuelta encontrada, cada uno cae a estribor para pasar por la banda de babor del otro."}, {"u": 6, "q": "Dos buques a motor que se cruzan: debe maniobrar el que ve al otro por:", "o": ["Su babor", "Su estribor", "Su popa", "Su proa"], "a": 1, "e": "Regla 15: cede el que tiene al otro por estribor, y evitará cruzarle por la proa."}, {"u": 6, "q": "Un barco a motor y un velero navegando a vela, con riesgo de abordaje y sin otras limitaciones:", "o": ["Se aparta el velero", "Se aparta el barco a motor", "Se aparta el más grande", "Cada uno cae a estribor"], "a": 1, "e": "Regla 18: el de propulsión mecánica se mantiene apartado del de vela, salvo que el velero alcance o haya buques con capacidad restringida."}, {"u": 6, "q": "De noche ves una luz verde y, por encima, una luz blanca. Se trata de:", "o": ["Un velero que te muestra su babor", "Un buque de propulsión mecánica que te muestra su estribor", "Un pesquero arrastrando", "Un buque fondeado"], "a": 1, "e": "Verde = banda de estribor; la blanca por encima es la luz de tope de un buque a motor. Un arrastrero llevaría verde sobre blanco todo horizonte, sin luz de tope."}, {"u": 6, "q": "Un buque fondeado de menos de 50 metros de eslora muestra de noche:", "o": ["Una luz blanca todo horizonte", "Dos luces rojas todo horizonte", "Luz roja sobre verde", "Luces de costado y de tope"], "a": 0, "e": "Regla 30: una luz blanca todo horizonte en la parte más visible (dos si mide 50 m o más)."}, {"u": 6, "q": "Una pitada corta significa:", "o": ["Caigo a babor", "Caigo a estribor", "Doy atrás", "No entiendo sus intenciones"], "a": 1, "e": "Regla 34: una corta, estribor; dos cortas, babor; tres cortas, máquina atrás; cinco o más, duda."}, {"u": 6, "q": "Cuando un buque alcanza a otro:", "o": ["Se aparta el alcanzado", "Se aparta el que alcanza", "Los dos caen a estribor", "Se aparta el más lento"], "a": 1, "e": "Regla 13: el que alcanza se mantiene apartado hasta quedar completamente libre, aunque sea velero."}, {"u": 6, "q": "Con visibilidad reducida, un buque de propulsión mecánica con arrancada emite:", "o": ["Una pitada larga a intervalos no superiores a 2 minutos", "Dos pitadas largas cada minuto", "Una corta cada 30 segundos", "Un toque de campana cada minuto"], "a": 0, "e": "Regla 35: una larga cada 2 minutos como máximo; dos largas si está parado y sin arrancada."}, {"u": 6, "q": "Un pesquero dedicado al arrastre muestra de noche, en línea vertical:", "o": ["Rojo sobre blanco", "Verde sobre blanco", "Rojo sobre rojo", "Blanco sobre rojo"], "a": 1, "e": "Regla 26: verde sobre blanco para arrastre; rojo sobre blanco para otras artes de pesca."}, {"u": 7, "q": "Con una hélice dextrógira, al dar atrás desde parado la popa tiende a caer a:", "o": ["Estribor", "Babor", "Proa", "No se desplaza"], "a": 1, "e": "El efecto evolutivo de la hélice dextrógira en marcha atrás lleva la popa a babor; conviene tenerlo en cuenta al atracar."}, {"u": 7, "q": "Al atracar de costado con viento que aleja el barco del pantalán, conviene:", "o": ["Aproximarse muy paralelo y a poca velocidad", "Aproximarse con más ángulo y dar primero un cabo de proa", "Dar primero el cabo de popa", "Esperar a que cambie el viento"], "a": 1, "e": "Con viento que abre, un cabo de proa dado pronto permite trabajar con el motor para arrimar la popa."}, {"u": 8, "q": "Ante una vía de agua, la primera medida es:", "o": ["Abandonar el barco", "Localizar la entrada de agua e intentar taponarla mientras se achica", "Aumentar la velocidad para llegar a puerto", "Fondear"], "a": 1, "e": "Taponar y achicar; después valorar la escora, avisar por radio y dirigirse a puerto si es posible."}, {"u": 8, "q": "Si se declara un incendio en el compartimento del motor:", "o": ["Abrir la tapa del todo para ver el fuego", "Parar el motor, cortar el combustible y descargar el extintor sin abrir completamente el compartimento", "Echar agua de mar con un cubo", "Acelerar para que el viento lo apague"], "a": 1, "e": "Abrir del todo aporta oxígeno; se corta combustible y se usa el extintor por la abertura mínima posible."}, {"u": 8, "q": "Una llamada de socorro por radio VHF se hace en el canal:", "o": ["Canal 9", "Canal 16", "Canal 72", "Canal 6"], "a": 1, "e": "El canal 16 es el de socorro, urgencia, seguridad y llamada; la llamada empieza con MAYDAY repetido tres veces."}, {"u": 8, "q": "Si te remolcan, como patrón del barco remolcado debes:", "o": ["Fijar el timón a la vía", "Gobernar siguiendo la estela del remolcador", "Dar atrás para tensar el cabo", "Apagar todas las luces"], "a": 1, "e": "Se gobierna manteniéndose en la estela para no cargar el cabo y facilitar la maniobra del remolcador."}, {"u": 9, "q": "El Garbí, viento habitual de tarde en verano en la costa catalana, sopla del:", "o": ["Norte", "Sureste", "Suroeste", "Noroeste"], "a": 2, "e": "Garbí = suroeste. El Llevant es del este, el Xaloc del sureste y la Tramuntana del norte."}, {"u": 9, "q": "Si el barómetro baja rápidamente, lo más probable es:", "o": ["Que mejore el tiempo", "Que empeore el tiempo", "Que no cambie nada", "Que suba la temperatura del agua"], "a": 1, "e": "Una bajada rápida de presión suele anunciar la llegada de una borrasca o un frente."}, {"u": 9, "q": "En la escala Beaufort, fuerza 6 corresponde aproximadamente a:", "o": ["4-6 nudos", "11-16 nudos", "22-27 nudos", "34-40 nudos"], "a": 2, "e": "Fuerza 6 (brisa fuerte, 22-27 nudos) ya es incómoda para la mayoría de barcos de recreo pequeños."}, {"u": 9, "q": "La Tramuntana es un viento:", "o": ["Del sur, cálido y húmedo", "Del norte, seco y racheado, típico del Empordà", "Del este, con lluvia", "Térmico de tarde"], "a": 1, "e": "Sopla del norte por el golfo de León y llega con fuerza al Alt Empordà y las Baleares."}, {"u": 10, "q": "Un nudo equivale a:", "o": ["Un kilómetro por hora", "Una milla náutica por hora", "Una milla terrestre por hora", "Diez cables por minuto"], "a": 1, "e": "La milla náutica mide 1.852 m; un nudo es una milla náutica por hora."}, {"u": 10, "q": "La corrección total (Ct) que relaciona el rumbo de aguja con el rumbo verdadero es:", "o": ["Declinación magnética + desvío", "Declinación magnética − variación", "Desvío × declinación", "Solo el desvío"], "a": 0, "e": "Ct = declinación magnética + desvío de la aguja; Rv = Ra + Ct."}, {"u": 10, "q": "La latitud de un punto se mide:", "o": ["Desde el meridiano de Greenwich, de 0º a 180º", "Desde el ecuador, de 0º a 90º, norte o sur", "Desde el polo, de 0º a 90º", "Desde el meridiano del lugar"], "a": 1, "e": "Latitud: 0º en el ecuador, 90º en los polos. La longitud se mide desde Greenwich, de 0º a 180º E u O."}, {"u": 10, "q": "Navegando a 6 nudos durante 40 minutos, la distancia recorrida es de:", "o": ["2 millas", "3 millas", "4 millas", "6 millas"], "a": 2, "e": "Distancia = velocidad × tiempo: 6 × (40/60) = 4 millas."}, {"u": 11, "q": "En la carta náutica, las distancias se miden en la escala de:", "o": ["Longitudes (borde superior e inferior)", "Latitudes (bordes laterales)", "Cualquier borde, es indiferente", "La rosa de los vientos"], "a": 1, "e": "Un minuto de latitud es una milla; la escala de longitudes no sirve porque los meridianos convergen."}, {"u": 11, "q": "Navegas a rumbo verdadero 090º y ves un faro con marcación 045º por estribor. Su demora verdadera es:", "o": ["045º", "135º", "315º", "270º"], "a": 1, "e": "Demora = rumbo + marcación (contada hacia estribor): 090 + 045 = 135º."}, {"u": 11, "q": "Las sondas que figuran en una carta están referidas a:", "o": ["La pleamar media", "El nivel medio del mar", "El cero hidrográfico (bajamar escorada)", "La altura de la marea en ese momento"], "a": 2, "e": "Las sondas de la carta se refieren al cero hidrográfico, que en las cartas españolas es la bajamar escorada; la altura de marea del momento se suma."}];
+var UT={"1": "Nomenclatura", "2": "Amarre y fondeo", "3": "Seguridad", "4": "Legislación", "5": "Balizamiento", "6": "RIPA", "7": "Maniobra", "8": "Emergencias", "9": "Meteorología", "10": "Teoría de la navegación", "11": "Carta"};
+var LIM={5:2,6:5,11:2}; // errores máximos por unidad eliminatoria
+var qs=[],el=function(id){return document.getElementById(id)};
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function pick(){
+  var mode=document.querySelector('input[name=mode]:checked').value;
+  if(mode==='all'){return Q.slice().sort(function(a,b){return a.u-b.u})}
+  // 20 preguntas repartidas: al menos 1 por unidad, el resto al azar, más peso a RIPA y balizamiento
+  var byU={};Q.forEach(function(q){(byU[q.u]=byU[q.u]||[]).push(q)});
+  var out=[];Object.keys(byU).forEach(function(u){var arr=shuffle(byU[u].slice());out.push(arr.shift());byU[u]=arr});
+  var rest=[];Object.keys(byU).forEach(function(u){rest=rest.concat(byU[u])});
+  shuffle(rest);while(out.length<20&&rest.length)out.push(rest.shift());
+  return out.sort(function(a,b){return a.u-b.u});
+}
+function render(){
+  qs=pick();var h='';
+  qs.forEach(function(q,i){
+    h+='<div class="qcard" id="q'+i+'"><span class="tag">UT '+q.u+' · '+UT[q.u]+' · pregunta '+(i+1)+' de '+qs.length+'</span><h3>'+q.q+'</h3>';
+    q.o.forEach(function(o,j){h+='<label class="opt"><input type="radio" name="q'+i+'" value="'+j+'"> <span>'+o+'</span></label>'});
+    h+='<div class="expl hidden">'+q.e+'</div></div>';
+  });
+  el('questions').innerHTML=h;el('endbar').classList.remove('hidden');el('result').classList.add('hidden');el('mode').classList.add('hidden');el('start').parentNode.classList.add('hidden');
+  window.scrollTo({top:el('quiz').offsetTop-90,behavior:'smooth'});
+}
+function check(){
+  var errs=0,blank=0,perU={};
+  qs.forEach(function(q,i){
+    var sel=document.querySelector('input[name=q'+i+']:checked');var card=el('q'+i);var opts=card.querySelectorAll('.opt');
+    perU[q.u]=perU[q.u]||{n:0,e:0};perU[q.u].n++;
+    opts[q.a].classList.add('right');
+    if(!sel){blank++;errs++;perU[q.u].e++;card.classList.add('ko')}
+    else if(parseInt(sel.value)===q.a){card.classList.add('ok')}
+    else{opts[parseInt(sel.value)].classList.add('wrong');card.classList.add('ko');errs++;perU[q.u].e++}
+    card.querySelector('.expl').classList.remove('hidden');
+    card.querySelectorAll('input').forEach(function(x){x.disabled=true});
+  });
+  var total=qs.length,ok=total-errs,full=(total===Q.length);
+  var maxErr=full?13:Math.round(13*total/45);
+  var elim=[];Object.keys(LIM).forEach(function(u){if(perU[u]){var lim=full?LIM[u]:Math.max(1,Math.round(LIM[u]*perU[u].n/(u==5?5:u==6?10:4)));if(perU[u].e>lim)elim.push(UT[u])}});
+  var pass=errs<=maxErr&&elim.length===0;
+  var h='<h2>'+ok+' aciertos de '+total+(pass?' · Dentro del límite del examen':' · Fuera del límite del examen')+'</h2>';
+  h+='<p>'+errs+' errores'+(blank?' ('+blank+' sin contestar)':'')+'. Máximo permitido en este test: '+maxErr+'.'+(elim.length?' Unidad eliminatoria superada en errores: '+elim.join(', ')+'.':'')+'</p>';
+  h+='<table>';Object.keys(perU).sort(function(a,b){return a-b}).forEach(function(u){h+='<tr><td>UT '+u+' · '+UT[u]+'</td><td>'+(perU[u].n-perU[u].e)+' / '+perU[u].n+'</td></tr>'});h+='</table>';
+  el('result').innerHTML=h;el('result').classList.remove('hidden');el('check').classList.add('hidden');
+  window.scrollTo({top:el('result').offsetTop-90,behavior:'smooth'});
+}
+el('start').onclick=render;el('check').onclick=check;
+el('again').onclick=function(){el('questions').innerHTML='';el('endbar').classList.add('hidden');el('check').classList.remove('hidden');el('result').classList.add('hidden');el('mode').classList.remove('hidden');el('start').parentNode.classList.remove('hidden');window.scrollTo({top:el('quiz').offsetTop-90,behavior:'smooth'})};
+})();
+</script>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="line">
+      <span>© 2026 Plata Marine · Sabadell, Barcelona · <a href="mailto:juan@platamarine.com">juan@platamarine.com</a></span>
+      <a href="../aviso-legal.html">Aviso legal</a> · <a href="../privacidad.html">Privacidad</a> · <a href="../cookies.html">Cookies</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
+
+<script src="/analytics.js" defer></script>
