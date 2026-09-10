@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qué barco necesito: test de 2 minutos para saber qué tipo de barco encaja contigo · Plata Marine</title>
+<meta name="description" content="Contesta nueve preguntas sobre cuántos sois, qué uso le vas a dar, presupuesto, título y dónde lo guardarás, y te digo qué tipo de barco a motor encaja (open, sundeck, walkaround, cabinado, pilothouse, fly o semirrígida), qué eslora y qué mirar.">
+<link rel="canonical" href="https://www.platamarine.com/herramientas/que-barco-necesito.html">
+<link rel="icon" type="image/png" href="../logo-plata-marine.png">
+<meta property="og:title" content="Qué barco necesito: test de 2 minutos para saber qué tipo de barco encaja contigo">
+<meta property="og:description" content="Contesta nueve preguntas sobre cuántos sois, qué uso le vas a dar, presupuesto, título y dónde lo guardarás, y te digo qué tipo de barco a motor encaja (open, sundeck, walkaround, cabinado, pilothouse, fly o semirrígida), qué eslora y qué mirar.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.platamarine.com/herramientas/que-barco-necesito.html">
+<meta property="og:image" content="https://www.platamarine.com/logo-plata-marine.png">
+<link rel="stylesheet" href="../guias/guias.css">
+<style>.pm-modal{position:fixed;inset:0;background:rgba(13,28,39,.55);display:flex;align-items:center;justify-content:center;z-index:50;padding:16px}
+.pm-box{background:#fff;border-radius:10px;max-width:440px;width:100%;padding:26px 24px;box-shadow:0 24px 60px rgba(13,28,39,.3);position:relative}
+.pm-box h3{font-family:var(--display);font-size:1.25rem;margin:0 0 8px;line-height:1.2}
+.pm-box p{font-size:15px;color:var(--ink-2);margin:0 0 14px}
+.pm-box input[type=email]{width:100%;font:16px var(--serif);padding:11px 12px;border:1px solid var(--plata-2);border-radius:6px;margin-bottom:10px;box-sizing:border-box}
+.pm-box label.chk{display:flex;gap:8px;align-items:flex-start;font-family:var(--display);font-size:13px;color:var(--ink-2);margin-bottom:8px;line-height:1.4}
+.pm-box .btn{width:100%;margin-top:6px;cursor:pointer}
+.pm-box .skip{display:block;text-align:center;font-family:var(--display);font-size:13px;color:var(--ink-2);margin-top:12px;background:none;border:0;cursor:pointer;text-decoration:underline}
+.pm-box .msg{font-family:var(--display);font-size:13px;color:#c0392b;margin:0 0 8px}
+.pm-box .msg.ok{color:#2e8b57}
+.pm-box .legal{font-family:var(--display);font-size:11px;color:var(--ink-3,#7F929E);line-height:1.4;margin:12px 0 0}
+.pm-modal.hidden{display:none}
+
+.qz .qcard{background:#fff;border:1px solid var(--plata);border-radius:8px;padding:18px 20px;margin:0 0 14px}
+.qz .qcard h3{font-family:var(--display);font-size:1.05rem;margin:0 0 10px;line-height:1.3}
+.qz .qcard .step{display:block;font-family:var(--display);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+.qz .opt{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:6px;cursor:pointer;font-size:15.5px;line-height:1.35}
+.qz .opt:hover{background:rgba(127,146,158,.10)}
+.qz .opt input{margin-top:4px;flex:none}
+.qz .bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 0 22px}
+.qz .bar .btn{cursor:pointer}
+.qz .prog{height:6px;background:rgba(127,146,158,.25);border-radius:3px;margin:0 0 18px;overflow:hidden}
+.qz .prog i{display:block;height:100%;background:var(--brass);width:0;transition:width .25s}
+.qz .res{background:var(--sea-deep);color:#D5DDE2;padding:24px 26px;border-radius:6px;margin:0 0 22px}
+.qz .res h2{color:#fff;font-size:1.5rem;margin:0 0 6px}
+.qz .res h3{color:#fff;font-family:var(--display);font-size:1.05rem;margin:18px 0 6px}
+.qz .res p{margin:0 0 10px}
+.qz .res a{color:#fff}
+.qz .res ul{margin:0 0 10px 18px;padding:0}
+.qz .res li{margin:0 0 6px}
+.qz .res .alt{font-size:15px;color:#B7C3CB}
+.qz .boat{display:block;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:10px 12px;margin:0 0 8px;text-decoration:none}
+.qz .boat b{display:block;color:#fff}
+.qz .boat span{font-family:var(--display);font-size:13px;color:#B7C3CB}
+.hidden{display:none}
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Qué barco necesito", "applicationCategory": "UtilityApplication", "operatingSystem": "Web", "inLanguage": "es", "provider": {"@type": "Organization", "name": "Plata Marine"}, "url": "https://www.platamarine.com/herramientas/que-barco-necesito.html", "description": "Contesta nueve preguntas sobre cuántos sois, qué uso le vas a dar, presupuesto, título y dónde lo guardarás, y te digo qué tipo de barco a motor encaja (open, sundeck, walkaround, cabinado, pilothouse, fly o semirrígida), qué eslora y qué mirar."}
+</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="Plata Marine, inicio"><img class="brand-logo" src="../logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="../barcos/">Barcos</a>
+      <a href="../#vender">Vender</a>
+      <a href="../#comprar">Comprar</a>
+      <a href="../guias/">Guías</a>
+      <a href="../actualidad/">Actualidad</a>
+      <a href="../titulaciones/">Titulaciones</a>
+      <a href="../#juan">Sobre mí</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20he%20hecho%20el%20test%20de%20qu%C3%A9%20barco%20necesito." target="_blank" rel="noopener">Hablar con Juan</a>
+  </div>
+</header>
+
+<main class="art">
+  <div class="wrap">
+    <article>
+      <header>
+        <p class="eyebrow">Herramientas · Qué barco necesito</p>
+        <h1>¿Qué barco necesitas? Test de dos minutos</h1>
+        <div class="meta"><span>Por Juan Morante</span><span>Septiembre 2026</span></div>
+        <p class="lead">Casi todos los que me escriben empiezan con una marca o un modelo que han visto en un anuncio. Yo prefiero empezar por otra parte: cuántos vais, qué vais a hacer con el barco, dónde lo vais a dejar y qué título tienes. Con eso el tipo de barco sale casi solo, y después ya buscamos el modelo. Contesta estas nueve preguntas y te digo por dónde iría yo.</p>
+      </header>
+
+      <div class="prose qz" id="qz">
+        <div class="prog"><i id="prog"></i></div>
+        <div id="result" class="res hidden"></div>
+        <div id="questions"></div>
+        <div class="bar hidden" id="endbar"><button class="btn btn-wa" id="check">Ver qué barco me encaja</button><button class="btn btn-ghost" id="again">Empezar de nuevo</button></div>
+        <p class="aviso">El resultado es una orientación a partir de tus respuestas, no una recomendación de compra: dos barcos del mismo tipo pueden ser muy distintos. Si quieres, me escribes con el resultado y lo afinamos con calma.</p>
+      </div>
+    </article>
+
+    <div class="pm-modal hidden" id="pmModal" role="dialog" aria-modal="true" aria-labelledby="pmModalTitle">
+      <div class="pm-box">
+        <h3 id="pmModalTitle">¿Te envío el resultado por correo?</h3>
+        <p>Te mando el tipo de barco que te encaja, la eslora orientativa y las guías para seguir, para que lo tengas a mano cuando mires anuncios.</p>
+        <form id="pmLeadForm" novalidate>
+          <input type="email" id="pmEmail" placeholder="tu@correo.com" autocomplete="email" required>
+          <label class="chk"><input type="checkbox" id="pmConsent" required> <span>Acepto que Plata Marine guarde mi correo para enviarme el resultado, según la <a href="../privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
+          <label class="chk"><input type="checkbox" id="pmNews"> <span>Quiero recibir de vez en cuando artículos y guías de Plata Marine por correo (puedes darte de baja cuando quieras).</span></label>
+          <p class="msg hidden" id="pmMsg"></p>
+          <button type="submit" class="btn btn-wa" id="pmSend">Enviarme el resultado</button>
+          <button type="button" class="skip" id="pmSkip">Ver el resultado sin correo</button>
+          <p class="legal">Responsable: Juan Morante Cruz (Plata Marine). Finalidad: enviarte el resultado y, solo si lo marcas, novedades de la web. Puedes ejercer tus derechos de acceso, rectificación y supresión en juan@platamarine.com. Más información en la <a href="../privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</p>
+        </form>
+      </div>
+    </div>
+
+    <aside class="aside" aria-label="Contacto y navegación">
+      <div class="card">
+        <p class="eyebrow">¿Quieres que lo miremos juntos?</p>
+        <h3>Cuéntame tu resultado y buscamos el barco.</h3>
+        <p>Trabajo con barcos a motor de 7 a 12 metros en Cataluña. Solo cobro si compras.</p>
+        <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20he%20hecho%20el%20test%20de%20qu%C3%A9%20barco%20necesito%20y%20me%20sale%3A%20" target="_blank" rel="noopener">Hablar con Juan por WhatsApp</a>
+      </div>
+      <nav class="toc" aria-label="Contenido">
+        <p class="eyebrow">En esta página</p>
+        <ol>
+          <li><a href="#qz">El test</a></li>
+        </ol>
+      </nav>
+      <div class="rel">
+        <p class="eyebrow">También te puede interesar</p>
+        <a href="../guias/tipos-de-barco-a-motor.html">Tipos de barco a motor: para qué sirve cada uno</a>
+        <a href="../guias/amarres-cataluna-tipos-precios-alquiler-compra.html">Amarres en Cataluña: tipos y precios</a>
+        <a href="../titulaciones/">Qué título necesitas para cada barco</a>
+        <a href="../guias/que-mirar-comprar-barco-segunda-mano.html">Qué mirar al comprar de segunda mano</a>
+      </div>
+    </aside>
+
+  </div>
+</main>
+<script>
+(function(){
+var Q=[{"id": "gente", "q": "¿Cuántos soléis ir a bordo normalmente?", "o": [{"t": "1 o 2", "p": {"open": 2, "rib": 2, "walkaround": 1, "cabinado": 1}, "v": {"gente": 2}}, {"t": "3 o 4", "p": {"sundeck": 2, "open": 1, "walkaround": 2, "cabinado": 1}, "v": {"gente": 4}}, {"t": "5 o 6", "p": {"sundeck": 2, "cabinado": 2, "fly": 1, "walkaround": 1}, "v": {"gente": 6}}, {"t": "7 o más", "p": {"fly": 3, "cabinado": 1, "sundeck": 1}, "v": {"gente": 8}}]}, {"id": "uso", "q": "¿Qué uso le vas a dar sobre todo?", "o": [{"t": "Salidas de día: baño, calas y volver", "p": {"open": 3, "sundeck": 3, "rib": 2, "walkaround": 1}}, {"t": "Pesca", "p": {"open": 3, "walkaround": 3, "pilothouse": 2, "rib": 1}}, {"t": "Fines de semana durmiendo a bordo", "p": {"cabinado": 3, "walkaround": 1, "fly": 1, "sundeck": 1}}, {"t": "Travesías de varios días (Baleares, Costa Brava entera)", "p": {"cabinado": 2, "fly": 3, "pilothouse": 1}}, {"t": "Navegar todo el año, también en invierno", "p": {"pilothouse": 3, "cabinado": 1, "fly": 1}}]}, {"id": "dormir", "q": "¿Vas a dormir a bordo?", "o": [{"t": "Nunca", "p": {"open": 2, "rib": 2, "sundeck": 1}}, {"t": "Alguna noche puntual", "p": {"sundeck": 2, "walkaround": 2, "cabinado": 1}}, {"t": "Fines de semana enteros", "p": {"cabinado": 3, "fly": 1, "pilothouse": 1}}, {"t": "Varios días seguidos", "p": {"fly": 3, "cabinado": 2, "pilothouse": 1}}]}, {"id": "presu", "q": "¿Qué presupuesto tienes para el barco (sin contar amarre ni seguro)?", "o": [{"t": "Menos de 30.000 €", "p": {"open": 2, "rib": 2}, "v": {"presu": 1}}, {"t": "De 30.000 a 60.000 €", "p": {"open": 1, "sundeck": 2, "walkaround": 1, "rib": 1}, "v": {"presu": 2}}, {"t": "De 60.000 a 120.000 €", "p": {"sundeck": 1, "walkaround": 2, "cabinado": 2, "pilothouse": 1}, "v": {"presu": 3}}, {"t": "De 120.000 a 250.000 €", "p": {"cabinado": 2, "pilothouse": 2, "fly": 2}, "v": {"presu": 4}}, {"t": "Más de 250.000 €", "p": {"fly": 3, "cabinado": 1}, "v": {"presu": 5}}]}, {"id": "titulo", "q": "¿Qué título náutico tienes?", "o": [{"t": "Ninguno todavía", "p": {}, "v": {"titulo": 0}}, {"t": "Licencia de navegación", "p": {"rib": 1, "open": 1}, "v": {"titulo": 1}}, {"t": "PNB", "p": {"open": 1, "sundeck": 1}, "v": {"titulo": 2}}, {"t": "PER", "p": {}, "v": {"titulo": 3}}, {"t": "Patrón de Yate o superior", "p": {"fly": 1}, "v": {"titulo": 4}}]}, {"id": "guarda", "q": "¿Dónde vas a guardar el barco?", "o": [{"t": "En remolque, en casa o en un parking", "p": {"rib": 3, "open": 2}, "v": {"guarda": "remolque"}}, {"t": "En marina seca", "p": {"rib": 2, "open": 2, "sundeck": 1}, "v": {"guarda": "seca"}}, {"t": "En un amarre en puerto", "p": {"cabinado": 1, "fly": 1, "pilothouse": 1, "walkaround": 1}, "v": {"guarda": "amarre"}}, {"t": "Todavía no lo sé", "p": {}, "v": {"guarda": "nose"}}]}, {"id": "valora", "q": "¿Qué es lo que más valoras?", "o": [{"t": "Sencillez y poco mantenimiento", "p": {"open": 2, "rib": 3}}, {"t": "Espacio para tomar el sol y bañarse", "p": {"sundeck": 3, "open": 1}}, {"t": "Moverme por cubierta con seguridad", "p": {"walkaround": 3, "pilothouse": 1}}, {"t": "Ir protegido del sol y del viento", "p": {"pilothouse": 3, "cabinado": 1, "fly": 1}}, {"t": "Comodidad dentro: cama, cocina, aseo", "p": {"cabinado": 3, "fly": 1}}, {"t": "Espacio social y vistas", "p": {"fly": 3, "sundeck": 1}}]}, {"id": "motor", "q": "¿Motor fueraborda o intraborda?", "o": [{"t": "Fueraborda", "p": {"open": 2, "walkaround": 2, "rib": 2, "sundeck": 1}}, {"t": "Intraborda o dentrofueraborda", "p": {"cabinado": 2, "fly": 2, "sundeck": 1, "pilothouse": 1}}, {"t": "Me da igual, lo que encaje", "p": {}}]}, {"id": "zona", "q": "¿Desde dónde vas a salir a navegar?", "o": [{"t": "Barcelona ciudad", "p": {}, "v": {"zona": "Barcelona"}}, {"t": "Maresme (Masnou, Mataró, Balís, Arenys)", "p": {}, "v": {"zona": "Maresme"}}, {"t": "Costa Brava", "p": {}, "v": {"zona": "Costa Brava"}}, {"t": "Garraf y Tarragona (Sitges, Vilanova, Cambrils, Salou)", "p": {}, "v": {"zona": "Garraf y Tarragona"}}, {"t": "Delta del Ebro", "p": {}, "v": {"zona": "Ebro"}}, {"t": "Aún no lo sé", "p": {}, "v": {"zona": ""}}]}];
+var T={"open": {"n": "Open de consola central", "a": "open", "d": "Cubierta corrida, consola en el centro y motor fueraborda. Sencillo, fácil de mantener y muy vendido en la costa catalana.", "q": "Salidas de día, baño en calas y pesca ligera. Poco que mantener y fácil de vender después."}, "sundeck": {"n": "Sundeck o bowrider", "a": "sundeck", "d": "Más superficie de solárium, asientos en proa y, en muchos casos, un pequeño aseo o camarote de proa.", "q": "Familias y grupos que quieren pasar el día a bordo con comodidad sin llegar al cabinado."}, "walkaround": {"n": "Walkaround", "a": "walkaround", "d": "Pasillo perimetral para moverse con seguridad por toda la cubierta, y una pequeña cabina bajo la consola.", "q": "Quien mezcla pesca y familia, o navega con niños y quiere moverse por cubierta sin sustos."}, "cabinado": {"n": "Cabinado o cruiser", "a": "cabinado", "d": "Cabina cerrada con litera, cocina y aseo. Hecho para dormir a bordo y hacer travesías cortas.", "q": "Fines de semana enteros a bordo y alguna escapada a Baleares con calma."}, "pilothouse": {"n": "Pilothouse", "a": "pilothouse", "d": "Puesto de gobierno cerrado y protegido. Se navega cómodo con viento, frío o sol de justicia.", "q": "Quien navega todo el año, pesca fuera de temporada o no quiere depender del tiempo."}, "fly": {"n": "Fly (flybridge)", "a": "fly", "d": "Segundo puesto de gobierno arriba, con espacio social en la cubierta superior. A partir de 10-11 metros.", "q": "Grupos grandes, estancias largas a bordo y quien valora vistas y espacio por encima del consumo."}, "rib": {"n": "Semirrígida", "a": "semirrigidas", "d": "Ligera, muy manejable y con poco mantenimiento. Casi siempre fueraborda.", "q": "Segundo barco, salidas rápidas, remolque o marina seca, y quien prioriza sencillez."}};
+var BOATS=[{"n": "Monterey 278 SS (2011)", "t": ["sundeck"], "m": 8.4, "p": 49990, "u": "../barcos/monterey-278-ss.html", "d": "8,40 m · Volvo Penta 320 cv · Costa Brava"}, {"n": "Ranieri Azzurra 5 m", "t": ["open", "rib"], "m": 5.0, "p": 11990, "u": "../barcos/ranieri-azzurra-5m.html", "d": "5,00 m · Johnson 60 cv · Torredembarra"}];
+var el=function(id){return document.getElementById(id)};
+var LEADS_URL='__LEADS_URL__';
+var lastResult=null,_scrollTo=null;
+function openLeadModal(result,scrollId){lastResult=result;_scrollTo=scrollId;
+  if(LEADS_URL.indexOf('http')===0){el('pmModal').classList.remove('hidden');setTimeout(function(){el('pmEmail').focus()},200);}
+  else window.scrollTo({top:el(scrollId).offsetTop-90,behavior:'smooth'});}
+function closeModal(){el('pmModal').classList.add('hidden');if(_scrollTo)window.scrollTo({top:el(_scrollTo).offsetTop-90,behavior:'smooth'});}
+el('pmSkip').onclick=closeModal;
+el('pmLeadForm').onsubmit=function(ev){
+  ev.preventDefault();var em=el('pmEmail').value.trim(),msg=el('pmMsg');msg.className='msg';
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Revisa el correo, no parece correcto.';return;}
+  if(!el('pmConsent').checked){msg.textContent='Necesito que aceptes la política de privacidad para poder enviártelo.';return;}
+  var btn=el('pmSend');btn.disabled=true;var lbl=btn.textContent;btn.textContent='Enviando…';
+  var payload=Object.assign({email:em,consent:true,newsletter:el('pmNews').checked,consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
+  fetch(LEADS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)}).then(function(){
+    msg.className='msg ok';msg.textContent='Enviado. Revisa el correo en unos minutos (y la carpeta de spam, por si acaso).';btn.textContent='Enviado';
+    setTimeout(closeModal,1800);
+  }).catch(function(){msg.textContent='No se ha podido enviar. Prueba otra vez o escríbeme por WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
+};
+
+function render(){
+  var h='';
+  Q.forEach(function(q,i){
+    h+='<div class="qcard" id="q'+i+'"><span class="step">Pregunta '+(i+1)+' de '+Q.length+'</span><h3>'+q.q+'</h3>';
+    q.o.forEach(function(o,j){h+='<label class="opt"><input type="radio" name="q'+i+'" value="'+j+'"> <span>'+o.t+'</span></label>'});
+    h+='</div>';
+  });
+  el('questions').innerHTML=h;el('endbar').classList.remove('hidden');el('check').classList.remove('hidden');el('result').classList.add('hidden');
+  document.querySelectorAll('#questions input').forEach(function(x){x.addEventListener('change',prog)});prog();
+}
+function prog(){var n=0;Q.forEach(function(q,i){if(document.querySelector('input[name=q'+i+']:checked'))n++});el('prog').style.width=Math.round(100*n/Q.length)+'%';}
+function esloraRange(v){
+  // tramo orientativo por presupuesto, limitado por título
+  var r=[[5,7],[6,8],[7,10],[9,12],[12,16]][(v.presu||2)-1].slice();
+  if(v.titulo===1){r=[Math.min(r[0],6),6];}
+  else if(v.titulo===2){r=[Math.min(r[0],8),Math.min(r[1],8)];}
+  else if(v.titulo===3){r[1]=Math.min(r[1],15);}
+  if(v.gente>=7&&r[1]<9)r[1]=9;
+  return r;
+}
+function check(){
+  var missing=[];Q.forEach(function(q,i){if(!document.querySelector('input[name=q'+i+']:checked'))missing.push(i)});
+  if(missing.length){var c=el('q'+missing[0]);c.style.borderColor='#c0392b';window.scrollTo({top:c.offsetTop-90,behavior:'smooth'});return;}
+  var pts={},v={};Object.keys(T).forEach(function(k){pts[k]=0});
+  Q.forEach(function(q,i){var o=q.o[parseInt(document.querySelector('input[name=q'+i+']:checked').value)];Object.keys(o.p||{}).forEach(function(k){pts[k]+=o.p[k]});Object.keys(o.v||{}).forEach(function(k){v[k]=o.v[k]});});
+  // coherencia: sin dormir a bordo no recomendamos fly; presupuesto bajo penaliza fly y pilothouse
+  if(v.presu<=2){pts.fly-=4;pts.pilothouse-=2;}
+  if(v.presu<=1){pts.cabinado-=2;}
+  if(v.guarda==='remolque'){pts.fly-=6;pts.cabinado-=3;pts.pilothouse-=3;}
+  var order=Object.keys(T).sort(function(a,b){return pts[b]-pts[a]});
+  var top=order[0],second=order[1];var r=esloraRange(v);
+  var h='<h2>Te encaja un '+T[top].n.toLowerCase()+'</h2>';
+  h+='<p>'+T[top].d+' '+T[top].q+'</p>';
+  h+='<p class="alt">Segunda opción: <strong>'+T[second].n+'</strong>. '+T[second].q+'</p>';
+  h+='<h3>Eslora orientativa: '+r[0]+' a '+r[1]+' metros</h3>';
+  var notes=[];
+  if(v.titulo===0)notes.push('Sin título puedes llevar hasta 5 metros y 15 cv sin salir de 2 millas de un refugio. Para lo que buscas necesitarás como mínimo el <a href="../titulaciones/">PNB o el PER</a>; el PER se saca en unas semanas y abre hasta 15 metros.');
+  if(v.titulo===1)notes.push('Con la Licencia de navegación el límite son 6 metros de eslora y 2 millas de la costa. Si quieres ir más allá, mira el <a href="../titulaciones/">PNB o el PER</a>.');
+  if(v.titulo===2)notes.push('Con el PNB el límite son 8 metros y 5 millas de un puerto o refugio. Si el barco que te encaja pasa de ahí, te conviene el <a href="../titulaciones/">PER</a>.');
+  if(r[1]>8)notes.push('A partir de 8 metros entra el impuesto de matriculación (12 % en un barco nuevo o importado); en un barco de ocasión ya matriculado en España no se vuelve a pagar. Lo explico en la <a href="../guias/impuesto-matriculacion-barcos.html">guía del impuesto</a>.');
+  if(v.guarda==='amarre'||v.guarda==='nose')notes.push('El amarre es el gasto fijo que más pesa: cuenta con unos 2.700 a 3.700 euros al año para 8 metros en la zona de Barcelona y bastante más en 12. Tienes las tarifas puerto por puerto en la <a href="../guias/amarres-cataluna-tipos-precios-alquiler-compra.html">guía de amarres</a>'+(v.zona?' (mira '+v.zona+')':'')+'.');
+  if(v.guarda==='remolque')notes.push('En remolque, el límite práctico está en unos 7 metros: con el permiso B el conjunto coche más remolque no puede pasar de 3.500 kilos; por encima necesitas el B96 (hasta 4.250) o el BE, y un coche que tire de verdad.');
+  if(v.guarda==='seca')notes.push('La marina seca es una gran opción hasta 8 o 9 metros con fueraborda: el barco se conserva mucho mejor y sale más barato que un amarre a flote.');
+  if(v.presu<=1)notes.push('Con menos de 30.000 euros hay barcos muy válidos de 5 a 7 metros; lo importante es el estado del motor y la documentación, no el año.');
+  if(notes.length){h+='<ul>';notes.forEach(function(n){h+='<li>'+n+'</li>'});h+='</ul>';}
+  h+='<h3>Para seguir</h3><p><a href="../guias/tipos-de-barco-a-motor.html#'+T[top].a+'">Cómo es un '+T[top].n.toLowerCase()+' y qué marcas se ven por aquí</a> · <a href="../guias/que-mirar-comprar-barco-segunda-mano.html">Qué mirar al comprar de segunda mano</a></p>';
+  var match=BOATS.filter(function(b){return (b.t.indexOf(top)>=0||b.t.indexOf(second)>=0)&&b.m>=r[0]-1&&b.m<=r[1]+1});
+  if(match.length){h+='<h3>En cartera ahora mismo</h3>';match.forEach(function(b){h+='<a class="boat" href="'+b.u+'"><b>'+b.n+' · '+b.p.toLocaleString('es-ES')+' €</b><span>'+b.d+'</span></a>'});}
+  h+='<p style="margin-top:14px"><a class="btn btn-wa" href="https://wa.me/34633742973?text='+encodeURIComponent('Hola Juan, he hecho el test de qué barco necesito y me sale '+T[top].n+' de '+r[0]+' a '+r[1]+' m. ¿Lo miramos?')+'" target="_blank" rel="noopener">Cuéntamelo por WhatsApp</a></p>';
+  el('result').innerHTML=h;el('result').classList.remove('hidden');el('check').classList.add('hidden');
+  var det='Tipo: '+T[top].n+' | Segunda: '+T[second].n+' | Eslora: '+r[0]+'-'+r[1]+' m | Personas: '+v.gente+' | Presupuesto: '+['<30k','30-60k','60-120k','120-250k','>250k'][(v.presu||2)-1]+' | Título: '+['ninguno','Licencia','PNB','PER','PY+'][v.titulo||0]+' | Guarda: '+(v.guarda||'')+' | Zona: '+(v.zona||'');
+  openLeadModal({source:'que-barco',ok:'',total:'',pass:true,detail:det,page:location.pathname,ua:navigator.userAgent.slice(0,120)},'result');
+}
+el('check').onclick=check;
+el('again').onclick=function(){render();window.scrollTo({top:el('qz').offsetTop-90,behavior:'smooth'})};
+render();
+})();
+</script>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="line">
+      <span>© 2026 Plata Marine · Sabadell, Barcelona · <a href="mailto:juan@platamarine.com">juan@platamarine.com</a></span>
+      <a href="../aviso-legal.html">Aviso legal</a> · <a href="../privacidad.html">Privacidad</a> · <a href="../cookies.html">Cookies</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
+
+<script src="/analytics.js" defer></script>
