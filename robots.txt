@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /index_2.html
+
+Sitemap: https://www.platamarine.com/sitemap.xml
