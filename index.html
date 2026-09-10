@@ -418,6 +418,17 @@ section[id]{scroll-margin-top:78px}
 .nav a[aria-current]{color:var(--ink)}
 .faq summary{font-size:16.5px}
 #vender{position:relative;overflow:hidden}#vender canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom right,transparent 45%,#000 88%);mask-image:linear-gradient(to bottom right,transparent 45%,#000 88%)}#vender .wrap{position:relative}
+
+.hero-eyebrow{font-family:var(--display);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:#E3E9EC;opacity:.9;margin:0;text-shadow:0 1px 14px rgba(0,0,0,.35)}
+.hero .hero-title h1{font-family:var(--display);font-weight:700;text-transform:none;letter-spacing:-.01em;font-size:clamp(2rem,4.8vw,3.7rem);line-height:1.08;max-width:17ch;margin:12px 0 0}
+.hero-sub{max-width:56ch;font-size:clamp(.98rem,1.25vw,1.1rem);letter-spacing:.01em;line-height:1.5}
+@media (max-width:639px){.hero .hero-title h1{font-size:clamp(1.9rem,8.6vw,2.4rem)}}
+.more-links{margin-top:26px;font-family:var(--display);font-size:14px;color:var(--ink-2);line-height:1.9}
+.more-links a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--plata-2)}
+.more-links a:hover{border-color:var(--sea)}
+.steps .step p{max-width:none}
+.sec-lead{max-width:62ch;margin-top:14px;font-size:1.05rem;color:var(--ink-2)}
+@media (min-width:820px){#vender .steps{grid-template-columns:1fr 1fr;gap:0 56px}}
 </style>
 </head>
 <body>
@@ -462,14 +473,14 @@ section[id]{scroll-margin-top:78px}
            srcset="https://images.unsplash.com/photo-1672939113788-820060bbc046?auto=format&fit=crop&w=800&h=900&q=80 800w, https://images.unsplash.com/photo-1672939113788-820060bbc046?auto=format&fit=crop&w=1600&q=80 1600w, https://images.unsplash.com/photo-1672939113788-820060bbc046?auto=format&fit=crop&w=2400&q=80 2400w"
            sizes="100vw" alt="Barco a motor navegando por la costa mediterránea" fetchpriority="high" width="1600" height="1067">
       <div class="hero-title">
-        <img class="hero-logo" src="logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400" fetchpriority="high">
-        <h1>Broker náutico en Cataluña</h1>
-        <p class="hero-sub">Compra y venta de barcos a motor de ocasión. Trato directo con Juan Morante. A éxito y sin exclusiva.</p>
+        <p class="hero-eyebrow">Broker náutico en Cataluña · Juan Morante</p>
+        <h1>Vendo tu barco. Solo cobro si se vende.</h1>
+        <p class="hero-sub">Barcos a motor de particulares, de 45.000 a 250.000 €. Sin exclusiva y sin adelantos: si lo vendes tú por tu cuenta, no me debes nada. Y si buscas barco, lo buscamos juntos.</p>
         <div class="hero-btns">
           <a class="btn btn-pill" href="#valora">Quiero vender mi barco</a>
           <a class="btn btn-pill ghost" href="#comprar">Estoy buscando barco</a>
         </div>
-        <p class="hero-micro">Valoración inicial sin compromiso · Cataluña</p>
+        <p class="hero-micro">Valoración inicial sin compromiso · Toda la costa catalana</p>
       </div>
     </div>
   </section>
@@ -504,32 +515,18 @@ section[id]{scroll-margin-top:78px}
     </div>
   </section>
 
-  <section class="sec" id="vender">
-    <canvas id="carta" aria-hidden="true"></canvas>
-    <div class="wrap">
-      <p class="eyebrow">Por qué confiar la venta</p>
-      <h2>¿Para qué un broker, si puedo anunciarlo yo?</h2>
-      <p class="intro">Puedes, claro. La diferencia está en todo lo que pasa entre publicar el anuncio y cobrar. Muchos barcos que llevan meses anunciados comparten los mismos problemas: precio fuera de mercado, fotos que no ayudan y visitas de gente que en realidad no va a comprar.</p>
-      <ol class="why-list">
-        <li><span class="n">1</span><div><h3>Un precio que se sostiene</h3><p>Miro qué se pide y qué se acaba pagando por barcos comparables, no solo lo que aparece anunciado, y te lo explico para que decidas con datos.</p></div></li>
-        <li><span class="n">2</span><div><h3>El barco bien presentado</h3><p>Recopilo mantenimiento, equipamiento y papeles, preparo la ficha y las fotos, y lo publico en los portales donde buscan los compradores y entre mis contactos.</p></div></li>
-        <li><span class="n">3</span><div><h3>Consultas atendidas, curiosos fuera</h3><p>Respondo cada consulta y hablo con el comprador antes de la visita: qué busca, presupuesto y cuándo quiere comprar. A tu barco solo van visitas con sentido.</p></div></li>
-        <li><span class="n">4</span><div><h3>Ofertas negociadas contigo</h3><p>Recibo las ofertas, te digo qué me parece cada una y negocio lo que acordemos. La decisión de aceptar es siempre tuya.</p></div></li>
-        <li><span class="n">5</span><div><h3>Papeles hasta la entrega</h3><p>Contrato, cambio de titularidad, impuestos y tasas. Coordino la documentación contigo para que la venta no se atasque al final.</p></div></li>
-        <li><span class="n">6</span><div><h3>Sabes cómo va la venta</h3><p>Te cuento qué consultas llegan y qué se repite. Si hay que tocar precio, fotos o anuncio, lo hablamos con datos.</p></div></li>
-      </ol>
-    </div>
-  </section>
 
-  <section class="sec alt" id="como">
+  <section class="sec alt" id="vender">
     <div class="wrap">
-      <p class="eyebrow">Cómo funciona</p>
-      <h2>La venta, en cuatro fases.</h2>
+      <span id="como"></span>
+      <p class="eyebrow">Cómo trabajo</p>
+      <h2>¿Para qué un broker, si puedo anunciarlo yo?</h2>
+      <p class="sec-lead">Puedes, claro. La diferencia está en todo lo que pasa entre publicar el anuncio y cobrar: el precio, la ficha, las consultas, las visitas, la negociación y los papeles. Esto es lo que hago yo en cada fase.</p>
       <ol class="steps" style="list-style:none;padding:0;margin-top:40px">
-        <li class="step"><span class="n">1</span><h3>Diagnóstico y precio</h3><p>Modelo, año, motor, horas, puerto y el precio que tienes en mente. Reviso estado, trabajos pendientes y papeles.</p></li>
-        <li class="step"><span class="n">2</span><h3>Precio de salida por escrito</h3><p>Comparo barcos similares y te propongo un precio de salida explicando por qué. Y firmamos las condiciones.</p></li>
-        <li class="step"><span class="n">3</span><h3>Anuncio, consultas y visitas</h3><p>Ficha, fotos y publicación. Atiendo las consultas y organizo solo visitas con intención real de compra.</p></li>
-        <li class="step"><span class="n">4</span><h3>Oferta, papeles y entrega</h3><p>Negocio las ofertas contigo y coordino la documentación, los trámites y la entrega.</p></li>
+        <li class="step"><span class="n">1</span><h3>Diagnóstico y precio</h3><p>Modelo, año, motor, horas, puerto y el precio que tienes en mente. Reviso estado, trabajos pendientes y papeles, y miro qué se pide por barcos comparables y cuánto llevan anunciados, no solo el precio que aparece.</p></li>
+        <li class="step"><span class="n">2</span><h3>Precio de salida por escrito</h3><p>Te propongo un precio de salida explicando por qué, para que decidas con datos. Y firmamos las condiciones: trabajo, honorarios y duración del encargo, antes de empezar.</p></li>
+        <li class="step"><span class="n">3</span><h3>Anuncio, consultas y visitas</h3><p>Recopilo mantenimiento, equipamiento y papeles, preparo la ficha y las fotos y lo publico en los portales donde buscan los compradores. Respondo cada consulta y hablo con el interesado antes de la visita: qué busca, presupuesto y cuándo quiere comprar. Así a tu barco va quien de verdad está comprando.</p></li>
+        <li class="step"><span class="n">4</span><h3>Oferta, papeles y entrega</h3><p>Recibo las ofertas, te digo qué me parece cada una y negocio lo que acordemos; la decisión de aceptar es siempre tuya. Después coordino contrato, cambio de titularidad, impuestos y tasas para que la venta no se atasque al final. Y mientras dura, sabes qué consultas llegan y qué se repite.</p></li>
       </ol>
     </div>
   </section>
@@ -542,12 +539,12 @@ section[id]{scroll-margin-top:78px}
         <div class="cond"><strong>A éxito</strong><p>Los honorarios se pagan solo si se cierra la venta que gestiono.</p></div>
         <div class="cond"><strong>Sin exclusiva</strong><p>Puedes seguir vendiéndolo por tu cuenta. Si lo vendes tú, no me debes nada.</p></div>
         <div class="cond"><strong>Sin adelantos</strong><p>Ni cuota de publicación ni gastos por anticipado.</p></div>
-        <div class="cond"><strong>Trato directo</strong><p>Hablas conmigo en las cuatro fases.</p></div>
+        <div class="cond"><strong>Trato directo</strong><p>Hablas conmigo en las cuatro fases, no con una centralita.</p></div>
       </div>
       <p class="cond-note">Trabajo, honorarios y duración del encargo quedan por escrito antes de empezar. Si el barco necesita trabajos, también lo estudio cuando el estado y el precio permiten plantear una venta razonable.</p>
       <div class="faq" style="margin-top:30px">
         <details><summary>¿Tienes que venir a ver el barco para empezar?</summary><p>Podemos empezar con fotos, documentación y una conversación. Me desplazo cuando hay que preparar la ficha o cuando organizamos una visita con un comprador interesado.</p></details>
-        <details><summary>¿Qué barcos trabajas?</summary><p>Principalmente barcos a motor de particulares en Cataluña, normalmente entre 45.000 y 250.000 €. Importes superiores, caso por caso. Day boats, cabinados, cruceros deportivos, pilothouse, flybridge y semirrígidas de gama media y alta.</p></details>
+        <details><summary>¿Qué barcos trabajas?</summary><p>Barcos a motor de particulares en Cataluña, normalmente entre 45.000 y 250.000 €. Importes superiores o menores, caso por caso: cada barco es un mundo. Day boats, cabinados, cruceros deportivos, pilothouse, flybridge y semirrígidas de gama media y alta.</p></details>
         <details><summary>¿Y si ya lo tengo anunciado?</summary><p>No pasa nada. Sin exclusiva puedes mantener tu anuncio. Lo habitual es revisar precio y ficha para que los dos anuncios cuenten lo mismo.</p></details>
       </div>
     </div>
@@ -601,7 +598,7 @@ section[id]{scroll-margin-top:78px}
         <div>
           <p class="eyebrow">Buscas barco</p>
           <h2>Si buscas barco, lo buscamos juntos.</h2>
-          <p class="intro">Primero hablamos del uso, del presupuesto y de dónde lo vas a tener. Después busco opciones, comparo precio y estado, pido lo que falte antes de que te desplaces y te acompaño en la visita, la negociación y los papeles. Si hace falta, coordinamos una inspección independiente.</p>
+          <p class="intro">Primero hablamos del uso, del presupuesto y de dónde lo vas a tener. Después busco opciones, comparo precio y estado, pido lo que falte antes de que te desplaces y te acompaño en la visita, la negociación y los papeles. Si hace falta, coordinamos una inspección independiente, y para gestoría, seguro o taller te digo con quién lo haría yo.</p>
           <div class="boat-cta" style="margin-top:26px">
             <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20estoy%20buscando%20barco.%20Tipo%3A%20%20%7C%20Presupuesto%3A%20%20%7C%20Zona%3A%20" target="_blank" rel="noopener">Cuéntame qué estás buscando</a>
           </div>
@@ -618,35 +615,7 @@ section[id]{scroll-margin-top:78px}
     </div>
   </section>
 
-  <section class="sec alt" id="barcos">
-    <div class="wrap">
-      <p class="eyebrow">Qué barcos trabajo</p>
-      <h2>Barcos a motor, sobre todo.</h2>
-      <p class="intro">Day boats, cabinados, cruceros deportivos, pilothouse, flybridge y semirrígidas de gama media y alta. De particulares, en la costa catalana: Barcelona, Maresme, Costa Brava y Costa Daurada.</p>
-      <div class="brands" aria-label="Marcas habituales">
-        <span>Beneteau</span><span>Jeanneau</span><span>Axopar</span><span>De Antonio</span><span>Cranchi</span><span>Sessa</span><span>Princess</span><span>Fairline</span><span>Rodman</span><span>Astondoa</span><span>Quicksilver</span><span>Sea Ray</span>
-      </div>
-      <p class="cond-note">Si tu barco es de otra marca, cuéntamelo igual.</p>
-    </div>
-  </section>
 
-  <section class="sec" id="servicios">
-    <div class="wrap">
-      <p class="eyebrow">También te ayudo con</p>
-      <h2>Todo lo que rodea a la compraventa.</h2>
-      <p class="intro">Vender o comprar un barco casi nunca es solo firmar. Te pongo en contacto con profesionales de confianza en Cataluña, antes o después de la operación, sin coste por mi parte.</p>
-      <div class="serv-grid">
-        <div class="serv"><strong>Mecánica y taller</strong><p>Revisión previa a la venta, puesta a punto del motor, hibernación.</p></div>
-        <div class="serv"><strong>Peritaje independiente</strong><p>Inspección técnica antes de comprar o de aceptar una oferta.</p></div>
-        <div class="serv"><strong>Refit y limpieza</strong><p>Tapicería, gelcoat, pulido y limpieza a fondo para la visita.</p></div>
-        <div class="serv"><strong>Seguro</strong><p>Póliza ajustada al barco y al uso, desde el día de la entrega.</p></div>
-        <div class="serv"><strong>Gestoría náutica</strong><p>Cambio de titularidad, ITP, cambio de lista, matriculación de importados.</p></div>
-        <div class="serv"><strong>Amarre y transporte</strong><p>Amarre en la costa catalana y transporte por carretera.</p></div>
-        <div class="serv"><strong>Financiación</strong><p>Entidades que financian embarcaciones de ocasión.</p></div>
-        <div class="serv"><strong>Formación</strong><p>Escuelas náuticas para el título que pida el barco.</p></div>
-      </div>
-    </div>
-  </section>
 
   <section class="sec" id="guias">
     <div class="wrap">
@@ -655,39 +624,17 @@ section[id]{scroll-margin-top:78px}
           <p class="eyebrow">Guías</p>
           <h2>Lo que conviene saber antes de comprar o vender.</h2>
         </div>
-        <a class="btn btn-ghost" href="guias/">Ver todas las guías</a>
+        <a class="btn btn-ghost" href="guias/">Ver las 11 guías</a>
       </div>
       <ul class="guias-cards">
         <li><a href="guias/impuesto-matriculacion-barcos.html"><img src="https://images.unsplash.com/photo-1682194563788-312328e4a762?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Fiscalidad</span><strong>Impuesto de matriculación: por qué los 8 metros lo cambian todo</strong><span class="gc-more">Leer la guía →</span></span></a></li>
-        <li><a href="guias/lista-6-y-lista-7.html"><img src="https://images.unsplash.com/photo-1672939113905-49237296683a?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Listas</span><strong>Lista 6ª y lista 7ª: qué cambia cuando compras o vendes</strong><span class="gc-more">Leer la guía →</span></span></a></li>
-        <li><a href="guias/papeles-vender-barco-cambio-titularidad.html"><img src="https://images.unsplash.com/photo-1664463760781-f159dfe3af30?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Papeleo</span><strong>Qué papeles necesitas para vender y cuánto cuesta el cambio de nombre</strong><span class="gc-more">Leer la guía →</span></span></a></li>
         <li><a href="guias/precio-barco-ocasion.html"><img src="https://images.unsplash.com/photo-1626266061368-46a8f578ddd6?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Precio</span><strong>Cómo poner precio a un barco de ocasión</strong><span class="gc-more">Leer la guía →</span></span></a></li>
-        <li><a href="guias/comprar-barco-francia-italia-matricular-espana.html"><img src="https://images.unsplash.com/photo-1776221307349-717fc7944510?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Importación</span><strong>Comprar un barco en Francia o Italia y matricularlo en España</strong><span class="gc-more">Leer la guía →</span></span></a></li>
         <li><a href="guias/que-mirar-comprar-barco-segunda-mano.html"><img src="https://images.unsplash.com/photo-1660366916328-7bbc1a63107e?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Compra</span><strong>Qué mirar al comprar un barco de segunda mano de 7 a 12 m</strong><span class="gc-more">Leer la guía →</span></span></a></li>
-        <li><a href="guias/tipos-de-barco-a-motor.html"><img src="https://images.unsplash.com/photo-1674419404519-54fa8a774aa2?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Tipos de barco</span><strong>Open, sundeck, pilothouse, cabinado, fly: cuál encaja contigo</strong><span class="gc-more">Leer la guía →</span></span></a></li>
-        <li><a href="guias/que-hace-un-broker-nautico.html"><img src="https://images.unsplash.com/photo-1710106870942-c6f85a10db2a?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Brokeraje</span><strong>Qué hace un broker náutico y cuánto cobra</strong><span class="gc-more">Leer la guía →</span></span></a></li>
-        <li><a href="guias/bandera-polaca-abanderar-barco-otro-pais.html"><img src="https://images.unsplash.com/photo-1710106870942-c6f85a10db2a?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Bandera</span><strong>Bandera polaca, Gibraltar, Malta y otras: qué te ahorras y qué no</strong><span class="gc-more">Leer la guía →</span></span></a></li>
-        <li><a href="guias/amarres-cataluna-tipos-precios-alquiler-compra.html"><img src="https://images.unsplash.com/photo-1682194563788-312328e4a762?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Amarres</span><strong>Amarres en Cataluña: tipos, precios 2026 y alquiler o compra</strong><span class="gc-more">Leer la guía →</span></span></a></li>
       </ul>
+      <p class="more-links">También: <a href="guias/amarres-cataluna-tipos-precios-alquiler-compra.html">amarres en Cataluña (tarifas 2026)</a> · <a href="guias/lista-6-y-lista-7.html">lista 6ª y 7ª</a> · <a href="guias/papeles-vender-barco-cambio-titularidad.html">papeles para vender</a> · <a href="guias/tipos-de-barco-a-motor.html">tipos de barco</a> · <a href="guias/bandera-polaca-abanderar-barco-otro-pais.html">banderas extranjeras</a> · <a href="titulaciones/">titulaciones y test del PER</a> · <a href="herramientas/que-barco-necesito.html">test: qué barco necesito</a> · <a href="navegante/">guía del navegante</a> · <a href="actualidad/">actualidad</a></p>
     </div>
   </section>
 
-  <section class="sec alt" id="mas">
-    <div class="wrap">
-      <div class="sec-head">
-        <div>
-          <p class="eyebrow">Actualidad, titulaciones y guía del navegante</p>
-          <h2>Para navegar mejor, no solo para comprar o vender.</h2>
-        </div>
-      </div>
-      <ul class="guias-cards">
-        <li><a href="actualidad/que-motor-fueraborda-comprar-2026.html"><img src="https://images.unsplash.com/photo-1676734278124-43108405c985?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Actualidad</span><strong>Qué motor fueraborda comprar en 2026</strong><span class="gc-more">Leer el artículo →</span></span></a></li>
-        <li><a href="titulaciones/"><img src="https://images.unsplash.com/photo-1710106870942-c6f85a10db2a?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Titulaciones</span><strong>Qué título necesitas para llevar un barco, con test de práctica del PER</strong><span class="gc-more">Ver titulaciones →</span></span></a></li>
-        <li><a href="navegante/"><img src="https://images.unsplash.com/photo-1682194563788-312328e4a762?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Guía del navegante</span><strong>Mantenimiento de fin de temporada, fondeo y lista antes de salir</strong><span class="gc-more">Leer la guía →</span></span></a></li>
-        <li><a href="herramientas/que-barco-necesito.html"><img src="https://images.unsplash.com/photo-1676734278124-43108405c985?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Herramienta</span><strong>¿Qué barco necesitas? Test de dos minutos para saber qué tipo y qué eslora te encajan</strong><span class="gc-more">Hacer el test →</span></span></a></li>
-      </ul>
-    </div>
-  </section>
 
   <section class="sec deep" id="juan">
     <div class="wrap">
@@ -719,39 +666,23 @@ section[id]{scroll-margin-top:78px}
     <div class="wrap">
       <p class="eyebrow">Vender</p>
       <h2>¿Tienes un barco y estás pensando en venderlo? Cuéntame cuál es y lo estudiamos.</h2>
-      <p class="intro">Con estos datos puedo empezar. Rellena lo que sepas; las fotos me las mandas después por WhatsApp.</p>
+      <p class="intro">Con esto me basta para empezar; el resto (motor, horas, precio, fotos) lo vemos por WhatsApp.</p>
       <form id="valoracion" class="form-grid" novalidate>
         <div class="field span2">
           <label for="modelo">Marca y modelo <i>*</i></label>
           <input id="modelo" name="modelo" type="text" autocomplete="off" placeholder="Jeanneau Cap Camarat 9.0 WA" required>
         </div>
         <div class="field">
-          <label for="anio">Año <i>*</i></label>
-          <input id="anio" name="anio" type="number" inputmode="numeric" min="1980" max="2026" placeholder="2019" required>
-        </div>
-        <div class="field">
-          <label for="eslora">Eslora (m)</label>
-          <input id="eslora" name="eslora" type="text" inputmode="decimal" placeholder="8,90">
-        </div>
-        <div class="field">
-          <label for="motor">Motor y potencia</label>
-          <input id="motor" name="motor" type="text" placeholder="2 × Yamaha 200 cv">
-        </div>
-        <div class="field">
-          <label for="horas">Horas de motor</label>
-          <input id="horas" name="horas" type="text" inputmode="numeric" placeholder="320">
+          <label for="anio">Año</label>
+          <input id="anio" name="anio" type="number" inputmode="numeric" min="1980" max="2026" placeholder="2019">
         </div>
         <div class="field">
           <label for="puerto">Puerto o localidad <i>*</i></label>
           <input id="puerto" name="puerto" type="text" placeholder="Port Ginesta" required>
         </div>
-        <div class="field">
-          <label for="precio">Precio aproximado (€)</label>
-          <input id="precio" name="precio" type="text" inputmode="numeric" placeholder="95.000">
-        </div>
         <div class="field span2">
-          <label for="estado">Estado o trabajos pendientes <small style="text-transform:none;letter-spacing:0;font-weight:400">(opcional)</small></label>
-          <input id="estado" name="estado" type="text" placeholder="Revisión hecha en mayo, tapicería para cambiar">
+          <label for="anuncio">Enlace a tu anuncio, si ya lo tienes <small style="text-transform:none;letter-spacing:0;font-weight:400">(opcional)</small></label>
+          <input id="anuncio" name="anuncio" type="url" inputmode="url" placeholder="https://…">
         </div>
         <div class="field">
           <label for="nombre">Nombre <i>*</i></label>
@@ -762,10 +693,10 @@ section[id]{scroll-margin-top:78px}
           <input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="6xx xxx xxx" required>
         </div>
         <div class="form-actions">
-          <button class="btn btn-wa" type="submit">Enviar a Juan</button>
+          <button class="btn btn-wa" type="submit">Continuar por WhatsApp</button>
           <button class="btn btn-ghost" type="button" id="porEmail">Prefiero por email</button>
         </div>
-        <p class="form-help">Se abre WhatsApp (o tu correo) con el mensaje preparado; lo revisas y me lo envías tú. Nada se guarda en ningún servidor.</p>
+        <p class="form-help">Se abre WhatsApp (o tu correo) con el mensaje ya escrito; lo revisas y lo envías tú. Te contesto yo. Nada se guarda en ningún servidor.</p>
       </form>
     </div>
   </section>
@@ -780,6 +711,7 @@ section[id]{scroll-margin-top:78px}
       <a href="guias/">Guías</a>
       <a href="actualidad/">Actualidad</a>
       <a href="titulaciones/">Titulaciones</a>
+      <a href="herramientas/que-barco-necesito.html">Qué barco necesito</a>
       <a href="barcos/">Barcos en venta</a>
     </div>
     <div class="line">
@@ -835,11 +767,8 @@ var IMGS={"monterey-278-ss-1": "monterey-278-ss-1.jpg", "monterey-278-ss-2": "mo
     var lines=['Hola Juan, estoy pensando en vender mi barco.'];
     var barco=v('modelo'); if(v('anio')) barco+=' ('+v('anio')+')';
     lines.push('Barco: '+barco);
-    var tec=[]; if(v('eslora')) tec.push('Eslora: '+v('eslora')+' m'); if(v('motor')) tec.push('Motor: '+v('motor')); if(v('horas')) tec.push(v('horas')+' h');
-    if(tec.length) lines.push(tec.join(' · '));
     if(v('puerto')) lines.push('Puerto: '+v('puerto'));
-    if(v('estado')) lines.push('Estado: '+v('estado'));
-    if(v('precio')) lines.push('Precio que tengo en mente: '+v('precio')+' €');
+    if(v('anuncio')) lines.push('Anuncio: '+v('anuncio'));
     if(v('nombre')) lines.push('Soy '+v('nombre')+(v('telefono')?', tel. '+v('telefono'):'')+'.');
     return lines.join('\n');
   }
