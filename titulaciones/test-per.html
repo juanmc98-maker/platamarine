@@ -34,6 +34,18 @@
 .mode{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 20px}
 .mode label{display:flex;gap:8px;align-items:center;font-family:var(--display);font-size:14px;border:1px solid var(--plata);border-radius:6px;padding:8px 12px;cursor:pointer;background:#fff}
 .hidden{display:none}
+.pm-modal{position:fixed;inset:0;background:rgba(13,28,39,.55);display:flex;align-items:center;justify-content:center;z-index:50;padding:16px}
+.pm-box{background:#fff;border-radius:10px;max-width:440px;width:100%;padding:26px 24px;box-shadow:0 24px 60px rgba(13,28,39,.3);position:relative}
+.pm-box h3{font-family:var(--display);font-size:1.25rem;margin:0 0 8px;line-height:1.2}
+.pm-box p{font-size:15px;color:var(--ink-2);margin:0 0 14px}
+.pm-box input[type=email]{width:100%;font:16px var(--serif);padding:11px 12px;border:1px solid var(--plata-2);border-radius:6px;margin-bottom:10px;box-sizing:border-box}
+.pm-box label.chk{display:flex;gap:8px;align-items:flex-start;font-family:var(--display);font-size:13px;color:var(--ink-2);margin-bottom:8px;line-height:1.4}
+.pm-box .btn{width:100%;margin-top:6px;cursor:pointer}
+.pm-box .skip{display:block;text-align:center;font-family:var(--display);font-size:13px;color:var(--ink-2);margin-top:12px;background:none;border:0;cursor:pointer;text-decoration:underline}
+.pm-box .msg{font-family:var(--display);font-size:13px;color:#c0392b;margin:0 0 8px}
+.pm-box .msg.ok{color:#2e8b57}
+.pm-box .legal{font-family:var(--display);font-size:11px;color:var(--ink-3,#7F929E);line-height:1.4;margin:12px 0 0}
+.pm-modal.hidden{display:none}
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Quiz", "name": "Test de práctica del PER", "educationalLevel": "Patrón de Embarcaciones de Recreo", "inLanguage": "es", "provider": {"@type": "Organization", "name": "Plata Marine"}}
@@ -80,6 +92,22 @@
       </div>
     </article>
 
+    <div class="pm-modal hidden" id="pmModal" role="dialog" aria-modal="true" aria-labelledby="pmModalTitle">
+      <div class="pm-box">
+        <h3 id="pmModalTitle">¿Te envío el resultado por correo?</h3>
+        <p>Te mando el resultado con el desglose por unidades para que sepas qué repasar. Sin spam.</p>
+        <form id="pmLeadForm" novalidate>
+          <input type="email" id="pmEmail" placeholder="tu@correo.com" autocomplete="email" required>
+          <label class="chk"><input type="checkbox" id="pmConsent" required> <span>Acepto que Plata Marine guarde mi correo para enviarme el resultado, según la <a href="../privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
+          <label class="chk"><input type="checkbox" id="pmNews"> <span>Quiero recibir de vez en cuando artículos y guías de Plata Marine por correo (puedes darte de baja cuando quieras).</span></label>
+          <p class="msg hidden" id="pmMsg"></p>
+          <button type="submit" class="btn btn-wa" id="pmSend">Enviarme el resultado</button>
+          <button type="button" class="skip" id="pmSkip">Ver el resultado sin correo</button>
+          <p class="legal">Responsable: Juan Morante Cruz (Plata Marine). Finalidad: enviarte el resultado y, solo si lo marcas, novedades de la web. Puedes ejercer tus derechos de acceso, rectificación y supresión en juan@platamarine.com. Más información en la <a href="../privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</p>
+        </form>
+      </div>
+    </div>
+
     <aside class="aside" aria-label="Contacto y navegación">
       <div class="card">
         <p class="eyebrow">¿Ya tienes el título y buscas barco?</p>
@@ -109,6 +137,25 @@ var Q=[{"u": 1, "q": "La parte del casco que queda por debajo de la línea de fl
 var UT={"1": "Nomenclatura", "2": "Amarre y fondeo", "3": "Seguridad", "4": "Legislación", "5": "Balizamiento", "6": "RIPA", "7": "Maniobra", "8": "Emergencias", "9": "Meteorología", "10": "Teoría de la navegación", "11": "Carta"};
 var LIM={5:2,6:5,11:2}; // errores máximos por unidad eliminatoria
 var qs=[],el=function(id){return document.getElementById(id)};
+var LEADS_URL='https://script.google.com/macros/s/AKfycbwJtBkktakE0qgmu_b8oHOOopCDnG6BDpBjg2zBUsZKi8l3_OBEuez_OHWmE9j8qCBF/exec';
+var lastResult=null,_scrollTo=null;
+function openLeadModal(result,scrollId){lastResult=result;_scrollTo=scrollId;
+  if(LEADS_URL.indexOf('http')===0){el('pmModal').classList.remove('hidden');setTimeout(function(){el('pmEmail').focus()},200);}
+  else window.scrollTo({top:el(scrollId).offsetTop-90,behavior:'smooth'});}
+function closeModal(){el('pmModal').classList.add('hidden');if(_scrollTo)window.scrollTo({top:el(_scrollTo).offsetTop-90,behavior:'smooth'});}
+el('pmSkip').onclick=closeModal;
+el('pmLeadForm').onsubmit=function(ev){
+  ev.preventDefault();var em=el('pmEmail').value.trim(),msg=el('pmMsg');msg.className='msg';
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Revisa el correo, no parece correcto.';return;}
+  if(!el('pmConsent').checked){msg.textContent='Necesito que aceptes la política de privacidad para poder enviártelo.';return;}
+  var btn=el('pmSend');btn.disabled=true;var lbl=btn.textContent;btn.textContent='Enviando…';
+  var payload=Object.assign({email:em,consent:true,newsletter:el('pmNews').checked,consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
+  fetch(LEADS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)}).then(function(){
+    msg.className='msg ok';msg.textContent='Enviado. Revisa el correo en unos minutos (y la carpeta de spam, por si acaso).';btn.textContent='Enviado';
+    setTimeout(closeModal,1800);
+  }).catch(function(){msg.textContent='No se ha podido enviar. Prueba otra vez o escríbeme por WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
+};
+
 function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
 function pick(){
   var mode=document.querySelector('input[name=mode]:checked').value;
@@ -150,7 +197,8 @@ function check(){
   h+='<p>'+errs+' errores'+(blank?' ('+blank+' sin contestar)':'')+'. Máximo permitido en este test: '+maxErr+'.'+(elim.length?' Unidad eliminatoria superada en errores: '+elim.join(', ')+'.':'')+'</p>';
   h+='<table>';Object.keys(perU).sort(function(a,b){return a-b}).forEach(function(u){h+='<tr><td>UT '+u+' · '+UT[u]+'</td><td>'+(perU[u].n-perU[u].e)+' / '+perU[u].n+'</td></tr>'});h+='</table>';
   el('result').innerHTML=h;el('result').classList.remove('hidden');el('check').classList.add('hidden');
-  window.scrollTo({top:el('result').offsetTop-90,behavior:'smooth'});
+  var det=Object.keys(perU).sort(function(a,b){return a-b}).map(function(u){return 'UT '+u+' '+UT[u]+': '+(perU[u].n-perU[u].e)+'/'+perU[u].n}).join(' | ');
+  openLeadModal({source:'test-per',ok:ok,total:total,pass:pass,detail:det,page:location.pathname,ua:navigator.userAgent.slice(0,120)},'result');
 }
 el('start').onclick=render;el('check').onclick=check;
 el('again').onclick=function(){el('questions').innerHTML='';el('endbar').classList.add('hidden');el('check').classList.remove('hidden');el('result').classList.add('hidden');el('mode').classList.remove('hidden');el('start').parentNode.classList.remove('hidden');window.scrollTo({top:el('quiz').offsetTop-90,behavior:'smooth'})};
