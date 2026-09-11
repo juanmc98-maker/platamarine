@@ -12,7 +12,7 @@
   }
   function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
   function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
-  function accept(){gtag('consent','update',{analytics_storage:'granted'}); load();}
+  function accept(){window.__pmAnalyticsAllowed=true;gtag('consent','update',{analytics_storage:'granted'}); load();}
   var c=get();
   if(c==='all'){accept();return;}
   if(c==='essential'){return;}
@@ -47,21 +47,34 @@
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
 })();
-/* Medición de contactos (solo si hay consentimiento: gtag ignora eventos sin GA cargado) */
+/* Intención de contacto: no acredita mensajes recibidos ni ventas. */
 (function(){
-  function ev(name,params){try{if(window.gtag) gtag('event',name,params||{});}catch(e){}}
+  function ev(name,params){
+    if(!window.__pmAnalyticsAllowed||!window.__pmga||!window.gtag) return;
+    var safe={page:location.pathname};
+    ['form_id','contact_method','contact_purpose','placement'].forEach(function(k){
+      var v=params&&params[k];
+      if(typeof v==='string'&&/^[a-zA-Z0-9_-]{1,40}$/.test(v)) safe[k]=v;
+    });
+    try{window.gtag('event',name,safe);}catch(e){}
+  }
   function where(el){var s=el.closest('section,header,footer,aside');return (s&&(s.id||s.className||s.tagName)||'').toString().slice(0,40);}
   document.addEventListener('click',function(e){
     var a=e.target.closest('a,button'); if(!a) return;
     var href=a.getAttribute('href')||'';
-    if(href.indexOf('wa.me')>=0||href.indexOf('whatsapp')>=0){ev('click_whatsapp',{location:where(a),label:(a.textContent||'').trim().slice(0,60),page:location.pathname});}
-    else if(href.indexOf('mailto:')===0){ev('click_email',{location:where(a),page:location.pathname});}
-    else if(href.indexOf('tel:')===0){ev('click_phone',{location:where(a),page:location.pathname});}
+    var method=/^https:\/\/(wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)\//.test(href)?'whatsapp':href.indexOf('mailto:')===0?'email':href.indexOf('tel:')===0?'phone':'';
+    if(method){
+      if(a.id==='continuarContacto') return;
+      ev('contact_intent',{contact_method:method,contact_purpose:a.closest('#valora,#vender')?'seller':/^\/barcos\//.test(location.pathname)?'buyer':'general',placement:where(a).replace(/[^a-zA-Z0-9_-]/g,'_')||'page'});
+    }
     else if(a.matches('a[href*="/barcos/"],a[href*="barcos/"]')&&!a.matches('nav a')){ev('click_boat',{label:href.slice(0,80),page:location.pathname});}
   },true);
-  document.addEventListener('submit',function(e){
-    var f=e.target; if(!f||!f.id) return;
-    ev('form_submit',{form:f.id,page:location.pathname});
+  var started=false;
+  document.addEventListener('input',function(e){
+    var f=e.target.closest('form[data-contact-intent]');
+    if(!f||started||!window.__pmAnalyticsAllowed) return;
+    started=true;
+    ev('contact_form_start',{form_id:f.id,contact_purpose:'seller',placement:'valora'});
   },true);
   window.pmTrack=ev;
 })();
@@ -90,7 +103,7 @@
       var b=d.querySelector('.go'); b.disabled=true; b.textContent='Enviando…';
       fetch(URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify({source:'novedades',email:em,consent:true,newsletter:true,consent_v:'2026-09',consent_at:new Date().toISOString(),page:p,ua:navigator.userAgent.slice(0,120)})}).then(function(){
         set('ok'); m.className='m ok'; m.textContent='Apuntado. Te llega un correo de bienvenida en unos minutos.'; b.textContent='Listo';
-        try{if(window.gtag)gtag('event','newsletter_signup',{page:p});}catch(x){}
+        try{if(window.pmTrack)window.pmTrack('newsletter_request',{});}catch(x){}
         setTimeout(function(){d.remove();},3000);
       }).catch(function(){m.textContent='No se ha podido enviar. Prueba otra vez más tarde.';b.disabled=false;b.textContent='Apuntarme';});
     };
@@ -99,4 +112,3 @@
   function start(){ window.addEventListener('scroll',onScroll,{passive:true}); timer=setTimeout(show,45000); }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',start); else start();
 })();
-
