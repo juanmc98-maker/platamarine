@@ -105,11 +105,12 @@
         <form id="pmLeadForm" novalidate>
           <input type="email" id="pmEmail" placeholder="tu@correo.com" autocomplete="email" required>
           <label class="chk"><input type="checkbox" id="pmConsent" required> <span>Acepto que Plata Marine guarde mi correo para enviarme el resultado, según la <a href="../privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
+          <label class="chk"><input type="checkbox" id="pmAlert"> <span>Avísame si entra en cartera un barco que encaje con este resultado (te escribo yo, solo cuando haya algo).</span></label>
           <label class="chk"><input type="checkbox" id="pmNews"> <span>Quiero recibir de vez en cuando artículos y guías de Plata Marine por correo (puedes darte de baja cuando quieras).</span></label>
           <p class="msg hidden" id="pmMsg"></p>
           <button type="submit" class="btn btn-wa" id="pmSend">Enviarme el resultado</button>
           <button type="button" class="skip" id="pmSkip">Ver el resultado sin correo</button>
-          <p class="legal">Responsable: Juan Morante Cruz (Plata Marine). Finalidad: enviarte el resultado y, solo si lo marcas, novedades de la web. Puedes ejercer tus derechos de acceso, rectificación y supresión en juan@platamarine.com. Más información en la <a href="../privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</p>
+          <p class="legal">Responsable: Juan Morante Cruz (Plata Marine). Finalidad: enviarte el resultado y, solo si lo marcas, avisarte de barcos que encajen o enviarte novedades de la web. Puedes ejercer tus derechos de acceso, rectificación y supresión en juan@platamarine.com. Más información en la <a href="../privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</p>
         </form>
       </div>
     </div>
@@ -157,7 +158,7 @@ el('pmLeadForm').onsubmit=function(ev){
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Revisa el correo, no parece correcto.';return;}
   if(!el('pmConsent').checked){msg.textContent='Necesito que aceptes la política de privacidad para poder enviártelo.';return;}
   var btn=el('pmSend');btn.disabled=true;var lbl=btn.textContent;btn.textContent='Enviando…';
-  var payload=Object.assign({email:em,consent:true,newsletter:el('pmNews').checked,consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
+  var payload=Object.assign({email:em,consent:true,newsletter:el('pmNews').checked,alerta:!!(el('pmAlert')&&el('pmAlert').checked),consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
   fetch(LEADS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)}).then(function(){
     msg.className='msg ok';msg.textContent='Enviado. Revisa el correo en unos minutos (y la carpeta de spam, por si acaso).';btn.textContent='Enviado';
     setTimeout(closeModal,1800);
