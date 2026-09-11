@@ -158,6 +158,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 .form-actions{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:8px}
 .form-help{grid-column:1/-1;color:var(--ink-2);font-size:15.5px;max-width:64ch}
 .form-help b{font-weight:600;color:var(--ink)}
+[hidden]{display:none!important}
+#contactoEstado{padding:12px;border-left:3px solid var(--wa);background:var(--paper-2)}
+.field small{font-size:.85em;font-weight:400}
+@media(max-width:639px){.field input{font-size:16px}.hero-micro{line-height:1.6}.btn{white-space:normal;text-align:center}#valora{padding-bottom:88px}}
 @media (min-width:640px){
   .form-grid{grid-template-columns:1fr 1fr}
   .span2{grid-column:1/-1}
@@ -480,7 +484,7 @@ section[id]{scroll-margin-top:78px}
           <a class="btn btn-pill" href="#valora">Quiero vender mi barco</a>
           <a class="btn btn-pill ghost" href="#comprar">Estoy buscando barco</a>
         </div>
-        <p class="hero-micro">A éxito y sin exclusiva · <a href="herramientas/que-barco-necesito.html" style="color:inherit">Test: qué barco necesito</a></p>
+        <p class="hero-micro">Honorarios al cerrar la venta · Sin exclusiva ni adelantos</p>
       </div>
     </div>
   </section>
@@ -502,7 +506,7 @@ section[id]{scroll-margin-top:78px}
         <img class="service-img" src="https://images.unsplash.com/photo-1587365001066-8263b7061a38?auto=format&fit=crop&w=900&h=506&q=75" alt="Barcos a motor amarrados en un puerto deportivo del Mediterráneo" loading="lazy" width="900" height="506">
         <p class="service-kicker">Propietarios</p>
         <h2>Quiero vender mi barco</h2>
-        <p>Me cuentas qué barco tienes, vemos cómo está y qué se pide por unidades comparables. Después decidimos si tiene sentido trabajar juntos.</p>
+        <p>Me cuentas qué barco tienes y dónde está. Revisamos el precio y cómo plantear la venta. Si encaja, acordamos el trabajo y los honorarios por escrito.</p>
         <a class="btn btn-sea" href="#valora">Cuéntame qué barco tienes</a>
       </article>
       <article class="service-card">
@@ -525,8 +529,8 @@ section[id]{scroll-margin-top:78px}
       <ol class="steps" style="list-style:none;padding:0;margin-top:40px">
         <li class="step"><span class="n">1</span><h3>Diagnóstico y precio</h3><p>Modelo, año, motor, horas, puerto y el precio que tienes en mente. Reviso estado, trabajos pendientes y papeles, y miro qué se pide por barcos comparables y cuánto llevan anunciados, no solo el precio que aparece.</p></li>
         <li class="step"><span class="n">2</span><h3>Precio de salida por escrito</h3><p>Te propongo un precio de salida explicando por qué, para que decidas con datos. Y firmamos las condiciones: trabajo, honorarios y duración del encargo, antes de empezar.</p></li>
-        <li class="step"><span class="n">3</span><h3>Anuncio, consultas y visitas</h3><p>Recopilo mantenimiento, equipamiento y papeles, preparo la ficha y las fotos y lo publico en los portales donde buscan los compradores. Respondo cada consulta y hablo con el interesado antes de la visita: qué busca, presupuesto y cuándo quiere comprar. Así a tu barco va quien de verdad está comprando.</p></li>
-        <li class="step"><span class="n">4</span><h3>Oferta, papeles y entrega</h3><p>Recibo las ofertas, te digo qué me parece cada una y negocio lo que acordemos; la decisión de aceptar es siempre tuya. Después coordino contrato, cambio de titularidad, impuestos y tasas para que la venta no se atasque al final. Y mientras dura, sabes qué consultas llegan y qué se repite.</p></li>
+        <li class="step"><span class="n">3</span><h3>Anuncio, consultas y visitas</h3><p>Recopilo mantenimiento, equipamiento y papeles, preparo la ficha y las fotos y lo publico en los portales donde buscan los compradores. Respondo cada consulta y hablo con el interesado antes de la visita: qué busca, presupuesto y cuándo quiere comprar. Así podemos valorar si tiene sentido organizar la visita.</p></li>
+        <li class="step"><span class="n">4</span><h3>Oferta, papeles y entrega</h3><p>Recibo las ofertas, te digo qué me parece cada una y negocio lo que acordemos; la decisión de aceptar es siempre tuya. Después coordinamos la documentación y la entrega. Si hacen falta gestoría, inspección o varadero, acordamos antes su alcance y coste. Y mientras dura, sabes qué consultas llegan y qué se repite.</p></li>
       </ol>
     </div>
   </section>
@@ -537,7 +541,7 @@ section[id]{scroll-margin-top:78px}
       <h2>Claras antes de empezar.</h2>
       <div class="cond-grid">
         <div class="cond"><strong>A éxito</strong><p>Los honorarios se pagan solo si se cierra la venta que gestiono.</p></div>
-        <div class="cond"><strong>Sin exclusiva</strong><p>Puedes mantener tu anuncio. Los honorarios corresponden a la venta que gestiono yo.</p></div>
+        <div class="cond"><strong>Sin exclusiva</strong><p>Puedes mantener tu anuncio. Si lo vendes por tu cuenta, no me debes honorarios.</p></div>
         <div class="cond"><strong>Sin adelantos</strong><p>Ni cuota de publicación ni gastos por anticipado.</p></div>
         <div class="cond"><strong>Trato directo</strong><p>Hablas conmigo en las cuatro fases, no con una centralita.</p></div>
       </div>
@@ -548,6 +552,47 @@ section[id]{scroll-margin-top:78px}
         <details><summary>¿Trabajas fuera de Cataluña?</summary><p>Mi base es la costa catalana, de Roses al Delta del Ebro, y ahí es donde estoy cada semana. Para operaciones concretas me desplazo: Baleares, Comunidad Valenciana o cualquier puerto del Mediterráneo si el barco y la operación lo justifican. Cuéntame dónde está el barco y lo vemos.</p></details>
         <details><summary>¿Y si ya lo tengo anunciado?</summary><p>No pasa nada. Sin exclusiva puedes mantener tu anuncio. Lo habitual es revisar precio y ficha para que los dos anuncios cuenten lo mismo.</p></details>
       </div>
+    </div>
+  </section>
+
+  <section class="sec final" id="valora">
+    <div class="wrap">
+      <p class="eyebrow">Vender</p>
+      <h2>¿Tienes un barco y estás pensando en venderlo? Cuéntame cuál es y lo estudiamos.</h2>
+      <p class="intro">Dime el modelo y dónde está. Puedes añadir tu anuncio si ya lo tienes. Primero hablamos del barco; esta consulta no es un encargo de venta.</p>
+      <form id="valoracion" class="form-grid" data-contact-intent="seller" novalidate>
+        <div class="field span2">
+          <label for="modelo">Marca y modelo <i>*</i></label>
+          <input id="modelo" name="modelo" type="text" autocomplete="off" placeholder="Jeanneau Cap Camarat 9.0 WA" required>
+        </div>
+        <div class="field">
+          <label for="anio">Año</label>
+          <input id="anio" name="anio" type="number" inputmode="numeric" min="1980" max="2026" placeholder="2019">
+        </div>
+        <div class="field">
+          <label for="puerto">Puerto o localidad <i>*</i></label>
+          <input id="puerto" name="puerto" type="text" placeholder="Port Ginesta" required>
+        </div>
+        <div class="field span2">
+          <label for="anuncio">Enlace a tu anuncio, si ya lo tienes <small style="text-transform:none;letter-spacing:0;font-weight:400">(opcional)</small></label>
+          <input id="anuncio" name="anuncio" type="url" inputmode="url" placeholder="https://…">
+        </div>
+        <div class="field">
+          <label for="nombre">Nombre <i>*</i></label>
+          <input id="nombre" name="nombre" type="text" autocomplete="given-name" placeholder="Marc" required>
+        </div>
+        <div class="field">
+          <label for="telefono">Teléfono <small>(opcional)</small></label>
+          <input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="6xx xxx xxx">
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-wa" type="submit">Continuar por WhatsApp</button>
+          <button class="btn btn-ghost" type="button" id="porEmail">Prefiero por email</button>
+        </div>
+        <p class="form-help">Abrirás WhatsApp o tu aplicación de correo con el mensaje preparado. Revísalo y pulsa enviar allí para que me llegue. Los datos del formulario no se guardan en esta web.</p>
+        <p id="contactoEstado" class="form-help" role="status" aria-live="polite" hidden></p>
+        <p class="form-help" id="contactoAlternativa" hidden><a id="continuarContacto">Abrir el mensaje preparado</a></p>
+      </form>
     </div>
   </section>
 
@@ -627,7 +672,7 @@ section[id]{scroll-margin-top:78px}
           <p class="eyebrow">Guías</p>
           <h2>Lo que conviene saber antes de comprar o vender.</h2>
         </div>
-        <a class="btn btn-ghost" href="guias/">Ver las 11 guías</a>
+        <a class="btn btn-ghost" href="guias/">Ver todas las guías</a>
       </div>
       <ul class="guias-cards">
         <li><a href="guias/impuesto-matriculacion-barcos.html"><img src="https://images.unsplash.com/photo-1626266061368-46a8f578ddd6?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Fiscalidad</span><strong>Impuesto de matriculación: por qué los 8 metros lo cambian todo</strong><span class="gc-more">Leer la guía →</span></span></a></li>
@@ -665,44 +710,7 @@ section[id]{scroll-margin-top:78px}
     </div>
   </section>
 
-  <section class="sec final" id="valora">
-    <div class="wrap">
-      <p class="eyebrow">Vender</p>
-      <h2>¿Tienes un barco y estás pensando en venderlo? Cuéntame cuál es y lo estudiamos.</h2>
-      <p class="intro">Con esto me basta para empezar; el resto (motor, horas, precio, fotos) lo vemos por WhatsApp.</p>
-      <form id="valoracion" class="form-grid" novalidate>
-        <div class="field span2">
-          <label for="modelo">Marca y modelo <i>*</i></label>
-          <input id="modelo" name="modelo" type="text" autocomplete="off" placeholder="Jeanneau Cap Camarat 9.0 WA" required>
-        </div>
-        <div class="field">
-          <label for="anio">Año</label>
-          <input id="anio" name="anio" type="number" inputmode="numeric" min="1980" max="2026" placeholder="2019">
-        </div>
-        <div class="field">
-          <label for="puerto">Puerto o localidad <i>*</i></label>
-          <input id="puerto" name="puerto" type="text" placeholder="Port Ginesta" required>
-        </div>
-        <div class="field span2">
-          <label for="anuncio">Enlace a tu anuncio, si ya lo tienes <small style="text-transform:none;letter-spacing:0;font-weight:400">(opcional)</small></label>
-          <input id="anuncio" name="anuncio" type="url" inputmode="url" placeholder="https://…">
-        </div>
-        <div class="field">
-          <label for="nombre">Nombre <i>*</i></label>
-          <input id="nombre" name="nombre" type="text" autocomplete="given-name" placeholder="Marc" required>
-        </div>
-        <div class="field">
-          <label for="telefono">Teléfono <i>*</i></label>
-          <input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="6xx xxx xxx" required>
-        </div>
-        <div class="form-actions">
-          <button class="btn btn-wa" type="submit">Continuar por WhatsApp</button>
-          <button class="btn btn-ghost" type="button" id="porEmail">Prefiero por email</button>
-        </div>
-        <p class="form-help">Se abre WhatsApp (o tu correo) con el mensaje ya escrito; lo revisas y lo envías tú. Te contesto yo. Nada se guarda en ningún servidor.</p>
-      </form>
-    </div>
-  </section>
+
 </main>
 
 <footer class="foot">
@@ -762,33 +770,7 @@ var IMGS={"monterey-278-ss-1": "monterey-278-ss-1.jpg", "monterey-278-ss-2": "mo
 })();
 
 
-(function(){
-  var f=document.getElementById('valoracion'); if(!f) return;
-  var TEL='34633742973', MAIL='juan@platamarine.com';
-  function v(id){var el=document.getElementById(id);return el?el.value.trim():'';}
-  function build(){
-    var lines=['Hola Juan, estoy pensando en vender mi barco.'];
-    var barco=v('modelo'); if(v('anio')) barco+=' ('+v('anio')+')';
-    lines.push('Barco: '+barco);
-    if(v('puerto')) lines.push('Puerto: '+v('puerto'));
-    if(v('anuncio')) lines.push('Anuncio: '+v('anuncio'));
-    if(v('nombre')) lines.push('Soy '+v('nombre')+(v('telefono')?', tel. '+v('telefono'):'')+'.');
-    return lines.join('\n');
-  }
-  function valid(){
-    if(f.checkValidity()) return true;
-    f.reportValidity(); return false;
-  }
-  f.addEventListener('submit',function(e){
-    e.preventDefault(); if(!valid()) return;
-    var url='https://wa.me/'+TEL+'?text='+encodeURIComponent(build());
-    var w=window.open(url,'_blank','noopener'); if(!w) location.href=url;
-  });
-  document.getElementById('porEmail').addEventListener('click',function(){
-    if(!valid()) return;
-    location.href='mailto:'+MAIL+'?subject='+encodeURIComponent('Mi barco: '+v('modelo'))+'&body='+encodeURIComponent(build());
-  });
-})();
+
 
 (function(){
   var c=document.getElementById('carta'); if(!c||!c.getContext) return;
@@ -822,5 +804,6 @@ var IMGS={"monterey-278-ss-1": "monterey-278-ss-1.jpg", "monterey-278-ss-2": "mo
   var to; window.addEventListener('resize',function(){clearTimeout(to);to=setTimeout(draw,150);});
 })();
 </script>
+<script src="/contacto.js" defer></script>
 </body>
 </html>
