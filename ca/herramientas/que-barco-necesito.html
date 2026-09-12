@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quin vaixell comprar? Test de 2 minuts</title>
+<meta name="description" content="Nou preguntes i et diem quin tipus de vaixell i quina eslora t'encaixen segons l'ús, el pressupost, la titulació i on el guardaràs. Gratuït.">
+<link rel="canonical" href="https://www.platamarine.com/ca/herramientas/que-barco-necesito.html">
+<link rel="alternate" hreflang="es" href="https://www.platamarine.com/herramientas/que-barco-necesito.html">
+<link rel="alternate" hreflang="ca" href="https://www.platamarine.com/ca/herramientas/que-barco-necesito.html">
+<link rel="alternate" hreflang="en" href="https://www.platamarine.com/en/herramientas/que-barco-necesito.html">
+<link rel="alternate" hreflang="x-default" href="https://www.platamarine.com/herramientas/que-barco-necesito.html">
+<link rel="icon" type="image/png" href="/logo-plata-marine.png">
+<meta property="og:title" content="Quin vaixell comprar? Test de 2 minuts">
+<meta property="og:description" content="Nou preguntes i et diem quin tipus de vaixell i quina eslora t'encaixen segons l'ús, el pressupost, la titulació i on el guardaràs. Gratuït.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.platamarine.com/ca/herramientas/que-barco-necesito.html">
+<meta property="og:image" content="https://www.platamarine.com/logo-plata-marine.png">
+<link rel="stylesheet" href="/guias/guias.css">
+<style>.pm-modal{position:fixed;inset:0;background:rgba(13,28,39,.55);display:flex;align-items:center;justify-content:center;z-index:50;padding:16px}
+.pm-box{background:#fff;border-radius:10px;max-width:440px;width:100%;padding:26px 24px;box-shadow:0 24px 60px rgba(13,28,39,.3);position:relative}
+.pm-box h3{font-family:var(--display);font-size:1.25rem;margin:0 0 8px;line-height:1.2}
+.pm-box p{font-size:15px;color:var(--ink-2);margin:0 0 14px}
+.pm-box input[type=email]{width:100%;font:16px var(--serif);padding:11px 12px;border:1px solid var(--plata-2);border-radius:6px;margin-bottom:10px;box-sizing:border-box}
+.pm-box label.chk{display:flex;gap:8px;align-items:flex-start;font-family:var(--display);font-size:13px;color:var(--ink-2);margin-bottom:8px;line-height:1.4}
+.pm-box .btn{width:100%;margin-top:6px;cursor:pointer}
+.pm-box .skip{display:block;text-align:center;font-family:var(--display);font-size:13px;color:var(--ink-2);margin-top:12px;background:none;border:0;cursor:pointer;text-decoration:underline}
+.pm-box .msg{font-family:var(--display);font-size:13px;color:#c0392b;margin:0 0 8px}
+.pm-box .msg.ok{color:#2e8b57}
+.pm-box .legal{font-family:var(--display);font-size:11px;color:var(--ink-3,#7F929E);line-height:1.4;margin:12px 0 0}
+.pm-modal.hidden{display:none}
+
+.qz .qcard{background:#fff;border:1px solid var(--plata);border-radius:8px;padding:18px 20px;margin:0 0 14px}
+.qz .qcard h3{font-family:var(--display);font-size:1.05rem;margin:0 0 10px;line-height:1.3}
+.qz .qcard .step{display:block;font-family:var(--display);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+.qz .hint{font-size:13.5px;color:var(--ink-2);margin:-4px 0 8px}
+.qz .opt{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:6px;cursor:pointer;font-size:15.5px;line-height:1.35}
+.qz .opt:hover{background:rgba(127,146,158,.10)}
+.qz .opt input{margin-top:4px;flex:none}
+.qz .bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 0 22px}
+.qz .bar .btn{cursor:pointer}
+.qz .prog{height:6px;background:rgba(127,146,158,.25);border-radius:3px;margin:0 0 18px;overflow:hidden}
+.qz .prog i{display:block;height:100%;background:var(--brass);width:0;transition:width .25s}
+.qz .res{background:var(--sea-deep);color:#D5DDE2;padding:24px 26px;border-radius:6px;margin:0 0 22px}
+.qz .res h2{color:#fff;font-size:1.5rem;margin:0 0 6px}
+.qz .res h3{color:#fff;font-family:var(--display);font-size:1.05rem;margin:18px 0 6px}
+.qz .res p{margin:0 0 10px}
+.qz .res a{color:#fff}
+.qz .res ul{margin:0 0 10px 18px;padding:0}
+.qz .res li{margin:0 0 6px}
+.qz .res .alt{font-size:15px;color:#B7C3CB}
+.qz .boat{display:block;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:10px 12px;margin:0 0 8px;text-decoration:none}
+.qz .boat b{display:block;color:#fff}
+.qz .boat span{font-family:var(--display);font-size:13px;color:#B7C3CB}
+.hidden{display:none}
+.langsw{display:flex;gap:6px;align-items:center;font-size:.78rem;font-weight:600}
+.langsw a{padding:3px 7px;border-radius:4px;text-decoration:none;color:inherit;opacity:.65}
+.langsw a[aria-current="page"]{opacity:1;text-decoration:underline}
+</style>
+<script type="application/ld+json">
+[{"@context": "https://schema.org", "@type": "WebApplication", "name": "Quin vaixell necessito", "applicationCategory": "UtilityApplication", "operatingSystem": "Web", "inLanguage": "ca", "provider": {"@type": "Organization", "name": "Plata Marine"}, "url": "https://www.platamarine.com/ca/herramientas/que-barco-necesito.html", "description": "No saps quin vaixell comprar? Respon nou preguntes sobre quants sou, quin ús li donaràs, pressupost, titulació i on el guardaràs, i et dic quin tipus de vaixell a motor et convé (open, sundeck, walkaround, cabinat, pilothouse, fly o semirígida), quina eslora i què mirar. Gratuït i sense registre."}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quin vaixell comprar com a primer vaixell?", "acceptedAnswer": {"@type": "Answer", "text": "Per a un primer vaixell solc recomanar començar per l'ús i no pel model: quants sou, si dormireu a bord, on el guardareu i quina titulació teniu. Amb això el tipus surt gairebé sol: un open o una semirígida si busques senzillesa, un sundeck si el que t'agrada és el sol i el bany, un cabinat o un fly si passareu nits fora. El test de dalt ho resol en dos minuts."}}, {"@type": "Question", "name": "Quina eslora puc portar amb cada titulació?", "acceptedAnswer": {"@type": "Answer", "text": "Sense titulació, fins a 5 metres i 15 CV a prop de la costa; amb la Llicència de navegació, fins a 6 metres i 2 milles; amb el PNB, fins a 8 metres i 5 milles; amb el PER, fins a 15 metres (24 amb les pràctiques complementàries). Ho explico a la secció de titulacions."}}, {"@type": "Question", "name": "Quant costa mantenir un vaixell de 8 metres a Catalunya?", "acceptedAnswer": {"@type": "Answer", "text": "La despesa fixa que més pesa és l'amarratge: a la zona de Barcelona la majoria de ports publiquen entre 2.700 i 3.700 euros l'any per a 8 metres, més IVA i subministraments segons el port; els ports de la Generalitat surten bastant més barats i les marines de la Costa Brava, més cares. A això s'hi sumen l'assegurança, la varada anual i el manteniment del motor. Tens les tarifes port per port a la guia d'amarratges."}}, {"@type": "Question", "name": "És millor un vaixell amb motor fora borda o intraborda?", "acceptedAnswer": {"@type": "Answer", "text": "Depèn de la mida i de l'ús. Fins a 8 o 9 metres el fora borda és més senzill i barat de mantenir i permet marina seca o remolc; a partir d'aquí, i en vaixells amb cabina, l'intraborda o el dentrofora és l'habitual. El test ho té en compte a la pregunta 8."}}]}]
+</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/ca/" aria-label="Plata Marine, inici"><img class="brand-logo" src="/logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
+    <nav class="nav" aria-label="Seccions">
+      <a href="/ca/barcos/">Vaixells</a>
+      <a href="/ca/#vender">Vendre</a>
+      <a href="/ca/#comprar">Comprar</a>
+      <a href="/guias/">Guies</a>
+      <a href="/actualidad/">Actualitat</a>
+      <a href="/ca/servicios/">Serveis</a>
+      <a href="/ca/#juan">Sobre mi</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20he%20fet%20el%20test%20de%20quin%20vaixell%20necessito." target="_blank" rel="noopener">Parlar amb Juan</a>
+    <div class="langsw" aria-label="Idioma"><a href="https://www.platamarine.com/herramientas/que-barco-necesito.html">ES</a><a href="https://www.platamarine.com/ca/herramientas/que-barco-necesito.html" aria-current="page">CA</a><a href="https://www.platamarine.com/en/herramientas/que-barco-necesito.html">EN</a></div>
+  </div>
+</header>
+
+<main class="art">
+  <div class="wrap">
+    <article>
+      <header>
+        <p class="eyebrow">Eines · Quin vaixell necessito</p>
+        <h1>Quin vaixell comprar? Fes el test de dos minuts</h1>
+        <div class="meta"><span>Per Juan Morante</span><span>Setembre 2026</span></div>
+        <p class="lead">Gairebé tots els que m'escriuen comencen amb una marca o un model que han vist en un anunci. Jo prefereixo començar per una altra banda: quants sou, què fareu amb el vaixell, on el deixareu i quina titulació teniu. Amb això el tipus de vaixell surt gairebé sol, i després ja busquem el model. Respon aquestes nou preguntes i et dic per on aniria jo.</p>
+      </header>
+
+      <div class="prose qz" id="qz">
+        <div class="prog"><i id="prog"></i></div>
+        <div id="result" class="res hidden"></div>
+        <div id="questions"></div>
+        <div class="bar hidden" id="endbar"><button class="btn btn-wa" id="check">Veure quin vaixell m'encaixa</button><button class="btn btn-ghost" id="again">Tornar a començar</button></div>
+        <p class="aviso">El resultat és una orientació a partir de les teves respostes, no una recomanació de compra: dos vaixells del mateix tipus poden ser molt diferents. Si vols, m'escrius amb el resultat i ho afinem amb calma.</p>
+      </div>
+      <div class="prose">
+        <h2 id="faq" style="margin-top:36px">Preguntes freqüents abans de triar vaixell</h2>
+        <details><summary>Quin vaixell comprar com a primer vaixell?</summary><p>Per a un primer vaixell solc recomanar començar per l'ús i no pel model: quants sou, si dormireu a bord, on el guardareu i quina titulació teniu. Amb això el tipus surt gairebé sol: un open o una semirígida si busques senzillesa, un sundeck si el que t'agrada és el sol i el bany, un cabinat o un fly si passareu nits fora. El test de dalt ho resol en dos minuts.</p></details>
+        <details><summary>Quina eslora puc portar amb cada titulació?</summary><p>Sense titulació, fins a 5 metres i 15 CV a prop de la costa; amb la Llicència de navegació, fins a 6 metres i 2 milles; amb el PNB, fins a 8 metres i 5 milles; amb el PER, fins a 15 metres (24 amb les pràctiques complementàries). Ho explico a la secció de titulacions.</p></details>
+        <details><summary>Quant costa mantenir un vaixell de 8 metres a Catalunya?</summary><p>La despesa fixa que més pesa és l'amarratge: a la zona de Barcelona la majoria de ports publiquen entre 2.700 i 3.700 euros l'any per a 8 metres, més IVA i subministraments segons el port; els ports de la Generalitat surten bastant més barats i les marines de la Costa Brava, més cares. A això s'hi sumen l'assegurança, la varada anual i el manteniment del motor. Tens les tarifes port per port a la guia d'amarratges.</p></details>
+        <details><summary>És millor un vaixell amb motor fora borda o intraborda?</summary><p>Depèn de la mida i de l'ús. Fins a 8 o 9 metres el fora borda és més senzill i barat de mantenir i permet marina seca o remolc; a partir d'aquí, i en vaixells amb cabina, l'intraborda o el dentrofora és l'habitual. El test ho té en compte a la pregunta 8.</p></details>
+      </div>
+    </article>
+
+    <div class="pm-modal hidden" id="pmModal" role="dialog" aria-modal="true" aria-labelledby="pmModalTitle">
+      <div class="pm-box">
+        <h3 id="pmModalTitle">T'envio el resultat per correu?</h3>
+        <p>T'envio el tipus de vaixell que t'encaixa, l'eslora orientativa i les guies per seguir, perquè ho tinguis a mà quan miris anuncis.</p>
+        <form id="pmLeadForm" novalidate>
+          <input type="email" id="pmEmail" placeholder="tu@correu.com" autocomplete="email" required>
+          <label class="chk"><input type="checkbox" id="pmConsent" required> <span>Accepto que Plata Marine guardi el meu correu per enviar-me el resultat, segons la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
+          <label class="chk"><input type="checkbox" id="pmAlert"> <span>Avisa'm si entra a cartera un vaixell que encaixi amb aquest resultat (t'escric jo, només quan hi hagi alguna cosa).</span></label>
+          <label class="chk"><input type="checkbox" id="pmNews"> <span>Vull rebre de tant en tant articles i guies de Plata Marine per correu (et pots donar de baixa quan vulguis).</span></label>
+          <p class="msg hidden" id="pmMsg"></p>
+          <button type="submit" class="btn btn-wa" id="pmSend">Envia'm el resultat</button>
+          <button type="button" class="skip" id="pmSkip">Veure el resultat sense correu</button>
+          <p class="legal">Responsable: Juan Morante Cruz (Plata Marine). Finalitat: enviar-te el resultat i, només si ho marques, avisar-te de vaixells que encaixin o enviar-te novetats de la web. Pots exercir els teus drets d'accés, rectificació i supressió a juan@platamarine.com. Més informació a la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</p>
+        <p class="legal">També pots <a href="mailto:juan@platamarine.com">escriure a juan@platamarine.com</a>. Si no apareix una confirmació, consulta abans de tornar a enviar.</p></form>
+      </div>
+    </div>
+
+    <aside class="aside" aria-label="Contacte i navegació">
+      <div class="card">
+        <p class="eyebrow">Vols que ho mirem junts?</p>
+        <h3>Explica'm el teu resultat i busquem el vaixell.</h3>
+        <p>Treballo amb vaixells a motor des de 5 metres, a Catalunya i Balears. Només cobro si compres.</p>
+        <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20he%20fet%20el%20test%20de%20quin%20vaixell%20necessito%20i%20em%20surt%3A%20" target="_blank" rel="noopener">Parlar amb Juan per WhatsApp</a>
+      </div>
+      <nav class="toc" aria-label="Contingut">
+        <p class="eyebrow">En aquesta pàgina</p>
+        <ol>
+          <li><a href="#qz">El test</a></li>
+          <li><a href="#faq">Preguntes freqüents</a></li>
+        </ol>
+      </nav>
+      <div class="rel">
+        <p class="eyebrow">També et pot interessar</p>
+        <a href="/guias/tipos-de-barco-a-motor.html">Tipus de vaixell a motor: per a què serveix cadascun</a>
+        <a href="/guias/amarres-cataluna-tipos-precios-alquiler-compra.html">Amarratges a Catalunya: tipus i preus</a>
+        <a href="/titulaciones/">Quina titulació necessites per a cada vaixell</a>
+        <a href="/guias/que-mirar-comprar-barco-segunda-mano.html">Què mirar en comprar de segona mà</a>
+      </div>
+    </aside>
+
+  </div>
+</main>
+<script>
+(function(){
+var Q=[{"id": "gente", "q": "Quants soleu anar a bord normalment?", "o": [{"t": "1 o 2", "p": {"open": 2, "rib": 2, "walkaround": 1, "cabinado": 1}, "v": {"gente": 2}}, {"t": "3 o 4", "p": {"sundeck": 2, "open": 1, "walkaround": 2, "cabinado": 1}, "v": {"gente": 4}}, {"t": "5 o 6", "p": {"sundeck": 2, "cabinado": 2, "fly": 1, "walkaround": 1}, "v": {"gente": 6}}, {"t": "7 o més", "p": {"fly": 3, "cabinado": 1, "sundeck": 1}, "v": {"gente": 8}}]}, {"id": "uso", "q": "Quin ús li donaràs sobretot?", "o": [{"t": "Sortides de dia: bany, cales i tornar", "p": {"open": 3, "sundeck": 3, "rib": 2, "walkaround": 1}}, {"t": "Pesca", "p": {"open": 3, "walkaround": 3, "pilothouse": 2, "rib": 1}}, {"t": "Caps de setmana dormint a bord", "p": {"cabinado": 3, "walkaround": 1, "fly": 1, "sundeck": 1}}, {"t": "Travessies de diversos dies (Balears, tota la Costa Brava)", "p": {"cabinado": 2, "fly": 3, "pilothouse": 1}}, {"t": "Navegar tot l'any, també a l'hivern", "p": {"pilothouse": 3, "cabinado": 1, "fly": 1}}]}, {"id": "dormir", "q": "Dormiràs a bord?", "o": [{"t": "Mai", "p": {"open": 2, "rib": 2, "sundeck": 1}}, {"t": "Alguna nit puntual", "p": {"sundeck": 2, "walkaround": 2, "cabinado": 1}}, {"t": "Caps de setmana sencers", "p": {"cabinado": 3, "fly": 1, "pilothouse": 1}}, {"t": "Diversos dies seguits", "p": {"fly": 3, "cabinado": 2, "pilothouse": 1}}]}, {"id": "presu", "q": "Quin pressupost tens per al vaixell (sense comptar amarratge ni assegurança)?", "o": [{"t": "Menys de 30.000 €", "p": {"open": 2, "rib": 2}, "v": {"presu": 1}}, {"t": "De 30.000 a 60.000 €", "p": {"open": 1, "sundeck": 2, "walkaround": 1, "rib": 1}, "v": {"presu": 2}}, {"t": "De 60.000 a 120.000 €", "p": {"sundeck": 1, "walkaround": 2, "cabinado": 2, "pilothouse": 1}, "v": {"presu": 3}}, {"t": "De 120.000 a 250.000 €", "p": {"cabinado": 2, "pilothouse": 2, "fly": 2}, "v": {"presu": 4}}, {"t": "Més de 250.000 €", "p": {"fly": 3, "cabinado": 1}, "v": {"presu": 5}}]}, {"id": "titulo", "q": "Quina titulació nàutica tens?", "o": [{"t": "Cap encara", "p": {}, "v": {"titulo": 0}}, {"t": "Llicència de navegació", "p": {"rib": 1, "open": 1}, "v": {"titulo": 1}}, {"t": "PNB", "p": {"open": 1, "sundeck": 1}, "v": {"titulo": 2}}, {"t": "PER", "p": {}, "v": {"titulo": 3}}, {"t": "Patró de Iot o superior", "p": {"fly": 1}, "v": {"titulo": 4}}]}, {"id": "guarda", "q": "On guardaràs el vaixell?", "o": [{"t": "En remolc, a casa o en un pàrquing", "p": {"rib": 3, "open": 2}, "v": {"guarda": "remolque"}}, {"t": "En marina seca", "p": {"rib": 2, "open": 2, "sundeck": 1}, "v": {"guarda": "seca"}}, {"t": "En un amarratge a port", "p": {"cabinado": 1, "fly": 1, "pilothouse": 1, "walkaround": 1}, "v": {"guarda": "amarre"}}, {"t": "Encara no ho sé", "p": {}, "v": {"guarda": "nose"}}]}, {"id": "valora", "q": "Què és el que més valores?", "multi": 3, "hint": "Pots marcar fins a tres.", "o": [{"t": "Senzillesa i poc manteniment", "p": {"open": 2, "rib": 3}}, {"t": "Espai per prendre el sol i banyar-se", "p": {"sundeck": 3, "open": 1}}, {"t": "Moure'm per coberta amb seguretat", "p": {"walkaround": 3, "pilothouse": 1}}, {"t": "Anar protegit del sol i del vent", "p": {"pilothouse": 3, "cabinado": 1, "fly": 1}}, {"t": "Comoditat a dins: llit, cuina, lavabo", "p": {"cabinado": 3, "fly": 1}}, {"t": "Espai social i vistes", "p": {"fly": 3, "sundeck": 1}}]}, {"id": "motor", "q": "Motor fora borda o intraborda?", "o": [{"t": "Fora borda", "p": {"open": 2, "walkaround": 2, "rib": 2, "sundeck": 1}}, {"t": "Intraborda o dentrofora", "p": {"cabinado": 2, "fly": 2, "sundeck": 1, "pilothouse": 1}}, {"t": "M'és igual, el que encaixi", "p": {}}]}, {"id": "zona", "q": "Des d'on sortiràs a navegar?", "o": [{"t": "Barcelona ciutat", "p": {}, "v": {"zona": "Barcelona"}}, {"t": "Maresme (Masnou, Mataró, Balís, Arenys)", "p": {}, "v": {"zona": "Maresme"}}, {"t": "Costa Brava", "p": {}, "v": {"zona": "Costa Brava"}}, {"t": "Garraf i Tarragona (Sitges, Vilanova, Cambrils, Salou)", "p": {}, "v": {"zona": "Garraf y Tarragona"}}, {"t": "Delta de l'Ebre", "p": {}, "v": {"zona": "Ebro"}}, {"t": "Encara no ho sé", "p": {}, "v": {"zona": ""}}]}];
+var T={"open": {"n": "Open de consola central", "a": "open", "d": "Coberta corrida, consola al centre i motor fora borda. Senzill, fàcil de mantenir i molt venut a la costa catalana.", "q": "Sortides de dia, bany a cales i pesca lleugera. Poc a mantenir i fàcil de vendre després."}, "sundeck": {"n": "Sundeck o bowrider", "a": "sundeck", "d": "Més superfície de solàrium, seients a proa i, en molts casos, un petit lavabo o camarot de proa.", "q": "Famílies i grups que volen passar el dia a bord amb comoditat sense arribar al cabinat."}, "walkaround": {"n": "Walkaround", "a": "walkaround", "d": "Passadís perimetral per moure's amb seguretat per tota la coberta, i una petita cabina sota la consola.", "q": "Qui combina pesca i família, o navega amb nens i vol moure's per coberta sense ensurts."}, "cabinado": {"n": "Cabinat o cruiser", "a": "cabinado", "d": "Cabina tancada amb llitera, cuina i lavabo. Fet per dormir a bord i fer travessies curtes.", "q": "Caps de setmana sencers a bord i alguna escapada a Balears amb calma."}, "pilothouse": {"n": "Pilothouse", "a": "pilothouse", "d": "Lloc de govern tancat i protegit. Es navega còmode amb vent, fred o sol de justícia.", "q": "Qui navega tot l'any, pesca fora de temporada o no vol dependre del temps."}, "fly": {"n": "Fly (flybridge)", "a": "fly", "d": "Segon lloc de govern a dalt, amb espai social a la coberta superior. A partir de 10-11 metres.", "q": "Grups grans, estades llargues a bord i qui valora vistes i espai per sobre del consum."}, "rib": {"n": "Semirígida", "a": "semirrigidas", "d": "Lleugera, molt manejable i amb poc manteniment. Gairebé sempre fora borda.", "q": "Segon vaixell, sortides ràpides, remolc o marina seca, i qui prioritza la senzillesa."}};
+var BOATS=[{"n": "Monterey 278 SS (2011)", "t": ["sundeck"], "m": 8.4, "p": 49990, "u": "/ca/barcos/monterey-278-ss.html", "d": "8,40 m · Volvo Penta 320 cv · Costa Brava"}, {"n": "Ranieri Azzurra 5 m", "t": ["open", "rib"], "m": 5.0, "p": 11990, "u": "/ca/barcos/ranieri-azzurra-5m.html", "d": "5,00 m · Johnson 60 cv · Torredembarra"}];
+var el=function(id){return document.getElementById(id)};
+var LEADS_URL='https://script.google.com/macros/s/AKfycbwJtBkktakE0qgmu_b8oHOOopCDnG6BDpBjg2zBUsZKi8l3_OBEuez_OHWmE9j8qCBF/exec';
+var lastResult=null,_scrollTo=null;
+function openLeadModal(result,scrollId){lastResult=result;_scrollTo=scrollId;
+  if(LEADS_URL.indexOf('http')===0){el('pmModal').classList.remove('hidden');setTimeout(function(){el('pmEmail').focus()},200);}
+  else window.scrollTo({top:el(scrollId).offsetTop-90,behavior:'smooth'});}
+function closeModal(){el('pmModal').classList.add('hidden');if(_scrollTo)window.scrollTo({top:el(_scrollTo).offsetTop-90,behavior:'smooth'});}
+el('pmSkip').onclick=closeModal;
+el('pmLeadForm').onsubmit=function(ev){
+  ev.preventDefault();var em=el('pmEmail').value.trim(),msg=el('pmMsg');msg.className='msg';
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Revisa el correu, no sembla correcte.';return;}
+  if(!el('pmConsent').checked){msg.textContent='Necessito que acceptis la política de privacitat per poder enviar-te’l.';return;}
+  var btn=el('pmSend');btn.disabled=true;var lbl=btn.textContent;btn.textContent='Enviant…';
+  var payload=Object.assign({email:em,consent:true,newsletter:el('pmNews').checked,alerta:!!(el('pmAlert')&&el('pmAlert').checked),consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
+  window.submitConfirmed(LEADS_URL,payload,'json').then(function(){
+    msg.className='msg ok';msg.textContent='Sol·licitud registrada. El resultat també continua disponible a la pantalla.';btn.textContent='Enviat';
+    setTimeout(closeModal,1800);
+  }).catch(function(){msg.textContent='No hem pogut confirmar la recepció. Les teves dades continuen a la pantalla. Abans de tornar a enviar, consulta a juan@platamarine.com o per WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
+};
+
+function render(){
+  var h='';
+  Q.forEach(function(q,i){
+    h+='<div class="qcard" id="q'+i+'"><span class="step">Pregunta '+(i+1)+' de '+Q.length+'</span><h3>'+q.q+'</h3>';
+    if(q.hint)h+='<p class="hint">'+q.hint+'</p>';
+    q.o.forEach(function(o,j){h+='<label class="opt"><input type="'+(q.multi?'checkbox':'radio')+'" name="q'+i+'" value="'+j+'"> <span>'+o.t+'</span></label>'});
+    h+='</div>';
+  });
+  el('questions').innerHTML=h;el('endbar').classList.remove('hidden');el('check').classList.remove('hidden');el('result').classList.add('hidden');
+  document.querySelectorAll('#questions input').forEach(function(x){x.addEventListener('change',prog)});
+  document.querySelectorAll('#questions input[type=checkbox]').forEach(function(x){x.addEventListener('change',function(){var i=x.name.slice(1),m=Q[i].multi||3;if(document.querySelectorAll('input[name='+x.name+']:checked').length>m)x.checked=false;})});prog();
+}
+function prog(){var n=0;Q.forEach(function(q,i){if(document.querySelector('input[name=q'+i+']:checked'))n++});el('prog').style.width=Math.round(100*n/Q.length)+'%';}
+function esloraRange(v){
+  // tram orientatiu per pressupost, limitat per titulació
+  var r=[[5,7],[6,8],[7,10],[9,12],[12,16]][(v.presu||2)-1].slice();
+  if(v.titulo===1){r=[Math.min(r[0],6),6];}
+  else if(v.titulo===2){r=[Math.min(r[0],8),Math.min(r[1],8)];}
+  else if(v.titulo===3){r[1]=Math.min(r[1],15);}
+  if(v.gente>=7&&r[1]<9)r[1]=9;
+  return r;
+}
+function check(){
+  var missing=[];Q.forEach(function(q,i){if(!document.querySelector('input[name=q'+i+']:checked'))missing.push(i)});
+  if(missing.length){var c=el('q'+missing[0]);c.style.borderColor='#c0392b';window.scrollTo({top:c.offsetTop-90,behavior:'smooth'});return;}
+  var pts={},v={};Object.keys(T).forEach(function(k){pts[k]=0});
+  Q.forEach(function(q,i){var sel=document.querySelectorAll('input[name=q'+i+']:checked');var w=q.multi?Math.max(1,Math.min(sel.length,2)):1;sel.forEach(function(inp){var o=q.o[parseInt(inp.value)];Object.keys(o.p||{}).forEach(function(k){pts[k]+=o.p[k]/w});Object.keys(o.v||{}).forEach(function(k){v[k]=o.v[k]});});});
+  // coherència: sense dormir a bord no recomanem fly; pressupost baix penalitza fly i pilothouse
+  if(v.presu<=2){pts.fly-=4;pts.pilothouse-=2;}
+  if(v.presu<=1){pts.cabinado-=2;}
+  if(v.guarda==='remolque'){pts.fly-=6;pts.cabinado-=3;pts.pilothouse-=3;}
+  var order=Object.keys(T).sort(function(a,b){return pts[b]-pts[a]});
+  var top=order[0],second=order[1];var r=esloraRange(v);
+  var h='<h2>Et convé un '+T[top].n.toLowerCase()+'</h2>';
+  h+='<p>'+T[top].d+' '+T[top].q+'</p>';
+  h+='<p class="alt">Segona opció: <strong>'+T[second].n+'</strong>. '+T[second].q+'</p>';
+  h+='<h3>Eslora orientativa: '+r[0]+' a '+r[1]+' metres</h3>';
+  var notes=[];
+  if(v.titulo===0)notes.push('Sense titulació pots portar fins a 5 metres i 15 cv sense sortir de 2 milles d\'un refugi. Per al que busques necessitaràs com a mínim el <a href="/titulaciones/">PNB o el PER</a>; el PER es treu en unes setmanes i obre fins a 15 metres.');
+  if(v.titulo===1)notes.push('Amb la Llicència de navegació el límit són 6 metres d\'eslora i 2 milles de la costa. Si vols anar més enllà, mira el <a href="/titulaciones/">PNB o el PER</a>.');
+  if(v.titulo===2)notes.push('Amb el PNB el límit són 8 metres i 5 milles d\'un port o refugi. Si el vaixell que et convé passa d\'aquí, et convé el <a href="/titulaciones/">PER</a>.');
+  if(r[1]>8)notes.push('A partir de 8 metres entra l\'impost de matriculació (12 % en un vaixell nou o importat); en un vaixell d\'ocasió ja matriculat a Espanya no es torna a pagar. Ho explico a la <a href="/guias/impuesto-matriculacion-barcos.html">guia de l\'impost</a>.');
+  if(v.guarda==='amarre'||v.guarda==='nose')notes.push('L\'amarratge és la despesa fixa que més pesa: compta amb uns 2.700 a 3.700 euros l\'any per a 8 metres a la zona de Barcelona i bastant més en 12. Tens les tarifes port per port a la <a href="/guias/amarres-cataluna-tipos-precios-alquiler-compra.html">guia d\'amarratges</a>'+(v.zona?' (mira '+v.zona+')':'')+'.');
+  if(v.guarda==='remolque')notes.push('En remolc, el límit pràctic és d\'uns 7 metres: amb el permís B el conjunt cotxe més remolc no pot passar de 3.500 quilos; per sobre necessites el B96 (fins a 4.250) o el BE, i un cotxe que estiri de veritat.');
+  if(v.guarda==='seca')notes.push('La marina seca és una gran opció fins a 8 o 9 metres amb fora borda: el vaixell es conserva molt millor i surt més barat que un amarratge a flotació.');
+  if(v.presu<=1)notes.push('Amb menys de 30.000 euros hi ha vaixells molt vàlids de 5 a 7 metres; el que importa és l\'estat del motor i la documentació, no l\'any.');
+  if(notes.length){h+='<ul>';notes.forEach(function(n){h+='<li>'+n+'</li>'});h+='</ul>';}
+  h+='<h3>Per seguir</h3><p><a href="/guias/tipos-de-barco-a-motor.html#'+T[top].a+'">Com és un '+T[top].n.toLowerCase()+' i quines marques es veuen per aquí</a> · <a href="/guias/que-mirar-comprar-barco-segunda-mano.html">Què mirar en comprar de segona mà</a></p>';
+  var match=BOATS.filter(function(b){return (b.t.indexOf(top)>=0||b.t.indexOf(second)>=0)&&b.m>=r[0]-1&&b.m<=r[1]+1});
+  if(match.length){h+='<h3>En cartera ara mateix</h3>';match.forEach(function(b){h+='<a class="boat" href="'+b.u+'"><b>'+b.n+' · '+b.p.toLocaleString('es-ES')+' €</b><span>'+b.d+'</span></a>'});}
+  h+='<p style="margin-top:14px"><a class="btn btn-wa" href="'+'https://wa.me/34633742973?text='+encodeURIComponent('Hola Juan, he fet el test de quin vaixell necessito i em surt '+T[top].n+' de '+r[0]+' a '+r[1]+' m. Ho mirem?')+'" target="_blank" rel="noopener">Explica-m\'ho per WhatsApp</a></p>';
+  el('result').innerHTML=h;el('result').classList.remove('hidden');el('check').classList.add('hidden');
+  var det='Tipus: '+T[top].n+' | Segona: '+T[second].n+' | Eslora: '+r[0]+'-'+r[1]+' m | Persones: '+v.gente+' | Pressupost: '+['<30k','30-60k','60-120k','120-250k','>250k'][(v.presu||2)-1]+' | Titulació: '+['cap','Llicència','PNB','PER','PY+'][v.titulo||0]+' | Guarda: '+(v.guarda||'')+' | Zona: '+(v.zona||'');
+  openLeadModal({source:'que-barco',ok:'',total:'',pass:true,detail:det,page:location.pathname,ua:navigator.userAgent.slice(0,120)},'result');
+}
+el('check').onclick=check;
+el('again').onclick=function(){render();window.scrollTo({top:el('qz').offsetTop-90,behavior:'smooth'})};
+render();
+})();
+</script>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="line">
+      <span>© 2026 Plata Marine · Sabadell, Barcelona · <a href="mailto:juan@platamarine.com">juan@platamarine.com</a></span>
+      <a href="/aviso-legal.html">Avís legal</a> · <a href="/privacidad.html">Privacitat</a> · <a href="/cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Web per rotulito.com</a>
+    </div>
+  </div>
+<p class="wrap"><button type="button" data-cookie-settings>Configurar les cookies</button></p></footer>
+</body>
+</html>
+
+<script src="/consent.js" defer></script>
+<script src="/submit-confirmed.js" defer></script>
+<script src="/analytics.js?v=20260912" defer></script>

@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What boat should I buy? 2-minute test</title>
+<meta name="description" content="Nine questions and we'll tell you what type of boat and what length suits you, based on use, budget, licence and where you'll keep it. Free.">
+<link rel="canonical" href="https://www.platamarine.com/en/herramientas/que-barco-necesito.html">
+<link rel="alternate" hreflang="es" href="https://www.platamarine.com/herramientas/que-barco-necesito.html">
+<link rel="alternate" hreflang="ca" href="https://www.platamarine.com/ca/herramientas/que-barco-necesito.html">
+<link rel="alternate" hreflang="en" href="https://www.platamarine.com/en/herramientas/que-barco-necesito.html">
+<link rel="alternate" hreflang="x-default" href="https://www.platamarine.com/herramientas/que-barco-necesito.html">
+<link rel="icon" type="image/png" href="/logo-plata-marine.png">
+<meta property="og:title" content="What boat should I buy? 2-minute test">
+<meta property="og:description" content="Nine questions and we'll tell you what type of boat and what length suits you, based on use, budget, licence and where you'll keep it. Free.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.platamarine.com/en/herramientas/que-barco-necesito.html">
+<meta property="og:image" content="https://www.platamarine.com/logo-plata-marine.png">
+<link rel="stylesheet" href="/guias/guias.css">
+<style>.pm-modal{position:fixed;inset:0;background:rgba(13,28,39,.55);display:flex;align-items:center;justify-content:center;z-index:50;padding:16px}
+.pm-box{background:#fff;border-radius:10px;max-width:440px;width:100%;padding:26px 24px;box-shadow:0 24px 60px rgba(13,28,39,.3);position:relative}
+.pm-box h3{font-family:var(--display);font-size:1.25rem;margin:0 0 8px;line-height:1.2}
+.pm-box p{font-size:15px;color:var(--ink-2);margin:0 0 14px}
+.pm-box input[type=email]{width:100%;font:16px var(--serif);padding:11px 12px;border:1px solid var(--plata-2);border-radius:6px;margin-bottom:10px;box-sizing:border-box}
+.pm-box label.chk{display:flex;gap:8px;align-items:flex-start;font-family:var(--display);font-size:13px;color:var(--ink-2);margin-bottom:8px;line-height:1.4}
+.pm-box .btn{width:100%;margin-top:6px;cursor:pointer}
+.pm-box .skip{display:block;text-align:center;font-family:var(--display);font-size:13px;color:var(--ink-2);margin-top:12px;background:none;border:0;cursor:pointer;text-decoration:underline}
+.pm-box .msg{font-family:var(--display);font-size:13px;color:#c0392b;margin:0 0 8px}
+.pm-box .msg.ok{color:#2e8b57}
+.pm-box .legal{font-family:var(--display);font-size:11px;color:var(--ink-3,#7F929E);line-height:1.4;margin:12px 0 0}
+.pm-modal.hidden{display:none}
+
+.qz .qcard{background:#fff;border:1px solid var(--plata);border-radius:8px;padding:18px 20px;margin:0 0 14px}
+.qz .qcard h3{font-family:var(--display);font-size:1.05rem;margin:0 0 10px;line-height:1.3}
+.qz .qcard .step{display:block;font-family:var(--display);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+.qz .hint{font-size:13.5px;color:var(--ink-2);margin:-4px 0 8px}
+.qz .opt{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:6px;cursor:pointer;font-size:15.5px;line-height:1.35}
+.qz .opt:hover{background:rgba(127,146,158,.10)}
+.qz .opt input{margin-top:4px;flex:none}
+.qz .bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 0 22px}
+.qz .bar .btn{cursor:pointer}
+.qz .prog{height:6px;background:rgba(127,146,158,.25);border-radius:3px;margin:0 0 18px;overflow:hidden}
+.qz .prog i{display:block;height:100%;background:var(--brass);width:0;transition:width .25s}
+.qz .res{background:var(--sea-deep);color:#D5DDE2;padding:24px 26px;border-radius:6px;margin:0 0 22px}
+.qz .res h2{color:#fff;font-size:1.5rem;margin:0 0 6px}
+.qz .res h3{color:#fff;font-family:var(--display);font-size:1.05rem;margin:18px 0 6px}
+.qz .res p{margin:0 0 10px}
+.qz .res a{color:#fff}
+.qz .res ul{margin:0 0 10px 18px;padding:0}
+.qz .res li{margin:0 0 6px}
+.qz .res .alt{font-size:15px;color:#B7C3CB}
+.qz .boat{display:block;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:10px 12px;margin:0 0 8px;text-decoration:none}
+.qz .boat b{display:block;color:#fff}
+.qz .boat span{font-family:var(--display);font-size:13px;color:#B7C3CB}
+.hidden{display:none}
+.langsw{display:flex;gap:6px;align-items:center;font-size:.78rem;font-weight:600}
+.langsw a{padding:3px 7px;border-radius:4px;text-decoration:none;color:inherit;opacity:.65}
+.langsw a[aria-current="page"]{opacity:1;text-decoration:underline}
+</style>
+<script type="application/ld+json">
+[{"@context": "https://schema.org", "@type": "WebApplication", "name": "What boat do I need", "applicationCategory": "UtilityApplication", "operatingSystem": "Web", "inLanguage": "en", "provider": {"@type": "Organization", "name": "Plata Marine"}, "url": "https://www.platamarine.com/en/herramientas/que-barco-necesito.html", "description": "Not sure what boat to buy? Answer nine questions about how many of you there are, what you'll use it for, budget, licence and where you'll keep it, and I'll tell you what type of motorboat suits you (open, sundeck, walkaround, cabin cruiser, pilothouse, flybridge or RIB), what length and what to look out for. Free, no sign-up."}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What boat should I buy as a first boat?", "acceptedAnswer": {"@type": "Answer", "text": "For a first boat I usually recommend starting with how you'll use it rather than the model: how many of you there are, whether you'll sleep on board, where you'll keep it and what licence you hold. From that the type almost picks itself: an open or a RIB if you want simplicity, a sundeck if what you're after is sun and swimming, a cabin cruiser or a flybridge if you'll spend nights away. The test above sorts it out in two minutes."}}, {"@type": "Question", "name": "What length can I take out with each licence?", "acceptedAnswer": {"@type": "Answer", "text": "Without a licence, up to 5 metres and 15 hp within reach of the coast; with the Navigation Licence, up to 6 metres and 2 miles; with the PNB, up to 8 metres and 5 miles; with the PER, up to 15 metres (24 with the extra practical training). I explain it in the licences section."}}, {"@type": "Question", "name": "How much does it cost to keep an 8-metre boat in Catalonia?", "acceptedAnswer": {"@type": "Answer", "text": "The fixed cost that weighs most is the mooring: around Barcelona most marinas publish rates of €2,700 to €3,700 a year for 8 metres, plus VAT and utilities depending on the marina; publicly-run marinas come out considerably cheaper and Costa Brava marinas more expensive. On top of that comes insurance, the annual haul-out and engine maintenance. You'll find marina-by-marina rates in the mooring guide."}}, {"@type": "Question", "name": "Is an outboard or an inboard engine better?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on size and use. Up to 8 or 9 metres an outboard is simpler and cheaper to maintain and allows dry storage or trailing; beyond that, and on boats with a cabin, an inboard or sterndrive is the norm. The test takes this into account in question 8."}}]}]
+</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/en/" aria-label="Plata Marine, home"><img class="brand-logo" src="/logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="/en/barcos/">Boats</a>
+      <a href="/en/#vender">Sell</a>
+      <a href="/en/#comprar">Buy</a>
+      <a href="/guias/">Guides</a>
+      <a href="/actualidad/">News</a>
+      <a href="/en/servicios/">Services</a>
+      <a href="/en/#juan">About me</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hi%20Juan%2C%20I%27ve%20done%20the%20what%20boat%20do%20I%20need%20test." target="_blank" rel="noopener">Talk to Juan</a>
+    <div class="langsw" aria-label="Language"><a href="https://www.platamarine.com/herramientas/que-barco-necesito.html">ES</a><a href="https://www.platamarine.com/ca/herramientas/que-barco-necesito.html">CA</a><a href="https://www.platamarine.com/en/herramientas/que-barco-necesito.html" aria-current="page">EN</a></div>
+  </div>
+</header>
+
+<main class="art">
+  <div class="wrap">
+    <article>
+      <header>
+        <p class="eyebrow">Tools · What boat do I need</p>
+        <h1>What boat should I buy? Take the two-minute test</h1>
+        <div class="meta"><span>By Juan Morante</span><span>September 2026</span></div>
+        <p class="lead">Almost everyone who writes to me starts with a brand or model they've seen in an ad. I prefer to start somewhere else: how many of you there are, what you'll do with the boat, where you'll keep it and what licence you hold. From that the type of boat almost picks itself, and then we look for the model. Answer these nine questions and I'll tell you which way I'd go.</p>
+      </header>
+
+      <div class="prose qz" id="qz">
+        <div class="prog"><i id="prog"></i></div>
+        <div id="result" class="res hidden"></div>
+        <div id="questions"></div>
+        <div class="bar hidden" id="endbar"><button class="btn btn-wa" id="check">See what boat suits me</button><button class="btn btn-ghost" id="again">Start again</button></div>
+        <p class="aviso">The result is a guide based on your answers, not a purchase recommendation: two boats of the same type can be very different. If you'd like, write to me with your result and we'll fine-tune it together.</p>
+      </div>
+      <div class="prose">
+        <h2 id="faq" style="margin-top:36px">Frequently asked questions before choosing a boat</h2>
+        <details><summary>What boat should I buy as a first boat?</summary><p>For a first boat I usually recommend starting with how you'll use it rather than the model: how many of you there are, whether you'll sleep on board, where you'll keep it and what licence you hold. From that the type almost picks itself: an open or a RIB if you want simplicity, a sundeck if what you're after is sun and swimming, a cabin cruiser or a flybridge if you'll spend nights away. The test above sorts it out in two minutes.</p></details>
+        <details><summary>What length can I take out with each licence?</summary><p>Without a licence, up to 5 metres and 15 hp within reach of the coast; with the Navigation Licence, up to 6 metres and 2 miles; with the PNB, up to 8 metres and 5 miles; with the PER, up to 15 metres (24 with the extra practical training). I explain it in the licences section.</p></details>
+        <details><summary>How much does it cost to keep an 8-metre boat in Catalonia?</summary><p>The fixed cost that weighs most is the mooring: around Barcelona most marinas publish rates of €2,700 to €3,700 a year for 8 metres, plus VAT and utilities depending on the marina; publicly-run marinas come out considerably cheaper and Costa Brava marinas more expensive. On top of that comes insurance, the annual haul-out and engine maintenance. You'll find marina-by-marina rates in the mooring guide.</p></details>
+        <details><summary>Is an outboard or an inboard engine better?</summary><p>It depends on size and use. Up to 8 or 9 metres an outboard is simpler and cheaper to maintain and allows dry storage or trailing; beyond that, and on boats with a cabin, an inboard or sterndrive is the norm. The test takes this into account in question 8.</p></details>
+      </div>
+    </article>
+
+    <div class="pm-modal hidden" id="pmModal" role="dialog" aria-modal="true" aria-labelledby="pmModalTitle">
+      <div class="pm-box">
+        <h3 id="pmModalTitle">Shall I email you the result?</h3>
+        <p>I'll send you the type of boat that suits you, the approximate length and the guides to read next, so you have it to hand when you're browsing listings.</p>
+        <form id="pmLeadForm" novalidate>
+          <input type="email" id="pmEmail" placeholder="you@email.com" autocomplete="email" required>
+          <label class="chk"><input type="checkbox" id="pmConsent" required> <span>I agree that Plata Marine will store my email to send me the result, in accordance with the <a href="/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</span></label>
+          <label class="chk"><input type="checkbox" id="pmAlert"> <span>Let me know if a boat matching this result comes into the listings (I write to you myself, only when there's something).</span></label>
+          <label class="chk"><input type="checkbox" id="pmNews"> <span>I'd also like to receive articles and guides from Plata Marine by email from time to time (you can unsubscribe whenever you like).</span></label>
+          <p class="msg hidden" id="pmMsg"></p>
+          <button type="submit" class="btn btn-wa" id="pmSend">Send me the result</button>
+          <button type="button" class="skip" id="pmSkip">See the result without email</button>
+          <p class="legal">Data controller: Juan Morante Cruz (Plata Marine). Purpose: to send you the result and, only if you tick the box, to notify you of matching boats or send you updates from the website. You can exercise your rights of access, rectification and erasure at juan@platamarine.com. More information in the <a href="/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</p>
+        <p class="legal">You can also <a href="mailto:juan@platamarine.com">write to juan@platamarine.com</a>. If you don't see a confirmation, please check before sending again.</p></form>
+      </div>
+    </div>
+
+    <aside class="aside" aria-label="Contact and navigation">
+      <div class="card">
+        <p class="eyebrow">Want to look at it together?</p>
+        <h3>Tell me your result and we'll find the boat.</h3>
+        <p>I work with motorboats from 5 metres, in Catalonia and the Balearic Islands. I only get paid if you buy.</p>
+        <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hi%20Juan%2C%20I%27ve%20done%20the%20what%20boat%20do%20I%20need%20test%20and%20I%20got%3A%20" target="_blank" rel="noopener">Talk to Juan on WhatsApp</a>
+      </div>
+      <nav class="toc" aria-label="Contents">
+        <p class="eyebrow">On this page</p>
+        <ol>
+          <li><a href="#qz">The test</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </nav>
+      <div class="rel">
+        <p class="eyebrow">You might also like</p>
+        <a href="/guias/tipos-de-barco-a-motor.html">Types of motorboats: what each one is for</a>
+        <a href="/guias/amarres-cataluna-tipos-precios-alquiler-compra.html">Moorings in Catalonia: types and prices</a>
+        <a href="/titulaciones/">What licence you need for each boat</a>
+        <a href="/guias/que-mirar-comprar-barco-segunda-mano.html">What to check when buying second-hand</a>
+      </div>
+    </aside>
+
+  </div>
+</main>
+<script>
+(function(){
+var Q=[{"id": "gente", "q": "How many of you usually go out on board?", "o": [{"t": "1 or 2", "p": {"open": 2, "rib": 2, "walkaround": 1, "cabinado": 1}, "v": {"gente": 2}}, {"t": "3 or 4", "p": {"sundeck": 2, "open": 1, "walkaround": 2, "cabinado": 1}, "v": {"gente": 4}}, {"t": "5 or 6", "p": {"sundeck": 2, "cabinado": 2, "fly": 1, "walkaround": 1}, "v": {"gente": 6}}, {"t": "7 or more", "p": {"fly": 3, "cabinado": 1, "sundeck": 1}, "v": {"gente": 8}}]}, {"id": "uso", "q": "What will you mainly use it for?", "o": [{"t": "Day trips: swimming, coves and back", "p": {"open": 3, "sundeck": 3, "rib": 2, "walkaround": 1}}, {"t": "Fishing", "p": {"open": 3, "walkaround": 3, "pilothouse": 2, "rib": 1}}, {"t": "Weekends sleeping on board", "p": {"cabinado": 3, "walkaround": 1, "fly": 1, "sundeck": 1}}, {"t": "Multi-day trips (Balearics, the whole Costa Brava)", "p": {"cabinado": 2, "fly": 3, "pilothouse": 1}}, {"t": "Sailing all year round, including winter", "p": {"pilothouse": 3, "cabinado": 1, "fly": 1}}]}, {"id": "dormir", "q": "Will you sleep on board?", "o": [{"t": "Never", "p": {"open": 2, "rib": 2, "sundeck": 1}}, {"t": "The odd night", "p": {"sundeck": 2, "walkaround": 2, "cabinado": 1}}, {"t": "Full weekends", "p": {"cabinado": 3, "fly": 1, "pilothouse": 1}}, {"t": "Several days in a row", "p": {"fly": 3, "cabinado": 2, "pilothouse": 1}}]}, {"id": "presu", "q": "What's your budget for the boat (excluding mooring and insurance)?", "o": [{"t": "Under €30,000", "p": {"open": 2, "rib": 2}, "v": {"presu": 1}}, {"t": "€30,000 to €60,000", "p": {"open": 1, "sundeck": 2, "walkaround": 1, "rib": 1}, "v": {"presu": 2}}, {"t": "€60,000 to €120,000", "p": {"sundeck": 1, "walkaround": 2, "cabinado": 2, "pilothouse": 1}, "v": {"presu": 3}}, {"t": "€120,000 to €250,000", "p": {"cabinado": 2, "pilothouse": 2, "fly": 2}, "v": {"presu": 4}}, {"t": "Over €250,000", "p": {"fly": 3, "cabinado": 1}, "v": {"presu": 5}}]}, {"id": "titulo", "q": "What boating licence do you hold?", "o": [{"t": "None yet", "p": {}, "v": {"titulo": 0}}, {"t": "Navigation Licence", "p": {"rib": 1, "open": 1}, "v": {"titulo": 1}}, {"t": "PNB", "p": {"open": 1, "sundeck": 1}, "v": {"titulo": 2}}, {"t": "PER", "p": {}, "v": {"titulo": 3}}, {"t": "Yacht Skipper or higher", "p": {"fly": 1}, "v": {"titulo": 4}}]}, {"id": "guarda", "q": "Where will you keep the boat?", "o": [{"t": "On a trailer, at home or in a car park", "p": {"rib": 3, "open": 2}, "v": {"guarda": "remolque"}}, {"t": "In dry storage", "p": {"rib": 2, "open": 2, "sundeck": 1}, "v": {"guarda": "seca"}}, {"t": "On a mooring in a marina", "p": {"cabinado": 1, "fly": 1, "pilothouse": 1, "walkaround": 1}, "v": {"guarda": "amarre"}}, {"t": "I don't know yet", "p": {}, "v": {"guarda": "nose"}}]}, {"id": "valora", "q": "What matters to you most?", "multi": 3, "hint": "You can pick up to three.", "o": [{"t": "Simplicity and low maintenance", "p": {"open": 2, "rib": 3}}, {"t": "Space for sunbathing and swimming", "p": {"sundeck": 3, "open": 1}}, {"t": "Moving around the deck safely", "p": {"walkaround": 3, "pilothouse": 1}}, {"t": "Shelter from sun and wind", "p": {"pilothouse": 3, "cabinado": 1, "fly": 1}}, {"t": "Comfort inside: a berth, galley, heads", "p": {"cabinado": 3, "fly": 1}}, {"t": "Social space and views", "p": {"fly": 3, "sundeck": 1}}]}, {"id": "motor", "q": "Outboard or inboard engine?", "o": [{"t": "Outboard", "p": {"open": 2, "walkaround": 2, "rib": 2, "sundeck": 1}}, {"t": "Inboard or sterndrive", "p": {"cabinado": 2, "fly": 2, "sundeck": 1, "pilothouse": 1}}, {"t": "No preference, whatever fits", "p": {}}]}, {"id": "zona", "q": "Where will you sail from?", "o": [{"t": "Barcelona city", "p": {}, "v": {"zona": "Barcelona"}}, {"t": "Maresme (Masnou, Mataró, Balís, Arenys)", "p": {}, "v": {"zona": "Maresme"}}, {"t": "Costa Brava", "p": {}, "v": {"zona": "Costa Brava"}}, {"t": "Garraf and Tarragona (Sitges, Vilanova, Cambrils, Salou)", "p": {}, "v": {"zona": "Garraf y Tarragona"}}, {"t": "Ebro Delta", "p": {}, "v": {"zona": "Ebro"}}, {"t": "I don't know yet", "p": {}, "v": {"zona": ""}}]}];
+var T={"open": {"n": "Center console (open)", "a": "open", "d": "An open deck with a center console and an outboard engine. Simple, easy to maintain and very common along the Catalan coast.", "q": "Day trips, swimming in coves and light fishing. Little to maintain and easy to resell later."}, "sundeck": {"n": "Sundeck or bowrider", "a": "sundeck", "d": "More sundeck space, bow seating and, in many cases, a small head or forward cabin.", "q": "Families and groups who want to spend the day on board in comfort without going as far as a cabin cruiser."}, "walkaround": {"n": "Walkaround", "a": "walkaround", "d": "A perimeter walkway for moving safely around the whole deck, and a small cabin under the console.", "q": "Anyone who mixes fishing and family time, or sails with children and wants to move around the deck safely."}, "cabinado": {"n": "Cabin cruiser", "a": "cabinado", "d": "An enclosed cabin with a berth, galley and heads. Built for sleeping on board and short trips.", "q": "Full weekends on board and the odd relaxed getaway to the Balearics."}, "pilothouse": {"n": "Pilothouse", "a": "pilothouse", "d": "An enclosed, protected helm station. Comfortable in wind, cold or blazing sun.", "q": "Anyone who sails all year round, fishes out of season or doesn't want to depend on the weather."}, "fly": {"n": "Flybridge", "a": "fly", "d": "A second helm station up top, with social space on the upper deck. From around 10-11 metres.", "q": "Large groups, long stays on board, and anyone who values views and space over fuel consumption."}, "rib": {"n": "RIB (inflatable)", "a": "semirrigidas", "d": "Light, very manageable and low-maintenance. Almost always outboard-powered.", "q": "A second boat, quick outings, trailing or dry storage, and anyone who prioritises simplicity."}};
+var BOATS=[{"n": "Monterey 278 SS (2011)", "t": ["sundeck"], "m": 8.4, "p": 49990, "u": "/en/barcos/monterey-278-ss.html", "d": "8.4 m · Volvo Penta 320 hp · Costa Brava"}, {"n": "Ranieri Azzurra 5 m", "t": ["open", "rib"], "m": 5.0, "p": 11990, "u": "/en/barcos/ranieri-azzurra-5m.html", "d": "5 m · Johnson 60 hp · Torredembarra"}];
+var el=function(id){return document.getElementById(id)};
+var LEADS_URL='https://script.google.com/macros/s/AKfycbwJtBkktakE0qgmu_b8oHOOopCDnG6BDpBjg2zBUsZKi8l3_OBEuez_OHWmE9j8qCBF/exec';
+var lastResult=null,_scrollTo=null;
+function openLeadModal(result,scrollId){lastResult=result;_scrollTo=scrollId;
+  if(LEADS_URL.indexOf('http')===0){el('pmModal').classList.remove('hidden');setTimeout(function(){el('pmEmail').focus()},200);}
+  else window.scrollTo({top:el(scrollId).offsetTop-90,behavior:'smooth'});}
+function closeModal(){el('pmModal').classList.add('hidden');if(_scrollTo)window.scrollTo({top:el(_scrollTo).offsetTop-90,behavior:'smooth'});}
+el('pmSkip').onclick=closeModal;
+el('pmLeadForm').onsubmit=function(ev){
+  ev.preventDefault();var em=el('pmEmail').value.trim(),msg=el('pmMsg');msg.className='msg';
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='That email doesn’t look right — please check it.';return;}
+  if(!el('pmConsent').checked){msg.textContent='I need you to accept the privacy policy so I can send it to you.';return;}
+  var btn=el('pmSend');btn.disabled=true;var lbl=btn.textContent;btn.textContent='Sending…';
+  var payload=Object.assign({email:em,consent:true,newsletter:el('pmNews').checked,alerta:!!(el('pmAlert')&&el('pmAlert').checked),consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
+  window.submitConfirmed(LEADS_URL,payload,'json').then(function(){
+    msg.className='msg ok';msg.textContent='Request received. The result is also still available on screen.';btn.textContent='Sent';
+    setTimeout(closeModal,1800);
+  }).catch(function(){msg.textContent='We couldn’t confirm receipt. Your details are still on screen. Before sending again, check with juan@platamarine.com or on WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
+};
+
+function render(){
+  var h='';
+  Q.forEach(function(q,i){
+    h+='<div class="qcard" id="q'+i+'"><span class="step">Question '+(i+1)+' of '+Q.length+'</span><h3>'+q.q+'</h3>';
+    if(q.hint)h+='<p class="hint">'+q.hint+'</p>';
+    q.o.forEach(function(o,j){h+='<label class="opt"><input type="'+(q.multi?'checkbox':'radio')+'" name="q'+i+'" value="'+j+'"> <span>'+o.t+'</span></label>'});
+    h+='</div>';
+  });
+  el('questions').innerHTML=h;el('endbar').classList.remove('hidden');el('check').classList.remove('hidden');el('result').classList.add('hidden');
+  document.querySelectorAll('#questions input').forEach(function(x){x.addEventListener('change',prog)});
+  document.querySelectorAll('#questions input[type=checkbox]').forEach(function(x){x.addEventListener('change',function(){var i=x.name.slice(1),m=Q[i].multi||3;if(document.querySelectorAll('input[name='+x.name+']:checked').length>m)x.checked=false;})});prog();
+}
+function prog(){var n=0;Q.forEach(function(q,i){if(document.querySelector('input[name=q'+i+']:checked'))n++});el('prog').style.width=Math.round(100*n/Q.length)+'%';}
+function esloraRange(v){
+  // approximate range by budget, capped by licence
+  var r=[[5,7],[6,8],[7,10],[9,12],[12,16]][(v.presu||2)-1].slice();
+  if(v.titulo===1){r=[Math.min(r[0],6),6];}
+  else if(v.titulo===2){r=[Math.min(r[0],8),Math.min(r[1],8)];}
+  else if(v.titulo===3){r[1]=Math.min(r[1],15);}
+  if(v.gente>=7&&r[1]<9)r[1]=9;
+  return r;
+}
+function check(){
+  var missing=[];Q.forEach(function(q,i){if(!document.querySelector('input[name=q'+i+']:checked'))missing.push(i)});
+  if(missing.length){var c=el('q'+missing[0]);c.style.borderColor='#c0392b';window.scrollTo({top:c.offsetTop-90,behavior:'smooth'});return;}
+  var pts={},v={};Object.keys(T).forEach(function(k){pts[k]=0});
+  Q.forEach(function(q,i){var sel=document.querySelectorAll('input[name=q'+i+']:checked');var w=q.multi?Math.max(1,Math.min(sel.length,2)):1;sel.forEach(function(inp){var o=q.o[parseInt(inp.value)];Object.keys(o.p||{}).forEach(function(k){pts[k]+=o.p[k]/w});Object.keys(o.v||{}).forEach(function(k){v[k]=o.v[k]});});});
+  // consistency: no sleeping on board means we don't recommend a flybridge; low budget penalises fly and pilothouse
+  if(v.presu<=2){pts.fly-=4;pts.pilothouse-=2;}
+  if(v.presu<=1){pts.cabinado-=2;}
+  if(v.guarda==='remolque'){pts.fly-=6;pts.cabinado-=3;pts.pilothouse-=3;}
+  var order=Object.keys(T).sort(function(a,b){return pts[b]-pts[a]});
+  var top=order[0],second=order[1];var r=esloraRange(v);
+  var h='<h2>A '+T[top].n.toLowerCase()+' suits you</h2>';
+  h+='<p>'+T[top].d+' '+T[top].q+'</p>';
+  h+='<p class="alt">Second option: <strong>'+T[second].n+'</strong>. '+T[second].q+'</p>';
+  h+='<h3>Approximate length: '+r[0]+' to '+r[1]+' metres</h3>';
+  var notes=[];
+  if(v.titulo===0)notes.push('Without a licence you can take out up to 5 metres and 15 hp without going beyond 2 miles of a shelter. For what you’re after you’ll need at least the <a href="/titulaciones/">PNB or the PER</a>; the PER takes a few weeks and opens up to 15 metres.');
+  if(v.titulo===1)notes.push('With the Navigation Licence the limit is 6 metres in length and 2 miles from the coast. If you want to go further, look at the <a href="/titulaciones/">PNB or the PER</a>.');
+  if(v.titulo===2)notes.push('With the PNB the limit is 8 metres and 5 miles from a port or shelter. If the boat that suits you is bigger than that, the <a href="/titulaciones/">PER</a> is what you need.');
+  if(r[1]>8)notes.push('From 8 metres onward the registration tax applies (12% on a new or imported boat); on a used boat already registered in Spain it isn’t paid again. I explain it in the <a href="/guias/impuesto-matriculacion-barcos.html">tax guide</a>.');
+  if(v.guarda==='amarre'||v.guarda==='nose')notes.push('Mooring is the fixed cost that weighs most: budget around €2,700 to €3,700 a year for 8 metres around Barcelona, and quite a bit more for 12. You’ll find marina-by-marina rates in the <a href="/guias/amarres-cataluna-tipos-precios-alquiler-compra.html">mooring guide</a>'+(v.zona?' (check '+v.zona+')':'')+'.');
+  if(v.guarda==='remolque')notes.push('On a trailer, the practical limit is around 7 metres: with a category B licence the car-plus-trailer combination can’t exceed 3,500 kg; above that you need a B96 (up to 4,250 kg) or a BE, and a car that can really tow.');
+  if(v.guarda==='seca')notes.push('Dry storage is a great option up to 8 or 9 metres with an outboard: the boat is kept in much better condition and it’s cheaper than a mooring afloat.');
+  if(v.presu<=1)notes.push('With under €30,000 there are plenty of good boats from 5 to 7 metres; what matters is the condition of the engine and the paperwork, not the year.');
+  if(notes.length){h+='<ul>';notes.forEach(function(n){h+='<li>'+n+'</li>'});h+='</ul>';}
+  h+='<h3>To read next</h3><p><a href="/guias/tipos-de-barco-a-motor.html#'+T[top].a+'">What a '+T[top].n.toLowerCase()+' is like and which brands you see around here</a> · <a href="/guias/que-mirar-comprar-barco-segunda-mano.html">What to check when buying second-hand</a></p>';
+  var match=BOATS.filter(function(b){return (b.t.indexOf(top)>=0||b.t.indexOf(second)>=0)&&b.m>=r[0]-1&&b.m<=r[1]+1});
+  if(match.length){h+='<h3>In our listings right now</h3>';match.forEach(function(b){h+='<a class="boat" href="'+b.u+'"><b>'+b.n+' · '+b.p.toLocaleString('en-GB')+' €</b><span>'+b.d+'</span></a>'});}
+  h+='<p style="margin-top:14px"><a class="btn btn-wa" href="'+'https://wa.me/34633742973?text='+encodeURIComponent('Hi Juan, I did the what boat do I need test and I got '+T[top].n+' from '+r[0]+' to '+r[1]+' m. Shall we take a look?')+'" target="_blank" rel="noopener">Tell me about it on WhatsApp</a></p>';
+  el('result').innerHTML=h;el('result').classList.remove('hidden');el('check').classList.add('hidden');
+  var det='Type: '+T[top].n+' | Second: '+T[second].n+' | Length: '+r[0]+'-'+r[1]+' m | People: '+v.gente+' | Budget: '+['<30k','30-60k','60-120k','120-250k','>250k'][(v.presu||2)-1]+' | Licence: '+['none','Navigation','PNB','PER','Skipper+'][v.titulo||0]+' | Storage: '+(v.guarda||'')+' | Area: '+(v.zona||'');
+  openLeadModal({source:'que-barco',ok:'',total:'',pass:true,detail:det,page:location.pathname,ua:navigator.userAgent.slice(0,120)},'result');
+}
+el('check').onclick=check;
+el('again').onclick=function(){render();window.scrollTo({top:el('qz').offsetTop-90,behavior:'smooth'})};
+render();
+})();
+</script>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="line">
+      <span>© 2026 Plata Marine · Sabadell, Barcelona · <a href="mailto:juan@platamarine.com">juan@platamarine.com</a></span>
+      <a href="/aviso-legal.html">Legal notice</a> · <a href="/privacidad.html">Privacy</a> · <a href="/cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Website by rotulito.com</a>
+    </div>
+  </div>
+<p class="wrap"><button type="button" data-cookie-settings>Cookie settings</button></p></footer>
+</body>
+</html>
+
+<script src="/consent.js" defer></script>
+<script src="/submit-confirmed.js" defer></script>
+<script src="/analytics.js?v=20260912" defer></script>
