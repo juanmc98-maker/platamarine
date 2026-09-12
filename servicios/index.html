@@ -93,7 +93,7 @@
             <button type="submit" class="btn btn-wa">Pedir contacto para la ITB</button>
             <p class="msg"></p>
             <p class="legal">Responsable: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Finalidad: responder a tu solicitud, decirte con quién lo haría yo y, solo si lo autorizas, comunicar tus datos a esa empresa para que te contacte. Base legal: tu consentimiento, que puedes retirar cuando quieras. Conservación: un año desde la solicitud, salvo que la relación continúe. Derechos: acceso, rectificación, supresión, oposición y los demás que reconoce el RGPD, escribiendo a juan@platamarine.com; también puedes reclamar ante la AEPD. Más información en la <a href="../privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</p>
-          </form>
+          <p class="legal">También puedes <a href="mailto:juan@platamarine.com">escribir a juan@platamarine.com</a>. Si no aparece una confirmación, consulta antes de volver a enviar.</p></form>
         </div>
 
         <h2 id="gestoria">Gestoría náutica: cambio de nombre, matriculación, importación</h2>
@@ -118,7 +118,7 @@
             <button type="submit" class="btn btn-wa">Pedir contacto con la gestoría</button>
             <p class="msg"></p>
             <p class="legal">Responsable: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Finalidad: responder a tu solicitud, decirte con quién lo haría yo y, solo si lo autorizas, comunicar tus datos a esa empresa para que te contacte. Base legal: tu consentimiento, que puedes retirar cuando quieras. Conservación: un año desde la solicitud, salvo que la relación continúe. Derechos: acceso, rectificación, supresión, oposición y los demás que reconoce el RGPD, escribiendo a juan@platamarine.com; también puedes reclamar ante la AEPD. Más información en la <a href="../privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</p>
-          </form>
+          <p class="legal">También puedes <a href="mailto:juan@platamarine.com">escribir a juan@platamarine.com</a>. Si no aparece una confirmación, consulta antes de volver a enviar.</p></form>
         </div>
 
         <h2 id="varadero">Varadero y taller: varada, antifouling, motor</h2>
@@ -147,7 +147,7 @@
             <button type="submit" class="btn btn-wa">Pedir contacto con el varadero</button>
             <p class="msg"></p>
             <p class="legal">Responsable: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Finalidad: responder a tu solicitud, decirte con quién lo haría yo y, solo si lo autorizas, comunicar tus datos a esa empresa para que te contacte. Base legal: tu consentimiento, que puedes retirar cuando quieras. Conservación: un año desde la solicitud, salvo que la relación continúe. Derechos: acceso, rectificación, supresión, oposición y los demás que reconoce el RGPD, escribiendo a juan@platamarine.com; también puedes reclamar ante la AEPD. Más información en la <a href="../privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</p>
-          </form>
+          <p class="legal">También puedes <a href="mailto:juan@platamarine.com">escribir a juan@platamarine.com</a>. Si no aparece una confirmación, consulta antes de volver a enviar.</p></form>
         </div>
 
         <h2 id="seguro">Seguro del barco</h2>
@@ -205,10 +205,10 @@ function pmWire(f,build){
     var p=build(f);if(!p){return;}
     p.email=em;p.consent=true;p.consent_v='2026-09';p.consent_at=new Date().toISOString();p.page=location.pathname;p.ua=navigator.userAgent.slice(0,120);
     var btn=f.querySelector('button[type=submit]');btn.disabled=true;var lbl=btn.textContent;btn.textContent='Enviando…';
-    fetch(LEADS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(p)}).then(function(){
-      msg.className='msg ok';msg.textContent='Recibido. Te llega un correo de confirmación en unos minutos (mira también la carpeta de spam).';btn.textContent='Enviado';
-      try{if(window.pmTrack)pmTrack('form_submit',{form:f.id,page:location.pathname});}catch(e){}
-    }).catch(function(){msg.textContent='No se ha podido enviar. Prueba otra vez o escríbeme por WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
+    window.submitConfirmed(LEADS_URL,p,'json').then(function(){
+      msg.className='msg ok';msg.textContent='Solicitud registrada. Gracias; revisaremos los datos que nos has enviado.';btn.textContent='Enviado';
+      try{if(window.pmTrack)pmTrack('generate_lead',{form_id:f.id});}catch(e){}
+    }).catch(function(){msg.textContent='No hemos podido confirmar la recepción. Tus datos siguen en pantalla. Antes de repetir el envío, consulta en juan@platamarine.com o por WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
   });
 }
 
@@ -226,8 +226,10 @@ pmWire(document.getElementById('svcVaradero'),mk('varadero',[['puerto','Puerto']
       <a href="../aviso-legal.html">Aviso legal</a> · <a href="../privacidad.html">Privacidad</a> · <a href="../cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Web por rotulito.com</a>
     </div>
   </div>
-</footer>
+<p class="wrap"><button type="button" data-cookie-settings>Configurar cookies</button></p></footer>
 </body>
 </html>
 
-<script src="/analytics.js" defer></script>
+<script src="/consent.js" defer></script>
+<script src="/submit-confirmed.js" defer></script>
+<script src="/analytics.js?v=20260912" defer></script>

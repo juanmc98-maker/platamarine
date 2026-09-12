@@ -14,7 +14,9 @@
 <meta property="og:image" content="https://www.platamarine.com/logo-plata-marine.png">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="pm.css">
-<script src="/analytics.js" defer></script>
+<script src="/consent.js" defer></script>
+<script src="/submit-confirmed.js" defer></script>
+<script src="/analytics.js?v=20260912" defer></script>
 </head>
 <body>
 
@@ -40,16 +42,18 @@
     <p class="crumb"><a href="./">Inicio</a> · Política de cookies</p>
     <div class="head"><div><h1>Política de cookies</h1></div></div>
     <div class="prose" style="max-width:72ch">
-      <p>Esta web usa el mínimo de cookies posible.</p>
-      <h2>Cookies necesarias</h2>
-      <p>Guardamos en tu navegador (localStorage) tu elección sobre cookies (<code>pm_cookies</code>) para no volver a preguntarte. No identifica a nadie.</p>
-      <h2>Cookies de analítica (solo si las aceptas)</h2>
-      <p>Si pulsas «Aceptar todas», se carga Google Analytics 4 (Google Ireland Ltd.), que instala cookies <code>_ga</code> y <code>_ga_*</code> (duración hasta 2 años) para saber qué páginas se visitan y desde dónde, con la dirección IP anonimizada. Se usa únicamente para mejorar el contenido de la web. No hay publicidad ni se venden datos.</p>
-      <p>Si eliges «Solo necesarias», Google Analytics no se carga y no se instala ninguna cookie de terceros.</p>
-      <h2>Cambiar tu elección</h2>
-      <p>Puedes cambiarla en cualquier momento: <a href="#" id="reset-ck">restablecer mis preferencias de cookies</a>. También puedes borrar las cookies desde la configuración de tu navegador.</p>
-      <p>Más información sobre el tratamiento de datos en la <a href="privacidad.html">política de privacidad</a>.</p>
-      <script>document.getElementById('reset-ck').addEventListener('click',function(e){e.preventDefault();try{localStorage.removeItem('pm_cookies');}catch(x){}location.href='/';});</script>
+      <h2>Cookies y almacenamiento utilizados</h2>
+<p>Guardamos tu elección en <code>pm_privacy_v2</code> en el almacenamiento local del navegador durante 12 meses. Incluye la decisión, su fecha y la versión de este aviso. Es necesaria para respetar tu elección y no se utiliza para publicidad.</p>
+<table><thead><tr><th>Nombre</th><th>Proveedor y finalidad</th><th>Duración</th></tr></thead><tbody><tr><td>_ga y _ga_*</td><td>Google Analytics: estadísticas de navegación, solo con tu consentimiento.</td><td>Hasta 12 meses desde su creación.</td></tr></tbody></table>
+<p>No activamos Google Ads, Google Signals ni el píxel de Meta. Si incorporamos finalidades publicitarias, actualizaremos la información y pediremos el consentimiento correspondiente antes de activarlas. Rechazar la analítica no impide usar los formularios ni contactar.</p>
+<p>En las páginas de guías y herramientas, <code>pm_news</code> recuerda que has cerrado el aviso de novedades durante 30 días o que ya has solicitado el alta. Esta preferencia no guarda tu correo. Se elimina automáticamente a los 12 meses como máximo.</p>
+<h2>Cambiar o retirar tu consentimiento</h2>
+<p><button type="button" data-cookie-settings>Configurar cookies</button> <button type="button" id="withdraw-analytics">Retirar consentimiento de analítica</button></p>
+<p>Los controles también están disponibles en el pie de página. Al retirar el consentimiento se desactiva la medición y se eliminan las cookies de analítica accesibles a esta web. Si la herramienta estaba cargada, la página se recarga para detenerla. Puedes además borrar todos los datos del sitio desde tu navegador.</p>
+<h2>Datos y transferencias</h2>
+<p>Google Analytics trata información de navegación e identificadores seudónimos. No debe confundirse con información anónima. Consulta las <a href="https://policies.google.com/privacy/frameworks?hl=es">garantías de transferencia de Google</a> y nuestra <a href="/privacidad.html">política de privacidad</a>, donde se identifica al responsable y se explican tus derechos.</p>
+<script>document.getElementById('withdraw-analytics').onclick=function(){if(window.siteConsent)window.siteConsent.reject();};</script>
+
     </div>
   </div>
 </main>

@@ -104,7 +104,7 @@
           <button type="submit" class="btn btn-wa" id="pmSend">Enviarme el resultado</button>
           <button type="button" class="skip" id="pmSkip">Ver el resultado sin correo</button>
           <p class="legal">Responsable: Juan Morante Cruz (Plata Marine). Finalidad: enviarte el resultado y, solo si lo marcas, novedades de la web. Puedes ejercer tus derechos de acceso, rectificación y supresión en juan@platamarine.com. Más información en la <a href="../privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</p>
-        </form>
+        <p class="legal">También puedes <a href="mailto:juan@platamarine.com">escribir a juan@platamarine.com</a>. Si no aparece una confirmación, consulta antes de volver a enviar.</p></form>
       </div>
     </div>
 
@@ -150,10 +150,10 @@ el('pmLeadForm').onsubmit=function(ev){
   if(!el('pmConsent').checked){msg.textContent='Necesito que aceptes la política de privacidad para poder enviártelo.';return;}
   var btn=el('pmSend');btn.disabled=true;var lbl=btn.textContent;btn.textContent='Enviando…';
   var payload=Object.assign({email:em,consent:true,newsletter:el('pmNews').checked,consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
-  fetch(LEADS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)}).then(function(){
-    msg.className='msg ok';msg.textContent='Enviado. Revisa el correo en unos minutos (y la carpeta de spam, por si acaso).';btn.textContent='Enviado';
+  window.submitConfirmed(LEADS_URL,payload,'json').then(function(){
+    msg.className='msg ok';msg.textContent='Solicitud registrada. El resultado también sigue disponible en pantalla.';btn.textContent='Enviado';
     setTimeout(closeModal,1800);
-  }).catch(function(){msg.textContent='No se ha podido enviar. Prueba otra vez o escríbeme por WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
+  }).catch(function(){msg.textContent='No hemos podido confirmar la recepción. Tus datos siguen en pantalla. Antes de repetir el envío, consulta en juan@platamarine.com o por WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
 };
 
 function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
@@ -212,8 +212,10 @@ el('again').onclick=function(){el('questions').innerHTML='';el('endbar').classLi
       <a href="../aviso-legal.html">Aviso legal</a> · <a href="../privacidad.html">Privacidad</a> · <a href="../cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Web por rotulito.com</a>
     </div>
   </div>
-</footer>
+<p class="wrap"><button type="button" data-cookie-settings>Configurar cookies</button></p></footer>
 </body>
 </html>
 
-<script src="/analytics.js" defer></script>
+<script src="/consent.js" defer></script>
+<script src="/submit-confirmed.js" defer></script>
+<script src="/analytics.js?v=20260912" defer></script>

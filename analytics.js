@@ -1,32 +1,3 @@
-/* Plata Marine · Google Analytics 4 con consentimiento (RGPD) */
-(function(){
-  var ID='G-MJ6S489CXQ', KEY='pm_cookies';
-  window.dataLayer=window.dataLayer||[];
-  function gtag(){dataLayer.push(arguments);}
-  window.gtag=gtag;
-  gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
-  function load(){
-    if(window.__pmga) return; window.__pmga=true;
-    var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id='+ID; document.head.appendChild(s);
-    gtag('js',new Date()); gtag('config',ID,{anonymize_ip:true});
-  }
-  function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
-  function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
-  function accept(){window.__pmAnalyticsAllowed=true;gtag('consent','update',{analytics_storage:'granted'}); load();}
-  var c=get();
-  if(c==='all'){accept();return;}
-  if(c==='essential'){return;}
-  function show(){
-    var css='#pm-ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:520px;margin:0 auto;background:#0E3042;color:#E3E9EC;border-top:3px solid #B7C3CB;border-radius:10px;padding:18px 20px;box-shadow:0 18px 45px rgba(13,28,39,.35);font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:1.5}#pm-ck p{margin:0 0 12px}#pm-ck a{color:#fff}#pm-ck .b{display:flex;gap:10px;flex-wrap:wrap}#pm-ck button{font:600 14px "Archivo","Helvetica Neue",Arial,sans-serif;padding:10px 16px;border-radius:7px;cursor:pointer;border:1px solid rgba(255,255,255,.55);background:transparent;color:#fff}#pm-ck button.ok{background:#B58A2C;border-color:#B58A2C;color:#0D1C27}@media(min-width:820px){#pm-ck{left:24px;right:auto;bottom:24px;margin:0}}';
-    var st=document.createElement('style'); st.textContent=css; document.head.appendChild(st);
-    var d=document.createElement('div'); d.id='pm-ck'; d.setAttribute('role','dialog'); d.setAttribute('aria-label','Cookies');
-    d.innerHTML='<p>Usamos cookies de Google Analytics solo para saber qué páginas se visitan y mejorar la web. No hay publicidad ni se venden datos. <a href="/cookies.html">Política de cookies</a>.</p><div class="b"><button type="button" class="ok" id="pm-ck-all">Aceptar todas</button><button type="button" id="pm-ck-ess">Solo necesarias</button></div>';
-    document.body.appendChild(d);
-    document.getElementById('pm-ck-all').onclick=function(){set('all');accept();d.remove();};
-    document.getElementById('pm-ck-ess').onclick=function(){set('essential');d.remove();};
-  }
-  if(document.body) show(); else document.addEventListener('DOMContentLoaded',show);
-})();
 /* Menú móvil en páginas interiores (la home ya trae el suyo) */
 (function(){
   function init(){
@@ -85,9 +56,9 @@
   if(!/^\/(guias|actualidad|navegante|titulaciones)\//.test(p)) return;
   function get(){try{return JSON.parse(localStorage.getItem(KEY)||'null');}catch(e){return null;}}
   function set(v){try{localStorage.setItem(KEY,JSON.stringify({v:v,t:Date.now()}));}catch(e){}}
-  var s=get(); if(s&&(s.v==='ok'||Date.now()-s.t<30*864e5)) return;
+  var s=get(); if(s&&Date.now()-s.t<365*864e5&&(s.v==='ok'||Date.now()-s.t<30*864e5)) return; if(s){try{localStorage.removeItem(KEY);}catch(e){}}
   var shown=false, timer=null;
-  function ready(){ if(document.getElementById('pm-ck')) return false; var m=document.getElementById('pmModal'); if(m&&!m.classList.contains('hidden')) return false; return true; }
+  function ready(){ var ck=document.getElementById('privacy-choice'); if(ck&&!ck.hidden) return false; var m=document.getElementById('pmModal'); if(m&&!m.classList.contains('hidden')) return false; return true; }
   function show(){
     if(shown) return; if(!ready()){ setTimeout(show,8000); return; } shown=true;
     var css='#pm-nl{position:fixed;right:16px;bottom:16px;left:16px;z-index:9990;max-width:360px;margin-left:auto;background:#fff;color:#0D1C27;border-top:3px solid #B58A2C;border-radius:10px;padding:18px 20px 16px;box-shadow:0 18px 45px rgba(13,28,39,.28);font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:1.45;transform:translateY(20px);opacity:0;transition:.35s ease}#pm-nl.in{transform:none;opacity:1}#pm-nl h4{font-size:16px;margin:0 28px 6px 0;line-height:1.25}#pm-nl p{margin:0 0 10px;color:#3E5462}#pm-nl input[type=email]{width:100%;box-sizing:border-box;font:15px "Archivo","Helvetica Neue",Arial,sans-serif;padding:9px 11px;border:1px solid #B7C3CB;border-radius:6px;margin:0 0 8px}#pm-nl label{display:flex;gap:7px;align-items:flex-start;font-size:12px;color:#3E5462;margin:0 0 10px}#pm-nl label a{color:#0E3042}#pm-nl button.go{font:600 14px "Archivo","Helvetica Neue",Arial,sans-serif;padding:9px 16px;border-radius:7px;cursor:pointer;border:0;background:#128C7E;color:#fff}#pm-nl button.x{position:absolute;top:8px;right:8px;width:30px;height:30px;border:0;background:transparent;font-size:20px;line-height:1;cursor:pointer;color:#7F929E}#pm-nl .m{font-size:12.5px;color:#c0392b;margin:8px 0 0}#pm-nl .m.ok{color:#2e8b57}#pm-nl .lg{font-size:10.5px;color:#7F929E;margin:10px 0 0;line-height:1.4}@media(max-width:480px){#pm-nl{left:12px;right:12px;bottom:12px}}';
@@ -101,11 +72,11 @@
       if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){m.textContent='Revisa el correo, no parece correcto.';return;}
       if(!ok){m.textContent='Marca la casilla para que pueda escribirte.';return;}
       var b=d.querySelector('.go'); b.disabled=true; b.textContent='Enviando…';
-      fetch(URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify({source:'novedades',email:em,consent:true,newsletter:true,consent_v:'2026-09',consent_at:new Date().toISOString(),page:p,ua:navigator.userAgent.slice(0,120)})}).then(function(){
-        set('ok'); m.className='m ok'; m.textContent='Apuntado. Te llega un correo de bienvenida en unos minutos.'; b.textContent='Listo';
-        try{if(window.pmTrack)window.pmTrack('newsletter_request',{});}catch(x){}
+      window.submitConfirmed(URL,{source:'novedades',email:em,consent:true,newsletter:true,consent_v:'2026-09',consent_at:new Date().toISOString(),page:p,ua:navigator.userAgent.slice(0,120)},'json').then(function(){
+        set('ok'); m.className='m ok'; m.textContent='Solicitud registrada. Gracias por apuntarte.'; b.textContent='Listo';
+        try{if(window.pmTrack)window.pmTrack('newsletter_signup',{});}catch(x){}
         setTimeout(function(){d.remove();},3000);
-      }).catch(function(){m.textContent='No se ha podido enviar. Prueba otra vez más tarde.';b.disabled=false;b.textContent='Apuntarme';});
+      }).catch(function(){m.textContent='No hemos podido confirmar el alta. Antes de repetirla, consulta en juan@platamarine.com.';b.disabled=false;b.textContent='Apuntarme';});
     };
   }
   function onScroll(){ var h=document.documentElement; var pct=(h.scrollTop+window.innerHeight)/h.scrollHeight; if(pct>0.6){ window.removeEventListener('scroll',onScroll); show(); } }
