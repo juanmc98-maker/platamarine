@@ -56,6 +56,13 @@
     <p style="max-width:62ch;color:var(--ink-2)">Estas son las embarcaciones que gestiono ahora mismo. Cada ficha lleva especificaciones, mi opinión sobre el barco y un PDF descargable. Si alguna te encaja, hablamos y organizamos la visita. Y si no está el tuyo, <a href="../alertas/">crea una alerta</a> y te aviso cuando entre.</p>
     <style>
     .bgrid{display:grid;grid-template-columns:1fr;gap:28px;margin-top:32px}
+    .bfilters{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;margin-top:24px;padding:16px 20px;background:var(--paper-2);border-radius:var(--radius)}
+    .bfilters label{display:flex;flex-direction:column;gap:4px;font-size:.8rem;font-weight:600;color:var(--ink-2)}
+    .bfilters select{font:inherit;font-size:.92rem;padding:7px 10px;border-radius:8px;border:1px solid rgba(127,146,158,.4);background:#fff;color:var(--ink)}
+    .bfilters .fchk{flex-direction:row;align-items:center;gap:8px;font-weight:600}
+    .bfilters .fchk input{width:16px;height:16px}
+    .bempty{margin-top:28px;padding:18px 20px;background:var(--paper-2);border-radius:var(--radius);color:var(--ink-2)}
+
     @media (min-width:820px){.bgrid{grid-template-columns:1fr 1fr;gap:32px}}
     .bcard{background:#fff;border:1px solid rgba(127,146,158,.28);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
     .bimg{position:relative;display:block;background:var(--paper-2)}.bimg img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block}
@@ -72,8 +79,14 @@
     .langsw a{padding:3px 7px;border-radius:4px;text-decoration:none;color:inherit;opacity:.65}
     .langsw a[aria-current="page"]{opacity:1;text-decoration:underline}
     </style>
+    <div class="bfilters" role="search" aria-label="Filtrar barcos">
+      <label>Precio<select id="fPrecio"><option value="">Cualquiera</option><option value="0-15000">Hasta 15.000 €</option><option value="15000-30000">15.000 – 30.000 €</option><option value="30000-60000">30.000 – 60.000 €</option><option value="60000-120000">60.000 – 120.000 €</option><option value="120000-">Más de 120.000 €</option></select></label>
+      <label>Eslora<select id="fEslora"><option value="">Cualquiera</option><option value="0-6">Hasta 6 m</option><option value="6-9">6 – 9 m</option><option value="9-12">9 – 12 m</option><option value="12-">Más de 12 m</option></select></label>
+      <label class="fchk"><input type="checkbox" id="fVendidos"> Ocultar vendidos</label>
+    </div>
+    <p id="fEmpty" class="bempty" hidden>No hay barcos que encajen con este filtro. <a href="../alertas/">Crea una alerta</a> y te aviso cuando entre uno.</p>
     <div class="bgrid">
-      <article class="bcard">
+      <article class="bcard" data-price="49990" data-length="8.4">
         <a class="bimg" href="monterey-278-ss.html"><img src="../monterey-278-ss-1.jpg" alt="Monterey 278 SS fondeada en una cala de la Costa Brava" loading="lazy" width="1600" height="900"><span class="status">En gestión</span></a>
         <div class="bbody">
           <div class="head" style="margin:0 0 6px"><h2><a href="monterey-278-ss.html">Monterey 278 SS</a></h2><p class="price">49.990 €</p></div>
@@ -82,7 +95,7 @@
           <div class="bcta"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20me%20interesa%20la%20Monterey%20278%20SS%20de%202011%20que%20ten%C3%A9is%20en%20venta.%20%C2%BFPodemos%20hablar%3F" target="_blank" rel="noopener">Preguntar por WhatsApp</a><a class="btn btn-ghost" href="monterey-278-ss.html">Ver ficha</a></div>
         </div>
       </article>
-      <article class="bcard">
+      <article class="bcard is-sold" data-price="11990" data-length="5.0">
         <a class="bimg" href="ranieri-azzurra-5m.html"><img src="../ranieri-azzurra-1.jpg" alt="Ranieri Azzurra de 5 metros fondeada cerca de la costa" loading="lazy" width="1600" height="900"><span class="status sold">Vendido</span></a>
         <div class="bbody">
           <div class="head" style="margin:0 0 6px"><h2><a href="ranieri-azzurra-5m.html">Ranieri Azzurra 5 m</a></h2><p class="price">11.990 €</p></div>
@@ -98,6 +111,33 @@
       <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20estoy%20pensando%20en%20vender%20mi%20barco.%20Modelo%3A%20%20%7C%20A%C3%B1o%3A%20%20%7C%20Motor%20y%20horas%3A%20%20%7C%20Puerto%3A%20" target="_blank" rel="noopener">Quiero vender mi barco</a>
     </div>
   </div>
+<script>
+(function(){
+  var precio=document.getElementById('fPrecio'), eslora=document.getElementById('fEslora'), vend=document.getElementById('fVendidos');
+  if(!precio) return;
+  var cards=[].slice.call(document.querySelectorAll('.bcard'));
+  var empty=document.getElementById('fEmpty');
+  function parseRange(v){ if(!v) return null; var p=v.split('-'); return [p[0]?parseFloat(p[0]):0, p[1]?parseFloat(p[1]):Infinity]; }
+  function apply(){
+    var pr=parseRange(precio.value), es=parseRange(eslora.value), hideSold=vend.checked, visible=0;
+    cards.forEach(function(c){
+      var price=parseFloat(c.getAttribute('data-price')||'0');
+      var length=parseFloat(c.getAttribute('data-length')||'0');
+      var sold=c.classList.contains('is-sold');
+      var ok=true;
+      if(pr && (price<pr[0] || price>pr[1])) ok=false;
+      if(es && (length<es[0] || length>es[1])) ok=false;
+      if(hideSold && sold) ok=false;
+      c.style.display = ok? '' : 'none';
+      if(ok) visible++;
+    });
+    empty.hidden = visible>0;
+  }
+  precio.addEventListener('change', apply);
+  eslora.addEventListener('change', apply);
+  vend.addEventListener('change', apply);
+})();
+</script>
 </main>
 
 <footer class="foot">
