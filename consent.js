@@ -1,8 +1,35 @@
-/* Consentimiento de analítica. Publicidad desactivada. Versión 2026-09-12. */
+/* Consentimiento de analítica. Publicidad desactivada. Versión 2026-09-14. */
 (function () {
   'use strict';
   var ID = 'G-MJ6S489CXQ', KEY = 'pm_privacy_v2', OLD = 'pm_cookies';
   var VERSION = '2026-09-12', MAX_AGE = 365 * 86400000, allowed = false, loaded = false, box, opener;
+  var AKEY = 'pm_attr', AMAX = 90 * 86400000;
+  /* Atribución de origen (UTM/gclid/referrer), solo con consentimiento de analítica.
+     No es publicidad ni remarketing: es texto de la propia URL/referrer, guardado en
+     local para saber por qué canal llegó cada lead. No se comparte con terceros. */
+  function captureAttribution() {
+    try {
+      var q = new URLSearchParams(location.search), data = {}, campaignKeys =
+        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid'];
+      campaignKeys.forEach(function (k) { var v = q.get(k); if (v) data[k] = v.slice(0, 150); });
+      var hasCampaign = Object.keys(data).length > 0;
+      var ref = document.referrer, extRef = ref && ref.indexOf(location.origin) !== 0 ? ref.slice(0, 300) : '';
+      if (hasCampaign) {
+        if (extRef) data.referrer = extRef;
+        data.landing = location.pathname; data.at = Date.now();
+        localStorage.setItem(AKEY, JSON.stringify(data));
+        return;
+      }
+      var existing = null;
+      try { existing = JSON.parse(localStorage.getItem(AKEY)); } catch (_) {}
+      if (existing && existing.at && Date.now() - existing.at < AMAX) return;
+      if (extRef) localStorage.setItem(AKEY, JSON.stringify({ referrer: extRef, landing: location.pathname, at: Date.now() }));
+      else if (!existing) localStorage.setItem(AKEY, JSON.stringify({ source: 'direct', landing: location.pathname, at: Date.now() }));
+    } catch (_) {}
+  }
+  window.pmAttribution = function () {
+    try { return JSON.parse(localStorage.getItem(AKEY)) || null; } catch (_) { return null; }
+  };
   window.dataLayer = window.dataLayer || [];
   window.gtag = function () { window.dataLayer.push(arguments); };
   window.gtag('consent', 'default', {analytics_storage:'denied', ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied'});
@@ -31,13 +58,16 @@
   function enable() {
     allowed = true; window.__pmAnalyticsAllowed = true; window['ga-disable-' + ID] = false;
     window.gtag('consent', 'update', {analytics_storage:'granted', ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied'});
+    captureAttribution();
     if (loaded) return;
     loaded = true; window.__pmga = true;
     var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID; document.head.appendChild(s);
     window.gtag('js', new Date());
-    // No query strings, fragment identifiers, form data or external link text in analytics.
-    window.gtag('config', ID, {send_page_view:false, allow_google_signals:false, allow_ad_personalization_signals:false, cookie_expires:31536000, cookie_update:false, page_location:location.origin + location.pathname, page_referrer:'', ignore_referrer:true});
-    window.gtag('event', 'page_view', {page_location:location.origin + location.pathname, page_referrer:'', page_title:document.title});
+    // Fragment identifiers and form data never leave the page; the real URL (with utm/gclid) and
+    // referrer ARE sent, only under analytics consent, so GA4 can attribute source/medium/campaign.
+    // Google Signals and ad personalization stay OFF regardless (ad_storage denied above).
+    window.gtag('config', ID, {send_page_view:false, allow_google_signals:false, allow_ad_personalization_signals:false, cookie_expires:31536000, cookie_update:false});
+    window.gtag('event', 'page_view', {page_location:location.href, page_referrer:document.referrer, page_title:document.title});
   }
   function disable() {
     allowed = false; window.__pmAnalyticsAllowed = false; window['ga-disable-' + ID] = true;
