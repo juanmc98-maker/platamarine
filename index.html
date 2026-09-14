@@ -439,7 +439,7 @@ section[id]{scroll-margin-top:78px}
 .steps .step p{max-width:none}
 .sec-lead{max-width:62ch;margin-top:14px;font-size:1.05rem;color:var(--ink-2)}
 @media (min-width:820px){#vender .steps{grid-template-columns:1fr 1fr;gap:0 56px}}
-.langsw{display:flex;gap:6px;align-items:center;font-size:.78rem;font-weight:600}
+.langsw{display:flex;gap:6px;align-items:center;font-size:.78rem;font-weight:600}.langsw a{display:inline-flex;align-items:center;padding:3px;border-radius:4px}.langsw a[aria-current="page"]{background:rgba(13,28,39,.08)}.flag{display:block;width:20px;height:14px;border-radius:2px;box-shadow:inset 0 0 0 1px rgba(13,28,39,.18);background-size:cover;background-position:center}.flag-es{background-image:linear-gradient(#AA151B 0 25%,#F1BF00 25% 75%,#AA151B 75% 100%)}.flag-ca{background-image:repeating-linear-gradient(#FFCE00 0 11.11%,#DA121A 11.11% 22.22%)}.flag-en{background-color:#00247D;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 36'%3E%3Cpath d='M0 0L60 36M60 0L0 36' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0L60 36M60 0L0 36' stroke='%23C8102E' stroke-width='2.4'/%3E%3Cpath d='M30 0V36M0 18H60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30 0V36M0 18H60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E")}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .langsw a{padding:3px 7px;border-radius:4px;text-decoration:none;color:var(--ink-2,inherit)}
 .langsw a[aria-current="page"]{color:var(--ink,inherit);text-decoration:underline}
 </style>
@@ -462,7 +462,7 @@ section[id]{scroll-margin-top:78px}
       <a href="#contacto">Contacto</a>
     </nav>
     <a class="btn btn-wa top-cta" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20hablar%20sobre%20un%20barco." target="_blank" rel="noopener">Hablar con Juan</a>
-    <div class="langsw" aria-label="Idioma"><a href="https://www.platamarine.com/" aria-current="page">ES</a><a href="https://www.platamarine.com/ca/">CA</a><a href="https://www.platamarine.com/en/">EN</a></div>
+    <div class="langsw" aria-label="Idioma"><a href="https://www.platamarine.com/" aria-current="page"><span class="flag flag-es" aria-hidden="true"></span><span class="sr-only">ES</span></a><a href="https://www.platamarine.com/ca/"><span class="flag flag-ca" aria-hidden="true"></span><span class="sr-only">CA</span></a><a href="https://www.platamarine.com/en/"><span class="flag flag-en" aria-hidden="true"></span><span class="sr-only">EN</span></a></div>
     <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="mobileNav" aria-label="Abrir menú"><span></span></button>
   </div>
   <nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil">
