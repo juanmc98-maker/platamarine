@@ -145,7 +145,8 @@ var Q=[
    {"t":"Walkaround","v":{"tipo":"walkaround"}},
    {"t":"Cabinado o cruiser","v":{"tipo":"cabinado"}},
    {"t":"Pilothouse","v":{"tipo":"pilothouse"}},
-   {"t":"Fly (flybridge)","v":{"tipo":"fly"}}
+   {"t":"Fly (flybridge)","v":{"tipo":"fly"}},
+   {"t":"No estoy seguro / No lo sé","v":{"tipo":"sin identificar"}}
  ]},
  {"id":"eslora","q":"¿Qué eslora tiene?","o":[
    {"t":"Menos de 6 metros","v":{"eslora":"menos de 6 m"}},
@@ -161,9 +162,11 @@ var Q=[
    {"t":"De 2000 a 2009","v":{"anio":"2000-2009","etapa":"medio"}},
    {"t":"Anterior a 2000","v":{"anio":"anterior a 2000","etapa":"clasico"}}
  ]},
- {"id":"motor","q":"¿Motor fueraborda o intraborda?","o":[
-   {"t":"Fueraborda","v":{"motor":"fueraborda"}},
-   {"t":"Intraborda o dentrofueraborda","v":{"motor":"intraborda"}},
+ {"id":"motor","q":"¿Qué motor lleva?","o":[
+   {"t":"Fueraborda (gasolina)","v":{"motor":"fueraborda gasolina"}},
+   {"t":"Intraborda diésel","v":{"motor":"intraborda diésel"}},
+   {"t":"Intraborda gasolina","v":{"motor":"intraborda gasolina"}},
+   {"t":"Vela, con motor auxiliar","v":{"motor":"vela con auxiliar"}},
    {"t":"Más de un motor","v":{"motor":"varios motores"}}
  ]},
  {"id":"horas","q":"¿Cuántas horas tiene el motor?","o":[
@@ -222,16 +225,37 @@ function render(){
   Q.forEach(function(q,i){
     h+='<div class="qcard" id="q'+i+'"><span class="step">Pregunta '+(i+1)+' de '+Q.length+'</span><h3>'+q.q+'</h3>';
     q.o.forEach(function(o,j){h+='<label class="opt"><input type="radio" name="q'+i+'" value="'+j+'"> <span>'+o.t+'</span></label>'});
+if(q.id==='tipo'){h+='<p class="hint" style="margin-top:10px">¿Sabes la marca y el modelo? (opcional)</p><input type="text" id="marcaModelo" placeholder="Marca y modelo" style="width:100%;font:15px var(--serif);padding:9px 10px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box">';}
+if(q.id==='motor'){h+='<p class="hint" style="margin-top:10px">Potencia en CV, si la sabes (opcional)</p><input type="text" id="potenciaCV" placeholder="Ej. 250 CV" style="width:100%;font:15px var(--serif);padding:9px 10px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box">';}
+if(q.id==='anunciado'){h+='<div class="qcard hidden" id="qDonde"><h3>¿Dónde lo tienes anunciado?</h3>'+[['wallapop','Wallapop u otro clasificado'],['portal','Portal náutico especializado'],['broker','Con otro broker'],['redes','Redes sociales'],['otro','Otro']].map(function(e){return '<label class="opt"><input type="radio" name="donde" value="'+e[0]+'"> <span>'+e[1]+'</span></label>'}).join('')+'</div><div class="qcard hidden" id="qExclusiva"><h3>¿Se lo has dado en exclusiva a ese broker?</h3><label class="opt"><input type="radio" name="exclusiva" value="si"> <span>Sí, en exclusiva</span></label><label class="opt"><input type="radio" name="exclusiva" value="no"> <span>No, sin exclusiva</span></label></div>';}
+
     h+='</div>';
   });
-  el('questions').innerHTML=h;el('endbar').classList.remove('hidden');el('check').classList.remove('hidden');el('result').classList.add('hidden');
+  h+='<div class="qcard" id="qEquipo"><span class="step">Opcional</span><h3>Equipamiento y extras</h3><p class="hint">Marca lo que lleve (no hace falta para ver el resultado).</p>'+[['toldo','Toldo o bimini'],['plotter','Plotter / GPS'],['molinete','Molinete eléctrico'],['duchapopa','Ducha de popa'],['wc','WC'],['aa','Aire acondicionado'],['generador','Generador'],['pasarela','Pasarela'],['bow','Hélice de proa (bow thruster)']].map(function(e){return '<label class="opt"><input type="checkbox" name="equipo" value="'+e[0]+'"> <span>'+e[1]+'</span></label>'}).join('')+'</div>';
+el('questions').innerHTML=h;el('endbar').classList.remove('hidden');el('check').classList.remove('hidden');el('result').classList.add('hidden');
   document.querySelectorAll('#questions input').forEach(function(x){x.addEventListener('change',prog)});prog();
+el('questions').addEventListener('change',function(e){
+if(e.target.name && /^q\d+$/.test(e.target.name)){
+var qi=parseInt(e.target.name.substring(1));
+if(Q[qi] && Q[qi].id==='anunciado'){
+var val=Q[qi].o[parseInt(e.target.value)].v.anunciado;var show=(val!=='no');
+el('qDonde').classList.toggle('hidden',!show);if(!show)el('qExclusiva').classList.add('hidden');
+}}
+if(e.target.name==='donde'){el('qExclusiva').classList.toggle('hidden',e.target.value!=='broker');}
+});
+
 }
 function prog(){var n=0;Q.forEach(function(q,i){if(document.querySelector('input[name=q'+i+']:checked'))n++});el('prog').style.width=Math.round(100*n/Q.length)+'%';}
 function check(){
   var missing=[];Q.forEach(function(q,i){if(!document.querySelector('input[name=q'+i+']:checked'))missing.push(i)});
   if(missing.length){var c=el('q'+missing[0]);c.style.borderColor='#c0392b';window.scrollTo({top:c.offsetTop-90,behavior:'smooth'});return;}
   var v={};Q.forEach(function(q,i){var sel=document.querySelector('input[name=q'+i+']:checked');var o=q.o[parseInt(sel.value)];Object.assign(v,o.v||{});});
+v.marca=(el('marcaModelo')&&el('marcaModelo').value.trim())||'';
+v.potencia=(el('potenciaCV')&&el('potenciaCV').value.trim())||'';
+v.equipo=Array.from(document.querySelectorAll('input[name=equipo]:checked')).map(function(x){return x.value}).join(', ');
+var dSel=document.querySelector('input[name=donde]:checked');v.donde=dSel?dSel.value:'';
+var eSel=document.querySelector('input[name=exclusiva]:checked');v.exclusiva=eSel?eSel.value:'';
+
 
   var notes=[];
   if(v.etapa==='nuevo')notes.push('Con menos de 5 años todavía estás en la parte más rápida de la depreciación: pequeñas diferencias de estado o de horas pesan mucho en el precio.');
@@ -254,14 +278,19 @@ function check(){
   if(v.anunciado==='antiguo')notes.push('Un anuncio que lleva meses sin moverse casi nunca es un problema del barco en sí: suele ser precio, fotos o dónde está publicado. Merece la pena revisarlo antes de bajar el precio a lo loco.');
   else if(v.anunciado==='no')notes.push('Sin nada publicado todavía, lo primero es un precio de salida bien argumentado, no solo publicar y esperar.');
 
-  var h='<h2>Lo que más va a pesar en el precio de tu '+v.tipo+'</h2>';
-  h+='<p>Con '+v.eslora+', de '+v.anio+' y motor '+v.motor+', esto es lo que miraría yo primero:</p>';
+  if(v.donde==='broker'){notes.push(v.exclusiva==='si'?'Si ya lo llevas en exclusiva con otro broker, revisa las condiciones de salida del contrato antes de moverlo con nadie más.':'Si lo lleva otro broker sin exclusiva, puedes seguir mirando otras opciones sin problema.');}
+else if(v.donde==='wallapop')notes.push('Wallapop da mucha visibilidad pero también mucha curiosidad sin intención real de compra: conviene filtrar bien antes de enseñar el barco.');
+else if(v.donde==='portal')notes.push('Estar en un portal especializado es buen punto de partida: conviene revisar que las fotos y el precio estén actualizados.');
+else if(v.donde==='redes')notes.push('Las redes dan visibilidad pero pocas veces cierran una venta solas: conviene combinarlas con un anuncio en un portal serio.');
+var h='<h2>Lo que más va a pesar en el precio de tu '+(v.marca?v.marca:v.tipo)+'</h2>';
+  h+='<p>Con '+v.eslora+', de '+v.anio+' y motor '+v.motor+(v.potencia?' ('+v.potencia+')':'')+', esto es lo que miraría yo primero:</p>';
   h+='<ul>';notes.forEach(function(n){h+='<li>'+n+'</li>'});h+='</ul>';
   h+='<h3>Para seguir</h3><p><a href="../guias/precio-barco-ocasion.html">Cómo poner precio a un barco de ocasión</a> · <a href="../guias/papeles-vender-barco-cambio-titularidad.html">Papeles para vender</a></p>';
-  h+='<p style="margin-top:14px"><a class="btn btn-wa" href="https://wa.me/34633742973?text='+encodeURIComponent('Hola Juan, he hecho la valoración de mi barco en la web. Es un '+v.tipo+' de '+v.eslora+', año '+v.anio+', motor '+v.motor+' ('+v.horas+' horas), mantenimiento '+v.mantenimiento+', papeles '+v.papeles+', en '+v.zona+'. Anunciado: '+v.anunciado+'. ¿Lo miramos?')+'" target="_blank" rel="noopener">Cuéntamelo por WhatsApp</a></p>';
-  el('result').innerHTML=h;el('result').classList.remove('hidden');el('check').classList.add('hidden');
-  var det='Tipo: '+v.tipo+' | Eslora: '+v.eslora+' | Año: '+v.anio+' | Motor: '+v.motor+' | Horas: '+v.horas+' | Mantenimiento: '+v.mantenimiento+' | Papeles: '+v.papeles+' | Zona: '+v.zona+' | Anunciado: '+v.anunciado;
-  openLeadModal({source:'valora-tu-barco',intent:'vendedor',ok:'',total:'',pass:true,detail:det,page:location.pathname,ua:navigator.userAgent.slice(0,120)},'result');
+  var waTexto='Hola Juan, he hecho la valoración de mi barco en la web. Es un '+(v.marca?v.marca+' — '+v.tipo:v.tipo)+' de '+v.eslora+', año '+v.anio+', motor '+v.motor+(v.potencia?' ('+v.potencia+')':'')+' ('+v.horas+' horas), mantenimiento '+v.mantenimiento+', papeles '+v.papeles+', en '+v.zona+'. Anunciado: '+v.anunciado+(v.donde?' en '+v.donde:'')+(v.exclusiva?' (exclusiva: '+v.exclusiva+')':'')+'. ¿Lo miramos?';
+h+='<p style="margin-top:14px"><a class="btn btn-wa" href="https://wa.me/34633742973?text='+encodeURIComponent(waTexto)+'" target="_blank" rel="noopener">Cuéntamelo por WhatsApp</a></p>';
+el('result').innerHTML=h;el('result').classList.remove('hidden');el('check').classList.add('hidden');
+  var det='Tipo: '+v.tipo+(v.marca?' ('+v.marca+')':'')+' | Eslora: '+v.eslora+' | Año: '+v.anio+' | Motor: '+v.motor+(v.potencia?' '+v.potencia:'')+' | Horas: '+v.horas+' | Mantenimiento: '+v.mantenimiento+' | Papeles: '+v.papeles+' | Zona: '+v.zona+' | Anunciado: '+v.anunciado+(v.donde?' ('+v.donde+(v.exclusiva?', exclusiva '+v.exclusiva:'')+')':'')+(v.equipo?' | Equipamiento: '+v.equipo:'');
+openLeadModal({source:'valora-tu-barco',intent:'vendedor',ok:'',total:'',pass:true,detail:det,page:location.pathname,ua:navigator.userAgent.slice(0,120)},'result');
 }
 el('check').onclick=check;
 el('again').onclick=function(){render();window.scrollTo({top:el('qz').offsetTop-90,behavior:'smooth'})};
