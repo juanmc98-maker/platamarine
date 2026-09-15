@@ -4,7 +4,11 @@ window.submitConfirmed = async function (url, body, encoding) {
   var timer = setTimeout(function () { controller.abort(); }, 45000);
   try {
     var options = {method:'POST', credentials:'omit', signal:controller.signal};
-    if (encoding === 'json') { options.headers = {'Content-Type':'text/plain;charset=UTF-8'}; options.body = JSON.stringify(body); }
+    if (encoding === 'json') {
+      var attribution = (window.pmAttribution && window.pmAttribution()) || null;
+      var payload = attribution ? Object.assign({}, body, {attribution:attribution}) : body;
+      options.headers = {'Content-Type':'text/plain;charset=UTF-8'}; options.body = JSON.stringify(payload);
+    }
     else options.body = body;
     var response = await fetch(url, options);
     if (!response.ok || response.type === 'opaque') throw new Error('unconfirmed');
