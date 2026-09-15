@@ -1,9 +1,24 @@
-/* Consentimiento de analítica. Publicidad desactivada. Versión 2026-09-14. */
+/* Consentimiento de analítica. Publicidad desactivada. Versión 2026-09-12. i18n ES/CA/EN. */
 (function () {
   'use strict';
   var ID = 'G-MJ6S489CXQ', KEY = 'pm_privacy_v2', OLD = 'pm_cookies';
   var VERSION = '2026-09-12', MAX_AGE = 365 * 86400000, allowed = false, loaded = false, box, opener;
   var AKEY = 'pm_attr', AMAX = 90 * 86400000;
+  var LANG = location.pathname.indexOf('/ca/') === 0 ? 'ca' : (location.pathname.indexOf('/en/') === 0 ? 'en' : 'es');
+  var T = {
+    es: {
+      aria: 'Preferencias de cookies',
+      html: '<p><strong>Tú decides sobre las cookies.</strong> Con tu permiso, Google Analytics mide las visitas a esta web. No activamos cookies publicitarias. Puedes rechazar la analítica y usar todos los servicios. Guardamos tu elección durante 12 meses. <a href="/cookies.html">Política de cookies</a>.</p><div class="choices"><button type="button" data-choice="no">Rechazar analítica</button><button type="button" data-choice="yes">Aceptar analítica</button></div>'
+    },
+    ca: {
+      aria: 'Preferències de galetes',
+      html: '<p><strong>Tu decideixes sobre les galetes.</strong> Amb el teu permís, Google Analytics mesura les visites d\'aquesta web. No activem galetes publicitàries. Pots rebutjar l\'analítica i fer servir tots els serveis. Guardem la teva elecció durant 12 mesos. <a href="/ca/cookies.html">Política de galetes</a>.</p><div class="choices"><button type="button" data-choice="no">Rebutjar analítica</button><button type="button" data-choice="yes">Acceptar analítica</button></div>'
+    },
+    en: {
+      aria: 'Cookie preferences',
+      html: '<p><strong>You decide about cookies.</strong> With your permission, Google Analytics measures visits to this site. We don\'t activate advertising cookies. You can reject analytics and still use every service. We keep your choice for 12 months. <a href="/en/cookies.html">Cookie policy</a>.</p><div class="choices"><button type="button" data-choice="no">Reject analytics</button><button type="button" data-choice="yes">Accept analytics</button></div>'
+    }
+  };
   /* Atribución de origen (UTM/gclid/referrer), solo con consentimiento de analítica.
      No es publicidad ni remarketing: es texto de la propia URL/referrer, guardado en
      local para saber por qué canal llegó cada lead. No se comparte con terceros. */
@@ -89,8 +104,8 @@
       var style = document.createElement('style');
       style.textContent = '#privacy-choice[hidden]{display:none!important}#privacy-choice{position:fixed;bottom:16px;left:16px;right:16px;z-index:10000;max-width:560px;margin:auto;padding:20px;background:#fff;color:#171512;border:2px solid #171512;border-radius:8px;box-shadow:0 8px 35px #0003;font:15px/1.5 system-ui,sans-serif;max-height:85vh;overflow:auto}#privacy-choice p{margin:0 0 14px;color:#171512}#privacy-choice a{color:#171512;text-decoration:underline}#privacy-choice .choices{display:flex;gap:12px;flex-wrap:wrap}#privacy-choice button{flex:1;min-width:130px;background:#fff;color:#171512;border:2px solid #171512;border-radius:4px;padding:12px 16px;cursor:pointer;font:600 15px system-ui,sans-serif}#privacy-choice button:focus-visible{outline:3px solid #0067c0;outline-offset:3px}';
       document.head.appendChild(style);
-      box = document.createElement('div'); box.id = 'privacy-choice'; box.setAttribute('role','dialog'); box.setAttribute('aria-label','Preferencias de cookies');
-      box.innerHTML = '<p><strong>Tú decides sobre las cookies.</strong> Con tu permiso, Google Analytics mide las visitas a esta web. No activamos cookies publicitarias. Puedes rechazar la analítica y usar todos los servicios. Guardamos tu elección durante 12 meses. <a href="/cookies.html">Política de cookies</a>.</p><div class="choices"><button type="button" data-choice="no">Rechazar analítica</button><button type="button" data-choice="yes">Aceptar analítica</button></div>';
+      box = document.createElement('div'); box.id = 'privacy-choice'; box.setAttribute('role','dialog'); box.setAttribute('aria-label', T[LANG].aria);
+      box.innerHTML = T[LANG].html;
       document.body.appendChild(box);
       box.querySelector('[data-choice="no"]').onclick = function () { save(false); };
       box.querySelector('[data-choice="yes"]').onclick = function () { save(true); };
