@@ -80,6 +80,7 @@
 
         <div class="pmf">
           <form id="svcItb" novalidate>
+            <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true"><label>Empresa<input type="text" name="empresa_web" tabindex="-1" autocomplete="off"></label></div>
             
             <div class="row">
               <div class="f"><label class="l">Puerto o zona donde está el barco</label><input type="text" name="puerto" placeholder="Port Masnou, Vilanova, marina seca de…"></div>
@@ -109,6 +110,7 @@
 
         <div class="pmf">
           <form id="svcGestoria" novalidate>
+            <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true"><label>Empresa<input type="text" name="empresa_web" tabindex="-1" autocomplete="off"></label></div>
             
             <div class="row">
               <div class="f"><label class="l">Qué trámite necesitas</label><select name="tramite"><option value="">Elige una opción</option><option>Cambio de nombre (compraventa)</option><option>Matriculación de barco nuevo</option><option>Importación / abanderamiento</option><option>Cambio de lista (6ª ↔ 7ª)</option><option>Baja o exportación</option><option>Duplicado de documentación</option><option>Otro (lo cuento abajo)</option></select></div>
@@ -134,6 +136,7 @@
 
         <div class="pmf">
           <form id="svcVaradero" novalidate>
+            <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true"><label>Empresa<input type="text" name="empresa_web" tabindex="-1" autocomplete="off"></label></div>
             
             <div class="row">
               <div class="f"><label class="l">Puerto o zona donde está el barco</label><input type="text" name="puerto" placeholder="Port Masnou, Vilanova, Roses…"></div>
@@ -163,6 +166,7 @@
 
         <div class="pmf">
           <form id="svcTransporte" novalidate>
+            <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true"><label>Empresa<input type="text" name="empresa_web" tabindex="-1" autocomplete="off"></label></div>
             <div class="row">
               <div class="f"><label class="l">Puerto o zona de origen</label><input type="text" name="origen" placeholder="Port Masnou, Vilanova…"></div>
               <div class="f"><label class="l">Puerto o zona de destino</label><input type="text" name="destino" placeholder="Dónde tiene que llegar"></div>
@@ -172,8 +176,8 @@
               <div class="f"><label class="l">Cómo se mueve</label><select name="tipo"><option value="">Elige una opción</option><option>Por carretera (remolque o góndola)</option><option>Navegando (patrón de entrega)</option><option>No lo sé, dime tú qué conviene</option></select></div>
             </div>
             <div class="row">
-              <div class="f"><label class="l">Cuándo</label><input type="text" name="cuando" placeholder="Este mes, fecha concreta, sin prisa…"></div>
-              <div class="f"></div>
+              <div class="f"><label class="l">Fecha deseada</label><input type="date" name="fecha"></div>
+              <div class="f"><label class="l">Flexibilidad</label><select name="flex"><option value="">Elige una opción</option><option>Fecha exacta</option><option>&plusmn;1 día</option><option>&plusmn;3 días</option><option>&plusmn;7 días</option><option>Soy flexible, dime tú qué conviene</option></select></div>
             </div>
             <div class="f"><label class="l">Algo más (opcional)</label><textarea name="mensaje" placeholder="Peso, manga, si tiene quilla fija, si hace falta grúa…"></textarea></div>
 
@@ -239,6 +243,10 @@ function pmVal(f,n){var x=f.querySelector('[name='+n+']');if(!x)return '';if(x.t
 function pmWire(f,build){
   f.addEventListener('submit',function(ev){
     ev.preventDefault();var msg=f.querySelector('.msg');msg.className='msg';msg.textContent='';
+    if(pmVal(f,'empresa_web')){return;}
+    var nom=pmVal(f,'nombre');if(!nom){msg.textContent='Necesito tu nombre para poder ayudarte.';return;}
+    var tel=pmVal(f,'telefono');var telDig=tel.replace(/\D/g,'');
+    if(!tel||telDig.length<9){msg.textContent='Revisa el teléfono, parece incompleto.';return;}
     var em=pmVal(f,'email');
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Revisa el correo, no parece correcto.';return;}
     if(!pmVal(f,'consent')){msg.textContent='Necesito que aceptes la política de privacidad para poder atenderte.';return;}
@@ -256,7 +264,7 @@ function mk(key,fields){return function(f){var parts=[];fields.forEach(function(
 pmWire(document.getElementById('svcItb'),mk('itb',[['puerto','Puerto'],['eslora','Eslora'],['lista','Lista'],['caducidad','Caducidad'],['mensaje','Mensaje']]));
 pmWire(document.getElementById('svcGestoria'),mk('gestoria',[['tramite','Trámite'],['eslora','Eslora'],['mensaje','Mensaje']]));
 pmWire(document.getElementById('svcVaradero'),mk('varadero',[['puerto','Puerto'],['eslora','Eslora'],['trabajo','Trabajo'],['cuando','Cuándo'],['mensaje','Mensaje']]));
-pmWire(document.getElementById('svcTransporte'),mk('transporte',[['origen','Origen'],['destino','Destino'],['eslora','Eslora'],['tipo','Tipo'],['cuando','Cuándo'],['mensaje','Mensaje']]));
+pmWire(document.getElementById('svcTransporte'),mk('transporte',[['origen','Origen'],['destino','Destino'],['eslora','Eslora'],['tipo','Tipo'],['fecha','Fecha deseada'],['flex','Flexibilidad'],['mensaje','Mensaje']]));
 })();
 </script>
 
