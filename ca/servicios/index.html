@@ -84,7 +84,7 @@
 
             <div class="row">
               <div class="f"><label class="l">Port o zona on és el vaixell</label><input type="text" name="puerto" placeholder="Port Masnou, Vilanova, marina seca de…"></div>
-              <div class="f"><label class="l">Eslora</label><input type="text" name="eslora" placeholder="7,5 m"></div>
+              <div class="f"><label class="l">Eslora (m)</label><input type="number" inputmode="decimal" name="eslora" placeholder="7,5" min="1" max="40" step="0.1"></div>
             </div>
             <div class="row">
               <div class="f"><label class="l">Llista de matrícula</label><select name="lista"><option value="">Tria una opció</option><option>6a (lloguer / xàrter)</option><option>7a (ús privat)</option><option>No ho sé</option></select></div>
@@ -114,7 +114,7 @@
 
             <div class="row">
               <div class="f"><label class="l">Quin tràmit necessites</label><select name="tramite"><option value="">Tria una opció</option><option>Canvi de nom (compravenda)</option><option>Matriculació de vaixell nou</option><option>Importació / abanderament</option><option>Canvi de llista (6a ↔ 7a)</option><option>Baixa o exportació</option><option>Duplicat de documentació</option><option>Altre (ho explico a sota)</option></select></div>
-              <div class="f"><label class="l">Eslora</label><input type="text" name="eslora" placeholder="7,5 m"></div>
+              <div class="f"><label class="l">Eslora (m)</label><input type="number" inputmode="decimal" name="eslora" placeholder="7,5" min="1" max="40" step="0.1"></div>
             </div>
             <div class="f"><label class="l">Explica'm el cas (opcional)</label><textarea name="mensaje" placeholder="On és matriculat, si hi ha pressa, si compres a un particular o a una empresa…"></textarea></div>
 
@@ -140,11 +140,11 @@
 
             <div class="row">
               <div class="f"><label class="l">Port o zona on és el vaixell</label><input type="text" name="puerto" placeholder="Port Masnou, Vilanova, Roses…"></div>
-              <div class="f"><label class="l">Eslora</label><input type="text" name="eslora" placeholder="7,5 m"></div>
+              <div class="f"><label class="l">Eslora (m)</label><input type="number" inputmode="decimal" name="eslora" placeholder="7,5" min="1" max="40" step="0.1"></div>
             </div>
             <div class="row">
               <div class="f"><label class="l">Què necessites</label><select name="trabajo"><option value="">Tria una opció</option><option>Varada, neteja d'obra viva i antifouling</option><option>Revisió o reparació de motor</option><option>Òsmosi, pintura o gelcoat</option><option>Hivernatge / guardar el vaixell en sec</option><option>Electrònica o instal·lació</option><option>Altre (ho explico a sota)</option></select></div>
-              <div class="f"><label class="l">Quan</label><input type="text" name="cuando" placeholder="Aquest mes, abans de l'estiu, final de temporada…"></div>
+              <div class="f"><label class="l">Quan</label><select name="cuando"><option value="">Tria una opció</option><option>Com més aviat millor</option><option>Aquesta setmana</option><option>Aquest mes</option><option>Abans de l'estiu</option><option>Final de temporada</option><option>Sense pressa</option></select></div>
             </div>
             <div class="f"><label class="l">Alguna cosa més (opcional)</label><textarea name="mensaje" placeholder="Motor, any, si prefereixes una zona concreta…"></textarea></div>
 
@@ -172,7 +172,7 @@
               <div class="f"><label class="l">Port o zona de destinació</label><input type="text" name="destino" placeholder="On ha d'arribar"></div>
             </div>
             <div class="row">
-              <div class="f"><label class="l">Eslora</label><input type="text" name="eslora" placeholder="7,5 m"></div>
+              <div class="f"><label class="l">Eslora (m)</label><input type="number" inputmode="decimal" name="eslora" placeholder="7,5" min="1" max="40" step="0.1"></div>
               <div class="f"><label class="l">Com es mou</label><select name="tipo"><option value="">Tria una opció</option><option>Per carretera (remolc o góndola)</option><option>Navegant (patró d'entrega)</option><option>No ho sé, digues-me tu què convé</option></select></div>
             </div>
             <div class="row">
