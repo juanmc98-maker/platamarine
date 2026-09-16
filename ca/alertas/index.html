@@ -66,7 +66,7 @@
       <header>
         <p class="eyebrow">Comprar · Alerta</p>
         <h1>Crea una alerta: t'aviso quan entri el vaixell que busques</h1>
-        <div class="meta"><span>Gratuït i sense compromís</span><span>T'escric jo, no un robot</span></div>
+        <div class="meta"><span>Gratuït i sense compromis</span><span>T'escric jo, no un robot</span></div>
         <p class="lead">La majoria dels vaixells bons es venen abans d'arribar als portals. Si em dius què busques, quan entri a cartera un que hi encaixi t'escric directament, amb fotos, preu i el que sé del vaixell. No és un butlletí: si no entra res que t'encaixi, no reps res.</p>
       </header>
 
@@ -84,7 +84,7 @@
             <div class="f"><label class="l" for="a-notas">Alguna cosa més que hagi de saber (opcional)</label><textarea name="notas" id="a-notas" placeholder="Marques que t'agraden, any mínim, fora borda o intraborda, si tens pressa…"></textarea></div>
             <div class="row">
               <div class="f"><label class="l" for="a-nombre">Nom</label><input type="text" name="nombre" id="a-nombre" autocomplete="name" placeholder="Com et dic"></div>
-              <div class="f"><label class="l" for="a-tel">Telèfon</label><input type="tel" name="telefono" id="a-tel" autocomplete="tel" placeholder="Per escriure't per WhatsApp" required></div>
+              <div class="f"><label class="l" for="a-tel">Telèfon</label><input type="tel" name="telefono" id="a-tel" autocomplete="tel" placeholder="Per escriure't per WhatsApp" required inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')"></div>
             </div>
             <div class="f"><label class="l" for="a-email">Correu</label><input type="email" name="email" id="a-email" autocomplete="email" placeholder="tu@correu.com" required></div>
             <label class="chk"><input type="checkbox" name="consent" required> <span>Accepto que Plata Marine guardi aquestes dades per avisar-me quan hi hagi un vaixell que encaixi, segons la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
@@ -108,7 +108,7 @@
       <div class="card">
         <p class="eyebrow">Prefereixes parlar-ho?</p>
         <h3>Explica'm què busques per WhatsApp.</h3>
-        <p>Amb tipus, pressupost i zona ja puc començar a buscar entre particulars. Sense compromís.</p>
+        <p>Amb tipus, pressupost i zona ja puc començar a buscar entre particulars. Sense compromis.</p>
         <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20estic%20buscant%20vaixell.%20Tipus%3A%20%20%7C%20Pressupost%3A%20%20%7C%20Zona%3A%20" target="_blank" rel="noopener">Parlar amb Juan per WhatsApp</a>
       </div>
       <nav class="toc" aria-label="Contingut">
