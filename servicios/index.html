@@ -94,7 +94,7 @@
 
             <div class="row">
               <div class="f"><label class="l">Nombre</label><input type="text" name="nombre" autocomplete="name"></div>
-              <div class="f"><label class="l">Teléfono</label><input type="tel" name="telefono" autocomplete="tel" placeholder="Por si prefieres WhatsApp" required></div>
+              <div class="f"><label class="l">Teléfono</label><input type="tel" name="telefono" autocomplete="tel" placeholder="Por si prefieres WhatsApp" required inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')"></div>
             </div>
             <div class="f"><label class="l">Correo</label><input type="email" name="email" autocomplete="email" placeholder="tu@correo.com" required></div>
             <label class="chk"><input type="checkbox" name="consent" required> <span>Acepto que Plata Marine guarde estos datos para responderme y decirme con quién lo haría, según la <a href="../privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
@@ -120,7 +120,7 @@
 
             <div class="row">
               <div class="f"><label class="l">Nombre</label><input type="text" name="nombre" autocomplete="name"></div>
-              <div class="f"><label class="l">Teléfono</label><input type="tel" name="telefono" autocomplete="tel" placeholder="Por si prefieres WhatsApp" required></div>
+              <div class="f"><label class="l">Teléfono</label><input type="tel" name="telefono" autocomplete="tel" placeholder="Por si prefieres WhatsApp" required inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')"></div>
             </div>
             <div class="f"><label class="l">Correo</label><input type="email" name="email" autocomplete="email" placeholder="tu@correo.com" required></div>
             <label class="chk"><input type="checkbox" name="consent" required> <span>Acepto que Plata Marine guarde estos datos para responderme y decirme con quién lo haría, según la <a href="../privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
@@ -150,7 +150,7 @@
 
             <div class="row">
               <div class="f"><label class="l">Nombre</label><input type="text" name="nombre" autocomplete="name"></div>
-              <div class="f"><label class="l">Teléfono</label><input type="tel" name="telefono" autocomplete="tel" placeholder="Por si prefieres WhatsApp" required></div>
+              <div class="f"><label class="l">Teléfono</label><input type="tel" name="telefono" autocomplete="tel" placeholder="Por si prefieres WhatsApp" required inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')"></div>
             </div>
             <div class="f"><label class="l">Correo</label><input type="email" name="email" autocomplete="email" placeholder="tu@correo.com" required></div>
             <label class="chk"><input type="checkbox" name="consent" required> <span>Acepto que Plata Marine guarde estos datos para responderme y decirme con quién lo haría, según la <a href="../privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
@@ -183,7 +183,7 @@
 
             <div class="row">
               <div class="f"><label class="l">Nombre</label><input type="text" name="nombre" autocomplete="name"></div>
-              <div class="f"><label class="l">Teléfono</label><input type="tel" name="telefono" autocomplete="tel" placeholder="Por si prefieres WhatsApp" required></div>
+              <div class="f"><label class="l">Teléfono</label><input type="tel" name="telefono" autocomplete="tel" placeholder="Por si prefieres WhatsApp" required inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')"></div>
             </div>
             <div class="f"><label class="l">Correo</label><input type="email" name="email" autocomplete="email" placeholder="tu@correo.com" required></div>
             <label class="chk"><input type="checkbox" name="consent" required> <span>Acepto que Plata Marine guarde estos datos para responderme y decirme con quién lo haría, según la <a href="../privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
@@ -245,10 +245,10 @@ function pmWire(f,build){
     ev.preventDefault();var msg=f.querySelector('.msg');msg.className='msg';msg.textContent='';
     if(pmVal(f,'empresa_web')){return;}
     var nom=pmVal(f,'nombre');if(!nom){msg.textContent='Necesito tu nombre para poder ayudarte.';return;}
-    var tel=pmVal(f,'telefono');var telDig=tel.replace(/D/g,'');
+    var tel=pmVal(f,'telefono');var telDig=tel.replace(/\D/g,'');
     if(!tel||telDig.length<9){msg.textContent='Revisa el teléfono, parece incompleto.';return;}
     var em=pmVal(f,'email');
-    if(!/^[^@s]+@[^@s]+.[^@s]+$/.test(em)){msg.textContent='Revisa el correo, no parece correcto.';return;}
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Revisa el correo, no parece correcto.';return;}
     if(!pmVal(f,'consent')){msg.textContent='Necesito que aceptes la política de privacidad para poder atenderte.';return;}
     var p=build(f);if(!p){return;}
     p.email=em;p.consent=true;p.consent_v='2026-09';p.consent_at=new Date().toISOString();p.page=location.pathname;p.ua=navigator.userAgent.slice(0,120);
