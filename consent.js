@@ -1,4 +1,4 @@
-/* Consentimiento de analÃ­tica y marketing. VersiÃ³n 2026-09-16. i18n ES/CA/EN. */
+/* Consentimiento de analítica y marketing. Versión 2026-09-16. i18n ES/CA/EN. */
 (function () {
 'use strict';
 var GID = 'G-MJ6S489CXQ', FID = '1618955459947483', KEY = 'pm_privacy_v3', OLD = 'pm_cookies', OLD2 = 'pm_privacy_v2';
@@ -9,20 +9,20 @@ var LANG = location.pathname.indexOf('/ca/') === 0 ? 'ca' : (location.pathname.i
 var T = {
 es: {
 aria: 'Preferencias de cookies',
-html: '<p><strong>TÃº decides sobre las cookies.</strong> Con tu permiso, Google Analytics mide las visitas a esta web y Meta (Facebook/Instagram) nos ayuda a medir y mejorar nuestros anuncios. Puedes rechazarlas y usar todos los servicios igualmente. Guardamos tu elecciÃ³n durante 12 meses. <a href="/cookies.html">PolÃ­tica de cookies</a>.</p><div class="choices"><button type="button" data-choice="no">Rechazar todo</button><button type="button" data-choice="analytics">Solo analÃ­tica</button><button type="button" data-choice="all">Aceptar todo</button></div>'
+html: '<p><strong>Tú decides sobre las cookies.</strong> Con tu permiso, medimos las visitas con Google Analytics y, si lo aceptas, usamos cookies de publicidad para medir la eficacia de nuestros anuncios (Google Ads y Meta). Puedes usar la web y los formularios aunque lo rechaces todo. Guardamos tu elección durante 12 meses. <a href="/cookies.html">Política de cookies</a>.</p><div class="choices"><button type="button" data-choice="no">Rechazar todo</button><button type="button" data-choice="analytics">Solo analítica</button><button type="button" data-choice="all">Aceptar todo</button></div>'
 },
 ca: {
-aria: 'PreferÃ¨ncies de galetes',
-html: '<p><strong>Tu decideixes sobre les galetes.</strong> Amb el teu permÃ­s, Google Analytics mesura les visites d\'aquesta web i Meta (Facebook/Instagram) ens ajuda a mesurar i millorar els nostres anuncis. Pots rebutjar-les i fer servir tots els serveis igualment. Guardem la teva elecciÃ³ durant 12 mesos. <a href="/ca/cookies.html">PolÃ­tica de galetes</a>.</p><div class="choices"><button type="button" data-choice="no">Rebutjar-ho tot</button><button type="button" data-choice="analytics">NomÃ©s analÃ­tica</button><button type="button" data-choice="all">Acceptar-ho tot</button></div>'
+aria: 'Preferències de galetes',
+html: '<p><strong>Tu decideixes sobre les galetes.</strong> Amb el teu permís, mesurem les visites amb Google Analytics i, si ho acceptes, fem servir galetes de publicitat per mesurar l\'eficàcia dels nostres anuncis (Google Ads i Meta). Pots utilitzar la web i els formularis encara que ho rebutgis tot. Guardem la teva elecció durant 12 mesos. <a href="/ca/cookies.html">Política de galetes</a>.</p><div class="choices"><button type="button" data-choice="no">Rebutjar-ho tot</button><button type="button" data-choice="analytics">Només analítica</button><button type="button" data-choice="all">Acceptar-ho tot</button></div>'
 },
 en: {
 aria: 'Cookie preferences',
-html: '<p><strong>You decide about cookies.</strong> With your permission, Google Analytics measures visits to this site and Meta (Facebook/Instagram) helps us measure and improve our ads. You can reject them and still use every service. We keep your choice for 12 months. <a href="/en/cookies.html">Cookie policy</a>.</p><div class="choices"><button type="button" data-choice="no">Reject all</button><button type="button" data-choice="analytics">Analytics only</button><button type="button" data-choice="all">Accept all</button></div>'
+html: '<p><strong>You decide about cookies.</strong> With your permission, we measure visits with Google Analytics and, if you accept, we use advertising cookies to measure the effectiveness of our ads (Google Ads and Meta). You can use the website and forms even if you reject everything. We store your choice for 12 months. <a href="/en/cookies.html">Cookie policy</a>.</p><div class="choices"><button type="button" data-choice="no">Reject all</button><button type="button" data-choice="analytics">Analytics only</button><button type="button" data-choice="all">Accept all</button></div>'
 }
 };
-/* AtribuciÃ³n de origen (UTM/gclid/referrer), solo con consentimiento de analÃ­tica.
+/* Atribución de origen (UTM/gclid/referrer), solo con consentimiento de analítica.
 No es publicidad ni remarketing: es texto de la propia URL/referrer, guardado en
-local para saber por quÃ© canal llegÃ³ cada lead. No se comparte con terceros. */
+local para saber por qué canal llegó cada lead. No se comparte con terceros. */
 function captureAttribution() {
 try {
 var q = new URLSearchParams(location.search), data = {}, campaignKeys =
