@@ -488,10 +488,8 @@ section[id]{scroll-margin-top:78px}
            srcset="https://images.unsplash.com/photo-1672939113788-820060bbc046?auto=format&fit=crop&w=800&h=900&q=80 800w, https://images.unsplash.com/photo-1672939113788-820060bbc046?auto=format&fit=crop&w=1600&q=80 1600w, https://images.unsplash.com/photo-1672939113788-820060bbc046?auto=format&fit=crop&w=2400&q=80 2400w"
            sizes="100vw" alt="Barco a motor navegando por la costa mediterránea" fetchpriority="high" width="1600" height="1067">
       -->
-      <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="/hero-poster.jpg" aria-hidden="true">
-        <source src="/hero-540.mp4" type="video/mp4" media="(max-width: 768px)">
-        <source src="/hero-720.mp4" type="video/mp4">
-      </video>
+      <video class="hero-video" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture preload="auto" poster="/hero-poster.jpg" aria-hidden="true" src="/hero-720.mp4"></video>
+      <script>(function(){var v=document.querySelector(".hero-video");if(!v)return;if(window.innerWidth<=768)v.src="/hero-540.mp4";v.muted=true;v.defaultMuted=true;function p(){var r=v.play();if(r&&r.catch)r.catch(function(){})}p();["touchstart","scroll","click"].forEach(function(e){window.addEventListener(e,p,{once:true,passive:true})});document.addEventListener("visibilitychange",function(){if(!document.hidden)p()})})();</script>
       <div class="hero-title">
         <p class="hero-eyebrow">Broker náutico en Cataluña · Juan Morante</p>
         <h1>Vender tu barco bien lleva trabajo. De eso me encargo yo.</h1>
