@@ -84,7 +84,7 @@
             <div class="f"><label class="l" for="a-notas">Algo más que deba saber (opcional)</label><textarea name="notas" id="a-notas" placeholder="Marcas que te gustan, año mínimo, fueraborda o intraborda, si tienes prisa…"></textarea></div>
             <div class="row">
               <div class="f"><label class="l" for="a-nombre">Nombre</label><input type="text" name="nombre" id="a-nombre" autocomplete="name" placeholder="Cómo te llamo"></div>
-              <div class="f"><label class="l" for="a-tel">Teléfono</label><input type="tel" name="telefono" id="a-tel" autocomplete="tel" placeholder="Para escribirte por WhatsApp" required></div>
+              <div class="f"><label class="l" for="a-tel">Teléfono</label><input type="tel" name="telefono" id="a-tel" autocomplete="tel" placeholder="Para escribirte por WhatsApp" required inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')"></div>
             </div>
             <div class="f"><label class="l" for="a-email">Correo</label><input type="email" name="email" id="a-email" autocomplete="email" placeholder="tu@correo.com" required></div>
             <label class="chk"><input type="checkbox" name="consent" required> <span>Acepto que Plata Marine guarde estos datos para avisarme cuando haya un barco que encaje, según la <a href="../privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
