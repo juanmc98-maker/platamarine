@@ -84,7 +84,7 @@
             
             <div class="row">
               <div class="f"><label class="l">Puerto o zona donde está el barco</label><input type="text" name="puerto" placeholder="Port Masnou, Vilanova, marina seca de…"></div>
-              <div class="f"><label class="l">Eslora</label><input type="text" name="eslora" placeholder="7,5 m"></div>
+              <div class="f"><label class="l">Eslora (m)</label><input type="number" inputmode="decimal" name="eslora" placeholder="7,5" min="1" max="40" step="0.1"></div>
             </div>
             <div class="row">
               <div class="f"><label class="l">Lista de matrícula</label><select name="lista"><option value="">Elige una opción</option><option>6ª (alquiler / charter)</option><option>7ª (uso privado)</option><option>No lo sé</option></select></div>
@@ -114,7 +114,7 @@
             
             <div class="row">
               <div class="f"><label class="l">Qué trámite necesitas</label><select name="tramite"><option value="">Elige una opción</option><option>Cambio de nombre (compraventa)</option><option>Matriculación de barco nuevo</option><option>Importación / abanderamiento</option><option>Cambio de lista (6ª ↔ 7ª)</option><option>Baja o exportación</option><option>Duplicado de documentación</option><option>Otro (lo cuento abajo)</option></select></div>
-              <div class="f"><label class="l">Eslora</label><input type="text" name="eslora" placeholder="7,5 m"></div>
+              <div class="f"><label class="l">Eslora (m)</label><input type="number" inputmode="decimal" name="eslora" placeholder="7,5" min="1" max="40" step="0.1"></div>
             </div>
             <div class="f"><label class="l">Cuéntame el caso (opcional)</label><textarea name="mensaje" placeholder="Dónde está matriculado, si hay prisa, si compras a un particular o a una empresa…"></textarea></div>
 
@@ -140,11 +140,11 @@
             
             <div class="row">
               <div class="f"><label class="l">Puerto o zona donde está el barco</label><input type="text" name="puerto" placeholder="Port Masnou, Vilanova, Roses…"></div>
-              <div class="f"><label class="l">Eslora</label><input type="text" name="eslora" placeholder="7,5 m"></div>
+              <div class="f"><label class="l">Eslora (m)</label><input type="number" inputmode="decimal" name="eslora" placeholder="7,5" min="1" max="40" step="0.1"></div>
             </div>
             <div class="row">
               <div class="f"><label class="l">Qué necesitas</label><select name="trabajo"><option value="">Elige una opción</option><option>Varada, limpieza de obra viva y antifouling</option><option>Revisión o reparación de motor</option><option>Ósmosis, pintura o gelcoat</option><option>Invernaje / guardar el barco en seco</option><option>Electrónica o instalación</option><option>Otro (lo cuento abajo)</option></select></div>
-              <div class="f"><label class="l">Cuándo</label><input type="text" name="cuando" placeholder="Este mes, antes del verano, fin de temporada…"></div>
+              <div class="f"><label class="l">Cuándo</label><select name="cuando"><option value="">Elige una opción</option><option>Lo antes posible</option><option>Esta semana</option><option>Este mes</option><option>Antes del verano</option><option>Fin de temporada</option><option>Sin prisa</option></select></div>
             </div>
             <div class="f"><label class="l">Algo más (opcional)</label><textarea name="mensaje" placeholder="Motor, año, si prefieres una zona concreta…"></textarea></div>
 
@@ -172,7 +172,7 @@
               <div class="f"><label class="l">Puerto o zona de destino</label><input type="text" name="destino" placeholder="Dónde tiene que llegar"></div>
             </div>
             <div class="row">
-              <div class="f"><label class="l">Eslora</label><input type="text" name="eslora" placeholder="7,5 m"></div>
+              <div class="f"><label class="l">Eslora (m)</label><input type="number" inputmode="decimal" name="eslora" placeholder="7,5" min="1" max="40" step="0.1"></div>
               <div class="f"><label class="l">Cómo se mueve</label><select name="tipo"><option value="">Elige una opción</option><option>Por carretera (remolque o góndola)</option><option>Navegando (patrón de entrega)</option><option>No lo sé, dime tú qué conviene</option></select></div>
             </div>
             <div class="row">
@@ -245,10 +245,10 @@ function pmWire(f,build){
     ev.preventDefault();var msg=f.querySelector('.msg');msg.className='msg';msg.textContent='';
     if(pmVal(f,'empresa_web')){return;}
     var nom=pmVal(f,'nombre');if(!nom){msg.textContent='Necesito tu nombre para poder ayudarte.';return;}
-    var tel=pmVal(f,'telefono');var telDig=tel.replace(/\D/g,'');
+    var tel=pmVal(f,'telefono');var telDig=tel.replace(/D/g,'');
     if(!tel||telDig.length<9){msg.textContent='Revisa el teléfono, parece incompleto.';return;}
     var em=pmVal(f,'email');
-    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Revisa el correo, no parece correcto.';return;}
+    if(!/^[^@s]+@[^@s]+.[^@s]+$/.test(em)){msg.textContent='Revisa el correo, no parece correcto.';return;}
     if(!pmVal(f,'consent')){msg.textContent='Necesito que aceptes la política de privacidad para poder atenderte.';return;}
     var p=build(f);if(!p){return;}
     p.email=em;p.consent=true;p.consent_v='2026-09';p.consent_at=new Date().toISOString();p.page=location.pathname;p.ua=navigator.userAgent.slice(0,120);
