@@ -19,6 +19,7 @@ h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;color:var(--ink)}
 .head .sub{font-family:var(--display);font-size:14px;color:var(--ink-2);margin-top:8px;display:flex;flex-wrap:wrap;gap:6px 16px}
 .price{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--sea);font-variant-numeric:tabular-nums;white-space:nowrap}
 .status{display:inline-block;font-family:var(--display);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;background:var(--sea-deep);color:#fff;padding:6px 9px;border-radius:5px;margin-bottom:12px}
+.status.available{background:#1C7A4D}
 .gal{display:grid;grid-template-columns:1fr;gap:8px}
 .gal img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--radius);display:block;background:var(--paper-2)}
 .gal .main{aspect-ratio:16/9}
