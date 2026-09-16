@@ -84,7 +84,7 @@
             <div class="f"><label class="l" for="a-notas">Anything else I should know (optional)</label><textarea name="notas" id="a-notas" placeholder="Brands you like, minimum year, outboard or inboard, if you're in a hurry…"></textarea></div>
             <div class="row">
               <div class="f"><label class="l" for="a-nombre">Name</label><input type="text" name="nombre" id="a-nombre" autocomplete="name" placeholder="What should I call you"></div>
-              <div class="f"><label class="l" for="a-tel">Phone</label><input type="tel" name="telefono" id="a-tel" autocomplete="tel" placeholder="So I can message you on WhatsApp" required></div>
+              <div class="f"><label class="l" for="a-tel">Phone</label><input type="tel" name="telefono" id="a-tel" autocomplete="tel" placeholder="So I can message you on WhatsApp" required inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')"></div>
             </div>
             <div class="f"><label class="l" for="a-email">Email</label><input type="email" name="email" id="a-email" autocomplete="email" placeholder="you@email.com" required></div>
             <label class="chk"><input type="checkbox" name="consent" required> <span>I agree that Plata Marine will store this data to notify me when a boat that fits comes up, in accordance with the <a href="/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</span></label>
