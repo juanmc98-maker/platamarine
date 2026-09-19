@@ -606,10 +606,11 @@ section[id]{scroll-margin-top:78px}
         </div>
         <p class="form-help">Data controller: Juan Morante Cruz (Plata Marine). I'll use your name, contact details and boat information to handle this enquiry and prepare a possible engagement, as pre-contractual measures. You can exercise your rights at juan@platamarine.com. <a href="/privacidad.html">Privacy policy</a>. This enquiry does not subscribe you to any newsletter.</p>
         <div class="form-actions">
-          <button class="btn btn-wa" type="submit">Continue via WhatsApp</button>
-          <button class="btn btn-ghost" type="button" id="porEmail">I'd rather use email</button>
+          <button class="btn btn-wa" type="submit" id="enviarConsulta">Send inquiry</button>
+          <button class="btn btn-ghost" type="button" id="porWhatsapp">Or via WhatsApp</button>
+          <button class="btn btn-ghost" type="button" id="porEmail">Or by email</button>
         </div>
-        <p class="form-help">This will open WhatsApp or your email app with the message already drafted. Check it and hit send there so it reaches me. The form data isn't stored on this website.</p>
+        <p class="form-help">Pressing "Send inquiry" sends it straight to me; you'll see the confirmation right here once I've received it. If you'd rather, you can also write to me on WhatsApp or by email with the buttons above.</p>
         <p id="contactoEstado" class="form-help" role="status" aria-live="polite" hidden></p>
         <p class="form-help" id="contactoAlternativa" hidden><a id="continuarContacto">Open the prepared message</a></p>
       </form>
@@ -624,7 +625,26 @@ section[id]{scroll-margin-top:78px}
           <h2>A selection of boats under management.</h2>
         </div>
       </div>
-      <div class="boats one">
+      <div class="boats">
+        <article class="boat featured">
+          <div class="gal" data-imgs="faeton-730-moraga-1,faeton-730-moraga-2,faeton-730-moraga-3,faeton-730-moraga-4" data-alt="Faeton 730 Moraga anchored in a cove in Mallorca"><span class="boat-status">Available</span></div>
+          <div class="boat-body">
+            <div class="boat-head"><h3><a href="/en/barcos/faeton-730-moraga.html" style="color:inherit;text-decoration:none">Faeton 730 Moraga</a></h3><p class="price">€30,000</p></div>
+            <dl class="specs">
+              <div><dt>Year</dt><dd>2005</dd></div>
+              <div><dt>LOA</dt><dd>7.39 m · beam 2.66 m</dd></div>
+              <div><dt>Engine</dt><dd>Volvo Penta KAD32P 170 hp, diesel</dd></div>
+              <div><dt>Hours</dt><dd>Approx. 1,300</dd></div>
+              <div><dt>Flag</dt><dd>Spanish, 7th list</dd></div>
+              <div><dt>Location</dt><dd>Portocolom, Mallorca</dd></div>
+            </dl>
+            <p class="desc">A seaworthy pilot boat set up for fishing: live-bait well, rod holders, Raymarine radar and fishfinder. €34,000 with the Minn Kota electric bow thruster included. Can be viewed with no obligation.</p>
+            <div class="boat-cta">
+              <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hi%20Juan%2C%20I%27m%20interested%20in%20the%202005%20Faeton%20730%20Moraga%20you%20have%20for%20sale.%20Can%20we%20talk%3F" target="_blank" rel="noopener">Ask on WhatsApp</a>
+              <a class="btn btn-ghost" href="/en/barcos/faeton-730-moraga.html">View full listing</a>
+            </div>
+          </div>
+        </article>
         <article class="boat featured">
           <div class="gal" data-imgs="monterey-278-ss-1,monterey-278-ss-2,monterey-278-ss-3,monterey-278-ss-4" data-alt="Monterey 278 SS anchored in a cove on the Costa Brava"><span class="boat-status">Under management</span></div>
           <div class="boat-body">
@@ -775,7 +795,7 @@ section[id]{scroll-margin-top:78px}
   window.addEventListener('resize',function(){if(window.innerWidth>=980) close();});
 })();
 
-var IMGS={"monterey-278-ss-1": "/monterey-278-ss-1.jpg", "monterey-278-ss-2": "/monterey-278-ss-2.jpg", "monterey-278-ss-3": "/monterey-278-ss-3.jpg", "monterey-278-ss-4": "/monterey-278-ss-4.jpg"};
+var IMGS={"monterey-278-ss-1": "/monterey-278-ss-1.jpg", "monterey-278-ss-2": "/monterey-278-ss-2.jpg", "monterey-278-ss-3": "/monterey-278-ss-3.jpg", "monterey-278-ss-4": "/monterey-278-ss-4.jpg", "faeton-730-moraga-1": "/faeton-730-moraga-1.jpg", "faeton-730-moraga-2": "/faeton-730-moraga-2.jpg", "faeton-730-moraga-3": "/faeton-730-moraga-3.jpg", "faeton-730-moraga-4": "/faeton-730-moraga-4.jpg"};
 (function(){
   var gals=document.querySelectorAll('.gal[data-imgs]');
   for(var g=0;g<gals.length;g++){(function(gal){
