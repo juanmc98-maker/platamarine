@@ -77,7 +77,7 @@
     <article>
       <header>
         <p class="eyebrow">Herramientas · Valora tu barco</p>
-        <h1>¿Cuánto vale tu barco? Hazte una idea en 2 minutos</h1>
+        <h1>Comprueba qué influye en el precio de tu barco</h1>
         <div class="meta"><span>Por Juan Morante</span><span>Septiembre 2026</span></div>
         <p class="lead">Cada barco es un mundo, así que no te voy a dar aquí un número exacto sin verlo: eso sería inventar. Pero contestando estas nueve preguntas te digo qué está jugando a favor de tu precio y qué lo va a bajar, para que cuando hablemos ya vengas con las ideas claras.</p>
       </header>
@@ -290,7 +290,7 @@ var h='<h2>Lo que más va a pesar en el precio de tu '+(v.marca?v.marca:v.tipo)+
   h+='<ul>';notes.forEach(function(n){h+='<li>'+n+'</li>'});h+='</ul>';
   h+='<h3>Para seguir</h3><p><a href="../guias/precio-barco-ocasion.html">Cómo poner precio a un barco de ocasión</a> · <a href="../guias/papeles-vender-barco-cambio-titularidad.html">Papeles para vender</a></p>';
   var waTexto='Hola Juan, he hecho la valoración de mi barco en la web. Es un '+(v.marca?v.marca+' — '+v.tipo:v.tipo)+' de '+v.eslora+', año '+v.anio+', motor '+v.motor+(v.potencia?' ('+v.potencia+')':'')+' ('+v.horas+' horas), mantenimiento '+v.mantenimiento+', papeles '+v.papeles+', en '+v.zona+'. Anunciado: '+v.anunciado+(v.donde?' en '+v.donde:'')+(v.exclusiva?' (exclusiva: '+v.exclusiva+')':'')+'. ¿Lo miramos?';
-h+='<p style="margin-top:14px"><a class="btn btn-wa" href="https://wa.me/34633742973?text='+encodeURIComponent(waTexto)+'" target="_blank" rel="noopener">Cuéntamelo por WhatsApp</a></p>';
+h+='<p style="margin-top:14px"><a class="btn btn-wa" href="https://wa.me/34633742973?text='+encodeURIComponent(waTexto)+'" target="_blank" rel="noopener">Solicitar valoración personalizada</a></p>';
 el('result').innerHTML=h;el('result').classList.remove('hidden');el('check').classList.add('hidden');
   var det='Tipo: '+v.tipo+(v.marca?' ('+v.marca+')':'')+' | Eslora: '+v.eslora+' | Año: '+v.anio+' | Motor: '+v.motor+(v.potencia?' '+v.potencia:'')+' | Horas: '+v.horas+' | Mantenimiento: '+v.mantenimiento+' | Papeles: '+v.papeles+' | Zona: '+v.zona+' | Anunciado: '+v.anunciado+(v.donde?' ('+v.donde+(v.exclusiva?', exclusiva '+v.exclusiva:'')+')':'')+(v.equipo?' | Equipamiento: '+v.equipo:'');
 openLeadModal({source:'valora-tu-barco',intent:'vendedor',ok:'',total:'',pass:true,detail:det,page:location.pathname,ua:navigator.userAgent.slice(0,120)},'result');
