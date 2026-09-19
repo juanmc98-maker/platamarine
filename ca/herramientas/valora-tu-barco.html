@@ -77,6 +77,324 @@
     <article>
       <header>
         <p class="eyebrow">Eines · Valora el teu vaixell</p>
+        <h1>Comprova què influeix en el preu del teu vaixell</h1>
+        <div class="meta"><span>Per Juan Morante</span><span>Setembre 2026</span></div>
+        <p class="lead">Cada vaixell és un món, així que no et donaré aquí un número exacte sense veure'l: seria inventar-m'ho. Però responent aquestes nou preguntes et dic què juga a favor del teu preu i què el farà baixar, perquè quan parlem ja vinguis amb les idees clares.</p>
+      </header>
+
+      <div class="prose qz" id="qz">
+        <div class="prog"><i id="prog"></i></div>
+        <div id="result" class="res hidden"></div>
+        <div id="questions"></div>
+        <div class="bar hidden" id="endbar"><button class="btn btn-wa" id="check">Veure què influeix en el meu preu</button><button class="btn btn-ghost" id="again">Tornar a començar</button></div>
+        <p class="aviso">Això és una orientació a partir de les teves respostes, no una taxació: per a un preu de sortida real cal veure el vaixell i els papers. Si vols, m'escrius amb el resultat i ho mirem amb calma.</p>
+      </div>
+      <div class="prose">
+        <h2 id="faq" style="margin-top:36px">Preguntes freqüents abans de vendre</h2>
+        <details><summary>Per què no em doneu aquí un preu exacte?</summary><p>Un preu real depèn de coses que no surten en un formulari: l'estat del motor vist en persona, el paperam concret i què s'està venent de veritat ara mateix en la teva franja. Aquesta eina et dona les claus; el preu de sortida el preparo mirant el teu vaixell i el mercat actual, gratis i sense compromís.</p></details>
+        <details><summary>Quant triga a vendre's un vaixell de segona mà?</summary><p>Depèn del tipus, l'eslora i l'època de l'any: fora de temporada (tardor i hivern) sol allargar-se. Com a orientació, diversos mesos és habitual fins i tot amb un preu correcte; amb la fitxa i el preu ben plantejats es pot escurçar, però convé desconfiar de qui prometi una venda ràpida sense haver vist el vaixell.</p></details>
+        <details><summary>Puc vendre encara que el vaixell no estigui al dia en manteniment o papers?</summary><p>Sí. El més habitual és ajustar el preu o resoldre abans el que es pugui. El que no convé és amagar-ho: sol sortir a la revisió o la prova de mar, i complica més la venda que dir-ho des del principi.</p></details>
+        <details><summary>Té algun cost aquesta valoració?</summary><p>No. Ni aquesta eina ni la primera conversa tenen cost. Només cobro honoraris si gestiono la venda i es tanca, i això queda sempre per escrit abans de començar.</p></details>
+      </div>
+    </article>
+
+    <div class="pm-modal hidden" id="pmModal" role="dialog" aria-modal="true" aria-labelledby="pmModalTitle">
+      <div class="pm-box">
+        <h3 id="pmModalTitle">T'envio aquest resum per correu?</h3>
+        <p>T'envio per escrit els punts que influeixen en el preu del teu vaixell, perquè els tinguis a mà quan parlem.</p>
+        <form id="pmLeadForm" novalidate>
+          <input type="email" id="pmEmail" placeholder="elteu@correu.com" autocomplete="email" required>
+          <label class="chk"><input type="checkbox" id="pmConsent" required> <span>Accepto que Plata Marine guardi el meu correu per enviar-me aquest resum, segons la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
+          <label class="chk"><input type="checkbox" id="pmNews"> <span>Vull rebre de tant en tant articles i guies de Plata Marine per correu (et pots donar de baixa quan vulguis).</span></label>
+          <p class="msg hidden" id="pmMsg"></p>
+          <button type="submit" class="btn btn-wa" id="pmSend">Envia'm el resum</button>
+          <button type="button" class="skip" id="pmSkip">Veure el resultat sense correu</button>
+          <p class="legal">Responsable: Juan Morante Cruz (Plata Marine). Finalitat: enviar-te aquest resum i, només si ho marques, novetats de la web. Pots exercir els teus drets d'accés, rectificació i supressió a juan@platamarine.com. Més informació a la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</p>
+        <p class="legal">També pots <a href="mailto:juan@platamarine.com">escriure a juan@platamarine.com</a>. Si no apareix una confirmació, consulta abans de tornar a enviar-ho.</p></form>
+      </div>
+    </div>
+
+    <aside class="aside" aria-label="Contacte i navegació">
+      <div class="card">
+        <p class="eyebrow">Parlem del teu vaixell?</p>
+        <h3>Explica'm el resultat i preparem el preu de sortida.</h3>
+        <p>Treballo la venda de vaixells a motor des de 5 metres, a Catalunya i Balears. A èxit, sense exclusiva ni avançaments.</p>
+        <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20he%20fet%20la%20valoraci%C3%B3%20del%20meu%20vaixell%20a%20la%20web." target="_blank" rel="noopener">Parla amb en Juan per WhatsApp</a>
+      </div>
+      <nav class="toc" aria-label="Contingut">
+        <p class="eyebrow">En aquesta pàgina</p>
+        <ol>
+          <li><a href="#qz">La valoració</a></li>
+          <li><a href="#faq">Preguntes freqüents</a></li>
+        </ol>
+      </nav>
+      <div class="rel">
+        <p class="eyebrow">També et pot interessar</p>
+        <a href="/ca/guias/precio-barco-ocasion.html">Com posar preu a un vaixell d'ocasió</a>
+        <a href="/ca/guias/papeles-vender-barco-cambio-titularidad.html">Papers per vendre i canvi de titularitat</a>
+        <a href="/ca/guias/que-hace-un-broker-nautico.html">Què fa un broker nàutic i quant cobra</a>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<footer class="foot">
+<div class="wrap">
+<div class="line">
+<span>© 2026 Plata Marine · Sabadell, Barcelona · <a href="mailto:juan@platamarine.com">juan@platamarine.com</a></span>
+<a href="/ca/aviso-legal.html">Avís legal</a> · <a href="/ca/privacidad.html">Privacitat</a> · <a href="/ca/cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Web per rotulito.com</a>
+</div>
+</div>
+<p class="wrap"><button type="button" data-cookie-settings>Configurar les cookies</button></p></footer>
+
+<script>
+(function(){
+var Q=[
+ {"id":"tipo","q":"Quin tipus de vaixell és?","o":[
+   {"t":"Semirígida","v":{"tipo":"semirígida"}},
+   {"t":"Open de consola central","v":{"tipo":"open"}},
+   {"t":"Sundeck o bowrider","v":{"tipo":"sundeck"}},
+   {"t":"Walkaround","v":{"tipo":"walkaround"}},
+   {"t":"Cabinat o creuer","v":{"tipo":"cabinat"}},
+   {"t":"Pilothouse","v":{"tipo":"pilothouse"}},
+   {"t":"Fly (flybridge)","v":{"tipo":"fly"}},
+   {"t":"No n'estic segur / No ho sé","v":{"tipo":"sense identificar"}}
+ ]},
+ {"id":"eslora","q":"Quina eslora té?","o":[
+   {"t":"Menys de 6 metres","v":{"eslora":"menys de 6 m"}},
+   {"t":"De 6 a 8 metres","v":{"eslora":"6 a 8 m"}},
+   {"t":"De 8 a 10 metres","v":{"eslora":"8 a 10 m"}},
+   {"t":"De 10 a 12 metres","v":{"eslora":"10 a 12 m"}},
+   {"t":"Més de 12 metres","v":{"eslora":"més de 12 m"}}
+ ]},
+ {"id":"anio","q":"De quin any és?","o":[
+   {"t":"2021 en endavant","v":{"anio":"2021+","etapa":"nou"}},
+   {"t":"De 2016 a 2020","v":{"anio":"2016-2020","etapa":"recent"}},
+   {"t":"De 2010 a 2015","v":{"anio":"2010-2015","etapa":"mitjà"}},
+   {"t":"De 2000 a 2009","v":{"anio":"2000-2009","etapa":"mitjà"}},
+   {"t":"Anterior al 2000","v":{"anio":"anterior al 2000","etapa":"clàssic"}}
+ ]},
+ {"id":"motor","q":"Quin motor porta?","o":[
+   {"t":"Fora borda (gasolina)","v":{"motor":"fora borda gasolina"}},
+   {"t":"Intraborda dièsel","v":{"motor":"intraborda dièsel"}},
+   {"t":"Intraborda gasolina","v":{"motor":"intraborda gasolina"}},
+   {"t":"Vela, amb motor auxiliar","v":{"motor":"vela amb auxiliar"}},
+   {"t":"Més d'un motor","v":{"motor":"diversos motors"}}
+ ]},
+ {"id":"horas","q":"Quantes hores té el motor?","o":[
+   {"t":"Menys de 200 hores","v":{"horas":"poques"}},
+   {"t":"De 200 a 500 hores","v":{"horas":"mitjanes"}},
+   {"t":"De 500 a 1.000 hores","v":{"horas":"notables"}},
+   {"t":"Més de 1.000 hores","v":{"horas":"moltes"}},
+   {"t":"No ho sé amb exactitud","v":{"horas":"no ho sé"}}
+ ]},
+ {"id":"mantenimiento","q":"Com està el manteniment?","o":[
+   {"t":"Al dia, amb factures i revisions guardades","v":{"mantenimiento":"al dia"}},
+   {"t":"Cuidat, però sense tot documentat","v":{"mantenimiento":"sense documentar"}},
+   {"t":"Necessita alguna feina abans de vendre'l","v":{"mantenimiento":"amb feines pendents"}}
+ ]},
+ {"id":"papeles","q":"Com tens els papers?","o":[
+   {"t":"Tot en regla que jo sàpiga","v":{"papeles":"en regla"}},
+   {"t":"No n'estic del tot segur","v":{"papeles":"no del tot segur"}},
+   {"t":"Sé que falta alguna cosa (ITB, canvi de motor sense declarar…)","v":{"papeles":"falta alguna cosa"}}
+ ]},
+ {"id":"zona","q":"On està el vaixell?","o":[
+   {"t":"Barcelona ciutat","v":{"zona":"Barcelona"}},
+   {"t":"Maresme","v":{"zona":"Maresme"}},
+   {"t":"Costa Brava","v":{"zona":"Costa Brava"}},
+   {"t":"Garraf i Tarragona","v":{"zona":"Garraf i Tarragona"}},
+   {"t":"Balears","v":{"zona":"Balears"}},
+   {"t":"Una altra zona","v":{"zona":"una altra zona"}}
+ ]},
+ {"id":"anunciado","q":"Ja el tens anunciat?","o":[
+   {"t":"No, encara no","v":{"anunciado":"no"}},
+   {"t":"Sí, des de fa poc (menys d'un mes)","v":{"anunciado":"recent"}},
+   {"t":"Sí, des de fa temps (més de dos mesos)","v":{"anunciado":"antic"}}
+ ]}
+];
+var el=function(id){return document.getElementById(id)};
+var LEADS_URL='https://script.google.com/macros/s/AKfycbwJtBkktakE0qgmu_b8oHOOopCDnG6BDpBjg2zBUsZKi8l3_OBEuez_OHWmE9j8qCBF/exec';
+var lastResult=null,_scrollTo=null;
+function openLeadModal(result,scrollId){lastResult=result;_scrollTo=scrollId;
+  if(LEADS_URL.indexOf('http')===0){el('pmModal').classList.remove('hidden');setTimeout(function(){el('pmEmail').focus()},200);}
+  else window.scrollTo({top:el(scrollId).offsetTop-90,behavior:'smooth'});}
+function closeModal(){el('pmModal').classList.add('hidden');if(_scrollTo)window.scrollTo({top:el(_scrollTo).offsetTop-90,behavior:'smooth'});}
+el('pmSkip').onclick=closeModal;
+el('pmLeadForm').onsubmit=function(ev){
+  ev.preventDefault();var em=el('pmEmail').value.trim(),msg=el('pmMsg');msg.className='msg';
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Revisa el correu, no sembla correcte.';return;}
+  if(!el('pmConsent').checked){msg.textContent='Necessito que acceptis la política de privacitat per poder-te\'l enviar.';return;}
+  var btn=el('pmSend');btn.disabled=true;var lbl=btn.textContent;btn.textContent='Enviant…';
+  var payload=Object.assign({email:em,consent:true,newsletter:el('pmNews').checked,consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
+  window.submitConfirmed(LEADS_URL,payload,'json').then(function(){
+    msg.className='msg ok';msg.textContent='Resum registrat. El resultat també continua disponible a la pantalla.';btn.textContent='Enviat';
+    setTimeout(closeModal,1800);
+  }).catch(function(){msg.textContent='No hem pogut confirmar la recepció. Les teves dades continuen a la pantalla. Abans de tornar a enviar-ho, consulta a juan@platamarine.com o per WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
+};
+
+function render(){
+  var h='';
+  Q.forEach(function(q,i){
+    h+='<div class="qcard" id="q'+i+'"><span class="step">Pregunta '+(i+1)+' de '+Q.length+'</span><h3>'+q.q+'</h3>';
+    q.o.forEach(function(o,j){h+='<label class="opt"><input type="radio" name="q'+i+'" value="'+j+'"> <span>'+o.t+'</span></label>'});
+if(q.id==='tipo'){h+='<p class="hint" style="margin-top:10px">Saps la marca i el model? (opcional)</p><input type="text" id="marcaModelo" placeholder="Marca i model" style="width:100%;font:15px var(--serif);padding:9px 10px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box">';}
+if(q.id==='motor'){h+='<p class="hint" style="margin-top:10px">Potència en CV, si la saps (opcional)</p><input type="text" id="potenciaCV" placeholder="P. ex. 250 CV" style="width:100%;font:15px var(--serif);padding:9px 10px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box">';}
+if(q.id==='anunciado'){h+='<div class="qcard hidden" id="qDonde"><h3>On el tens anunciat?</h3>'+[['wallapop','Wallapop o un altre classificat'],['portal','Portal nàutic especialitzat'],['broker','Amb un altre broker'],['redes','Xarxes socials'],['otro','Altre']].map(function(e){return '<label class="opt"><input type="radio" name="donde" value="'+e[0]+'"> <span>'+e[1]+'</span></label>'}).join('')+'</div><div class="qcard hidden" id="qExclusiva"><h3>L\'has donat en exclusiva a aquest broker?</h3><label class="opt"><input type="radio" name="exclusiva" value="si"> <span>Sí, en exclusiva</span></label><label class="opt"><input type="radio" name="exclusiva" value="no"> <span>No, sense exclusiva</span></label></div>';}
+
+    h+='</div>';
+  });
+  h+='<div class="qcard" id="qEquipo"><span class="step">Opcional</span><h3>Equipament i extres</h3><p class="hint">Marca el que porti (no cal per veure el resultat).</p>'+[['toldo','Tendal o bimini'],['plotter','Plotter / GPS'],['molinete','Molinet elèctric'],['duchapopa','Dutxa de popa'],['wc','WC'],['aa','Aire condicionat'],['generador','Generador'],['pasarela','Passarel·la'],['bow','Hèlix de proa (bow thruster)']].map(function(e){return '<label class="opt"><input type="checkbox" name="equipo" value="'+e[0]+'"> <span>'+e[1]+'</span></label>'}).join('')+'</div>';
+el('questions').innerHTML=h;el('endbar').classList.remove('hidden');el('check').classList.remove('hidden');el('result').classList.add('hidden');
+  document.querySelectorAll('#questions input').forEach(function(x){x.addEventListener('change',prog)});prog();
+el('questions').addEventListener('change',function(e){
+if(e.target.name && /^q\d+$/.test(e.target.name)){
+var qi=parseInt(e.target.name.substring(1));
+if(Q[qi] && Q[qi].id==='anunciado'){
+var val=Q[qi].o[parseInt(e.target.value)].v.anunciado;var show=(val!=='no');
+el('qDonde').classList.toggle('hidden',!show);if(!show)el('qExclusiva').classList.add('hidden');
+}}
+if(e.target.name==='donde'){el('qExclusiva').classList.toggle('hidden',e.target.value!=='broker');}
+});
+
+}
+function prog(){var n=0;Q.forEach(function(q,i){if(document.querySelector('input[name=q'+i+']:checked'))n++});el('prog').style.width=Math.round(100*n/Q.length)+'%';}
+function check(){
+  var missing=[];Q.forEach(function(q,i){if(!document.querySelector('input[name=q'+i+']:checked'))missing.push(i)});
+  if(missing.length){var c=el('q'+missing[0]);c.style.borderColor='#c0392b';window.scrollTo({top:c.offsetTop-90,behavior:'smooth'});return;}
+  var v={};Q.forEach(function(q,i){var sel=document.querySelector('input[name=q'+i+']:checked');var o=q.o[parseInt(sel.value)];Object.assign(v,o.v||{});});
+v.marca=(el('marcaModelo')&&el('marcaModelo').value.trim())||'';
+v.potencia=(el('potenciaCV')&&el('potenciaCV').value.trim())||'';
+v.equipo=Array.from(document.querySelectorAll('input[name=equipo]:checked')).map(function(x){return x.value}).join(', ');
+var dSel=document.querySelector('input[name=donde]:checked');v.donde=dSel?dSel.value:'';
+var eSel=document.querySelector('input[name=exclusiva]:checked');v.exclusiva=eSel?eSel.value:'';
+
+
+  var notes=[];
+  if(v.etapa==='nou')notes.push('Amb menys de 5 anys encara estàs en la part més ràpida de la depreciació: petites diferències d\'estat o d\'hores pesen molt en el preu.');
+  else if(v.etapa==='recent'||v.etapa==='mitjà')notes.push('En aquesta franja d\'edat el preu ja s\'ha estabilitzat bastant: el que més mou l\'agulla és l\'estat real del vaixell, no l\'any exacte.');
+  else notes.push('A partir d\'aquí l\'any pesa menys que el manteniment: un vaixell veterà amb motor i buc cuidats pot demanar més que un de més nou però descuidat.');
+
+  if(v.horas==='poques')notes.push('Poques hores per a la seva edat és un punt a favor, sobretot si estan documentades amb factures de manteniment.');
+  else if(v.horas==='notables')notes.push('Amb hores ja notables convé tenir a mà l\'historial de revisions del motor: és de les primeres coses que preguntarà un comprador seriós.');
+  else if(v.horas==='moltes')notes.push('Amb més de 1.000 hores el motor passa a primer pla. Un informe d\'un mecànic de confiança abans d\'anunciar-lo sol evitar que la negociació se\'n vagi tota cap allà.');
+  else if(v.horas==='no ho sé')notes.push('Convé saber les hores exactes abans de posar preu: és de les primeres preguntes que et faran.');
+
+  if(v.mantenimiento==='al dia')notes.push('Tenir les factures de manteniment a mà és del que més tranquil·litza un comprador: ho ensenyo sempre que puc.');
+  else if(v.mantenimiento==='sense documentar')notes.push('Que estigui cuidat ajuda, però sense papers el comprador desconfia per defecte. Si pots recuperar alguna factura antiga, val la pena.');
+  else notes.push('Si hi ha feines pendents, gairebé sempre compensa més fer-les o baixar el preu en conseqüència i dir-ho, que amagar alguna cosa que sortirà a la prova de mar.');
+
+  if(v.papeles==='en regla')notes.push('Amb els papers en regla la venda va més ràpida: és de les primeres coses que reviso en preparar un anunci.');
+  else if(v.papeles==='no del tot segur')notes.push('Abans d\'anunciar-lo val la pena comprovar la ITB, els canvis de motor declarats i que la titularitat estigui clara. Ho explico a la guia de papers per vendre.');
+  else notes.push('Si saps que falta alguna cosa (ITB caducada, canvi de motor sense declarar…), millor resoldre-ho o almenys saber el cost abans de posar preu: canvia la negociació.');
+
+  if(v.anunciado==='antic')notes.push('Un anunci que porta mesos sense moure\'s gairebé mai és un problema del vaixell en si: sol ser el preu, les fotos o on està publicat. Val la pena revisar-ho abans de baixar el preu a la babalà.');
+  else if(v.anunciado==='no')notes.push('Sense res publicat encara, el primer és un preu de sortida ben argumentat, no només publicar i esperar.');
+
+  if(v.donde==='broker'){notes.push(v.exclusiva==='si'?'Si ja el portes en exclusiva amb un altre broker, revisa les condicions de sortida del contracte abans de moure\'l amb ningú més.':'Si el porta un altre broker sense exclusiva, pots continuar mirant altres opcions sense problema.');}
+else if(v.donde==='wallapop')notes.push('Wallapop dona molta visibilitat però també molta curiositat sense intenció real de compra: convé filtrar bé abans d\'ensenyar el vaixell.');
+else if(v.donde==='portal')notes.push('Ser en un portal especialitzat és un bon punt de partida: convé revisar que les fotos i el preu estiguin actualitzats.');
+else if(v.donde==='redes')notes.push('Les xarxes donen visibilitat però poques vegades tanquen una venda soles: convé combinar-les amb un anunci en un portal seriós.');
+var h='<h2>El que més pesarà en el preu del teu '+(v.marca?v.marca:v.tipo)+'</h2>';
+  h+='<p>Amb '+v.eslora+', del '+v.anio+' i motor '+v.motor+(v.potencia?' ('+v.potencia+')':'')+', això és el que jo miraria primer:</p>';
+  h+='<ul>';notes.forEach(function(n){h+='<li>'+n+'</li>'});h+='</ul>';
+  h+='<h3>Per seguir</h3><p><a href="/ca/guias/precio-barco-ocasion.html">Com posar preu a un vaixell d\'ocasió</a> · <a href="/ca/guias/papeles-vender-barco-cambio-titularidad.html">Papers per vendre</a></p>';
+  var waTexto='Hola Juan, he fet la valoració del meu vaixell a la web. És un '+(v.marca?v.marca+' — '+v.tipo:v.tipo)+' de '+v.eslora+', any '+v.anio+', motor '+v.motor+(v.potencia?' ('+v.potencia+')':'')+' ('+v.horas+' hores), manteniment '+v.mantenimiento+', papers '+v.papeles+', a '+v.zona+'. Anunciat: '+v.anunciado+(v.donde?' a '+v.donde:'')+(v.exclusiva?' (exclusiva: '+v.exclusiva+')':'')+'. Ho mirem?';
+h+='<p style="margin-top:14px"><a class="btn btn-wa" href="https://wa.me/34633742973?text='+encodeURIComponent(waTexto)+'" target="_blank" rel="noopener">Sol·licitar valoració personalitzada</a></p>';
+el('result').innerHTML=h;el('result').classList.remove('hidden');el('check').classList.add('hidden');
+  var det='Tipus: '+v.tipo+(v.marca?' ('+v.marca+')':'')+' | Eslora: '+v.eslora+' | Any: '+v.anio+' | Motor: '+v.motor+(v.potencia?' '+v.potencia:'')+' | Hores: '+v.horas+' | Manteniment: '+v.mantenimiento+' | Papers: '+v.papeles+' | Zona: '+v.zona+' | Anunciat: '+v.anunciado+(v.donde?' ('+v.donde+(v.exclusiva?', exclusiva '+v.exclusiva:'')+')':'')+(v.equipo?' | Equipament: '+v.equipo:'');
+openLeadModal({source:'valora-tu-barco-ca',intent:'vendedor',ok:'',total:'',pass:true,detail:det,page:location.pathname,ua:navigator.userAgent.slice(0,120)},'result');
+}
+el('check').onclick=check;
+el('again').onclick=function(){render();window.scrollTo({top:el('qz').offsetTop-90,behavior:'smooth'})};
+render();
+})();
+</script>
+</body>
+</html>
+
+<script src="/consent.js" defer></script>
+<script src="/submit-confirmed.js" defer></script>
+<script src="/analytics.js?v=20260916" defer></script>
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quant val el meu vaixell? Valora'l gratis en 2 minuts</title>
+<meta name="description" content="Respon unes preguntes sobre el teu vaixell (tipus, eslora, any, motor, estat i papers) i et dic què juga al teu favor i què et baixarà el preu abans de donar-te una valoració real. Gratis.">
+<link rel="canonical" href="https://www.platamarine.com/ca/herramientas/valora-tu-barco.html">
+<link rel="alternate" hreflang="es" href="https://www.platamarine.com/herramientas/valora-tu-barco.html">
+<link rel="alternate" hreflang="ca" href="https://www.platamarine.com/ca/herramientas/valora-tu-barco.html">
+<link rel="alternate" hreflang="x-default" href="https://www.platamarine.com/herramientas/valora-tu-barco.html">
+<link rel="icon" type="image/png" href="/logo-plata-marine.png">
+<meta property="og:title" content="Quant val el meu vaixell? Valora'l gratis en 2 minuts">
+<meta property="og:description" content="Respon unes preguntes sobre el teu vaixell i et dic què juga al teu favor i què et baixarà el preu abans de donar-te una valoració real. Gratis.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.platamarine.com/ca/herramientas/valora-tu-barco.html">
+<meta property="og:image" content="https://www.platamarine.com/logo-plata-marine.png">
+<link rel="stylesheet" href="/guias/guias.css">
+<style>.pm-modal{position:fixed;inset:0;background:rgba(13,28,39,.55);display:flex;align-items:center;justify-content:center;z-index:50;padding:16px}
+.pm-box{background:#fff;border-radius:10px;max-width:440px;width:100%;padding:26px 24px;box-shadow:0 24px 60px rgba(13,28,39,.3);position:relative}
+.pm-box h3{font-family:var(--display);font-size:1.25rem;margin:0 0 8px;line-height:1.2}
+.pm-box p{font-size:15px;color:var(--ink-2);margin:0 0 14px}
+.pm-box input[type=email]{width:100%;font:16px var(--serif);padding:11px 12px;border:1px solid var(--plata-2);border-radius:6px;margin-bottom:10px;box-sizing:border-box}
+.pm-box label.chk{display:flex;gap:8px;align-items:flex-start;font-family:var(--display);font-size:13px;color:var(--ink-2);margin-bottom:8px;line-height:1.4}
+.pm-box .btn{width:100%;margin-top:6px;cursor:pointer}
+.pm-box .skip{display:block;text-align:center;font-family:var(--display);font-size:13px;color:var(--ink-2);margin-top:12px;background:none;border:0;cursor:pointer;text-decoration:underline}
+.pm-box .msg{font-family:var(--display);font-size:13px;color:#c0392b;margin:0 0 8px}
+.pm-box .msg.ok{color:#2e8b57}
+.pm-box .legal{font-family:var(--display);font-size:11px;color:var(--ink-3,#7F929E);line-height:1.4;margin:12px 0 0}
+.pm-modal.hidden{display:none}
+
+.qz .qcard{background:#fff;border:1px solid var(--plata);border-radius:8px;padding:18px 20px;margin:0 0 14px}
+.qz .qcard h3{font-family:var(--display);font-size:1.05rem;margin:0 0 10px;line-height:1.3}
+.qz .qcard .step{display:block;font-family:var(--display);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+.qz .hint{font-size:13.5px;color:var(--ink-2);margin:-4px 0 8px}
+.qz .opt{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:6px;cursor:pointer;font-size:15.5px;line-height:1.35}
+.qz .opt:hover{background:rgba(127,146,158,.10)}
+.qz .opt input{margin-top:4px;flex:none}
+.qz .bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 0 22px}
+.qz .bar .btn{cursor:pointer}
+.qz .prog{height:6px;background:rgba(127,146,158,.25);border-radius:3px;margin:0 0 18px;overflow:hidden}
+.qz .prog i{display:block;height:100%;background:var(--brass);width:0;transition:width .25s}
+.qz .res{background:var(--sea-deep);color:#D5DDE2;padding:24px 26px;border-radius:6px;margin:0 0 22px}
+.qz .res h2{color:#fff;font-size:1.5rem;margin:0 0 6px}
+.qz .res h3{color:#fff;font-family:var(--display);font-size:1.05rem;margin:18px 0 6px}
+.qz .res p{margin:0 0 10px}
+.qz .res a{color:#fff}
+.qz .res ul{margin:0 0 10px 18px;padding:0}
+.qz .res li{margin:0 0 6px}
+.qz .res .alt{font-size:15px;color:#B7C3CB}
+.hidden{display:none}
+</style>
+<script type="application/ld+json">
+[{"@context": "https://schema.org", "@type": "WebApplication", "name": "Valora el teu vaixell", "applicationCategory": "UtilityApplication", "operatingSystem": "Web", "inLanguage": "ca", "provider": {"@type": "Organization", "name": "Plata Marine"}, "url": "https://www.platamarine.com/ca/herramientas/valora-tu-barco.html", "description": "Respon nou preguntes sobre el teu vaixell (tipus, eslora, any, motor, hores, manteniment, papers, ubicació i si ja està anunciat) i et dic què juga a favor del seu preu i què el pot baixar, abans de donar-te una valoració real. Gratis i sense registre."}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Per què no em doneu aquí un preu exacte?", "acceptedAnswer": {"@type": "Answer", "text": "Un preu real depèn de coses que no surten en un formulari: l'estat del motor vist en persona, el paperam concret i què s'està venent de veritat ara mateix en la teva franja. Aquesta eina et dona les claus; el preu de sortida el preparo mirant el teu vaixell i el mercat actual, gratis i sense compromís."}}, {"@type": "Question", "name": "Quant triga a vendre's un vaixell de segona mà?", "acceptedAnswer": {"@type": "Answer", "text": "Depèn del tipus, l'eslora i l'època de l'any: fora de temporada (tardor i hivern) sol allargar-se. Com a orientació, diversos mesos és habitual fins i tot amb un preu correcte; amb la fitxa i el preu ben plantejats es pot escurçar, però convé desconfiar de qui prometi una venda ràpida sense haver vist el vaixell."}}, {"@type": "Question", "name": "Puc vendre encara que el vaixell no estigui al dia en manteniment o papers?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El més habitual és ajustar el preu o resoldre abans el que es pugui. El que no convé és amagar-ho: sol sortir a la revisió o la prova de mar, i complica més la venda que dir-ho des del principi."}}, {"@type": "Question", "name": "Té algun cost aquesta valoració?", "acceptedAnswer": {"@type": "Answer", "text": "No. Ni aquesta eina ni la primera conversa tenen cost. Només cobro honoraris si gestiono la venda i es tanca, i això queda sempre per escrit abans de començar."}}]}]
+</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/ca/" aria-label="Plata Marine, inici"><img class="brand-logo" src="/logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
+    <nav class="nav" aria-label="Seccions">
+      <a href="/ca/barcos/">Vaixells</a>
+      <a href="/ca/#vendre">Vendre</a>
+      <a href="/ca/#comprar">Comprar</a>
+      <a href="/ca/guias/">Guies</a>
+      <a href="/actualidad/">Actualitat</a>
+      <a href="/ca/servicios/">Serveis</a>
+      <a href="/ca/#juan">Sobre mi</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20he%20fet%20la%20valoraci%C3%B3%20del%20meu%20vaixell%20a%20la%20web." target="_blank" rel="noopener">Parla amb en Juan</a><div class="langsw" aria-label="Idioma"><a href="https://www.platamarine.com/herramientas/valora-tu-barco.html"><span class="flag flag-es" aria-hidden="true"></span><span class="sr-only">ES</span></a><a href="https://www.platamarine.com/ca/herramientas/valora-tu-barco.html" aria-current="page"><span class="flag flag-ca" aria-hidden="true"></span><span class="sr-only">CA</span></a></div>
+  </div>
+</header>
+
+<main class="art">
+  <div class="wrap">
+    <article>
+      <header>
+        <p class="eyebrow">Eines · Valora el teu vaixell</p>
         <h1>Quant val el teu vaixell? Fes-te una idea en 2 minuts</h1>
         <div class="meta"><span>Per Juan Morante</span><span>Setembre 2026</span></div>
         <p class="lead">Cada vaixell és un món, així que no et donaré aquí un número exacte sense veure'l: seria inventar-m'ho. Però responent aquestes nou preguntes et dic què juga a favor del teu preu i què el farà baixar, perquè quan parlem ja vinguis amb les idees clares.</p>
