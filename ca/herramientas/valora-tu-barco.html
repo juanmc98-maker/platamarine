@@ -103,7 +103,7 @@
         <h3 id="pmModalTitle">T'envio aquest resum per correu?</h3>
         <p>T'envio per escrit els punts que influeixen en el preu del teu vaixell, perquè els tinguis a mà quan parlem.</p>
         <form id="pmLeadForm" novalidate>
-          <input type="email" id="pmEmail" placeholder="elteu@correu.com" autocomplete="email" required>
+          <input type="email" id="pmEmail" placeholder="elteu@correu.com" autocomplete="email" required><input type="tel" id="pmTel" placeholder="El teu telèfon (per avisos per WhatsApp)" autocomplete="tel" required inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')">
           <label class="chk"><input type="checkbox" id="pmConsent" required> <span>Accepto que Plata Marine guardi el meu correu per enviar-me aquest resum, segons la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
           <label class="chk"><input type="checkbox" id="pmNews"> <span>Vull rebre de tant en tant articles i guies de Plata Marine per correu (et pots donar de baixa quan vulguis).</span></label>
           <p class="msg hidden" id="pmMsg"></p>
@@ -223,10 +223,10 @@ function closeModal(){el('pmModal').classList.add('hidden');if(_scrollTo)window.
 el('pmSkip').onclick=closeModal;
 el('pmLeadForm').onsubmit=function(ev){
   ev.preventDefault();var em=el('pmEmail').value.trim(),msg=el('pmMsg');msg.className='msg';
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Revisa el correu, no sembla correcte.';return;}
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Revisa el correu, no sembla correcte.';return;}var tel=el('pmTel').value.trim();if(tel.replace(/\D/g,'').length<9){msg.textContent='Revisa el telèfon, sembla incomplet.';return;}
   if(!el('pmConsent').checked){msg.textContent='Necessito que acceptis la política de privacitat per poder-te\'l enviar.';return;}
   var btn=el('pmSend');btn.disabled=true;var lbl=btn.textContent;btn.textContent='Enviant…';
-  var payload=Object.assign({email:em,consent:true,newsletter:el('pmNews').checked,consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
+  var payload=Object.assign({email:em,telefono:tel,consent:true,newsletter:el('pmNews').checked,consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
   window.submitConfirmed(LEADS_URL,payload,'json').then(function(){
     msg.className='msg ok';msg.textContent='Resum registrat. El resultat també continua disponible a la pantalla.';btn.textContent='Enviat';
     setTimeout(closeModal,1800);
