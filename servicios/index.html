@@ -176,13 +176,13 @@
             </div>
             <div class="row">
               <div class="f"><label class="l">Eslora (m)</label><input type="number" inputmode="decimal" name="eslora" placeholder="7,5" min="1" max="40" step="0.1"></div>
-              <div class="f"><label class="l">Cómo se mueve</label><select name="tipo"><option value="">Elige una opción</option><option>Por carretera (remolque o góndola)</option><option>Navegando (patrón de entrega)</option><option>No lo sé, dime tú qué conviene</option></select></div>
+              <div class="f"><label class="l">Manga (m)</label><input type="number" inputmode="decimal" name="manga" placeholder="2,5" min="0.5" max="12" step="0.1"></div>
             </div>
             <div class="row">
-              <div class="f"><label class="l">Fecha deseada</label><input type="date" name="fecha"></div>
-              <div class="f"><label class="l">Flexibilidad</label><select name="flex"><option value="">Elige una opción</option><option>Fecha exacta</option><option>&plusmn;1 día</option><option>&plusmn;3 días</option><option>&plusmn;7 días</option><option>Soy flexible, dime tú qué conviene</option></select></div>
+              <div class="f"><label class="l">Cómo se mueve</label><select name="tipo"><option value="">Elige una opción</option><option>Por carretera (remolque o góndola)</option><option>Navegando (patrón de entrega)</option><option>No lo sé, dime tú qué conviene</option></select></div><div class="f"><label class="l">Fecha deseada</label><input type="date" name="fecha" min="2024-01-01" max="2035-12-31"></div>
             </div>
-            <div class="f"><label class="l">Algo más (opcional)</label><textarea name="mensaje" placeholder="Peso, manga, si tiene quilla fija, si hace falta grúa…"></textarea></div>
+            <div class="f"><label class="l">Flexibilidad</label><select name="flex"><option value="">Elige una opción</option><option>Fecha exacta</option><option>&plusmn;1 día</option><option>&plusmn;3 días</option><option>&plusmn;7 días</option><option>Soy flexible, dime tú qué conviene</option></select></div>
+            <div class="f"><label class="l">Algo más (opcional)</label><textarea name="mensaje" placeholder="Peso, si tiene quilla fija, si hace falta grúa…"></textarea></div>
 
             <div class="row">
               <div class="f"><label class="l">Nombre</label><input type="text" name="nombre" autocomplete="name"></div>
@@ -268,7 +268,7 @@ function mk(key,fields){return function(f){var parts=[];fields.forEach(function(
 pmWire(document.getElementById('svcItb'),mk('itb',[['puerto','Puerto'],['eslora','Eslora'],['lista','Lista'],['caducidad','Caducidad'],['mensaje','Mensaje']]));
 pmWire(document.getElementById('svcGestoria'),mk('gestoria',[['tramite','Trámite'],['eslora','Eslora'],['mensaje','Mensaje']]));
 pmWire(document.getElementById('svcVaradero'),mk('varadero',[['puerto','Puerto'],['eslora','Eslora'],['trabajo','Trabajo'],['cuando','Cuándo'],['mensaje','Mensaje']]));
-pmWire(document.getElementById('svcTransporte'),mk('transporte',[['origen','Origen'],['destino','Destino'],['eslora','Eslora'],['tipo','Tipo'],['fecha','Fecha deseada'],['flex','Flexibilidad'],['mensaje','Mensaje']]));
+pmWire(document.getElementById('svcTransporte'),mk('transporte',[['origen','Origen'],['destino','Destino'],['eslora','Eslora'],['manga','Manga'],['tipo','Tipo'],['fecha','Fecha deseada'],['flex','Flexibilidad'],['mensaje','Mensaje']]));
 })();
 </script>
 
