@@ -89,6 +89,7 @@
             <div class="f"><label class="l" for="a-email">Correu</label><input type="email" name="email" id="a-email" autocomplete="email" placeholder="tu@correu.com" required></div>
             <label class="chk"><input type="checkbox" name="consent" required> <span>Accepto que Plata Marine guardi aquestes dades per avisar-me quan hi hagi un vaixell que encaixi, segons la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
             <label class="chk"><input type="checkbox" name="newsletter"> <span>Avisa'm també, de tant en tant, de guies, novetats i alguna oferta de vaixells en cartera de Plata Marine (res d'spam, dona't de baixa quan vulguis).</span></label>
+            <label class="chk"><input type="checkbox" name="cesion_terceros"> <span>Accepto que Plata Marine pugui compartir les meves dades de contacte (nom, telèfon, correu) amb empreses col·laboradores del sector nàutic i afins —com tallers, correduria d'assegurances o altres brokers— perquè puguin oferir-me productes o serveis relacionats amb el meu vaixell o la meva cerca.</span></label>
             <button type="submit" class="btn btn-wa">Crear la meva alerta</button>
             <p class="msg"></p>
             <p class="legal">Responsable: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Finalitat: avisar-te quan entri a cartera un vaixell que encaixi amb el que busques i, només si ho marques, enviar-te novetats de la web. Base legal: el teu consentiment, que pots retirar quan vulguis. Conservació: l'alerta es manté dotze mesos o fins que em demanis que l'esborri. Drets: accés, rectificació, supressió, oposició i la resta que reconeix el RGPD, escrivint a juan@platamarine.com; també pots reclamar davant l'AEPD. Més informació a la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</p>
@@ -154,7 +155,7 @@ pmWire(document.getElementById('alertaForm'),function(f){
   var parts=[];
   [['tipo','Tipus'],['eslora','Eslora'],['presu','Pressupost'],['zona','Zona'],['notas','Notes']].forEach(function(p){var v=pmVal(f,p[0]);if(v)parts.push(p[1]+': '+v);});
   if(!parts.length){f.querySelector('.msg').textContent='Digue’m almenys el tipus de vaixell, l’eslora o el pressupost.';return null;}
-  return {source:'alerta',nombre:pmVal(f,'nombre'),telefono:pmVal(f,'telefono'),newsletter:!!pmVal(f,'newsletter'),detail:parts.join(' | ')};
+  return {source:'alerta',nombre:pmVal(f,'nombre'),telefono:pmVal(f,'telefono'),newsletter:!!pmVal(f,'newsletter'),cesion_terceros:!!pmVal(f,'cesion_terceros'),detail:parts.join(' | ')};
 });
 })();
 </script>
