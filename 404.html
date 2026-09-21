@@ -24,12 +24,28 @@
 <body>
 <div class="wrap">
   <img src="/logo-plata-marine.png" alt="Plata Marine">
-  <h1>Esta página se ha quedado varada</h1>
-  <p>No encuentro lo que buscas: puede que el enlace haya cambiado o que ese barco ya no esté disponible.</p>
+  <h1 id="t404h1">Esta página se ha quedado varada</h1>
+  <p id="t404p">No encuentro lo que buscas: puede que el enlace haya cambiado o que ese barco ya no esté disponible.</p>
   <div class="btns">
-    <a class="btn primary" href="/">Volver al inicio</a>
-    <a class="btn secondary" href="/barcos/">Ver barcos en venta</a>
+    <a class="btn primary" id="t404home" href="/">Volver al inicio</a>
+    <a class="btn secondary" id="t404boats" href="/barcos/">Ver barcos en venta</a>
   </div>
 </div>
+<script>
+(function(){
+  var p = location.pathname;
+  var lang = p.indexOf("/ca/") === 0 ? "ca" : (p.indexOf("/en/") === 0 ? "en" : "es");
+  var t = {
+    es: {h1:"Esta página se ha quedado varada", p:"No encuentro lo que buscas: puede que el enlace haya cambiado o que ese barco ya no esté disponible.", home:"Volver al inicio", boats:"Ver barcos en venta", homeHref:"/", boatsHref:"/barcos/"},
+    ca: {h1:"Aquesta pàgina s'ha quedat varada", p:"No trobo el que busques: potser l'enllaç ha canviat o aquest barco ja no està disponible.", home:"Tornar a l'inici", boats:"Veure barcos en venda", homeHref:"/ca/", boatsHref:"/ca/barcos/"},
+    en: {h1:"This page has run aground", p:"I can't find what you're looking for: the link may have changed, or that boat may no longer be available.", home:"Back to home", boats:"See boats for sale", homeHref:"/en/", boatsHref:"/en/barcos/"}
+  }[lang];
+  document.documentElement.lang = lang;
+  document.getElementById("t404h1").textContent = t.h1;
+  document.getElementById("t404p").textContent = t.p;
+  var home = document.getElementById("t404home"); home.textContent = t.home; home.href = t.homeHref;
+  var boats = document.getElementById("t404boats"); boats.textContent = t.boats; boats.href = t.boatsHref;
+})();
+</script>
 </body>
 </html>
