@@ -89,6 +89,7 @@
             <div class="f"><label class="l" for="a-email">Email</label><input type="email" name="email" id="a-email" autocomplete="email" placeholder="you@email.com" required></div>
             <label class="chk"><input type="checkbox" name="consent" required> <span>I agree that Plata Marine will store this data to notify me when a boat that fits comes up, in accordance with the <a href="/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</span></label>
             <label class="chk"><input type="checkbox" name="newsletter"> <span>Also send me guides, news and the occasional listing offer from Plata Marine now and then (no spam, unsubscribe whenever you like).</span></label>
+            <label class="chk"><input type="checkbox" name="cesion_terceros"> <span>I agree that Plata Marine may share my contact details (name, phone, email) with partner companies in the boating sector and related fields — such as boatyards, insurance brokers or other brokers — so they can offer me products or services related to my boat or my search.</span></label>
             <button type="submit" class="btn btn-wa">Create my alert</button>
             <p class="msg"></p>
             <p class="legal">Data controller: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Purpose: to notify you when a boat matching what you're looking for comes into our listings and, only if you tick the box, to send you updates from the website. Legal basis: your consent, which you can withdraw at any time. Retention: the alert is kept for twelve months or until you ask me to delete it. Rights: access, rectification, erasure, objection and the other rights recognised by the GDPR, by writing to juan@platamarine.com; you can also file a complaint with the Spanish data protection authority (AEPD). More information in the <a href="/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</p>
@@ -154,7 +155,7 @@ pmWire(document.getElementById('alertaForm'),function(f){
   var parts=[];
   [['tipo','Type'],['eslora','Length'],['presu','Budget'],['zona','Area'],['notas','Notes']].forEach(function(p){var v=pmVal(f,p[0]);if(v)parts.push(p[1]+': '+v);});
   if(!parts.length){f.querySelector('.msg').textContent='Tell me at least the boat type, length or budget.';return null;}
-  return {source:'alerta',nombre:pmVal(f,'nombre'),telefono:pmVal(f,'telefono'),newsletter:!!pmVal(f,'newsletter'),detail:parts.join(' | ')};
+  return {source:'alerta',nombre:pmVal(f,'nombre'),telefono:pmVal(f,'telefono'),newsletter:!!pmVal(f,'newsletter'),cesion_terceros:!!pmVal(f,'cesion_terceros'),detail:parts.join(' | ')};
 });
 })();
 </script>
