@@ -111,7 +111,7 @@
         <h3 id="pmModalTitle">Shall I email you the result?</h3>
         <p>I'll send you the type of boat that suits you, the approximate length and the guides to read next, so you have it to hand when you're browsing listings.</p>
         <form id="pmLeadForm" novalidate>
-          <input type="email" id="pmEmail" placeholder="you@email.com" autocomplete="email" required>
+          <input type="email" id="pmEmail" placeholder="you@email.com" autocomplete="email" required><input type="tel" id="pmTel" placeholder="Your phone number (for WhatsApp updates)" autocomplete="tel" required inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')">
           <label class="chk"><input type="checkbox" id="pmConsent" required> <span>I agree that Plata Marine will store my email to send me the result, in accordance with the <a href="/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</span></label>
           <label class="chk"><input type="checkbox" id="pmAlert"> <span>Let me know if a boat matching this result comes into the listings (I write to you myself, only when there's something).</span></label>
           <label class="chk"><input type="checkbox" id="pmNews"> <span>I'd also like to receive articles and guides from Plata Marine by email from time to time (you can unsubscribe whenever you like).</span></label>
@@ -163,10 +163,10 @@ function closeModal(){el('pmModal').classList.add('hidden');if(_scrollTo)window.
 el('pmSkip').onclick=closeModal;
 el('pmLeadForm').onsubmit=function(ev){
   ev.preventDefault();var em=el('pmEmail').value.trim(),msg=el('pmMsg');msg.className='msg';
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='That email doesn’t look right — please check it.';return;}
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='That email doesn’t look right — please check it.';return;}var tel=el('pmTel').value.trim();if(tel.replace(/\D/g,'').length<9){msg.textContent='That phone number looks incomplete — please check it.';return;}
   if(!el('pmConsent').checked){msg.textContent='I need you to accept the privacy policy so I can send it to you.';return;}
   var btn=el('pmSend');btn.disabled=true;var lbl=btn.textContent;btn.textContent='Sending…';
-  var payload=Object.assign({email:em,consent:true,newsletter:el('pmNews').checked,alerta:!!(el('pmAlert')&&el('pmAlert').checked),consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
+  var payload=Object.assign({email:em,telefono:tel,consent:true,newsletter:el('pmNews').checked,alerta:!!(el('pmAlert')&&el('pmAlert').checked),consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});="email" id="pmEmail" placeholder="you@email.com" autocomplete="email" required><input type="tel" id="pmTel" placeholder="Your phone number (for WhatsApp updates)" autocomplete="tel" required inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')">
   window.submitConfirmed(LEADS_URL,payload,'json').then(function(){
     msg.className='msg ok';msg.textContent='Request received. The result is also still available on screen.';btn.textContent='Sent';
     setTimeout(closeModal,1800);
