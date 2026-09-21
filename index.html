@@ -128,7 +128,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 /* barcos en venta */
 .boats{display:grid;grid-template-columns:1fr;gap:44px;margin-top:40px}
 .boat{display:flex;flex-direction:column;gap:16px}
-.gal .main{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:4px;background:var(--paper-2)}
+.gal .main{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:4px;background:var(--paper-2);cursor:pointer}.gal .main-link{display:block}
 .thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
 .thumbs button{padding:0;border:2px solid transparent;border-radius:3px;overflow:hidden;background:var(--paper-2);cursor:pointer;aspect-ratio:4/3;display:block;width:100%}
 .thumbs button img{width:100%;height:100%;object-fit:cover;display:block}
@@ -625,7 +625,7 @@ section[id]{scroll-margin-top:78px}
       </div>
       <div class="boats">
         <article class="boat featured">
-          <div class="gal" data-imgs="faeton-730-moraga-1,faeton-730-moraga-2,faeton-730-moraga-3,faeton-730-moraga-4" data-alt="Faeton 730 Moraga fondeado en una cala de Mallorca"><span class="boat-status">Disponible</span></div>
+          <div class="gal" data-imgs="faeton-730-moraga-1,faeton-730-moraga-2,faeton-730-moraga-3,faeton-730-moraga-4" data-alt="Faeton 730 Moraga fondeado en una cala de Mallorca" data-href="barcos/faeton-730-moraga.html"><span class="boat-status">Disponible</span></div>
           <div class="boat-body">
             <div class="boat-head"><h3><a href="barcos/faeton-730-moraga.html" style="color:inherit;text-decoration:none">Faeton 730 Moraga</a></h3><p class="price">30.000 €</p></div>
             <dl class="specs">
@@ -644,7 +644,7 @@ section[id]{scroll-margin-top:78px}
           </div>
         </article>
         <article class="boat featured">
-          <div class="gal" data-imgs="monterey-278-ss-1,monterey-278-ss-2,monterey-278-ss-3,monterey-278-ss-4" data-alt="Monterey 278 SS fondeada en una cala de la Costa Brava"><span class="boat-status">En gestión</span></div>
+          <div class="gal" data-imgs="monterey-278-ss-1,monterey-278-ss-2,monterey-278-ss-3,monterey-278-ss-4" data-alt="Monterey 278 SS fondeada en una cala de la Costa Brava" data-href="barcos/monterey-278-ss.html"><span class="boat-status">En gestión</span></div>
           <div class="boat-body">
             <div class="boat-head"><h3><a href="barcos/monterey-278-ss.html" style="color:inherit;text-decoration:none">Monterey 278 SS</a></h3><p class="price">49.990 €</p></div>
             <dl class="specs">
@@ -798,8 +798,9 @@ var IMGS={"monterey-278-ss-1": "monterey-278-ss-1.jpg", "monterey-278-ss-2": "mo
   var gals=document.querySelectorAll('.gal[data-imgs]');
   for(var g=0;g<gals.length;g++){(function(gal){
     var keys=gal.getAttribute('data-imgs').split(',');
-    var main=document.createElement('img'); main.className='main'; main.alt=gal.getAttribute('data-alt')||''; main.src=IMGS[keys[0]]||''; main.width=1600; main.height=900; main.setAttribute('loading','lazy');
-    gal.appendChild(main);
+        var main=document.createElement('img'); main.className='main'; main.alt=gal.getAttribute('data-alt')||''; main.src=IMGS[keys[0]]||''; main.width=1600; main.height=900; main.setAttribute('loading','lazy');
+    var href=gal.getAttribute('data-href');
+    if(href){var mainLink=document.createElement('a'); mainLink.className='main-link'; mainLink.href=href; mainLink.setAttribute('aria-label','Ver ficha completa'); mainLink.appendChild(main); gal.appendChild(mainLink);} else { gal.appendChild(main); }
     if(keys.length<2) return;
     var strip=document.createElement('div'); strip.className='thumbs';
     keys.forEach(function(k,i){
