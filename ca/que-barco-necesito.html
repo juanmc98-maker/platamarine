@@ -114,7 +114,7 @@
           <input type="email" id="pmEmail" placeholder="tu@correu.com" autocomplete="email" required><input type="tel" id="pmTel" placeholder="El teu telèfon (per avisos per WhatsApp)" autocomplete="tel" required inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')">
           <label class="chk"><input type="checkbox" id="pmConsent" required> <span>Accepto que Plata Marine guardi el meu correu per enviar-me el resultat, segons la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
           <label class="chk"><input type="checkbox" id="pmAlert"> <span>Avisa'm si entra a cartera un vaixell que encaixi amb aquest resultat (t'escric jo, només quan hi hagi alguna cosa).</span></label>
-          <label class="chk"><input type="checkbox" id="pmNews"> <span>Vull rebre de tant en tant articles i guies de Plata Marine per correu (et pots donar de baixa quan vulguis).</span></label>
+          <label class="chk"><input type="checkbox" id="pmNews"> <span>Vull rebre de tant en tant articles i guies de Plata Marine per correu (et pots donar de baixa quan vulguis).</span></label><label class="chk"><input type="checkbox" id="pmCesion"> <span>Accepto que Plata Marine pugui compartir les meves dades de contacte (nom, telèfon, correu) amb empreses col·laboradores del sector nàutic i afins —com tallers, correduria d'assegurances o altres brokers— perquè puguin oferir-me productes o serveis relacionats amb el meu vaixell o la meva cerca.</span></label>
           <p class="msg hidden" id="pmMsg"></p>
           <button type="submit" class="btn btn-wa" id="pmSend">Envia'm el resultat</button>
           <button type="button" class="skip" id="pmSkip">Veure el resultat sense correu</button>
@@ -166,7 +166,7 @@ el('pmLeadForm').onsubmit=function(ev){
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Revisa el correu, no sembla correcte.';return;}var tel=el('pmTel').value.trim();if(tel.replace(/\D/g,'').length<9){msg.textContent='Revisa el telèfon, sembla incomplet.';return;}
   if(!el('pmConsent').checked){msg.textContent='Necessito que acceptis la política de privacitat per poder enviar-te’l.';return;}
   var btn=el('pmSend');btn.disabled=true;var lbl=btn.textContent;btn.textContent='Enviant…';
-  var payload=Object.assign({email:em,telefono:tel,consent:true,newsletter:el('pmNews').checked,alerta:!!(el('pmAlert')&&el('pmAlert').checked),consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
+  var payload=Object.assign({email:em,telefono:tel,consent:true,newsletter:el('pmNews').checked,alerta:!!(el('pmAlert')&&el('pmAlert').checked),cesion_terceros:!!(el('pmCesion')&&el('pmCesion').checked),consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
   window.submitConfirmed(LEADS_URL,payload,'json').then(function(){
     msg.className='msg ok';msg.textContent='Sol·licitud registrada. El resultat també continua disponible a la pantalla.';btn.textContent='Enviat';
     setTimeout(closeModal,1800);
