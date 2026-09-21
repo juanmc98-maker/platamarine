@@ -89,6 +89,7 @@
             <div class="f"><label class="l" for="a-email">Correo</label><input type="email" name="email" id="a-email" autocomplete="email" placeholder="tu@correo.com" required></div>
             <label class="chk"><input type="checkbox" name="consent" required> <span>Acepto que Plata Marine guarde estos datos para avisarme cuando haya un barco que encaje, según la <a href="../privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
             <label class="chk"><input type="checkbox" name="newsletter"> <span>Avísame también, de vez en cuando, de guías, novedades y alguna oferta de barcos en cartera de Plata Marine (nada de spam, baja cuando quieras).</span></label>
+            <label class="chk"><input type="checkbox" name="cesion_terceros"> <span>Acepto que Plata Marine pueda compartir mis datos de contacto (nombre, teléfono, email) con empresas colaboradoras del sector náutico y afines —como talleres, correduría de seguros u otros brokers— para que puedan ofrecerme productos o servicios relacionados con mi barco o mi búsqueda.</span></label>
             <button type="submit" class="btn btn-wa">Crear mi alerta</button>
             <p class="msg"></p>
             <p class="legal">Responsable: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Finalidad: avisarte cuando entre en cartera un barco que encaje con lo que buscas y, solo si lo marcas, enviarte novedades de la web. Base legal: tu consentimiento, que puedes retirar cuando quieras. Conservación: la alerta se mantiene doce meses o hasta que me pidas que la borre. Derechos: acceso, rectificación, supresión, oposición y los demás que reconoce el RGPD, escribiendo a juan@platamarine.com; también puedes reclamar ante la AEPD. Más información en la <a href="../privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</p>
@@ -154,7 +155,7 @@ pmWire(document.getElementById('alertaForm'),function(f){
   var parts=[];
   [['tipo','Tipo'],['eslora','Eslora'],['presu','Presupuesto'],['zona','Zona'],['notas','Notas']].forEach(function(p){var v=pmVal(f,p[0]);if(v)parts.push(p[1]+': '+v);});
   if(!parts.length){f.querySelector('.msg').textContent='Dime al menos el tipo de barco, la eslora o el presupuesto.';return null;}
-  return {source:'alerta',nombre:pmVal(f,'nombre'),telefono:pmVal(f,'telefono'),newsletter:!!pmVal(f,'newsletter'),detail:parts.join(' | ')};
+  return {source:'alerta',nombre:pmVal(f,'nombre'),telefono:pmVal(f,'telefono'),newsletter:!!pmVal(f,'newsletter'),cesion_terceros:!!pmVal(f,'cesion_terceros'),detail:parts.join(' | ')};
 });
 })();
 </script>
