@@ -254,14 +254,14 @@ if(Q[qi] && Q[qi].id==='anunciado'){
 var val=Q[qi].o[parseInt(e.target.value)].v.anunciado;var show=(val!=='no');
 el('qDonde').classList.toggle('hidden',!show);if(!show)el('qExclusiva').classList.add('hidden');
 }}
-if(e.target.name==='donde'){el('qExclusiva').classList.toggle('hidden',e.target.value!=='broker');}mm.style.borderColor='#c0392b';var mg=el('marcaModeloMsg');if(mg)mg.style.display='block';window.scrollTo
+if(e.target.name==='donde'){el('qExclusiva').classList.toggle('hidden',e.target.value!=='broker');}
 });
 
 }
 function prog(){var n=0;Q.forEach(function(q,i){if(document.querySelector('input[name=q'+i+']:checked'))n++});el('prog').style.width=Math.round(100*n/Q.length)+'%';}
 function check(){
   var missing=[];Q.forEach(function(q,i){if(!document.querySelector('input[name=q'+i+']:checked'))missing.push(i)});
-  var mm=el('marcaModelo');var mmEmpty=mm&&!mm.value.trim();if(missing.length||mmEmpty){var c=el('q'+(missing.length?missing[0]:0));c.style.borderColor='#c0392b';if(mmEmpty&&mm){mm.style.borderColor='#c0392b';var mg=el('marcaModeloMsg');if(mg)mg.style.display='block';}window.scrollTo({top:c.offsetTop-90,behavior:'smooth'});return;}po'){h+='<p class="hint" style="margin-top:10px">Quina marca i model és?</p><input type="text" id="marcaModelo" placeholder="Ex. Quicksilver 675" style="width:100%;font:15px var(--serif);padding:9px 10px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box"><p class="hint" id="marcaModeloMsg" style="display:none;color:#c0392b;margin-top:6px">Digues-nos almenys la marca del teu vaixell, ens ajuda a valorar-lo millor.</p>';}
+  var mm=el('marcaModelo');var mmEmpty=mm&&!mm.value.trim();if(missing.length||mmEmpty){var c=el('q'+(missing.length?missing[0]:0));c.style.borderColor='#c0392b';if(mmEmpty&&mm){mm.style.borderColor='#c0392b';var mg=el('marcaModeloMsg');if(mg)mg.style.display='block';}window.scrollTo({top:c.offsetTop-90,behavior:'smooth'});return;}
   var v={};Q.forEach(function(q,i){var sel=document.querySelector('input[name=q'+i+']:checked');var o=q.o[parseInt(sel.value)];Object.assign(v,o.v||{});});
 v.marca=(el('marcaModelo')&&el('marcaModelo').value.trim())||'';
 v.potencia=(el('potenciaCV')&&el('potenciaCV').value.trim())||'';
