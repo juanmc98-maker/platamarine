@@ -20,7 +20,7 @@
 .pm-box{background:#fff;border-radius:10px;max-width:440px;width:100%;padding:26px 24px;box-shadow:0 24px 60px rgba(13,28,39,.3);position:relative}
 .pm-box h3{font-family:var(--display);font-size:1.25rem;margin:0 0 8px;line-height:1.2}
 .pm-box p{font-size:15px;color:var(--ink-2);margin:0 0 14px}
-.pm-box input[type=email]{width:100%;font:16px var(--serif);padding:11px 12px;border:1px solid var(--plata-2);border-radius:6px;margin-bottom:10px;box-sizing:border-box}
+.pm-box input[type=email],.pm-box input[type=tel]{width:100%;font:16px var(--serif);padding:11px 12px;border:1px solid var(--plata-2);border-radius:6px;margin-bottom:10px;box-sizing:border-box}
 .pm-box label.chk{display:flex;gap:8px;align-items:flex-start;font-family:var(--display);font-size:13px;color:var(--ink-2);margin-bottom:8px;line-height:1.4}
 .pm-box .btn{width:100%;margin-top:6px;cursor:pointer}
 .pm-box .skip{display:block;text-align:center;font-family:var(--display);font-size:13px;color:var(--ink-2);margin-top:12px;background:none;border:0;cursor:pointer;text-decoration:underline}
@@ -228,7 +228,7 @@ function render(){
   Q.forEach(function(q,i){
     h+='<div class="qcard" id="q'+i+'"><span class="step">Pregunta '+(i+1)+' de '+Q.length+'</span><h3>'+q.q+'</h3>';
     q.o.forEach(function(o,j){h+='<label class="opt"><input type="radio" name="q'+i+'" value="'+j+'"> <span>'+o.t+'</span></label>'});
-if(q.id==='tipo'){h+='<p class="hint" style="margin-top:10px">¿Sabes la marca y el modelo? (opcional)</p><input type="text" id="marcaModelo" placeholder="Marca y modelo" style="width:100%;font:15px var(--serif);padding:9px 10px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box">';}
+if(q.id==='tipo'){h+='<p class="hint" style="margin-top:10px">¿Qué marca y modelo es?</p><input type="text" id="marcaModelo" placeholder="Ej. Quicksilver 675" style="width:100%;font:15px var(--serif);padding:9px 10px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box"><p class="hint" id="marcaModeloMsg" style="display:none;color:#c0392b;margin-top:6px">Dinos al menos la marca de tu barco, nos ayuda a valorarlo mejor.</p>';}
 if(q.id==='motor'){h+='<p class="hint" style="margin-top:10px">Potencia en CV, si la sabes (opcional)</p><input type="text" id="potenciaCV" placeholder="Ej. 250 CV" style="width:100%;font:15px var(--serif);padding:9px 10px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box">';}
 if(q.id==='anunciado'){h+='<div class="qcard hidden" id="qDonde"><h3>¿Dónde lo tienes anunciado?</h3>'+[['wallapop','Wallapop u otro clasificado'],['portal','Portal náutico especializado'],['broker','Con otro broker'],['redes','Redes sociales'],['otro','Otro']].map(function(e){return '<label class="opt"><input type="radio" name="donde" value="'+e[0]+'"> <span>'+e[1]+'</span></label>'}).join('')+'</div><div class="qcard hidden" id="qExclusiva"><h3>¿Se lo has dado en exclusiva a ese broker?</h3><label class="opt"><input type="radio" name="exclusiva" value="si"> <span>Sí, en exclusiva</span></label><label class="opt"><input type="radio" name="exclusiva" value="no"> <span>No, sin exclusiva</span></label></div>';}
 
@@ -251,7 +251,7 @@ if(e.target.name==='donde'){el('qExclusiva').classList.toggle('hidden',e.target.
 function prog(){var n=0;Q.forEach(function(q,i){if(document.querySelector('input[name=q'+i+']:checked'))n++});el('prog').style.width=Math.round(100*n/Q.length)+'%';}
 function check(){
   var missing=[];Q.forEach(function(q,i){if(!document.querySelector('input[name=q'+i+']:checked'))missing.push(i)});
-  if(missing.length){var c=el('q'+missing[0]);c.style.borderColor='#c0392b';window.scrollTo({top:c.offsetTop-90,behavior:'smooth'});return;}
+  var mm=el('marcaModelo');var mmEmpty=mm&&!mm.value.trim();if(missing.length||mmEmpty){var c=el('q'+(missing.length?missing[0]:0));c.style.borderColor='#c0392b';if(mmEmpty&&mm){mm.style.borderColor='#c0392b';var mg=el('marcaModeloMsg');if(mg)mg.style.display='block';}window.scrollTo({top:c.offsetTop-90,behavior:'smooth'});return;}
   var v={};Q.forEach(function(q,i){var sel=document.querySelector('input[name=q'+i+']:checked');var o=q.o[parseInt(sel.value)];Object.assign(v,o.v||{});});
 v.marca=(el('marcaModelo')&&el('marcaModelo').value.trim())||'';
 v.potencia=(el('potenciaCV')&&el('potenciaCV').value.trim())||'';
