@@ -14,8 +14,9 @@ function setMain(i){
   thumbs.forEach(function(t, idx){ t.className = idx === current ? 'on' : ''; });
 }
 
+var openFromThumb = null;
 thumbs.forEach(function(t, idx){
-  t.addEventListener('click', function(){ setMain(idx); });
+  t.addEventListener('click', function(){ if(openFromThumb) openFromThumb(idx); else setMain(idx); });
 });
 
 if(images.length){
@@ -63,6 +64,7 @@ if(images.length){
     updateLb();
   }
 
+  openFromThumb = openLb;
   main.classList.add('zoomable');
   main.setAttribute('role', 'button');
   main.setAttribute('tabindex', '0');
