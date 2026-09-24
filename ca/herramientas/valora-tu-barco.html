@@ -53,23 +53,37 @@
 <script type="application/ld+json">
 [{"@context": "https://schema.org", "@type": "WebApplication", "name": "Valora el teu vaixell", "applicationCategory": "UtilityApplication", "operatingSystem": "Web", "inLanguage": "ca", "provider": {"@type": "Organization", "name": "Plata Marine"}, "url": "https://www.platamarine.com/ca/herramientas/valora-tu-barco.html", "description": "Respon nou preguntes sobre el teu vaixell (tipus, eslora, any, motor, hores, manteniment, papers, ubicació i si ja està anunciat) i et dic què juga a favor del seu preu i què el pot baixar, abans de donar-te una valoració real. Gratis i sense registre."}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Per què no em doneu aquí un preu exacte?", "acceptedAnswer": {"@type": "Answer", "text": "Un preu real depèn de coses que no surten en un formulari: l'estat del motor vist en persona, el paperam concret i què s'està venent de veritat ara mateix en la teva franja. Aquesta eina et dona les claus; el preu de sortida el preparo mirant el teu vaixell i el mercat actual, gratis i sense compromís."}}, {"@type": "Question", "name": "Quant triga a vendre's un vaixell de segona mà?", "acceptedAnswer": {"@type": "Answer", "text": "Depèn del tipus, l'eslora i l'època de l'any: fora de temporada (tardor i hivern) sol allargar-se. Com a orientació, diversos mesos és habitual fins i tot amb un preu correcte; amb la fitxa i el preu ben plantejats es pot escurçar, però convé desconfiar de qui prometi una venda ràpida sense haver vist el vaixell."}}, {"@type": "Question", "name": "Puc vendre encara que el vaixell no estigui al dia en manteniment o papers?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El més habitual és ajustar el preu o resoldre abans el que es pugui. El que no convé és amagar-ho: sol sortir a la revisió o la prova de mar, i complica més la venda que dir-ho des del principi."}}, {"@type": "Question", "name": "Té algun cost aquesta valoració?", "acceptedAnswer": {"@type": "Answer", "text": "No. Ni aquesta eina ni la primera conversa tenen cost. Només cobro honoraris si gestiono la venda i es tanca, i això queda sempre per escrit abans de començar."}}]}]
 </script>
+<link rel="stylesheet" href="/nav.css?v=20260924">
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
     <a class="brand" href="/ca/" aria-label="Plata Marine, inici"><img class="brand-logo" src="/logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
-    <nav class="nav" aria-label="Seccions">
+    <nav class="nav pmx-nav" aria-label="Seccions">
       <a href="/ca/barcos/">Vaixells</a>
-      <a href="/ca/#vendre">Vendre</a>
-      <a href="/ca/#comprar">Comprar</a>
-      <a href="/ca/guias/">Guies</a>
-      <a href="/actualidad/">Actualitat</a>
-      <a href="/ca/servicios/">Serveis</a>
+      <div class="pmx-dd cur"><button type="button" aria-expanded="false" aria-controls="pmxM1">Vendre</button><div class="pmx-menu" id="pmxM1"><a href="/ca/#vender">Vendre el meu vaixell</a><a href="/ca/herramientas/valora-tu-barco.html" aria-current="page">Quant val el meu vaixell?</a><a href="/ca/guias/que-hace-un-broker-nautico.html">Què fa un bròker nàutic</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM2">Comprar</button><div class="pmx-menu" id="pmxM2"><a href="/ca/barcos/">Vaixells en venda</a><a href="/ca/#comprar">Busco vaixell</a><a href="/ca/alertas/">Avisa&#x27;m de vaixells nous</a><a href="/ca/que-barco-necesito.html">Quin vaixell necessito?</a><a href="/ca/modelos/">Models: què mirar i preus</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM3">Aprèn</button><div class="pmx-menu" id="pmxM3"><a href="/ca/guias/">Guies</a><a href="/ca/actualidad/">Actualitat</a><a href="/ca/navegante/">Guia del navegant</a><a href="/ca/titulaciones/">Titulacions</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM4">Serveis</button><div class="pmx-menu" id="pmxM4"><a href="/ca/servicios/">ITB, gestoria, varador i més</a><a href="/ca/servicios/directorio.html">Directori d&#x27;empreses</a></div></div>
       <a href="/ca/#juan">Sobre mi</a>
+      <a href="/ca/#contacto">Contacte</a>
     </nav>
     <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20he%20fet%20la%20valoraci%C3%B3%20del%20meu%20vaixell%20a%20la%20web." target="_blank" rel="noopener">Parla amb en Juan</a><div class="langsw" aria-label="Idioma"><a href="https://www.platamarine.com/herramientas/valora-tu-barco.html"><span class="flag flag-es" aria-hidden="true"></span><span class="sr-only">ES</span></a><a href="https://www.platamarine.com/ca/herramientas/valora-tu-barco.html" aria-current="page"><span class="flag flag-ca" aria-hidden="true"></span><span class="sr-only">CA</span></a></div>
+    <button type="button" class="pmx-btn" id="pmxBtn" aria-expanded="false" aria-controls="pmxPanel" aria-label="Obrir menú" data-open="Obrir menú" data-close="Tancar menú"><span></span></button>
   </div>
+  <nav class="pmx-panel" id="pmxPanel" aria-label="Menú mòbil">
+    <div class="pmx-in">
+      <div class="pmx-grp"><a href="/ca/barcos/">Vaixells</a></div>
+      <div class="pmx-grp"><p>Vendre</p><a href="/ca/#vender">Vendre el meu vaixell</a><a href="/ca/herramientas/valora-tu-barco.html" aria-current="page">Quant val el meu vaixell?</a><a href="/ca/guias/que-hace-un-broker-nautico.html">Què fa un bròker nàutic</a></div>
+      <div class="pmx-grp"><p>Comprar</p><a href="/ca/barcos/">Vaixells en venda</a><a href="/ca/#comprar">Busco vaixell</a><a href="/ca/alertas/">Avisa&#x27;m de vaixells nous</a><a href="/ca/que-barco-necesito.html">Quin vaixell necessito?</a><a href="/ca/modelos/">Models: què mirar i preus</a></div>
+      <div class="pmx-grp"><p>Aprèn</p><a href="/ca/guias/">Guies</a><a href="/ca/actualidad/">Actualitat</a><a href="/ca/navegante/">Guia del navegant</a><a href="/ca/titulaciones/">Titulacions</a></div>
+      <div class="pmx-grp"><p>Serveis</p><a href="/ca/servicios/">ITB, gestoria, varador i més</a><a href="/ca/servicios/directorio.html">Directori d&#x27;empreses</a></div>
+      <div class="pmx-grp"><a href="/ca/#juan">Sobre mi</a></div>
+      <div class="pmx-grp"><a href="/ca/#contacto">Contacte</a></div>
+      <div class="pmx-wide"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20vull%20parlar%20sobre%20un%20vaixell." target="_blank" rel="noopener">Parlar amb en Juan</a></div>
+    </div>
+  </nav>
 </header>
 
 <main class="art">
@@ -104,12 +118,12 @@
         <p>T'envio per escrit els punts que influeixen en el preu del teu vaixell, perquè els tinguis a mà quan parlem.</p>
         <form id="pmLeadForm" novalidate>
           <input type="email" id="pmEmail" placeholder="elteu@correu.com" autocomplete="email" required><input type="tel" id="pmTel" placeholder="El teu telèfon (per avisos per WhatsApp)" autocomplete="tel" required inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')">
-          <label class="chk"><input type="checkbox" id="pmConsent" required> <span>Accepto que Plata Marine guardi el meu correu per enviar-me aquest resum, segons la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
+          <label class="chk"><input type="checkbox" id="pmConsent" required> <span>Accepto que Plata Marine guardi el meu correu per enviar-me aquest resum, segons la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
           <label class="chk"><input type="checkbox" id="pmNews"> <span>Vull rebre de tant en tant articles i guies de Plata Marine per correu (et pots donar de baixa quan vulguis).</span></label><label class="chk"><input type="checkbox" id="pmCesion"> <span>Accepto que Plata Marine pugui compartir les meves dades de contacte (nom, telèfon, correu) amb empreses col·laboradores del sector nàutic i afins —com tallers, correduria d'assegurances o altres brokers— perquè puguin oferir-me productes o serveis relacionats amb el meu vaixell o la meva cerca.</span></label>
           <p class="msg hidden" id="pmMsg"></p>
           <button type="submit" class="btn btn-wa" id="pmSend">Envia'm el resum</button>
           <button type="button" class="skip" id="pmSkip">Veure el resultat sense correu</button>
-          <p class="legal">Responsable: Juan Morante Cruz (Plata Marine). Finalitat: enviar-te aquest resum i, només si ho marques, novetats de la web. Pots exercir els teus drets d'accés, rectificació i supressió a juan@platamarine.com. Més informació a la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</p>
+          <p class="legal">Responsable: Juan Morante Cruz (Plata Marine). Finalitat: enviar-te aquest resum i, només si ho marques, novetats de la web. Pots exercir els teus drets d'accés, rectificació i supressió a juan@platamarine.com. Més informació a la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</p>
         <p class="legal">També pots <a href="mailto:juan@platamarine.com">escriure a juan@platamarine.com</a>. Si no apareix una confirmació, consulta abans de tornar a enviar-ho.</p></form>
       </div>
     </div>
@@ -143,7 +157,7 @@
 <div class="wrap">
 <div class="line">
 <span>© 2026 Plata Marine · Sabadell, Barcelona · <a href="mailto:juan@platamarine.com">juan@platamarine.com</a></span>
-<a href="/ca/aviso-legal.html">Avís legal</a> · <a href="/ca/privacidad.html">Privacitat</a> · <a href="/ca/cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Web per rotulito.com</a>
+<a href="/aviso-legal.html">Avís legal</a> · <a href="/privacidad.html">Privacitat</a> · <a href="/ca/cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Web per rotulito.com</a>
 </div>
 </div>
 <p class="wrap"><button type="button" data-cookie-settings>Configurar les cookies</button></p></footer>
@@ -310,6 +324,7 @@ el('again').onclick=function(){render();window.scrollTo({top:el('qz').offsetTop-
 render();
 })();
 </script>
+<script src="/nav.js?v=20260924" defer></script>
 </body>
 </html>
 
