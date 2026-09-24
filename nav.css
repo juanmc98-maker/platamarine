@@ -1,0 +1,36 @@
+/* Menú agrupado Plata Marine (escritorio + móvil) */
+header.top .nav.pmx-nav{display:none;align-items:center;gap:2px}
+header.top .pmx-nav>a,header.top .pmx-dd>button{font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-weight:500;font-size:14px;letter-spacing:.01em;color:#44545F;text-decoration:none;background:none;border:0;padding:8px 9px;border-radius:6px;cursor:pointer;display:inline-flex;align-items:center;gap:4px;line-height:1.2;white-space:nowrap}
+header.top .pmx-nav>a:hover,header.top .pmx-dd>button:hover,header.top .pmx-dd.open>button{color:#0D1C27;background:rgba(13,28,39,.05)}
+header.top .pmx-nav>a[aria-current],header.top .pmx-dd.cur>button{color:#0D1C27;font-weight:600}
+header.top .pmx-dd>button::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translate(-2px,-2px);margin-left:3px;opacity:.7}
+.pmx-dd{position:relative}
+.pmx-menu{display:none;position:absolute;left:-6px;top:100%;min-width:230px;background:#fff;border:1px solid #B7C3CB;border-radius:8px;box-shadow:0 14px 30px rgba(13,28,39,.12);padding:6px;z-index:60}
+.pmx-menu::before{content:"";position:absolute;left:0;right:0;top:-8px;height:8px}
+.pmx-dd.open .pmx-menu{display:block}
+@media (hover:hover){.pmx-dd:hover .pmx-menu{display:block}}
+header.top .pmx-menu a{display:block;font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-size:14px;font-weight:500;color:#0D1C27;text-decoration:none;padding:9px 12px;border-radius:6px;white-space:nowrap}
+header.top .pmx-menu a:hover,header.top .pmx-menu a:focus-visible{background:#E9EDEF}
+header.top .pmx-menu a[aria-current]{color:#17465F;font-weight:600}
+/* botón y panel móvil */
+.pmx-btn{display:none;width:42px;height:42px;align-items:center;justify-content:center;border:1px solid #B7C3CB;background:rgba(255,255,255,.55);border-radius:7px;cursor:pointer;color:#0D1C27;padding:0;flex:none;margin-left:8px}
+.pmx-btn span,.pmx-btn span::before,.pmx-btn span::after{display:block;width:19px;height:2px;background:currentColor;border-radius:2px;content:"";position:relative;transition:.2s ease}
+.pmx-btn span::before{position:absolute;top:-6px}.pmx-btn span::after{position:absolute;top:6px}
+.pmx-btn[aria-expanded="true"] span{background:transparent}
+.pmx-btn[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.pmx-btn[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+.pmx-panel{display:none;position:absolute;left:0;right:0;top:100%;background:#F3F5F6;border-bottom:1px solid #B7C3CB;box-shadow:0 14px 30px rgba(13,28,39,.08);max-height:calc(100vh - 64px);max-height:calc(100dvh - 64px);overflow-y:auto;z-index:50}
+.pmx-panel.open{display:block}
+.pmx-panel .pmx-in{max-width:1120px;margin:0 auto;padding:6px clamp(20px,4vw,48px) 18px;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.pmx-grp{padding:12px 0 6px;border-bottom:1px solid rgba(127,146,158,.18)}
+.pmx-grp p{font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#7F929E;margin:0 0 4px}
+.pmx-panel a{display:block;font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-size:15px;font-weight:600;color:#0D1C27;text-decoration:none;padding:9px 0}
+.pmx-panel a[aria-current]{color:#17465F}
+.pmx-panel .pmx-wide{grid-column:1/-1;margin-top:14px}
+.pmx-panel .pmx-wide a.btn{display:flex;justify-content:center;width:100%;color:#fff;padding:13px 16px}
+/* los menús móviles antiguos quedan sustituidos por este */
+header.top .menu-btn,header.top .mobile-nav,header.top .pm-mbtn,header.top .pm-mnav{display:none!important}
+@media (min-width:1120px){header.top .nav.pmx-nav{display:flex}}
+@media (max-width:1119px){header.top .nav.pmx-nav{display:none}header.top .wrap{justify-content:flex-start}header.top .brand{margin-right:auto}.pmx-btn{display:inline-flex}header.top .top-cta{display:none}}
+@media (max-width:560px){.pmx-panel .pmx-in{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.pmx-btn span,.pmx-btn span::before,.pmx-btn span::after{transition:none}}
