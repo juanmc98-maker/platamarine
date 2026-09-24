@@ -60,24 +60,38 @@
 <script type="application/ld+json">
 [{"@context": "https://schema.org", "@type": "WebApplication", "name": "Quin vaixell necessito", "applicationCategory": "UtilityApplication", "operatingSystem": "Web", "inLanguage": "ca", "provider": {"@type": "Organization", "name": "Plata Marine"}, "url": "https://www.platamarine.com/ca/que-barco-necesito.html", "description": "No saps quin vaixell comprar? Respon nou preguntes sobre quants sou, quin ús li donaràs, pressupost, titulació i on el guardaràs, i et dic quin tipus de vaixell a motor et convé (open, sundeck, walkaround, cabinat, pilothouse, fly o semirígida), quina eslora i què mirar. Gratuït i sense registre."}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quin vaixell comprar com a primer vaixell?", "acceptedAnswer": {"@type": "Answer", "text": "Per a un primer vaixell solc recomanar començar per l'ús i no pel model: quants sou, si dormireu a bord, on el guardareu i quina titulació teniu. Amb això el tipus surt gairebé sol: un open o una semirígida si busques senzillesa, un sundeck si el que t'agrada és el sol i el bany, un cabinat o un fly si passareu nits fora. El test de dalt ho resol en dos minuts."}}, {"@type": "Question", "name": "Quina eslora puc portar amb cada titulació?", "acceptedAnswer": {"@type": "Answer", "text": "Sense titulació, fins a 5 metres i 15 CV a prop de la costa; amb la Llicència de navegació, fins a 6 metres i 2 milles; amb el PNB, fins a 8 metres i 5 milles; amb el PER, fins a 15 metres (24 amb les pràctiques complementàries). Ho explico a la secció de titulacions."}}, {"@type": "Question", "name": "Quant costa mantenir un vaixell de 8 metres a Catalunya?", "acceptedAnswer": {"@type": "Answer", "text": "La despesa fixa que més pesa és l'amarratge: a la zona de Barcelona la majoria de ports publiquen entre 2.700 i 3.700 euros l'any per a 8 metres, més IVA i subministraments segons el port; els ports de la Generalitat surten bastant més barats i les marines de la Costa Brava, més cares. A això s'hi sumen l'assegurança, la varada anual i el manteniment del motor. Tens les tarifes port per port a la guia d'amarratges."}}, {"@type": "Question", "name": "És millor un vaixell amb motor fora borda o intraborda?", "acceptedAnswer": {"@type": "Answer", "text": "Depèn de la mida i de l'ús. Fins a 8 o 9 metres el fora borda és més senzill i barat de mantenir i permet marina seca o remolc; a partir d'aquí, i en vaixells amb cabina, l'intraborda o el dentrofora és l'habitual. El test ho té en compte a la pregunta 8."}}]}]
 </script>
+<link rel="stylesheet" href="/nav.css?v=20260924">
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
     <a class="brand" href="/ca/" aria-label="Plata Marine, inici"><img class="brand-logo" src="/logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
-    <nav class="nav" aria-label="Seccions">
+    <nav class="nav pmx-nav" aria-label="Seccions">
       <a href="/ca/barcos/">Vaixells</a>
-      <a href="/ca/#vender">Vendre</a>
-      <a href="/ca/#comprar">Comprar</a>
-      <a href="/guias/">Guies</a>
-      <a href="/actualidad/">Actualitat</a>
-      <a href="/ca/servicios/">Serveis</a>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM1">Vendre</button><div class="pmx-menu" id="pmxM1"><a href="/ca/#vender">Vendre el meu vaixell</a><a href="/ca/herramientas/valora-tu-barco.html">Quant val el meu vaixell?</a><a href="/ca/guias/que-hace-un-broker-nautico.html">Què fa un bròker nàutic</a></div></div>
+      <div class="pmx-dd cur"><button type="button" aria-expanded="false" aria-controls="pmxM2">Comprar</button><div class="pmx-menu" id="pmxM2"><a href="/ca/barcos/">Vaixells en venda</a><a href="/ca/#comprar">Busco vaixell</a><a href="/ca/alertas/">Avisa&#x27;m de vaixells nous</a><a href="/ca/que-barco-necesito.html" aria-current="page">Quin vaixell necessito?</a><a href="/ca/modelos/">Models: què mirar i preus</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM3">Aprèn</button><div class="pmx-menu" id="pmxM3"><a href="/ca/guias/">Guies</a><a href="/ca/actualidad/">Actualitat</a><a href="/ca/navegante/">Guia del navegant</a><a href="/ca/titulaciones/">Titulacions</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM4">Serveis</button><div class="pmx-menu" id="pmxM4"><a href="/ca/servicios/">ITB, gestoria, varador i més</a><a href="/ca/servicios/directorio.html">Directori d&#x27;empreses</a></div></div>
       <a href="/ca/#juan">Sobre mi</a>
+      <a href="/ca/#contacto">Contacte</a>
     </nav>
     <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20he%20fet%20el%20test%20de%20quin%20vaixell%20necessito." target="_blank" rel="noopener">Parlar amb Juan</a>
     <div class="langsw" aria-label="Idioma"><a href="https://www.platamarine.com/que-barco-necesito.html"><span class="flag flag-es" aria-hidden="true"></span><span class="sr-only">ES</span></a><a href="https://www.platamarine.com/ca/que-barco-necesito.html" aria-current="page"><span class="flag flag-ca" aria-hidden="true"></span><span class="sr-only">CA</span></a><a href="https://www.platamarine.com/en/que-barco-necesito.html"><span class="flag flag-en" aria-hidden="true"></span><span class="sr-only">EN</span></a></div>
+    <button type="button" class="pmx-btn" id="pmxBtn" aria-expanded="false" aria-controls="pmxPanel" aria-label="Obrir menú" data-open="Obrir menú" data-close="Tancar menú"><span></span></button>
   </div>
+  <nav class="pmx-panel" id="pmxPanel" aria-label="Menú mòbil">
+    <div class="pmx-in">
+      <div class="pmx-grp"><a href="/ca/barcos/">Vaixells</a></div>
+      <div class="pmx-grp"><p>Vendre</p><a href="/ca/#vender">Vendre el meu vaixell</a><a href="/ca/herramientas/valora-tu-barco.html">Quant val el meu vaixell?</a><a href="/ca/guias/que-hace-un-broker-nautico.html">Què fa un bròker nàutic</a></div>
+      <div class="pmx-grp"><p>Comprar</p><a href="/ca/barcos/">Vaixells en venda</a><a href="/ca/#comprar">Busco vaixell</a><a href="/ca/alertas/">Avisa&#x27;m de vaixells nous</a><a href="/ca/que-barco-necesito.html" aria-current="page">Quin vaixell necessito?</a><a href="/ca/modelos/">Models: què mirar i preus</a></div>
+      <div class="pmx-grp"><p>Aprèn</p><a href="/ca/guias/">Guies</a><a href="/ca/actualidad/">Actualitat</a><a href="/ca/navegante/">Guia del navegant</a><a href="/ca/titulaciones/">Titulacions</a></div>
+      <div class="pmx-grp"><p>Serveis</p><a href="/ca/servicios/">ITB, gestoria, varador i més</a><a href="/ca/servicios/directorio.html">Directori d&#x27;empreses</a></div>
+      <div class="pmx-grp"><a href="/ca/#juan">Sobre mi</a></div>
+      <div class="pmx-grp"><a href="/ca/#contacto">Contacte</a></div>
+      <div class="pmx-wide"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20vull%20parlar%20sobre%20un%20vaixell." target="_blank" rel="noopener">Parlar amb en Juan</a></div>
+    </div>
+  </nav>
 </header>
 
 <main class="art">
@@ -242,6 +256,7 @@ render();
     </div>
   </div>
 <p class="wrap"><button type="button" data-cookie-settings>Configurar les cookies</button></p></footer>
+<script src="/nav.js?v=20260924" defer></script>
 </body>
 </html>
 
