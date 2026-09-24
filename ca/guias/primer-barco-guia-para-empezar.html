@@ -19,23 +19,37 @@
 <script type="application/ld+json">
 [{"@context": "https://schema.org", "@type": "Article", "headline": "Comprar el teu primer vaixell, sense perdre't pel camí", "author": {"@type": "Person", "name": "Juan Morante"}, "publisher": {"@type": "Organization", "name": "Plata Marine"}, "datePublished": "2026-09-15", "dateModified": "2026-09-16", "inLanguage": "ca", "mainEntityOfPage": "https://www.platamarine.com/ca/guias/primer-barco-guia-para-empezar.html"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Cal ser un expert en nàutica per comprar un vaixell?", "acceptedAnswer": {"@type": "Answer", "text": "No. La majoria de qui compra el seu primer vaixell no ho és. L'important és no precipitar-se i comprovar les coses bàsiques abans de decidir: papers, motor i per a què el faràs servir realment."}}, {"@type": "Question", "name": "És més barat comprar un vaixell nou o de segona mà?", "acceptedAnswer": {"@type": "Answer", "text": "De segona mà sol sortir més a compte si no t'importa que tingui algunes hores d'ús, però cal revisar-lo bé abans: l'estalvi inicial es pot perdre si el motor està molt castigat."}}, {"@type": "Question", "name": "Quina documentació m'ha de donar el venedor d'un vaixell de segona mà?", "acceptedAnswer": {"@type": "Answer", "text": "Com a mínim: full d'assentament o certificat de navegabilitat, últim rebut de la ITB si s'aplica, i justificant que el vaixell no té càrregues pendents. Si falta alguna d'aquestes coses, és motiu per preguntar abans de seguir endavant."}}, {"@type": "Question", "name": "Puc finançar un vaixell de segona mà?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, diverses entitats ho permeten, encara que les condicions varien segons l'antiguitat i el tipus de vaixell."}}]}]
 </script>
+<link rel="stylesheet" href="/nav.css?v=20260924">
 </head>
 <body>
 
 <header class="top">
 <div class="wrap">
 <a class="brand" href="/ca/" aria-label="Plata Marine, inici"><img class="brand-logo" src="/logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
-<nav class="nav" aria-label="Seccions">
-<a href="/ca/barcos/">Vaixells</a>
-<a href="/ca/#vendre">Vendre</a>
-<a href="/ca/#comprar">Comprar</a>
-<a href="./" aria-current="page">Guies</a>
-<a href="/actualidad/">Actualitat</a>
-<a href="/ca/servicios/">Serveis</a>
-<a href="/ca/#juan">Sobre mi</a>
-</nav>
+<nav class="nav pmx-nav" aria-label="Seccions">
+      <a href="/ca/barcos/">Vaixells</a>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM1">Vendre</button><div class="pmx-menu" id="pmxM1"><a href="/ca/#vender">Vendre el meu vaixell</a><a href="/ca/herramientas/valora-tu-barco.html">Quant val el meu vaixell?</a><a href="/ca/guias/que-hace-un-broker-nautico.html">Què fa un bròker nàutic</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM2">Comprar</button><div class="pmx-menu" id="pmxM2"><a href="/ca/barcos/">Vaixells en venda</a><a href="/ca/#comprar">Busco vaixell</a><a href="/ca/alertas/">Avisa&#x27;m de vaixells nous</a><a href="/ca/que-barco-necesito.html">Quin vaixell necessito?</a><a href="/ca/modelos/">Models: què mirar i preus</a></div></div>
+      <div class="pmx-dd cur"><button type="button" aria-expanded="false" aria-controls="pmxM3">Aprèn</button><div class="pmx-menu" id="pmxM3"><a href="/ca/guias/" aria-current="page">Guies</a><a href="/ca/actualidad/">Actualitat</a><a href="/ca/navegante/">Guia del navegant</a><a href="/ca/titulaciones/">Titulacions</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM4">Serveis</button><div class="pmx-menu" id="pmxM4"><a href="/ca/servicios/">ITB, gestoria, varador i més</a><a href="/ca/servicios/directorio.html">Directori d&#x27;empreses</a></div></div>
+      <a href="/ca/#juan">Sobre mi</a>
+      <a href="/ca/#contacto">Contacte</a>
+    </nav>
 <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20%C3%A9s%20el%20meu%20primer%20vaixell%20i%20tinc%20dubtes%20abans%20de%20decidir." target="_blank" rel="noopener">Parla amb en Juan</a><div class="langsw" aria-label="Idioma"><a href="https://www.platamarine.com/guias/primer-barco-guia-para-empezar.html"><span class="flag flag-es" aria-hidden="true"></span><span class="sr-only">ES</span></a><a href="https://www.platamarine.com/ca/guias/primer-barco-guia-para-empezar.html" aria-current="page"><span class="flag flag-ca" aria-hidden="true"></span><span class="sr-only">CA</span></a></div>
-</div>
+  <button type="button" class="pmx-btn" id="pmxBtn" aria-expanded="false" aria-controls="pmxPanel" aria-label="Obrir menú" data-open="Obrir menú" data-close="Tancar menú"><span></span></button>
+  </div>
+  <nav class="pmx-panel" id="pmxPanel" aria-label="Menú mòbil">
+    <div class="pmx-in">
+      <div class="pmx-grp"><a href="/ca/barcos/">Vaixells</a></div>
+      <div class="pmx-grp"><p>Vendre</p><a href="/ca/#vender">Vendre el meu vaixell</a><a href="/ca/herramientas/valora-tu-barco.html">Quant val el meu vaixell?</a><a href="/ca/guias/que-hace-un-broker-nautico.html">Què fa un bròker nàutic</a></div>
+      <div class="pmx-grp"><p>Comprar</p><a href="/ca/barcos/">Vaixells en venda</a><a href="/ca/#comprar">Busco vaixell</a><a href="/ca/alertas/">Avisa&#x27;m de vaixells nous</a><a href="/ca/que-barco-necesito.html">Quin vaixell necessito?</a><a href="/ca/modelos/">Models: què mirar i preus</a></div>
+      <div class="pmx-grp"><p>Aprèn</p><a href="/ca/guias/" aria-current="page">Guies</a><a href="/ca/actualidad/">Actualitat</a><a href="/ca/navegante/">Guia del navegant</a><a href="/ca/titulaciones/">Titulacions</a></div>
+      <div class="pmx-grp"><p>Serveis</p><a href="/ca/servicios/">ITB, gestoria, varador i més</a><a href="/ca/servicios/directorio.html">Directori d&#x27;empreses</a></div>
+      <div class="pmx-grp"><a href="/ca/#juan">Sobre mi</a></div>
+      <div class="pmx-grp"><a href="/ca/#contacto">Contacte</a></div>
+      <div class="pmx-wide"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20vull%20parlar%20sobre%20un%20vaixell." target="_blank" rel="noopener">Parlar amb en Juan</a></div>
+    </div>
+  </nav>
 </header>
 
 <main class="art">
@@ -127,10 +141,11 @@
 <div class="wrap">
 <div class="line">
 <span>© 2026 Plata Marine · Sabadell, Barcelona · <a href="mailto:juan@platamarine.com">juan@platamarine.com</a></span>
-<a href="/ca/aviso-legal.html">Avís legal</a> · <a href="/ca/privacidad.html">Privacitat</a> · <a href="/ca/cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Web per rotulito.com</a>
+<a href="/aviso-legal.html">Avís legal</a> · <a href="/privacidad.html">Privacitat</a> · <a href="/ca/cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Web per rotulito.com</a>
 </div>
 </div>
 <p class="wrap"><button type="button" data-cookie-settings>Configurar cookies</button></p></footer>
+<script src="/nav.js?v=20260924" defer></script>
 </body>
 </html>
 
