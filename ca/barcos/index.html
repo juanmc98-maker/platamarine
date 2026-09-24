@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vaixells a motor en venda a Catalunya · Plata Marine</title>
-<meta name="description" content="Embarcacions a motor d'ocasió gestionades per Juan Morante, broker nàutic a Catalunya. Fitxes completes, opinió del broker i PDF descarregable.">
+<title>Vaixells en venda a Catalunya i Balears · Plata Marine</title>
+<meta name="description" content="Vaixells d'ocasió, a motor i a vela, gestionades per Juan Morante, broker nàutic a Catalunya. Fitxes completes, opinió del broker i PDF descarregable.">
 <link rel="canonical" href="https://www.platamarine.com/ca/barcos/">
 <link rel="alternate" hreflang="es" href="https://www.platamarine.com/barcos/">
 <link rel="alternate" hreflang="ca" href="https://www.platamarine.com/ca/barcos/">
 <link rel="alternate" hreflang="en" href="https://www.platamarine.com/en/barcos/">
 <link rel="alternate" hreflang="x-default" href="https://www.platamarine.com/barcos/">
 <link rel="icon" type="image/png" href="/logo-plata-marine.png">
-<meta property="og:title" content="Vaixells a motor en venda a Catalunya · Plata Marine">
-<meta property="og:description" content="Embarcacions a motor d'ocasió gestionades per Juan Morante, broker nàutic a Catalunya. Fitxes completes, opinió del broker i PDF descarregable.">
+<meta property="og:title" content="Vaixells en venda a Catalunya i Balears · Plata Marine">
+<meta property="og:description" content="Vaixells d'ocasió, a motor i a vela, gestionades per Juan Morante, broker nàutic a Catalunya. Fitxes completes, opinió del broker i PDF descarregable.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.platamarine.com/ca/barcos/">
 <meta property="og:image" content="https://www.platamarine.com/logo-plata-marine.png">
@@ -78,73 +78,96 @@
     .langsw{display:flex;gap:6px;align-items:center;font-size:.78rem;font-weight:600}.langsw a{display:inline-flex;align-items:center;padding:3px;border-radius:4px}.langsw a[aria-current="page"]{background:rgba(13,28,39,.08)}.flag{display:block;width:20px;height:14px;border-radius:2px;box-shadow:inset 0 0 0 1px rgba(13,28,39,.18);background-size:cover;background-position:center}.flag-es{background-image:linear-gradient(#AA151B 0 25%,#F1BF00 25% 75%,#AA151B 75% 100%)}.flag-ca{background-image:repeating-linear-gradient(#FFCE00 0 11.11%,#DA121A 11.11% 22.22%)}.flag-en{background-color:#00247D;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 36'%3E%3Cpath d='M0 0L60 36M60 0L0 36' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0L60 36M60 0L0 36' stroke='%23C8102E' stroke-width='2.4'/%3E%3Cpath d='M30 0V36M0 18H60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30 0V36M0 18H60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E")}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     .langsw a{padding:3px 7px;border-radius:4px;text-decoration:none;color:inherit;opacity:.65}
     .langsw a[aria-current="page"]{opacity:1;text-decoration:underline}
+
+    .bfilt{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:flex-end;margin-top:28px;padding:16px 18px;background:#fff;border:1px solid rgba(127,146,158,.28);border-radius:var(--radius)}
+    .bfilt fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;min-width:0}
+    .bfilt legend,.bfilt label{font-size:.72rem;font-weight:650;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);padding:0}
+    .bfilt .seg{display:flex;border:1px solid rgba(127,146,158,.45);border-radius:999px;overflow:hidden}
+    .bfilt .seg button{font:inherit;font-size:.9rem;border:0;background:transparent;padding:7px 14px;cursor:pointer;color:inherit}
+    .bfilt .seg button[aria-pressed="true"]{background:var(--ink,#0d1c27);color:#fff}
+    .bfilt select{font:inherit;font-size:.92rem;padding:7px 10px;border:1px solid rgba(127,146,158,.45);border-radius:8px;background:#fff;color:inherit;max-width:100%}
+    .bfilt .bcount{margin-left:auto;font-size:.9rem;color:var(--ink-2);align-self:center}
+    .bnote{font-size:.82rem;color:var(--ink-2);margin-top:8px;max-width:80ch}
+    .bnone{margin-top:28px;color:var(--ink-2)}
+    .tbadge{display:inline-block;align-self:flex-start;margin-top:10px;font-size:.78rem;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--paper-2,#eef1f3);color:var(--ink,#0d1c27)}
+    .bcard[hidden]{display:none}
+    @media (max-width:640px){.bfilt{flex-direction:column;align-items:stretch}.bfilt .bcount{margin-left:0}.bfilt .seg button{flex:1}}
     </style>
-    <div class="bfilters" role="search" aria-label="Filtrar vaixells">
-      <label>Preu<select id="fPrecio"><option value="">Qualsevol</option><option value="0-15000">Fins a 15.000 €</option><option value="15000-30000">15.000 – 30.000 €</option><option value="30000-60000">30.000 – 60.000 €</option><option value="60000-120000">60.000 – 120.000 €</option><option value="120000-">Més de 120.000 €</option></select></label>
-      <label>Eslora<select id="fEslora"><option value="">Qualsevol</option><option value="0-6">Fins a 6 m</option><option value="6-9">6 – 9 m</option><option value="9-12">9 – 12 m</option><option value="12-">Més de 12 m</option></select></label>
-      <label class="fchk"><input type="checkbox" id="fVendidos"> Amagar venuts</label>
+    <div class="bfilt" role="search">
+      <fieldset><legend>Tipus</legend><div class="seg"><button type="button" data-v="all" aria-pressed="true">Tots</button><button type="button" data-v="motor" aria-pressed="false">Motor</button><button type="button" data-v="vela" aria-pressed="false">Vela</button></div></fieldset>
+      <fieldset><label for="f-tit">Quin títol tens?</label><select id="f-tit"><option value="all">Qualsevol</option><option value="0">Sense títol</option><option value="1">Llicència de Navegació</option><option value="2">PNB</option><option value="3">PER</option><option value="4">Patró o Capità de Iot</option></select></fieldset>
+      <fieldset><label for="f-ord">Ordenar</label><select id="f-ord"><option value="nov">Novetats</option><option value="pa">Preu: de més barat a més car</option><option value="pd">Preu: de més car a més barat</option><option value="an">Any: de més nou a més vell</option></select></fieldset>
+      <span class="bcount" aria-live="polite" data-one="1 vaixell" data-many="{n} vaixells"></span>
     </div>
-    <p id="fEmpty" class="bempty" hidden>No hi ha vaixells que encaixin amb aquest filtre. <a href="/ca/alertas/">Crea una alerta</a> i t'avisaré quan n'entri un.</p>
+    <p class="bnote">Orientatiu: es confirma amb la documentació del vaixell (eslora i potència màxima de la placa del fabricant). Els velers requereixen, a més, les pràctiques de vela.</p>
+    <p class="bnone" hidden>Amb aquest títol ara mateix no hi ha cap vaixell en cartera. Si busques alguna cosa concreta, <a href="/ca/alertas/">crea una alerta</a> i t'aviso.</p>
     <div class="bgrid">
-      <article class="bcard" data-price="72000" data-length="12">
+      <article class="bcard" data-sold="0" data-tipo="motor" data-titulo="1" data-precio="25000" data-anyo="2002" data-i="0">
         <a class="bimg" href="sacs-535.html"><img src="/sacs-535-1.jpg" alt="Semirígida Sacs 535 amarrada en un port de Mallorca" loading="lazy" width="1600" height="1200"><span class="status available">Disponible</span></a>
         <div class="bbody">
           <div class="head" style="margin:0 0 6px"><h2><a href="sacs-535.html">Sacs 535</a></h2><p class="price">25.000 €</p></div>
           <p class="sub" style="margin:0">2002 · 5,35 m · semirígida · Suzuki 115 cv · 400 h · Mallorca</p>
+          <span class="tbadge">Títol mínim: Llicència de Navegació</span>
           <p class="bdesc">Semirígida de 5,35 m restaurada: flotadors, tapisseria, pintura, electricitat i bateries noves. Suzuki 115 CV amb unes 400 hores. Amb remolc nou de 1.200 kg i cabrestant elèctric. Guardada en garatge a Mallorca.</p>
           <div class="bcta"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20m%27interessa%20la%20Sacs%20535%20del%202002%20que%20teniu%20en%20venda.%20Podem%20parlar%3F" target="_blank" rel="noopener">Preguntar per WhatsApp</a><a class="btn btn-ghost" href="sacs-535.html">Veure fitxa</a></div>
         </div>
       </article>
-      <article class="bcard" data-price="72000" data-length="12">
+      <article class="bcard" data-sold="0" data-tipo="vela" data-titulo="3" data-precio="72000" data-anyo="1981" data-i="1">
         <a class="bimg" href="van-de-stadt-36.html"><img src="/van-de-stadt-36-1.jpg" alt="Veler Van de Stadt Zeehond 36 amarrat en un port d'Alacant" loading="lazy" width="1600" height="1200"><span class="status available">Disponible</span></a>
         <div class="bbody">
           <div class="head" style="margin:0 0 6px"><h2><a href="van-de-stadt-36.html">Van de Stadt Zeehond 36</a></h2><p class="price">72.000 €</p></div>
           <p class="sub" style="margin:0">1981 · aprox. 12 m · acer · Solé Mini 62 cv · 1.000 h · Alacant</p>
+          <span class="tbadge">Títol mínim: PER + pràctiques de vela</span>
           <p class="bdesc">Veler d'acer del 1981 repassat a fons: buc sorrejat i pintat, veles perfectes, tapisseria nova. Solé Mini 62 CV amb unes 1.000 hores. Homologat per a 10 persones, taxat per l'assegurança en 88.000 €. Es pot visitar amb cita prèvia.</p>
           <div class="bcta"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20m%27interessa%20el%20Van%20de%20Stadt%20Zeehond%2036%20de%201981%20que%20teniu%20en%20venda.%20Podem%20parlar%3F" target="_blank" rel="noopener">Preguntar per WhatsApp</a><a class="btn btn-ghost" href="van-de-stadt-36.html">Veure fitxa</a></div>
         </div>
       </article>
-      <article class="bcard" data-price="64900" data-length="7.98">
+      <article class="bcard" data-sold="0" data-tipo="motor" data-titulo="2" data-precio="64900" data-anyo="2008" data-i="2">
         <a class="bimg" href="monte-carlo-27.html"><img src="/monte-carlo-27-1.jpg" alt="Beneteau Monte Carlo 27 amarrada de popa en un port de la Costa Brava" loading="lazy" width="1600" height="1200"><span class="status available">Disponible</span></a>
         <div class="bbody">
           <div class="head" style="margin:0 0 6px"><h2><a href="monte-carlo-27.html">Beneteau Monte Carlo 27</a></h2><p class="price">64.900 €</p></div>
           <p class="sub" style="margin:0">2008 · 7,98 m · Volvo Penta 5.7 GXi 350 cv · 650 h · Costa Brava</p>
+          <span class="tbadge">Títol mínim: PNB</span>
           <p class="bdesc">Open amb cabina de 2008, Volvo Penta 5.7 GXi de 350 CV amb unes 650 hores. Dues cabines, bany amb aigua calenta, hèlix de proa, sonda Raymarine Axiom 7 nova i tendal càmper. Es pot visitar amb cita prèvia.</p>
           <div class="bcta"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20m%27interessa%20la%20Beneteau%20Monte%20Carlo%2027%20de%202008%20que%20teniu%20en%20venda.%20Podem%20parlar%3F" target="_blank" rel="noopener">Preguntar per WhatsApp</a><a class="btn btn-ghost" href="monte-carlo-27.html">Veure fitxa</a></div>
         </div>
       </article>
-      <article class="bcard" data-price="75000" data-length="11">
+      <article class="bcard" data-sold="0" data-tipo="motor" data-titulo="3" data-precio="75000" data-anyo="1989" data-i="3">
         <a class="bimg" href="sealine-365.html"><img src="/sealine-365-1.jpg" alt="Sealine 365 · imatge il·lustrativa (render)" loading="lazy" width="1600" height="900" style="aspect-ratio:16/9"><span class="status available">Disponible</span></a>
         <div class="bbody">
           <div class="head" style="margin:0 0 6px"><h2><a href="sealine-365.html">Sealine 365</a></h2><p class="price">75.000 €</p></div>
           <p class="sub" style="margin:0">1989 · aprox. 11 m · 2 x Volvo Penta TAMD41 200 cv · 1.100 h · Roda de Berà, Tarragona</p>
+          <span class="tbadge">Títol mínim: PER</span>
           <p class="bdesc">Dues cabines i dos banys complets en 11 metres, capacitat per a deu. Turbos i bateries nous, ITB fins al 2030, Garmin i pilot nou.</p>
           <div class="bcta"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20m%27interessa%20el%20Sealine%20365%20de%201989%20que%20teniu%20en%20venda.%20Podem%20parlar%3F" target="_blank" rel="noopener">Preguntar per WhatsApp</a><a class="btn btn-ghost" href="sealine-365.html">Veure fitxa</a></div>
         </div>
       </article>
-      <article class="bcard" data-price="30000" data-length="7.39">
+      <article class="bcard" data-sold="0" data-tipo="motor" data-titulo="2" data-precio="30000" data-anyo="2005" data-i="4">
         <a class="bimg" href="faeton-730-moraga.html"><img src="/faeton-730-moraga-1.jpg" alt="Faeton 730 Moraga fondejat en una cala de Mallorca" loading="lazy" width="1600" height="900"><span class="status available">Disponible</span></a>
         <div class="bbody">
           <div class="head" style="margin:0 0 6px"><h2><a href="faeton-730-moraga.html">Faeton 730 Moraga</a></h2><p class="price">30.000 €</p></div>
           <p class="sub" style="margin:0">2005 · 7,39 m · Volvo Penta KAD32P 170 cv · 1.300 h · Portocolom, Mallorca</p>
+          <span class="tbadge">Títol mínim: PNB</span>
           <p class="bdesc">Pilotina marinera preparada per a la pesca: viver, portacanyes, radar i sonda Raymarine. 34.000 € amb motor elèctric de proa Minn Kota inclòs.</p>
           <div class="bcta"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20m%27interessa%20el%20Faeton%20730%20Moraga%20de%202005%20que%20teniu%20en%20venda.%20Podem%20parlar%3F" target="_blank" rel="noopener">Pregunta per WhatsApp</a><a class="btn btn-ghost" href="faeton-730-moraga.html">Veure fitxa</a></div>
         </div>
       </article>
-      <article class="bcard" data-price="49990" data-length="8.4">
+      <article class="bcard" data-sold="0" data-tipo="motor" data-titulo="3" data-precio="49990" data-anyo="2011" data-i="5">
         <a class="bimg" href="monterey-278-ss.html"><img src="/monterey-278-ss-1.jpg" alt="Monterey 278 SS fondejada en una cala de la Costa Brava" loading="lazy" width="1600" height="900"><span class="status">En gestió</span></a>
         <div class="bbody">
           <div class="head" style="margin:0 0 6px"><h2><a href="monterey-278-ss.html">Monterey 278 SS</a></h2><p class="price">49.990 €</p></div>
           <p class="sub" style="margin:0">2011 · 8,40 m · Volvo Penta 5.7 GXi 320 cv · 350 h · Costa Brava</p>
+          <span class="tbadge">Títol mínim: PER</span>
           <p class="bdesc">Només 350 hores i hivernada cada any. Plataforma de bany ampliada, arc de radar, bany independent, Garmin, VHF DSC i presa de 220 V.</p>
           <div class="bcta"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20m%27interessa%20la%20Monterey%20278%20SS%20de%202011%20que%20teniu%20en%20venda.%20Podem%20parlar%3F" target="_blank" rel="noopener">Pregunta per WhatsApp</a><a class="btn btn-ghost" href="monterey-278-ss.html">Veure fitxa</a></div>
         </div>
       </article>
-      <article class="bcard is-sold" data-price="11990" data-length="5.0">
+      <article class="bcard is-sold" data-sold="1" data-tipo="motor" data-titulo="1" data-precio="11990" data-anyo="2004" data-i="6">
         <a class="bimg" href="ranieri-azzurra-5m.html"><img src="/ranieri-azzurra-1.jpg" alt="Ranieri Azzurra de 5 metres fondejada a prop de la costa" loading="lazy" width="1600" height="900"><span class="status sold">Venut</span></a>
         <div class="bbody">
           <div class="head" style="margin:0 0 6px"><h2><a href="ranieri-azzurra-5m.html">Ranieri Azzurra 5 m</a></h2><p class="price">11.990 €</p></div>
           <p class="sub" style="margin:0">2004 · 5,00 m · Johnson 60 cv 4T · 400 h aprox. · Torredembarra</p>
+          <span class="tbadge">Títol mínim: Llicència de Navegació</span>
           <p class="bdesc">Open molt cuidat i guardat en sec, homologat per a 6. Bimini, solàrium de proa, sonda i escala de bany. Remolc opcional.</p>
           <div class="bcta"><a class="btn btn-ghost" href="ranieri-azzurra-5m.html">Veure fitxa</a></div>
         </div>
@@ -156,34 +179,44 @@
       <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20estic%20pensant%20a%20vendre%20el%20meu%20vaixell.%20Model%3A%20%20%7C%20Any%3A%20%20%7C%20Motor%20i%20hores%3A%20%20%7C%20Port%3A%20" target="_blank" rel="noopener">Vull vendre el meu vaixell</a>
     </div>
   </div>
+</main>
 <script>
 (function(){
-  var precio=document.getElementById('fPrecio'), eslora=document.getElementById('fEslora'), vend=document.getElementById('fVendidos');
-  if(!precio) return;
-  var cards=[].slice.call(document.querySelectorAll('.bcard'));
-  var empty=document.getElementById('fEmpty');
-  function parseRange(v){ if(!v) return null; var p=v.split('-'); return [p[0]?parseFloat(p[0]):0, p[1]?parseFloat(p[1]):Infinity]; }
-  function apply(){
-    var pr=parseRange(precio.value), es=parseRange(eslora.value), hideSold=vend.checked, visible=0;
-    cards.forEach(function(c){
-      var price=parseFloat(c.getAttribute('data-price')||'0');
-      var length=parseFloat(c.getAttribute('data-length')||'0');
-      var sold=c.classList.contains('is-sold');
-      var ok=true;
-      if(pr && (price<pr[0] || price>pr[1])) ok=false;
-      if(es && (length<es[0] || length>es[1])) ok=false;
-      if(hideSold && sold) ok=false;
-      c.style.display = ok? '' : 'none';
-      if(ok) visible++;
-    });
-    empty.hidden = visible>0;
-  }
-  precio.addEventListener('change', apply);
-  eslora.addEventListener('change', apply);
-  vend.addEventListener('change', apply);
+var g=document.querySelector('.bgrid');if(!g)return;
+var cards=[].slice.call(g.querySelectorAll('.bcard'));
+var f=document.querySelector('.bfilt'),tsel=f.querySelector('#f-tit'),osel=f.querySelector('#f-ord'),cnt=f.querySelector('.bcount'),none=document.querySelector('.bnone');
+var tipo='all';
+function apply(push){
+  var tl=tsel.value,o=osel.value,n=0;
+  cards.forEach(function(c){
+    var ok=(tipo==='all'||c.dataset.tipo===tipo);
+    if(tl!=='all'){var need=+c.dataset.titulo;ok=ok&&(+tl>=need)&&!(c.dataset.tipo==='vela'&&+tl<3)&&+tl>0;}
+    if(c.dataset.sold==='1'&&(tipo!=='all'||tl!=='all'))ok=false;
+    c.hidden=!ok;if(ok&&c.dataset.sold!=='1')n++;
+  });
+  var s=cards.slice();
+  if(o==='pa')s.sort(function(a,b){return a.dataset.precio-b.dataset.precio});
+  else if(o==='pd')s.sort(function(a,b){return b.dataset.precio-a.dataset.precio});
+  else if(o==='an')s.sort(function(a,b){return b.dataset.anyo-a.dataset.anyo||a.dataset.i-b.dataset.i});
+  else s.sort(function(a,b){return a.dataset.i-b.dataset.i});
+  s.sort(function(a,b){return a.dataset.sold-b.dataset.sold});
+  s.forEach(function(c){g.appendChild(c)});
+  cnt.textContent=n===1?cnt.dataset.one:cnt.dataset.many.replace('{n}',n);
+  none.hidden=n>0;
+  if(push){var p=new URLSearchParams();if(tipo!=='all')p.set('tipo',tipo);if(tl!=='all')p.set('titulo',tl);if(o!=='nov')p.set('orden',o);
+    var q=p.toString();history.replaceState(null,'',location.pathname+(q?'?'+q:''));
+    if(window.gtag)try{gtag('event','filtro_barcos',{tipo:tipo,titulo:tl,orden:o})}catch(e){}}
+}
+f.querySelectorAll('.seg button').forEach(function(b){b.addEventListener('click',function(){
+  tipo=b.dataset.v;f.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});apply(true);});});
+tsel.addEventListener('change',function(){apply(true)});osel.addEventListener('change',function(){apply(true)});
+var p=new URLSearchParams(location.search);
+if(p.get('tipo')){var b=f.querySelector('.seg button[data-v="'+p.get('tipo')+'"]');if(b){tipo=b.dataset.v;f.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});}}
+if(p.get('titulo')&&tsel.querySelector('option[value="'+p.get('titulo')+'"]'))tsel.value=p.get('titulo');
+if(p.get('orden')&&osel.querySelector('option[value="'+p.get('orden')+'"]'))osel.value=p.get('orden');
+apply(false);
 })();
 </script>
-</main>
 
 <footer class="foot">
   <div class="wrap">
