@@ -23,7 +23,7 @@
   function ev(name,params){
     if(!window.__pmAnalyticsAllowed||!window.__pmga||!window.gtag) return;
     var safe={page:location.pathname};
-    ['form_id','contact_method','contact_purpose','placement'].forEach(function(k){
+    ['form_id','contact_method','contact_purpose','placement','boat','file_type'].forEach(function(k){
       var v=params&&params[k];
       if(typeof v==='string'&&/^[a-zA-Z0-9_-]{1,40}$/.test(v)) safe[k]=v;
     });
@@ -34,9 +34,12 @@
     var a=e.target.closest('a,button'); if(!a) return;
     var href=a.getAttribute('href')||'';
     var method=/^https:\/\/(wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)\//.test(href)?'whatsapp':href.indexOf('mailto:')===0?'email':href.indexOf('tel:')===0?'phone':'';
+    var boat='',m=location.pathname.match(/\/barcos\/([a-z0-9-]+)\.html$/);
+    if(m) boat=m[1]; else { var card=a.closest('article'); var l=card&&card.querySelector('a[href*="barcos/"][href$=".html"]'); var mm=l&&(l.getAttribute('href')||'').match(/([a-z0-9-]+)\.html$/); if(mm) boat=mm[1]; }
+    if(/\.pdf(\?|$)/i.test(href)){ var pm=href.match(/([a-z0-9-]+)\.pdf/i); ev('pdf_ficha',{boat:boat||(pm?pm[1]:''),file_type:'pdf'}); return; }
     if(method){
       if(a.id==='continuarContacto') return;
-      ev('contact_intent',{contact_method:method,contact_purpose:a.closest('#valora,#vender')?'seller':/^\/barcos\//.test(location.pathname)?'buyer':'general',placement:where(a).replace(/[^a-zA-Z0-9_-]/g,'_')||'page'});
+      ev('contact_intent',{contact_method:method,contact_purpose:a.closest('#valora,#vender')?'seller':/^\/barcos\//.test(location.pathname)?'buyer':'general',placement:where(a).replace(/[^a-zA-Z0-9_-]/g,'_')||'page',boat:boat});
     }
     else if(a.matches('a[href*="/barcos/"],a[href*="barcos/"]')&&!a.matches('nav a')){ev('click_boat',{label:href.slice(0,80),page:location.pathname});}
   },true);
