@@ -20,23 +20,37 @@
 <script type="application/ld+json">
 [{"@context": "https://schema.org", "@type": "Article", "headline": "La ITB de un barco de recreo: qué es, quién la pasa y cada cuánto", "author": {"@type": "Person", "name": "Juan Morante"}, "publisher": {"@type": "Organization", "name": "Plata Marine"}, "datePublished": "2026-09-11", "dateModified": "2026-09-11", "inLanguage": "es", "mainEntityOfPage": "https://www.platamarine.com/guias/itb-inspeccion-tecnica-barcos-recreo.html"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Mi barco de menos de 6 metros tiene que pasar la ITB?", "acceptedAnswer": {"@type": "Answer", "text": "Si está en lista 7ª (uso privado) y mide menos de 6 metros de eslora de casco, no tiene reconocimientos periódicos: su certificado de navegabilidad se expide sin fecha de caducidad. Sigue obligado a llevar el equipo de seguridad de su zona de navegación y a pasar un reconocimiento adicional si cambia el motor o sufre una avería grave."}}, {"@type": "Question", "name": "¿Cada cuánto se pasa la ITB en un barco de recreo?", "acceptedAnswer": {"@type": "Answer", "text": "En lista 7ª, con 6 metros o más de eslora, el reconocimiento periódico es como máximo cada 5 años. En lista 6ª (alquiler) también cada 5 años, con un reconocimiento intermedio entre el segundo y el tercer año. Los barcos de lista 7ª de 15 metros o más y los de casco de madera de 6 o más también llevan intermedio."}}, {"@type": "Question", "name": "¿La ITB se hace con el barco en el agua o en seco?", "acceptedAnswer": {"@type": "Answer", "text": "El reconocimiento periódico incluye la inspección del casco en seco, así que hay que varar el barco o hacerla coincidir con la varada de mantenimiento. Los reconocimientos intermedios se pueden hacer a flote."}}, {"@type": "Question", "name": "¿Qué pasa si compro un barco con la ITB caducada?", "acceptedAnswer": {"@type": "Answer", "text": "Navegar sin certificado de navegabilidad en vigor es una infracción grave y, además, el seguro puede poner problemas en un siniestro. Antes de comprar, pide el certificado, mira la fecha del próximo reconocimiento y, si está caducado, descuéntalo del precio o pacta que el vendedor la pase antes de la entrega."}}]}]
 </script>
+<link rel="stylesheet" href="/nav.css?v=20260924">
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
     <a class="brand" href="../" aria-label="Plata Marine, inicio"><img class="brand-logo" src="../logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
-    <nav class="nav" aria-label="Secciones">
-      <a href="../barcos/">Barcos</a>
-      <a href="../#vender">Vender</a>
-      <a href="../#comprar">Comprar</a>
-      <a href="./" aria-current="page">Guías</a>
-      <a href="../actualidad/">Actualidad</a>
-      <a href="../servicios/">Servicios</a>
-      <a href="../#juan">Sobre mí</a>
+    <nav class="nav pmx-nav" aria-label="Secciones">
+      <a href="/barcos/">Barcos</a>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM1">Vender</button><div class="pmx-menu" id="pmxM1"><a href="/#vender">Vender mi barco</a><a href="/herramientas/valora-tu-barco.html">¿Cuánto vale mi barco?</a><a href="/papeles-fiscalidad/">Papeles e impuestos</a><a href="/guias/que-hace-un-broker-nautico.html">Qué hace un bróker náutico</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM2">Comprar</button><div class="pmx-menu" id="pmxM2"><a href="/barcos/">Barcos en venta</a><a href="/#comprar">Busco barco</a><a href="/alertas/">Avísame de barcos nuevos</a><a href="/que-barco-necesito.html">¿Qué barco necesito?</a><a href="/modelos/">Modelos: qué mirar y precios</a></div></div>
+      <div class="pmx-dd cur"><button type="button" aria-expanded="false" aria-controls="pmxM3">Aprende</button><div class="pmx-menu" id="pmxM3"><a href="/guias/" aria-current="page">Guías</a><a href="/actualidad/">Actualidad</a><a href="/navegante/">Guía del navegante</a><a href="/titulaciones/">Titulaciones</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM4">Servicios</button><div class="pmx-menu" id="pmxM4"><a href="/servicios/">ITB, gestoría, varadero y más</a><a href="/servicios/directorio.html">Directorio de empresas</a></div></div>
+      <a href="/#juan">Sobre mí</a>
+      <a href="/#contacto">Contacto</a>
     </nav>
     <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20tengo%20una%20duda%20sobre%20la%20ITB." target="_blank" rel="noopener">Hablar con Juan</a><div class="langsw" aria-label="Idioma"><a href="https://www.platamarine.com/guias/itb-inspeccion-tecnica-barcos-recreo.html" aria-current="page"><span class="flag flag-es" aria-hidden="true"></span><span class="sr-only">ES</span></a><a href="https://www.platamarine.com/ca/guias/itb-inspeccion-tecnica-barcos-recreo.html"><span class="flag flag-ca" aria-hidden="true"></span><span class="sr-only">CA</span></a><a href="https://www.platamarine.com/en/guias/itb-inspeccion-tecnica-barcos-recreo.html"><span class="flag flag-en" aria-hidden="true"></span><span class="sr-only">EN</span></a></div>
+    <button type="button" class="pmx-btn" id="pmxBtn" aria-expanded="false" aria-controls="pmxPanel" aria-label="Abrir menú" data-open="Abrir menú" data-close="Cerrar menú"><span></span></button>
   </div>
+  <nav class="pmx-panel" id="pmxPanel" aria-label="Menú móvil">
+    <div class="pmx-in">
+      <div class="pmx-grp"><a href="/barcos/">Barcos</a></div>
+      <div class="pmx-grp"><p>Vender</p><a href="/#vender">Vender mi barco</a><a href="/herramientas/valora-tu-barco.html">¿Cuánto vale mi barco?</a><a href="/papeles-fiscalidad/">Papeles e impuestos</a><a href="/guias/que-hace-un-broker-nautico.html">Qué hace un bróker náutico</a></div>
+      <div class="pmx-grp"><p>Comprar</p><a href="/barcos/">Barcos en venta</a><a href="/#comprar">Busco barco</a><a href="/alertas/">Avísame de barcos nuevos</a><a href="/que-barco-necesito.html">¿Qué barco necesito?</a><a href="/modelos/">Modelos: qué mirar y precios</a></div>
+      <div class="pmx-grp"><p>Aprende</p><a href="/guias/" aria-current="page">Guías</a><a href="/actualidad/">Actualidad</a><a href="/navegante/">Guía del navegante</a><a href="/titulaciones/">Titulaciones</a></div>
+      <div class="pmx-grp"><p>Servicios</p><a href="/servicios/">ITB, gestoría, varadero y más</a><a href="/servicios/directorio.html">Directorio de empresas</a></div>
+      <div class="pmx-grp"><a href="/#juan">Sobre mí</a></div>
+      <div class="pmx-grp"><a href="/#contacto">Contacto</a></div>
+      <div class="pmx-wide"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20hablar%20sobre%20un%20barco." target="_blank" rel="noopener">Hablar con Juan</a></div>
+    </div>
+  </nav>
 </header>
 
 <main class="art">
@@ -164,6 +178,7 @@
     </div>
   </div>
 <p class="wrap"><button type="button" data-cookie-settings>Configurar cookies</button></p></footer>
+<script src="/nav.js?v=20260924" defer></script>
 </body>
 </html>
 
