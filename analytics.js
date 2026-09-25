@@ -18,17 +18,36 @@
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
 })();
-/* Intención de contacto: no acredita mensajes recibidos ni ventas. */
+/* Medición común (window.pmTrack). Solo se envía con consentimiento y nunca con datos personales.
+   Eventos:
+   - contact_intent: clic en WhatsApp, teléfono o email (intención; NO es un mensaje recibido).
+   - generate_lead: formulario recibido y confirmado por el servidor (ok:true).
+   - newsletter_signup: alta a novedades confirmada por el servidor.
+   - contact_form_start / contact_form_error / pdf_ficha / click_boat / quiz_complete: solo GA4.
+   "Contacto cualificado" no se mide aquí: requiere una validación posterior real (p. ej. marcarlo en la hoja de leads). */
 (function(){
-  function ev(name,params){
-    if(!window.__pmAnalyticsAllowed||!window.__pmga||!window.gtag) return;
-    var safe={page:location.pathname};
-    ['form_id','contact_method','contact_purpose','placement','boat','file_type'].forEach(function(k){
-      var v=params&&params[k];
-      if(typeof v==='string'&&/^[a-zA-Z0-9_-]{1,40}$/.test(v)) safe[k]=v;
-    });
-    try{window.gtag('event',name,safe);}catch(e){}
+  var SAFE=['form_id','contact_method','contact_purpose','placement','boat','file_type','quiz','result_type','label','lang'];
+  var META={contact_intent:['trackCustom','ContactIntent'],generate_lead:['track','Lead'],newsletter_signup:['trackCustom','NewsletterSignup']};
+  var lang=location.pathname.indexOf('/ca/')===0?'ca':location.pathname.indexOf('/en/')===0?'en':'es';
+  var last={};
+  function clean(params){
+    var safe={page:location.pathname,lang:lang};
+    SAFE.forEach(function(k){var v=params&&params[k];if(typeof v==='string'&&/^[a-zA-Z0-9_\/.-]{1,80}$/.test(v))safe[k]=v;});
+    return safe;
   }
+  window.pmTrack=function(name,params){
+    if(!/^[a-z_]{3,40}$/.test(name||''))return;
+    var safe=clean(params||{});
+    // evita duplicados del mismo evento en menos de 1,5 s (doble clic, dos manejadores)
+    var key=name+'|'+(safe.form_id||'')+'|'+(safe.contact_method||'')+'|'+(safe.boat||'');
+    var now=Date.now(); if(last[key]&&now-last[key]<1500)return; last[key]=now;
+    if(window.__pmAnalyticsAllowed&&window.__pmga&&window.gtag){try{window.gtag('event',name,safe);}catch(e){}}
+    var m=META[name];
+    if(m&&window.__pmMarketingAllowed&&window.fbq){
+      var fp={};['form_id','contact_method','contact_purpose','boat'].forEach(function(k){if(safe[k])fp[k]=safe[k];});
+      try{window.fbq(m[0],m[1],fp);}catch(e){}
+    }
+  };
   function where(el){var s=el.closest('section,header,footer,aside');return (s&&(s.id||s.className||s.tagName)||'').toString().slice(0,40);}
   document.addEventListener('click',function(e){
     var a=e.target.closest('a,button'); if(!a) return;
@@ -36,19 +55,19 @@
     var method=/^https:\/\/(wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)\//.test(href)?'whatsapp':href.indexOf('mailto:')===0?'email':href.indexOf('tel:')===0?'phone':'';
     var boat='',m=location.pathname.match(/\/barcos\/([a-z0-9-]+)\.html$/);
     if(m) boat=m[1]; else { var card=a.closest('article'); var l=card&&card.querySelector('a[href*="barcos/"][href$=".html"]'); var mm=l&&(l.getAttribute('href')||'').match(/([a-z0-9-]+)\.html$/); if(mm) boat=mm[1]; }
-    if(/\.pdf(\?|$)/i.test(href)){ var pm=href.match(/([a-z0-9-]+)\.pdf/i); ev('pdf_ficha',{boat:boat||(pm?pm[1]:''),file_type:'pdf'}); return; }
+    if(/\.pdf(\?|$)/i.test(href)){ var pm=href.match(/([a-z0-9-]+)\.pdf/i); window.pmTrack('pdf_ficha',{boat:boat||(pm?pm[1]:''),file_type:'pdf'}); return; }
     if(method){
-      if(a.id==='continuarContacto') return;
-      ev('contact_intent',{contact_method:method,contact_purpose:a.closest('#valora,#vender')?'seller':/^\/barcos\//.test(location.pathname)?'buyer':'general',placement:where(a).replace(/[^a-zA-Z0-9_-]/g,'_')||'page',boat:boat});
+      if(a.hasAttribute('data-no-track')) return; // enlaces que ya se miden desde su propio script
+      if(/^https:\/\/wa\.me\/\?text=/.test(href)) return; // "compartir por WhatsApp" no es contacto
+      window.pmTrack('contact_intent',{contact_method:method,contact_purpose:a.closest('#valora,#vender')?'seller':/\/barcos\//.test(location.pathname)?'buyer':'general',placement:where(a).replace(/[^a-zA-Z0-9_-]/g,'_')||'page',boat:boat});
     }
-    else if(a.matches('a[href*="/barcos/"],a[href*="barcos/"]')&&!a.matches('nav a')){ev('click_boat',{label:href.slice(0,80),page:location.pathname});}
+    else if(a.matches('a[href*="/barcos/"],a[href*="barcos/"]')&&!a.matches('nav a')){window.pmTrack('click_boat',{boat:(href.match(/([a-z0-9-]+)\.html$/)||[])[1]||''});}
   },true);
-  var started=false;
+  var started={};
   document.addEventListener('input',function(e){
-    var f=e.target.closest('form[data-contact-intent]');
-    if(!f||started||!window.__pmAnalyticsAllowed) return;
-    started=true;
-    ev('contact_form_start',{form_id:f.id,contact_purpose:'seller',placement:'valora'});
+    var f=e.target.closest('form'); if(!f||!f.id||started[f.id]) return;
+    started[f.id]=true;
+    window.pmTrack('contact_form_start',{form_id:f.id});
   },true);
 })();
 /* Aviso discreto de novedades (solo páginas de contenido, una vez cada 30 días) */
@@ -76,7 +95,7 @@
       var b=d.querySelector('.go'); b.disabled=true; b.textContent='Enviando…';
       window.submitConfirmed(URL,{source:'novedades',email:em,consent:true,newsletter:true,consent_v:'2026-09',consent_at:new Date().toISOString(),page:p,ua:navigator.userAgent.slice(0,120)},'json').then(function(){
         set('ok'); m.className='m ok'; m.textContent='Solicitud registrada. Gracias por apuntarte.'; b.textContent='Listo';
-        try{if(window.pmTrack)window.pmTrack('newsletter_signup',{});}catch(x){}
+        try{if(window.pmTrack)window.pmTrack('newsletter_signup',{form_id:'novedades'});}catch(x){}
         setTimeout(function(){d.remove();},3000);
       }).catch(function(){m.textContent='No hemos podido confirmar el alta. Antes de repetirla, consulta en juan@platamarine.com.';b.disabled=false;b.textContent='Apuntarme';});
     };

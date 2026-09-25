@@ -34,3 +34,14 @@ header.top .menu-btn,header.top .mobile-nav,header.top .pm-mbtn,header.top .pm-m
 @media (max-width:1119px){header.top .nav.pmx-nav{display:none}header.top .wrap{justify-content:flex-start}header.top .brand{margin-right:auto}.pmx-btn{display:inline-flex}header.top .top-cta{display:none}}
 @media (max-width:560px){.pmx-panel .pmx-in{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.pmx-btn span,.pmx-btn span::before,.pmx-btn span::after{transition:none}}
+/* Tablas apiladas en móvil (ver nav.js) */
+@media (max-width:640px){
+  table.pm-stack{min-width:0!important;width:100%!important;border-collapse:collapse}
+  table.pm-stack,table.pm-stack tbody,table.pm-stack tr,table.pm-stack td,table.pm-stack th{display:block;width:100%!important;box-sizing:border-box}
+  table.pm-stack thead,table.pm-stack tr.pm-head{display:none}
+  table.pm-stack tr{border-bottom:1px solid rgba(127,146,158,.35);padding:10px 0}
+  table.pm-stack td,table.pm-stack tbody th{border:0!important;padding:3px 0!important;text-align:left!important;white-space:normal!important}
+  table.pm-stack td[data-label]::before{content:attr(data-label);display:block;font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-size:11px;font-weight:650;letter-spacing:.06em;text-transform:uppercase;color:#44545F;margin-bottom:1px}
+  table.pm-stack td:first-child::before{display:none}
+  table.pm-stack td:first-child{font-weight:650}
+}
