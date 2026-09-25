@@ -30,24 +30,38 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "ItemList", "name": "Directorio de servicios náuticos en Cataluña", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Aldamar Inspección"}, {"@type": "ListItem", "position": 2, "name": "Labcer"}, {"@type": "ListItem", "position": 3, "name": "OCA ICP"}, {"@type": "ListItem", "position": 4, "name": "Apave (antes Eurocontrol)"}, {"@type": "ListItem", "position": 5, "name": "Applus"}, {"@type": "ListItem", "position": 6, "name": "SGS"}, {"@type": "ListItem", "position": 7, "name": "Marinos."}, {"@type": "ListItem", "position": 8, "name": "Gestoría Maresme GAM"}, {"@type": "ListItem", "position": 9, "name": "Nautia Gestión"}, {"@type": "ListItem", "position": 10, "name": "Varadero Masnou"}, {"@type": "ListItem", "position": 11, "name": "SeaDek Europe"}, {"@type": "ListItem", "position": 12, "name": "4Deck"}]}
 </script>
+<link rel="stylesheet" href="/nav.css?v=20260924">
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
     <a class="brand" href="../" aria-label="Plata Marine, inicio"><img class="brand-logo" src="../logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
-    <nav class="nav" aria-label="Secciones">
-      <a href="../barcos/">Barcos</a>
-      <a href="../#vender">Vender</a>
-      <a href="../#comprar">Comprar</a>
-      <a href="../guias/" aria-current="page">Guías</a>
-      <a href="../actualidad/">Actualidad</a>
-      <a href="../servicios/">Servicios</a>
-      <a href="../#juan">Sobre mí</a>
+    <nav class="nav pmx-nav" aria-label="Secciones">
+      <a href="/barcos/">Barcos</a>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM1">Vender</button><div class="pmx-menu" id="pmxM1"><a href="/#vender">Vender mi barco</a><a href="/herramientas/valora-tu-barco.html">¿Cuánto vale mi barco?</a><a href="/papeles-fiscalidad/">Papeles e impuestos</a><a href="/guias/que-hace-un-broker-nautico.html">Qué hace un bróker náutico</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM2">Comprar</button><div class="pmx-menu" id="pmxM2"><a href="/barcos/">Barcos en venta</a><a href="/#comprar">Busco barco</a><a href="/alertas/">Avísame de barcos nuevos</a><a href="/que-barco-necesito.html">¿Qué barco necesito?</a><a href="/modelos/">Modelos: qué mirar y precios</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM3">Aprende</button><div class="pmx-menu" id="pmxM3"><a href="/guias/">Guías</a><a href="/actualidad/">Actualidad</a><a href="/navegante/">Guía del navegante</a><a href="/titulaciones/">Titulaciones</a></div></div>
+      <div class="pmx-dd cur"><button type="button" aria-expanded="false" aria-controls="pmxM4">Servicios</button><div class="pmx-menu" id="pmxM4"><a href="/servicios/">ITB, gestoría, varadero y más</a><a href="/servicios/directorio.html" aria-current="page">Directorio de empresas</a></div></div>
+      <a href="/#juan">Sobre mí</a>
+      <a href="/#contacto">Contacto</a>
     </nav>
     <div class="langsw" aria-label="Idioma"><a href="https://www.platamarine.com/servicios/directorio.html" aria-current="page"><span class="flag flag-es" aria-hidden="true"></span><span class="sr-only">ES</span></a><a href="https://www.platamarine.com/ca/servicios/directorio.html"><span class="flag flag-ca" aria-hidden="true"></span><span class="sr-only">CA</span></a><a href="https://www.platamarine.com/en/servicios/directorio.html"><span class="flag flag-en" aria-hidden="true"></span><span class="sr-only">EN</span></a></div>
     <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20busco%20una%20empresa%20para%20mi%20barco." target="_blank" rel="noopener">Hablar con Juan</a>
+    <button type="button" class="pmx-btn" id="pmxBtn" aria-expanded="false" aria-controls="pmxPanel" aria-label="Abrir menú" data-open="Abrir menú" data-close="Cerrar menú"><span></span></button>
   </div>
+  <nav class="pmx-panel" id="pmxPanel" aria-label="Menú móvil">
+    <div class="pmx-in">
+      <div class="pmx-grp"><a href="/barcos/">Barcos</a></div>
+      <div class="pmx-grp"><p>Vender</p><a href="/#vender">Vender mi barco</a><a href="/herramientas/valora-tu-barco.html">¿Cuánto vale mi barco?</a><a href="/papeles-fiscalidad/">Papeles e impuestos</a><a href="/guias/que-hace-un-broker-nautico.html">Qué hace un bróker náutico</a></div>
+      <div class="pmx-grp"><p>Comprar</p><a href="/barcos/">Barcos en venta</a><a href="/#comprar">Busco barco</a><a href="/alertas/">Avísame de barcos nuevos</a><a href="/que-barco-necesito.html">¿Qué barco necesito?</a><a href="/modelos/">Modelos: qué mirar y precios</a></div>
+      <div class="pmx-grp"><p>Aprende</p><a href="/guias/">Guías</a><a href="/actualidad/">Actualidad</a><a href="/navegante/">Guía del navegante</a><a href="/titulaciones/">Titulaciones</a></div>
+      <div class="pmx-grp"><p>Servicios</p><a href="/servicios/">ITB, gestoría, varadero y más</a><a href="/servicios/directorio.html" aria-current="page">Directorio de empresas</a></div>
+      <div class="pmx-grp"><a href="/#juan">Sobre mí</a></div>
+      <div class="pmx-grp"><a href="/#contacto">Contacto</a></div>
+      <div class="pmx-wide"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20hablar%20sobre%20un%20barco." target="_blank" rel="noopener">Hablar con Juan</a></div>
+    </div>
+  </nav>
 </header>
 
 <main class="art">
@@ -108,6 +122,7 @@
     </div>
   </div>
 <p class="wrap"><button type="button" data-cookie-settings>Configurar cookies</button></p></footer>
+<script src="/nav.js?v=20260924" defer></script>
 </body>
 </html>
 

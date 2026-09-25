@@ -36,28 +36,44 @@
 .langsw{display:flex;gap:6px;align-items:center;font-size:.78rem;font-weight:600}.langsw a{display:inline-flex;align-items:center;padding:3px;border-radius:4px}.langsw a[aria-current="page"]{background:rgba(13,28,39,.08)}.flag{display:block;width:20px;height:14px;border-radius:2px;box-shadow:inset 0 0 0 1px rgba(13,28,39,.18);background-size:cover;background-position:center}.flag-es{background-image:linear-gradient(#AA151B 0 25%,#F1BF00 25% 75%,#AA151B 75% 100%)}.flag-ca{background-image:repeating-linear-gradient(#FFCE00 0 11.11%,#DA121A 11.11% 22.22%)}.flag-en{background-color:#00247D;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 36'%3E%3Cpath d='M0 0L60 36M60 0L0 36' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0L60 36M60 0L0 36' stroke='%23C8102E' stroke-width='2.4'/%3E%3Cpath d='M30 0V36M0 18H60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30 0V36M0 18H60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E")}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .langsw a{padding:3px 7px;border-radius:4px;text-decoration:none;color:inherit;opacity:.65}
 .langsw a[aria-current="page"]{opacity:1;text-decoration:underline}
+.svc-pick{margin:0 0 26px}.svc-pick p{font-family:var(--display);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin:0 0 10px}.svc-pick ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}.svc-pick li{margin:0;padding:0}.svc-pick li::before{content:none}.svc-pick a{display:inline-block;font-family:var(--display);font-size:14.5px;font-weight:600;color:var(--sea);text-decoration:none;border:1px solid var(--plata);background:#fff;border-radius:999px;padding:9px 16px}.svc-pick a:hover,.svc-pick a:focus-visible{border-color:var(--sea);background:var(--sea);color:#fff}
+h2[id]{scroll-margin-top:90px}
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "WebPage", "name": "Servicios: ITB, gestoría, varadero, transporte y seguro", "description": "¿Tienes que pasar la ITB, cambiar el nombre del barco, vararlo, moverlo o asegurarlo y no sabes a quién llamar? Cuéntame qué necesitas y te pongo en contacto con la empresa con la que lo haría yo en Cataluña.", "url": "https://www.platamarine.com/servicios/", "inLanguage": "es", "publisher": {"@type": "Organization", "name": "Plata Marine"}}
 </script>
+<link rel="stylesheet" href="/nav.css?v=20260924">
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
     <a class="brand" href="../" aria-label="Plata Marine, inicio"><img class="brand-logo" src="../logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
-    <nav class="nav" aria-label="Secciones">
-      <a href="../barcos/">Barcos</a>
-      <a href="../#vender">Vender</a>
-      <a href="../#comprar">Comprar</a>
-      <a href="../guias/" aria-current="page">Guías</a>
-      <a href="../actualidad/">Actualidad</a>
-      <a href="../servicios/">Servicios</a>
-      <a href="../#juan">Sobre mí</a>
+    <nav class="nav pmx-nav" aria-label="Secciones">
+      <a href="/barcos/">Barcos</a>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM1">Vender</button><div class="pmx-menu" id="pmxM1"><a href="/#vender">Vender mi barco</a><a href="/herramientas/valora-tu-barco.html">¿Cuánto vale mi barco?</a><a href="/papeles-fiscalidad/">Papeles e impuestos</a><a href="/guias/que-hace-un-broker-nautico.html">Qué hace un bróker náutico</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM2">Comprar</button><div class="pmx-menu" id="pmxM2"><a href="/barcos/">Barcos en venta</a><a href="/#comprar">Busco barco</a><a href="/alertas/">Avísame de barcos nuevos</a><a href="/que-barco-necesito.html">¿Qué barco necesito?</a><a href="/modelos/">Modelos: qué mirar y precios</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM3">Aprende</button><div class="pmx-menu" id="pmxM3"><a href="/guias/">Guías</a><a href="/actualidad/">Actualidad</a><a href="/navegante/">Guía del navegante</a><a href="/titulaciones/">Titulaciones</a></div></div>
+      <div class="pmx-dd cur"><button type="button" aria-expanded="false" aria-controls="pmxM4">Servicios</button><div class="pmx-menu" id="pmxM4"><a href="/servicios/" aria-current="page">ITB, gestoría, varadero y más</a><a href="/servicios/directorio.html">Directorio de empresas</a></div></div>
+      <a href="/#juan">Sobre mí</a>
+      <a href="/#contacto">Contacto</a>
     </nav>
     <div class="langsw" aria-label="Idioma"><a href="https://www.platamarine.com/servicios/" aria-current="page"><span class="flag flag-es" aria-hidden="true"></span><span class="sr-only">ES</span></a><a href="https://www.platamarine.com/ca/servicios/"><span class="flag flag-ca" aria-hidden="true"></span><span class="sr-only">CA</span></a><a href="https://www.platamarine.com/en/servicios/"><span class="flag flag-en" aria-hidden="true"></span><span class="sr-only">EN</span></a></div>
     <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20necesito%20ayuda%20con%20un%20tr%C3%A1mite%20del%20barco." target="_blank" rel="noopener">Hablar con Juan</a>
+    <button type="button" class="pmx-btn" id="pmxBtn" aria-expanded="false" aria-controls="pmxPanel" aria-label="Abrir menú" data-open="Abrir menú" data-close="Cerrar menú"><span></span></button>
   </div>
+  <nav class="pmx-panel" id="pmxPanel" aria-label="Menú móvil">
+    <div class="pmx-in">
+      <div class="pmx-grp"><a href="/barcos/">Barcos</a></div>
+      <div class="pmx-grp"><p>Vender</p><a href="/#vender">Vender mi barco</a><a href="/herramientas/valora-tu-barco.html">¿Cuánto vale mi barco?</a><a href="/papeles-fiscalidad/">Papeles e impuestos</a><a href="/guias/que-hace-un-broker-nautico.html">Qué hace un bróker náutico</a></div>
+      <div class="pmx-grp"><p>Comprar</p><a href="/barcos/">Barcos en venta</a><a href="/#comprar">Busco barco</a><a href="/alertas/">Avísame de barcos nuevos</a><a href="/que-barco-necesito.html">¿Qué barco necesito?</a><a href="/modelos/">Modelos: qué mirar y precios</a></div>
+      <div class="pmx-grp"><p>Aprende</p><a href="/guias/">Guías</a><a href="/actualidad/">Actualidad</a><a href="/navegante/">Guía del navegante</a><a href="/titulaciones/">Titulaciones</a></div>
+      <div class="pmx-grp"><p>Servicios</p><a href="/servicios/" aria-current="page">ITB, gestoría, varadero y más</a><a href="/servicios/directorio.html">Directorio de empresas</a></div>
+      <div class="pmx-grp"><a href="/#juan">Sobre mí</a></div>
+      <div class="pmx-grp"><a href="/#contacto">Contacto</a></div>
+      <div class="pmx-wide"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20hablar%20sobre%20un%20barco." target="_blank" rel="noopener">Hablar con Juan</a></div>
+    </div>
+  </nav>
 </header>
 
 <main class="art">
@@ -74,6 +90,12 @@
         <div class="disc">
           <p><strong>Para que quede claro:</strong> recomiendo empresas con las que he trabajado o con las que tengo un acuerdo de colaboración, y por algunas de esas recomendaciones puedo recibir una compensación de la empresa. Nunca te cobro a ti por ponerte en contacto y el precio que te hagan es el suyo, no lleva recargo. Si una empresa deja de merecer la recomendación, la quito. Y si prefieres que solo te dé el contacto sin pasarle tus datos, me lo dices en la casilla del formulario. Si quieres llamar tú directamente, tienes el <a href="directorio.html">directorio de empresas comprobadas</a>.</p>
         </div>
+
+        <nav class="svc-pick" aria-label="Ir a la sección">
+          <p>¿Qué necesitas?</p>
+          <ul><li><a href="#itb">ITB</a></li><li><a href="#gestoria">Gestoría</a></li><li><a href="#varadero">Varadero y taller</a></li><li><a href="#transporte">Transporte</a></li><li><a href="#seguro">Seguro</a></li></ul>
+        </nav>
+
 
         <h2 id="itb">ITB: inspección técnica del barco</h2>
         <p>Si tu barco tiene que pasar la ITB (o no sabes si tiene que pasarla, que es lo más habitual), dime dónde está, la eslora y cuándo caduca y te pongo en contacto con una entidad colaboradora de inspección que trabaja en tu zona. Antes puedes leer la <a href="../guias/itb-inspeccion-tecnica-barcos-recreo.html">guía de la ITB</a>: quién la pasa, cada cuánto y qué miran.</p>
@@ -280,6 +302,7 @@ pmWire(document.getElementById('svcTransporte'),mk('transporte',[['origen','Orig
     </div>
   </div>
 <p class="wrap"><button type="button" data-cookie-settings>Configurar cookies</button></p></footer>
+<script src="/nav.js?v=20260924" defer></script>
 </body>
 </html>
 
