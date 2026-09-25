@@ -54,7 +54,7 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Quiz", "name": "Test de práctica del PER", "educationalLevel": "Patrón de Embarcaciones de Recreo", "inLanguage": "es", "provider": {"@type": "Organization", "name": "Plata Marine"}}
 </script>
-<link rel="stylesheet" href="/nav.css?v=20260924">
+<link rel="stylesheet" href="/nav.css?v=20260925">
 </head>
 <body>
 
@@ -130,7 +130,7 @@
       <div class="card">
         <p class="eyebrow">¿Ya tienes el título y buscas barco?</p>
         <h3>Cuéntame qué quieres navegar y te ayudo a encontrarlo.</h3>
-        <p>Trabajo con barcos a motor de 7 a 12 metros en Cataluña, a éxito y sin exclusiva.</p>
+        <p>Barcos a motor y veleros, con base en Cataluña. A éxito y sin exclusiva.</p>
         <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20tengo%20el%20PER%20y%20estoy%20buscando%20barco." target="_blank" rel="noopener">Hablar con Juan por WhatsApp</a>
       </div>
       <nav class="toc" aria-label="Contenido">
@@ -168,7 +168,7 @@ el('pmLeadForm').onsubmit=function(ev){
   if(!el('pmConsent').checked){msg.textContent='Necesito que aceptes la política de privacidad para poder enviártelo.';return;}
   var btn=el('pmSend');btn.disabled=true;var lbl=btn.textContent;btn.textContent='Enviando…';
   var payload=Object.assign({email:em,consent:true,newsletter:el('pmNews').checked,consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
-  window.submitConfirmed(LEADS_URL,payload,'json').then(function(){
+  window.submitConfirmed(LEADS_URL,payload,'json').then(function(){try{if(window.pmTrack)window.pmTrack('generate_lead',{form_id:'resultado_test_per',contact_purpose:'result'});}catch(x){}
     msg.className='msg ok';msg.textContent='Solicitud registrada. El resultado también sigue disponible en pantalla.';btn.textContent='Enviado';
     setTimeout(closeModal,1800);
   }).catch(function(){msg.textContent='No hemos podido confirmar la recepción. Tus datos siguen en pantalla. Antes de repetir el envío, consulta en juan@platamarine.com o por WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
@@ -231,10 +231,9 @@ el('again').onclick=function(){el('questions').innerHTML='';el('endbar').classLi
     </div>
   </div>
 <p class="wrap"><button type="button" data-cookie-settings>Configurar cookies</button></p></footer>
-<script src="/nav.js?v=20260924" defer></script>
-</body>
-</html>
-
+<script src="/nav.js?v=20260925" defer></script>
 <script src="/consent.js" defer></script>
 <script src="/submit-confirmed.js" defer></script>
-<script src="/analytics.js?v=20260912" defer></script>
+<script src="/analytics.js?v=20260925" defer></script>
+</body>
+</html>
