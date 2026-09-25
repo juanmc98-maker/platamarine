@@ -54,7 +54,7 @@
 <script type="application/ld+json">
 [{"@context": "https://schema.org", "@type": "WebApplication", "name": "Valora tu barco", "applicationCategory": "UtilityApplication", "operatingSystem": "Web", "inLanguage": "es", "provider": {"@type": "Organization", "name": "Plata Marine"}, "url": "https://www.platamarine.com/herramientas/valora-tu-barco.html", "description": "Responde nueve preguntas sobre tu barco (tipo, eslora, año, motor, horas, mantenimiento, papeles, ubicación y si ya está anunciado) y te digo qué está jugando a favor de su precio y qué lo puede bajar, antes de darte una valoración real. Gratis y sin registro."}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Por qué no me dais aquí un precio exacto?", "acceptedAnswer": {"@type": "Answer", "text": "Un precio real depende de cosas que no salen en un formulario: el estado del motor visto en persona, el papeleo concreto y qué se está vendiendo de verdad ahora mismo en tu franja. Esta herramienta te da las claves; el precio de salida lo preparo mirando tu barco y el mercado actual, gratis y sin compromiso."}}, {"@type": "Question", "name": "¿Cuánto tarda en venderse un barco de segunda mano?", "acceptedAnswer": {"@type": "Answer", "text": "Depende del tipo, la eslora y la época del año: fuera de temporada (otoño e invierno) suele alargarse. Como orientación, varios meses es habitual incluso con un precio correcto; con la ficha y el precio bien planteados se puede acortar, pero conviene desconfiar de quien prometa una venta rápida sin haber visto el barco."}}, {"@type": "Question", "name": "¿Puedo vender aunque el barco no esté al día en mantenimiento o papeles?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Lo habitual es ajustar el precio o resolver antes lo que se pueda. Lo que no conviene es esconderlo: suele salir en la revisión o la prueba de mar, y complica más la venta que decirlo desde el principio."}}, {"@type": "Question", "name": "¿Tiene algún coste esta valoración?", "acceptedAnswer": {"@type": "Answer", "text": "No. Ni esta herramienta ni la primera conversación tienen coste. Solo cobro honorarios si gestiono la venta y se cierra, y eso queda siempre por escrito antes de empezar."}}]}]
 </script>
-<link rel="stylesheet" href="/nav.css?v=20260924">
+<link rel="stylesheet" href="/nav.css?v=20260925">
 </head>
 <body>
 
@@ -118,9 +118,9 @@
         <h3 id="pmModalTitle">¿Te envío este resumen por correo?</h3>
         <p>Te mando por escrito los puntos que influyen en el precio de tu barco, para que los tengas a mano cuando hablemos.</p>
         <form id="pmLeadForm" novalidate>
-          <input type="email" id="pmEmail" placeholder="tu@correo.com" autocomplete="email" required><input type="tel" id="pmTel" placeholder="Tu teléfono (para avisos por WhatsApp)" autocomplete="tel" required inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')">
+          <input type="email" id="pmEmail" placeholder="tu@correo.com" autocomplete="email" required><input type="tel" id="pmTel" placeholder="Tu teléfono (opcional, por si prefieres WhatsApp)" autocomplete="tel" inputmode="tel" maxlength="20">
           <label class="chk"><input type="checkbox" id="pmConsent" required> <span>Acepto que Plata Marine guarde mi correo para enviarme este resumen, según la <a href="../privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
-          <label class="chk"><input type="checkbox" id="pmNews"> <span>Quiero recibir de vez en cuando artículos y guías de Plata Marine por correo (puedes darte de baja cuando quieras).</span></label><label class="chk"><input type="checkbox" id="pmCesion"> <span>Acepto que Plata Marine pueda compartir mis datos de contacto (nombre, teléfono, email) con empresas colaboradoras del sector náutico y afines —como talleres, correduría de seguros u otros brokers— para que puedan ofrecerme productos o servicios relacionados con mi barco o mi búsqueda.</span></label>
+          <label class="chk"><input type="checkbox" id="pmNews"> <span>Quiero recibir de vez en cuando artículos y guías de Plata Marine por correo (puedes darte de baja cuando quieras).</span></label>
           <p class="msg hidden" id="pmMsg"></p>
           <button type="submit" class="btn btn-wa" id="pmSend">Enviarme el resumen</button>
           <button type="button" class="skip" id="pmSkip">Ver el resultado sin correo</button>
@@ -133,7 +133,7 @@
       <div class="card">
         <p class="eyebrow">¿Hablamos de tu barco?</p>
         <h3>Cuéntame el resultado y preparamos el precio de salida.</h3>
-        <p>Trabajo la venta de barcos a motor desde 5 metros, en Cataluña y Baleares. A éxito, sin exclusiva ni adelantos.</p>
+        <p>Te ayudo a vender tu barco, a motor o a vela. Tengo la base en Cataluña y también llevo operaciones en Baleares y otras zonas cuando el barco lo justifica. A éxito, sin exclusiva ni adelantos.</p>
         <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20he%20hecho%20la%20valoraci%C3%B3n%20de%20mi%20barco%20en%20la%20web." target="_blank" rel="noopener">Hablar con Juan por WhatsApp</a>
       </div>
       <nav class="toc" aria-label="Contenido">
@@ -228,11 +228,11 @@ function closeModal(){el('pmModal').classList.add('hidden');if(_scrollTo)window.
 el('pmSkip').onclick=closeModal;
 el('pmLeadForm').onsubmit=function(ev){
   ev.preventDefault();var em=el('pmEmail').value.trim(),msg=el('pmMsg');msg.className='msg';
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Revisa el correo, no parece correcto.';return;}var tel=el('pmTel').value.trim();if(tel.replace(/\D/g,'').length<9){msg.textContent='Revisa el teléfono, parece incompleto.';return;}
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Revisa el correo, no parece correcto.';return;}var tel=el('pmTel').value.trim();if(tel&&!/^\+?[0-9 ().-]{6,20}$/.test(tel)){msg.textContent='Revisa el teléfono, parece incompleto.';return;}
   if(!el('pmConsent').checked){msg.textContent='Necesito que aceptes la política de privacidad para poder enviártelo.';return;}
   var btn=el('pmSend');btn.disabled=true;var lbl=btn.textContent;btn.textContent='Enviando…';
-  var payload=Object.assign({email:em,telefono:tel,consent:true,newsletter:el('pmNews').checked,cesion_terceros:!!(el('pmCesion')&&el('pmCesion').checked),consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
-  window.submitConfirmed(LEADS_URL,payload,'json').then(function(){
+  var payload=Object.assign({email:em,telefono:tel,consent:true,newsletter:el('pmNews').checked,consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
+  window.submitConfirmed(LEADS_URL,payload,'json').then(function(){try{if(window.pmTrack)window.pmTrack('generate_lead',{form_id:'resultado_valoracion',contact_purpose:'result'});}catch(x){}
     msg.className='msg ok';msg.textContent='Resumen registrado. El resultado también sigue disponible en pantalla.';btn.textContent='Enviado';
     setTimeout(closeModal,1800);
   }).catch(function(){msg.textContent='No hemos podido confirmar la recepción. Tus datos siguen en pantalla. Antes de repetir el envío, consulta en juan@platamarine.com o por WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
@@ -324,10 +324,9 @@ render();
     </div>
   </div>
 <p class="wrap"><button type="button" data-cookie-settings>Configurar cookies</button></p></footer>
-<script src="/nav.js?v=20260924" defer></script>
-</body>
-</html>
-
+<script src="/nav.js?v=20260925" defer></script>
 <script src="/consent.js" defer></script>
 <script src="/submit-confirmed.js" defer></script>
-<script src="/analytics.js?v=20260912" defer></script>
+<script src="/analytics.js?v=20260925" defer></script>
+</body>
+</html>
