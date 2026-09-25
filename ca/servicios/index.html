@@ -42,7 +42,7 @@ h2[id]{scroll-margin-top:90px}
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "WebPage", "name": "Serveis: ITB, gestoria, varador, transport i assegurança", "description": "Has de passar la ITB, canviar el nom del vaixell, varar-lo, moure'l o assegurar-lo i no saps a qui trucar? Explica'm què necessites i et poso en contacte amb l'empresa amb qui ho faria jo a Catalunya.", "url": "https://www.platamarine.com/ca/servicios/", "inLanguage": "ca", "publisher": {"@type": "Organization", "name": "Plata Marine"}}
 </script>
-<link rel="stylesheet" href="/nav.css?v=20260924">
+<link rel="stylesheet" href="/nav.css?v=20260925">
 </head>
 <body>
 
@@ -115,14 +115,15 @@ h2[id]{scroll-margin-top:90px}
             <div class="f"><label class="l">Alguna cosa més (opcional)</label><textarea name="mensaje" placeholder="Any del vaixell, si és de motor o vela, si el tens a l'aigua o en sec…"></textarea></div>
 
             <div class="row">
-              <div class="f"><label class="l">Nom</label><input type="text" name="nombre" autocomplete="name"></div>
-              <div class="f"><label class="l">Telèfon</label><input type="tel" name="telefono" autocomplete="tel" placeholder="Per si prefereixes WhatsApp" required inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')"></div>
+              <div class="f"><label class="l">Nom *</label><input type="text" name="nombre" autocomplete="name" required></div>
+              <div class="f"><label class="l">Telèfon *</label><input type="tel" name="telefono" autocomplete="tel" placeholder="Amb prefix si no és d'Espanya" required inputmode="tel" maxlength="20"></div>
             </div>
-            <div class="f"><label class="l">Correu</label><input type="email" name="email" autocomplete="email" placeholder="tu@correu.com" required></div>
-            <label class="chk"><input type="checkbox" name="consent" required> <span>Accepto que Plata Marine guardi aquestes dades per respondre'm i dir-me amb qui ho faria, segons la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
+            <div class="f"><label class="l">Correu <small>(opcional)</small></label><input type="email" name="email" autocomplete="email" placeholder="tu@correu.com"></div>
+            <label class="chk"><input type="checkbox" name="consent" required> <span>* Accepto que Plata Marine guardi aquestes dades per respondre'm i dir-me amb qui ho faria, segons la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
             <label class="chk"><input type="checkbox" name="comparte"> <span>Autoritzo Plata Marine a passar el meu nom, telèfon, correu i les dades d'aquest formulari a l'empresa que em recomani, perquè sigui ella qui em contacti. Si no ho marques, et dono jo el contacte i truques tu.</span></label>
-              <label class="chk"><input type="checkbox" name="cesion_terceros"> <span>Accepto que Plata Marine pugui compartir les meves dades de contacte (nom, telèfon, correu) amb empreses col·laboradores del sector nàutic i afins —com tallers, correduria d'assegurances o altres brokers— perquè puguin oferir-me productes o serveis relacionats amb el meu vaixell o la meva cerca.</span></label>
-            <button type="submit" class="btn btn-wa">Demanar contacte per a la ITB</button>
+              
+            <p class="legal req-note">Els camps amb * són obligatoris.</p>
+<button type="submit" class="btn btn-wa">Demanar contacte per a la ITB</button>
             <p class="msg"></p>
             <p class="legal">Responsable: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Finalitat: respondre la teva sol·licitud, dir-te amb qui ho faria jo i, només si ho autoritzes, comunicar les teves dades a aquesta empresa perquè et contacti. Base legal: el teu consentiment, que pots retirar quan vulguis. Conservació: un any des de la sol·licitud, llevat que la relació continuï. Drets: accés, rectificació, supressió, oposició i la resta que reconeix el RGPD, escrivint a juan@platamarine.com; també pots reclamar davant l'Agència Espanyola de Protecció de Dades (AEPD). Més informació a la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</p>
           <p class="legal">També pots <a href="mailto:juan@platamarine.com">escriure a juan@platamarine.com</a>. Si no apareix una confirmació, consulta abans de tornar a enviar.</p></form>
@@ -142,14 +143,15 @@ h2[id]{scroll-margin-top:90px}
             <div class="f"><label class="l">Explica'm el cas (opcional)</label><textarea name="mensaje" placeholder="On és matriculat, si hi ha pressa, si compres a un particular o a una empresa…"></textarea></div>
 
             <div class="row">
-              <div class="f"><label class="l">Nom</label><input type="text" name="nombre" autocomplete="name"></div>
-              <div class="f"><label class="l">Telèfon</label><input type="tel" name="telefono" autocomplete="tel" placeholder="Per si prefereixes WhatsApp" required inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')"></div>
+              <div class="f"><label class="l">Nom *</label><input type="text" name="nombre" autocomplete="name" required></div>
+              <div class="f"><label class="l">Telèfon *</label><input type="tel" name="telefono" autocomplete="tel" placeholder="Amb prefix si no és d'Espanya" required inputmode="tel" maxlength="20"></div>
             </div>
-            <div class="f"><label class="l">Correu</label><input type="email" name="email" autocomplete="email" placeholder="tu@correu.com" required></div>
-            <label class="chk"><input type="checkbox" name="consent" required> <span>Accepto que Plata Marine guardi aquestes dades per respondre'm i dir-me amb qui ho faria, segons la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
+            <div class="f"><label class="l">Correu <small>(opcional)</small></label><input type="email" name="email" autocomplete="email" placeholder="tu@correu.com"></div>
+            <label class="chk"><input type="checkbox" name="consent" required> <span>* Accepto que Plata Marine guardi aquestes dades per respondre'm i dir-me amb qui ho faria, segons la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
             <label class="chk"><input type="checkbox" name="comparte"> <span>Autoritzo Plata Marine a passar el meu nom, telèfon, correu i les dades d'aquest formulari a l'empresa que em recomani, perquè sigui ella qui em contacti. Si no ho marques, et dono jo el contacte i truques tu.</span></label>
-              <label class="chk"><input type="checkbox" name="cesion_terceros"> <span>Accepto que Plata Marine pugui compartir les meves dades de contacte (nom, telèfon, correu) amb empreses col·laboradores del sector nàutic i afins —com tallers, correduria d'assegurances o altres brokers— perquè puguin oferir-me productes o serveis relacionats amb el meu vaixell o la meva cerca.</span></label>
-            <button type="submit" class="btn btn-wa">Demanar contacte amb la gestoria</button>
+              
+            <p class="legal req-note">Els camps amb * són obligatoris.</p>
+<button type="submit" class="btn btn-wa">Demanar contacte amb la gestoria</button>
             <p class="msg"></p>
             <p class="legal">Responsable: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Finalitat: respondre la teva sol·licitud, dir-te amb qui ho faria jo i, només si ho autoritzes, comunicar les teves dades a aquesta empresa perquè et contacti. Base legal: el teu consentiment, que pots retirar quan vulguis. Conservació: un any des de la sol·licitud, llevat que la relació continuï. Drets: accés, rectificació, supressió, oposició i la resta que reconeix el RGPD, escrivint a juan@platamarine.com; també pots reclamar davant l'Agència Espanyola de Protecció de Dades (AEPD). Més informació a la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</p>
           <p class="legal">També pots <a href="mailto:juan@platamarine.com">escriure a juan@platamarine.com</a>. Si no apareix una confirmació, consulta abans de tornar a enviar.</p></form>
@@ -173,14 +175,15 @@ h2[id]{scroll-margin-top:90px}
             <div class="f"><label class="l">Alguna cosa més (opcional)</label><textarea name="mensaje" placeholder="Motor, any, si prefereixes una zona concreta…"></textarea></div>
 
             <div class="row">
-              <div class="f"><label class="l">Nom</label><input type="text" name="nombre" autocomplete="name"></div>
-              <div class="f"><label class="l">Telèfon</label><input type="tel" name="telefono" autocomplete="tel" placeholder="Per si prefereixes WhatsApp" required inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')"></div>
+              <div class="f"><label class="l">Nom *</label><input type="text" name="nombre" autocomplete="name" required></div>
+              <div class="f"><label class="l">Telèfon *</label><input type="tel" name="telefono" autocomplete="tel" placeholder="Amb prefix si no és d'Espanya" required inputmode="tel" maxlength="20"></div>
             </div>
-            <div class="f"><label class="l">Correu</label><input type="email" name="email" autocomplete="email" placeholder="tu@correu.com" required></div>
-            <label class="chk"><input type="checkbox" name="consent" required> <span>Accepto que Plata Marine guardi aquestes dades per respondre'm i dir-me amb qui ho faria, segons la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
+            <div class="f"><label class="l">Correu <small>(opcional)</small></label><input type="email" name="email" autocomplete="email" placeholder="tu@correu.com"></div>
+            <label class="chk"><input type="checkbox" name="consent" required> <span>* Accepto que Plata Marine guardi aquestes dades per respondre'm i dir-me amb qui ho faria, segons la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
             <label class="chk"><input type="checkbox" name="comparte"> <span>Autoritzo Plata Marine a passar el meu nom, telèfon, correu i les dades d'aquest formulari a l'empresa que em recomani, perquè sigui ella qui em contacti. Si no ho marques, et dono jo el contacte i truques tu.</span></label>
-              <label class="chk"><input type="checkbox" name="cesion_terceros"> <span>Accepto que Plata Marine pugui compartir les meves dades de contacte (nom, telèfon, correu) amb empreses col·laboradores del sector nàutic i afins —com tallers, correduria d'assegurances o altres brokers— perquè puguin oferir-me productes o serveis relacionats amb el meu vaixell o la meva cerca.</span></label>
-            <button type="submit" class="btn btn-wa">Demanar contacte amb el varador</button>
+              
+            <p class="legal req-note">Els camps amb * són obligatoris.</p>
+<button type="submit" class="btn btn-wa">Demanar contacte amb el varador</button>
             <p class="msg"></p>
             <p class="legal">Responsable: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Finalitat: respondre la teva sol·licitud, dir-te amb qui ho faria jo i, només si ho autoritzes, comunicar les teves dades a aquesta empresa perquè et contacti. Base legal: el teu consentiment, que pots retirar quan vulguis. Conservació: un any des de la sol·licitud, llevat que la relació continuï. Drets: accés, rectificació, supressió, oposició i la resta que reconeix el RGPD, escrivint a juan@platamarine.com; també pots reclamar davant l'Agència Espanyola de Protecció de Dades (AEPD). Més informació a la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</p>
           <p class="legal">També pots <a href="mailto:juan@platamarine.com">escriure a juan@platamarine.com</a>. Si no apareix una confirmació, consulta abans de tornar a enviar.</p></form>
@@ -207,14 +210,15 @@ h2[id]{scroll-margin-top:90px}
             <div class="f"><label class="l">Alguna cosa més (opcional)</label><textarea name="mensaje" placeholder="Pes, si té quilla fixa, si cal grua…"></textarea></div>
 
             <div class="row">
-              <div class="f"><label class="l">Nom</label><input type="text" name="nombre" autocomplete="name"></div>
-              <div class="f"><label class="l">Telèfon</label><input type="tel" name="telefono" autocomplete="tel" placeholder="Per si prefereixes WhatsApp" required inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')"></div>
+              <div class="f"><label class="l">Nom *</label><input type="text" name="nombre" autocomplete="name" required></div>
+              <div class="f"><label class="l">Telèfon *</label><input type="tel" name="telefono" autocomplete="tel" placeholder="Amb prefix si no és d'Espanya" required inputmode="tel" maxlength="20"></div>
             </div>
-            <div class="f"><label class="l">Correu</label><input type="email" name="email" autocomplete="email" placeholder="tu@correo.com" required></div>
-            <label class="chk"><input type="checkbox" name="consent" required> <span>Accepto que Plata Marine guardi aquestes dades per respondre'm i dir-me amb qui ho faria, segons la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
+            <div class="f"><label class="l">Correu <small>(opcional)</small></label><input type="email" name="email" autocomplete="email" placeholder="tu@correo.com"></div>
+            <label class="chk"><input type="checkbox" name="consent" required> <span>* Accepto que Plata Marine guardi aquestes dades per respondre'm i dir-me amb qui ho faria, segons la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
             <label class="chk"><input type="checkbox" name="comparte"> <span>Autoritzo Plata Marine a passar el meu nom, telèfon, correu i les dades d'aquest formulari a l'empresa que em recomani, perquè sigui ella qui em contacti. Si no ho marques, et dono jo el contacte i truques tu.</span></label>
-              <label class="chk"><input type="checkbox" name="cesion_terceros"> <span>Accepto que Plata Marine pugui compartir les meves dades de contacte (nom, telèfon, correu) amb empreses col·laboradores del sector nàutic i afins —com tallers, correduria d'assegurances o altres brokers— perquè puguin oferir-me productes o serveis relacionats amb el meu vaixell o la meva cerca.</span></label>
-            <button type="submit" class="btn btn-wa">Demanar contacte per al transport</button>
+              
+            <p class="legal req-note">Els camps amb * són obligatoris.</p>
+<button type="submit" class="btn btn-wa">Demanar contacte per al transport</button>
             <p class="msg"></p>
             <p class="legal">Responsable: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Finalitat: respondre la teva sol·licitud, dir-te amb qui ho faria jo i, només si ho autoritzes, comunicar les teves dades a aquesta empresa perquè et contacti. Base legal: el teu consentiment, que pots retirar quan vulguis. Conservació: un any des de la sol·licitud, llevat que la relació continuï. Drets: accés, rectificació, supressió, oposició i la resta que reconeix el RGPD, escrivint a juan@platamarine.com; també pots reclamar davant l'Agència Espanyola de Protecció de Dades (AEPD). Més informació a la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</p>
           <p class="legal">També pots <a href="mailto:juan@platamarine.com">escriure a juan@platamarine.com</a>. Si no apareix una confirmació, consulta abans de tornar a enviar.</p></form>
@@ -267,26 +271,28 @@ h2[id]{scroll-margin-top:90px}
 var LEADS_URL='https://script.google.com/macros/s/AKfycbwJtBkktakE0qgmu_b8oHOOopCDnG6BDpBjg2zBUsZKi8l3_OBEuez_OHWmE9j8qCBF/exec';
 function pmVal(f,n){var x=f.querySelector('[name='+n+']');if(!x)return '';if(x.type==='checkbox')return x.checked;return (x.value||'').trim();}
 function pmWire(f,build){
+  if(!f)return;
   f.addEventListener('submit',function(ev){
     ev.preventDefault();var msg=f.querySelector('.msg');msg.className='msg';msg.textContent='';
     if(pmVal(f,'empresa_web')){return;}
-    var nom=pmVal(f,'nombre');if(!nom){msg.textContent='Necessito el teu nom per poder ajudar-te.';return;}
-    var tel=pmVal(f,'telefono');var telDig=tel.replace(/\D/g,'');
-    if(!tel||telDig.length<9){msg.textContent='Revisa el telèfon, sembla incomplet.';return;}
-    var em=pmVal(f,'email');
-    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Revisa el correu, no sembla correcte.';return;}
-    if(!pmVal(f,'consent')){msg.textContent='Necessito que acceptis la política de privacitat per poder atendre\'t.';return;}
+    function bad(t,n){msg.textContent=t;var x=n&&f.querySelector('[name='+n+']');if(x){x.setAttribute('aria-invalid','true');x.focus();}}
+    [].forEach.call(f.querySelectorAll('[aria-invalid]'),function(x){x.removeAttribute('aria-invalid');});
+    var nom=pmVal(f,'nombre');if(!nom){bad('Necessito el teu nom per poder ajudar-te.','nombre');return;}
+    var tel=pmVal(f,'telefono');if(!/^\+?[0-9 ().-]{6,20}$/.test(tel)||tel.replace(/\D/g,'').length<6){bad('Revisa el telèfon: el pots escriure amb prefix internacional, per exemple +34 600 000 000.','telefono');return;}
+    var em=pmVal(f,'email');if(em&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){bad('Revisa el correu, no sembla correcte.','email');return;}
+    if(!pmVal(f,'consent')){bad("Necessito que acceptis la política de privacitat per poder atendre't.",'consent');return;}
     var p=build(f);if(!p){return;}
     p.email=em;p.consent=true;p.consent_v='2026-09';p.consent_at=new Date().toISOString();p.page=location.pathname;p.ua=navigator.userAgent.slice(0,120);
     var btn=f.querySelector('button[type=submit]');btn.disabled=true;var lbl=btn.textContent;btn.textContent='Enviant…';
     window.submitConfirmed(LEADS_URL,p,'json').then(function(){
-      msg.className='msg ok';msg.textContent='Sol·licitud registrada. Gràcies; revisarem les dades que ens has enviat.';btn.textContent='Enviat';
-      try{if(window.pmTrack)pmTrack('generate_lead',{form_id:f.id});}catch(e){}
-    }).catch(function(){msg.textContent='No hem pogut confirmar la recepció. Les teves dades continuen a la pantalla. Abans de tornar a enviar-ho, consulta a juan@platamarine.com o per WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
+      msg.className='msg ok';msg.textContent='Sol·licitud rebuda. Et contesto tan aviat com pugui.';btn.textContent='Enviat';
+      try{if(window.pmTrack)pmTrack('generate_lead',{form_id:f.id,contact_purpose:'service'});}catch(e){}
+    }).catch(function(){msg.innerHTML='No he pogut confirmar que la teva sol·licitud ha arribat. Les teves dades segueixen aquí: pots tornar-ho a provar d\'aquí a uns minuts o escriure\'m per <a href="https://wa.me/34633742973" target="_blank" rel="noopener">WhatsApp</a> o a <a href="mailto:juan@platamarine.com">juan@platamarine.com</a>.';btn.disabled=false;btn.textContent=lbl;
+      try{if(window.pmTrack)pmTrack('contact_form_error',{form_id:f.id});}catch(e){}});
   });
 }
 
-function mk(key,fields){return function(f){var parts=[];fields.forEach(function(p){var v=pmVal(f,p[0]);if(v)parts.push(p[1]+': '+v);});return {source:'servicio',servicio:key,nombre:pmVal(f,'nombre'),telefono:pmVal(f,'telefono'),comparte:!!pmVal(f,'comparte'),cesion_terceros:!!pmVal(f,'cesion_terceros'),newsletter:false,detail:parts.join(' | ')};};}
+function mk(key,fields){return function(f){var parts=[];fields.forEach(function(p){var v=pmVal(f,p[0]);if(v)parts.push(p[1]+': '+v);});return {source:'servicio',servicio:key,nombre:pmVal(f,'nombre'),telefono:pmVal(f,'telefono'),comparte:!!pmVal(f,'comparte'),newsletter:false,detail:parts.join(' | ')};};}
 pmWire(document.getElementById('svcItb'),mk('itb',[['puerto','Port'],['eslora','Eslora'],['lista','Llista'],['caducidad','Caducitat'],['mensaje','Missatge']]));
 pmWire(document.getElementById('svcGestoria'),mk('gestoria',[['tramite','Tràmit'],['eslora','Eslora'],['mensaje','Missatge']]));
 pmWire(document.getElementById('svcVaradero'),mk('varadero',[['puerto','Port'],['eslora','Eslora'],['trabajo','Feina'],['cuando','Quan'],['mensaje','Missatge']]));
@@ -302,10 +308,9 @@ pmWire(document.getElementById('svcTransporte'),mk('transporte',[['origen','Orig
     </div>
   </div>
 <p class="wrap"><button type="button" data-cookie-settings>Configurar cookies</button></p></footer>
-<script src="/nav.js?v=20260924" defer></script>
-</body>
-</html>
-
+<script src="/nav.js?v=20260925" defer></script>
 <script src="/consent.js" defer></script>
 <script src="/submit-confirmed.js" defer></script>
-<script src="/analytics.js?v=20260912" defer></script>
+<script src="/analytics.js?v=20260925" defer></script>
+</body>
+</html>
