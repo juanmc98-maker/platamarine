@@ -54,7 +54,7 @@
 <script type="application/ld+json">
 [{"@context": "https://schema.org", "@type": "WebApplication", "name": "Value your boat", "applicationCategory": "UtilityApplication", "operatingSystem": "Web", "inLanguage": "en", "provider": {"@type": "Organization", "name": "Plata Marine"}, "url": "https://www.platamarine.com/en/herramientas/valora-tu-barco.html", "description": "Answer nine questions about your boat (type, length, year, engine, hours, maintenance, paperwork, location and whether it is already listed) and I'll tell you what works in favour of its price and what can bring it down, before giving you a real valuation. Free, no sign-up."}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why don't you give me an exact price here?", "acceptedAnswer": {"@type": "Answer", "text": "A real price depends on things a form can't capture: the condition of the engine seen in person, the specific paperwork and what is actually selling right now in your bracket. This tool gives you the key points; I work out the asking price by looking at your boat and the current market, free and with no commitment."}}, {"@type": "Question", "name": "How long does it take to sell a used boat?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the type, the length and the time of year: out of season (autumn and winter) it usually takes longer. As a rough guide, several months is normal even with a sensible price; a well-prepared listing and price can shorten it, but be wary of anyone who promises a quick sale without having seen the boat."}}, {"@type": "Question", "name": "Can I sell if the boat isn't up to date on maintenance or paperwork?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The usual approach is to adjust the price or sort out what you can beforehand. What you shouldn't do is hide it: it tends to come out at the survey or the sea trial, and that complicates the sale more than saying it from the start."}}, {"@type": "Question", "name": "Does this valuation cost anything?", "acceptedAnswer": {"@type": "Answer", "text": "No. Neither this tool nor the first conversation costs anything. I only charge a fee if I handle the sale and it goes through, and that is always put in writing before we start."}}]}]
 </script>
-<link rel="stylesheet" href="/nav.css?v=20260924">
+<link rel="stylesheet" href="/nav.css?v=20260925">
 </head>
 <body>
 
@@ -118,9 +118,9 @@
         <h3 id="pmModalTitle">Shall I email you this summary?</h3>
         <p>I'll send you in writing the points that affect your boat's price, so you have them to hand when we talk.</p>
         <form id="pmLeadForm" novalidate>
-          <input type="email" id="pmEmail" placeholder="you@email.com" autocomplete="email" required><input type="tel" id="pmTel" placeholder="Your phone (for WhatsApp updates)" autocomplete="tel" required inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')">
+          <input type="email" id="pmEmail" placeholder="you@email.com" autocomplete="email" required><input type="tel" id="pmTel" placeholder="Your phone (optional, if you prefer WhatsApp)" autocomplete="tel" inputmode="tel" maxlength="20">
           <label class="chk"><input type="checkbox" id="pmConsent" required> <span>I agree that Plata Marine may store my email to send me this summary, in line with the <a href="/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</span></label>
-          <label class="chk"><input type="checkbox" id="pmNews"> <span>I would like to receive occasional articles and guides from Plata Marine by email (you can unsubscribe at any time).</span></label><label class="chk"><input type="checkbox" id="pmCesion"> <span>I agree that Plata Marine may share my contact details (name, phone, email) with partner companies in the nautical and related sectors —such as workshops, insurance brokers or other boat brokers— so that they can offer me products or services related to my boat or my search.</span></label>
+          <label class="chk"><input type="checkbox" id="pmNews"> <span>I would like to receive occasional articles and guides from Plata Marine by email (you can unsubscribe at any time).</span></label>
           <p class="msg hidden" id="pmMsg"></p>
           <button type="submit" class="btn btn-wa" id="pmSend">Send me the summary</button>
           <button type="button" class="skip" id="pmSkip">See the result without email</button>
@@ -133,7 +133,7 @@
       <div class="card">
         <p class="eyebrow">Shall we talk about your boat?</p>
         <h3>Tell me the result and we'll work out the asking price.</h3>
-        <p>I handle the sale of motorboats from 5 metres, in Catalonia and the Balearics. Paid on success, with no exclusivity and no upfront fees.</p>
+        <p>I help you sell your boat, power or sail. My base is Catalonia and I also handle deals in the Balearics and other areas when the boat justifies it. Paid on success, with no exclusivity and no upfront fees.</p>
         <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hi%20Juan%2C%20I%27ve%20done%20the%20boat%20valuation%20on%20your%20website." target="_blank" rel="noopener">Talk to Juan on WhatsApp</a>
       </div>
       <nav class="toc" aria-label="Contents">
@@ -239,11 +239,11 @@ function closeModal(){el('pmModal').classList.add('hidden');if(_scrollTo)window.
 el('pmSkip').onclick=closeModal;
 el('pmLeadForm').onsubmit=function(ev){
   ev.preventDefault();var em=el('pmEmail').value.trim(),msg=el('pmMsg');msg.className='msg';
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Please check your email, it doesn\'t look right.';return;}var tel=el('pmTel').value.trim();if(tel.replace(/\D/g,'').length<9){msg.textContent='Please check your phone number, it looks incomplete.';return;}
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Please check your email, it doesn\'t look right.';return;}var tel=el('pmTel').value.trim();if(tel&&!/^\+?[0-9 ().-]{6,20}$/.test(tel)){msg.textContent='Please check your phone number, it looks incomplete.';return;}
   if(!el('pmConsent').checked){msg.textContent='I need you to accept the privacy policy so I can send it to you.';return;}
   var btn=el('pmSend');btn.disabled=true;var lbl=btn.textContent;btn.textContent='Sending…';
-  var payload=Object.assign({email:em,telefono:tel,consent:true,newsletter:el('pmNews').checked,cesion_terceros:!!(el('pmCesion')&&el('pmCesion').checked),consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
-  window.submitConfirmed(LEADS_URL,payload,'json').then(function(){
+  var payload=Object.assign({email:em,telefono:tel,consent:true,newsletter:el('pmNews').checked,consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
+  window.submitConfirmed(LEADS_URL,payload,'json').then(function(){try{if(window.pmTrack)window.pmTrack('generate_lead',{form_id:'resultado_valoracion',contact_purpose:'result'});}catch(x){}
     msg.className='msg ok';msg.textContent='Summary saved. The result is still available on screen.';btn.textContent='Sent';
     setTimeout(closeModal,1800);
   }).catch(function(){msg.textContent='We couldn\'t confirm it was received. Your details are still on screen. Before sending again, check with juan@platamarine.com or on WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
@@ -326,10 +326,9 @@ el('again').onclick=function(){render();window.scrollTo({top:el('qz').offsetTop-
 render();
 })();
 </script>
-<script src="/nav.js?v=20260924" defer></script>
-</body>
-</html>
-
+<script src="/nav.js?v=20260925" defer></script>
 <script src="/consent.js" defer></script>
 <script src="/submit-confirmed.js" defer></script>
-<script src="/analytics.js?v=20260916" defer></script>
+<script src="/analytics.js?v=20260925" defer></script>
+</body>
+</html>
