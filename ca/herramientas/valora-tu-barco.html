@@ -54,7 +54,7 @@
 <script type="application/ld+json">
 [{"@context": "https://schema.org", "@type": "WebApplication", "name": "Valora el teu vaixell", "applicationCategory": "UtilityApplication", "operatingSystem": "Web", "inLanguage": "ca", "provider": {"@type": "Organization", "name": "Plata Marine"}, "url": "https://www.platamarine.com/ca/herramientas/valora-tu-barco.html", "description": "Respon nou preguntes sobre el teu vaixell (tipus, eslora, any, motor, hores, manteniment, papers, ubicació i si ja està anunciat) i et dic què juga a favor del seu preu i què el pot baixar, abans de donar-te una valoració real. Gratis i sense registre."}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Per què no em doneu aquí un preu exacte?", "acceptedAnswer": {"@type": "Answer", "text": "Un preu real depèn de coses que no surten en un formulari: l'estat del motor vist en persona, el paperam concret i què s'està venent de veritat ara mateix en la teva franja. Aquesta eina et dona les claus; el preu de sortida el preparo mirant el teu vaixell i el mercat actual, gratis i sense compromís."}}, {"@type": "Question", "name": "Quant triga a vendre's un vaixell de segona mà?", "acceptedAnswer": {"@type": "Answer", "text": "Depèn del tipus, l'eslora i l'època de l'any: fora de temporada (tardor i hivern) sol allargar-se. Com a orientació, diversos mesos és habitual fins i tot amb un preu correcte; amb la fitxa i el preu ben plantejats es pot escurçar, però convé desconfiar de qui prometi una venda ràpida sense haver vist el vaixell."}}, {"@type": "Question", "name": "Puc vendre encara que el vaixell no estigui al dia en manteniment o papers?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El més habitual és ajustar el preu o resoldre abans el que es pugui. El que no convé és amagar-ho: sol sortir a la revisió o la prova de mar, i complica més la venda que dir-ho des del principi."}}, {"@type": "Question", "name": "Té algun cost aquesta valoració?", "acceptedAnswer": {"@type": "Answer", "text": "No. Ni aquesta eina ni la primera conversa tenen cost. Només cobro honoraris si gestiono la venda i es tanca, i això queda sempre per escrit abans de començar."}}]}]
 </script>
-<link rel="stylesheet" href="/nav.css?v=20260924">
+<link rel="stylesheet" href="/nav.css?v=20260925">
 </head>
 <body>
 
@@ -118,9 +118,9 @@
         <h3 id="pmModalTitle">T'envio aquest resum per correu?</h3>
         <p>T'envio per escrit els punts que influeixen en el preu del teu vaixell, perquè els tinguis a mà quan parlem.</p>
         <form id="pmLeadForm" novalidate>
-          <input type="email" id="pmEmail" placeholder="elteu@correu.com" autocomplete="email" required><input type="tel" id="pmTel" placeholder="El teu telèfon (per avisos per WhatsApp)" autocomplete="tel" required inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9 ]/g,'')">
+          <input type="email" id="pmEmail" placeholder="elteu@correu.com" autocomplete="email" required><input type="tel" id="pmTel" placeholder="El teu telèfon (opcional, si prefereixes WhatsApp)" autocomplete="tel" inputmode="tel" maxlength="20">
           <label class="chk"><input type="checkbox" id="pmConsent" required> <span>Accepto que Plata Marine guardi el meu correu per enviar-me aquest resum, segons la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
-          <label class="chk"><input type="checkbox" id="pmNews"> <span>Vull rebre de tant en tant articles i guies de Plata Marine per correu (et pots donar de baixa quan vulguis).</span></label><label class="chk"><input type="checkbox" id="pmCesion"> <span>Accepto que Plata Marine pugui compartir les meves dades de contacte (nom, telèfon, correu) amb empreses col·laboradores del sector nàutic i afins —com tallers, correduria d'assegurances o altres brokers— perquè puguin oferir-me productes o serveis relacionats amb el meu vaixell o la meva cerca.</span></label>
+          <label class="chk"><input type="checkbox" id="pmNews"> <span>Vull rebre de tant en tant articles i guies de Plata Marine per correu (et pots donar de baixa quan vulguis).</span></label>
           <p class="msg hidden" id="pmMsg"></p>
           <button type="submit" class="btn btn-wa" id="pmSend">Envia'm el resum</button>
           <button type="button" class="skip" id="pmSkip">Veure el resultat sense correu</button>
@@ -133,7 +133,7 @@
       <div class="card">
         <p class="eyebrow">Parlem del teu vaixell?</p>
         <h3>Explica'm el resultat i preparem el preu de sortida.</h3>
-        <p>Treballo la venda de vaixells a motor des de 5 metres, a Catalunya i Balears. A èxit, sense exclusiva ni avançaments.</p>
+        <p>T'ajudo a vendre el teu vaixell, a motor o a vela. Tinc la base a Catalunya i també porto operacions a Balears i altres zones quan el vaixell ho justifica. A èxit, sense exclusiva ni avançaments.</p>
         <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20he%20fet%20la%20valoraci%C3%B3%20del%20meu%20vaixell%20a%20la%20web." target="_blank" rel="noopener">Parla amb en Juan per WhatsApp</a>
       </div>
       <nav class="toc" aria-label="Contingut">
@@ -238,11 +238,11 @@ function closeModal(){el('pmModal').classList.add('hidden');if(_scrollTo)window.
 el('pmSkip').onclick=closeModal;
 el('pmLeadForm').onsubmit=function(ev){
   ev.preventDefault();var em=el('pmEmail').value.trim(),msg=el('pmMsg');msg.className='msg';
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Revisa el correu, no sembla correcte.';return;}var tel=el('pmTel').value.trim();if(tel.replace(/\D/g,'').length<9){msg.textContent='Revisa el telèfon, sembla incomplet.';return;}
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Revisa el correu, no sembla correcte.';return;}var tel=el('pmTel').value.trim();if(tel&&!/^\+?[0-9 ().-]{6,20}$/.test(tel)){msg.textContent='Revisa el telèfon, sembla incomplet.';return;}
   if(!el('pmConsent').checked){msg.textContent='Necessito que acceptis la política de privacitat per poder-te\'l enviar.';return;}
   var btn=el('pmSend');btn.disabled=true;var lbl=btn.textContent;btn.textContent='Enviant…';
-  var payload=Object.assign({email:em,telefono:tel,consent:true,newsletter:el('pmNews').checked,cesion_terceros:!!(el('pmCesion')&&el('pmCesion').checked),consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
-  window.submitConfirmed(LEADS_URL,payload,'json').then(function(){
+  var payload=Object.assign({email:em,telefono:tel,consent:true,newsletter:el('pmNews').checked,consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
+  window.submitConfirmed(LEADS_URL,payload,'json').then(function(){try{if(window.pmTrack)window.pmTrack('generate_lead',{form_id:'resultado_valoracion',contact_purpose:'result'});}catch(x){}
     msg.className='msg ok';msg.textContent='Resum registrat. El resultat també continua disponible a la pantalla.';btn.textContent='Enviat';
     setTimeout(closeModal,1800);
   }).catch(function(){msg.textContent='No hem pogut confirmar la recepció. Les teves dades continuen a la pantalla. Abans de tornar a enviar-ho, consulta a juan@platamarine.com o per WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
@@ -325,10 +325,9 @@ el('again').onclick=function(){render();window.scrollTo({top:el('qz').offsetTop-
 render();
 })();
 </script>
-<script src="/nav.js?v=20260924" defer></script>
-</body>
-</html>
-
+<script src="/nav.js?v=20260925" defer></script>
 <script src="/consent.js" defer></script>
 <script src="/submit-confirmed.js" defer></script>
-<script src="/analytics.js?v=20260916" defer></script>
+<script src="/analytics.js?v=20260925" defer></script>
+</body>
+</html>
