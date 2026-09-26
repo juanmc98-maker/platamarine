@@ -174,6 +174,7 @@ var Q=[
    {"t":"Cabinat o creuer","v":{"tipo":"cabinat"}},
    {"t":"Pilothouse","v":{"tipo":"pilothouse"}},
    {"t":"Fly (flybridge)","v":{"tipo":"fly"}},
+   {"t":"Veler","v":{"tipo":"veler"}},
    {"t":"No n'estic segur / No ho sé","v":{"tipo":"sense identificar"}}
  ]},
  {"id":"eslora","q":"Quina eslora té?","o":[
@@ -194,7 +195,7 @@ var Q=[
    {"t":"Fora borda (gasolina)","v":{"motor":"fora borda gasolina"}},
    {"t":"Intraborda dièsel","v":{"motor":"intraborda dièsel"}},
    {"t":"Intraborda gasolina","v":{"motor":"intraborda gasolina"}},
-   {"t":"Vela, amb motor auxiliar","v":{"motor":"vela amb auxiliar"}},
+   {"t":"Vela, amb motor auxiliar","v":{"motor":"auxiliar (veler)"}},
    {"t":"Més d'un motor","v":{"motor":"diversos motors"}}
  ]},
  {"id":"horas","q":"Quantes hores té el motor?","o":[
@@ -225,6 +226,7 @@ var Q=[
  {"id":"anunciado","q":"Ja el tens anunciat?","o":[
    {"t":"No, encara no","v":{"anunciado":"no"}},
    {"t":"Sí, des de fa poc (menys d'un mes)","v":{"anunciado":"recent"}},
+   {"t":"Sí, entre un i dos mesos","v":{"anunciado":"mig"}},
    {"t":"Sí, des de fa temps (més de dos mesos)","v":{"anunciado":"antic"}}
  ]}
 ];
@@ -245,7 +247,7 @@ el('pmLeadForm').onsubmit=function(ev){
   window.submitConfirmed(LEADS_URL,payload,'json').then(function(){try{if(window.pmTrack)window.pmTrack('generate_lead',{form_id:'resultado_valoracion',contact_purpose:'result'});}catch(x){}
     msg.className='msg ok';msg.textContent='Resum registrat. El resultat també continua disponible a la pantalla.';btn.textContent='Enviat';
     setTimeout(closeModal,1800);
-  }).catch(function(){msg.textContent='No hem pogut confirmar la recepció. Les teves dades continuen a la pantalla. Abans de tornar a enviar-ho, consulta a juan@platamarine.com o per WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
+  }).catch(function(){try{if(window.pmTrack)window.pmTrack('contact_form_error',{form_id:'resultado_valoracion'});}catch(x){}msg.textContent='No hem pogut confirmar la recepció. Les teves dades continuen a la pantalla. Abans de tornar a enviar-ho, consulta a juan@platamarine.com o per WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
 };
 
 function render(){
@@ -253,7 +255,7 @@ function render(){
   Q.forEach(function(q,i){
     h+='<div class="qcard" id="q'+i+'"><span class="step">Pregunta '+(i+1)+' de '+Q.length+'</span><h3>'+q.q+'</h3>';
     q.o.forEach(function(o,j){h+='<label class="opt"><input type="radio" name="q'+i+'" value="'+j+'"> <span>'+o.t+'</span></label>'});
-if(q.id==='tipo'){h+='<p class="hint" style="margin-top:10px">Quina marca i model és?</p><input type="text" id="marcaModelo" placeholder="Ex. Quicksilver 675" style="width:100%;font:15px var(--serif);padding:9px 10px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box"><p class="hint" id="marcaModeloMsg" style="display:none;color:#c0392b;margin-top:6px">Digues-nos almenys la marca del teu vaixell, ens ajuda a valorar-lo millor.</p>';}
+if(q.id==='tipo'){h+='<label for="marcaModelo" class="hint" style="display:block;margin-top:10px;font-weight:600;color:var(--ink)">Marca i model <span style="color:#c0392b">*</span> <span style="font-weight:400">(obligatori per veure el resultat)</span></label><input type="text" id="marcaModelo" placeholder="Ex. Quicksilver 675" style="width:100%;font:15px var(--serif);padding:9px 10px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box"><p class="hint" id="marcaModeloMsg" style="display:none;color:#c0392b;margin-top:6px">Digues-nos almenys la marca del teu vaixell, ens ajuda a valorar-lo millor.</p>';}
 if(q.id==='motor'){h+='<p class="hint" style="margin-top:10px">Potència en CV, si la saps (opcional)</p><input type="text" id="potenciaCV" placeholder="P. ex. 250 CV" style="width:100%;font:15px var(--serif);padding:9px 10px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box">';}
 if(q.id==='anunciado'){h+='<div class="qcard hidden" id="qDonde"><h3>On el tens anunciat?</h3>'+[['wallapop','Wallapop o un altre classificat'],['portal','Portal nàutic especialitzat'],['broker','Amb un altre broker'],['redes','Xarxes socials'],['otro','Altre']].map(function(e){return '<label class="opt"><input type="radio" name="donde" value="'+e[0]+'"> <span>'+e[1]+'</span></label>'}).join('')+'</div><div class="qcard hidden" id="qExclusiva"><h3>L\'has donat en exclusiva a aquest broker?</h3><label class="opt"><input type="radio" name="exclusiva" value="si"> <span>Sí, en exclusiva</span></label><label class="opt"><input type="radio" name="exclusiva" value="no"> <span>No, sense exclusiva</span></label></div>';}
 
@@ -261,6 +263,7 @@ if(q.id==='anunciado'){h+='<div class="qcard hidden" id="qDonde"><h3>On el tens 
   });
   h+='<div class="qcard" id="qEquipo"><span class="step">Opcional</span><h3>Equipament i extres</h3><p class="hint">Marca el que porti (no cal per veure el resultat).</p>'+[['toldo','Tendal o bimini'],['plotter','Plotter / GPS'],['molinete','Molinet elèctric'],['duchapopa','Dutxa de popa'],['wc','WC'],['aa','Aire condicionat'],['generador','Generador'],['pasarela','Passarel·la'],['bow','Hèlix de proa (bow thruster)']].map(function(e){return '<label class="opt"><input type="checkbox" name="equipo" value="'+e[0]+'"> <span>'+e[1]+'</span></label>'}).join('')+'</div>';
 el('questions').innerHTML=h;el('endbar').classList.remove('hidden');el('check').classList.remove('hidden');el('result').classList.add('hidden');
+var mmI=el('marcaModelo');if(mmI)mmI.addEventListener('input',function(){if(mmI.value.trim()){mmI.style.borderColor='';var mg=el('marcaModeloMsg');if(mg)mg.style.display='none';if(document.querySelector('input[name=q0]:checked'))el('q0').style.borderColor='';}});el('questions').addEventListener('change',function(e){if(e.target.name&&/^q\d+$/.test(e.target.name)){var cq=el(e.target.name);if(cq&&!(e.target.name==='q0'&&mmI&&!mmI.value.trim()))cq.style.borderColor='';}});
   document.querySelectorAll('#questions input').forEach(function(x){x.addEventListener('change',prog)});prog();
 el('questions').addEventListener('change',function(e){
 if(e.target.name && /^q\d+$/.test(e.target.name)){
@@ -290,9 +293,10 @@ var eSel=document.querySelector('input[name=exclusiva]:checked');v.exclusiva=eSe
   else if(v.etapa==='recent'||v.etapa==='mitjà')notes.push('En aquesta franja d\'edat el preu ja s\'ha estabilitzat bastant: el que més mou l\'agulla és l\'estat real del vaixell, no l\'any exacte.');
   else notes.push('A partir d\'aquí l\'any pesa menys que el manteniment: un vaixell veterà amb motor i buc cuidats pot demanar més que un de més nou però descuidat.');
 
+  if(v.tipo==='veler'||v.motor==='auxiliar (veler)')notes.push('En un veler pesen tant com el motor auxiliar l\'estat de les veles, l\'eixàrcia (i quan es va canviar) i el buc. Si tens dates o factures d\'aquestes feines, sumen molt.');
   if(v.horas==='poques')notes.push('Poques hores per a la seva edat és un punt a favor, sobretot si estan documentades amb factures de manteniment.');
-  else if(v.horas==='notables')notes.push('Amb hores ja notables convé tenir a mà l\'historial de revisions del motor: és de les primeres coses que preguntarà un comprador seriós.');
-  else if(v.horas==='moltes')notes.push('Amb més de 1.000 hores el motor passa a primer pla. Un informe d\'un mecànic de confiança abans d\'anunciar-lo sol evitar que la negociació se\'n vagi tota cap allà.');
+  else if(v.horas==='notables')notes.push('Entre 500 i 1.000 hores és un ús habitual en molts vaixells. El que més compta és poder ensenyar les revisions fetes: tingues-les a mà, perquè és de les primeres coses que pregunta un comprador seriós.');
+  else if(v.horas==='moltes')notes.push('Amb més de 1.000 hores el comprador es fixarà sobretot en l\'historial del motor. Unes hores altes amb revisions documentades no són un problema per si mateixes; si hi ha dubtes, l\'opinió d\'un mecànic de confiança ajuda a centrar la negociació.');
   else if(v.horas==='no ho sé')notes.push('Convé saber les hores exactes abans de posar preu: és de les primeres preguntes que et faran.');
 
   if(v.mantenimiento==='al dia')notes.push('Tenir les factures de manteniment a mà és del que més tranquil·litza un comprador: ho ensenyo sempre que puc.');
@@ -303,7 +307,8 @@ var eSel=document.querySelector('input[name=exclusiva]:checked');v.exclusiva=eSe
   else if(v.papeles==='no del tot segur')notes.push('Abans d\'anunciar-lo val la pena comprovar la ITB, els canvis de motor declarats i que la titularitat estigui clara. Ho explico a la guia de papers per vendre.');
   else notes.push('Si saps que falta alguna cosa (ITB caducada, canvi de motor sense declarar…), millor resoldre-ho o almenys saber el cost abans de posar preu: canvia la negociació.');
 
-  if(v.anunciado==='antic')notes.push('Un anunci que porta mesos sense moure\'s gairebé mai és un problema del vaixell en si: sol ser el preu, les fotos o on està publicat. Val la pena revisar-ho abans de baixar el preu a la babalà.');
+  if(v.anunciado==='mig')notes.push('Amb un o dos mesos publicat ja es pot veure com respon l\'anunci: si arriben poques consultes serioses, convé revisar el preu, les fotos i on està publicat abans de tocar res més.');
+  else if(v.anunciado==='antic')notes.push('Un anunci que porta mesos sense moure\'s gairebé mai és un problema del vaixell en si: sol ser el preu, les fotos o on està publicat. Val la pena revisar-ho abans de baixar el preu a la babalà.');
   else if(v.anunciado==='no')notes.push('Sense res publicat encara, el primer és un preu de sortida ben argumentat, no només publicar i esperar.');
 
   if(v.donde==='broker'){notes.push(v.exclusiva==='si'?'Si ja el portes en exclusiva amb un altre broker, revisa les condicions de sortida del contracte abans de moure\'l amb ningú més.':'Si el porta un altre broker sense exclusiva, pots continuar mirant altres opcions sense problema.');}
@@ -314,7 +319,8 @@ var h='<h2>El que més pesarà en el preu del teu '+(v.marca?v.marca:v.tipo)+'</
   h+='<p>Amb '+v.eslora+', del '+v.anio+' i motor '+v.motor+(v.potencia?' ('+v.potencia+')':'')+', això és el que jo miraria primer:</p>';
   h+='<ul>';notes.forEach(function(n){h+='<li>'+n+'</li>'});h+='</ul>';
   h+='<h3>Per seguir</h3><p><a href="/ca/guias/precio-barco-ocasion.html">Com posar preu a un vaixell d\'ocasió</a> · <a href="/ca/guias/papeles-vender-barco-cambio-titularidad.html">Papers per vendre</a></p>';
-  var waTexto='Hola Juan, he fet la valoració del meu vaixell a la web. És un '+(v.marca?v.marca+' — '+v.tipo:v.tipo)+' de '+v.eslora+', any '+v.anio+', motor '+v.motor+(v.potencia?' ('+v.potencia+')':'')+' ('+v.horas+' hores), manteniment '+v.mantenimiento+', papers '+v.papeles+', a '+v.zona+'. Anunciat: '+v.anunciado+(v.donde?' a '+v.donde:'')+(v.exclusiva?' (exclusiva: '+v.exclusiva+')':'')+'. Ho mirem?';
+  var T={},TD={};Q.forEach(function(q,i){var s=document.querySelector('input[name=q'+i+']:checked');T[q.id]=q.o[parseInt(s.value)].t;});['donde','exclusiva'].forEach(function(n){var s=document.querySelector('input[name='+n+']:checked');if(s&&!s.closest('.hidden'))TD[n]=s.parentNode.querySelector('span').textContent.trim();});
+var waTexto='Hola Juan, he fet la valoració del meu vaixell a la web. És un '+(v.marca||'vaixell')+' ('+T.tipo+'). Eslora: '+T.eslora+'. Any: '+T.anio+'. Motor: '+T.motor+(v.potencia?' ('+v.potencia+')':'')+'. Hores: '+T.horas+'. Manteniment: '+T.mantenimiento+'. Papers: '+T.papeles+'. Zona: '+T.zona+'. Anunciat?: '+T.anunciado+(TD.donde?' ('+TD.donde+(TD.exclusiva?', '+TD.exclusiva:'')+')':'')+'. Ho mirem?';
 h+='<p style="margin-top:14px"><a class="btn btn-wa" href="https://wa.me/34633742973?text='+encodeURIComponent(waTexto)+'" target="_blank" rel="noopener">Sol·licitar valoració personalitzada</a></p>';
 el('result').innerHTML=h;el('result').classList.remove('hidden');el('check').classList.add('hidden');
   var det='Tipus: '+v.tipo+(v.marca?' ('+v.marca+')':'')+' | Eslora: '+v.eslora+' | Any: '+v.anio+' | Motor: '+v.motor+(v.potencia?' '+v.potencia:'')+' | Hores: '+v.horas+' | Manteniment: '+v.mantenimiento+' | Papers: '+v.papeles+' | Zona: '+v.zona+' | Anunciat: '+v.anunciado+(v.donde?' ('+v.donde+(v.exclusiva?', exclusiva '+v.exclusiva:'')+')':'')+(v.equipo?' | Equipament: '+v.equipo:'');
