@@ -164,6 +164,7 @@ var Q=[
    {"t":"Cabinado o cruiser","v":{"tipo":"cabinado"}},
    {"t":"Pilothouse","v":{"tipo":"pilothouse"}},
    {"t":"Fly (flybridge)","v":{"tipo":"fly"}},
+   {"t":"Velero","v":{"tipo":"velero"}},
    {"t":"No estoy seguro / No lo sé","v":{"tipo":"sin identificar"}}
  ]},
  {"id":"eslora","q":"¿Qué eslora tiene?","o":[
@@ -184,7 +185,7 @@ var Q=[
    {"t":"Fueraborda (gasolina)","v":{"motor":"fueraborda gasolina"}},
    {"t":"Intraborda diésel","v":{"motor":"intraborda diésel"}},
    {"t":"Intraborda gasolina","v":{"motor":"intraborda gasolina"}},
-   {"t":"Vela, con motor auxiliar","v":{"motor":"vela con auxiliar"}},
+   {"t":"Vela, con motor auxiliar","v":{"motor":"auxiliar (velero)"}},
    {"t":"Más de un motor","v":{"motor":"varios motores"}}
  ]},
  {"id":"horas","q":"¿Cuántas horas tiene el motor?","o":[
@@ -215,6 +216,7 @@ var Q=[
  {"id":"anunciado","q":"¿Ya lo tienes anunciado?","o":[
    {"t":"No, todavía no","v":{"anunciado":"no"}},
    {"t":"Sí, desde hace poco (menos de un mes)","v":{"anunciado":"reciente"}},
+   {"t":"Sí, entre uno y dos meses","v":{"anunciado":"medio"}},
    {"t":"Sí, desde hace tiempo (más de dos meses)","v":{"anunciado":"antiguo"}}
  ]}
 ];
@@ -235,7 +237,7 @@ el('pmLeadForm').onsubmit=function(ev){
   window.submitConfirmed(LEADS_URL,payload,'json').then(function(){try{if(window.pmTrack)window.pmTrack('generate_lead',{form_id:'resultado_valoracion',contact_purpose:'result'});}catch(x){}
     msg.className='msg ok';msg.textContent='Resumen registrado. El resultado también sigue disponible en pantalla.';btn.textContent='Enviado';
     setTimeout(closeModal,1800);
-  }).catch(function(){msg.textContent='No hemos podido confirmar la recepción. Tus datos siguen en pantalla. Antes de repetir el envío, consulta en juan@platamarine.com o por WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
+  }).catch(function(){try{if(window.pmTrack)window.pmTrack('contact_form_error',{form_id:'resultado_valoracion'});}catch(x){}msg.textContent='No hemos podido confirmar la recepción. Tus datos siguen en pantalla. Antes de repetir el envío, consulta en juan@platamarine.com o por WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
 };
 
 function render(){
@@ -243,7 +245,7 @@ function render(){
   Q.forEach(function(q,i){
     h+='<div class="qcard" id="q'+i+'"><span class="step">Pregunta '+(i+1)+' de '+Q.length+'</span><h3>'+q.q+'</h3>';
     q.o.forEach(function(o,j){h+='<label class="opt"><input type="radio" name="q'+i+'" value="'+j+'"> <span>'+o.t+'</span></label>'});
-if(q.id==='tipo'){h+='<p class="hint" style="margin-top:10px">¿Qué marca y modelo es?</p><input type="text" id="marcaModelo" placeholder="Ej. Quicksilver 675" style="width:100%;font:15px var(--serif);padding:9px 10px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box"><p class="hint" id="marcaModeloMsg" style="display:none;color:#c0392b;margin-top:6px">Dinos al menos la marca de tu barco, nos ayuda a valorarlo mejor.</p>';}
+if(q.id==='tipo'){h+='<label for="marcaModelo" class="hint" style="display:block;margin-top:10px;font-weight:600;color:var(--ink)">Marca y modelo <span style="color:#c0392b">*</span> <span style="font-weight:400">(obligatorio para ver el resultado)</span></label><input type="text" id="marcaModelo" placeholder="Ej. Quicksilver 675" style="width:100%;font:15px var(--serif);padding:9px 10px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box"><p class="hint" id="marcaModeloMsg" style="display:none;color:#c0392b;margin-top:6px">Dinos al menos la marca de tu barco, nos ayuda a valorarlo mejor.</p>';}
 if(q.id==='motor'){h+='<p class="hint" style="margin-top:10px">Potencia en CV, si la sabes (opcional)</p><input type="text" id="potenciaCV" placeholder="Ej. 250 CV" style="width:100%;font:15px var(--serif);padding:9px 10px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box">';}
 if(q.id==='anunciado'){h+='<div class="qcard hidden" id="qDonde"><h3>¿Dónde lo tienes anunciado?</h3>'+[['wallapop','Wallapop u otro clasificado'],['portal','Portal náutico especializado'],['broker','Con otro broker'],['redes','Redes sociales'],['otro','Otro']].map(function(e){return '<label class="opt"><input type="radio" name="donde" value="'+e[0]+'"> <span>'+e[1]+'</span></label>'}).join('')+'</div><div class="qcard hidden" id="qExclusiva"><h3>¿Se lo has dado en exclusiva a ese broker?</h3><label class="opt"><input type="radio" name="exclusiva" value="si"> <span>Sí, en exclusiva</span></label><label class="opt"><input type="radio" name="exclusiva" value="no"> <span>No, sin exclusiva</span></label></div>';}
 
@@ -251,6 +253,7 @@ if(q.id==='anunciado'){h+='<div class="qcard hidden" id="qDonde"><h3>¿Dónde lo
   });
   h+='<div class="qcard" id="qEquipo"><span class="step">Opcional</span><h3>Equipamiento y extras</h3><p class="hint">Marca lo que lleve (no hace falta para ver el resultado).</p>'+[['toldo','Toldo o bimini'],['plotter','Plotter / GPS'],['molinete','Molinete eléctrico'],['duchapopa','Ducha de popa'],['wc','WC'],['aa','Aire acondicionado'],['generador','Generador'],['pasarela','Pasarela'],['bow','Hélice de proa (bow thruster)']].map(function(e){return '<label class="opt"><input type="checkbox" name="equipo" value="'+e[0]+'"> <span>'+e[1]+'</span></label>'}).join('')+'</div>';
 el('questions').innerHTML=h;el('endbar').classList.remove('hidden');el('check').classList.remove('hidden');el('result').classList.add('hidden');
+var mmI=el('marcaModelo');if(mmI)mmI.addEventListener('input',function(){if(mmI.value.trim()){mmI.style.borderColor='';var mg=el('marcaModeloMsg');if(mg)mg.style.display='none';if(document.querySelector('input[name=q0]:checked'))el('q0').style.borderColor='';}});el('questions').addEventListener('change',function(e){if(e.target.name&&/^q\d+$/.test(e.target.name)){var cq=el(e.target.name);if(cq&&!(e.target.name==='q0'&&mmI&&!mmI.value.trim()))cq.style.borderColor='';}});
   document.querySelectorAll('#questions input').forEach(function(x){x.addEventListener('change',prog)});prog();
 el('questions').addEventListener('change',function(e){
 if(e.target.name && /^q\d+$/.test(e.target.name)){
@@ -280,9 +283,10 @@ var eSel=document.querySelector('input[name=exclusiva]:checked');v.exclusiva=eSe
   else if(v.etapa==='reciente'||v.etapa==='medio')notes.push('En esta franja de edad el precio ya se ha estabilizado bastante: lo que más mueve la aguja es el estado real del barco, no el año exacto.');
   else notes.push('A partir de aquí el año pesa menos que el mantenimiento: un barco veterano con motor y casco cuidados puede pedir más que uno más nuevo pero descuidado.');
 
+  if(v.tipo==='velero'||v.motor==='auxiliar (velero)')notes.push('En un velero pesan tanto como el motor auxiliar el estado de las velas, la jarcia (y cuándo se cambió) y el casco. Si tienes fechas o facturas de esos trabajos, suman mucho.');
   if(v.horas==='pocas')notes.push('Pocas horas para su edad es un punto a favor, sobre todo si están documentadas con facturas de mantenimiento.');
-  else if(v.horas==='notables')notes.push('Con horas ya notables conviene tener a mano el historial de revisiones del motor: es de lo primero que va a preguntar un comprador serio.');
-  else if(v.horas==='muchas')notes.push('Con más de 1.000 horas el motor pasa a primer plano. Un informe de un mecánico de confianza antes de anunciarlo suele evitar que la negociación se vaya toda ahí.');
+  else if(v.horas==='notables')notes.push('Entre 500 y 1.000 horas es un uso habitual en muchos barcos. Lo que más cuenta es poder enseñar las revisiones hechas: tenlas a mano, porque es de lo primero que pregunta un comprador serio.');
+  else if(v.horas==='muchas')notes.push('Con más de 1.000 horas el comprador se fijará sobre todo en el historial del motor. Unas horas altas con revisiones documentadas no son un problema por sí mismas; si hay dudas, la opinión de un mecánico de confianza ayuda a centrar la negociación.');
   else if(v.horas==='nose')notes.push('Conviene saber las horas exactas antes de poner precio: es de las primeras preguntas que te van a hacer.');
 
   if(v.mantenimiento==='aldia')notes.push('Tener las facturas de mantenimiento a mano es de lo que más tranquiliza a un comprador: lo enseño siempre que puedo.');
@@ -293,7 +297,8 @@ var eSel=document.querySelector('input[name=exclusiva]:checked');v.exclusiva=eSe
   else if(v.papeles==='noseguro')notes.push('Antes de anunciarlo merece la pena comprobar ITB, cambios de motor declarados y que la titularidad esté clara. Lo explico en la guía de papeles para vender.');
   else notes.push('Si sabes que falta algo (ITB caducada, cambio de motor sin declarar…), mejor resolverlo o al menos saber el coste antes de poner precio: cambia la negociación.');
 
-  if(v.anunciado==='antiguo')notes.push('Un anuncio que lleva meses sin moverse casi nunca es un problema del barco en sí: suele ser precio, fotos o dónde está publicado. Merece la pena revisarlo antes de bajar el precio a lo loco.');
+  if(v.anunciado==='medio')notes.push('Con uno o dos meses publicado ya se puede ver cómo responde el anuncio: si llegan pocas consultas serias, conviene revisar precio, fotos y dónde está publicado antes de tocar nada más.');
+  else if(v.anunciado==='antiguo')notes.push('Un anuncio que lleva meses sin moverse casi nunca es un problema del barco en sí: suele ser precio, fotos o dónde está publicado. Merece la pena revisarlo antes de bajar el precio a lo loco.');
   else if(v.anunciado==='no')notes.push('Sin nada publicado todavía, lo primero es un precio de salida bien argumentado, no solo publicar y esperar.');
 
   if(v.donde==='broker'){notes.push(v.exclusiva==='si'?'Si ya lo llevas en exclusiva con otro broker, revisa las condiciones de salida del contrato antes de moverlo con nadie más.':'Si lo lleva otro broker sin exclusiva, puedes seguir mirando otras opciones sin problema.');}
@@ -304,7 +309,8 @@ var h='<h2>Lo que más va a pesar en el precio de tu '+(v.marca?v.marca:v.tipo)+
   h+='<p>Con '+v.eslora+', de '+v.anio+' y motor '+v.motor+(v.potencia?' ('+v.potencia+')':'')+', esto es lo que miraría yo primero:</p>';
   h+='<ul>';notes.forEach(function(n){h+='<li>'+n+'</li>'});h+='</ul>';
   h+='<h3>Para seguir</h3><p><a href="../guias/precio-barco-ocasion.html">Cómo poner precio a un barco de ocasión</a> · <a href="../guias/papeles-vender-barco-cambio-titularidad.html">Papeles para vender</a></p>';
-  var waTexto='Hola Juan, he hecho la valoración de mi barco en la web. Es un '+(v.marca?v.marca+' — '+v.tipo:v.tipo)+' de '+v.eslora+', año '+v.anio+', motor '+v.motor+(v.potencia?' ('+v.potencia+')':'')+' ('+v.horas+' horas), mantenimiento '+v.mantenimiento+', papeles '+v.papeles+', en '+v.zona+'. Anunciado: '+v.anunciado+(v.donde?' en '+v.donde:'')+(v.exclusiva?' (exclusiva: '+v.exclusiva+')':'')+'. ¿Lo miramos?';
+  var T={},TD={};Q.forEach(function(q,i){var s=document.querySelector('input[name=q'+i+']:checked');T[q.id]=q.o[parseInt(s.value)].t;});['donde','exclusiva'].forEach(function(n){var s=document.querySelector('input[name='+n+']:checked');if(s&&!s.closest('.hidden'))TD[n]=s.parentNode.querySelector('span').textContent.trim();});
+var waTexto='Hola Juan, he hecho la valoración de mi barco en la web. Es un '+(v.marca||'barco')+' ('+T.tipo+'). Eslora: '+T.eslora+'. Año: '+T.anio+'. Motor: '+T.motor+(v.potencia?' ('+v.potencia+')':'')+'. Horas: '+T.horas+'. Mantenimiento: '+T.mantenimiento+'. Papeles: '+T.papeles+'. Zona: '+T.zona+'. ¿Anunciado?: '+T.anunciado+(TD.donde?' ('+TD.donde+(TD.exclusiva?', '+TD.exclusiva:'')+')':'')+'. ¿Lo miramos?';
 h+='<p style="margin-top:14px"><a class="btn btn-wa" href="https://wa.me/34633742973?text='+encodeURIComponent(waTexto)+'" target="_blank" rel="noopener">Solicitar valoración personalizada</a></p>';
 el('result').innerHTML=h;el('result').classList.remove('hidden');el('check').classList.add('hidden');
   var det='Tipo: '+v.tipo+(v.marca?' ('+v.marca+')':'')+' | Eslora: '+v.eslora+' | Año: '+v.anio+' | Motor: '+v.motor+(v.potencia?' '+v.potencia:'')+' | Horas: '+v.horas+' | Mantenimiento: '+v.mantenimiento+' | Papeles: '+v.papeles+' | Zona: '+v.zona+' | Anunciado: '+v.anunciado+(v.donde?' ('+v.donde+(v.exclusiva?', exclusiva '+v.exclusiva:'')+')':'')+(v.equipo?' | Equipamiento: '+v.equipo:'');
