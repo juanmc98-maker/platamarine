@@ -13,9 +13,9 @@
     updated: '2026-09-25',
     boats: [
       {slug: 'oceanis-50', name: 'Beneteau Oceanis 50', year: 2008, kind: 'vela', types: ['velero'], length: 14.75, price: 155000, zone: 'valencia', title: 3, status: 'available',
-        d: {es: 'Aprox. 14,75 m · Yanmar 110 cv · La Pobla de Farnals (Valencia)', ca: 'Aprox. 14,75 m · Yanmar 110 cv · La Pobla de Farnals (València)', en: 'Approx. 14.75 m · Yanmar 110 hp · La Pobla de Farnals (Valencia)'}},
+        d: {es: 'Aprox. 14,75 m · Yanmar 110 cv · Valencia', ca: 'Aprox. 14,75 m · Yanmar 110 cv · València', en: 'Approx. 14.75 m · Yanmar 110 hp · Valencia'}},
       {slug: 'sealine-365', name: 'Sealine 365', year: 1989, kind: 'motor', types: ['cabinado'], length: 11.1, price: 75000, zone: 'cataluna', title: 3, status: 'available',
-        d: {es: '11,10 m · 2 x Volvo Penta 200 cv · Roda de Berà (Tarragona)', ca: '11,10 m · 2 x Volvo Penta 200 cv · Roda de Berà (Tarragona)', en: '11.10 m · 2 x Volvo Penta 200 hp · Roda de Berà (Tarragona)'}},
+        d: {es: '11,10 m · 2 x Volvo Penta 200 cv · Costa Daurada (Tarragona)', ca: '11,10 m · 2 x Volvo Penta 200 cv · Costa Daurada (Tarragona)', en: '11.10 m · 2 x Volvo Penta 200 hp · Costa Daurada (Tarragona)'}},
       {slug: 'monte-carlo-27', name: 'Beneteau Monte Carlo 27', year: 2008, kind: 'motor', types: ['cabinado', 'sundeck'], length: 7.98, price: 64900, zone: 'cataluna', title: 2, status: 'available',
         d: {es: '7,98 m · Volvo Penta 350 cv · Costa Brava', ca: '7,98 m · Volvo Penta 350 cv · Costa Brava', en: '7.98 m · Volvo Penta 350 hp · Costa Brava'}},
       {slug: 'van-de-stadt-36', name: 'Van de Stadt Zeehond 36', year: 1981, kind: 'vela', types: ['velero'], length: 12, price: 72000, zone: 'valencia', title: 3, status: 'available',
@@ -27,7 +27,7 @@
       {slug: 'sacs-535', name: 'Sacs 535', year: 2002, kind: 'motor', types: ['rib'], length: 5.35, price: 25000, zone: 'baleares', title: 1, status: 'available',
         d: {es: '5,35 m · semirrígida · Suzuki 115 cv · Mallorca', ca: '5,35 m · semirígida · Suzuki 115 cv · Mallorca', en: '5.35 m · RIB · Suzuki 115 hp · Mallorca'}},
       {slug: 'ranieri-azzurra-5m', name: 'Ranieri Azzurra 5 m', year: 2004, kind: 'motor', types: ['open'], length: 5, price: 11990, zone: 'cataluna', title: 1, status: 'sold',
-        d: {es: '5,00 m · Johnson 60 cv · Torredembarra', ca: '5,00 m · Johnson 60 cv · Torredembarra', en: '5.00 m · Johnson 60 hp · Torredembarra'}}
+        d: {es: '5,00 m · Johnson 60 cv · Costa Daurada', ca: '5,00 m · Johnson 60 cv · Costa Daurada', en: '5.00 m · Johnson 60 hp · Costa Daurada'}}
     ],
     label: {
       es: {available: 'Disponible', reserved: 'Reservado', sold: 'Vendido'},
