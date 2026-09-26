@@ -8,7 +8,7 @@ from PIL import Image
 from playwright.async_api import async_playwright
 
 ROOT = '/home/claude/platamarine'
-SLUGS = ['oceanis-50', 'sealine-365', 'monte-carlo-27', 'van-de-stadt-36', 'monterey-278-ss',
+SLUGS = ['starfisher-840', 'oceanis-50', 'sealine-365', 'monte-carlo-27', 'van-de-stadt-36', 'monterey-278-ss',
          'faeton-730-moraga', 'sacs-535', 'ranieri-azzurra-5m']
 L = {
  'es': dict(pre='', sale='EN VENTA', sold='VENDIDO', langtag='Ficha en español', tech='Resumen técnico', gal='Galería',
@@ -16,19 +16,19 @@ L = {
             soldt='Este barco ya está vendido', soldt2='Si buscas uno parecido, mira los barcos disponibles o crea una alerta en la web.',
             scan='Ficha completa y todas las fotos', broker='Broker náutico',
             legal='Plata Marine gestiona el contacto y la operación como intermediario. La información de esta ficha procede del propietario y se comprueba con la documentación antes de la venta; tiene carácter informativo y los datos definitivos serán los que figuren en el contrato de compraventa. Precio sin gastos de cambio de titularidad. Se recomienda prueba de mar y, si el comprador lo desea, peritaje independiente.',
-            date='Ficha actualizada el 25/09/2026'),
+            date='Ficha actualizada el 26/09/2026'),
  'ca': dict(pre='ca/', sale='EN VENDA', sold='VENUT', langtag='Fitxa en català', tech='Resum tècnic', gal='Galeria',
             interest="T'interessa aquest vaixell?", interest2="Escriu-me i el veiem junts, sense compromís.",
             soldt='Aquest vaixell ja està venut', soldt2='Si en busques un de semblant, mira els vaixells disponibles o crea una alerta al web.',
             scan='Fitxa completa i totes les fotos', broker='Broker nàutic',
             legal="Plata Marine gestiona el contacte i l'operació com a intermediari. La informació d'aquesta fitxa prové del propietari i es comprova amb la documentació abans de la venda; té caràcter informatiu i les dades definitives seran les que figurin al contracte de compravenda. Preu sense despeses de canvi de titularitat. Es recomana prova de mar i, si el comprador ho vol, peritatge independent.",
-            date='Fitxa actualitzada el 25/09/2026'),
+            date='Fitxa actualitzada el 26/09/2026'),
  'en': dict(pre='en/', sale='FOR SALE', sold='SOLD', langtag='Listing in English', tech='Technical summary', gal='Gallery',
             interest='Interested in this boat?', interest2="Message me and we'll look at it together, no obligation.",
             soldt='This boat has been sold', soldt2='If you are after something similar, see the boats available or set up an alert on the website.',
             scan='Full listing and all photos', broker='Nautical broker',
             legal='Plata Marine handles the contact and the transaction as an intermediary. The information in this listing comes from the owner and is checked against the documentation before the sale; it is for information only and the final details will be those stated in the sale contract. Price excludes ownership-transfer costs. A sea trial is recommended and, if the buyer wishes, an independent survey.',
-            date='Listing updated 25/09/2026'),
+            date='Listing updated 26/09/2026'),
 }
 
 def strip(s):
