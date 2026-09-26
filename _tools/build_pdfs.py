@@ -62,10 +62,8 @@ def parse(slug, lang):
     seen = []
     for x in thumbs:
         if x not in seen: seen.append(x)
-    nm = re.search(r'<img class="main"[^>]*data-note="([^"]*)"', t)
-    note = html.unescape(nm.group(1)) if nm else ''
     url = 'https://www.platamarine.com/' + L[lang]['pre'] + 'barcos/' + slug + '.html'
-    return dict(name=name, sub=sub, price=price, sold=sold, specs=specs, h2=h2, paras=paras, photos=seen, url=url, note=note)
+    return dict(name=name, sub=sub, price=price, sold=sold, specs=specs, h2=h2, paras=paras, photos=seen, url=url)
 
 CSS = '''
 @font-face{font-family:"Archivo";src:url(file://%(root)s/archivo.woff2) format("woff2-variations");font-weight:100 900;font-stretch:62%% 125%%}
@@ -79,7 +77,6 @@ body{margin:0;font-family:"Source Serif 4",Georgia,serif;color:#0D1C27;font-size
 h1,h2,h3,.disp{font-family:"Archivo",Arial,sans-serif}
 .foot{position:absolute;left:16mm;right:16mm;bottom:9mm;display:flex;justify-content:space-between;font:8pt "Archivo",Arial,sans-serif;color:#7F929E;border-top:0.4pt solid #B7C3CB;padding-top:3mm}
 .cover-img{height:168mm;background-size:cover;background-position:center;position:relative}
-.cnote{position:absolute;top:8mm;left:8mm;background:rgba(10,20,30,.8);color:#fff;font:600 9pt "Archivo",Arial,sans-serif;letter-spacing:.03em;padding:1.6mm 3.4mm;border-radius:10mm}
 .band{background:#0E3042;color:#fff;padding:9mm 16mm;display:flex;justify-content:space-between;align-items:center}
 .band .k{font:700 9pt "Archivo",Arial;letter-spacing:.22em;color:#D9C28A}
 .band .n{font:700 25pt/1.05 "Archivo",Arial;font-stretch:90%%;margin-top:2mm}
@@ -120,12 +117,12 @@ def build_html(slug, lang, logo_white):
     pages = []
     status = c['sold'] if d['sold'] else c['sale']
     meta = ' · '.join(d['sub'][:1] + d['sub'][-1:]) if d['sub'] else ''
-    pages.append('''<section class="page"><div class="cover-img" style="background-image:url(%s)">%s</div>
+    pages.append('''<section class="page"><div class="cover-img" style="background-image:url(%s)"></div>
 <div class="band%s"><div><div class="k">%s</div><div class="n">%s</div></div><img src="%s" alt="Plata Marine"></div>
 <div class="cov"><div class="meta">%s</div><div class="price%s">%s</div>
 <div class="broker">Plata Marine · %s · Juan Morante · 633 742 973 · juan@platamarine.com</div>
 <div class="lang">%s</div></div>%s</section>''' % (
-        ph[0], ('<span class="cnote">%s</span>' % html.escape(d['note'])) if d['note'] else '', ' sold' if d['sold'] else '', status, html.escape(d['name']), logo_white,
+        ph[0], ' sold' if d['sold'] else '', status, html.escape(d['name']), logo_white,
         html.escape(' · '.join(d['sub'])), ' sold' if d['sold'] else '', html.escape(d['price']),
         c['broker'], c['langtag'], page_foot(d, 1)))
     rows = ''.join('<tr><th>%s</th><td>%s</td></tr>' % (html.escape(a), html.escape(b)) for a, b in d['specs'])
