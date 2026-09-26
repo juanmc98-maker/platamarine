@@ -72,7 +72,7 @@
     @media (min-width:820px){.bgrid{grid-template-columns:1fr 1fr;gap:32px}}
     .bcard{background:#fff;border:1px solid rgba(127,146,158,.28);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
     .bimg{position:relative;display:block;background:var(--paper-2)}.bimg img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block}
-    .bimg .status{position:absolute;top:14px;left:14px}
+    .bimg .status{position:absolute;top:14px;left:14px}.bimg .img-note{position:absolute;top:14px;right:14px;background:rgba(10,20,30,.78);color:#fff;font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:.03em;padding:5px 9px;border-radius:999px;pointer-events:none}
     .bimg{overflow:hidden}
     .bimg .status.sold{top:50%;left:50%;transform:translate(-50%,-50%) rotate(-8deg);width:145%;text-align:center;font-size:19px;padding:10px 0;margin:0;box-shadow:0 8px 22px rgba(0,0,0,.35);border-top:2px solid rgba(255,255,255,.35);border-bottom:2px solid rgba(255,255,255,.35)}
     .bbody{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
@@ -92,6 +92,7 @@
     .bfilt .seg button{font:inherit;font-size:.9rem;border:0;background:transparent;padding:7px 14px;cursor:pointer;color:inherit}
     .bfilt .seg button[aria-pressed="true"]{background:var(--ink,#0d1c27);color:#fff}
     .bfilt select{font:inherit;font-size:.92rem;padding:7px 10px;border:1px solid rgba(127,146,158,.45);border-radius:8px;background:#fff;color:inherit;max-width:100%}
+    .bclear{font:inherit;font-size:.9rem;background:none;border:0;padding:6px 2px;color:var(--sea);text-decoration:underline;text-underline-offset:3px;cursor:pointer;align-self:center}.bclear-inline{margin-right:6px;padding:0}
     .bfilt .bcount{margin-left:auto;font-size:.9rem;color:var(--ink-2);align-self:center}
     .bnote{font-size:.82rem;color:var(--ink-2);margin-top:8px;max-width:80ch}
     .bnone{margin-top:28px;color:var(--ink-2)}
@@ -104,13 +105,16 @@
       <fieldset><label for="f-tit">¿Qué título tienes?</label><select id="f-tit"><option value="all">Cualquiera</option><option value="0">Sin título</option><option value="1">Licencia de Navegación</option><option value="2">PNB</option><option value="3">PER</option><option value="4">Patrón o Capitán de Yate</option></select></fieldset>
       <fieldset><label for="f-pre">Precio</label><select id="f-pre"><option value="all">Cualquiera</option><option value="0-30000">Hasta 30.000 €</option><option value="30000-60000">30.000 – 60.000 €</option><option value="60000-100000">60.000 – 100.000 €</option><option value="100000-">Más de 100.000 €</option></select></fieldset>
       <fieldset><label for="f-zon">Zona</label><select id="f-zon"><option value="all">Todas</option><option value="cataluna">Cataluña</option><option value="baleares">Baleares</option><option value="valencia">Comunidad Valenciana</option><option value="galicia">Galicia</option></select></fieldset>
+      <fieldset><label for="f-comb">Combustible</label><select id="f-comb"><option value="all">Cualquiera</option><option value="diesel">Diésel</option><option value="gasolina">Gasolina</option></select></fieldset>
+      <fieldset><label for="f-mot">Motor</label><select id="f-mot"><option value="all">Cualquiera</option><option value="intra">Intraborda (eje o cola)</option><option value="fuera">Fueraborda</option></select></fieldset>
       <fieldset><label for="f-ord">Ordenar</label><select id="f-ord"><option value="nov">Novedades</option><option value="pa">Precio: de más barato a más caro</option><option value="pd">Precio: de más caro a más barato</option><option value="an">Año: de más nuevo a más viejo</option></select></fieldset>
-      <span class="bcount" aria-live="polite" data-one="1 barco" data-many="{n} barcos"></span>
+      <span class="bcount" aria-live="polite" data-one="1 barco disponible" data-many="{n} barcos disponibles"></span>
+      <button type="button" class="bclear" hidden>Limpiar filtros</button>
     </div>
     <p class="bnote">Orientativo: se confirma con la documentación del barco (eslora y potencia máxima de la placa del fabricante). Los veleros requieren además las prácticas de vela.</p>
-    <p class="bnone" hidden>Con esos filtros no hay ahora mismo ningún barco disponible en cartera. Si buscas algo concreto, <a href="../alertas/">crea una alerta</a> y te aviso.</p>
+    <p class="bnone" hidden><button type="button" class="bclear bclear-inline">Limpiar filtros</button> Con esos filtros no hay ahora mismo ningún barco disponible en cartera. Si buscas algo concreto, <a href="../alertas/">crea una alerta</a> y te aviso.</p>
     <div class="bgrid">
-      <article data-pm-boat="oceanis-50" class="bcard" data-sold="0" data-tipo="vela" data-titulo="3" data-precio="155000" data-zona="valencia" data-anyo="2008" data-i="0">
+      <article data-pm-boat="oceanis-50" class="bcard" data-sold="0" data-tipo="vela" data-titulo="3" data-precio="155000" data-zona="valencia" data-comb="diesel" data-motor="intra" data-anyo="2008" data-i="0">
         <a class="bimg" href="oceanis-50.html"><img src="/oceanis-50-1.jpg" alt="Velero Beneteau Oceanis 50 amarrado en puerto" loading="lazy" width="1600" height="1200"><span class="status available">Disponible</span></a>
         <div class="bbody">
           <div class="head" style="margin:0 0 6px"><h2><a href="oceanis-50.html">Beneteau Oceanis 50</a></h2><p class="price">155.000 €</p></div>
@@ -120,7 +124,7 @@
           <div class="bcta"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20me%20interesa%20el%20Beneteau%20Oceanis%2050%20de%202008%20que%20ten%C3%A9is%20en%20venta.%20%C2%BFPodemos%20hablar%3F" target="_blank" rel="noopener">Preguntar por WhatsApp</a><a class="btn btn-ghost" href="oceanis-50.html">Ver ficha</a></div>
         </div>
       </article>
-      <article data-pm-boat="starfisher-840" class="bcard" data-sold="0" data-tipo="motor" data-titulo="3" data-precio="50900" data-zona="galicia" data-anyo="2004" data-i="1">
+      <article data-pm-boat="starfisher-840" class="bcard" data-sold="0" data-tipo="motor" data-titulo="3" data-precio="50900" data-zona="galicia" data-comb="diesel" data-motor="intra" data-anyo="2004" data-i="1">
         <a class="bimg" href="starfisher-840.html"><img src="/starfisher-840-1.jpg" alt="Starfisher 840 R navegando en una ría gallega" loading="lazy" width="1600" height="1200"><span class="status available">Disponible</span></a>
         <div class="bbody">
           <div class="head" style="margin:0 0 6px"><h2><a href="starfisher-840.html">Starfisher 840 R</a></h2><p class="price">50.900 €</p></div>
@@ -130,7 +134,7 @@
           <div class="bcta"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20me%20interesa%20la%20Starfisher%20840%20R%20de%202004%20que%20ten%C3%A9is%20en%20venta.%20%C2%BFPodemos%20hablar%3F" target="_blank" rel="noopener">Preguntar por WhatsApp</a><a class="btn btn-ghost" href="starfisher-840.html">Ver ficha</a></div>
         </div>
       </article>
-      <article data-pm-boat="sacs-535" class="bcard" data-sold="0" data-tipo="motor" data-titulo="1" data-precio="25000" data-zona="baleares" data-anyo="2002" data-i="2">
+      <article data-pm-boat="sacs-535" class="bcard" data-sold="0" data-tipo="motor" data-titulo="1" data-precio="25000" data-zona="baleares" data-comb="gasolina" data-motor="fuera" data-anyo="2002" data-i="2">
         <a class="bimg" href="sacs-535.html"><img src="/sacs-535-1.jpg" alt="Semirrígida Sacs 535 amarrada en un puerto de Mallorca" loading="lazy" width="1600" height="1200"><span class="status available">Disponible</span></a>
         <div class="bbody">
           <div class="head" style="margin:0 0 6px"><h2><a href="sacs-535.html">Sacs 535</a></h2><p class="price">25.000 €</p></div>
@@ -140,7 +144,7 @@
           <div class="bcta"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20me%20interesa%20la%20Sacs%20535%20de%202002%20que%20ten%C3%A9is%20en%20venta.%20%C2%BFPodemos%20hablar%3F" target="_blank" rel="noopener">Preguntar por WhatsApp</a><a class="btn btn-ghost" href="sacs-535.html">Ver ficha</a></div>
         </div>
       </article>
-      <article data-pm-boat="van-de-stadt-36" class="bcard" data-sold="0" data-tipo="vela" data-titulo="3" data-precio="72000" data-zona="valencia" data-anyo="1981" data-i="3">
+      <article data-pm-boat="van-de-stadt-36" class="bcard" data-sold="0" data-tipo="vela" data-titulo="3" data-precio="72000" data-zona="valencia" data-comb="diesel" data-motor="intra" data-anyo="1981" data-i="3">
         <a class="bimg" href="van-de-stadt-36.html"><img src="/van-de-stadt-36-1.jpg" alt="Velero Van de Stadt Zeehond 36 amarrado en un puerto de Alicante" loading="lazy" width="1600" height="1200"><span class="status available">Disponible</span></a>
         <div class="bbody">
           <div class="head" style="margin:0 0 6px"><h2><a href="van-de-stadt-36.html">Van de Stadt Zeehond 36</a></h2><p class="price">72.000 €</p></div>
@@ -150,7 +154,7 @@
           <div class="bcta"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20me%20interesa%20el%20Van%20de%20Stadt%20Zeehond%2036%20de%201981%20que%20ten%C3%A9is%20en%20venta.%20%C2%BFPodemos%20hablar%3F" target="_blank" rel="noopener">Preguntar por WhatsApp</a><a class="btn btn-ghost" href="van-de-stadt-36.html">Ver ficha</a></div>
         </div>
       </article>
-      <article data-pm-boat="monte-carlo-27" class="bcard" data-sold="0" data-tipo="motor" data-titulo="2" data-precio="64900" data-zona="cataluna" data-anyo="2008" data-i="4">
+      <article data-pm-boat="monte-carlo-27" class="bcard" data-sold="0" data-tipo="motor" data-titulo="2" data-precio="64900" data-zona="cataluna" data-comb="gasolina" data-motor="intra" data-anyo="2008" data-i="4">
         <a class="bimg" href="monte-carlo-27.html"><img src="/monte-carlo-27-1.jpg" alt="Beneteau Monte Carlo 27 amarrada de popa en un puerto de la Costa Brava" loading="lazy" width="1600" height="1200"><span class="status available">Disponible</span></a>
         <div class="bbody">
           <div class="head" style="margin:0 0 6px"><h2><a href="monte-carlo-27.html">Beneteau Monte Carlo 27</a></h2><p class="price">64.900 €</p></div>
@@ -160,8 +164,8 @@
           <div class="bcta"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20me%20interesa%20la%20Beneteau%20Monte%20Carlo%2027%20de%202008%20que%20ten%C3%A9is%20en%20venta.%20%C2%BFPodemos%20hablar%3F" target="_blank" rel="noopener">Preguntar por WhatsApp</a><a class="btn btn-ghost" href="monte-carlo-27.html">Ver ficha</a></div>
         </div>
       </article>
-      <article data-pm-boat="sealine-365" class="bcard" data-sold="0" data-tipo="motor" data-titulo="3" data-precio="75000" data-zona="cataluna" data-anyo="1989" data-i="5">
-        <a class="bimg" href="sealine-365.html"><img src="/sealine-365-1.jpg" alt="Sealine 365 · imagen ilustrativa (render)" loading="lazy" width="1600" height="900" style="aspect-ratio:16/9"><span class="status available">Disponible</span></a>
+      <article data-pm-boat="sealine-365" class="bcard" data-sold="0" data-tipo="motor" data-titulo="3" data-precio="75000" data-zona="cataluna" data-comb="diesel" data-motor="intra" data-anyo="1989" data-i="5">
+        <a class="bimg" href="sealine-365.html"><img src="/sealine-365-1.jpg" alt="Sealine 365 · imagen ilustrativa (render)" loading="lazy" width="1600" height="900" style="aspect-ratio:16/9"><span class="img-note">Imagen ilustrativa</span><span class="status available">Disponible</span></a>
         <div class="bbody">
           <div class="head" style="margin:0 0 6px"><h2><a href="sealine-365.html">Sealine 365</a></h2><p class="price">75.000 €</p></div>
           <p class="sub" style="margin:0">1989 · 11,10 m · 2 x Volvo Penta AQAD41 200 cv · 1.100 h · Costa Daurada (Tarragona)</p>
@@ -170,7 +174,7 @@
           <div class="bcta"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20me%20interesa%20el%20Sealine%20365%20de%201989%20que%20ten%C3%A9is%20en%20venta.%20%C2%BFPodemos%20hablar%3F" target="_blank" rel="noopener">Preguntar por WhatsApp</a><a class="btn btn-ghost" href="sealine-365.html">Ver ficha</a></div>
         </div>
       </article>
-      <article data-pm-boat="faeton-730-moraga" class="bcard" data-sold="0" data-tipo="motor" data-titulo="2" data-precio="30000" data-zona="baleares" data-anyo="2005" data-i="6">
+      <article data-pm-boat="faeton-730-moraga" class="bcard" data-sold="0" data-tipo="motor" data-titulo="2" data-precio="30000" data-zona="baleares" data-comb="diesel" data-motor="intra" data-anyo="2005" data-i="6">
         <a class="bimg" href="faeton-730-moraga.html"><img src="/faeton-730-moraga-1.jpg" alt="Faeton 730 Moraga fondeado en una cala de Mallorca" loading="lazy" width="1600" height="900"><span class="status available">Disponible</span></a>
         <div class="bbody">
           <div class="head" style="margin:0 0 6px"><h2><a href="faeton-730-moraga.html">Faeton 730 Moraga</a></h2><p class="price">30.000 €</p></div>
@@ -180,7 +184,7 @@
           <div class="bcta"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20me%20interesa%20el%20Faeton%20730%20Moraga%20de%202005%20(Lembus)%20que%20ten%C3%A9is%20en%20venta.%20%C2%BFPodemos%20hablar%3F" target="_blank" rel="noopener">Preguntar por WhatsApp</a><a class="btn btn-ghost" href="faeton-730-moraga.html">Ver ficha</a></div>
         </div>
       </article>
-      <article data-pm-boat="monterey-278-ss" class="bcard" data-sold="0" data-tipo="motor" data-titulo="3" data-precio="49990" data-zona="cataluna" data-anyo="2011" data-i="7">
+      <article data-pm-boat="monterey-278-ss" class="bcard" data-sold="0" data-tipo="motor" data-titulo="3" data-precio="49990" data-zona="cataluna" data-comb="gasolina" data-motor="intra" data-anyo="2011" data-i="7">
         <a class="bimg" href="monterey-278-ss.html"><img src="/monterey-278-ss-1.jpg" alt="Monterey 278 SS fondeada en una cala de la Costa Brava" loading="lazy" width="1600" height="900"><span class="status available">Disponible</span></a>
         <div class="bbody">
           <div class="head" style="margin:0 0 6px"><h2><a href="monterey-278-ss.html">Monterey 278 SS</a></h2><p class="price">49.990 €</p></div>
@@ -190,7 +194,7 @@
           <div class="bcta"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20me%20interesa%20la%20Monterey%20278%20SS%20de%202011%20que%20ten%C3%A9is%20en%20venta.%20%C2%BFPodemos%20hablar%3F" target="_blank" rel="noopener">Preguntar por WhatsApp</a><a class="btn btn-ghost" href="monterey-278-ss.html">Ver ficha</a></div>
         </div>
       </article>
-      <article data-pm-boat="ranieri-azzurra-5m" class="bcard is-sold" data-sold="1" data-tipo="motor" data-titulo="1" data-precio="11990" data-zona="cataluna" data-anyo="2004" data-i="8">
+      <article data-pm-boat="ranieri-azzurra-5m" class="bcard is-sold" data-sold="1" data-tipo="motor" data-titulo="1" data-precio="11990" data-zona="cataluna" data-comb="gasolina" data-motor="fuera" data-anyo="2004" data-i="8">
         <a class="bimg" href="ranieri-azzurra-5m.html"><img src="/ranieri-azzurra-1.jpg" alt="Ranieri Azzurra de 5 metros fondeada cerca de la costa" loading="lazy" width="1600" height="900"><span class="status sold">Vendido</span></a>
         <div class="bbody">
           <div class="head" style="margin:0 0 6px"><h2><a href="ranieri-azzurra-5m.html">Ranieri Azzurra 5 m</a></h2><p class="price">11.990 €</p></div>
@@ -212,16 +216,18 @@
 (function(){
 var g=document.querySelector('.bgrid');if(!g)return;
 var cards=[].slice.call(g.querySelectorAll('.bcard'));
-var f=document.querySelector('.bfilt'),tsel=f.querySelector('#f-tit'),osel=f.querySelector('#f-ord'),psel=f.querySelector('#f-pre'),zsel=f.querySelector('#f-zon'),cnt=f.querySelector('.bcount'),none=document.querySelector('.bnone');
+var f=document.querySelector('.bfilt'),tsel=f.querySelector('#f-tit'),osel=f.querySelector('#f-ord'),psel=f.querySelector('#f-pre'),zsel=f.querySelector('#f-zon'),csel=f.querySelector('#f-comb'),msel=f.querySelector('#f-mot'),cnt=f.querySelector('.bcount'),none=document.querySelector('.bnone');
 var tipo='all';
 function apply(push){
-  var tl=tsel.value,o=osel.value,pr=psel.value,zn=zsel.value,n=0;
+  var tl=tsel.value,o=osel.value,pr=psel.value,zn=zsel.value,cb=csel.value,mt=msel.value,n=0;
   cards.forEach(function(c){
     var ok=(tipo==='all'||c.dataset.tipo===tipo);
     if(tl!=='all'){var need=+c.dataset.titulo;ok=ok&&(+tl>=need)&&!(c.dataset.tipo==='vela'&&+tl<3)&&+tl>0;}
     if(pr!=='all'){var r=pr.split('-'),v=+c.dataset.precio;ok=ok&&(r[0]==='0'||v>+r[0])&&(r[1]===''||v<=+r[1]);}
     if(zn!=='all')ok=ok&&c.dataset.zona===zn;
-    if(c.dataset.sold==='1'&&(tipo!=='all'||tl!=='all'||pr!=='all'||zn!=='all'))ok=false;
+    if(cb!=='all')ok=ok&&c.dataset.comb===cb;
+    if(mt!=='all')ok=ok&&c.dataset.motor===mt;
+    if(c.dataset.sold==='1'&&(tipo!=='all'||tl!=='all'||pr!=='all'||zn!=='all'||cb!=='all'||mt!=='all'))ok=false;
     c.hidden=!ok;if(ok&&c.dataset.sold!=='1')n++;
   });
   var s=cards.slice();
@@ -233,19 +239,26 @@ function apply(push){
   s.forEach(function(c){g.appendChild(c)});
   cnt.textContent=n===1?cnt.dataset.one:cnt.dataset.many.replace('{n}',n);
   none.hidden=n>0;
-  if(push){var p=new URLSearchParams();if(tipo!=='all')p.set('tipo',tipo);if(tl!=='all')p.set('titulo',tl);if(o!=='nov')p.set('orden',o);if(pr!=='all')p.set('precio',pr);if(zn!=='all')p.set('zona',zn);
+  var act=tipo!=='all'||tl!=='all'||pr!=='all'||zn!=='all'||cb!=='all'||mt!=='all'||o!=='nov';
+  f.querySelector('.bclear').hidden=!act;
+  if(push){var p=new URLSearchParams();if(tipo!=='all')p.set('tipo',tipo);if(tl!=='all')p.set('titulo',tl);if(o!=='nov')p.set('orden',o);if(pr!=='all')p.set('precio',pr);if(zn!=='all')p.set('zona',zn);if(cb!=='all')p.set('combustible',cb);if(mt!=='all')p.set('motor',mt);
     var q=p.toString();history.replaceState(null,'',location.pathname+(q?'?'+q:''));
-    if(window.gtag)try{gtag('event','filtro_barcos',{tipo:tipo,titulo:tl,orden:o,precio:pr,zona:zn})}catch(e){}}
+    if(window.gtag)try{gtag('event','filtro_barcos',{tipo:tipo,titulo:tl,orden:o,precio:pr,zona:zn,combustible:cb,motor:mt})}catch(e){}}
 }
 f.querySelectorAll('.seg button').forEach(function(b){b.addEventListener('click',function(){
   tipo=b.dataset.v;f.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});apply(true);});});
-tsel.addEventListener('change',function(){apply(true)});psel.addEventListener('change',function(){apply(true)});zsel.addEventListener('change',function(){apply(true)});osel.addEventListener('change',function(){apply(true)});
+document.querySelectorAll('.bclear').forEach(function(b){b.addEventListener('click',function(){
+  tipo='all';tsel.value='all';psel.value='all';zsel.value='all';csel.value='all';msel.value='all';osel.value='nov';
+  f.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.v==='all')});apply(true);});});
+tsel.addEventListener('change',function(){apply(true)});psel.addEventListener('change',function(){apply(true)});zsel.addEventListener('change',function(){apply(true)});csel.addEventListener('change',function(){apply(true)});msel.addEventListener('change',function(){apply(true)});osel.addEventListener('change',function(){apply(true)});
 var p=new URLSearchParams(location.search);
 if(p.get('tipo')){var b=f.querySelector('.seg button[data-v="'+p.get('tipo')+'"]');if(b){tipo=b.dataset.v;f.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});}}
 if(p.get('titulo')&&tsel.querySelector('option[value="'+p.get('titulo')+'"]'))tsel.value=p.get('titulo');
 if(p.get('orden')&&osel.querySelector('option[value="'+p.get('orden')+'"]'))osel.value=p.get('orden');
 if(p.get('precio')&&psel.querySelector('option[value="'+p.get('precio')+'"]'))psel.value=p.get('precio');
 if(p.get('zona')&&zsel.querySelector('option[value="'+p.get('zona')+'"]'))zsel.value=p.get('zona');
+if(p.get('combustible')&&csel.querySelector('option[value="'+p.get('combustible')+'"]'))csel.value=p.get('combustible');
+if(p.get('motor')&&msel.querySelector('option[value="'+p.get('motor')+'"]'))msel.value=p.get('motor');
 apply(false);
 })();
 </script>
