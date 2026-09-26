@@ -174,6 +174,7 @@ var Q=[
    {"t":"Cabin cruiser","v":{"tipo":"cabin cruiser"}},
    {"t":"Pilothouse","v":{"tipo":"pilothouse"}},
    {"t":"Fly (flybridge)","v":{"tipo":"fly"}},
+   {"t":"Sailing yacht","v":{"tipo":"sailing yacht"}},
    {"t":"Not sure / I don't know","v":{"tipo":"boat"}}
  ]},
  {"id":"eslora","q":"How long is it?","o":[
@@ -194,7 +195,7 @@ var Q=[
    {"t":"Outboard (petrol)","v":{"motor":"petrol outboard"}},
    {"t":"Diesel inboard","v":{"motor":"diesel inboard"}},
    {"t":"Petrol inboard","v":{"motor":"petrol inboard"}},
-   {"t":"Sailing boat with auxiliary engine","v":{"motor":"sail with auxiliary"}},
+   {"t":"Sailing boat with auxiliary engine","v":{"motor":"sailing auxiliary"}},
    {"t":"More than one engine","v":{"motor":"multiple engines"}}
  ]},
  {"id":"horas","q":"How many hours are on the engine?","o":[
@@ -225,6 +226,7 @@ var Q=[
  {"id":"anunciado","q":"Is it already listed for sale?","o":[
    {"t":"No, not yet","v":{"anunciado":"no"}},
    {"t":"Yes, recently (less than a month)","v":{"anunciado":"recent"}},
+   {"t":"Yes, between one and two months","v":{"anunciado":"mid"}},
    {"t":"Yes, for a while (more than two months)","v":{"anunciado":"antic"}}
  ]}
 ];
@@ -246,7 +248,7 @@ el('pmLeadForm').onsubmit=function(ev){
   window.submitConfirmed(LEADS_URL,payload,'json').then(function(){try{if(window.pmTrack)window.pmTrack('generate_lead',{form_id:'resultado_valoracion',contact_purpose:'result'});}catch(x){}
     msg.className='msg ok';msg.textContent='Summary saved. The result is still available on screen.';btn.textContent='Sent';
     setTimeout(closeModal,1800);
-  }).catch(function(){msg.textContent='We couldn\'t confirm it was received. Your details are still on screen. Before sending again, check with juan@platamarine.com or on WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
+  }).catch(function(){try{if(window.pmTrack)window.pmTrack('contact_form_error',{form_id:'resultado_valoracion'});}catch(x){}msg.textContent='We couldn\'t confirm it was received. Your details are still on screen. Before sending again, check with juan@platamarine.com or on WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
 };
 
 function render(){
@@ -254,7 +256,7 @@ function render(){
   Q.forEach(function(q,i){
     h+='<div class="qcard" id="q'+i+'"><span class="step">Question '+(i+1)+' of '+Q.length+'</span><h3>'+q.q+'</h3>';
     q.o.forEach(function(o,j){h+='<label class="opt"><input type="radio" name="q'+i+'" value="'+j+'"> <span>'+o.t+'</span></label>'});
-if(q.id==='tipo'){h+='<p class="hint" style="margin-top:10px">What make and model is it?</p><input type="text" id="marcaModelo" placeholder="E.g. Quicksilver 675" style="width:100%;font:15px var(--serif);padding:9px 10px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box"><p class="hint" id="marcaModeloMsg" style="display:none;color:#c0392b;margin-top:6px">Tell us at least the make of your boat, it helps us value it better.</p>';}
+if(q.id==='tipo'){h+='<label for="marcaModelo" class="hint" style="display:block;margin-top:10px;font-weight:600;color:var(--ink)">Make and model <span style="color:#c0392b">*</span> <span style="font-weight:400">(required to see the result)</span></label><input type="text" id="marcaModelo" placeholder="E.g. Quicksilver 675" style="width:100%;font:15px var(--serif);padding:9px 10px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box"><p class="hint" id="marcaModeloMsg" style="display:none;color:#c0392b;margin-top:6px">Tell us at least the make of your boat, it helps us value it better.</p>';}
 if(q.id==='motor'){h+='<p class="hint" style="margin-top:10px">Horsepower, if you know it (optional)</p><input type="text" id="potenciaCV" placeholder="E.g. 250 hp" style="width:100%;font:15px var(--serif);padding:9px 10px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box">';}
 if(q.id==='anunciado'){h+='<div class="qcard hidden" id="qDonde"><h3>Where is it listed?</h3>'+[['wallapop','Wallapop or another classifieds site'],['portal','Specialist boat portal'],['broker','With another broker'],['redes','Social media'],['otro','Other']].map(function(e){return '<label class="opt"><input type="radio" name="donde" value="'+e[0]+'"> <span>'+e[1]+'</span></label>'}).join('')+'</div><div class="qcard hidden" id="qExclusiva"><h3>Have you given this broker an exclusive?</h3><label class="opt"><input type="radio" name="exclusiva" value="si"> <span>Yes, exclusive</span></label><label class="opt"><input type="radio" name="exclusiva" value="no"> <span>No, not exclusive</span></label></div>';}
 
@@ -262,6 +264,7 @@ if(q.id==='anunciado'){h+='<div class="qcard hidden" id="qDonde"><h3>Where is it
   });
   h+='<div class="qcard" id="qEquipo"><span class="step">Optional</span><h3>Equipment and extras</h3><p class="hint">Tick what it has (not needed to see the result).</p>'+[['toldo','Canopy or bimini'],['plotter','Chartplotter / GPS'],['molinete','Electric windlass'],['duchapopa','Transom shower'],['wc','WC'],['aa','Air conditioning'],['generador','Generator'],['pasarela','Gangway'],['bow','Bow thruster']].map(function(e){return '<label class="opt"><input type="checkbox" name="equipo" value="'+e[0]+'"> <span>'+e[1]+'</span></label>'}).join('')+'</div>';
 el('questions').innerHTML=h;el('endbar').classList.remove('hidden');el('check').classList.remove('hidden');el('result').classList.add('hidden');
+var mmI=el('marcaModelo');if(mmI)mmI.addEventListener('input',function(){if(mmI.value.trim()){mmI.style.borderColor='';var mg=el('marcaModeloMsg');if(mg)mg.style.display='none';if(document.querySelector('input[name=q0]:checked'))el('q0').style.borderColor='';}});el('questions').addEventListener('change',function(e){if(e.target.name&&/^q\d+$/.test(e.target.name)){var cq=el(e.target.name);if(cq&&!(e.target.name==='q0'&&mmI&&!mmI.value.trim()))cq.style.borderColor='';}});
   document.querySelectorAll('#questions input').forEach(function(x){x.addEventListener('change',prog)});prog();
 el('questions').addEventListener('change',function(e){
 if(e.target.name && /^q\d+$/.test(e.target.name)){
@@ -291,9 +294,10 @@ var eSel=document.querySelector('input[name=exclusiva]:checked');v.exclusiva=eSe
   else if(v.etapa==='recent'||v.etapa==='mitjà')notes.push('In this age bracket the price has already levelled off quite a lot: what moves the needle most is the boat\'s real condition, not the exact year.');
   else notes.push('From here on the year matters less than the maintenance: an older boat with a well-kept engine and hull can ask more than a newer but neglected one.');
 
+  if(v.tipo==='sailing yacht'||v.motor==='sailing auxiliary')notes.push('On a sailing yacht the condition of the sails, the rigging (and when it was replaced) and the hull matter as much as the auxiliary engine. If you have dates or invoices for that work, they add a lot.');
   if(v.horas==='poques')notes.push('Low hours for its age is a plus, especially if they are backed up by maintenance invoices.');
-  else if(v.horas==='notables')notes.push('With fairly high hours it pays to have the engine\'s service history to hand: it is one of the first things a serious buyer will ask for.');
-  else if(v.horas==='moltes')notes.push('With over 1,000 hours the engine takes centre stage. A report from a trusted mechanic before listing usually stops the whole negotiation from revolving around it.');
+  else if(v.horas==='notables')notes.push('Between 500 and 1,000 hours is normal use for many boats. What counts most is being able to show the servicing done: keep it to hand, as it is one of the first things a serious buyer asks about.');
+  else if(v.horas==='moltes')notes.push('With over 1,000 hours a buyer will focus mainly on the engine\'s history. High hours with documented servicing are not a problem in themselves; if there are doubts, a trusted mechanic\'s opinion helps keep the negotiation on track.');
   else if(v.horas==='no ho sé')notes.push('It is worth knowing the exact hours before setting a price: it is one of the first questions you will be asked.');
 
   if(v.mantenimiento==='al dia')notes.push('Having the maintenance invoices to hand is one of the things that most reassures a buyer: I show them whenever I can.');
@@ -304,7 +308,8 @@ var eSel=document.querySelector('input[name=exclusiva]:checked');v.exclusiva=eSe
   else if(v.papeles==='no del tot segur')notes.push('Before listing it, it is worth checking the technical inspection (ITB), that any engine changes have been declared and that ownership is clear. I explain this in the guide to paperwork for selling.');
   else notes.push('If you know something is missing (expired inspection, undeclared engine change…), better to sort it out or at least know the cost before setting a price: it changes the negotiation.');
 
-  if(v.anunciado==='antic')notes.push('A listing that has sat for months without moving is rarely a problem with the boat itself: it is usually the price, the photos or where it is published. It is worth reviewing that before cutting the price blindly.');
+  if(v.anunciado==='mid')notes.push('After one or two months online you can already see how the listing is performing: if few serious enquiries come in, it is worth reviewing the price, photos and where it is published before changing anything else.');
+  else if(v.anunciado==='antic')notes.push('A listing that has sat for months without moving is rarely a problem with the boat itself: it is usually the price, the photos or where it is published. It is worth reviewing that before cutting the price blindly.');
   else if(v.anunciado==='no')notes.push('With nothing published yet, the first step is a well-reasoned asking price, not just publishing and waiting.');
 
   if(v.donde==='broker'){notes.push(v.exclusiva==='si'?'If you already have it on an exclusive with another broker, check the contract\'s exit terms before working with anyone else.':'If another broker has it without an exclusive, you can keep looking at other options without any problem.');}
@@ -315,7 +320,8 @@ var h='<h2>What will weigh most on the price of your '+(v.marca?v.marca:v.tipo)+
   h+='<p>With '+v.eslora+', from '+v.anio+' and a '+v.motor+(v.potencia?' ('+v.potencia+')':'')+' engine, this is what I would look at first:</p>';
   h+='<ul>';notes.forEach(function(n){h+='<li>'+n+'</li>'});h+='</ul>';
   h+='<h3>Next steps</h3><p><a href="/en/guias/precio-barco-ocasion.html">How to price a used boat</a> · <a href="/en/guias/papeles-vender-barco-cambio-titularidad.html">Paperwork for selling</a></p>';
-  var waTexto='Hi Juan, I\'ve done the boat valuation on your website. It\'s a '+(v.marca?v.marca+' — '+v.tipo:v.tipo)+', '+v.eslora+', year '+v.anio+', '+v.motor+(v.potencia?' ('+v.potencia+')':'')+' ('+HR[v.horas]+' hours), maintenance: '+MT[v.mantenimiento]+', paperwork: '+PP[v.papeles]+', in '+v.zona+'. Listed: '+AN[v.anunciado]+(v.donde?' on '+v.donde:'')+(v.exclusiva?' (exclusive: '+v.exclusiva+')':'')+'. Can we talk?';
+  var T={},TD={};Q.forEach(function(q,i){var s=document.querySelector('input[name=q'+i+']:checked');T[q.id]=q.o[parseInt(s.value)].t;});['donde','exclusiva'].forEach(function(n){var s=document.querySelector('input[name='+n+']:checked');if(s&&!s.closest('.hidden'))TD[n]=s.parentNode.querySelector('span').textContent.trim();});
+var waTexto='Hi Juan, I\'ve done the boat valuation on your website. It\'s a '+(v.marca||'boat')+' ('+T.tipo+'). Length: '+T.eslora+'. Year: '+T.anio+'. Engine: '+T.motor+(v.potencia?' ('+v.potencia+')':'')+'. Hours: '+T.horas+'. Maintenance: '+T.mantenimiento+'. Paperwork: '+T.papeles+'. Area: '+T.zona+'. Listed?: '+T.anunciado+(TD.donde?' ('+TD.donde+(TD.exclusiva?', '+TD.exclusiva:'')+')':'')+'. Can we talk?';
 h+='<p style="margin-top:14px"><a class="btn btn-wa" href="https://wa.me/34633742973?text='+encodeURIComponent(waTexto)+'" target="_blank" rel="noopener">Ask for a personal valuation</a></p>';
 el('result').innerHTML=h;el('result').classList.remove('hidden');el('check').classList.add('hidden');
   var det='Type: '+v.tipo+(v.marca?' ('+v.marca+')':'')+' | Length: '+v.eslora+' | Year: '+v.anio+' | Engine: '+v.motor+(v.potencia?' '+v.potencia:'')+' | Hours: '+HR[v.horas]+' | Maintenance: '+MT[v.mantenimiento]+' | Paperwork: '+PP[v.papeles]+' | Area: '+v.zona+' | Listed: '+AN[v.anunciado]+(v.donde?' ('+v.donde+(v.exclusiva?', exclusive '+v.exclusiva:'')+')':'')+(v.equipo?' | Equipment: '+v.equipo:'');
