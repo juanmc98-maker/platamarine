@@ -153,10 +153,10 @@
       </nav>
       <div class="rel">
         <p class="eyebrow">You might also like</p>
-        <a href="/guias/tipos-de-barco-a-motor.html">Types of motorboats: what each one is for</a>
-        <a href="/guias/amarres-cataluna-tipos-precios-alquiler-compra.html">Moorings in Catalonia: types and prices</a>
-        <a href="/titulaciones/">What licence you need for each boat</a>
-        <a href="/guias/que-mirar-comprar-barco-segunda-mano.html">What to check when buying second-hand</a>
+        <a href="/en/guias/tipos-de-barco-a-motor.html">Types of motorboats: what each one is for</a>
+        <a href="/en/guias/amarres-cataluna-tipos-precios-alquiler-compra.html">Moorings in Catalonia: types and prices</a>
+        <a href="/en/titulaciones/">What licence you need for each boat</a>
+        <a href="/en/guias/que-mirar-comprar-barco-segunda-mano.html">What to check when buying second-hand</a>
       </div>
     </aside>
 
@@ -228,13 +228,13 @@ function check(){
   if(v.titulo===1)notes.push("With the Navigation Licence you can skipper boats up to 6 metres long, with the engine power the manufacturer rates as suitable, in daylight only and no more than 2 nautical miles from a port, marina or sheltered spot. If you want to go further, look at the <a href=\"/en/titulaciones/\">PNB or the PER</a>.");
   if(v.titulo===2)notes.push("With the PNB you can skipper motorboats up to 8 metres no more than 5 miles from a port, marina or sheltered spot (sailboats need the sailing practice). If the boat that suits you is bigger than that, the <a href=\"/en/titulaciones/\">PER</a> allows up to 15 metres and 12 miles off the coast.");
   if(top==='velero')notes.push("To skipper a sailboat you also need the sailing practice on top of the licence. I explain it in <a href=\"/en/titulaciones/\">boating licences</a>.");
-  if(r[1]>8)notes.push('From 8 metres onward the registration tax applies (12% on a new or imported boat); on a used boat already registered in Spain it isn’t paid again. I explain it in the <a href="/guias/impuesto-matriculacion-barcos.html">tax guide</a>.');
-  if(v.guarda==='amarre'||v.guarda==='nose')notes.push('Mooring is the fixed cost that weighs most: budget around €2,700 to €3,700 a year for 8 metres around Barcelona, and quite a bit more for 12. You’ll find marina-by-marina rates in the <a href="/guias/amarres-cataluna-tipos-precios-alquiler-compra.html">mooring guide</a>'+(v.zona?' (check '+v.zona+')':'')+'.');
+  if(r[1]>8)notes.push('From 8 metres onward the registration tax applies (12% on a new or imported boat); on a used boat already registered in Spain it isn’t paid again. I explain it in the <a href="/en/guias/impuesto-matriculacion-barcos.html">tax guide</a>.');
+  if(v.guarda==='amarre'||v.guarda==='nose')notes.push('Mooring is the fixed cost that weighs most: budget around €2,700 to €3,700 a year for 8 metres around Barcelona, and quite a bit more for 12. You’ll find marina-by-marina rates in the <a href="/en/guias/amarres-cataluna-tipos-precios-alquiler-compra.html">mooring guide</a>'+(v.zona?' (check '+v.zona+')':'')+'.');
   if(v.guarda==='remolque')notes.push('On a trailer, the practical limit is around 7 metres: with a category B licence the car-plus-trailer combination can’t exceed 3,500 kg; above that you need a B96 (up to 4,250 kg) or a BE, and a car that can really tow.');
   if(v.guarda==='seca')notes.push('Dry storage is a great option up to 8 or 9 metres with an outboard: the boat is kept in much better condition and it’s cheaper than a mooring afloat.');
   if(v.presu<=1)notes.push('With under €30,000 there are plenty of good boats from 5 to 7 metres; what matters is the condition of the engine and the paperwork, not the year.');
   if(notes.length){h+='<ul>';notes.forEach(function(n){h+='<li>'+n+'</li>'});h+='</ul>';}
-  h+='<h3>To read next</h3><p>'+(top==='velero'?'':'<a href="/guias/tipos-de-barco-a-motor.html#'+T[top].a+'">What a '+T[top].n.toLowerCase()+' is like and which brands you see around here</a> · ')+'<a href="/guias/que-mirar-comprar-barco-segunda-mano.html">What to check when buying second-hand</a></p>';
+  h+='<h3>To read next</h3><p>'+(top==='velero'?'':'<a href="/en/guias/tipos-de-barco-a-motor.html#'+T[top].a+'">What a '+T[top].n.toLowerCase()+' is like and which brands you see around here</a> · ')+'<a href="/en/guias/que-mirar-comprar-barco-segunda-mano.html">What to check when buying second-hand</a></p>';
   var BUD=[[0,30000],[30000,60000],[60000,120000],[120000,250000],[250000,1e9]][(v.presu||2)-1];
 var inv=(window.PM_INV&&window.PM_INV.available())||[],L=window.PM_INV?window.PM_INV.lang():'es';
 var match=inv.filter(function(b){
@@ -258,7 +258,7 @@ render();
   <div class="wrap">
     <div class="line">
       <span>© 2026 Plata Marine · Sabadell, Barcelona · <a href="mailto:juan@platamarine.com">juan@platamarine.com</a></span>
-      <a href="/aviso-legal.html">Legal notice</a> · <a href="/privacidad.html">Privacy</a> · <a href="/cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Website by rotulito.com</a>
+      <a href="/aviso-legal.html">Legal notice</a> · <a href="/privacidad.html">Privacy</a> · <a href="/en/cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Website by rotulito.com</a>
     </div>
   </div>
 <p class="wrap"><button type="button" data-cookie-settings>Cookie settings</button></p></footer>

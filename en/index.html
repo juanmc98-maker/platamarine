@@ -26,7 +26,7 @@
 <meta name="twitter:image" content="https://www.platamarine.com/logo-plata-marine.png">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"Plata Marine","description":"Nautical broker in Barcelona: brokerage for private boat sales and used boat sourcing for buyers across Catalonia, Spain and Europe. Success-fee based, no exclusivity and no upfront payments.","serviceType":["Venta de embarcaciones de ocasión","Búsqueda de barco para compradores"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios de intermediación náutica","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Gestión de venta de tu barco","description":"Market valuation, listing on nautical portals, buyer screening, viewings, negotiation and paperwork through to transfer. Fee tied to the sale closing."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Búsqueda de barco para compradores","description":"Search, screening and assessment of used boats, documentation review, negotiation and support through to purchase. Fee tied to the purchase."}}]},"url":"https://www.platamarine.com/","image":"https://www.platamarine.com/logo-plata-marine.png","telephone":"+34633742973","email":"juan@platamarine.com","address":{"@type":"PostalAddress","streetAddress":"C/ Tetuán 92","postalCode":"08203","addressLocality":"Sabadell","addressRegion":"Barcelona","addressCountry":"ES"},"areaServed":["Barcelona","Maresme","Costa Brava","Costa Daurada","Cataluña"],"founder":{"@type":"Person","name":"Juan Morante","jobTitle":"Broker náutico"},"sameAs":["https://www.platagarage.com"]}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Plata Marine","description":"Nautical broker in Barcelona: brokerage for private boat sales and used boat sourcing for buyers across Catalonia, Spain and Europe. Success-fee based, no exclusivity and no upfront payments.","serviceType":["Used boat brokerage","Boat search for buyers"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Nautical brokerage services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Selling your boat","description":"Market valuation, listing on nautical portals, buyer screening, viewings, negotiation and paperwork through to transfer. Fee tied to the sale closing."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Boat search for buyers","description":"Search, screening and assessment of used boats, documentation review, negotiation and support through to purchase. Fee tied to the purchase."}}]},"url":"https://www.platamarine.com/","image":"https://www.platamarine.com/logo-plata-marine.png","telephone":"+34633742973","email":"juan@platamarine.com","address":{"@type":"PostalAddress","streetAddress":"C/ Tetuán 92","postalCode":"08203","addressLocality":"Sabadell","addressRegion":"Barcelona","addressCountry":"ES"},"areaServed":["Barcelona","Maresme","Costa Brava","Costa Daurada","Cataluña"],"founder":{"@type":"Person","name":"Juan Morante","jobTitle":"Yacht broker"},"sameAs":["https://www.platagarage.com"]}
 </script>
 <style>
 @font-face{font-family:"Archivo";src:url(/archivo.woff2) format("woff2-variations");font-weight:100 900;font-stretch:62% 125%;font-style:normal;font-display:swap}
@@ -271,6 +271,7 @@ section[id]{scroll-margin-top:78px}
 @media (min-width:1060px){.boats{grid-template-columns:repeat(3,1fr);gap:26px}.boat.featured .boat-body{padding:24px 22px}.boat.featured .specs{grid-template-columns:1fr 1fr}.boats .boat{display:flex;flex-direction:column}.boats .boat-body{flex:1;display:flex;flex-direction:column}.boats .boat-cta{margin-top:auto;padding-top:14px}}
 .boat{gap:0;background:#fff;border:1px solid rgba(127,146,158,.28);border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 24px rgba(13,28,39,.045)}
 .gal{position:relative;background:var(--paper-2)}
+.img-note{position:absolute;top:14px;right:14px;z-index:2;background:rgba(10,20,30,.78);color:#fff;font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:.03em;padding:5px 9px;border-radius:999px;pointer-events:none}
 .gal .main{border-radius:0;transition:opacity .15s ease}
 .boat-body{padding:24px}
 .boat-status{position:absolute;top:14px;left:14px;z-index:2;background:rgba(14,48,66,.94);color:#fff;border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px);font-family:var(--display);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:7px 9px;border-radius:5px}
@@ -321,7 +322,7 @@ section[id]{scroll-margin-top:78px}
 
 /* V4 — fotografía */
 .hero{background:var(--paper);color:var(--ink);border-bottom:0;min-height:0;display:block}
-.hero-photo{position:relative;width:100%;height:calc(100vh - 70px);min-height:520px;max-height:860px;overflow:hidden;background:var(--sea-deep)}
+.hero-photo{position:relative;width:100%;height:min(calc(100vh - 70px),640px);min-height:500px;max-height:860px;overflow:hidden;background:var(--sea-deep)}
 .hero-photo > img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;display:block}
 .hero-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,48,66,.25) 0%,rgba(14,48,66,.45) 60%,rgba(14,48,66,.7) 100%)}
 .hero-photo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--brass)}
@@ -339,7 +340,7 @@ section[id]{scroll-margin-top:78px}
 .h1-like em{color:var(--sea);font-style:italic;font-family:var(--serif);font-weight:500}
 .wa-float{display:inline-flex!important;width:58px;height:58px;padding:0;gap:0;border-radius:50%;font-size:0;background:#25D366}
 .wa-float::before{content:"";width:30px;height:30px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2z'/%3E%3C/svg%3E") center/contain no-repeat}
-@media (max-width:640px){.hero-photo{height:calc(100svh - 70px);min-height:480px}}
+@media (max-width:640px){.hero-photo{height:min(calc(100svh - 70px),600px);min-height:470px}}
 .hero-below{position:relative;overflow:hidden}.hero-below canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,transparent 30%,#000 90%);mask-image:linear-gradient(to bottom,transparent 30%,#000 90%)}@media (min-width:820px){.hero-below canvas{-webkit-mask-image:linear-gradient(to bottom right,transparent 38%,#000 78%);mask-image:linear-gradient(to bottom right,transparent 38%,#000 78%)}}
 .hero-text{position:relative;padding-top:clamp(36px,5vw,64px);padding-bottom:clamp(40px,6vw,72px)}
 .hero .eyebrow{color:var(--sea)}
@@ -443,7 +444,8 @@ section[id]{scroll-margin-top:78px}
 .langsw{display:flex;gap:6px;align-items:center;font-size:.78rem;font-weight:600}.langsw a{display:inline-flex;align-items:center;padding:3px;border-radius:4px}.langsw a[aria-current="page"]{background:rgba(13,28,39,.08)}.flag{display:block;width:20px;height:14px;border-radius:2px;box-shadow:inset 0 0 0 1px rgba(13,28,39,.18);background-size:cover;background-position:center}.flag-es{background-image:linear-gradient(#AA151B 0 25%,#F1BF00 25% 75%,#AA151B 75% 100%)}.flag-ca{background-image:repeating-linear-gradient(#FFCE00 0 11.11%,#DA121A 11.11% 22.22%)}.flag-en{background-color:#00247D;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 36'%3E%3Cpath d='M0 0L60 36M60 0L0 36' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0L60 36M60 0L0 36' stroke='%23C8102E' stroke-width='2.4'/%3E%3Cpath d='M30 0V36M0 18H60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30 0V36M0 18H60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E")}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .langsw a{padding:3px 7px;border-radius:4px;text-decoration:none;color:var(--ink-2,inherit)}
 .langsw a[aria-current="page"]{color:var(--ink,inherit);text-decoration:underline}
-.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}.hero-photo::before{z-index:1}.hero-photo::after,.hero-title{z-index:2}</style>
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}.hero-photo::before{z-index:1}.hero-photo::after,.hero-title{z-index:2}@media (max-width:639px){.service-img{display:none}.service-card{padding-top:26px;padding-bottom:26px}}
+</style>
 <link rel="stylesheet" href="/nav.css?v=20260925">
 </head>
 <body>
@@ -498,7 +500,7 @@ section[id]{scroll-margin-top:78px}
         <p class="hero-sub">A well-reasoned price, a carefully prepared listing and negotiation through to handover. Motorboats and sailboats, based in Catalonia with deals in the Balearics and other areas.</p>
         <div class="hero-btns">
           <a class="btn btn-pill" href="#valora">I want to sell my boat</a>
-          <a class="btn btn-pill ghost" href="#comprar">I'm looking for a boat</a>
+          <a class="btn btn-pill ghost" href="barcos/">See boats for sale</a>
         </div>
         <p class="hero-micro">Fee only on completion · No exclusivity, no upfront costs</p>
       </div>
@@ -511,18 +513,21 @@ section[id]{scroll-margin-top:78px}
         <img class="service-img" src="https://images.unsplash.com/photo-1587365001066-8263b7061a38?auto=format&fit=crop&w=900&h=506&q=75" alt="Motorboats moored in a Mediterranean marina" loading="lazy" width="900" height="506">
         <p class="service-kicker">Owners</p>
         <h2>I want to sell my boat</h2>
-        <p>Tell me what boat you have and where it is. We review the price and how to approach the sale. If it's a good fit, we agree the work and the fee in writing.</p>
+        <p>Tell me what boat you have and where it is, and I'll tell you what price makes sense and how I'd approach the sale.</p>
         <div class="boat-cta" style="margin-top:20px">
           <a class="btn btn-sea" href="#valora">Tell me about your boat</a>
-          <a class="btn btn-ghost" href="/herramientas/valora-tu-barco.html">Not sure what price to ask? Value it (2 min)</a>
+          <a class="btn btn-ghost" href="/en/herramientas/valora-tu-barco.html">Not sure what price to ask? Value it (2 min)</a>
         </div>
       </article>
       <article class="service-card">
         <img class="service-img" src="https://images.pexels.com/photos/14223217/pexels-photo-14223217.jpeg?auto=compress&cs=tinysrgb&w=900&h=506&fit=crop" alt="Family enjoying a motorboat" loading="lazy" width="900" height="506">
         <p class="service-kicker">Buyers</p>
         <h2>I'm looking for a boat</h2>
-        <p>Tell me how you'll use it and how much you want to spend. I search across Spain and Europe, explain what I find in each one, and support you through to the purchase.</p>
-        <a class="btn btn-ghost" href="#comprar">How it works</a>
+        <p>Have a look at the boats I have for sale right now. If the one you want isn't there, I'll help you find it.</p>
+        <div class="boat-cta" style="margin-top:20px">
+          <a class="btn btn-sea" href="barcos/">See boats for sale</a>
+          <a class="btn btn-ghost" href="#comprar">Can't find yours? I'll help you look</a>
+        </div>
       </article>
     </div>
   </section>
@@ -557,7 +562,7 @@ section[id]{scroll-margin-top:78px}
         </article>
 
         <article class="boat featured" data-pm-boat="sealine-365">
-          <div class="gal" data-imgs="sealine-365-1,sealine-365-2,sealine-365-3,sealine-365-4" data-alt="Sealine 365 · illustrative image (render)" data-href="/en/barcos/sealine-365.html"><span class="boat-status">Available</span></div>
+          <div class="gal" data-imgs="sealine-365-1,sealine-365-2,sealine-365-3,sealine-365-4" data-alt="Sealine 365 · illustrative image (render)" data-note="Illustrative image" data-href="/en/barcos/sealine-365.html"><span class="boat-status">Available</span></div>
           <div class="boat-body">
             <div class="boat-head"><h3><a href="/en/barcos/sealine-365.html" style="color:inherit;text-decoration:none">Sealine 365</a></h3><p class="price">€75,000</p></div>
             <dl class="specs">
@@ -693,8 +698,8 @@ section[id]{scroll-margin-top:78px}
       <div class="buy-grid">
         <div>
           <p class="eyebrow">Looking for a boat</p>
-          <h2>Looking for a boat? Let's find it together.</h2>
-          <p class="intro">First we talk about how you'll use it, your budget and where you'll keep it. Then I search for options, compare price and condition, chase up anything missing before you travel to see it, and support you through the viewing, negotiation and paperwork. If needed, we arrange an independent survey, and for paperwork agents, insurance or a boatyard, I'll tell you who I'd use myself.</p>
+          <h2>Can't find yours? I'll help you look.</h2>
+          <p class="intro">First, take a look at the <a href="barcos/">boats I have for sale</a>. If yours isn't there, tell me how you'll use it, your budget and where you'll keep it: I search across Spain and Europe, check anything missing before you travel and support you through the viewing, negotiation and paperwork.</p>
           <div class="boat-cta" style="margin-top:26px">
             <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hi%20Juan%2C%20I'm%20looking%20for%20a%20boat.%20Type%3A%20%20%7C%20Budget%3A%20%20%7C%20Area%3A%20" target="_blank" rel="noopener">Tell me what you're looking for</a>
             <a class="btn btn-ghost" href="/en/que-barco-necesito.html">Not sure what boat? Take the test (2 min)</a>
@@ -722,14 +727,14 @@ section[id]{scroll-margin-top:78px}
           <p class="eyebrow">Guides</p>
           <h2>What's worth knowing before you buy or sell.</h2>
         </div>
-        <a class="btn btn-ghost" href="/guias/">See all guides</a>
+        <a class="btn btn-ghost" href="/en/guias/">See all guides</a>
       </div>
       <ul class="guias-cards">
-        <li><a href="/guias/impuesto-matriculacion-barcos.html"><img src="https://images.unsplash.com/photo-1626266061368-46a8f578ddd6?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Taxation</span><strong>Registration tax: why 8 metres changes everything</strong><span class="gc-more">Read the guide →</span></span></a></li>
-        <li><a href="/guias/precio-barco-ocasion.html"><img src="https://images.unsplash.com/photo-1604671801989-586dde3c1574?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Price</span><strong>How to price a used boat</strong><span class="gc-more">Read the guide →</span></span></a></li>
-        <li><a href="/guias/que-mirar-comprar-barco-segunda-mano.html"><img src="https://images.unsplash.com/photo-1605050287918-5e2be7797f73?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Buying</span><strong>What to check when buying a used boat from 7 to 12 m</strong><span class="gc-more">Read the guide →</span></span></a></li>
+        <li><a href="/en/guias/impuesto-matriculacion-barcos.html"><img src="https://images.unsplash.com/photo-1626266061368-46a8f578ddd6?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Taxation</span><strong>Registration tax: why 8 metres changes everything</strong><span class="gc-more">Read the guide →</span></span></a></li>
+        <li><a href="/en/guias/precio-barco-ocasion.html"><img src="https://images.unsplash.com/photo-1604671801989-586dde3c1574?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Price</span><strong>How to price a used boat</strong><span class="gc-more">Read the guide →</span></span></a></li>
+        <li><a href="/en/guias/que-mirar-comprar-barco-segunda-mano.html"><img src="https://images.unsplash.com/photo-1605050287918-5e2be7797f73?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Buying</span><strong>What to check when buying a used boat from 7 to 12 m</strong><span class="gc-more">Read the guide →</span></span></a></li>
       </ul>
-      <p class="more-links">Also: <a href="/modelos/">used model listings</a> · <a href="/guias/amarres-cataluna-tipos-precios-alquiler-compra.html">moorings in Catalonia (2026 rates)</a> · <a href="/guias/lista-6-y-lista-7.html">list 6 and list 7</a> · <a href="/guias/papeles-vender-barco-cambio-titularidad.html">paperwork to sell</a> · <a href="/guias/tipos-de-barco-a-motor.html">types of boat</a> · <a href="/guias/bandera-polaca-abanderar-barco-otro-pais.html">foreign flags</a> · <a href="/guias/itb-inspeccion-tecnica-barcos-recreo.html">the ITB (technical inspection)</a> · <a href="/titulaciones/">boating licences and the PER test</a> · <a href="/en/que-barco-necesito.html">test: what boat do I need</a> · <a href="/navegante/">the navigator's guide</a> · <a href="/actualidad/">news</a></p>
+      <p class="more-links">Also: <a href="/en/papeles-fiscalidad/">paperwork and taxes</a> · <a href="/en/guias/amarres-cataluna-tipos-precios-alquiler-compra.html">moorings in Catalonia (2026 rates)</a> · <a href="/en/titulaciones/">boating licences and the PER test</a> · <a href="/en/modelos/">used model listings</a> · <a href="/en/guias/"><strong>all guides</strong></a></p>
     </div>
   </section>
 
@@ -772,12 +777,12 @@ section[id]{scroll-margin-top:78px}
     <div class="legal-links">
       <a href="/aviso-legal.html">Legal notice</a>
       <a href="/privacidad.html">Privacy</a>
-      <a href="/cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Website by rotulito.com</a>
-      <a href="/guias/">Guides</a>
-      <a href="/actualidad/">News</a>
-      <a href="/titulaciones/">Licences</a>
+      <a href="/en/cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Website by rotulito.com</a>
+      <a href="/en/guias/">Guides</a>
+      <a href="/en/actualidad/">News</a>
+      <a href="/en/titulaciones/">Licences</a>
       <a href="/en/que-barco-necesito.html">What boat do I need</a>
-      <a href="/herramientas/valora-tu-barco.html">Value your boat</a>
+      <a href="/en/herramientas/valora-tu-barco.html">Value your boat</a>
       <a href="/en/barcos/">Boats for sale</a>
     </div>
     <div class="line">
@@ -812,13 +817,14 @@ var IMGS={"oceanis-50-1": "/oceanis-50-1.jpg", "oceanis-50-2": "/oceanis-50-2.jp
     var keys=gal.getAttribute('data-imgs').split(',');
     var main=document.createElement('img'); main.className='main'; main.alt=gal.getAttribute('data-alt')||''; main.src=IMGS[keys[0]]||''; main.width=1600; main.height=900; main.setAttribute('loading','lazy');
     var href=gal.getAttribute('data-href');
-    if(href){var mainLink=document.createElement('a'); mainLink.className='main-link'; mainLink.href=href; mainLink.setAttribute('aria-label','Ver ficha completa'); mainLink.appendChild(main); gal.appendChild(mainLink);} else { gal.appendChild(main); }
+    if(href){var mainLink=document.createElement('a'); mainLink.className='main-link'; mainLink.href=href; mainLink.setAttribute('aria-label','View full listing'); mainLink.appendChild(main); gal.appendChild(mainLink);} else { gal.appendChild(main); }
+    var nt=gal.getAttribute('data-note'),ne=null; if(nt){ne=document.createElement('span');ne.className='img-note';ne.textContent=nt;gal.appendChild(ne);}
     if(keys.length<2) return;
     var strip=document.createElement('div'); strip.className='thumbs';
     keys.forEach(function(k,i){
       var b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label','Photo '+(i+1)); if(i===0) b.className='on';
       var im=document.createElement('img'); im.alt=''; im.src=IMGS[k]||''; im.setAttribute('loading','lazy'); b.appendChild(im);
-      b.addEventListener('click',function(){ main.src=IMGS[k]; var on=strip.querySelector('.on'); if(on) on.className=''; b.className='on'; });
+      b.addEventListener('click',function(){ main.src=IMGS[k]; var on=strip.querySelector('.on'); if(on) on.className=''; b.className='on'; if(ne) ne.style.display=i===0?'':'none'; });
       strip.appendChild(b);
     });
     gal.appendChild(strip);
