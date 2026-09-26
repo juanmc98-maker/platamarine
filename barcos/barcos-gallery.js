@@ -11,22 +11,12 @@ if(!L) L = {dlg:'Foto ampliada', close:'Cerrar', prev:'Foto anterior', next:'Fot
 
 var thumbsWrap = document.querySelector('.thumbs');
 var thumbs = thumbsWrap ? Array.prototype.slice.call(thumbsWrap.querySelectorAll('img')) : [];
-var images = thumbs.length ? thumbs.map(function(t){ return { src: t.currentSrc || t.src, alt: t.alt || main.alt, note: t.getAttribute('data-note') || '' }; }) : [{ src: main.src, alt: main.alt, note: main.getAttribute('data-note') || '' }];
-// Aviso visible cuando una imagen es ilustrativa (render), no una foto real
-var galNote = null;
-if(main.parentNode && images.some(function(im){ return im.note; })){
-  galNote = document.createElement('span');
-  galNote.className = 'img-note';
-  main.parentNode.insertBefore(galNote, main.nextSibling);
-}
-function showNote(el, txt){ if(!el) return; el.textContent = txt; el.style.display = txt ? '' : 'none'; }
+var images = thumbs.length ? thumbs.map(function(t){ return { src: t.currentSrc || t.src, alt: t.alt || main.alt }; }) : [{ src: main.src, alt: main.alt }];
 var current = 0;
-if(galNote){ var i0 = thumbs.findIndex ? thumbs.findIndex(function(t){ return t.className === 'on'; }) : 0; showNote(galNote, images[i0 > 0 ? i0 : 0].note); }
 
 function setMain(i){
   current = (i + images.length) % images.length;
   main.src = images[current].src;
-  showNote(galNote, images[current].note);
   thumbs.forEach(function(t, idx){ t.className = idx === current ? 'on' : ''; });
 }
 
@@ -45,7 +35,6 @@ if(images.length){
     '<button type="button" class="lb-close" aria-label="' + L.close + '">&times;</button>' +
     (images.length > 1 ? '<button type="button" class="lb-prev" aria-label="' + L.prev + '">&#8249;</button>' : '') +
     '<img class="lb-img" alt="">' +
-    '<span class="img-note lb-note"></span>' +
     (images.length > 1 ? '<button type="button" class="lb-next" aria-label="' + L.next + '">&#8250;</button>' : '') +
     (images.length > 1 ? '<p class="lb-count"></p>' : '');
   document.body.appendChild(lb);
@@ -55,12 +44,10 @@ if(images.length){
   var lbPrev = lb.querySelector('.lb-prev');
   var lbNext = lb.querySelector('.lb-next');
   var lbClose = lb.querySelector('.lb-close');
-  var lbNote = lb.querySelector('.lb-note');
 
   function updateLb(){
     lbImg.src = images[current].src;
     lbImg.alt = images[current].alt;
-    showNote(lbNote, images[current].note);
     if(lbCount) lbCount.textContent = (current + 1) + ' / ' + images.length;
   }
 
