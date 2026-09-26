@@ -7,6 +7,8 @@ window.submitConfirmed = async function (url, body, encoding) {
     if (encoding === 'json') {
       var attribution = (window.pmAttribution && window.pmAttribution()) || null;
       var payload = attribution ? Object.assign({}, body, {attribution:attribution}) : body;
+      // La hoja de leads interpreta "+34…" como fórmula (#ERROR!): se envía con prefijo 00, mismo número
+      if (payload && typeof payload.telefono === 'string' && /^\s*\+/.test(payload.telefono)) payload = Object.assign({}, payload, {telefono: payload.telefono.replace(/^\s*\+/, '00')});
       options.headers = {'Content-Type':'text/plain;charset=UTF-8'}; options.body = JSON.stringify(payload);
     }
     else options.body = body;

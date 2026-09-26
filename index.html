@@ -271,7 +271,6 @@ section[id]{scroll-margin-top:78px}
 @media (min-width:1060px){.boats{grid-template-columns:repeat(3,1fr);gap:26px}.boat.featured .boat-body{padding:24px 22px}.boat.featured .specs{grid-template-columns:1fr 1fr}.boats .boat{display:flex;flex-direction:column}.boats .boat-body{flex:1;display:flex;flex-direction:column}.boats .boat-cta{margin-top:auto;padding-top:14px}}
 .boat{gap:0;background:#fff;border:1px solid rgba(127,146,158,.28);border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 24px rgba(13,28,39,.045)}
 .gal{position:relative;background:var(--paper-2)}
-.img-note{position:absolute;top:14px;right:14px;z-index:2;background:rgba(10,20,30,.78);color:#fff;font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:.03em;padding:5px 9px;border-radius:999px;pointer-events:none}
 .gal .main{border-radius:0;transition:opacity .15s ease}
 .boat-body{padding:24px}
 .boat-status{position:absolute;top:14px;left:14px;z-index:2;background:rgba(14,48,66,.94);color:#fff;border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px);font-family:var(--display);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:7px 9px;border-radius:5px}
@@ -560,7 +559,7 @@ section[id]{scroll-margin-top:78px}
         </article>
 
         <article class="boat featured" data-pm-boat="sealine-365">
-          <div class="gal" data-imgs="sealine-365-1,sealine-365-2,sealine-365-3,sealine-365-4" data-alt="Sealine 365" data-href="barcos/sealine-365.html"><span class="boat-status">Disponible</span></div>
+          <div class="gal" data-imgs="sealine-365-1,sealine-365-2,sealine-365-3,sealine-365-4" data-alt="Sealine 365 amarrado de popa en puerto al atardecer" data-href="barcos/sealine-365.html"><span class="boat-status">Disponible</span></div>
           <div class="boat-body">
             <div class="boat-head"><h3><a href="barcos/sealine-365.html" style="color:inherit;text-decoration:none">Sealine 365</a></h3><p class="price">75.000 €</p></div>
             <dl class="specs">
@@ -816,13 +815,12 @@ var IMGS={"oceanis-50-1": "oceanis-50-1.jpg", "oceanis-50-2": "oceanis-50-2.jpg"
         var main=document.createElement('img'); main.className='main'; main.alt=gal.getAttribute('data-alt')||''; main.src=IMGS[keys[0]]||''; main.width=1600; main.height=900; main.setAttribute('loading','lazy');
     var href=gal.getAttribute('data-href');
     if(href){var mainLink=document.createElement('a'); mainLink.className='main-link'; mainLink.href=href; mainLink.setAttribute('aria-label','Ver ficha completa'); mainLink.appendChild(main); gal.appendChild(mainLink);} else { gal.appendChild(main); }
-    var nt=gal.getAttribute('data-note'),ne=null; if(nt){ne=document.createElement('span');ne.className='img-note';ne.textContent=nt;gal.appendChild(ne);}
     if(keys.length<2) return;
     var strip=document.createElement('div'); strip.className='thumbs';
     keys.forEach(function(k,i){
       var b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label','Foto '+(i+1)); if(i===0) b.className='on';
       var im=document.createElement('img'); im.alt=''; im.src=IMGS[k]||''; im.setAttribute('loading','lazy'); b.appendChild(im);
-      b.addEventListener('click',function(){ main.src=IMGS[k]; var on=strip.querySelector('.on'); if(on) on.className=''; b.className='on'; if(ne) ne.style.display=i===0?'':'none'; });
+      b.addEventListener('click',function(){ main.src=IMGS[k]; var on=strip.querySelector('.on'); if(on) on.className=''; b.className='on'; });
       strip.appendChild(b);
     });
     gal.appendChild(strip);
