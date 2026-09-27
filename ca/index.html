@@ -679,7 +679,7 @@ section[id]{scroll-margin-top:78px}
           <label for="telefono">Telèfon <i>*</i></label>
           <input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="+34 6xx xxx xxx" maxlength="20" required>
         </div>
-        <p class="form-help">Responsable: Juan Morante Cruz (Plata Marine). Faré servir el teu nom, contacte i dades del vaixell per atendre aquesta consulta i preparar una possible gestió, com a mesures precontractuals. Pots exercir els teus drets a juan@platamarine.com. <a href="/privacidad.html">Política de privacitat</a>. Aquesta consulta no et subscriu a novetats.</p>
+        <p class="form-help">Responsable: Juan Morante Cruz (Plata Marine). Faré servir el teu nom, contacte i dades del vaixell per atendre aquesta consulta i preparar una possible gestió, com a mesures precontractuals. Pots exercir els teus drets a juan@platamarine.com. <a href="/ca/privacidad.html">Política de privacitat</a>. Aquesta consulta no et subscriu a novetats.</p>
         <div class="form-actions">
           <button class="btn btn-wa" type="submit" id="enviarConsulta">Enviar consulta</button>
           <button class="btn btn-ghost" type="button" id="porWhatsapp">O per WhatsApp</button>
@@ -774,8 +774,8 @@ section[id]{scroll-margin-top:78px}
 <footer class="foot">
   <div class="wrap">
     <div class="legal-links">
-      <a href="/aviso-legal.html">Avís legal</a>
-      <a href="/privacidad.html">Privacitat</a>
+      <a href="/ca/aviso-legal.html">Avís legal</a>
+      <a href="/ca/privacidad.html">Privacitat</a>
       <a href="/ca/cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Web per rotulito.com</a>
       <a href="/ca/guias/">Guies</a>
       <a href="/ca/actualidad/">Actualitat</a>
@@ -817,15 +817,15 @@ var IMGS={"oceanis-50-1": "/oceanis-50-1.jpg", "oceanis-50-2": "/oceanis-50-2.jp
   var gals=document.querySelectorAll('.gal[data-imgs]');
   for(var g=0;g<gals.length;g++){(function(gal){
     var keys=gal.getAttribute('data-imgs').split(',');
-    var main=document.createElement('img'); main.className='main'; main.alt=gal.getAttribute('data-alt')||''; main.src=IMGS[keys[0]]||''; main.width=1600; main.height=900; main.setAttribute('loading','lazy');
+    var main=document.createElement('img'); main.className='main'; main.alt=gal.getAttribute('data-alt')||''; main.src=(IMGS[keys[0]]||'').replace(/\.jpg$/,'-m.jpg'); main.width=1600; main.height=900; main.setAttribute('loading','lazy');
     var href=gal.getAttribute('data-href');
     if(href){var mainLink=document.createElement('a'); mainLink.className='main-link'; mainLink.href=href; mainLink.setAttribute('aria-label','Veure la fitxa completa'); mainLink.appendChild(main); gal.appendChild(mainLink);} else { gal.appendChild(main); }
     if(keys.length<2) return;
     var strip=document.createElement('div'); strip.className='thumbs';
     keys.forEach(function(k,i){
       var b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label','Foto '+(i+1)); if(i===0) b.className='on';
-      var im=document.createElement('img'); im.alt=''; im.src=IMGS[k]||''; im.setAttribute('loading','lazy'); b.appendChild(im);
-      b.addEventListener('click',function(){ main.src=IMGS[k]; var on=strip.querySelector('.on'); if(on) on.className=''; b.className='on'; });
+      var im=document.createElement('img'); im.alt=''; im.src=(IMGS[k]||'').replace(/\.jpg$/,'-t.jpg'); im.setAttribute('loading','lazy'); b.appendChild(im);
+      b.addEventListener('click',function(){ main.src=IMGS[k].replace(/\.jpg$/,'-m.jpg'); var on=strip.querySelector('.on'); if(on) on.className=''; b.className='on'; });
       strip.appendChild(b);
     });
     gal.appendChild(strip);
