@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tax calculator for buying a used boat in Spain (ITP and IEDMT)</title>
+<meta name="description" content="Work out the transfer tax (ITP), registration tax (IEDMT) and costs of buying a used boat in Spain, depending on the seller, region, length and flag.">
+<link rel="canonical" href="https://www.platamarine.com/en/herramientas/impuestos-comprar-barco.html">
+<link rel="alternate" hreflang="es" href="https://www.platamarine.com/herramientas/impuestos-comprar-barco.html">
+<link rel="alternate" hreflang="ca" href="https://www.platamarine.com/ca/herramientas/impuestos-comprar-barco.html">
+<link rel="alternate" hreflang="en" href="https://www.platamarine.com/en/herramientas/impuestos-comprar-barco.html">
+<link rel="alternate" hreflang="x-default" href="https://www.platamarine.com/herramientas/impuestos-comprar-barco.html">
+<link rel="icon" type="image/png" href="/logo-plata-marine.png">
+<meta property="og:title" content="Tax calculator for buying a used boat in Spain (ITP and IEDMT)">
+<meta property="og:description" content="Work out the transfer tax (ITP), registration tax (IEDMT) and costs of buying a used boat in Spain, depending on the seller, region, length and flag.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.platamarine.com/en/herramientas/impuestos-comprar-barco.html">
+<meta property="og:image" content="https://www.platamarine.com/logo-plata-marine.png">
+<link rel="stylesheet" href="/guias/guias.css">
+<style>.g-list li a{min-height:0}</style><style>.calc{background:#fff;border:1px solid var(--plata);border-radius:8px;padding:18px 18px 8px;margin:0 0 22px;font-family:var(--display)}
+.calc .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 16px;margin:0 0 12px}
+.calc label{display:block;font-size:13px;color:var(--ink-2);margin:0 0 4px}
+.calc input,.calc select{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--plata);border-radius:6px;font:inherit;font-size:16px;background:#fff;color:inherit}
+.calc .hint{font-size:12px;color:var(--ink-2);margin:4px 0 0}
+.res{background:var(--sea-deep);color:#D5DDE2;border-radius:8px;padding:18px 20px;margin:0 0 22px;font-family:var(--display)}
+.res .big{font-size:1.9rem;color:#fff;font-weight:600;margin:2px 0 4px}
+.res .big small{font-size:.95rem;font-weight:400;color:#D5DDE2}
+.res table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0 0}
+.res td{padding:7px 0;border-top:1px solid rgba(255,255,255,.15)}.res td:last-child{text-align:right;color:#fff;white-space:nowrap;padding-left:12px}
+.res .tot td{font-weight:600;color:#fff}
+.res p{margin:8px 0 0;font-size:13px}
+.note{font-family:var(--display);font-size:12.5px;color:var(--ink-2);margin:0 0 22px}
+.cta2{background:#F3F5F6;padding:18px 20px;border-radius:6px;margin:0 0 22px}.cta2 h3{font-family:var(--display);font-size:1.05rem;margin:0 0 6px}.cta2 p{margin:0 0 12px}.cta2 .btn{margin-right:8px;margin-bottom:8px}
+.g-list li a{min-height:0}
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "What taxes do I pay when buying a used boat in Spain?", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "en", "url": "https://www.platamarine.com/en/herramientas/impuestos-comprar-barco.html", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@type": "Organization", "name": "Plata Marine"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much is the ITP on a boat in Catalonia?", "acceptedAnswer": {"@type": "Answer", "text": "5% of the boat's value, worked out on the purchase price or on the tax office table value if higher. The buyer pays it within 30 working days of the purchase."}}, {"@type": "Question", "name": "Do I pay ITP if I buy from a dealer?", "acceptedAnswer": {"@type": "Answer", "text": "No. If a company sells with an invoice, the sale carries VAT instead of ITP."}}, {"@type": "Question", "name": "When is registration tax paid on a boat in Spain?", "acceptedAnswer": {"@type": "Answer", "text": "Once, when a boat over 8 metres that has not paid it here is registered in Spain, for example one bought in France. It is 12%."}}]}]}
+</script>
+<link rel="stylesheet" href="/nav.css?v=20260925">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/en/" aria-label="Plata Marine, home"><img class="brand-logo" src="/logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
+    <nav class="nav pmx-nav" aria-label="Sections">
+      <a href="/en/barcos/">Boats</a>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM1">Sell</button><div class="pmx-menu" id="pmxM1"><a href="/en/#vender">Sell my boat</a><a href="/en/herramientas/valora-tu-barco.html">How much is my boat worth?</a><a href="/en/papeles-fiscalidad/">Paperwork and taxes</a><a href="/en/guias/que-hace-un-broker-nautico.html">What a boat broker does</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM2">Buy</button><div class="pmx-menu" id="pmxM2"><a href="/en/barcos/">Boats for sale</a><a href="/en/#comprar">I&#x27;m looking for a boat</a><a href="/en/alertas/">Tell me about new boats</a><a href="/en/que-barco-necesito.html">Which boat do I need?</a><a href="/en/modelos/">Models: what to check and prices</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM3">Learn</button><div class="pmx-menu" id="pmxM3"><a href="/en/guias/">Guides</a><a href="/en/actualidad/">News</a><a href="/en/navegante/">Skipper&#x27;s guide</a><a href="/en/titulaciones/">Boating licences</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM4">Services</button><div class="pmx-menu" id="pmxM4"><a href="/en/servicios/">Inspection, paperwork, boatyard and more</a><a href="/en/servicios/directorio.html">Company directory</a></div></div>
+      <a href="/en/#juan">About me</a>
+      <a href="/en/#contacto">Contact</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hi%20Juan%2C%20I%20used%20the%20tax%20calculator%20and%20have%20a%20question%20about%20a%20boat." target="_blank" rel="noopener">Talk to Juan</a><div class="langsw" aria-label="Language"><a href="https://www.platamarine.com/herramientas/impuestos-comprar-barco.html"><span class="flag flag-es" aria-hidden="true"></span><span class="sr-only">ES</span></a><a href="https://www.platamarine.com/ca/herramientas/impuestos-comprar-barco.html"><span class="flag flag-ca" aria-hidden="true"></span><span class="sr-only">CA</span></a><a href="https://www.platamarine.com/en/herramientas/impuestos-comprar-barco.html" aria-current="page"><span class="flag flag-en" aria-hidden="true"></span><span class="sr-only">EN</span></a></div>
+    <button type="button" class="pmx-btn" id="pmxBtn" aria-expanded="false" aria-controls="pmxPanel" aria-label="Open menu" data-open="Open menu" data-close="Close menu"><span></span></button>
+  </div>
+  <nav class="pmx-panel" id="pmxPanel" aria-label="Mobile menu">
+    <div class="pmx-in">
+      <div class="pmx-grp"><a href="/en/barcos/">Boats</a></div>
+      <div class="pmx-grp"><p>Sell</p><a href="/en/#vender">Sell my boat</a><a href="/en/herramientas/valora-tu-barco.html">How much is my boat worth?</a><a href="/en/papeles-fiscalidad/">Paperwork and taxes</a><a href="/en/guias/que-hace-un-broker-nautico.html">What a boat broker does</a></div>
+      <div class="pmx-grp"><p>Buy</p><a href="/en/barcos/">Boats for sale</a><a href="/en/#comprar">I&#x27;m looking for a boat</a><a href="/en/alertas/">Tell me about new boats</a><a href="/en/que-barco-necesito.html">Which boat do I need?</a><a href="/en/modelos/">Models: what to check and prices</a></div>
+      <div class="pmx-grp"><p>Learn</p><a href="/en/guias/">Guides</a><a href="/en/actualidad/">News</a><a href="/en/navegante/">Skipper&#x27;s guide</a><a href="/en/titulaciones/">Boating licences</a></div>
+      <div class="pmx-grp"><p>Services</p><a href="/en/servicios/">Inspection, paperwork, boatyard and more</a><a href="/en/servicios/directorio.html">Company directory</a></div>
+      <div class="pmx-grp"><a href="/en/#juan">About me</a></div>
+      <div class="pmx-grp"><a href="/en/#contacto">Contact</a></div>
+      <div class="pmx-wide"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hi%20Juan%2C%20I%27d%20like%20to%20talk%20about%20a%20boat." target="_blank" rel="noopener">Talk to Juan</a></div>
+    </div>
+  </nav>
+</header>
+
+<main class="art">
+  <div class="wrap">
+    <article>
+      <header>
+        <p class="eyebrow">Tools · Taxes</p>
+        <h1>What taxes do I pay when buying a used boat in Spain?</h1>
+        <div class="meta"><span>By Juan Morante</span><span>Reviewed in September 2026</span></div>
+        <p class="lead">On top of the boat's price come taxes that many people only find out about after signing. Enter the price, who is selling and where the boat comes from, and I will tell you what you have to pay and how much, using the tax base the Spanish tax office applies.</p>
+      </header>
+      <div class="prose">
+        <form class="calc" id="calc" onsubmit="return false" novalidate>
+<div class="row"><div><label for="i_price">Purchase price (€)</label><input id="i_price" type="text" inputmode="numeric" value="60000" autocomplete="off"></div><div><label for="i_seller">Who is selling?</label><select id="i_seller"><option value="p" selected>A private owner (also when a broker is involved)</option><option value="e">A company or dealer issuing an invoice</option></select></div><div><label for="i_reg">Is it registered in Spain?</label><select id="i_reg"><option value="y" selected>Yes, Spanish flag</option><option value="n">No, it comes from another country</option></select></div></div>
+<div class="row"><div><label for="i_len">Length (m)</label><input id="i_len" type="text" inputmode="decimal" value="8.5" autocomplete="off"></div><div><label for="i_ccaa">Region where you live</label><select id="i_ccaa"><option value="5" selected>Catalonia (5%)</option><option value="x">Another region: I will enter the rate</option></select></div><div id="i_rate_w" style="display:none"><div><label for="i_rate">ITP rate in your region (%)</label><input id="i_rate" type="text" inputmode="decimal" value="4" autocomplete="off"><p class=hint>The general rate for movable goods is usually 4%, but some regions charge more for larger boats. Check with your gestoría.</p></div></div></div>
+<div class="row"><div><label for="i_tab">Value per tax office tables (€, optional)</label><input id="i_tab" type="text" inputmode="numeric" value="" autocomplete="off"><p class=hint>If the tax office values the boat above what you pay, the tax is worked out on that value.</p></div><div><label for="i_gest">Gestoría / paperwork agent (€, optional)</label><input id="i_gest" type="text" inputmode="numeric" value="" autocomplete="off"></div></div>
+        </form>
+        <div class="res" id="res" aria-live="polite">
+<p style="margin:0">Taxes to pay</p><p class="big" id="r_tot">–</p><table id="r_tab"></table><p id="r_pct"></p>
+        </div>
+<h2 id="explicacion">The three taxes, in short</h2>
+<ul><li><strong>ITP:</strong> paid by the buyer when buying a boat already registered in Spain from a private owner. It depends on the region where the buyer lives; in Catalonia it is 5% and you have 30 working days to pay it.</li>
+<li><strong>VAT:</strong> only if a company or professional sells with an invoice. In that case there is no ITP.</li>
+<li><strong>IEDMT (registration):</strong> paid once, when a boat over 8 metres is registered in Spain. A boat already under the Spanish flag that paid it back then does not pay it again.</li></ul>
+<p>On top of that comes the Harbour Master fee for the change of ownership (form 790, code 025). Everything is explained in <a href="/en/papeles-fiscalidad/">paperwork and taxes</a> and in the guide to the <a href="/en/guias/impuesto-matriculacion-barcos.html">registration tax</a>.</p>
+<div class="cta2"><h3>Shall I check it for a specific boat?</h3><p>When you buy through me, I review the paperwork and coordinate the ITP and change of ownership with the gestoría.</p><a class="btn btn-wa" href="/en/barcos/">See boats for sale</a><a class="btn btn-ghost" href="/en/herramientas/coste-mantener-barco.html">Work out yearly costs</a></div>
+        <h2 id="faq">Frequently asked questions</h2>
+        <h3>How much is the ITP on a boat in Catalonia?</h3><p>5% of the boat's value, worked out on the purchase price or on the tax office table value if higher. The buyer pays it within 30 working days of the purchase.</p><h3>Do I pay ITP if I buy from a dealer?</h3><p>No. If a company sells with an invoice, the sale carries VAT instead of ITP.</p><h3>When is registration tax paid on a boat in Spain?</h3><p>Once, when a boat over 8 metres that has not paid it here is registered in Spain, for example one bought in France. It is 12%.</p>
+        <p class="aviso">Indicative calculation under the rules in force in September 2026. Rates and tables change and each case may have exemptions or reliefs: check with a gestoría or tax adviser before buying. Plata Marine does not provide tax advice. We do not store what you type.</p>
+      </div>
+    </article>
+    <aside class="aside">
+      <div class="card">
+        <p class="eyebrow">Got a boat in mind?</p>
+        <h3>Let us check the paperwork before you sign.</h3>
+        <p>Send me the listing and I will tell you which taxes and procedures apply.</p>
+        <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hi%20Juan%2C%20I%20used%20the%20tax%20calculator%20and%20have%20a%20question%20about%20a%20boat." target="_blank" rel="noopener">Talk to Juan on WhatsApp</a>
+      </div>
+      <div class="rel">
+        <p class="eyebrow">More tools</p>
+        <a href="/en/herramientas/coste-mantener-barco.html">Yearly cost of keeping a boat</a><a href="/en/herramientas/financiar-barco.html">Finance calculator</a><a href="/en/precios/">Used boat prices</a><a href="/en/herramientas/">All tools</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="line">
+      <span>© 2026 Plata Marine · Sabadell, Barcelona · <a href="mailto:juan@platamarine.com">juan@platamarine.com</a></span>
+      <a href="/aviso-legal.html">Legal notice</a> · <a href="/privacidad.html">Privacy</a> · <a href="/en/cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Website by rotulito.com</a>
+    </div>
+  </div>
+<p class="wrap"><button type="button" data-cookie-settings>Cookie settings</button></p></footer>
+<script src="/nav.js?v=20260925" defer></script>
+<script src="/consent.js" defer></script>
+<script src="/submit-confirmed.js" defer></script>
+<script src="/analytics.js?v=20260925" defer></script>
+<script>
+(function(){var L=document.documentElement.lang||'es';
+window.pmEur=function(n){n=Math.round(n||0);var s=String(Math.abs(n)).replace(/\B(?=(\d{3})+(?!\d))/g,L==='en'?',':'.');return (n<0?'-':'')+(L==='en'?'€'+s:s+' €');};
+window.pmNum=function(el){var v=String(el.value||'').replace(/\s/g,'');if(L==='en'){v=v.replace(/,/g,'');}else{v=v.replace(/\.(?=\d{3}(\D|$))/g,'').replace(',','.');}var n=parseFloat(v);return isFinite(n)?n:0;};
+window.pmTool=function(name){if(window.__pmt)return;window.__pmt=1;try{window.pmTrack&&window.pmTrack('tool_use',{tool:name});}catch(e){}};
+})();
+</script><script>
+(function(){var R={"title": "Taxes to pay", "itp": "ITP (transfer tax)", "iva": "VAT", "ivan": "included in the invoice", "iedmt": "Registration tax (IEDMT, 12%)", "gest": "Paperwork agent", "tot": "Total taxes and costs", "all": "Total cost of the purchase", "base": "Tax base used: {b}.", "emp": "If a company is selling, you do not pay ITP: the sale carries VAT, normally already included in the price. Ask for the invoice.", "noi": "At 8 metres or less, or if it is already registered in Spain, there is no registration tax.", "imp": "When a boat over 8 metres that has not paid this tax here is registered in Spain, 12% is due. There are exemptions (for example, charter) worth checking with the gestoría."};var $=function(i){return document.getElementById(i)};
+function calc(){var p=pmNum($('i_price')),tab=pmNum($('i_tab')),len=pmNum($('i_len')),g=pmNum($('i_gest')),s=$('i_seller').value,reg=$('i_reg').value,c=$('i_ccaa').value;
+$('i_rate_w').style.display=c==='x'?'':'none';var rate=c==='x'?pmNum($('i_rate')):5;
+var base=Math.max(p,tab);var itp=s==='p'?base*rate/100:0;var ied=(reg==='n'&&len>8)?base*0.12:0;var tot=itp+ied+g;
+var rows=[];if(s==='p')rows.push([R.itp+' ('+String(rate).replace('.',document.documentElement.lang==='en'?'.':',')+' %)',pmEur(itp)]);else rows.push([R.iva,R.ivan]);
+rows.push([R.iedmt,pmEur(ied)]);if(g>0)rows.push([R.gest,pmEur(g)]);
+$('r_tot').innerHTML=pmEur(tot);
+$('r_tab').innerHTML=rows.map(function(r){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>'}).join('')+'<tr class="tot"><td>'+R.tot+'</td><td>'+pmEur(tot)+'</td></tr><tr class="tot"><td>'+R.all+'</td><td>'+pmEur(p+tot)+'</td></tr>';
+var n=[R.base.replace('{b}',pmEur(base))];if(s==='e')n.push(R.emp);n.push(ied>0?R.imp:R.noi);$('r_pct').textContent=n.join(' ');}
+document.getElementById('calc').addEventListener('input',function(){pmTool('impuestos');calc()});document.getElementById('calc').addEventListener('change',calc);calc();})();
+</script>
+</body>
+</html>
