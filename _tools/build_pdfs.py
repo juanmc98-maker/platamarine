@@ -58,7 +58,7 @@ def parse(slug, lang):
     prose = re.search(r'<div class="prose">(.*?)</div>', t, re.S).group(1)
     h2 = strip(re.search(r'<h2>(.*?)</h2>', prose, re.S).group(1))
     paras = [p for p in re.findall(r'<p>(.*?)</p>', prose, re.S)]
-    thumbs = re.findall(r'<img src="/([a-z0-9-]+-\d+\.jpg)"', re.search(r'<div class="gal">(.*?)</div>\s*</div>', t, re.S).group(1))
+    thumbs = re.findall(r'data-full="/([a-z0-9-]+-\d+\.jpg)"', re.search(r'<div class="gal">(.*?)</div>\s*</div>', t, re.S).group(1))
     seen = []
     for x in thumbs:
         if x not in seen: seen.append(x)
