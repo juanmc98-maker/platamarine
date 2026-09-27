@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora: cuánto cuesta mantener un barco al año</title>
+<meta name="description" content="Calcula el coste anual de tener un barco: amarre, seguro, motor, varada, ITB y combustible según eslora, motor, uso y puerto. Gratis y sin registro.">
+<link rel="canonical" href="https://www.platamarine.com/herramientas/coste-mantener-barco.html">
+<link rel="alternate" hreflang="es" href="https://www.platamarine.com/herramientas/coste-mantener-barco.html">
+<link rel="alternate" hreflang="ca" href="https://www.platamarine.com/ca/herramientas/coste-mantener-barco.html">
+<link rel="alternate" hreflang="en" href="https://www.platamarine.com/en/herramientas/coste-mantener-barco.html">
+<link rel="alternate" hreflang="x-default" href="https://www.platamarine.com/herramientas/coste-mantener-barco.html">
+<link rel="icon" type="image/png" href="../logo-plata-marine.png">
+<meta property="og:title" content="Calculadora: cuánto cuesta mantener un barco al año">
+<meta property="og:description" content="Calcula el coste anual de tener un barco: amarre, seguro, motor, varada, ITB y combustible según eslora, motor, uso y puerto. Gratis y sin registro.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.platamarine.com/herramientas/coste-mantener-barco.html">
+<meta property="og:image" content="https://www.platamarine.com/logo-plata-marine.png">
+<link rel="stylesheet" href="../guias/guias.css">
+<style>.g-list li a{min-height:0}</style><style>.calc{background:#fff;border:1px solid var(--plata);border-radius:8px;padding:18px 18px 8px;margin:0 0 22px;font-family:var(--display)}
+.calc .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 16px;margin:0 0 12px}
+.calc label{display:block;font-size:13px;color:var(--ink-2);margin:0 0 4px}
+.calc input,.calc select{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--plata);border-radius:6px;font:inherit;font-size:16px;background:#fff;color:inherit}
+.calc .hint{font-size:12px;color:var(--ink-2);margin:4px 0 0}
+.res{background:var(--sea-deep);color:#D5DDE2;border-radius:8px;padding:18px 20px;margin:0 0 22px;font-family:var(--display)}
+.res .big{font-size:1.9rem;color:#fff;font-weight:600;margin:2px 0 4px}
+.res .big small{font-size:.95rem;font-weight:400;color:#D5DDE2}
+.res table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0 0}
+.res td{padding:7px 0;border-top:1px solid rgba(255,255,255,.15)}.res td:last-child{text-align:right;color:#fff;white-space:nowrap;padding-left:12px}
+.res .tot td{font-weight:600;color:#fff}
+.res p{margin:8px 0 0;font-size:13px}
+.note{font-family:var(--display);font-size:12.5px;color:var(--ink-2);margin:0 0 22px}
+.cta2{background:#F3F5F6;padding:18px 20px;border-radius:6px;margin:0 0 22px}.cta2 h3{font-family:var(--display);font-size:1.05rem;margin:0 0 6px}.cta2 p{margin:0 0 12px}.cta2 .btn{margin-right:8px;margin-bottom:8px}
+.g-list li a{min-height:0}
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "¿Cuánto cuesta mantener un barco al año?", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "es", "url": "https://www.platamarine.com/herramientas/coste-mantener-barco.html", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@type": "Organization", "name": "Plata Marine"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuánto cuesta mantener un barco de 7 metros al año?", "acceptedAnswer": {"@type": "Answer", "text": "Con amarre en un puerto medio de la costa catalana y unas 60 horas de navegación, un barco de 7 metros con fueraborda suele salir entre 7.000 y 9.000 € al año, de los que el amarre es casi la mitad. Sin amarre (en marina seca o con remolque) baja mucho."}}, {"@type": "Question", "name": "¿Qué es lo más caro de tener un barco?", "acceptedAnswer": {"@type": "Answer", "text": "Casi siempre el amarre, porque se paga los doce meses. Después, según cuánto navegues, el combustible."}}, {"@type": "Question", "name": "¿Es fiable esta calculadora?", "acceptedAnswer": {"@type": "Answer", "text": "Da un orden de magnitud realista para decidir antes de comprar. El coste real depende del puerto, del estado del barco y de cómo lo uses: para un caso concreto, mejor hablarlo."}}]}]}
+</script>
+<link rel="stylesheet" href="/nav.css?v=20260925">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="Plata Marine, inicio"><img class="brand-logo" src="../logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
+    <nav class="nav pmx-nav" aria-label="Secciones">
+      <a href="/barcos/">Barcos</a>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM1">Vender</button><div class="pmx-menu" id="pmxM1"><a href="/#vender">Vender mi barco</a><a href="/herramientas/valora-tu-barco.html">¿Cuánto vale mi barco?</a><a href="/papeles-fiscalidad/">Papeles e impuestos</a><a href="/guias/que-hace-un-broker-nautico.html">Qué hace un bróker náutico</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM2">Comprar</button><div class="pmx-menu" id="pmxM2"><a href="/barcos/">Barcos en venta</a><a href="/#comprar">Busco barco</a><a href="/alertas/">Avísame de barcos nuevos</a><a href="/que-barco-necesito.html">¿Qué barco necesito?</a><a href="/modelos/">Modelos: qué mirar y precios</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM3">Aprende</button><div class="pmx-menu" id="pmxM3"><a href="/guias/">Guías</a><a href="/actualidad/">Actualidad</a><a href="/navegante/">Guía del navegante</a><a href="/titulaciones/">Titulaciones</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM4">Servicios</button><div class="pmx-menu" id="pmxM4"><a href="/servicios/">ITB, gestoría, varadero y más</a><a href="/servicios/directorio.html">Directorio de empresas</a></div></div>
+      <a href="/#juan">Sobre mí</a>
+      <a href="/#contacto">Contacto</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20he%20usado%20la%20calculadora%20de%20costes%20y%20quer%C3%ADa%20afinar%20el%20presupuesto." target="_blank" rel="noopener">Hablar con Juan</a><div class="langsw" aria-label="Idioma"><a href="https://www.platamarine.com/herramientas/coste-mantener-barco.html" aria-current="page"><span class="flag flag-es" aria-hidden="true"></span><span class="sr-only">ES</span></a><a href="https://www.platamarine.com/ca/herramientas/coste-mantener-barco.html"><span class="flag flag-ca" aria-hidden="true"></span><span class="sr-only">CA</span></a><a href="https://www.platamarine.com/en/herramientas/coste-mantener-barco.html"><span class="flag flag-en" aria-hidden="true"></span><span class="sr-only">EN</span></a></div>
+    <button type="button" class="pmx-btn" id="pmxBtn" aria-expanded="false" aria-controls="pmxPanel" aria-label="Abrir menú" data-open="Abrir menú" data-close="Cerrar menú"><span></span></button>
+  </div>
+  <nav class="pmx-panel" id="pmxPanel" aria-label="Menú móvil">
+    <div class="pmx-in">
+      <div class="pmx-grp"><a href="/barcos/">Barcos</a></div>
+      <div class="pmx-grp"><p>Vender</p><a href="/#vender">Vender mi barco</a><a href="/herramientas/valora-tu-barco.html">¿Cuánto vale mi barco?</a><a href="/papeles-fiscalidad/">Papeles e impuestos</a><a href="/guias/que-hace-un-broker-nautico.html">Qué hace un bróker náutico</a></div>
+      <div class="pmx-grp"><p>Comprar</p><a href="/barcos/">Barcos en venta</a><a href="/#comprar">Busco barco</a><a href="/alertas/">Avísame de barcos nuevos</a><a href="/que-barco-necesito.html">¿Qué barco necesito?</a><a href="/modelos/">Modelos: qué mirar y precios</a></div>
+      <div class="pmx-grp"><p>Aprende</p><a href="/guias/">Guías</a><a href="/actualidad/">Actualidad</a><a href="/navegante/">Guía del navegante</a><a href="/titulaciones/">Titulaciones</a></div>
+      <div class="pmx-grp"><p>Servicios</p><a href="/servicios/">ITB, gestoría, varadero y más</a><a href="/servicios/directorio.html">Directorio de empresas</a></div>
+      <div class="pmx-grp"><a href="/#juan">Sobre mí</a></div>
+      <div class="pmx-grp"><a href="/#contacto">Contacto</a></div>
+      <div class="pmx-wide"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20hablar%20sobre%20un%20barco." target="_blank" rel="noopener">Hablar con Juan</a></div>
+    </div>
+  </nav>
+</header>
+
+<main class="art">
+  <div class="wrap">
+    <article>
+      <header>
+        <p class="eyebrow">Herramientas · Presupuesto</p>
+        <h1>¿Cuánto cuesta mantener un barco al año?</h1>
+        <div class="meta"><span>Por Juan Morante</span><span>Cifras revisadas en septiembre de 2026</span></div>
+        <p class="lead">Pon la eslora, el motor, cuánto vas a navegar y dónde lo tendrías, y te sale un presupuesto anual desglosado. Son los mismos números que uso cuando alguien me pregunta antes de comprar su primer barco: orientativos, pero sin optimismo.</p>
+      </header>
+      <div class="prose">
+        <form class="calc" id="calc" onsubmit="return false" novalidate>
+<div class="row"><div><label for="c_len">Eslora (m)</label><input id="c_len" type="text" inputmode="decimal" value="7,5" autocomplete="off"></div><div><label for="c_eng">Motor</label><select id="c_eng"><option value="fb" selected>Fueraborda de gasolina</option><option value="ig">Intraborda o cola de gasolina</option><option value="id">Intraborda o cola diésel</option><option value="sv">Velero con motor diésel</option></select></div><div><label for="c_hp">Potencia total (CV)</label><input id="c_hp" type="text" inputmode="numeric" value="150" autocomplete="off"><p class=hint>Si son dos motores, súmalos.</p></div></div>
+<div class="row"><div><label for="c_hrs">Horas de navegación al año</label><input id="c_hrs" type="text" inputmode="numeric" value="60" autocomplete="off"><p class=hint>Un fin de semana de verano son unas 6-8 horas.</p></div><div><label for="c_fuel">Precio del combustible (€/l)</label><input id="c_fuel" type="text" inputmode="decimal" value="1,80" autocomplete="off"><p class=hint>En gasolinera de puerto.</p></div><div><label for="c_val">Valor del barco (€)</label><input id="c_val" type="text" inputmode="numeric" value="45000" autocomplete="off"><p class=hint>Para calcular el seguro.</p></div></div>
+<div class="row"><div><label for="c_moor">Amarre</label><select id="c_moor"><option value="400">Puerto económico o concesión (≈ 400 €/m al año)</option><option value="600" selected>Puerto medio (≈ 600 €/m al año)</option><option value="950">Puerto caro, zona Barcelona o Costa Brava en alquiler (≈ 950 €/m al año)</option><option value="300">Marina seca (≈ 300 €/m al año)</option><option value="0">En casa, con remolque</option><option value="x">Sé lo que pago: lo escribo</option></select></div><div id="c_moorx_w" style="display:none"><div><label for="c_moorx">Amarre al año (€)</label><input id="c_moorx" type="text" inputmode="numeric" value="4000" autocomplete="off"></div></div></div>
+        </form>
+        <div class="res" id="res" aria-live="polite">
+<p style="margin:0">Coste anual orientativo</p><p class="big" id="r_tot">–</p><table id="r_tab"></table><p id="r_pct"></p>
+        </div>
+<h2 id="como">Cómo se calcula cada línea</h2>
+<ul><li><strong>Amarre:</strong> eslora por una tarifa media anual por metro. Tienes las tarifas reales de 19 puertos en la <a href="/guias/amarres-cataluna-tipos-precios-alquiler-compra.html">guía de amarres de Cataluña</a>.</li>
+<li><strong>Seguro:</strong> todo riesgo, alrededor del 0,7 % del valor del barco con un mínimo de 200 €. Solo con la responsabilidad civil obligatoria sale mucho más barato.</li>
+<li><strong>Motor:</strong> revisión anual según tipo y potencia; un diésel con muchas horas puede costar más.</li>
+<li><strong>Varada:</strong> una salida al año con limpieza y antifouling, unos 70 € por metro. En marina seca o con remolque no hace falta antifouling.</li>
+<li><strong>ITB:</strong> solo a partir de 6 metros; se reparte el coste de la inspección entre los 5 años.</li>
+<li><strong>Combustible:</strong> consumo medio a crucero según motor y potencia, por las horas que navegas. En un velero se cuenta el motor solo una parte del tiempo.</li></ul>
+<p>El desglose con más contexto está en la guía <a href="/guias/cuanto-cuesta-mantener-un-barco-cataluna.html">cuánto cuesta mantener un barco en Cataluña</a>.</p>
+<div class="cta2"><h3>¿Aún no tienes barco?</h3><p>Mira qué hay ahora en venta o dime qué buscas y te aviso cuando entre algo que encaje.</p><a class="btn btn-wa" href="/barcos/">Ver barcos en venta</a><a class="btn btn-ghost" href="/alertas/">Crear alerta</a></div>
+        <h2 id="faq">Preguntas frecuentes</h2>
+        <h3>¿Cuánto cuesta mantener un barco de 7 metros al año?</h3><p>Con amarre en un puerto medio de la costa catalana y unas 60 horas de navegación, un barco de 7 metros con fueraborda suele salir entre 7.000 y 9.000 € al año, de los que el amarre es casi la mitad. Sin amarre (en marina seca o con remolque) baja mucho.</p><h3>¿Qué es lo más caro de tener un barco?</h3><p>Casi siempre el amarre, porque se paga los doce meses. Después, según cuánto navegues, el combustible.</p><h3>¿Es fiable esta calculadora?</h3><p>Da un orden de magnitud realista para decidir antes de comprar. El coste real depende del puerto, del estado del barco y de cómo lo uses: para un caso concreto, mejor hablarlo.</p>
+        <p class="aviso">Cálculo orientativo con precios medios de septiembre de 2026 (tarifas públicas de puertos, aseguradoras y varaderos). No es un presupuesto ni una oferta. No guardamos los datos que escribes.</p>
+      </div>
+    </article>
+    <aside class="aside">
+      <div class="card">
+        <p class="eyebrow">¿Lo afinamos?</p>
+        <h3>Te ayudo con el presupuesto real.</h3>
+        <p>Dime la eslora, el motor y dónde lo tendrías amarrado y lo repasamos juntos.</p>
+        <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20he%20usado%20la%20calculadora%20de%20costes%20y%20quer%C3%ADa%20afinar%20el%20presupuesto." target="_blank" rel="noopener">Hablar con Juan por WhatsApp</a>
+      </div>
+      <div class="rel">
+        <p class="eyebrow">Más herramientas</p>
+        <a href="/herramientas/impuestos-comprar-barco.html">Impuestos al comprar un barco</a><a href="/herramientas/financiar-barco.html">Simulador de financiación</a><a href="/precios/">Precios de barcos de ocasión</a><a href="/herramientas/">Todas las herramientas</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="line">
+      <span>© 2026 Plata Marine · Sabadell, Barcelona · <a href="mailto:juan@platamarine.com">juan@platamarine.com</a></span>
+      <a href="../aviso-legal.html">Aviso legal</a> · <a href="../privacidad.html">Privacidad</a> · <a href="../cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Web por rotulito.com</a>
+    </div>
+  </div>
+<p class="wrap"><button type="button" data-cookie-settings>Configurar cookies</button></p></footer>
+<script src="/nav.js?v=20260925" defer></script>
+<script src="/consent.js" defer></script>
+<script src="/submit-confirmed.js" defer></script>
+<script src="/analytics.js?v=20260925" defer></script>
+<script>
+(function(){var L=document.documentElement.lang||'es';
+window.pmEur=function(n){n=Math.round(n||0);var s=String(Math.abs(n)).replace(/\B(?=(\d{3})+(?!\d))/g,L==='en'?',':'.');return (n<0?'-':'')+(L==='en'?'€'+s:s+' €');};
+window.pmNum=function(el){var v=String(el.value||'').replace(/\s/g,'');if(L==='en'){v=v.replace(/,/g,'');}else{v=v.replace(/\.(?=\d{3}(\D|$))/g,'').replace(',','.');}var n=parseFloat(v);return isFinite(n)?n:0;};
+window.pmTool=function(name){if(window.__pmt)return;window.__pmt=1;try{window.pmTrack&&window.pmTrack('tool_use',{tool:name});}catch(e){}};
+})();
+</script><script>
+(function(){var R={"title": "Coste anual orientativo", "month": "al mes", "moor": "Amarre", "ins": "Seguro (todo riesgo)", "eng": "Mantenimiento del motor", "hull": "Varada, limpieza y antifouling", "itb": "ITB (prorrateada)", "misc": "Ánodos, baterías y pequeños extras", "fuel": "Combustible", "tot": "Total al año", "pct": "Es un {p} % del valor del barco al año.", "nofuel": "Sin combustible:"};var $=function(i){return document.getElementById(i)};
+function calc(){var len=pmNum($('c_len')),eng=$('c_eng').value,hp=pmNum($('c_hp')),hrs=pmNum($('c_hrs')),fp=pmNum($('c_fuel')),val=pmNum($('c_val')),m=$('c_moor').value;
+$('c_moorx_w').style.display=m==='x'?'':'none';
+var moor=m==='x'?pmNum($('c_moorx')):len*(+m);var dry=(m==='0'||m==='300');
+var ins=val>0?Math.max(200,val*0.007):0;
+var engc={fb:250+1.0*hp,ig:350+1.2*hp,id:400+1.5*hp,sv:350+2*hp}[eng];
+var hull=len*(dry?30:70);var itb=len<6?0:(len<=12?80:120);var misc=150+10*len;
+var f={fb:0.17,ig:0.2,id:0.1,sv:0.1*0.3}[eng];var fuel=hp*f*hrs*fp;
+var tot=moor+ins+engc+hull+itb+misc+fuel;
+var rows=[[R.moor,moor],[R.ins,ins],[R.eng,engc],[R.hull,hull],[R.itb,itb],[R.misc,misc],[R.fuel,fuel]];
+$('r_tot').innerHTML=pmEur(tot)+' <small>· '+pmEur(tot/12)+' '+R.month+'</small>';
+$('r_tab').innerHTML=rows.map(function(r){return '<tr><td>'+r[0]+'</td><td>'+pmEur(r[1])+'</td></tr>'}).join('')+'<tr class="tot"><td>'+R.tot+'</td><td>'+pmEur(tot)+'</td></tr>';
+$('r_pct').textContent=(val>0?R.pct.replace('{p}',(tot/val*100).toFixed(1).replace('.',document.documentElement.lang==='en'?'.':',')):'')+' '+R.nofuel+' '+pmEur(tot-fuel)+'.';}
+var fuelTouched=false;$('c_fuel').addEventListener('input',function(){fuelTouched=true});
+$('c_eng').addEventListener('change',function(){if(!fuelTouched){var d=this.value==='fb'||this.value==='ig';$('c_fuel').value=d?'1,80':'1,60';}});
+document.getElementById('calc').addEventListener('input',function(){pmTool('coste');calc()});document.getElementById('calc').addEventListener('change',calc);calc();})();
+</script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de impuestos al comprar un barco de segunda mano (ITP e IEDMT)</title>
+<meta name="description" content="Calcula cuánto pagarás de ITP, impuesto de matriculación (IEDMT) y gastos al comprar un barco usado en España, según vendedor, comunidad, eslora y bandera.">
+<link rel="canonical" href="https://www.platamarine.com/herramientas/impuestos-comprar-barco.html">
+<link rel="alternate" hreflang="es" href="https://www.platamarine.com/herramientas/impuestos-comprar-barco.html">
+<link rel="alternate" hreflang="ca" href="https://www.platamarine.com/ca/herramientas/impuestos-comprar-barco.html">
+<link rel="alternate" hreflang="en" href="https://www.platamarine.com/en/herramientas/impuestos-comprar-barco.html">
+<link rel="alternate" hreflang="x-default" href="https://www.platamarine.com/herramientas/impuestos-comprar-barco.html">
+<link rel="icon" type="image/png" href="../logo-plata-marine.png">
+<meta property="og:title" content="Calculadora de impuestos al comprar un barco de segunda mano (ITP e IEDMT)">
+<meta property="og:description" content="Calcula cuánto pagarás de ITP, impuesto de matriculación (IEDMT) y gastos al comprar un barco usado en España, según vendedor, comunidad, eslora y bandera.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.platamarine.com/herramientas/impuestos-comprar-barco.html">
+<meta property="og:image" content="https://www.platamarine.com/logo-plata-marine.png">
+<link rel="stylesheet" href="../guias/guias.css">
+<style>.g-list li a{min-height:0}</style><style>.calc{background:#fff;border:1px solid var(--plata);border-radius:8px;padding:18px 18px 8px;margin:0 0 22px;font-family:var(--display)}
+.calc .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 16px;margin:0 0 12px}
+.calc label{display:block;font-size:13px;color:var(--ink-2);margin:0 0 4px}
+.calc input,.calc select{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--plata);border-radius:6px;font:inherit;font-size:16px;background:#fff;color:inherit}
+.calc .hint{font-size:12px;color:var(--ink-2);margin:4px 0 0}
+.res{background:var(--sea-deep);color:#D5DDE2;border-radius:8px;padding:18px 20px;margin:0 0 22px;font-family:var(--display)}
+.res .big{font-size:1.9rem;color:#fff;font-weight:600;margin:2px 0 4px}
+.res .big small{font-size:.95rem;font-weight:400;color:#D5DDE2}
+.res table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0 0}
+.res td{padding:7px 0;border-top:1px solid rgba(255,255,255,.15)}.res td:last-child{text-align:right;color:#fff;white-space:nowrap;padding-left:12px}
+.res .tot td{font-weight:600;color:#fff}
+.res p{margin:8px 0 0;font-size:13px}
+.note{font-family:var(--display);font-size:12.5px;color:var(--ink-2);margin:0 0 22px}
+.cta2{background:#F3F5F6;padding:18px 20px;border-radius:6px;margin:0 0 22px}.cta2 h3{font-family:var(--display);font-size:1.05rem;margin:0 0 6px}.cta2 p{margin:0 0 12px}.cta2 .btn{margin-right:8px;margin-bottom:8px}
+.g-list li a{min-height:0}
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "¿Qué impuestos pago al comprar un barco de segunda mano?", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "es", "url": "https://www.platamarine.com/herramientas/impuestos-comprar-barco.html", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@type": "Organization", "name": "Plata Marine"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuánto es el ITP de un barco en Cataluña?", "acceptedAnswer": {"@type": "Answer", "text": "El 5 % del valor del barco, calculado sobre el precio de compra o sobre el valor de las tablas de Hacienda si es mayor. Lo paga el comprador en los 30 días hábiles siguientes a la compra."}}, {"@type": "Question", "name": "¿Pago ITP si compro el barco a una náutica?", "acceptedAnswer": {"@type": "Answer", "text": "No. Si vende una empresa con factura, la operación lleva IVA en lugar de ITP."}}, {"@type": "Question", "name": "¿Cuándo se paga el impuesto de matriculación de un barco?", "acceptedAnswer": {"@type": "Answer", "text": "Una sola vez, al matricular en España un barco de más de 8 metros que no lo ha pagado aquí, por ejemplo uno comprado en Francia. Es el 12 %."}}]}]}
+</script>
+<link rel="stylesheet" href="/nav.css?v=20260925">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="Plata Marine, inicio"><img class="brand-logo" src="../logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
+    <nav class="nav pmx-nav" aria-label="Secciones">
+      <a href="/barcos/">Barcos</a>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM1">Vender</button><div class="pmx-menu" id="pmxM1"><a href="/#vender">Vender mi barco</a><a href="/herramientas/valora-tu-barco.html">¿Cuánto vale mi barco?</a><a href="/papeles-fiscalidad/">Papeles e impuestos</a><a href="/guias/que-hace-un-broker-nautico.html">Qué hace un bróker náutico</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM2">Comprar</button><div class="pmx-menu" id="pmxM2"><a href="/barcos/">Barcos en venta</a><a href="/#comprar">Busco barco</a><a href="/alertas/">Avísame de barcos nuevos</a><a href="/que-barco-necesito.html">¿Qué barco necesito?</a><a href="/modelos/">Modelos: qué mirar y precios</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM3">Aprende</button><div class="pmx-menu" id="pmxM3"><a href="/guias/">Guías</a><a href="/actualidad/">Actualidad</a><a href="/navegante/">Guía del navegante</a><a href="/titulaciones/">Titulaciones</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM4">Servicios</button><div class="pmx-menu" id="pmxM4"><a href="/servicios/">ITB, gestoría, varadero y más</a><a href="/servicios/directorio.html">Directorio de empresas</a></div></div>
+      <a href="/#juan">Sobre mí</a>
+      <a href="/#contacto">Contacto</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20he%20usado%20la%20calculadora%20de%20impuestos%20y%20tengo%20una%20duda%20sobre%20un%20barco." target="_blank" rel="noopener">Hablar con Juan</a><div class="langsw" aria-label="Idioma"><a href="https://www.platamarine.com/herramientas/impuestos-comprar-barco.html" aria-current="page"><span class="flag flag-es" aria-hidden="true"></span><span class="sr-only">ES</span></a><a href="https://www.platamarine.com/ca/herramientas/impuestos-comprar-barco.html"><span class="flag flag-ca" aria-hidden="true"></span><span class="sr-only">CA</span></a><a href="https://www.platamarine.com/en/herramientas/impuestos-comprar-barco.html"><span class="flag flag-en" aria-hidden="true"></span><span class="sr-only">EN</span></a></div>
+    <button type="button" class="pmx-btn" id="pmxBtn" aria-expanded="false" aria-controls="pmxPanel" aria-label="Abrir menú" data-open="Abrir menú" data-close="Cerrar menú"><span></span></button>
+  </div>
+  <nav class="pmx-panel" id="pmxPanel" aria-label="Menú móvil">
+    <div class="pmx-in">
+      <div class="pmx-grp"><a href="/barcos/">Barcos</a></div>
+      <div class="pmx-grp"><p>Vender</p><a href="/#vender">Vender mi barco</a><a href="/herramientas/valora-tu-barco.html">¿Cuánto vale mi barco?</a><a href="/papeles-fiscalidad/">Papeles e impuestos</a><a href="/guias/que-hace-un-broker-nautico.html">Qué hace un bróker náutico</a></div>
+      <div class="pmx-grp"><p>Comprar</p><a href="/barcos/">Barcos en venta</a><a href="/#comprar">Busco barco</a><a href="/alertas/">Avísame de barcos nuevos</a><a href="/que-barco-necesito.html">¿Qué barco necesito?</a><a href="/modelos/">Modelos: qué mirar y precios</a></div>
+      <div class="pmx-grp"><p>Aprende</p><a href="/guias/">Guías</a><a href="/actualidad/">Actualidad</a><a href="/navegante/">Guía del navegante</a><a href="/titulaciones/">Titulaciones</a></div>
+      <div class="pmx-grp"><p>Servicios</p><a href="/servicios/">ITB, gestoría, varadero y más</a><a href="/servicios/directorio.html">Directorio de empresas</a></div>
+      <div class="pmx-grp"><a href="/#juan">Sobre mí</a></div>
+      <div class="pmx-grp"><a href="/#contacto">Contacto</a></div>
+      <div class="pmx-wide"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20hablar%20sobre%20un%20barco." target="_blank" rel="noopener">Hablar con Juan</a></div>
+    </div>
+  </nav>
+</header>
+
+<main class="art">
+  <div class="wrap">
+    <article>
+      <header>
+        <p class="eyebrow">Herramientas · Impuestos</p>
+        <h1>¿Qué impuestos pago al comprar un barco de segunda mano?</h1>
+        <div class="meta"><span>Por Juan Morante</span><span>Revisado en septiembre de 2026</span></div>
+        <p class="lead">Al precio del barco hay que sumarle impuestos que mucha gente descubre después de firmar. Pon el precio, quién vende y de dónde viene el barco y te digo qué toca pagar y cuánto, con la base que usa Hacienda.</p>
+      </header>
+      <div class="prose">
+        <form class="calc" id="calc" onsubmit="return false" novalidate>
+<div class="row"><div><label for="i_price">Precio de compra (€)</label><input id="i_price" type="text" inputmode="numeric" value="60000" autocomplete="off"></div><div><label for="i_seller">¿Quién vende?</label><select id="i_seller"><option value="p" selected>Un particular (también si hay un bróker de por medio)</option><option value="e">Una empresa o náutica con factura</option></select></div><div><label for="i_reg">¿Está matriculado en España?</label><select id="i_reg"><option value="y" selected>Sí, con bandera española</option><option value="n">No, viene de otro país</option></select></div></div>
+<div class="row"><div><label for="i_len">Eslora (m)</label><input id="i_len" type="text" inputmode="decimal" value="8,5" autocomplete="off"></div><div><label for="i_ccaa">Comunidad donde vives</label><select id="i_ccaa"><option value="5" selected>Cataluña (5 %)</option><option value="x">Otra comunidad: pongo el tipo</option></select></div><div id="i_rate_w" style="display:none"><div><label for="i_rate">Tipo de ITP de tu comunidad (%)</label><input id="i_rate" type="text" inputmode="decimal" value="4" autocomplete="off"><p class=hint>El tipo general de bienes muebles suele ser el 4 %, pero algunas comunidades aplican más a los barcos grandes. Confírmalo con tu gestoría.</p></div></div></div>
+<div class="row"><div><label for="i_tab">Valor según tablas de Hacienda (€, opcional)</label><input id="i_tab" type="text" inputmode="numeric" value="" autocomplete="off"><p class=hint>Si Hacienda valora el barco por encima de lo que pagas, el impuesto se calcula sobre ese valor.</p></div><div><label for="i_gest">Gestoría (€, opcional)</label><input id="i_gest" type="text" inputmode="numeric" value="" autocomplete="off"></div></div>
+        </form>
+        <div class="res" id="res" aria-live="polite">
+<p style="margin:0">Impuestos a pagar</p><p class="big" id="r_tot">–</p><table id="r_tab"></table><p id="r_pct"></p>
+        </div>
+<h2 id="explicacion">Los tres impuestos, en corto</h2>
+<ul><li><strong>ITP:</strong> lo paga el comprador cuando compra a un particular un barco ya matriculado en España. Depende de la comunidad donde vive el comprador; en Cataluña es el 5 % y hay 30 días hábiles para liquidarlo.</li>
+<li><strong>IVA:</strong> solo si vende una empresa o profesional con factura. En ese caso no hay ITP.</li>
+<li><strong>IEDMT (matriculación):</strong> se paga una sola vez, al matricular en España un barco de más de 8 metros. En un barco que ya lleva bandera española y lo pagó en su día, no vuelve a pagarse.</li></ul>
+<p>Aparte va la tasa de Capitanía por el cambio de titularidad (modelo 790, código 025). Lo tienes todo explicado en <a href="/papeles-fiscalidad/">papeles e impuestos</a> y en la guía del <a href="/guias/impuesto-matriculacion-barcos.html">impuesto de matriculación</a>.</p>
+<div class="cta2"><h3>¿Te lo miro con un barco concreto?</h3><p>Cuando compras a través de mí, reviso la documentación y coordino con la gestoría el ITP y el cambio de titularidad.</p><a class="btn btn-wa" href="/barcos/">Ver barcos en venta</a><a class="btn btn-ghost" href="/herramientas/coste-mantener-barco.html">Calcular el coste anual</a></div>
+        <h2 id="faq">Preguntas frecuentes</h2>
+        <h3>¿Cuánto es el ITP de un barco en Cataluña?</h3><p>El 5 % del valor del barco, calculado sobre el precio de compra o sobre el valor de las tablas de Hacienda si es mayor. Lo paga el comprador en los 30 días hábiles siguientes a la compra.</p><h3>¿Pago ITP si compro el barco a una náutica?</h3><p>No. Si vende una empresa con factura, la operación lleva IVA en lugar de ITP.</p><h3>¿Cuándo se paga el impuesto de matriculación de un barco?</h3><p>Una sola vez, al matricular en España un barco de más de 8 metros que no lo ha pagado aquí, por ejemplo uno comprado en Francia. Es el 12 %.</p>
+        <p class="aviso">Cálculo orientativo con la normativa vigente en septiembre de 2026. Los tipos y las tablas cambian y cada caso puede tener exenciones o bonificaciones: confírmalo con una gestoría o asesor fiscal antes de comprar. Plata Marine no presta asesoramiento fiscal. No guardamos los datos que escribes.</p>
+      </div>
+    </article>
+    <aside class="aside">
+      <div class="card">
+        <p class="eyebrow">¿Tienes un barco en mente?</p>
+        <h3>Revisamos los papeles antes de firmar.</h3>
+        <p>Mándame el anuncio y te digo qué impuestos y trámites le tocan.</p>
+        <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20he%20usado%20la%20calculadora%20de%20impuestos%20y%20tengo%20una%20duda%20sobre%20un%20barco." target="_blank" rel="noopener">Hablar con Juan por WhatsApp</a>
+      </div>
+      <div class="rel">
+        <p class="eyebrow">Más herramientas</p>
+        <a href="/herramientas/coste-mantener-barco.html">Cuánto cuesta mantener un barco</a><a href="/herramientas/financiar-barco.html">Simulador de financiación</a><a href="/precios/">Precios de barcos de ocasión</a><a href="/herramientas/">Todas las herramientas</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="line">
+      <span>© 2026 Plata Marine · Sabadell, Barcelona · <a href="mailto:juan@platamarine.com">juan@platamarine.com</a></span>
+      <a href="../aviso-legal.html">Aviso legal</a> · <a href="../privacidad.html">Privacidad</a> · <a href="../cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Web por rotulito.com</a>
+    </div>
+  </div>
+<p class="wrap"><button type="button" data-cookie-settings>Configurar cookies</button></p></footer>
+<script src="/nav.js?v=20260925" defer></script>
+<script src="/consent.js" defer></script>
+<script src="/submit-confirmed.js" defer></script>
+<script src="/analytics.js?v=20260925" defer></script>
+<script>
+(function(){var L=document.documentElement.lang||'es';
+window.pmEur=function(n){n=Math.round(n||0);var s=String(Math.abs(n)).replace(/\B(?=(\d{3})+(?!\d))/g,L==='en'?',':'.');return (n<0?'-':'')+(L==='en'?'€'+s:s+' €');};
+window.pmNum=function(el){var v=String(el.value||'').replace(/\s/g,'');if(L==='en'){v=v.replace(/,/g,'');}else{v=v.replace(/\.(?=\d{3}(\D|$))/g,'').replace(',','.');}var n=parseFloat(v);return isFinite(n)?n:0;};
+window.pmTool=function(name){if(window.__pmt)return;window.__pmt=1;try{window.pmTrack&&window.pmTrack('tool_use',{tool:name});}catch(e){}};
+})();
+</script><script>
+(function(){var R={"title": "Impuestos a pagar", "itp": "ITP (transmisiones patrimoniales)", "iva": "IVA", "ivan": "incluido en la factura", "iedmt": "Impuesto de matriculación (IEDMT, 12 %)", "gest": "Gestoría", "tot": "Total impuestos y gastos", "all": "Coste total de la compra", "base": "Base usada: {b}.", "emp": "Si vende una empresa, no pagas ITP: la operación lleva IVA y normalmente ya va incluido en el precio. Pide la factura.", "noi": "Con 8 metros o menos, o si ya está matriculado en España, no hay impuesto de matriculación.", "imp": "Al matricular en España un barco de más de 8 metros que no ha pagado este impuesto aquí, toca el 12 %. Hay exenciones (por ejemplo, chárter), que conviene revisar con la gestoría."};var $=function(i){return document.getElementById(i)};
+function calc(){var p=pmNum($('i_price')),tab=pmNum($('i_tab')),len=pmNum($('i_len')),g=pmNum($('i_gest')),s=$('i_seller').value,reg=$('i_reg').value,c=$('i_ccaa').value;
+$('i_rate_w').style.display=c==='x'?'':'none';var rate=c==='x'?pmNum($('i_rate')):5;
+var base=Math.max(p,tab);var itp=s==='p'?base*rate/100:0;var ied=(reg==='n'&&len>8)?base*0.12:0;var tot=itp+ied+g;
+var rows=[];if(s==='p')rows.push([R.itp+' ('+String(rate).replace('.',document.documentElement.lang==='en'?'.':',')+' %)',pmEur(itp)]);else rows.push([R.iva,R.ivan]);
+rows.push([R.iedmt,pmEur(ied)]);if(g>0)rows.push([R.gest,pmEur(g)]);
+$('r_tot').innerHTML=pmEur(tot);
+$('r_tab').innerHTML=rows.map(function(r){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>'}).join('')+'<tr class="tot"><td>'+R.tot+'</td><td>'+pmEur(tot)+'</td></tr><tr class="tot"><td>'+R.all+'</td><td>'+pmEur(p+tot)+'</td></tr>';
+var n=[R.base.replace('{b}',pmEur(base))];if(s==='e')n.push(R.emp);n.push(ied>0?R.imp:R.noi);$('r_pct').textContent=n.join(' ');}
+document.getElementById('calc').addEventListener('input',function(){pmTool('impuestos');calc()});document.getElementById('calc').addEventListener('change',calc);calc();})();
+</script>
+</body>
+</html>

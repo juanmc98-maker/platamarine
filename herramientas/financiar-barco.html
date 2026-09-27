@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulador de financiación de barcos: cuota mensual de un préstamo náutico</title>
+<meta name="description" content="Calcula la cuota mensual, los intereses y el total a pagar si financias la compra de un barco. Pon el precio, la entrada, el plazo y el tipo de interés.">
+<link rel="canonical" href="https://www.platamarine.com/herramientas/financiar-barco.html">
+<link rel="alternate" hreflang="es" href="https://www.platamarine.com/herramientas/financiar-barco.html">
+<link rel="alternate" hreflang="ca" href="https://www.platamarine.com/ca/herramientas/financiar-barco.html">
+<link rel="alternate" hreflang="en" href="https://www.platamarine.com/en/herramientas/financiar-barco.html">
+<link rel="alternate" hreflang="x-default" href="https://www.platamarine.com/herramientas/financiar-barco.html">
+<link rel="icon" type="image/png" href="../logo-plata-marine.png">
+<meta property="og:title" content="Simulador de financiación de barcos: cuota mensual de un préstamo náutico">
+<meta property="og:description" content="Calcula la cuota mensual, los intereses y el total a pagar si financias la compra de un barco. Pon el precio, la entrada, el plazo y el tipo de interés.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.platamarine.com/herramientas/financiar-barco.html">
+<meta property="og:image" content="https://www.platamarine.com/logo-plata-marine.png">
+<link rel="stylesheet" href="../guias/guias.css">
+<style>.g-list li a{min-height:0}</style><style>.calc{background:#fff;border:1px solid var(--plata);border-radius:8px;padding:18px 18px 8px;margin:0 0 22px;font-family:var(--display)}
+.calc .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 16px;margin:0 0 12px}
+.calc label{display:block;font-size:13px;color:var(--ink-2);margin:0 0 4px}
+.calc input,.calc select{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--plata);border-radius:6px;font:inherit;font-size:16px;background:#fff;color:inherit}
+.calc .hint{font-size:12px;color:var(--ink-2);margin:4px 0 0}
+.res{background:var(--sea-deep);color:#D5DDE2;border-radius:8px;padding:18px 20px;margin:0 0 22px;font-family:var(--display)}
+.res .big{font-size:1.9rem;color:#fff;font-weight:600;margin:2px 0 4px}
+.res .big small{font-size:.95rem;font-weight:400;color:#D5DDE2}
+.res table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0 0}
+.res td{padding:7px 0;border-top:1px solid rgba(255,255,255,.15)}.res td:last-child{text-align:right;color:#fff;white-space:nowrap;padding-left:12px}
+.res .tot td{font-weight:600;color:#fff}
+.res p{margin:8px 0 0;font-size:13px}
+.note{font-family:var(--display);font-size:12.5px;color:var(--ink-2);margin:0 0 22px}
+.cta2{background:#F3F5F6;padding:18px 20px;border-radius:6px;margin:0 0 22px}.cta2 h3{font-family:var(--display);font-size:1.05rem;margin:0 0 6px}.cta2 p{margin:0 0 12px}.cta2 .btn{margin-right:8px;margin-bottom:8px}
+.g-list li a{min-height:0}
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "¿Cuánto pagaría al mes si financio el barco?", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "es", "url": "https://www.platamarine.com/herramientas/financiar-barco.html", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@type": "Organization", "name": "Plata Marine"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Se puede financiar la compra de un barco de segunda mano?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Lo habitual es un préstamo personal o un préstamo con garantía del barco, con plazos que suelen ir de 5 a 10 años según la entidad y la antigüedad del barco."}}, {"@type": "Question", "name": "¿Cuánta entrada piden para financiar un barco?", "acceptedAnswer": {"@type": "Answer", "text": "Depende de la entidad y del barco; es habitual que pidan una parte de entrada, más cuanto más antiguo es el barco."}}, {"@type": "Question", "name": "¿Plata Marine financia barcos?", "acceptedAnswer": {"@type": "Answer", "text": "No. Plata Marine no concede ni intermedia préstamos; esta herramienta solo sirve para hacer números."}}]}]}
+</script>
+<link rel="stylesheet" href="/nav.css?v=20260925">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="Plata Marine, inicio"><img class="brand-logo" src="../logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
+    <nav class="nav pmx-nav" aria-label="Secciones">
+      <a href="/barcos/">Barcos</a>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM1">Vender</button><div class="pmx-menu" id="pmxM1"><a href="/#vender">Vender mi barco</a><a href="/herramientas/valora-tu-barco.html">¿Cuánto vale mi barco?</a><a href="/papeles-fiscalidad/">Papeles e impuestos</a><a href="/guias/que-hace-un-broker-nautico.html">Qué hace un bróker náutico</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM2">Comprar</button><div class="pmx-menu" id="pmxM2"><a href="/barcos/">Barcos en venta</a><a href="/#comprar">Busco barco</a><a href="/alertas/">Avísame de barcos nuevos</a><a href="/que-barco-necesito.html">¿Qué barco necesito?</a><a href="/modelos/">Modelos: qué mirar y precios</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM3">Aprende</button><div class="pmx-menu" id="pmxM3"><a href="/guias/">Guías</a><a href="/actualidad/">Actualidad</a><a href="/navegante/">Guía del navegante</a><a href="/titulaciones/">Titulaciones</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM4">Servicios</button><div class="pmx-menu" id="pmxM4"><a href="/servicios/">ITB, gestoría, varadero y más</a><a href="/servicios/directorio.html">Directorio de empresas</a></div></div>
+      <a href="/#juan">Sobre mí</a>
+      <a href="/#contacto">Contacto</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20he%20hecho%20n%C3%BAmeros%20con%20el%20simulador%20de%20financiaci%C3%B3n%20y%20busco%20barco." target="_blank" rel="noopener">Hablar con Juan</a><div class="langsw" aria-label="Idioma"><a href="https://www.platamarine.com/herramientas/financiar-barco.html" aria-current="page"><span class="flag flag-es" aria-hidden="true"></span><span class="sr-only">ES</span></a><a href="https://www.platamarine.com/ca/herramientas/financiar-barco.html"><span class="flag flag-ca" aria-hidden="true"></span><span class="sr-only">CA</span></a><a href="https://www.platamarine.com/en/herramientas/financiar-barco.html"><span class="flag flag-en" aria-hidden="true"></span><span class="sr-only">EN</span></a></div>
+    <button type="button" class="pmx-btn" id="pmxBtn" aria-expanded="false" aria-controls="pmxPanel" aria-label="Abrir menú" data-open="Abrir menú" data-close="Cerrar menú"><span></span></button>
+  </div>
+  <nav class="pmx-panel" id="pmxPanel" aria-label="Menú móvil">
+    <div class="pmx-in">
+      <div class="pmx-grp"><a href="/barcos/">Barcos</a></div>
+      <div class="pmx-grp"><p>Vender</p><a href="/#vender">Vender mi barco</a><a href="/herramientas/valora-tu-barco.html">¿Cuánto vale mi barco?</a><a href="/papeles-fiscalidad/">Papeles e impuestos</a><a href="/guias/que-hace-un-broker-nautico.html">Qué hace un bróker náutico</a></div>
+      <div class="pmx-grp"><p>Comprar</p><a href="/barcos/">Barcos en venta</a><a href="/#comprar">Busco barco</a><a href="/alertas/">Avísame de barcos nuevos</a><a href="/que-barco-necesito.html">¿Qué barco necesito?</a><a href="/modelos/">Modelos: qué mirar y precios</a></div>
+      <div class="pmx-grp"><p>Aprende</p><a href="/guias/">Guías</a><a href="/actualidad/">Actualidad</a><a href="/navegante/">Guía del navegante</a><a href="/titulaciones/">Titulaciones</a></div>
+      <div class="pmx-grp"><p>Servicios</p><a href="/servicios/">ITB, gestoría, varadero y más</a><a href="/servicios/directorio.html">Directorio de empresas</a></div>
+      <div class="pmx-grp"><a href="/#juan">Sobre mí</a></div>
+      <div class="pmx-grp"><a href="/#contacto">Contacto</a></div>
+      <div class="pmx-wide"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20quiero%20hablar%20sobre%20un%20barco." target="_blank" rel="noopener">Hablar con Juan</a></div>
+    </div>
+  </nav>
+</header>
+
+<main class="art">
+  <div class="wrap">
+    <article>
+      <header>
+        <p class="eyebrow">Herramientas · Financiación</p>
+        <h1>¿Cuánto pagaría al mes si financio el barco?</h1>
+        <div class="meta"><span>Por Juan Morante</span><span>Revisado en septiembre de 2026</span></div>
+        <p class="lead">Si vas a pedir un préstamo para comprar el barco, aquí ves la cuota mensual y lo que acabas pagando en intereses. Pon el tipo que te ofrezca tu banco: cada entidad tiene sus condiciones.</p>
+      </header>
+      <div class="prose">
+        <form class="calc" id="calc" onsubmit="return false" novalidate>
+<div class="row"><div><label for="f_price">Precio del barco (€)</label><input id="f_price" type="text" inputmode="numeric" value="60000" autocomplete="off"></div><div><label for="f_down">Entrada (€)</label><input id="f_down" type="text" inputmode="numeric" value="15000" autocomplete="off"><p class=hint>Lo que pagas de tu bolsillo.</p></div></div>
+<div class="row"><div><label for="f_years">Plazo (años)</label><input id="f_years" type="text" inputmode="numeric" value="8" autocomplete="off"></div><div><label for="f_tin">Tipo de interés nominal, TIN (%)</label><input id="f_tin" type="text" inputmode="decimal" value="7,5" autocomplete="off"><p class=hint>El que te ofrezca tu banco o financiera.</p></div></div>
+        </form>
+        <div class="res" id="res" aria-live="polite">
+<p style="margin:0">Cuota mensual</p><p class="big" id="r_tot">–</p><table id="r_tab"></table><p id="r_pct"></p>
+        </div>
+<h2 id="consejos">Antes de financiar</h2>
+<ul><li>Suma al precio los <a href="/herramientas/impuestos-comprar-barco.html">impuestos de la compra</a> y el <a href="/herramientas/coste-mantener-barco.html">coste anual</a>: la cuota no es el único gasto fijo.</li>
+<li>Compara la TAE, no solo el TIN: la TAE incluye comisiones y da el coste real.</li>
+<li>Un préstamo personal o uno con garantía del propio barco tienen condiciones distintas; pregunta por las dos.</li>
+<li>Con el barco elegido y la financiación aprobada, negocias con más fuerza.</li></ul>
+<div class="cta2"><h3>¿Ya sabes tu presupuesto?</h3><p>Mira los barcos que hay en venta o dime qué buscas con ese presupuesto y te aviso cuando entre.</p><a class="btn btn-wa" href="/barcos/">Ver barcos en venta</a><a class="btn btn-ghost" href="/alertas/">Crear alerta</a></div>
+        <h2 id="faq">Preguntas frecuentes</h2>
+        <h3>¿Se puede financiar la compra de un barco de segunda mano?</h3><p>Sí. Lo habitual es un préstamo personal o un préstamo con garantía del barco, con plazos que suelen ir de 5 a 10 años según la entidad y la antigüedad del barco.</p><h3>¿Cuánta entrada piden para financiar un barco?</h3><p>Depende de la entidad y del barco; es habitual que pidan una parte de entrada, más cuanto más antiguo es el barco.</p><h3>¿Plata Marine financia barcos?</h3><p>No. Plata Marine no concede ni intermedia préstamos; esta herramienta solo sirve para hacer números.</p>
+        <p class="aviso">Simulación orientativa con el sistema de amortización francés (cuota constante). No es una oferta de financiación. Plata Marine no concede ni intermedia préstamos. No guardamos los datos que escribes.</p>
+      </div>
+    </article>
+    <aside class="aside">
+      <div class="card">
+        <p class="eyebrow">¿Tienes el presupuesto?</p>
+        <h3>Te busco el barco que encaje.</h3>
+        <p>Dime el presupuesto total y qué uso le vas a dar y te propongo opciones.</p>
+        <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20he%20hecho%20n%C3%BAmeros%20con%20el%20simulador%20de%20financiaci%C3%B3n%20y%20busco%20barco." target="_blank" rel="noopener">Hablar con Juan por WhatsApp</a>
+      </div>
+      <div class="rel">
+        <p class="eyebrow">Más herramientas</p>
+        <a href="/herramientas/impuestos-comprar-barco.html">Impuestos al comprar un barco</a><a href="/herramientas/coste-mantener-barco.html">Cuánto cuesta mantener un barco</a><a href="/precios/">Precios de barcos de ocasión</a><a href="/herramientas/">Todas las herramientas</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="line">
+      <span>© 2026 Plata Marine · Sabadell, Barcelona · <a href="mailto:juan@platamarine.com">juan@platamarine.com</a></span>
+      <a href="../aviso-legal.html">Aviso legal</a> · <a href="../privacidad.html">Privacidad</a> · <a href="../cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Web por rotulito.com</a>
+    </div>
+  </div>
+<p class="wrap"><button type="button" data-cookie-settings>Configurar cookies</button></p></footer>
+<script src="/nav.js?v=20260925" defer></script>
+<script src="/consent.js" defer></script>
+<script src="/submit-confirmed.js" defer></script>
+<script src="/analytics.js?v=20260925" defer></script>
+<script>
+(function(){var L=document.documentElement.lang||'es';
+window.pmEur=function(n){n=Math.round(n||0);var s=String(Math.abs(n)).replace(/\B(?=(\d{3})+(?!\d))/g,L==='en'?',':'.');return (n<0?'-':'')+(L==='en'?'€'+s:s+' €');};
+window.pmNum=function(el){var v=String(el.value||'').replace(/\s/g,'');if(L==='en'){v=v.replace(/,/g,'');}else{v=v.replace(/\.(?=\d{3}(\D|$))/g,'').replace(',','.');}var n=parseFloat(v);return isFinite(n)?n:0;};
+window.pmTool=function(name){if(window.__pmt)return;window.__pmt=1;try{window.pmTrack&&window.pmTrack('tool_use',{tool:name});}catch(e){}};
+})();
+</script><script>
+(function(){var R={"title": "Cuota mensual", "loan": "Importe financiado", "n": "Número de cuotas", "int": "Intereses totales", "paid": "Total pagado (entrada + cuotas)", "note": "Sin comisiones de apertura ni seguros vinculados, que suben la TAE. Pide siempre la TAE y la oferta vinculante antes de firmar."};var $=function(i){return document.getElementById(i)};
+function calc(){var p=pmNum($('f_price')),d=pmNum($('f_down')),y=pmNum($('f_years')),tin=pmNum($('f_tin'));var L=Math.max(0,p-d),n=Math.round(y*12),i=tin/1200;
+var q=n>0?(i>0?L*i/(1-Math.pow(1+i,-n)):L/n):0;var paid=q*n;
+$('r_tot').innerHTML=pmEur(q);
+$('r_tab').innerHTML=[[R.loan,pmEur(L)],[R.n,n],[R.int,pmEur(paid-L)],[R.paid,pmEur(paid+d)]].map(function(r){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>'}).join('');
+$('r_pct').textContent=R.note;}
+document.getElementById('calc').addEventListener('input',function(){pmTool('financiacion');calc()});calc();})();
+</script>
+</body>
+</html>
