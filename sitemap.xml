@@ -171,4 +171,37 @@
     <url><loc>https://www.platamarine.com/aviso-legal.html</loc><lastmod>2026-09-25</lastmod><priority>0.2</priority></url>
     <url><loc>https://www.platamarine.com/cookies.html</loc><lastmod>2026-09-25</lastmod><priority>0.2</priority></url>
     <url><loc>https://www.platamarine.com/privacidad.html</loc><lastmod>2026-09-25</lastmod><priority>0.2</priority></url>
+    <url><loc>https://www.platamarine.com/precios/</loc><lastmod>2026-09-26</lastmod><priority>0.9</priority></url>
+    <url><loc>https://www.platamarine.com/ca/precios/</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/en/precios/</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/herramientas/</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/ca/herramientas/</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/en/herramientas/</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/herramientas/coste-mantener-barco.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/ca/herramientas/coste-mantener-barco.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/en/herramientas/coste-mantener-barco.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/herramientas/impuestos-comprar-barco.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/ca/herramientas/impuestos-comprar-barco.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/en/herramientas/impuestos-comprar-barco.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/herramientas/financiar-barco.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/ca/herramientas/financiar-barco.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/en/herramientas/financiar-barco.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/comprar/</loc><lastmod>2026-09-26</lastmod><priority>0.9</priority></url>
+    <url><loc>https://www.platamarine.com/ca/comprar/</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/en/comprar/</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/comprar/barcos-segunda-mano-cataluna.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/ca/comprar/barcos-segunda-mano-cataluna.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/en/comprar/barcos-segunda-mano-cataluna.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/comprar/barcos-segunda-mano-baleares.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/ca/comprar/barcos-segunda-mano-baleares.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/en/comprar/barcos-segunda-mano-baleares.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/comprar/lanchas-motor-segunda-mano.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/ca/comprar/lanchas-motor-segunda-mano.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/en/comprar/lanchas-motor-segunda-mano.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/comprar/veleros-segunda-mano.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/ca/comprar/veleros-segunda-mano.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/en/comprar/veleros-segunda-mano.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/comprar/barcos-licencia-navegacion-pnb.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/ca/comprar/barcos-licencia-navegacion-pnb.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/en/comprar/barcos-licencia-navegacion-pnb.html</loc><lastmod>2026-09-26</lastmod><priority>0.8</priority></url>
 </urlset>
