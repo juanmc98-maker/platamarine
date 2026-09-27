@@ -11,12 +11,14 @@ if(!L) L = {dlg:'Foto ampliada', close:'Cerrar', prev:'Foto anterior', next:'Fot
 
 var thumbsWrap = document.querySelector('.thumbs');
 var thumbs = thumbsWrap ? Array.prototype.slice.call(thumbsWrap.querySelectorAll('img')) : [];
-var images = thumbs.length ? thumbs.map(function(t){ return { src: t.currentSrc || t.src, alt: t.alt || main.alt }; }) : [{ src: main.src, alt: main.alt }];
+var images = thumbs.length ? thumbs.map(function(t){ return { src: t.getAttribute('data-full') || t.currentSrc || t.src, alt: t.alt || main.alt }; }) : [{ src: main.src, alt: main.alt }];
 var current = 0;
 
 function setMain(i){
   current = (i + images.length) % images.length;
-  main.src = images[current].src;
+  var full = images[current].src;
+  if (/-\d+\.jpg$/.test(full)) main.srcset = full.replace(/\.jpg$/, '-m.jpg') + ' 1000w, ' + full + ' 1600w'; else main.removeAttribute('srcset');
+  main.src = full;
   thumbs.forEach(function(t, idx){ t.className = idx === current ? 'on' : ''; });
 }
 
