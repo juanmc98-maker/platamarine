@@ -24,6 +24,8 @@
         d: {es: '8,40 m · Volvo Penta 320 cv · Costa Brava', ca: '8,40 m · Volvo Penta 320 cv · Costa Brava', en: '8.40 m · Volvo Penta 320 hp · Costa Brava'}},
       {slug: 'faeton-730-moraga', name: 'Faeton 730 Moraga', year: 2005, kind: 'motor', types: ['pilothouse', 'walkaround'], length: 7.39, price: 30000, zone: 'baleares', title: 2, status: 'available',
         d: {es: '7,39 m · Volvo Penta 170 cv · Mallorca', ca: '7,39 m · Volvo Penta 170 cv · Mallorca', en: '7.39 m · Volvo Penta 170 hp · Mallorca'}},
+      {slug: 'faeton-730-top-moraga', name: 'Faeton 730 Top Moraga', year: 2003, kind: 'motor', types: ['pilothouse'], length: 7.39, price: 24000, zone: 'baleares', title: 2, status: 'available',
+        d: {es: '7,39 m · Volvo Penta 150 cv · Mallorca', ca: '7,39 m · Volvo Penta 150 cv · Mallorca', en: '7.39 m · Volvo Penta 150 hp · Mallorca'}},
       {slug: 'starfisher-840', name: 'Starfisher 840 R', year: 2004, kind: 'motor', types: ['pilothouse', 'cabinado'], length: 8.4, price: 50900, zone: 'galicia', title: 3, status: 'available',
         d: {es: 'Aprox. 8,40 m · 2 x Yanmar 200 cv · Galicia', ca: 'Aprox. 8,40 m · 2 x Yanmar 200 cv · Galícia', en: 'Approx. 8.40 m · twin Yanmar 200 hp · Galicia'}},
       {slug: 'sacs-535', name: 'Sacs 535', year: 2002, kind: 'motor', types: ['rib'], length: 5.35, price: 25000, zone: 'baleares', title: 1, status: 'available',
