@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora: quant costa mantenir un vaixell a l&#x27;any</title>
+<meta name="description" content="Calcula el cost anual de tenir un vaixell: amarratge, assegurança, motor, varada, ITB i combustible segons eslora, motor, ús i port. Gratis i sense registre.">
+<link rel="canonical" href="https://www.platamarine.com/ca/herramientas/coste-mantener-barco.html">
+<link rel="alternate" hreflang="es" href="https://www.platamarine.com/herramientas/coste-mantener-barco.html">
+<link rel="alternate" hreflang="ca" href="https://www.platamarine.com/ca/herramientas/coste-mantener-barco.html">
+<link rel="alternate" hreflang="en" href="https://www.platamarine.com/en/herramientas/coste-mantener-barco.html">
+<link rel="alternate" hreflang="x-default" href="https://www.platamarine.com/herramientas/coste-mantener-barco.html">
+<link rel="icon" type="image/png" href="/logo-plata-marine.png">
+<meta property="og:title" content="Calculadora: quant costa mantenir un vaixell a l&#x27;any">
+<meta property="og:description" content="Calcula el cost anual de tenir un vaixell: amarratge, assegurança, motor, varada, ITB i combustible segons eslora, motor, ús i port. Gratis i sense registre.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.platamarine.com/ca/herramientas/coste-mantener-barco.html">
+<meta property="og:image" content="https://www.platamarine.com/logo-plata-marine.png">
+<link rel="stylesheet" href="/guias/guias.css">
+<style>.g-list li a{min-height:0}</style><style>.calc{background:#fff;border:1px solid var(--plata);border-radius:8px;padding:18px 18px 8px;margin:0 0 22px;font-family:var(--display)}
+.calc .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 16px;margin:0 0 12px}
+.calc label{display:block;font-size:13px;color:var(--ink-2);margin:0 0 4px}
+.calc input,.calc select{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--plata);border-radius:6px;font:inherit;font-size:16px;background:#fff;color:inherit}
+.calc .hint{font-size:12px;color:var(--ink-2);margin:4px 0 0}
+.res{background:var(--sea-deep);color:#D5DDE2;border-radius:8px;padding:18px 20px;margin:0 0 22px;font-family:var(--display)}
+.res .big{font-size:1.9rem;color:#fff;font-weight:600;margin:2px 0 4px}
+.res .big small{font-size:.95rem;font-weight:400;color:#D5DDE2}
+.res table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0 0}
+.res td{padding:7px 0;border-top:1px solid rgba(255,255,255,.15)}.res td:last-child{text-align:right;color:#fff;white-space:nowrap;padding-left:12px}
+.res .tot td{font-weight:600;color:#fff}
+.res p{margin:8px 0 0;font-size:13px}
+.note{font-family:var(--display);font-size:12.5px;color:var(--ink-2);margin:0 0 22px}
+.cta2{background:#F3F5F6;padding:18px 20px;border-radius:6px;margin:0 0 22px}.cta2 h3{font-family:var(--display);font-size:1.05rem;margin:0 0 6px}.cta2 p{margin:0 0 12px}.cta2 .btn{margin-right:8px;margin-bottom:8px}
+.g-list li a{min-height:0}
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Quant costa mantenir un vaixell a l'any?", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "ca", "url": "https://www.platamarine.com/ca/herramientas/coste-mantener-barco.html", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@type": "Organization", "name": "Plata Marine"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quant costa mantenir un vaixell de 7 metres a l'any?", "acceptedAnswer": {"@type": "Answer", "text": "Amb amarratge en un port mitjà de la costa catalana i unes 60 hores de navegació, un vaixell de 7 metres amb forabord sol sortir entre 7.000 i 9.000 € l'any, dels quals l'amarratge és gairebé la meitat. Sense amarratge (en marina seca o amb remolc) baixa molt."}}, {"@type": "Question", "name": "Què és el més car de tenir un vaixell?", "acceptedAnswer": {"@type": "Answer", "text": "Gairebé sempre l'amarratge, perquè es paga els dotze mesos. Després, segons quant naveguis, el combustible."}}, {"@type": "Question", "name": "És fiable aquesta calculadora?", "acceptedAnswer": {"@type": "Answer", "text": "Dona un ordre de magnitud realista per decidir abans de comprar. El cost real depèn del port, de l'estat del vaixell i de com el facis servir: per a un cas concret, millor parlar-ne."}}]}]}
+</script>
+<link rel="stylesheet" href="/nav.css?v=20260925">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/ca/" aria-label="Plata Marine, inici"><img class="brand-logo" src="/logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
+    <nav class="nav pmx-nav" aria-label="Seccions">
+      <a href="/ca/barcos/">Vaixells</a>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM1">Vendre</button><div class="pmx-menu" id="pmxM1"><a href="/ca/#vender">Vendre el meu vaixell</a><a href="/ca/herramientas/valora-tu-barco.html">Quant val el meu vaixell?</a><a href="/ca/papeles-fiscalidad/">Papers i impostos</a><a href="/ca/guias/que-hace-un-broker-nautico.html">Què fa un bròker nàutic</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM2">Comprar</button><div class="pmx-menu" id="pmxM2"><a href="/ca/barcos/">Vaixells en venda</a><a href="/ca/#comprar">Busco vaixell</a><a href="/ca/alertas/">Avisa&#x27;m de vaixells nous</a><a href="/ca/que-barco-necesito.html">Quin vaixell necessito?</a><a href="/ca/modelos/">Models: què mirar i preus</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM3">Aprèn</button><div class="pmx-menu" id="pmxM3"><a href="/ca/guias/">Guies</a><a href="/ca/actualidad/">Actualitat</a><a href="/ca/navegante/">Guia del navegant</a><a href="/ca/titulaciones/">Titulacions</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM4">Serveis</button><div class="pmx-menu" id="pmxM4"><a href="/ca/servicios/">ITB, gestoria, varador i més</a><a href="/ca/servicios/directorio.html">Directori d&#x27;empreses</a></div></div>
+      <a href="/ca/#juan">Sobre mi</a>
+      <a href="/ca/#contacto">Contacte</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20he%20fet%20servir%20la%20calculadora%20de%20costos%20i%20volia%20afinar%20el%20pressupost." target="_blank" rel="noopener">Parla amb en Juan</a><div class="langsw" aria-label="Idioma"><a href="https://www.platamarine.com/herramientas/coste-mantener-barco.html"><span class="flag flag-es" aria-hidden="true"></span><span class="sr-only">ES</span></a><a href="https://www.platamarine.com/ca/herramientas/coste-mantener-barco.html" aria-current="page"><span class="flag flag-ca" aria-hidden="true"></span><span class="sr-only">CA</span></a><a href="https://www.platamarine.com/en/herramientas/coste-mantener-barco.html"><span class="flag flag-en" aria-hidden="true"></span><span class="sr-only">EN</span></a></div>
+    <button type="button" class="pmx-btn" id="pmxBtn" aria-expanded="false" aria-controls="pmxPanel" aria-label="Obrir menú" data-open="Obrir menú" data-close="Tancar menú"><span></span></button>
+  </div>
+  <nav class="pmx-panel" id="pmxPanel" aria-label="Menú mòbil">
+    <div class="pmx-in">
+      <div class="pmx-grp"><a href="/ca/barcos/">Vaixells</a></div>
+      <div class="pmx-grp"><p>Vendre</p><a href="/ca/#vender">Vendre el meu vaixell</a><a href="/ca/herramientas/valora-tu-barco.html">Quant val el meu vaixell?</a><a href="/ca/papeles-fiscalidad/">Papers i impostos</a><a href="/ca/guias/que-hace-un-broker-nautico.html">Què fa un bròker nàutic</a></div>
+      <div class="pmx-grp"><p>Comprar</p><a href="/ca/barcos/">Vaixells en venda</a><a href="/ca/#comprar">Busco vaixell</a><a href="/ca/alertas/">Avisa&#x27;m de vaixells nous</a><a href="/ca/que-barco-necesito.html">Quin vaixell necessito?</a><a href="/ca/modelos/">Models: què mirar i preus</a></div>
+      <div class="pmx-grp"><p>Aprèn</p><a href="/ca/guias/">Guies</a><a href="/ca/actualidad/">Actualitat</a><a href="/ca/navegante/">Guia del navegant</a><a href="/ca/titulaciones/">Titulacions</a></div>
+      <div class="pmx-grp"><p>Serveis</p><a href="/ca/servicios/">ITB, gestoria, varador i més</a><a href="/ca/servicios/directorio.html">Directori d&#x27;empreses</a></div>
+      <div class="pmx-grp"><a href="/ca/#juan">Sobre mi</a></div>
+      <div class="pmx-grp"><a href="/ca/#contacto">Contacte</a></div>
+      <div class="pmx-wide"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20vull%20parlar%20sobre%20un%20vaixell." target="_blank" rel="noopener">Parlar amb en Juan</a></div>
+    </div>
+  </nav>
+</header>
+
+<main class="art">
+  <div class="wrap">
+    <article>
+      <header>
+        <p class="eyebrow">Eines · Pressupost</p>
+        <h1>Quant costa mantenir un vaixell a l'any?</h1>
+        <div class="meta"><span>Per Juan Morante</span><span>Xifres revisades el setembre de 2026</span></div>
+        <p class="lead">Posa l'eslora, el motor, quant navegaràs i on el tindries, i et surt un pressupost anual desglossat. Són els mateixos números que faig servir quan algú em pregunta abans de comprar el seu primer vaixell: orientatius, però sense optimisme.</p>
+      </header>
+      <div class="prose">
+        <form class="calc" id="calc" onsubmit="return false" novalidate>
+<div class="row"><div><label for="c_len">Eslora (m)</label><input id="c_len" type="text" inputmode="decimal" value="7,5" autocomplete="off"></div><div><label for="c_eng">Motor</label><select id="c_eng"><option value="fb" selected>Forabord de gasolina</option><option value="ig">Intrabord o cua de gasolina</option><option value="id">Intrabord o cua dièsel</option><option value="sv">Veler amb motor dièsel</option></select></div><div><label for="c_hp">Potència total (CV)</label><input id="c_hp" type="text" inputmode="numeric" value="150" autocomplete="off"><p class=hint>Si són dos motors, suma'ls.</p></div></div>
+<div class="row"><div><label for="c_hrs">Hores de navegació a l'any</label><input id="c_hrs" type="text" inputmode="numeric" value="60" autocomplete="off"><p class=hint>Un cap de setmana d'estiu són unes 6-8 hores.</p></div><div><label for="c_fuel">Preu del combustible (€/l)</label><input id="c_fuel" type="text" inputmode="decimal" value="1,80" autocomplete="off"><p class=hint>A la benzinera del port.</p></div><div><label for="c_val">Valor del vaixell (€)</label><input id="c_val" type="text" inputmode="numeric" value="45000" autocomplete="off"><p class=hint>Per calcular l'assegurança.</p></div></div>
+<div class="row"><div><label for="c_moor">Amarratge</label><select id="c_moor"><option value="400">Port econòmic o concessió (≈ 400 €/m l'any)</option><option value="600" selected>Port mitjà (≈ 600 €/m l'any)</option><option value="950">Port car, zona Barcelona o Costa Brava en lloguer (≈ 950 €/m l'any)</option><option value="300">Marina seca (≈ 300 €/m l'any)</option><option value="0">A casa, amb remolc</option><option value="x">Sé el que pago: ho escric</option></select></div><div id="c_moorx_w" style="display:none"><div><label for="c_moorx">Amarratge a l'any (€)</label><input id="c_moorx" type="text" inputmode="numeric" value="4000" autocomplete="off"></div></div></div>
+        </form>
+        <div class="res" id="res" aria-live="polite">
+<p style="margin:0">Cost anual orientatiu</p><p class="big" id="r_tot">–</p><table id="r_tab"></table><p id="r_pct"></p>
+        </div>
+<h2 id="como">Com es calcula cada línia</h2>
+<ul><li><strong>Amarratge:</strong> eslora per una tarifa mitjana anual per metre. Tens les tarifes reals de 19 ports a la <a href="/ca/guias/amarres-cataluna-tipos-precios-alquiler-compra.html">guia d'amarratges de Catalunya</a>.</li>
+<li><strong>Assegurança:</strong> tot risc, al voltant del 0,7 % del valor del vaixell amb un mínim de 200 €. Només amb la responsabilitat civil obligatòria surt molt més barat.</li>
+<li><strong>Motor:</strong> revisió anual segons tipus i potència; un dièsel amb moltes hores pot costar més.</li>
+<li><strong>Varada:</strong> una sortida l'any amb neteja i antifouling, uns 70 € per metre. En marina seca o amb remolc no cal antifouling.</li>
+<li><strong>ITB:</strong> només a partir de 6 metres; es reparteix el cost de la inspecció entre els 5 anys.</li>
+<li><strong>Combustible:</strong> consum mitjà a creuer segons motor i potència, per les hores que navegues. En un veler es compta el motor només una part del temps.</li></ul>
+<p>El desglossament amb més context és a la guia <a href="/ca/guias/cuanto-cuesta-mantener-un-barco-cataluna.html">quant costa mantenir un vaixell a Catalunya</a>.</p>
+<div class="cta2"><h3>Encara no tens vaixell?</h3><p>Mira què hi ha ara en venda o digues-me què busques i t'aviso quan entri alguna cosa que encaixi.</p><a class="btn btn-wa" href="/ca/barcos/">Veure vaixells en venda</a><a class="btn btn-ghost" href="/ca/alertas/">Crear alerta</a></div>
+        <h2 id="faq">Preguntes freqüents</h2>
+        <h3>Quant costa mantenir un vaixell de 7 metres a l'any?</h3><p>Amb amarratge en un port mitjà de la costa catalana i unes 60 hores de navegació, un vaixell de 7 metres amb forabord sol sortir entre 7.000 i 9.000 € l'any, dels quals l'amarratge és gairebé la meitat. Sense amarratge (en marina seca o amb remolc) baixa molt.</p><h3>Què és el més car de tenir un vaixell?</h3><p>Gairebé sempre l'amarratge, perquè es paga els dotze mesos. Després, segons quant naveguis, el combustible.</p><h3>És fiable aquesta calculadora?</h3><p>Dona un ordre de magnitud realista per decidir abans de comprar. El cost real depèn del port, de l'estat del vaixell i de com el facis servir: per a un cas concret, millor parlar-ne.</p>
+        <p class="aviso">Càlcul orientatiu amb preus mitjans de setembre de 2026 (tarifes públiques de ports, asseguradores i varadors). No és un pressupost ni una oferta. No guardem les dades que escrius.</p>
+      </div>
+    </article>
+    <aside class="aside">
+      <div class="card">
+        <p class="eyebrow">L'afinem?</p>
+        <h3>T'ajudo amb el pressupost real.</h3>
+        <p>Digues-me l'eslora, el motor i on el tindries amarrat i ho repassem junts.</p>
+        <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20he%20fet%20servir%20la%20calculadora%20de%20costos%20i%20volia%20afinar%20el%20pressupost." target="_blank" rel="noopener">Parlar amb el Juan per WhatsApp</a>
+      </div>
+      <div class="rel">
+        <p class="eyebrow">Més eines</p>
+        <a href="/ca/herramientas/impuestos-comprar-barco.html">Impostos en comprar un vaixell</a><a href="/ca/herramientas/financiar-barco.html">Simulador de finançament</a><a href="/ca/precios/">Preus de vaixells d'ocasió</a><a href="/ca/herramientas/">Totes les eines</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="line">
+      <span>© 2026 Plata Marine · Sabadell, Barcelona · <a href="mailto:juan@platamarine.com">juan@platamarine.com</a></span>
+      <a href="/aviso-legal.html">Avís legal</a> · <a href="/privacidad.html">Privacitat</a> · <a href="/ca/cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Web per rotulito.com</a>
+    </div>
+  </div>
+<p class="wrap"><button type="button" data-cookie-settings>Configurar cookies</button></p></footer>
+<script src="/nav.js?v=20260925" defer></script>
+<script src="/consent.js" defer></script>
+<script src="/submit-confirmed.js" defer></script>
+<script src="/analytics.js?v=20260925" defer></script>
+<script>
+(function(){var L=document.documentElement.lang||'es';
+window.pmEur=function(n){n=Math.round(n||0);var s=String(Math.abs(n)).replace(/\B(?=(\d{3})+(?!\d))/g,L==='en'?',':'.');return (n<0?'-':'')+(L==='en'?'€'+s:s+' €');};
+window.pmNum=function(el){var v=String(el.value||'').replace(/\s/g,'');if(L==='en'){v=v.replace(/,/g,'');}else{v=v.replace(/\.(?=\d{3}(\D|$))/g,'').replace(',','.');}var n=parseFloat(v);return isFinite(n)?n:0;};
+window.pmTool=function(name){if(window.__pmt)return;window.__pmt=1;try{window.pmTrack&&window.pmTrack('tool_use',{tool:name});}catch(e){}};
+})();
+</script><script>
+(function(){var R={"title": "Cost anual orientatiu", "month": "al mes", "moor": "Amarratge", "ins": "Assegurança (tot risc)", "eng": "Manteniment del motor", "hull": "Varada, neteja i antifouling", "itb": "ITB (prorratejada)", "misc": "Ànodes, bateries i petits extres", "fuel": "Combustible", "tot": "Total a l'any", "pct": "És un {p} % del valor del vaixell a l'any.", "nofuel": "Sense combustible:"};var $=function(i){return document.getElementById(i)};
+function calc(){var len=pmNum($('c_len')),eng=$('c_eng').value,hp=pmNum($('c_hp')),hrs=pmNum($('c_hrs')),fp=pmNum($('c_fuel')),val=pmNum($('c_val')),m=$('c_moor').value;
+$('c_moorx_w').style.display=m==='x'?'':'none';
+var moor=m==='x'?pmNum($('c_moorx')):len*(+m);var dry=(m==='0'||m==='300');
+var ins=val>0?Math.max(200,val*0.007):0;
+var engc={fb:250+1.0*hp,ig:350+1.2*hp,id:400+1.5*hp,sv:350+2*hp}[eng];
+var hull=len*(dry?30:70);var itb=len<6?0:(len<=12?80:120);var misc=150+10*len;
+var f={fb:0.17,ig:0.2,id:0.1,sv:0.1*0.3}[eng];var fuel=hp*f*hrs*fp;
+var tot=moor+ins+engc+hull+itb+misc+fuel;
+var rows=[[R.moor,moor],[R.ins,ins],[R.eng,engc],[R.hull,hull],[R.itb,itb],[R.misc,misc],[R.fuel,fuel]];
+$('r_tot').innerHTML=pmEur(tot)+' <small>· '+pmEur(tot/12)+' '+R.month+'</small>';
+$('r_tab').innerHTML=rows.map(function(r){return '<tr><td>'+r[0]+'</td><td>'+pmEur(r[1])+'</td></tr>'}).join('')+'<tr class="tot"><td>'+R.tot+'</td><td>'+pmEur(tot)+'</td></tr>';
+$('r_pct').textContent=(val>0?R.pct.replace('{p}',(tot/val*100).toFixed(1).replace('.',document.documentElement.lang==='en'?'.':',')):'')+' '+R.nofuel+' '+pmEur(tot-fuel)+'.';}
+var fuelTouched=false;$('c_fuel').addEventListener('input',function(){fuelTouched=true});
+$('c_eng').addEventListener('change',function(){if(!fuelTouched){var d=this.value==='fb'||this.value==='ig';$('c_fuel').value=d?'1,80':'1,60';}});
+document.getElementById('calc').addEventListener('input',function(){pmTool('coste');calc()});document.getElementById('calc').addEventListener('change',calc);calc();})();
+</script>
+</body>
+</html>
