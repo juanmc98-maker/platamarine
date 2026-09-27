@@ -679,7 +679,7 @@ section[id]{scroll-margin-top:78px}
           <label for="telefono">Phone <i>*</i></label>
           <input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="+34 6xx xxx xxx" maxlength="20" required>
         </div>
-        <p class="form-help">Data controller: Juan Morante Cruz (Plata Marine). I'll use your name, contact details and boat information to handle this enquiry and prepare a possible engagement, as pre-contractual measures. You can exercise your rights at juan@platamarine.com. <a href="/privacidad.html">Privacy policy</a>. This enquiry does not subscribe you to any newsletter.</p>
+        <p class="form-help">Data controller: Juan Morante Cruz (Plata Marine). I'll use your name, contact details and boat information to handle this enquiry and prepare a possible engagement, as pre-contractual measures. You can exercise your rights at juan@platamarine.com. <a href="/en/privacidad.html">Privacy policy</a>. This enquiry does not subscribe you to any newsletter.</p>
         <div class="form-actions">
           <button class="btn btn-wa" type="submit" id="enviarConsulta">Send inquiry</button>
           <button class="btn btn-ghost" type="button" id="porWhatsapp">Or via WhatsApp</button>
@@ -774,8 +774,8 @@ section[id]{scroll-margin-top:78px}
 <footer class="foot">
   <div class="wrap">
     <div class="legal-links">
-      <a href="/aviso-legal.html">Legal notice</a>
-      <a href="/privacidad.html">Privacy</a>
+      <a href="/en/aviso-legal.html">Legal notice</a>
+      <a href="/en/privacidad.html">Privacy</a>
       <a href="/en/cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Website by rotulito.com</a>
       <a href="/en/guias/">Guides</a>
       <a href="/en/actualidad/">News</a>
@@ -817,15 +817,15 @@ var IMGS={"oceanis-50-1": "/oceanis-50-1.jpg", "oceanis-50-2": "/oceanis-50-2.jp
   var gals=document.querySelectorAll('.gal[data-imgs]');
   for(var g=0;g<gals.length;g++){(function(gal){
     var keys=gal.getAttribute('data-imgs').split(',');
-    var main=document.createElement('img'); main.className='main'; main.alt=gal.getAttribute('data-alt')||''; main.src=IMGS[keys[0]]||''; main.width=1600; main.height=900; main.setAttribute('loading','lazy');
+    var main=document.createElement('img'); main.className='main'; main.alt=gal.getAttribute('data-alt')||''; main.src=(IMGS[keys[0]]||'').replace(/\.jpg$/,'-m.jpg'); main.width=1600; main.height=900; main.setAttribute('loading','lazy');
     var href=gal.getAttribute('data-href');
     if(href){var mainLink=document.createElement('a'); mainLink.className='main-link'; mainLink.href=href; mainLink.setAttribute('aria-label','View full listing'); mainLink.appendChild(main); gal.appendChild(mainLink);} else { gal.appendChild(main); }
     if(keys.length<2) return;
     var strip=document.createElement('div'); strip.className='thumbs';
     keys.forEach(function(k,i){
       var b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label','Photo '+(i+1)); if(i===0) b.className='on';
-      var im=document.createElement('img'); im.alt=''; im.src=IMGS[k]||''; im.setAttribute('loading','lazy'); b.appendChild(im);
-      b.addEventListener('click',function(){ main.src=IMGS[k]; var on=strip.querySelector('.on'); if(on) on.className=''; b.className='on'; });
+      var im=document.createElement('img'); im.alt=''; im.src=(IMGS[k]||'').replace(/\.jpg$/,'-t.jpg'); im.setAttribute('loading','lazy'); b.appendChild(im);
+      b.addEventListener('click',function(){ main.src=IMGS[k].replace(/\.jpg$/,'-m.jpg'); var on=strip.querySelector('.on'); if(on) on.className=''; b.className='on'; });
       strip.appendChild(b);
     });
     gal.appendChild(strip);
