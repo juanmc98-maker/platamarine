@@ -26,7 +26,7 @@
    - contact_form_start / contact_form_error / pdf_ficha / click_boat / quiz_complete: solo GA4.
    "Contacto cualificado" no se mide aquí: requiere una validación posterior real (p. ej. marcarlo en la hoja de leads). */
 (function(){
-  var SAFE=['form_id','contact_method','contact_purpose','placement','boat','file_type','quiz','result_type','label','lang'];
+  var SAFE=['form_id','contact_method','contact_purpose','placement','boat','file_type','quiz','result_type','label','lang','tool'];
   var META={contact_intent:['trackCustom','ContactIntent'],generate_lead:['track','Lead'],newsletter_signup:['trackCustom','NewsletterSignup']};
   var lang=location.pathname.indexOf('/ca/')===0?'ca':location.pathname.indexOf('/en/')===0?'en':'es';
   var last={};
