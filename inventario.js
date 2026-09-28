@@ -10,8 +10,10 @@
 (function () {
   'use strict';
   var INV = {
-    updated: '2026-09-26',
+    updated: '2026-09-28',
     boats: [
+      {slug: 'tiger-marine-650', name: 'Tiger Marine Top Line 650', year: 2015, kind: 'motor', types: ['rib'], length: 6.5, price: 33000, zone: 'cataluna', title: 2, status: 'available',
+        d: {es: 'Aprox. 6,50 m · semirrígida · Suzuki 150 cv · Costa Daurada (Tarragona)', ca: 'Aprox. 6,50 m · semirígida · Suzuki 150 cv · Costa Daurada (Tarragona)', en: 'Approx. 6.50 m · RIB · Suzuki 150 hp · Costa Daurada (Tarragona)'}},
       {slug: 'oceanis-50', name: 'Beneteau Oceanis 50', year: 2008, kind: 'vela', types: ['velero'], length: 14.75, price: 155000, zone: 'valencia', title: 3, status: 'available',
         d: {es: 'Aprox. 14,75 m · Yanmar 110 cv · Valencia', ca: 'Aprox. 14,75 m · Yanmar 110 cv · València', en: 'Approx. 14.75 m · Yanmar 110 hp · Valencia'}},
       {slug: 'sealine-365', name: 'Sealine 365 Sport Bridge', year: 1989, kind: 'motor', types: ['cabinado'], length: 11.1, price: 75000, zone: 'cataluna', title: 3, status: 'available',
