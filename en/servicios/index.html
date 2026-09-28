@@ -24,7 +24,7 @@
 .pmf label.l{display:block;font-family:var(--display);font-size:13px;font-weight:600;color:var(--ink-2);margin:0 0 5px}
 .pmf input[type=text],.pmf input[type=email],.pmf input[type=tel],.pmf select,.pmf textarea{width:100%;font:16px var(--serif);padding:10px 12px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box;background:#fff;color:var(--ink)}
 .pmf textarea{min-height:90px;resize:vertical}
-.pmf label.chk{display:flex;gap:8px;align-items:flex-start;font-family:var(--display);font-size:13px;color:var(--ink-2);margin:0 0 8px;line-height:1.4}
+.pmf label.chk{display:flex;gap:8px;align-items:flex-start;font-family:var(--display);font-size:13px;color:var(--ink-2);margin:0 0 8px;line-height:1.4}.chk-info{font-family:var(--display);font-size:13px;color:var(--ink-2);margin:0 0 8px;line-height:1.4}
 .pmf .btn{cursor:pointer}
 .pmf .msg{font-family:var(--display);font-size:13.5px;color:#c0392b;margin:8px 0 0}
 .pmf .msg.ok{color:#2e8b57}
@@ -120,12 +120,12 @@ h2[id]{scroll-margin-top:90px}
             </div>
             <div class="f"><label class="l">Email <small>(optional)</small></label><input type="email" name="email" autocomplete="email" placeholder="you@email.com"></div>
             <label class="chk"><input type="checkbox" name="consent" required> <span>* I agree that Plata Marine will keep this data to reply to me and tell me who I'd use, per the <a href="/en/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</span></label>
-            <label class="chk"><input type="checkbox" name="comparte"> <span>I authorise Plata Marine to pass on my name, phone, email and the details in this form to the company they recommend, so that company can contact me directly. If you don't check this, I'll give you the contact myself and you call them.</span></label>
+            <p class="chk-info">I'll tell you which company I suggest. If you'd rather they call you, I'll tell you who they are and ask for your permission before passing on your details. You can also contact them yourself.</p>
               
             <p class="legal req-note">Fields marked * are required.</p>
 <button type="submit" class="btn btn-wa">Request a contact for the inspection</button>
             <p class="msg"></p>
-            <p class="legal">Data controller: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Purpose: to reply to your request, tell you who I'd use and, only if you authorise it, pass your data to that company so it can contact you. Legal basis: your consent, which you can withdraw at any time. Retention: one year from the request, unless the relationship continues. Rights: access, rectification, erasure, objection and the other rights under the GDPR, by writing to juan@platamarine.com; you can also file a complaint with the Spanish Data Protection Agency (AEPD). More information in the <a href="/en/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</p>
+            <p class="legal">Data controller: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Purpose: to reply to your request and tell you who I'd use. I will only pass your data to that company if, after telling you who they are, you give me permission. Legal basis: your consent, which you can withdraw at any time. Retention: one year from the request, unless the relationship continues. Rights: access, rectification, erasure, objection and the other rights under the GDPR, by writing to juan@platamarine.com; you can also file a complaint with the Spanish Data Protection Agency (AEPD). More information in the <a href="/en/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</p>
           <p class="legal">You can also <a href="mailto:juan@platamarine.com">write to juan@platamarine.com</a>. If no confirmation appears, check before sending again.</p></form>
         </div>
 
@@ -148,12 +148,12 @@ h2[id]{scroll-margin-top:90px}
             </div>
             <div class="f"><label class="l">Email <small>(optional)</small></label><input type="email" name="email" autocomplete="email" placeholder="you@email.com"></div>
             <label class="chk"><input type="checkbox" name="consent" required> <span>* I agree that Plata Marine will keep this data to reply to me and tell me who I'd use, per the <a href="/en/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</span></label>
-            <label class="chk"><input type="checkbox" name="comparte"> <span>I authorise Plata Marine to pass on my name, phone, email and the details in this form to the company they recommend, so that company can contact me directly. If you don't check this, I'll give you the contact myself and you call them.</span></label>
+            <p class="chk-info">I'll tell you which company I suggest. If you'd rather they call you, I'll tell you who they are and ask for your permission before passing on your details. You can also contact them yourself.</p>
               
             <p class="legal req-note">Fields marked * are required.</p>
 <button type="submit" class="btn btn-wa">Request a contact for the paperwork agent</button>
             <p class="msg"></p>
-            <p class="legal">Data controller: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Purpose: to reply to your request, tell you who I'd use and, only if you authorise it, pass your data to that company so it can contact you. Legal basis: your consent, which you can withdraw at any time. Retention: one year from the request, unless the relationship continues. Rights: access, rectification, erasure, objection and the other rights under the GDPR, by writing to juan@platamarine.com; you can also file a complaint with the Spanish Data Protection Agency (AEPD). More information in the <a href="/en/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</p>
+            <p class="legal">Data controller: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Purpose: to reply to your request and tell you who I'd use. I will only pass your data to that company if, after telling you who they are, you give me permission. Legal basis: your consent, which you can withdraw at any time. Retention: one year from the request, unless the relationship continues. Rights: access, rectification, erasure, objection and the other rights under the GDPR, by writing to juan@platamarine.com; you can also file a complaint with the Spanish Data Protection Agency (AEPD). More information in the <a href="/en/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</p>
           <p class="legal">You can also <a href="mailto:juan@platamarine.com">write to juan@platamarine.com</a>. If no confirmation appears, check before sending again.</p></form>
         </div>
 
@@ -180,12 +180,12 @@ h2[id]{scroll-margin-top:90px}
             </div>
             <div class="f"><label class="l">Email <small>(optional)</small></label><input type="email" name="email" autocomplete="email" placeholder="you@email.com"></div>
             <label class="chk"><input type="checkbox" name="consent" required> <span>* I agree that Plata Marine will keep this data to reply to me and tell me who I'd use, per the <a href="/en/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</span></label>
-            <label class="chk"><input type="checkbox" name="comparte"> <span>I authorise Plata Marine to pass on my name, phone, email and the details in this form to the company they recommend, so that company can contact me directly. If you don't check this, I'll give you the contact myself and you call them.</span></label>
+            <p class="chk-info">I'll tell you which company I suggest. If you'd rather they call you, I'll tell you who they are and ask for your permission before passing on your details. You can also contact them yourself.</p>
               
             <p class="legal req-note">Fields marked * are required.</p>
 <button type="submit" class="btn btn-wa">Request a contact for the boatyard</button>
             <p class="msg"></p>
-            <p class="legal">Data controller: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Purpose: to reply to your request, tell you who I'd use and, only if you authorise it, pass your data to that company so it can contact you. Legal basis: your consent, which you can withdraw at any time. Retention: one year from the request, unless the relationship continues. Rights: access, rectification, erasure, objection and the other rights under the GDPR, by writing to juan@platamarine.com; you can also file a complaint with the Spanish Data Protection Agency (AEPD). More information in the <a href="/en/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</p>
+            <p class="legal">Data controller: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Purpose: to reply to your request and tell you who I'd use. I will only pass your data to that company if, after telling you who they are, you give me permission. Legal basis: your consent, which you can withdraw at any time. Retention: one year from the request, unless the relationship continues. Rights: access, rectification, erasure, objection and the other rights under the GDPR, by writing to juan@platamarine.com; you can also file a complaint with the Spanish Data Protection Agency (AEPD). More information in the <a href="/en/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</p>
           <p class="legal">You can also <a href="mailto:juan@platamarine.com">write to juan@platamarine.com</a>. If no confirmation appears, check before sending again.</p></form>
         </div>
 
@@ -215,12 +215,12 @@ h2[id]{scroll-margin-top:90px}
             </div>
             <div class="f"><label class="l">Email <small>(optional)</small></label><input type="email" name="email" autocomplete="email" placeholder="you@email.com"></div>
             <label class="chk"><input type="checkbox" name="consent" required> <span>* I agree that Plata Marine will keep this data to reply to me and tell me who I'd use, per the <a href="/en/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</span></label>
-            <label class="chk"><input type="checkbox" name="comparte"> <span>I authorise Plata Marine to pass on my name, phone, email and the details in this form to the company they recommend, so that company can contact me directly. If you don't check this, I'll give you the contact myself and you call them.</span></label>
+            <p class="chk-info">I'll tell you which company I suggest. If you'd rather they call you, I'll tell you who they are and ask for your permission before passing on your details. You can also contact them yourself.</p>
               
             <p class="legal req-note">Fields marked * are required.</p>
 <button type="submit" class="btn btn-wa">Request a contact for the transport</button>
             <p class="msg"></p>
-            <p class="legal">Data controller: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Purpose: to reply to your request, tell you who I'd use and, only if you authorise it, pass your data to that company so it can contact you. Legal basis: your consent, which you can withdraw at any time. Retention: one year from the request, unless the relationship continues. Rights: access, rectification, erasure, objection and the other rights under the GDPR, by writing to juan@platamarine.com; you can also file a complaint with the Spanish Data Protection Agency (AEPD). More information in the <a href="/en/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</p>
+            <p class="legal">Data controller: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Purpose: to reply to your request and tell you who I'd use. I will only pass your data to that company if, after telling you who they are, you give me permission. Legal basis: your consent, which you can withdraw at any time. Retention: one year from the request, unless the relationship continues. Rights: access, rectification, erasure, objection and the other rights under the GDPR, by writing to juan@platamarine.com; you can also file a complaint with the Spanish Data Protection Agency (AEPD). More information in the <a href="/en/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</p>
           <p class="legal">You can also <a href="mailto:juan@platamarine.com">write to juan@platamarine.com</a>. If no confirmation appears, check before sending again.</p></form>
         </div>
 
