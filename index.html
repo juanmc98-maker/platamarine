@@ -490,7 +490,7 @@ section[id]{scroll-margin-top:78px}
            sizes="100vw" alt="Barco a motor navegando por la costa mediterránea" fetchpriority="high" width="1600" height="1067">
       -->
       <video class="hero-video" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture preload="auto" poster="/hero-poster.jpg" aria-hidden="true" src="/hero-720.mp4"></video>
-      <script>(function(){var v=document.querySelector(".hero-video");if(!v)return;if(window.innerWidth<=768)v.src="/hero-540.mp4";v.muted=true;v.defaultMuted=true;function p(){var r=v.play();if(r&&r.catch)r.catch(function(){})}p();["touchstart","scroll","click"].forEach(function(e){window.addEventListener(e,p,{once:true,passive:true})});document.addEventListener("visibilitychange",function(){if(!document.hidden)p()})})();</script>
+      <script>(function(){var v=document.querySelector(".hero-video");if(!v)return;if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){v.removeAttribute("autoplay");v.preload="none";v.pause();return;}if(window.innerWidth<=768)v.src="/hero-540.mp4";v.muted=true;v.defaultMuted=true;function p(){var r=v.play();if(r&&r.catch)r.catch(function(){})}p();["touchstart","scroll","click"].forEach(function(e){window.addEventListener(e,p,{once:true,passive:true})});document.addEventListener("visibilitychange",function(){if(!document.hidden)p()})})();</script>
       <div class="hero-title">
         <p class="hero-eyebrow">Broker náutico en Cataluña · Juan Morante</p>
         <h1>Vender tu barco bien lleva trabajo. De eso me encargo yo.</h1>
