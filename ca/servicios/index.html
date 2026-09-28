@@ -24,7 +24,7 @@
 .pmf label.l{display:block;font-family:var(--display);font-size:13px;font-weight:600;color:var(--ink-2);margin:0 0 5px}
 .pmf input[type=text],.pmf input[type=email],.pmf input[type=tel],.pmf select,.pmf textarea{width:100%;font:16px var(--serif);padding:10px 12px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box;background:#fff;color:var(--ink)}
 .pmf textarea{min-height:90px;resize:vertical}
-.pmf label.chk{display:flex;gap:8px;align-items:flex-start;font-family:var(--display);font-size:13px;color:var(--ink-2);margin:0 0 8px;line-height:1.4}
+.pmf label.chk{display:flex;gap:8px;align-items:flex-start;font-family:var(--display);font-size:13px;color:var(--ink-2);margin:0 0 8px;line-height:1.4}.chk-info{font-family:var(--display);font-size:13px;color:var(--ink-2);margin:0 0 8px;line-height:1.4}
 .pmf .btn{cursor:pointer}
 .pmf .msg{font-family:var(--display);font-size:13.5px;color:#c0392b;margin:8px 0 0}
 .pmf .msg.ok{color:#2e8b57}
@@ -120,12 +120,12 @@ h2[id]{scroll-margin-top:90px}
             </div>
             <div class="f"><label class="l">Correu <small>(opcional)</small></label><input type="email" name="email" autocomplete="email" placeholder="tu@correu.com"></div>
             <label class="chk"><input type="checkbox" name="consent" required> <span>* Accepto que Plata Marine guardi aquestes dades per respondre'm i dir-me amb qui ho faria, segons la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
-            <label class="chk"><input type="checkbox" name="comparte"> <span>Autoritzo Plata Marine a passar el meu nom, telèfon, correu i les dades d'aquest formulari a l'empresa que em recomani, perquè sigui ella qui em contacti. Si no ho marques, et dono jo el contacte i truques tu.</span></label>
+            <p class="chk-info">Et diré quina empresa et proposo. Si prefereixes que sigui ella qui et truqui, abans de passar-li les teves dades et diré quina és i et demanaré permís. També la pots contactar tu directament.</p>
               
             <p class="legal req-note">Els camps amb * són obligatoris.</p>
 <button type="submit" class="btn btn-wa">Demanar contacte per a la ITB</button>
             <p class="msg"></p>
-            <p class="legal">Responsable: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Finalitat: respondre la teva sol·licitud, dir-te amb qui ho faria jo i, només si ho autoritzes, comunicar les teves dades a aquesta empresa perquè et contacti. Base legal: el teu consentiment, que pots retirar quan vulguis. Conservació: un any des de la sol·licitud, llevat que la relació continuï. Drets: accés, rectificació, supressió, oposició i la resta que reconeix el RGPD, escrivint a juan@platamarine.com; també pots reclamar davant l'Agència Espanyola de Protecció de Dades (AEPD). Més informació a la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</p>
+            <p class="legal">Responsable: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Finalitat: respondre la teva sol·licitud i dir-te amb qui ho faria jo. Només comunicaré les teves dades a aquesta empresa si, després de dir-te quina és, em dones permís. Base legal: el teu consentiment, que pots retirar quan vulguis. Conservació: un any des de la sol·licitud, llevat que la relació continuï. Drets: accés, rectificació, supressió, oposició i la resta que reconeix el RGPD, escrivint a juan@platamarine.com; també pots reclamar davant l'Agència Espanyola de Protecció de Dades (AEPD). Més informació a la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</p>
           <p class="legal">També pots <a href="mailto:juan@platamarine.com">escriure a juan@platamarine.com</a>. Si no apareix una confirmació, consulta abans de tornar a enviar.</p></form>
         </div>
 
@@ -148,12 +148,12 @@ h2[id]{scroll-margin-top:90px}
             </div>
             <div class="f"><label class="l">Correu <small>(opcional)</small></label><input type="email" name="email" autocomplete="email" placeholder="tu@correu.com"></div>
             <label class="chk"><input type="checkbox" name="consent" required> <span>* Accepto que Plata Marine guardi aquestes dades per respondre'm i dir-me amb qui ho faria, segons la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
-            <label class="chk"><input type="checkbox" name="comparte"> <span>Autoritzo Plata Marine a passar el meu nom, telèfon, correu i les dades d'aquest formulari a l'empresa que em recomani, perquè sigui ella qui em contacti. Si no ho marques, et dono jo el contacte i truques tu.</span></label>
+            <p class="chk-info">Et diré quina empresa et proposo. Si prefereixes que sigui ella qui et truqui, abans de passar-li les teves dades et diré quina és i et demanaré permís. També la pots contactar tu directament.</p>
               
             <p class="legal req-note">Els camps amb * són obligatoris.</p>
 <button type="submit" class="btn btn-wa">Demanar contacte amb la gestoria</button>
             <p class="msg"></p>
-            <p class="legal">Responsable: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Finalitat: respondre la teva sol·licitud, dir-te amb qui ho faria jo i, només si ho autoritzes, comunicar les teves dades a aquesta empresa perquè et contacti. Base legal: el teu consentiment, que pots retirar quan vulguis. Conservació: un any des de la sol·licitud, llevat que la relació continuï. Drets: accés, rectificació, supressió, oposició i la resta que reconeix el RGPD, escrivint a juan@platamarine.com; també pots reclamar davant l'Agència Espanyola de Protecció de Dades (AEPD). Més informació a la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</p>
+            <p class="legal">Responsable: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Finalitat: respondre la teva sol·licitud i dir-te amb qui ho faria jo. Només comunicaré les teves dades a aquesta empresa si, després de dir-te quina és, em dones permís. Base legal: el teu consentiment, que pots retirar quan vulguis. Conservació: un any des de la sol·licitud, llevat que la relació continuï. Drets: accés, rectificació, supressió, oposició i la resta que reconeix el RGPD, escrivint a juan@platamarine.com; també pots reclamar davant l'Agència Espanyola de Protecció de Dades (AEPD). Més informació a la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</p>
           <p class="legal">També pots <a href="mailto:juan@platamarine.com">escriure a juan@platamarine.com</a>. Si no apareix una confirmació, consulta abans de tornar a enviar.</p></form>
         </div>
 
@@ -180,12 +180,12 @@ h2[id]{scroll-margin-top:90px}
             </div>
             <div class="f"><label class="l">Correu <small>(opcional)</small></label><input type="email" name="email" autocomplete="email" placeholder="tu@correu.com"></div>
             <label class="chk"><input type="checkbox" name="consent" required> <span>* Accepto que Plata Marine guardi aquestes dades per respondre'm i dir-me amb qui ho faria, segons la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
-            <label class="chk"><input type="checkbox" name="comparte"> <span>Autoritzo Plata Marine a passar el meu nom, telèfon, correu i les dades d'aquest formulari a l'empresa que em recomani, perquè sigui ella qui em contacti. Si no ho marques, et dono jo el contacte i truques tu.</span></label>
+            <p class="chk-info">Et diré quina empresa et proposo. Si prefereixes que sigui ella qui et truqui, abans de passar-li les teves dades et diré quina és i et demanaré permís. També la pots contactar tu directament.</p>
               
             <p class="legal req-note">Els camps amb * són obligatoris.</p>
 <button type="submit" class="btn btn-wa">Demanar contacte amb el varador</button>
             <p class="msg"></p>
-            <p class="legal">Responsable: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Finalitat: respondre la teva sol·licitud, dir-te amb qui ho faria jo i, només si ho autoritzes, comunicar les teves dades a aquesta empresa perquè et contacti. Base legal: el teu consentiment, que pots retirar quan vulguis. Conservació: un any des de la sol·licitud, llevat que la relació continuï. Drets: accés, rectificació, supressió, oposició i la resta que reconeix el RGPD, escrivint a juan@platamarine.com; també pots reclamar davant l'Agència Espanyola de Protecció de Dades (AEPD). Més informació a la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</p>
+            <p class="legal">Responsable: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Finalitat: respondre la teva sol·licitud i dir-te amb qui ho faria jo. Només comunicaré les teves dades a aquesta empresa si, després de dir-te quina és, em dones permís. Base legal: el teu consentiment, que pots retirar quan vulguis. Conservació: un any des de la sol·licitud, llevat que la relació continuï. Drets: accés, rectificació, supressió, oposició i la resta que reconeix el RGPD, escrivint a juan@platamarine.com; també pots reclamar davant l'Agència Espanyola de Protecció de Dades (AEPD). Més informació a la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</p>
           <p class="legal">També pots <a href="mailto:juan@platamarine.com">escriure a juan@platamarine.com</a>. Si no apareix una confirmació, consulta abans de tornar a enviar.</p></form>
         </div>
 
@@ -215,12 +215,12 @@ h2[id]{scroll-margin-top:90px}
             </div>
             <div class="f"><label class="l">Correu <small>(opcional)</small></label><input type="email" name="email" autocomplete="email" placeholder="tu@correo.com"></div>
             <label class="chk"><input type="checkbox" name="consent" required> <span>* Accepto que Plata Marine guardi aquestes dades per respondre'm i dir-me amb qui ho faria, segons la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
-            <label class="chk"><input type="checkbox" name="comparte"> <span>Autoritzo Plata Marine a passar el meu nom, telèfon, correu i les dades d'aquest formulari a l'empresa que em recomani, perquè sigui ella qui em contacti. Si no ho marques, et dono jo el contacte i truques tu.</span></label>
+            <p class="chk-info">Et diré quina empresa et proposo. Si prefereixes que sigui ella qui et truqui, abans de passar-li les teves dades et diré quina és i et demanaré permís. També la pots contactar tu directament.</p>
               
             <p class="legal req-note">Els camps amb * són obligatoris.</p>
 <button type="submit" class="btn btn-wa">Demanar contacte per al transport</button>
             <p class="msg"></p>
-            <p class="legal">Responsable: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Finalitat: respondre la teva sol·licitud, dir-te amb qui ho faria jo i, només si ho autoritzes, comunicar les teves dades a aquesta empresa perquè et contacti. Base legal: el teu consentiment, que pots retirar quan vulguis. Conservació: un any des de la sol·licitud, llevat que la relació continuï. Drets: accés, rectificació, supressió, oposició i la resta que reconeix el RGPD, escrivint a juan@platamarine.com; també pots reclamar davant l'Agència Espanyola de Protecció de Dades (AEPD). Més informació a la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</p>
+            <p class="legal">Responsable: Juan Morante Cruz (Plata Marine), juan@platamarine.com. Finalitat: respondre la teva sol·licitud i dir-te amb qui ho faria jo. Només comunicaré les teves dades a aquesta empresa si, després de dir-te quina és, em dones permís. Base legal: el teu consentiment, que pots retirar quan vulguis. Conservació: un any des de la sol·licitud, llevat que la relació continuï. Drets: accés, rectificació, supressió, oposició i la resta que reconeix el RGPD, escrivint a juan@platamarine.com; també pots reclamar davant l'Agència Espanyola de Protecció de Dades (AEPD). Més informació a la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</p>
           <p class="legal">També pots <a href="mailto:juan@platamarine.com">escriure a juan@platamarine.com</a>. Si no apareix una confirmació, consulta abans de tornar a enviar.</p></form>
         </div>
 
