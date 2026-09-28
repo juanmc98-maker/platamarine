@@ -1,0 +1,13 @@
+/* Plata Marine · bloque "Barcos parecidos" (similares.js) */
+.pm-simbox{margin:34px 0 10px;padding-top:26px;border-top:1px solid var(--plata,#d9dee2)}
+.pm-simbox h2{margin:0 0 6px}
+.pm-simbox .pm-sub{margin:0 0 16px;color:var(--ink-2,#4a5963);font-size:15px}
+.pm-sim{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;margin:0 0 14px}
+.pm-sim .pcard{display:flex;flex-direction:column;border:1px solid var(--plata,#d9dee2);border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;background:#fff}
+.pm-sim .pcard img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;height:auto}
+.pm-sim .pc-b{display:flex;flex-direction:column;gap:3px;padding:12px 14px 14px;font-family:var(--display,inherit)}
+.pm-sim .pc-b strong{font-size:1rem}.pm-sim .pc-p{font-weight:600}.pm-sim .pc-d{font-size:13px;color:var(--ink-2,#4a5963)}
+.pm-sim .pc-t{font-size:12px;align-self:flex-start;background:#eef1f3;border-radius:999px;padding:2px 8px;margin-top:4px}
+.pm-sim .pc-l{font-size:13px;color:var(--sea,#1d5b79);margin-top:6px}
+.pm-simbox .pm-empty{background:#F3F5F6;padding:14px 16px;border-radius:6px;margin:0 0 12px}
+.pm-simbox .pm-more{font-size:15px;margin:0}
