@@ -9,7 +9,7 @@ from playwright.async_api import async_playwright
 
 ROOT = os.environ.get('PM_ROOT', '/home/claude/platamarine')
 SLUGS = ['starfisher-840', 'oceanis-50', 'sealine-365', 'monte-carlo-27', 'van-de-stadt-36', 'monterey-278-ss',
-         'faeton-730-moraga', 'sacs-535', 'ranieri-azzurra-5m']
+         'faeton-730-moraga', 'sacs-535', 'tiger-marine-650', 'ranieri-azzurra-5m']
 L = {
  'es': dict(pre='', sale='EN VENTA', sold='VENDIDO', langtag='Ficha en español', tech='Resumen técnico', gal='Galería',
             interest='¿Te interesa este barco?', interest2='Escríbeme y lo vemos juntos, sin compromiso.',
