@@ -12,6 +12,8 @@
   var INV = {
     updated: '2026-09-28',
     boats: [
+      {slug: 'gallart-1050', name: 'Gallart 10.50 Fly', year: 1977, kind: 'motor', types: ['fly', 'cabinado'], length: 10.5, price: 29900, zone: 'cataluna', title: 3, status: 'available',
+        d: {es: 'Aprox. 10,50 m · 2 x Volvo Penta 192 cv · Costa Brava (Girona)', ca: 'Aprox. 10,50 m · 2 x Volvo Penta 192 cv · Costa Brava (Girona)', en: 'Approx. 10.50 m · twin Volvo Penta 192 hp · Costa Brava (Girona)'}},
       {slug: 'tiger-marine-650', name: 'Tiger Marine Top Line 650', year: 2015, kind: 'motor', types: ['rib'], length: 6.5, price: 33000, zone: 'cataluna', title: 2, status: 'available',
         d: {es: 'Aprox. 6,50 m · semirrígida · Suzuki 150 cv · Costa Daurada (Tarragona)', ca: 'Aprox. 6,50 m · semirígida · Suzuki 150 cv · Costa Daurada (Tarragona)', en: 'Approx. 6.50 m · RIB · Suzuki 150 hp · Costa Daurada (Tarragona)'}},
       {slug: 'oceanis-50', name: 'Beneteau Oceanis 50', year: 2008, kind: 'vela', types: ['velero'], length: 14.75, price: 155000, zone: 'valencia', title: 3, status: 'available',
