@@ -18,6 +18,7 @@
         if (f.zone && b.zone !== f.zone) return false;
         if (f.kind && b.kind !== f.kind) return false;
         if (f.maxTitle && b.title > f.maxTitle) return false;
+        if (f.q && !new RegExp(f.q, 'i').test(b.name)) return false;
         return true;
       });
       var empty = box.parentNode.querySelector('.pm-empty');
