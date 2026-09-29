@@ -8,7 +8,7 @@ from PIL import Image
 from playwright.async_api import async_playwright
 
 ROOT = os.environ.get('PM_ROOT', '/home/claude/platamarine')
-SLUGS = ['starfisher-840', 'oceanis-50', 'sealine-365', 'monte-carlo-27', 'van-de-stadt-36', 'monterey-278-ss',
+SLUGS = ['antares-12-fly', 'starfisher-840', 'oceanis-50', 'sealine-365', 'monte-carlo-27', 'van-de-stadt-36', 'monterey-278-ss',
          'faeton-730-moraga', 'sacs-535', 'tiger-marine-650', 'gallart-1050', 'ranieri-azzurra-5m']
 L = {
  'es': dict(pre='', sale='EN VENTA', sold='VENDIDO', langtag='Ficha en español', tech='Resumen técnico', gal='Galería',
@@ -58,7 +58,7 @@ def parse(slug, lang):
     prose = re.search(r'<div class="prose">(.*?)</div>', t, re.S).group(1)
     h2 = strip(re.search(r'<h2>(.*?)</h2>', prose, re.S).group(1))
     paras = [p for p in re.findall(r'<p>(.*?)</p>', prose, re.S)]
-    thumbs = re.findall(r'data-full="/([a-z0-9-]+-\d+\.jpg)"', re.search(r'<div class="gal">(.*?)</div>\s*</div>', t, re.S).group(1))
+    thumbs = re.findall(r'data-full="/([a-z0-9-]+-\d+(?:-ca|-en)?\.jpg)"', re.search(r'<div class="gal">(.*?)</div>\s*</div>', t, re.S).group(1))
     seen = []
     for x in thumbs:
         if x not in seen: seen.append(x)
