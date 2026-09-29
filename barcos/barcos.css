@@ -56,3 +56,9 @@ h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;color:var(--ink)}
 .btn-ask{white-space:nowrap}
 .head-note{font-size:12.5px;line-height:1.5;margin:10px 0 0;max-width:760px}
 @media (max-width:639px){.price-box{align-items:flex-start;max-width:none;width:100%}.price-box .price-alt{text-align:left}.btn-ask{width:100%;justify-content:center;text-align:center}}
+
+/* equipamiento en etiquetas y enlace PDF junto al precio (30/09/2026) */
+.equip-h{margin:18px 0 8px;font-size:1rem}
+.equip-tags{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-wrap:wrap;gap:6px}
+.equip-tags li{background:#eef4f7;color:#0e3042;border-radius:999px;padding:5px 11px;font-size:.88rem;line-height:1.3}
+.pdf-link{display:block;margin-top:10px;font-size:.92rem;color:#0e3042;text-decoration:underline;text-underline-offset:3px}
