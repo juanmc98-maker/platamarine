@@ -11,3 +11,5 @@
 .pm-sim .pc-l{font-size:13px;color:var(--sea,#1d5b79);margin-top:6px}
 .pm-simbox .pm-empty{background:#F3F5F6;padding:14px 16px;border-radius:6px;margin:0 0 12px}
 .pm-simbox .pm-more{font-size:15px;margin:0}
+
+.pm-sim .pc-p .vat,.pm-list .pc-p .vat{color:#C62828;font-size:.85em;font-weight:800}

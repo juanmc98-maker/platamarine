@@ -10,7 +10,7 @@
 (function () {
   'use strict';
   var INV = {
-    updated: '2026-09-29',
+    updated: '2026-09-30',
     boats: [
       {slug: 'antares-12-fly', name: 'Beneteau Antares 12 Fly', year: 2024, kind: 'motor', types: ['fly', 'cabinado'], length: 12.9, price: 499000, zone: 'cataluna', area: 'costa-daurada', title: 3, status: 'available',
         d: {es: '12,9 m · 2 x Mercury 400 XL · Costa Daurada (Tarragona)', ca: '12,9 m · 2 x Mercury 400 XL · Costa Daurada (Tarragona)', en: '12.9 m · twin Mercury 400 XL · Costa Daurada (Tarragona)'}},
@@ -22,6 +22,8 @@
         d: {es: 'Aprox. 14,75 m · Yanmar 110 cv · Valencia', ca: 'Aprox. 14,75 m · Yanmar 110 cv · València', en: 'Approx. 14.75 m · Yanmar 110 hp · Valencia'}},
       {slug: 'sealine-365', name: 'Sealine 365 Sport Bridge', year: 1989, kind: 'motor', types: ['cabinado'], length: 11.1, price: 75000, zone: 'cataluna', area: 'costa-daurada', title: 3, status: 'available',
         d: {es: '11,10 m · 2 x Volvo Penta 200 cv · Costa Daurada (Tarragona)', ca: '11,10 m · 2 x Volvo Penta 200 cv · Costa Daurada (Tarragona)', en: '11.10 m · 2 x Volvo Penta 200 hp · Costa Daurada (Tarragona)'}},
+      {slug: 'cattleya-x6', name: 'Cattleya X6', year: 2021, kind: 'motor', types: ['open', 'sundeck'], length: 5.98, price: 55000, vat: true, zone: 'baleares', area: 'ibiza', title: 1, status: 'available',
+        d: {es: '5,98 m · Tohatsu 150 cv, nuevo 2026 · Ibiza', ca: '5,98 m · Tohatsu 150 cv, nou 2026 · Eivissa', en: '5.98 m · Tohatsu 150 hp, new 2026 · Ibiza'}},
       {slug: 'monte-carlo-27', name: 'Beneteau Monte Carlo 27', year: 2008, kind: 'motor', types: ['cabinado', 'sundeck'], length: 7.98, price: 64900, zone: 'cataluna', area: 'costa-brava', title: 2, status: 'available',
         d: {es: '7,98 m · Volvo Penta 350 cv · Costa Brava', ca: '7,98 m · Volvo Penta 350 cv · Costa Brava', en: '7.98 m · Volvo Penta 350 hp · Costa Brava'}},
       {slug: 'van-de-stadt-36', name: 'Van de Stadt Zeehond 36', year: 1981, kind: 'vela', types: ['velero'], length: 12, price: 72000, zone: 'valencia', title: 3, status: 'available',
