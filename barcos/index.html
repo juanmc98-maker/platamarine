@@ -107,7 +107,7 @@
       <fieldset><label for="f-zon">Zona</label><select id="f-zon"><option value="all">Todas</option><option value="cataluna">Cataluña</option><option value="baleares">Baleares</option><option value="valencia">Comunidad Valenciana</option><option value="galicia">Galicia</option></select></fieldset>
       <fieldset><label for="f-comb">Combustible</label><select id="f-comb"><option value="all">Cualquiera</option><option value="diesel">Diésel</option><option value="gasolina">Gasolina</option></select></fieldset>
       <fieldset><label for="f-mot">Motor</label><select id="f-mot"><option value="all">Cualquiera</option><option value="intra">Intraborda (eje o cola)</option><option value="fuera">Fueraborda</option></select></fieldset>
-      <fieldset><label for="f-ord">Ordenar</label><select id="f-ord"><option value="nov">Novedades</option><option value="pa">Precio: de más barato a más caro</option><option value="pd">Precio: de más caro a más barato</option><option value="an">Año: de más nuevo a más viejo</option></select></fieldset>
+      <fieldset><label for="f-ord">Ordenar</label><select id="f-ord"><option selected value="pd">Precio: de más caro a más barato</option><option value="nov">Novedades</option><option value="pa">Precio: de más barato a más caro</option><option value="an">Año: de más nuevo a más viejo</option></select></fieldset>
       <span class="bcount" aria-live="polite" data-one="1 barco disponible" data-many="{n} barcos disponibles"></span>
       <button type="button" class="bclear" hidden>Limpiar filtros</button>
     </div>
@@ -279,16 +279,16 @@ function apply(push){
   s.forEach(function(c){g.appendChild(c)});
   cnt.textContent=n===1?cnt.dataset.one:cnt.dataset.many.replace('{n}',n);
   none.hidden=n>0;
-  var act=tipo!=='all'||tl!=='all'||pr!=='all'||zn!=='all'||cb!=='all'||mt!=='all'||o!=='nov';
+  var act=tipo!=='all'||tl!=='all'||pr!=='all'||zn!=='all'||cb!=='all'||mt!=='all'||o!=='pd';
   f.querySelector('.bclear').hidden=!act;
-  if(push){var p=new URLSearchParams();if(tipo!=='all')p.set('tipo',tipo);if(tl!=='all')p.set('titulo',tl);if(o!=='nov')p.set('orden',o);if(pr!=='all')p.set('precio',pr);if(zn!=='all')p.set('zona',zn);if(cb!=='all')p.set('combustible',cb);if(mt!=='all')p.set('motor',mt);
+  if(push){var p=new URLSearchParams();if(tipo!=='all')p.set('tipo',tipo);if(tl!=='all')p.set('titulo',tl);if(o!=='pd')p.set('orden',o);if(pr!=='all')p.set('precio',pr);if(zn!=='all')p.set('zona',zn);if(cb!=='all')p.set('combustible',cb);if(mt!=='all')p.set('motor',mt);
     var q=p.toString();history.replaceState(null,'',location.pathname+(q?'?'+q:''));
     if(window.gtag)try{gtag('event','filtro_barcos',{tipo:tipo,titulo:tl,orden:o,precio:pr,zona:zn,combustible:cb,motor:mt})}catch(e){}}
 }
 f.querySelectorAll('.seg button').forEach(function(b){b.addEventListener('click',function(){
   tipo=b.dataset.v;f.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});apply(true);});});
 document.querySelectorAll('.bclear').forEach(function(b){b.addEventListener('click',function(){
-  tipo='all';tsel.value='all';psel.value='all';zsel.value='all';csel.value='all';msel.value='all';osel.value='nov';
+  tipo='all';tsel.value='all';psel.value='all';zsel.value='all';csel.value='all';msel.value='all';osel.value='pd';
   f.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.v==='all')});apply(true);});});
 tsel.addEventListener('change',function(){apply(true)});psel.addEventListener('change',function(){apply(true)});zsel.addEventListener('change',function(){apply(true)});csel.addEventListener('change',function(){apply(true)});msel.addEventListener('change',function(){apply(true)});osel.addEventListener('change',function(){apply(true)});
 var p=new URLSearchParams(location.search);
