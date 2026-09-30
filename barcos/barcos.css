@@ -18,6 +18,8 @@ h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;color:var(--ink)}
 .head h1{font-size:clamp(2rem,4.6vw,3.2rem);font-weight:700;font-stretch:90%;line-height:1.05;letter-spacing:-.015em}
 .head .sub{font-family:var(--display);font-size:14px;color:var(--ink-2);margin-top:8px;display:flex;flex-wrap:wrap;gap:6px 16px}
 .price{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--sea);font-variant-numeric:tabular-nums;white-space:nowrap}
+.vat{color:#C62828;font-size:.58em;font-weight:800;vertical-align:middle;letter-spacing:.02em}
+.sb-price .vat{font-size:.7em}
 .status{display:inline-block;font-family:var(--display);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;background:var(--sea-deep);color:#fff;padding:6px 9px;border-radius:5px;margin-bottom:12px}
 .status.available{background:#1C7A4D}
 .gal{display:grid;grid-template-columns:1fr;gap:8px}
