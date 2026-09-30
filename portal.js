@@ -16,6 +16,7 @@
       try { f = JSON.parse(box.getAttribute('data-f')); } catch (e) {}
       var list = INV.available().filter(function (b) {
         if (f.zone && b.zone !== f.zone) return false;
+        if (f.area && b.area !== f.area) return false;
         if (f.kind && b.kind !== f.kind) return false;
         if (f.maxTitle && b.title > f.maxTitle) return false;
         if (f.q && !new RegExp(f.q, 'i').test(b.name)) return false;

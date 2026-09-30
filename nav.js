@@ -47,6 +47,15 @@
   var g=document.querySelectorAll('#pmxPanel .pmx-grp');
   for(var i=0;i<g.length;i++){var a=g[i].querySelector('a[href$="/modelos/"]');if(a){add(g[i]);break;}}
 })();
+/* Enlace "Broker en Barcelona y Maresme" en el menú Vender de todas las páginas. */
+(function(){
+  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':'';
+  var t={'':'Vender en Barcelona y Maresme','/ca':'Vendre a Barcelona i Maresme','/en':'Selling in Barcelona and Maresme'}[pre],h=pre+'/vender/broker-nautico-barcelona-maresme.html';
+  function add(box){if(!box||box.querySelector('a[href="'+h+'"]'))return;var a=document.createElement('a');a.href=h;a.textContent=t;if(p===h)a.setAttribute('aria-current','page');box.appendChild(a);}
+  add(document.getElementById('pmxM1'));
+  var g=document.querySelectorAll('#pmxPanel .pmx-grp');
+  for(var i=0;i<g.length;i++){if(g[i].querySelector('a[href$="/herramientas/valora-tu-barco.html"]')){add(g[i]);break;}}
+})();
 /* Enlace "Escuelas náuticas" en el menú Servicios de todas las páginas. */
 (function(){
   var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':'';
