@@ -20,7 +20,7 @@
         if (f.maxTitle && b.title > f.maxTitle) return false;
         if (f.q && !new RegExp(f.q, 'i').test(b.name)) return false;
         return true;
-      });
+      }).sort(function (a, b) { return (b.price || 0) - (a.price || 0); });
       var empty = box.parentNode.querySelector('.pm-empty');
       if (empty) empty.hidden = list.length > 0;
       box.innerHTML = list.map(function (b) {

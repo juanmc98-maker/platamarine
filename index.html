@@ -444,7 +444,15 @@ section[id]{scroll-margin-top:78px}
 .langsw a{padding:3px 7px;border-radius:4px;text-decoration:none;color:var(--ink-2,inherit)}
 .langsw a[aria-current="page"]{color:var(--ink,inherit);text-decoration:underline}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}.hero-photo::before{z-index:1}.hero-photo::after,.hero-title{z-index:2}@media (max-width:639px){.service-img{display:none}.service-card{padding-top:26px;padding-bottom:26px}}
-.hero-photo{background:var(--sea-deep) url(/hero-poster.jpg) center/cover no-repeat}.hero-video::-webkit-media-controls,.hero-video::-webkit-media-controls-panel,.hero-video::-webkit-media-controls-start-playback-button,.hero-video::-webkit-media-controls-overlay-play-button{display:none!important;-webkit-appearance:none;opacity:0}.hero-video.off{visibility:hidden}</style>
+.hero-photo{background:var(--sea-deep) url(/hero-poster.jpg) center/cover no-repeat}.hero-video::-webkit-media-controls,.hero-video::-webkit-media-controls-panel,.hero-video::-webkit-media-controls-start-playback-button,.hero-video::-webkit-media-controls-overlay-play-button{display:none!important;-webkit-appearance:none;opacity:0}.hero-video.off{visibility:hidden}.qsearch{background:var(--sea-deep);color:#fff;padding:18px 0}
+.qsearch form{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 16px;max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.qsearch .qs-ttl{font-family:var(--display);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#E3E9EC;flex:1 1 100%;margin:0}
+.qsearch label{display:flex;flex-direction:column;gap:5px;font-size:.82rem;color:#C9D3D9;flex:1 1 160px}
+.qsearch select{font:inherit;font-size:15px;padding:10px 12px;border:1px solid rgba(255,255,255,.35);border-radius:8px;background:#fff;color:var(--ink)}
+.qsearch button{font:inherit;font-size:15px;font-weight:600;padding:11px 24px;border:0;border-radius:999px;background:var(--wa);color:#fff;cursor:pointer;flex:0 0 auto}
+.qsearch button:hover{background:var(--wa-hover)}
+@media(max-width:639px){.qsearch label{flex:1 1 100%}.qsearch button{width:100%}}
+</style>
 <link rel="stylesheet" href="/nav.css?v=20260925">
 </head>
 <body>
@@ -490,11 +498,11 @@ section[id]{scroll-margin-top:78px}
            sizes="100vw" alt="Barco a motor navegando por la costa mediterránea" fetchpriority="high" width="1600" height="1067">
       -->
       <video class="hero-video" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture preload="auto" poster="/hero-poster.jpg" aria-hidden="true" src="/hero-720.mp4"></video>
-      <script>(function(){var v=document.querySelector(".hero-video");if(!v)return;if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){v.removeAttribute("autoplay");v.preload="none";v.pause();return;}if(window.innerWidth<=768)v.src="/hero-540.mp4";v.muted=true;v.defaultMuted=true;v.addEventListener("playing",function(){v.classList.remove("off")});function p(){var r=v.play();if(r&&r.catch)r.catch(function(){v.classList.add("off")})}p();["touchstart","scroll","click"].forEach(function(e){window.addEventListener(e,p,{once:true,passive:true})});document.addEventListener("visibilitychange",function(){if(!document.hidden)p()})})();</script>
+      <script>(function(){var v=document.querySelector(".hero-video");if(!v)return;if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){v.removeAttribute("autoplay");v.preload="none";v.pause();return;}if(window.innerWidth<=768){v.preload="metadata";v.src="/hero-540.mp4";}v.muted=true;v.defaultMuted=true;v.addEventListener("playing",function(){v.classList.remove("off")});function p(){var r=v.play();if(r&&r.catch)r.catch(function(){v.classList.add("off")})}p();["touchstart","scroll","click"].forEach(function(e){window.addEventListener(e,p,{once:true,passive:true})});document.addEventListener("visibilitychange",function(){if(!document.hidden)p()})})();</script>
       <div class="hero-title">
-        <p class="hero-eyebrow">Broker náutico en Cataluña · Juan Morante</p>
-        <h1>Vender tu barco bien lleva trabajo. De eso me encargo yo.</h1>
-        <p class="hero-sub">Precio con criterio, anuncio cuidado y negociación hasta la entrega. Barcos a motor y veleros, con base en Cataluña y operaciones en Baleares y otras zonas.</p>
+        <p class="hero-eyebrow">Juan Morante · Broker náutico en Cataluña y Baleares</p>
+        <h1>Te ayudo a vender tu barco o a encontrar el que buscas</h1>
+        <p class="hero-sub">Barcos a motor y veleros de ocasión. Precio con criterio, anuncio cuidado y acompañamiento hasta la entrega.</p>
         <div class="hero-btns">
           <a class="btn btn-pill" href="#valora">Quiero vender mi barco</a>
           <a class="btn btn-pill ghost" href="barcos/">Ver barcos en venta</a>
@@ -502,6 +510,16 @@ section[id]{scroll-margin-top:78px}
         <p class="hero-micro">Honorarios al cerrar la venta · Sin exclusiva ni adelantos</p>
       </div>
     </div>
+  </section>
+
+  <section class="qsearch" aria-label="Búsqueda rápida de barcos">
+    <form action="barcos/" method="get">
+      <p class="qs-ttl">¿Buscas barco?</p>
+      <label>Tipo<select name="tipo"><option value="all">Motor o vela</option><option value="motor">Motor</option><option value="vela">Vela</option></select></label>
+      <label>Presupuesto<select name="precio"><option value="all">Cualquiera</option><option value="0-30000">Hasta 30.000 €</option><option value="30000-60000">30.000 – 60.000 €</option><option value="60000-100000">60.000 – 100.000 €</option><option value="100000-">Más de 100.000 €</option></select></label>
+      <label>Zona<select name="zona"><option value="all">Todas</option><option value="cataluna">Cataluña</option><option value="baleares">Baleares</option><option value="valencia">Comunidad Valenciana</option><option value="galicia">Galicia</option></select></label>
+      <button type="submit">Buscar barcos</button>
+    </form>
   </section>
 
   <section class="service-switch" aria-label="Vender o comprar">
@@ -547,10 +565,9 @@ section[id]{scroll-margin-top:78px}
               <div><dt>Eslora</dt><dd>14,75 m</dd></div>
               <div><dt>Motor</dt><dd>Yanmar 110 cv, diésel</dd></div>
               <div><dt>Aparejo</dt><dd>Jarcia de 2019</dd></div>
-              
               <div><dt>Ubicación</dt><dd>Valencia</dd></div>
             </dl>
-            <p class="desc">Velero de 2008: generador, aire acondicionado, desalinizadora, tres winches eléctricos, dos pilotos y jarcia de 2019. Yanmar 110 CV. Con auxiliar semirrígida. Se puede visitar con cita previa.</p>
+            <p class="desc">Velero de 2008 muy equipado: generador, aire acondicionado, desalinizadora, tres winches eléctricos, dos pilotos y jarcia de 2019. Yanmar 110 CV. Con auxiliar semirrígida. Se puede visitar con cita previa.</p>
             <div class="boat-cta">
               <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20me%20interesa%20el%20Beneteau%20Oceanis%2050%20de%202008%20que%20ten%C3%A9is%20en%20venta.%20%C2%BFPodemos%20hablar%3F" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
               <a class="btn btn-ghost" href="barcos/oceanis-50.html">Ver ficha completa</a>
