@@ -18,7 +18,7 @@ const IMG = {'ranieri-azzurra-5m': '/ranieri-azzurra-1.jpg'};
 const price = (n, l) => { const s = String(n).replace(/\B(?=(\d{3})+(?!\d))/g, l === 'en' ? ',' : '.'); return l === 'en' ? '€' + s : s + ' €'; };
 const card = (b, l) => {
   const img = (IMG[b.slug] || '/' + b.slug + '-1.jpg').replace(/\.jpg$/, '');
-  return `<a class="pcard" href="${INV.url(b, l)}"><img src="${img}-m.jpg" srcset="${img}-m.jpg 1000w, ${img}.jpg 1600w" sizes="(max-width: 640px) 100vw, 360px" alt="${esc(b.name)}" loading="lazy" width="1600" height="900"><span class="pc-b"><strong>${esc(b.name)}</strong><span class="pc-p">${price(b.price, l)}</span><span class="pc-d">${b.year} · ${esc(b.d[l])}</span><span class="pc-t">${esc(INV.titleFor(b, l))}</span><span class="pc-l">${{es: 'Ver ficha', ca: 'Veure fitxa', en: 'See details'}[l]} →</span></span></a>`;
+  return `<a class="pcard" href="${INV.url(b, l)}"><img src="${img}-m.jpg" srcset="${img}-m.jpg 1000w, ${img}.jpg 1600w" sizes="(max-width: 640px) 100vw, 360px" alt="${esc(b.name)}" loading="lazy" width="1600" height="900"><span class="pc-b"><strong>${esc(b.name)}</strong><span class="pc-p">${price(b.price, l)}${b.vat ? ' <span class="vat">' + (l === 'en' ? '+VAT' : '+IVA') + '</span>' : ''}</span><span class="pc-d">${b.year} · ${esc(b.d[l])}</span><span class="pc-t">${esc(INV.titleFor(b, l))}</span><span class="pc-l">${{es: 'Ver ficha', ca: 'Veure fitxa', en: 'See details'}[l]} →</span></span></a>`;
 };
 const TX = {
   es: {avail: 'Otros barcos parecidos', sold: 'Barcos parecidos disponibles', model: 'En venta ahora, de eslora parecida',
