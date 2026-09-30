@@ -49,6 +49,8 @@ if(specs && gal){
         var v = r.value;
         if(K.k==='engine') v = v.split(/\s[·(]\s?/)[0].replace(/,\s*(diésel|dièsel|diesel|gasolina|petrol)\b.*$/i,'');
         if(K.k==='place') v = v.replace(/\s*\(.*\)\s*$/,'');
+        if(K.k==='title'){ v = v.replace(/PER con pr[áa]cticas de vela/i,'PER (vela)').replace(/PER amb pr[àa]ctiques de vela/i,'PER (vela)').replace(/Spanish PER with sailing endorsement/i,'PER (sail)').replace(/PER with sailing (practice|endorsement)/i,'PER (sail)').replace(/Licencia de Navegaci[óo]n/i,'Licencia').replace(/Llic[èe]ncia de Navegaci[óo]/i,'Llicència').replace(/Patr[óo]n o Capit[áa]n de Yate/i,'PY o CY'); }
+        if(K.k==='hours'){ v = v.replace(/^Sin contador de horas$/i,'Sin contador').replace(/^Sense comptador d'hores$/i,'Sense comptador').replace(/^No hour meter$/i,'No hour meter'); }
         if(v.length > 44) v = v.slice(0,42).replace(/\s\S*$/,'') + '…';
         items.push({k:K.k, label:r.label, value:v});
         break;
