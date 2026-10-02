@@ -120,3 +120,18 @@
   var g=document.querySelectorAll('#pmxPanel .pmx-grp');
   for(var i=0;i<g.length;i++){if(g[i].querySelector('a[href$="/herramientas/valora-tu-barco.html"]')){add(g[i]);break;}}
 })();
+
+/* Aviso en letra pequeña al pie de todas las páginas: información orientativa, podemos equivocarnos y nada es vinculante. */
+(function(){
+  function run(){
+    var foot=document.querySelector('footer.foot .wrap'); if(!foot||document.getElementById('pmDisc'))return;
+    var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':'';
+    var t={'':'La información de esta web es orientativa y se revisa con cuidado, pero podemos equivocarnos: compruébala siempre con la documentación del barco, el vendedor o un profesional. Nada de lo que aparece en esta web es vinculante.',
+      '/ca':'La informació d’aquest web és orientativa i es revisa amb cura, però ens podem equivocar: comprova-la sempre amb la documentació del vaixell, el venedor o un professional. Res del que apareix en aquest web és vinculant.',
+      '/en':'The information on this website is for guidance and is reviewed carefully, but we can get things wrong: always check it against the boat’s papers, the seller or a professional. Nothing on this website is binding.'}[pre];
+    var el=document.createElement('p');el.id='pmDisc';el.textContent=t;
+    el.style.cssText='font-size:11.5px;line-height:1.5;opacity:.75;margin:14px 0 0;max-width:820px;flex-basis:100%';
+    foot.appendChild(el);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
+})();
