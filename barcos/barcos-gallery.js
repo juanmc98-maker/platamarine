@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 /* ficha-plus: datos clave, descripción plegada y barra móvil (30/09/2026) */
-(function(){ var s=document.createElement('script'); s.src='/barcos/ficha-plus.js?v=20260930b'; s.defer=true; document.head.appendChild(s); })();
+(function(){ var s=document.createElement('script'); s.src='/barcos/ficha-plus.js?v=20261002'; s.defer=true; document.head.appendChild(s); })();
 var main = document.getElementById('main');
 if(!main) return;
 var L = {

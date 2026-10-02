@@ -112,3 +112,16 @@ if(ask && price && head && window.matchMedia('(max-width: 639px)').matches){
   show();
 }
 })();
+
+/* Enlace a "valora tu barco" al final de la descripción de cada ficha (ES/CA/EN). */
+(function(){
+  var lang=(document.documentElement.lang||'es').slice(0,2);
+  var L={es:['¿Tienes un barco parecido y lo quieres vender? ','Mira qué influye en su precio (2 min)','/herramientas/valora-tu-barco.html'],
+    ca:['Tens un vaixell semblant i el vols vendre? ','Mira què influeix en el seu preu (2 min)','/ca/herramientas/valora-tu-barco.html'],
+    en:['Own a similar boat and thinking of selling? ','See what affects its price (2 min)','/en/herramientas/valora-tu-barco.html']}[lang]||null;
+  var prose=document.querySelector('.prose'); if(!L||!prose||document.getElementById('pm-sell-hint'))return;
+  var p=document.createElement('p'); p.id='pm-sell-hint';
+  p.style.cssText='margin-top:22px;padding:12px 14px;border-left:3px solid var(--brass,#b8955a);background:rgba(127,146,158,.08);font-size:.95em';
+  p.appendChild(document.createTextNode(L[0])); var a=document.createElement('a'); a.href=L[2]; a.textContent=L[1]; p.appendChild(a);
+  prose.parentNode.insertBefore(p, prose.nextSibling);
+})();
