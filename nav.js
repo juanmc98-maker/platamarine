@@ -110,3 +110,13 @@
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
 })();
+
+/* Enlace "Cómo hacer las fotos de tu barco" en el menú Vender de todas las páginas. */
+(function(){
+  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':'';
+  var t={'':'Cómo hacer las fotos de tu barco','/ca':'Com fer les fotos del teu vaixell','/en':'How to photograph your boat'}[pre],h=pre+'/vender/guia-fotos-barco.html';
+  function add(box){if(!box||box.querySelector('a[href="'+h+'"]'))return;var a=document.createElement('a');a.href=h;a.textContent=t;if(p===h)a.setAttribute('aria-current','page');box.appendChild(a);}
+  add(document.getElementById('pmxM1'));
+  var g=document.querySelectorAll('#pmxPanel .pmx-grp');
+  for(var i=0;i<g.length;i++){if(g[i].querySelector('a[href$="/herramientas/valora-tu-barco.html"]')){add(g[i]);break;}}
+})();
