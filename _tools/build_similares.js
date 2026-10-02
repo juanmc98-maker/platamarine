@@ -24,15 +24,15 @@ const TX = {
   es: {avail: 'Otros barcos parecidos', sold: 'Barcos parecidos disponibles', model: 'En venta ahora, de eslora parecida',
        sub: 'Del mismo tipo, eslora y precio aproximados, de mi cartera.', subM: 'Barcos de mi cartera de un tamaño parecido. No son este modelo, pero pueden servirte de referencia.',
        empty: 'Ahora mismo no tengo otro barco disponible que se le parezca.', emptyA: 'Crea una alerta', emptyB: 'y te aviso en cuanto entre uno que encaje.',
-       all: 'Ver todos los barcos en venta', btn: 'Ver similares'},
+       all: 'Ver todos los barcos en venta', btn: '¿Buscas algo similar?'},
   ca: {avail: 'Altres vaixells semblants', sold: 'Vaixells semblants disponibles', model: 'En venda ara, d’eslora semblant',
        sub: 'Del mateix tipus, eslora i preu aproximats, de la meva cartera.', subM: 'Vaixells de la meva cartera d’una mida semblant. No són aquest model, però et poden servir de referència.',
        empty: 'Ara mateix no tinc cap altre vaixell disponible que s’hi assembli.', emptyA: 'Crea una alerta', emptyB: 'i t’aviso tan bon punt n’entri un que encaixi.',
-       all: 'Veure tots els vaixells en venda', btn: 'Veure’n de semblants'},
+       all: 'Veure tots els vaixells en venda', btn: 'Busques alguna cosa semblant?'},
   en: {avail: 'Other similar boats', sold: 'Similar boats available', model: 'For sale now, of a similar length',
        sub: 'Same type, similar length and price, from my listings.', subM: 'Boats from my listings of a similar size. Not this model, but a useful reference.',
        empty: 'Right now I have no other boat available that is similar.', emptyA: 'Set up an alert', emptyB: 'and I will let you know as soon as one that fits comes in.',
-       all: 'See all boats for sale', btn: 'See similar boats'}
+       all: 'See all boats for sale', btn: 'Looking for something similar?'}
 };
 function block(l, ref, head, sub) {
   let r = ref; if (ref.slug) { const me = INV.get(ref.slug); r = {slug: me.slug, kind: me.kind, len: me.length, price: me.status === 'sold' ? 0 : me.price, types: me.types}; }
