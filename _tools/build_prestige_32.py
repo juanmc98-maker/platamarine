@@ -7,7 +7,7 @@ from urllib.parse import quote
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SLUG = 'prestige-32'
 TPL = 'starfisher-840'
-N_PHOTOS = 17
+N_PHOTOS = 18
 
 D = {
  'es': dict(
