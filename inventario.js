@@ -12,7 +12,7 @@
   var INV = {
     updated: '2026-09-30',
     boats: [
-      {slug: 'antares-12-fly', name: 'Beneteau Antares 12 Fly', year: 2024, kind: 'motor', types: ['fly', 'cabinado'], length: 12.9, price: 499000, zone: 'cataluna', area: 'costa-daurada', title: 3, status: 'available',
+      {slug: 'antares-12-fly', name: 'Beneteau Antares 12 Fly', year: 2024, kind: 'motor', types: ['fly', 'cabinado'], length: 12.9, price: 499000, zone: 'cataluna', area: 'costa-daurada', title: 3, status: 'sold',
         d: {es: '12,9 m · 2 x Mercury 400 XL · Costa Daurada (Tarragona)', ca: '12,9 m · 2 x Mercury 400 XL · Costa Daurada (Tarragona)', en: '12.9 m · twin Mercury 400 XL · Costa Daurada (Tarragona)'}},
       {slug: 'prestige-32', name: 'Jeanneau Prestige 32', year: 2006, kind: 'motor', types: ['fly', 'cabinado'], length: 10.65, price: 89000, zone: 'baleares', area: 'menorca', title: 3, status: 'available',
         d: {es: '10,65 m · Volvo Penta D4 260 cv · Menorca', ca: '10,65 m · Volvo Penta D4 260 cv · Menorca', en: '10.65 m · Volvo Penta D4 260 hp · Menorca'}},
