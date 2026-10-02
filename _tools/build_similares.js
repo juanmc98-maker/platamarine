@@ -51,7 +51,8 @@ function assets(h, css) {
 }
 const MODEL = {'bavaria-27-sport': 8.35, 'beneteau-antares-8': 8.0, 'beneteau-flyer-6-6-spacedeck': 6.7, 'beneteau-flyer-7-7-sundeck': 7.64,
   'jeanneau-cap-camarat-6-5-cc': 6.86, 'jeanneau-cap-camarat-7-5-wa': 7.19, 'jeanneau-cap-camarat-8-5-wa': 8.4, 'jeanneau-merry-fisher-795': 7.43,
-  'quicksilver-activ-605-open': 6.45, 'quicksilver-activ-675-sundeck': 7.16};
+  'quicksilver-activ-605-open': 6.45, 'quicksilver-activ-675-sundeck': 7.16,
+  'jeanneau-merry-fisher-895': 8.9, 'beneteau-flyer-8-sundeck': 8.17};
 let n = 0; const report = [];
 for (const l of LANGS) {
   const dir = path.join(ROOT, l === 'es' ? '' : l);
@@ -66,7 +67,7 @@ for (const l of LANGS) {
     fs.writeFileSync(f, h); n++;
     report.push(`${l} ${b.slug}: ${pick(INV, {slug: b.slug, kind: b.kind, len: b.length, price: b.price, types: b.types}).map(x => x.slug).join(', ') || '(sin parecidos → alerta)'}`);
   }
-  const MT = {"bavaria-27-sport": ["cabinado", "sundeck"], "beneteau-antares-8": ["pilothouse", "cabinado"], "beneteau-flyer-6-6-spacedeck": ["open", "sundeck"], "beneteau-flyer-7-7-sundeck": ["sundeck", "open"], "jeanneau-cap-camarat-6-5-cc": ["open"], "jeanneau-cap-camarat-7-5-wa": ["walkaround"], "jeanneau-cap-camarat-8-5-wa": ["walkaround"], "jeanneau-merry-fisher-795": ["pilothouse"], "quicksilver-activ-605-open": ["open"], "quicksilver-activ-675-sundeck": ["sundeck", "open"]};
+  const MT = {"bavaria-27-sport": ["cabinado", "sundeck"], "beneteau-antares-8": ["pilothouse", "cabinado"], "beneteau-flyer-6-6-spacedeck": ["open", "sundeck"], "beneteau-flyer-7-7-sundeck": ["sundeck", "open"], "jeanneau-cap-camarat-6-5-cc": ["open"], "jeanneau-cap-camarat-7-5-wa": ["walkaround"], "jeanneau-cap-camarat-8-5-wa": ["walkaround"], "jeanneau-merry-fisher-795": ["pilothouse"], "quicksilver-activ-605-open": ["open"], "quicksilver-activ-675-sundeck": ["sundeck", "open"], "jeanneau-merry-fisher-895": ["pilothouse", "cabinado"], "beneteau-flyer-8-sundeck": ["sundeck", "open"]};
   for (const [slug, len] of Object.entries(MODEL)) {
     const f = path.join(dir, 'modelos', slug + '.html');
     let h = fs.readFileSync(f, 'utf8').replace(RX, '');
