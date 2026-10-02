@@ -14,6 +14,8 @@
     boats: [
       {slug: 'antares-12-fly', name: 'Beneteau Antares 12 Fly', year: 2024, kind: 'motor', types: ['fly', 'cabinado'], length: 12.9, price: 499000, zone: 'cataluna', area: 'costa-daurada', title: 3, status: 'available',
         d: {es: '12,9 m · 2 x Mercury 400 XL · Costa Daurada (Tarragona)', ca: '12,9 m · 2 x Mercury 400 XL · Costa Daurada (Tarragona)', en: '12.9 m · twin Mercury 400 XL · Costa Daurada (Tarragona)'}},
+      {slug: 'prestige-32', name: 'Jeanneau Prestige 32', year: 2006, kind: 'motor', types: ['fly', 'cabinado'], length: 10.65, price: 89000, zone: 'baleares', area: 'menorca', title: 3, status: 'available',
+        d: {es: '10,65 m · Volvo Penta D4 260 cv · Menorca', ca: '10,65 m · Volvo Penta D4 260 cv · Menorca', en: '10.65 m · Volvo Penta D4 260 hp · Menorca'}},
       {slug: 'gallart-1050', name: 'Gallart 10.50 Fly', year: 1977, kind: 'motor', types: ['fly', 'cabinado'], length: 9.58, price: 29900, zone: 'cataluna', area: 'costa-brava', title: 3, status: 'available',
         d: {es: '9,58 m · 2 x Volvo Penta 192 cv · Costa Brava (Girona)', ca: '9,58 m · 2 x Volvo Penta 192 cv · Costa Brava (Girona)', en: '9.58 m · twin Volvo Penta 192 hp · Costa Brava (Girona)'}},
       {slug: 'tiger-marine-650', name: 'Tiger Marine Top Line 650', year: 2015, kind: 'motor', types: ['rib'], length: 6.5, price: 33000, zone: 'cataluna', area: 'costa-daurada', title: 2, status: 'available',
