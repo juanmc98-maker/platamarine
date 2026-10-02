@@ -135,3 +135,16 @@
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
 })();
+
+/* Menú: "Vender mi barco" lleva a la página de venta (/vender-barco/) y el enlace a la herramienta no promete una tasación que no da. */
+(function(){
+  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':'';
+  var lab={'':'¿Qué influye en el precio de mi barco?','/ca':'Què influeix en el preu del meu vaixell?','/en':'What affects my boat’s price?'}[pre];
+  var old=['¿Cuánto vale mi barco?','Quant val el meu vaixell?','How much is my boat worth?'];
+  var as=document.querySelectorAll('.pmx-menu a, .pmx-grp a');
+  for(var i=0;i<as.length;i++){
+    var a=as[i],h=a.getAttribute('href');
+    if(h===pre+'/#vender'||h==='/#vender'){a.setAttribute('href',pre+'/vender-barco/');}
+    if(old.indexOf(a.textContent.trim())>-1){a.textContent=lab;}
+  }
+})();
