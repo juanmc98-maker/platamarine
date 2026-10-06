@@ -881,7 +881,7 @@ var IMGS={"prestige-32-1": "/prestige-32-1.jpg", "prestige-32-2": "/prestige-32-
   var to; window.addEventListener('resize',function(){clearTimeout(to);to=setTimeout(draw,150);});
 })();
 </script>
-<script src="/contacto.js?v=20261006" defer></script>
+<script src="/contacto.js?v=20261006b" defer></script>
 <script src="/nav.js?v=20261006" defer></script>
 <script src="/inventario.js?v=20261006" defer></script>
 <script>document.addEventListener("DOMContentLoaded",function(){var g=document.querySelector(".boats");if(!g||!window.PM_INV&&!window.INV)return;var inv=(window.PM_INV||window.INV);var P={};(inv.boats||[]).forEach(function(b){P[b.slug]=b.price||0});[].slice.call(g.querySelectorAll(".boat[data-pm-boat]")).sort(function(a,b){return (P[b.dataset.pmBoat]||0)-(P[a.dataset.pmBoat]||0)}).forEach(function(c){g.appendChild(c)})});</script>
