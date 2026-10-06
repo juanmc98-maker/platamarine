@@ -107,7 +107,6 @@ h2[id]{scroll-margin-top:90px}
 
         <div class="pmf">
           <form id="svcItb" novalidate>
-            <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true"><label>Empresa<input type="text" name="empresa_web" tabindex="-1" autocomplete="off"></label></div>
 
             <div class="row">
               <div class="f"><label class="l">Port o zona on és el vaixell</label><input type="text" name="puerto" placeholder="Port Masnou, Vilanova, marina seca de…"></div>
@@ -139,7 +138,6 @@ h2[id]{scroll-margin-top:90px}
 
         <div class="pmf">
           <form id="svcGestoria" novalidate>
-            <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true"><label>Empresa<input type="text" name="empresa_web" tabindex="-1" autocomplete="off"></label></div>
 
             <div class="row">
               <div class="f"><label class="l">Quin tràmit necessites</label><select name="tramite"><option value="">Tria una opció</option><option>Canvi de nom (compravenda)</option><option>Matriculació de vaixell nou</option><option>Importació / abanderament</option><option>Canvi de llista (6a ↔ 7a)</option><option>Baixa o exportació</option><option>Duplicat de documentació</option><option>Altre (ho explico a sota)</option></select></div>
@@ -167,7 +165,6 @@ h2[id]{scroll-margin-top:90px}
 
         <div class="pmf">
           <form id="svcVaradero" novalidate>
-            <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true"><label>Empresa<input type="text" name="empresa_web" tabindex="-1" autocomplete="off"></label></div>
 
             <div class="row">
               <div class="f"><label class="l">Port o zona on és el vaixell</label><input type="text" name="puerto" placeholder="Port Masnou, Vilanova, Roses…"></div>
@@ -210,7 +207,6 @@ h2[id]{scroll-margin-top:90px}
 
         <div class="pmf">
           <form id="svcTransporte" novalidate>
-            <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true"><label>Empresa<input type="text" name="empresa_web" tabindex="-1" autocomplete="off"></label></div>
             <div class="row">
               <div class="f"><label class="l">Port o zona d'origen</label><input type="text" name="origen" placeholder="Port Masnou, Vilanova…"></div>
               <div class="f"><label class="l">Port o zona de destinació</label><input type="text" name="destino" placeholder="On ha d'arribar"></div>
@@ -290,7 +286,7 @@ function pmWire(f,build){
   if(!f)return;
   f.addEventListener('submit',function(ev){
     ev.preventDefault();var msg=f.querySelector('.msg');msg.className='msg';msg.textContent='';
-    if(pmVal(f,'empresa_web')){return;}
+    
     function bad(t,n){msg.textContent=t;var x=n&&f.querySelector('[name='+n+']');if(x){x.setAttribute('aria-invalid','true');x.focus();}}
     [].forEach.call(f.querySelectorAll('[aria-invalid]'),function(x){x.removeAttribute('aria-invalid');});
     var nom=pmVal(f,'nombre');if(!nom){bad('Necessito el teu nom per poder ajudar-te.','nombre');return;}
