@@ -127,3 +127,17 @@ if(ask && price && head && window.matchMedia('(max-width: 639px)').matches){
   p.appendChild(document.createTextNode(L[0])); var a=document.createElement('a'); a.href=L[2]; a.textContent=L[1]; p.appendChild(a);
   prose.parentNode.insertBefore(p, prose.nextSibling);
 })();
+
+/* Solo en francés: aviso para quien vive en Francia, con enlace a la guía para llevarse el barco y matricularlo allí. */
+(function(){
+  if((document.documentElement.lang||'').slice(0,2)!=='fr')return;
+  var prose=document.querySelector('.prose'); if(!prose||document.getElementById('pm-fr-hint'))return;
+  var p=document.createElement('p'); p.id='pm-fr-hint';
+  p.style.cssText='margin-top:18px;font-size:.92em;color:var(--ink-2,#44545F)';
+  p.appendChild(document.createTextNode('Vous vivez en France ? '));
+  var a=document.createElement('a'); a.href='/fr/guias/comprar-barco-espana-matricular-francia.html'; a.textContent='Comment acheter un bateau en Espagne et l’immatriculer en France';
+  p.appendChild(a); p.appendChild(document.createTextNode(' · '));
+  var b=document.createElement('a'); b.href='/fr/guias/barco-frances-en-cataluna.html'; b.textContent='le garder en Catalogne';
+  p.appendChild(b); p.appendChild(document.createTextNode('.'));
+  prose.parentNode.insertBefore(p, prose.nextSibling);
+})();
