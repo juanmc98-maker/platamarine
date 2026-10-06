@@ -78,7 +78,7 @@ PAGES["g1"] = dict(
 </tbody></table></div>
 
 <h2 id="ayuda">Cómo te puedo ayudar</h2>
-<p>Me dedico a la compraventa de barcos en Cataluña. Te ayudo a encontrar el barco, reviso con el vendedor la documentación (titular, cargas, IVA, motores, bandera) y te acompaño en la prueba de mar y en el peritaje si quieres hacerlo. Los trámites de la baja en España y de la matrícula en Francia los hace una gestoría náutica; en el <a href="/servicios/directorio.html">directorio de empresas</a> tienes gestorías por zona.</p>
+<p>Soy broker náutico en Cataluña: pongo en contacto a quien vende su barco con quien lo compra. Te ayudo a encontrar el barco, reviso con el vendedor la documentación (titular, cargas, IVA, motores, bandera) y te acompaño en la prueba de mar y en el peritaje si quieres hacerlo. Los trámites de la baja en España y de la matrícula en Francia los hace una gestoría náutica; en el <a href="/servicios/directorio.html">directorio de empresas</a> tienes gestorías por zona.</p>
 
 <h2 id="faq">Preguntas frecuentes</h2>
 <h3>¿Pago impuestos en España y otra vez en Francia?</h3><p>Si compras un barco usado con el IVA europeo pagado, no se vuelve a pagar IVA en Francia. En España pagas el ITP del 4 % si compras a un particular, o el IVA si compras a una empresa. Después, en Francia, la tasa anual si el barco está obligado.</p>
@@ -176,7 +176,7 @@ PAGES["l4"] = dict(
     eyebrow="Comprar barco · Si vives en Francia",
     h1="Barcos de ocasión en España, si vives en Francia",
     meta=["Por Juan Morante", "Actualizado octubre 2026"],
-    lead="Estos son los barcos que tengo ahora en venta. Si vives en Francia, puedes comprar uno para llevártelo y matricularlo allí, o para tenerlo aquí y usarlo en verano. Debajo te explico lo básico de cada caso.",
+    lead="Estos son los barcos que gestiono ahora. Si vives en Francia, puedes comprar uno para llevártelo y matricularlo allí, o para tenerlo aquí y usarlo en verano. Debajo te explico lo básico de cada caso.",
     toc=[("barcos", "Barcos en venta"), ("llevar", "Para llevártelo a Francia"), ("aqui", "Para tenerlo en Cataluña"), ("como", "Cómo compramos"), ("faq", "Preguntas frecuentes")],
     body="""
 <h2 id="barcos">Barcos en venta</h2>

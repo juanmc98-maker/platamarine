@@ -77,7 +77,7 @@ PAGES["g1"] = dict(
 </tbody></table></div>
 
 <h2 id="ayuda">How I can help you</h2>
-<p>I work in buying and selling boats in Catalonia. I help you find the boat, go through the documentation with the seller (owner, charges, VAT, engines, flag) and accompany you on the sea trial and the survey if you want one. The deregistration procedures in Spain and the registration in France are handled by a nautical agency (gestoría); in the <a href="/en/servicios/directorio.html">business directory</a> you will find agencies by area.</p>
+<p>I'm a boat broker in Catalonia: I put people selling their boat in touch with people buying one. I help you find the boat, go through the documentation with the seller (owner, charges, VAT, engines, flag) and accompany you on the sea trial and the survey if you want one. The deregistration procedures in Spain and the registration in France are handled by a nautical agency (gestoría); in the <a href="/en/servicios/directorio.html">business directory</a> you will find agencies by area.</p>
 
 <h2 id="faq">Frequently asked questions</h2>
 <h3>Do I pay tax in Spain and again in France?</h3><p>If you buy a used boat with European VAT paid, VAT is not paid again in France. In Spain you pay the 4% ITP if you buy from a private individual, or VAT if you buy from a company. Afterwards, in France, the annual tax if the boat is liable.</p>
@@ -175,7 +175,7 @@ PAGES["l4"] = dict(
     eyebrow="Buy a boat · If you live in France",
     h1="Used boats in Spain, if you live in France",
     meta=["By Juan Morante", "Updated October 2026"],
-    lead="These are the boats I currently have for sale. If you live in France, you can buy one to take back and register there, or to keep here and use in the summer. Below I explain the basics of each option.",
+    lead="These are the boats I am currently handling. If you live in France, you can buy one to take back and register there, or to keep here and use in the summer. Below I explain the basics of each option.",
     toc=[("barcos", "Boats for sale"), ("llevar", "To take it to France"), ("aqui", "To keep it in Catalonia"), ("como", "How we buy"), ("faq", "Frequently asked questions")],
     body="""
 <h2 id="barcos">Boats for sale</h2>

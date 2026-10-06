@@ -77,7 +77,7 @@ PAGES["g1"] = dict(
 </tbody></table></div>
 
 <h2 id="ayuda">Comment je peux vous aider</h2>
-<p>Je m'occupe de l'achat et de la vente de bateaux en Catalogne. Je vous aide à trouver le bateau, je vérifie avec le vendeur les documents (propriétaire, charges, TVA, moteurs, pavillon) et je vous accompagne pour l'essai en mer et l'expertise si vous souhaitez la faire. Les démarches de radiation en Espagne et d'immatriculation en France sont faites par une gestoría nautique (cabinet spécialisé dans les formalités) ; dans l'<a href="/fr/servicios/directorio.html">annuaire des entreprises</a>, vous trouverez des gestorías par zone.</p>
+<p>Je suis courtier nautique en Catalogne : je mets en relation ceux qui vendent leur bateau avec ceux qui veulent l'acheter. Je vous aide à trouver le bateau, je vérifie avec le vendeur les documents (propriétaire, charges, TVA, moteurs, pavillon) et je vous accompagne pour l'essai en mer et l'expertise si vous souhaitez la faire. Les démarches de radiation en Espagne et d'immatriculation en France sont faites par une gestoría nautique (cabinet spécialisé dans les formalités) ; dans l'<a href="/fr/servicios/directorio.html">annuaire des entreprises</a>, vous trouverez des gestorías par zone.</p>
 
 <h2 id="faq">Questions fréquentes</h2>
 <h3>Est-ce que je paie des impôts en Espagne et encore en France ?</h3><p>Si vous achetez un bateau d'occasion avec la TVA européenne acquittée, vous ne repayez pas la TVA en France. En Espagne, vous payez l'ITP de 4 % si vous achetez à un particulier, ou la TVA si vous achetez à une entreprise. Ensuite, en France, la taxe annuelle si le bateau y est soumis.</p>
@@ -175,7 +175,7 @@ PAGES["l4"] = dict(
     eyebrow="Acheter un bateau · Si vous vivez en France",
     h1="Bateaux d'occasion en Espagne, si vous vivez en France",
     meta=["Par Juan Morante", "Mis à jour en octobre 2026"],
-    lead="Voici les bateaux que j'ai actuellement à la vente. Si vous vivez en France, vous pouvez en acheter un pour le ramener et l'immatriculer là-bas, ou pour le garder ici et l'utiliser l'été. Je vous explique plus bas l'essentiel de chaque cas.",
+    lead="Voici les bateaux dont je m'occupe actuellement. Si vous vivez en France, vous pouvez en acheter un pour le ramener et l'immatriculer là-bas, ou pour le garder ici et l'utiliser l'été. Je vous explique plus bas l'essentiel de chaque cas.",
     toc=[("barcos", "Bateaux à vendre"), ("llevar", "Pour le ramener en France"), ("aqui", "Pour le garder en Catalogne"), ("como", "Comment nous achetons"), ("faq", "Questions fréquentes")],
     body="""
 <h2 id="barcos">Bateaux à vendre</h2>

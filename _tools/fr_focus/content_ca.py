@@ -77,7 +77,7 @@ PAGES["g1"] = dict(
 </tbody></table></div>
 
 <h2 id="ayuda">Com et puc ajudar</h2>
-<p>Em dedico a la compravenda de vaixells a Catalunya. T'ajudo a trobar el vaixell, reviso amb el venedor la documentació (titular, càrregues, IVA, motors, bandera) i t'acompanyo a la prova de mar i al peritatge si el vols fer. Els tràmits de la baixa a Espanya i de la matrícula a França els fa una gestoria nàutica; al <a href="/ca/servicios/directorio.html">directori d'empreses</a> tens gestories per zona.</p>
+<p>Soc broker nàutic a Catalunya: poso en contacte qui ven el seu vaixell amb qui el compra. T'ajudo a trobar el vaixell, reviso amb el venedor la documentació (titular, càrregues, IVA, motors, bandera) i t'acompanyo a la prova de mar i al peritatge si el vols fer. Els tràmits de la baixa a Espanya i de la matrícula a França els fa una gestoria nàutica; al <a href="/ca/servicios/directorio.html">directori d'empreses</a> tens gestories per zona.</p>
 
 <h2 id="faq">Preguntes freqüents</h2>
 <h3>Pago impostos a Espanya i un altre cop a França?</h3><p>Si compres un vaixell usat amb l'IVA europeu pagat, no es torna a pagar IVA a França. A Espanya pagues l'ITP del 4 % si compres a un particular, o l'IVA si compres a una empresa. Després, a França, la taxa anual si el vaixell hi està obligat.</p>
@@ -175,7 +175,7 @@ PAGES["l4"] = dict(
     eyebrow="Comprar vaixell · Si vius a França",
     h1="Vaixells d'ocasió a Espanya, si vius a França",
     meta=["Per Juan Morante", "Actualitzat octubre 2026"],
-    lead="Aquests són els vaixells que tinc ara en venda. Si vius a França, en pots comprar un per endur-te'l i matricular-lo allà, o per tenir-lo aquí i fer-lo servir a l'estiu. A sota t'explico el bàsic de cada cas.",
+    lead="Aquests són els vaixells que gestiono ara. Si vius a França, en pots comprar un per endur-te'l i matricular-lo allà, o per tenir-lo aquí i fer-lo servir a l'estiu. A sota t'explico el bàsic de cada cas.",
     toc=[("barcos", "Vaixells en venda"), ("llevar", "Per endur-te'l a França"), ("aqui", "Per tenir-lo a Catalunya"), ("como", "Com comprem"), ("faq", "Preguntes freqüents")],
     body="""
 <h2 id="barcos">Vaixells en venda</h2>
