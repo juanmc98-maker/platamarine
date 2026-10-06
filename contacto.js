@@ -1,4 +1,4 @@
-/* Plata Marine: formulario "Quiero vender mi barco" (portada ES/CA/EN).
+/* Plata Marine: formulario "Quiero vender mi barco" (portada ES/CA/EN/FR).
    - Envío directo: la confirmación solo aparece cuando el servidor responde ok:true.
    - WhatsApp / email: se pueden usar aunque el formulario esté incompleto; el mensaje lleva solo los datos escritos.
    - Medición: contact_intent (abrir WhatsApp/email) y generate_lead (formulario confirmado), sin datos personales. */
@@ -7,7 +7,7 @@
   var f=document.getElementById('valoracion'); if(!f) return;
   var TEL='34633742973', MAIL='juan@platamarine.com';
   var LEADS_URL='https://script.google.com/macros/s/AKfycbwJtBkktakE0qgmu_b8oHOOopCDnG6BDpBjg2zBUsZKi8l3_OBEuez_OHWmE9j8qCBF/exec';
-  var LANG=location.pathname.indexOf('/ca/')===0?'ca':location.pathname.indexOf('/en/')===0?'en':'es';
+  var LANG=location.pathname.indexOf('/ca/')===0?'ca':location.pathname.indexOf('/en/')===0?'en':location.pathname.indexOf('/fr/')===0?'fr':'es';
   var T={
     es:{hello:'Hola Juan, estoy pensando en vender mi barco.',boat:'Barco',port:'Puerto',ad:'Anuncio',me:'Soy',tel:'tel.',subj:'Mi barco',
       req:'Completa este campo.',year:'Revisa el año: escríbelo con cuatro cifras, por ejemplo 1998.',phone:'Revisa el teléfono: puedes escribirlo con prefijo internacional, por ejemplo +34 600 000 000.',url:'El enlace no parece correcto. Si no lo tienes a mano, déjalo en blanco.',
@@ -26,7 +26,13 @@
       waOpen:'WhatsApp has opened with a message containing the details you entered. Press send there so it reaches me.',mailOpen:'An email to juan@platamarine.com has been prepared with the details you entered. Press send in your email app; if it does not open, write to that address directly.',
       waAgain:'Open WhatsApp again',mailAgain:'Open the email again',sending:'Sending your enquiry…',sendingBtn:'Sending…',
       ok:'Enquiry received. I will get back to you as soon as I can.',okBtn:'Enquiry sent ✓',
-      fail:'I could not confirm that your enquiry arrived. Your details are still here and have not been deleted: you can message me on WhatsApp or by email with the buttons above, or try again in a few minutes.',send:'Send enquiry'}
+      fail:'I could not confirm that your enquiry arrived. Your details are still here and have not been deleted: you can message me on WhatsApp or by email with the buttons above, or try again in a few minutes.',send:'Send enquiry'},
+    fr:{hello:"Bonjour Juan, je pense vendre mon bateau.",boat:'Bateau',port:'Port',ad:'Annonce',me:'Je suis',tel:'tél.',subj:'Mon bateau',
+      req:'Veuillez remplir ce champ.',year:"Vérifiez l'année : écrivez-la avec quatre chiffres, par exemple 1998.",phone:"Vérifiez le numéro de téléphone : vous pouvez l'écrire avec l'indicatif international, par exemple +33 6 00 00 00 00.",url:"Le lien ne semble pas correct. Si vous ne l'avez pas sous la main, laissez ce champ vide.",
+      waOpen:"WhatsApp s'est ouvert avec un message préparé avec les informations que vous avez saisies. Appuyez sur envoyer pour qu'il me parvienne.",mailOpen:"Un e-mail pour juan@platamarine.com a été préparé avec les informations que vous avez saisies. Appuyez sur envoyer dans votre messagerie ; si elle ne s'ouvre pas, écrivez-moi directement à cette adresse.",
+      waAgain:'Rouvrir WhatsApp',mailAgain:"Rouvrir l'e-mail",sending:'Envoi de votre demande…',sendingBtn:'Envoi…',
+      ok:'Demande reçue. Je vous réponds dès que possible.',okBtn:'Demande envoyée ✓',
+      fail:"Je n'ai pas pu confirmer que votre demande est bien arrivée. Vos informations sont toujours là, elles n'ont pas été effacées : vous pouvez m'écrire sur WhatsApp ou par e-mail avec les boutons ci-dessus, ou réessayer dans quelques minutes.",send:'Envoyer la demande'}
   }[LANG];
   var status=document.getElementById('contactoEstado');
   var fallback=document.getElementById('contactoAlternativa');

@@ -15,7 +15,7 @@
       var s = document.getElementById(id);
       if (s && idx > 0 && idx < s.options.length && !s.value) s.selectedIndex = idx;
     }
-    /* Orden de opciones (igual en ES/CA/EN):
+    /* Orden de opciones (igual en ES/CA/EN/FR):
        tipo: 1 cualquiera, 2 velero, 3 open, 4 sundeck, 5 walkaround, 6 cabinado, 7 pilothouse, 8 fly, 9 semirrígida */
     var T = {velero: 2, open: 3, sundeck: 4, walkaround: 5, cabinado: 6, pilothouse: 7, fly: 8, rib: 9};
     pick('a-tipo', T[(b.types || [])[0]] || 1);
@@ -27,7 +27,8 @@
     var txt = {
       es: 'He dejado rellenada la alerta con algo parecido al <b>' + b.name + '</b>. Cámbiala como quieras: te aviso si entra un barco que encaje.',
       ca: 'He deixat l’alerta emplenada amb una cosa semblant al <b>' + b.name + '</b>. Canvia-la com vulguis: t’aviso si entra un vaixell que encaixi.',
-      en: 'I’ve pre-filled the alert with something similar to the <b>' + b.name + '</b>. Change anything you like: I’ll let you know if a matching boat comes in.'
+      en: 'I’ve pre-filled the alert with something similar to the <b>' + b.name + '</b>. Change anything you like: I’ll let you know if a matching boat comes in.',
+      fr: 'J’ai prérempli l’alerte avec quelque chose de proche du <b>' + b.name + '</b>. Modifiez-la comme vous voulez : je vous préviens si un bateau correspondant arrive.'
     }[lang];
     var note = document.createElement('p');
     note.className = 'alerta-contexto';
@@ -35,7 +36,7 @@
     note.innerHTML = txt;
     form.parentNode.insertBefore(note, form);
     var n = document.getElementById('a-notas');
-    var pre = {es: 'Visto en la web: ', ca: 'Vist al web: ', en: 'Seen on the website: '}[lang];
+    var pre = {es: 'Visto en la web: ', ca: 'Vist al web: ', en: 'Seen on the website: ', fr: 'Vu sur le site : '}[lang];
     if (n && !n.value) n.value = pre + b.name + '. ';
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();

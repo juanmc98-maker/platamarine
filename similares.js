@@ -24,9 +24,9 @@
     var INV = window.PM_INV;
     if (!INV) return;
     var lang = INV.lang();
-    var T = {es: 'Ver ficha', ca: 'Veure fitxa', en: 'See details'}[lang];
+    var T = {es: 'Ver ficha', ca: 'Veure fitxa', en: 'See details', fr: 'Voir la fiche'}[lang];
     var IMG = {'ranieri-azzurra-5m': '/ranieri-azzurra-1.jpg'};
-    function price(n) { var s = String(n).replace(/\B(?=(\d{3})+(?!\d))/g, lang === 'en' ? ',' : '.'); return lang === 'en' ? '€' + s : s + ' €'; }
+    function price(n) { var s = String(n).replace(/\B(?=(\d{3})+(?!\d))/g, lang === 'en' ? ',' : lang === 'fr' ? '\u202f' : '.'); return lang === 'en' ? '€' + s : s + ' €'; }
     function esc(s) { return String(s).replace(/[&<>"]/g, function (m) { return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[m]; }); }
     [].forEach.call(document.querySelectorAll('.pm-sim[data-ref]'), function (box) {
       var ref = {};
@@ -43,7 +43,7 @@
       box.innerHTML = list.map(function (b) {
         var u = INV.url(b, lang), img = (IMG[b.slug] || '/' + b.slug + '-1.jpg').replace(/\.jpg$/, '');
         return '<a class="pcard" href="' + u + '"><img src="' + img + '-m.jpg" srcset="' + img + '-m.jpg 1000w, ' + img + '.jpg 1600w" sizes="(max-width: 640px) 100vw, 360px" alt="' + esc(b.name) + '" loading="lazy" width="1600" height="900">' +
-          '<span class="pc-b"><strong>' + esc(b.name) + '</strong><span class="pc-p">' + price(b.price) + (b.vat ? ' <span class="vat">' + (lang === 'en' ? '+VAT' : '+IVA') + '</span>' : '') + '</span>' +
+          '<span class="pc-b"><strong>' + esc(b.name) + '</strong><span class="pc-p">' + price(b.price) + (b.vat ? ' <span class="vat">' + (lang === 'en' ? '+VAT' : lang === 'fr' ? '+TVA' : '+IVA') + '</span>' : '') + '</span>' +
           '<span class="pc-d">' + b.year + ' · ' + esc(b.d[lang]) + '</span><span class="pc-t">' + esc(INV.titleFor(b, lang)) + '</span>' +
           '<span class="pc-l">' + T + ' →</span></span></a>';
       }).join('');

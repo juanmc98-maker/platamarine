@@ -1,4 +1,4 @@
-/* Plata Marine · barcos guardados y comparador (catálogo ES/CA/EN).
+/* Plata Marine · barcos guardados y comparador (catálogo ES/CA/EN/FR).
    Guarda los slugs en localStorage (solo en el navegador del visitante; no se envía a ningún sitio). */
 (function () {
   'use strict';
@@ -8,7 +8,8 @@
   var T = {
     es: {save: 'Guardar para comparar', saved: 'Guardado', bar: '{n} guardados', bar1: '1 guardado', cmp: 'Comparar', clear: 'Vaciar', close: 'Cerrar', title: 'Tus barcos guardados', one: 'Guarda al menos dos barcos para compararlos.', price: 'Precio', year: 'Año', len: 'Eslora', type: 'Tipo', fuel: 'Combustible', eng: 'Motor', hrs: 'Horas', zone: 'Zona', lic: 'Titulación', see: 'Ver ficha', rm: 'Quitar', motor: 'Motor', vela: 'Vela', diesel: 'Diésel', gasolina: 'Gasolina', note: 'Se guardan solo en este navegador.'},
     ca: {save: 'Desar per comparar', saved: 'Desat', bar: '{n} desats', bar1: '1 desat', cmp: 'Comparar', clear: 'Buidar', close: 'Tancar', title: 'Els teus vaixells desats', one: 'Desa almenys dos vaixells per comparar-los.', price: 'Preu', year: 'Any', len: 'Eslora', type: 'Tipus', fuel: 'Combustible', eng: 'Motor', hrs: 'Hores', zone: 'Zona', lic: 'Titulació', see: 'Veure fitxa', rm: 'Treure', motor: 'Motor', vela: 'Vela', diesel: 'Dièsel', gasolina: 'Gasolina', note: 'Només es desen en aquest navegador.'},
-    en: {save: 'Save to compare', saved: 'Saved', bar: '{n} saved', bar1: '1 saved', cmp: 'Compare', clear: 'Clear', close: 'Close', title: 'Your saved boats', one: 'Save at least two boats to compare them.', price: 'Price', year: 'Year', len: 'Length', type: 'Type', fuel: 'Fuel', eng: 'Engine', hrs: 'Hours', zone: 'Area', lic: 'Licence', see: 'See details', rm: 'Remove', motor: 'Motor', vela: 'Sail', diesel: 'Diesel', gasolina: 'Petrol', note: 'Saved in this browser only.'}
+    en: {save: 'Save to compare', saved: 'Saved', bar: '{n} saved', bar1: '1 saved', cmp: 'Compare', clear: 'Clear', close: 'Close', title: 'Your saved boats', one: 'Save at least two boats to compare them.', price: 'Price', year: 'Year', len: 'Length', type: 'Type', fuel: 'Fuel', eng: 'Engine', hrs: 'Hours', zone: 'Area', lic: 'Licence', see: 'See details', rm: 'Remove', motor: 'Motor', vela: 'Sail', diesel: 'Diesel', gasolina: 'Petrol', note: 'Saved in this browser only.'},
+    fr: {save: 'Enregistrer pour comparer', saved: 'Enregistré', bar: '{n} enregistrés', bar1: '1 enregistré', cmp: 'Comparer', clear: 'Vider', close: 'Fermer', title: 'Vos bateaux enregistrés', one: 'Enregistrez au moins deux bateaux pour les comparer.', price: 'Prix', year: 'Année', len: 'Longueur', type: 'Type', fuel: 'Carburant', eng: 'Moteur', hrs: 'Heures', zone: 'Zone', lic: 'Permis', see: 'Voir la fiche', rm: 'Retirer', motor: 'Moteur', vela: 'Voile', diesel: 'Diesel', gasolina: 'Essence', note: 'Enregistrés uniquement dans ce navigateur.'}
   }[lang] || null;
   if (!T) return;
   var KEY = 'pm_favs';
@@ -74,7 +75,7 @@
   function info(c) {
     var sub = ((c.querySelector('.sub') || {}).textContent || '').split(' · ');
     var hrs = '', eng = '';
-    sub.forEach(function (p) { if (/\d\s?h$/.test(p.trim())) hrs = p.trim(); else if (/(cv|hp)\b/i.test(p)) eng = p.trim(); });
+    sub.forEach(function (p) { if (/\d\s?h$/.test(p.trim())) hrs = p.trim(); else if (/(cv|hp)\b/i.test(p) || /\d\s?ch\b/i.test(p)) eng = p.trim(); });
     var len = ''; sub.forEach(function (p) { if (/\d\s?m$/.test(p.trim()) && !len) len = p.trim(); });
     var a = c.querySelector('h2 a'), img = c.querySelector('img'), st = c.querySelector('.status');
     return {

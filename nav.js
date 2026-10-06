@@ -35,10 +35,11 @@
 })();
 /* Enlaces nuevos del menú Comprar (precios, compra por zona/tipo y calculadoras) en todas las páginas, sin tocar cada HTML. */
 (function(){
-  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':'';
+  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
   var L={'':[['/comprar/','Comprar barco: por zona y tipo'],['/precios/','Precios de barcos de ocasión'],['/herramientas/','Calculadoras: impuestos, costes, financiación']],
     '/ca':[['/comprar/','Comprar vaixell: per zona i tipus'],['/precios/','Preus de vaixells d’ocasió'],['/herramientas/','Calculadores: impostos, costos, finançament']],
-    '/en':[['/comprar/','Buy a boat: by area and type'],['/precios/','Used boat prices'],['/herramientas/','Calculators: taxes, costs, finance']]}[pre];
+    '/en':[['/comprar/','Buy a boat: by area and type'],['/precios/','Used boat prices'],['/herramientas/','Calculators: taxes, costs, finance']],
+    '/fr':[['/comprar/','Acheter un bateau : par zone et par type'],['/precios/','Prix des bateaux d’occasion'],['/herramientas/','Calculatrices : taxes, coûts, financement']]}[pre];
   function add(box){
     if(!box)return;
     L.forEach(function(it){var h=pre+it[0];if(box.querySelector('a[href="'+h+'"]'))return;var a=document.createElement('a');a.href=h;a.textContent=it[1];if(p===h||p===h+'index.html')a.setAttribute('aria-current','page');box.appendChild(a);});
@@ -49,8 +50,8 @@
 })();
 /* Enlace "Broker en Barcelona y Maresme" en el menú Vender de todas las páginas. */
 (function(){
-  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':'';
-  var t={'':'Vender en Barcelona y Maresme','/ca':'Vendre a Barcelona i Maresme','/en':'Selling in Barcelona and Maresme'}[pre],h=pre+'/vender/broker-nautico-barcelona-maresme.html';
+  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
+  var t={'':'Vender en Barcelona y Maresme','/ca':'Vendre a Barcelona i Maresme','/en':'Selling in Barcelona and Maresme','/fr':'Vendre à Barcelone et dans le Maresme'}[pre],h=pre+'/vender/broker-nautico-barcelona-maresme.html';
   function add(box){if(!box||box.querySelector('a[href="'+h+'"]'))return;var a=document.createElement('a');a.href=h;a.textContent=t;if(p===h)a.setAttribute('aria-current','page');box.appendChild(a);}
   add(document.getElementById('pmxM1'));
   var g=document.querySelectorAll('#pmxPanel .pmx-grp');
@@ -58,8 +59,8 @@
 })();
 /* Enlace "Escuelas náuticas" en el menú Servicios de todas las páginas. */
 (function(){
-  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':'';
-  var t={'':'Escuelas náuticas','/ca':'Escoles nàutiques','/en':'Boating schools'}[pre],h=pre+'/servicios/escuelas.html';
+  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
+  var t={'':'Escuelas náuticas','/ca':'Escoles nàutiques','/en':'Boating schools','/fr':'Écoles nautiques'}[pre],h=pre+'/servicios/escuelas.html';
   function add(box){if(!box||box.querySelector('a[href="'+h+'"]'))return;var a=document.createElement('a');a.href=h;a.textContent=t;if(p===h)a.setAttribute('aria-current','page');box.appendChild(a);}
   add(document.getElementById('pmxM4'));
   var g=document.querySelectorAll('#pmxPanel .pmx-grp');
@@ -67,8 +68,8 @@
 })();
 /* Enlace "Amarres" en el menú Servicios de todas las páginas. */
 (function(){
-  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':'';
-  var t={'':'Amarres','/ca':'Amarradors','/en':'Moorings'}[pre],h=pre+'/servicios/amarres.html';
+  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
+  var t={'':'Amarres','/ca':'Amarradors','/en':'Moorings','/fr':'Places de port'}[pre],h=pre+'/servicios/amarres.html';
   function add(box){if(!box||box.querySelector('a[href="'+h+'"]'))return;var a=document.createElement('a');a.href=h;a.textContent=t;if(p===h)a.setAttribute('aria-current','page');box.appendChild(a);}
   add(document.getElementById('pmxM4'));
   var g=document.querySelectorAll('#pmxPanel .pmx-grp');
@@ -78,10 +79,11 @@
 (function(){
   function run(){
     var foot=document.querySelector('footer.foot .wrap'); if(!foot||document.getElementById('pmShare'))return;
-    var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':'';
+    var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
     var T={'':{t:'Comparte esta página',c:'Copiar enlace',ok:'Enlace copiado',m:'Compartir…',a:'Compartir en '},
       '/ca':{t:'Comparteix aquesta pàgina',c:'Copia l’enllaç',ok:'Enllaç copiat',m:'Compartir…',a:'Compartir a '},
-      '/en':{t:'Share this page',c:'Copy link',ok:'Link copied',m:'Share…',a:'Share on '}}[pre];
+      '/en':{t:'Share this page',c:'Copy link',ok:'Link copied',m:'Share…',a:'Share on '},
+      '/fr':{t:'Partagez cette page',c:'Copier le lien',ok:'Lien copié',m:'Partager…',a:'Partager sur '}}[pre];
     var can=document.querySelector('link[rel="canonical"]'),url=(can&&can.href)||location.href.split('#')[0],title=document.title;
     var ogd=document.querySelector('meta[property="og:description"]'),txt=title+(ogd?' — '+ogd.content:'');
     var e=encodeURIComponent,eu=e(url);
@@ -113,8 +115,8 @@
 
 /* Enlace "Cómo hacer las fotos de tu barco" en el menú Vender de todas las páginas. */
 (function(){
-  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':'';
-  var t={'':'Cómo hacer las fotos de tu barco','/ca':'Com fer les fotos del teu vaixell','/en':'How to photograph your boat'}[pre],h=pre+'/vender/guia-fotos-barco.html';
+  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
+  var t={'':'Cómo hacer las fotos de tu barco','/ca':'Com fer les fotos del teu vaixell','/en':'How to photograph your boat','/fr':'Comment photographier votre bateau'}[pre],h=pre+'/vender/guia-fotos-barco.html';
   function add(box){if(!box||box.querySelector('a[href="'+h+'"]'))return;var a=document.createElement('a');a.href=h;a.textContent=t;if(p===h)a.setAttribute('aria-current','page');box.appendChild(a);}
   add(document.getElementById('pmxM1'));
   var g=document.querySelectorAll('#pmxPanel .pmx-grp');
@@ -125,10 +127,11 @@
 (function(){
   function run(){
     var foot=document.querySelector('footer.foot .wrap'); if(!foot||document.getElementById('pmDisc'))return;
-    var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':'';
+    var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
     var t={'':'La información de esta web es orientativa y se revisa con cuidado, pero podemos equivocarnos: compruébala siempre con la documentación del barco, el vendedor o un profesional. Nada de lo que aparece en esta web es vinculante.',
       '/ca':'La informació d’aquest web és orientativa i es revisa amb cura, però ens podem equivocar: comprova-la sempre amb la documentació del vaixell, el venedor o un professional. Res del que apareix en aquest web és vinculant.',
-      '/en':'The information on this website is for guidance and is reviewed carefully, but we can get things wrong: always check it against the boat’s papers, the seller or a professional. Nothing on this website is binding.'}[pre];
+      '/en':'The information on this website is for guidance and is reviewed carefully, but we can get things wrong: always check it against the boat’s papers, the seller or a professional. Nothing on this website is binding.',
+      '/fr':'Les informations de ce site sont indicatives et vérifiées avec soin, mais nous pouvons nous tromper : vérifiez-les toujours avec les papiers du bateau, le vendeur ou un professionnel. Rien de ce qui figure sur ce site n’est contractuel.'}[pre];
     var el=document.createElement('p');el.id='pmDisc';el.textContent=t;
     el.style.cssText='font-size:11.5px;line-height:1.5;opacity:.75;margin:14px 0 0;max-width:820px;flex-basis:100%';
     foot.appendChild(el);
@@ -138,8 +141,8 @@
 
 /* Menú: "Vender mi barco" lleva a la página de venta (/vender-barco/) y el enlace a la herramienta no promete una tasación que no da. */
 (function(){
-  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':'';
-  var lab={'':'¿Qué influye en el precio de mi barco?','/ca':'Què influeix en el preu del meu vaixell?','/en':'What affects my boat’s price?'}[pre];
+  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
+  var lab={'':'¿Qué influye en el precio de mi barco?','/ca':'Què influeix en el preu del meu vaixell?','/en':'What affects my boat’s price?','/fr':'Qu’est-ce qui influe sur le prix de mon bateau ?'}[pre];
   var old=['¿Cuánto vale mi barco?','Quant val el meu vaixell?','How much is my boat worth?'];
   var as=document.querySelectorAll('.pmx-menu a, .pmx-grp a');
   for(var i=0;i<as.length;i++){
@@ -147,4 +150,17 @@
     if(h===pre+'/#vender'||h==='/#vender'){a.setAttribute('href',pre+'/vender-barco/');}
     if(old.indexOf(a.textContent.trim())>-1){a.textContent=lab;}
   }
+})();
+
+/* Versión francesa: aviso al pie de que Juan no habla francés y usa un traductor. */
+(function(){
+  if(location.pathname.indexOf('/fr/')!==0)return;
+  function run(){
+    var foot=document.querySelector('footer.foot .wrap'); if(!foot||document.getElementById('pmFrNote'))return;
+    var el=document.createElement('p');el.id='pmFrNote';
+    el.textContent='Nous ne parlons pas français : ce site a été traduit et, pour vous répondre, nous utilisons un traducteur. N’hésitez pas à nous écrire en français, en anglais ou en espagnol. Merci de votre compréhension.';
+    el.style.cssText='font-size:12.5px;line-height:1.5;margin:14px 0 0;max-width:820px;flex-basis:100%;font-weight:600';
+    var d=document.getElementById('pmDisc'); if(d)foot.insertBefore(el,d); else foot.appendChild(el);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
 })();

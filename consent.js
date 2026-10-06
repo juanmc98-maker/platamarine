@@ -1,11 +1,11 @@
-/* Consentimiento de analítica y marketing. Versión 2026-09-28 (Configurar por finalidad, atribución borrada al retirar). i18n ES/CA/EN. */
+/* Consentimiento de analítica y marketing. Versión 2026-09-28 (Configurar por finalidad, atribución borrada al retirar). i18n ES/CA/EN/FR. */
 (function () {
 'use strict';
 var GID = 'G-MJ6S489CXQ', FID = '1618955459947483', KEY = 'pm_privacy_v3', OLD = 'pm_cookies', OLD2 = 'pm_privacy_v2';
 var VERSION = '2026-09-16', MAX_AGE = 365 * 86400000;
 var allowedA = false, allowedM = false, loadedGA = false, loadedFB = false, box, opener;
 var AKEY = 'pm_attr', AMAX = 90 * 86400000;
-var LANG = location.pathname.indexOf('/ca/') === 0 ? 'ca' : (location.pathname.indexOf('/en/') === 0 ? 'en' : 'es');
+var LANG = location.pathname.indexOf('/ca/') === 0 ? 'ca' : (location.pathname.indexOf('/en/') === 0 ? 'en' : (location.pathname.indexOf('/fr/') === 0 ? 'fr' : 'es'));
 var T = {
 es: {
 aria: 'Preferencias de cookies',
@@ -21,6 +21,11 @@ en: {
 aria: 'Cookie preferences',
 cfg: '<p><strong>Cookie settings</strong></p><label class="opt"><input type="checkbox" data-opt="analytics"> <span><b>Analytics</b> (Google Analytics): how many visits the site gets and which pages are read.</span></label><label class="opt"><input type="checkbox" data-opt="marketing"> <span><b>Advertising</b> (Google Ads and Meta): measuring whether our ads work.</span></label><div class="choices"><button type="button" data-choice="back">Back</button><button type="button" data-choice="save">Save my choice</button></div>',
 html: '<p><strong>You decide about cookies.</strong> With your permission, Google Analytics measures visits to this site and Meta (Facebook/Instagram) helps us measure and improve our ads. You can reject them and still use every service. We keep your choice for 12 months. <a href="/en/cookies.html">Cookie policy</a>.</p><div class="choices"><button type="button" data-choice="no">Reject all</button><button type="button" data-choice="config">Settings</button><button type="button" data-choice="all">Accept all</button></div>'
+},
+fr: {
+aria: 'Préférences de cookies',
+cfg: '<p><strong>Paramètres des cookies</strong></p><label class="opt"><input type="checkbox" data-opt="analytics"> <span><b>Mesure d\'audience</b> (Google Analytics) : combien de visites reçoit le site et quelles pages sont lues.</span></label><label class="opt"><input type="checkbox" data-opt="marketing"> <span><b>Publicité</b> (Google Ads et Meta) : mesurer si nos annonces fonctionnent.</span></label><div class="choices"><button type="button" data-choice="back">Retour</button><button type="button" data-choice="save">Enregistrer mon choix</button></div>',
+html: '<p><strong>C\'est vous qui décidez pour les cookies.</strong> Avec votre accord, Google Analytics mesure les visites de ce site et Meta (Facebook/Instagram) nous aide à mesurer et à améliorer nos annonces. Vous pouvez les refuser et utiliser tous les services quand même. Nous conservons votre choix pendant 12 mois. <a href="/fr/cookies.html">Politique de cookies</a>.</p><div class="choices"><button type="button" data-choice="no">Tout refuser</button><button type="button" data-choice="config">Paramétrer</button><button type="button" data-choice="all">Tout accepter</button></div>'
 }
 };
 /* Atribución de origen (UTM/gclid/referrer), solo con consentimiento de analítica.
