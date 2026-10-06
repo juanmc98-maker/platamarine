@@ -14,10 +14,11 @@
 <link rel="alternate" hreflang="es" href="https://www.platamarine.com/">
 <link rel="alternate" hreflang="ca" href="https://www.platamarine.com/ca/">
 <link rel="alternate" hreflang="en" href="https://www.platamarine.com/en/">
+<link rel="alternate" hreflang="fr" href="https://www.platamarine.com/fr/">
 <link rel="alternate" hreflang="x-default" href="https://www.platamarine.com/">
-<script src="/consent.js" defer></script>
+<script src="/consent.js?v=20261006" defer></script>
 <script src="/submit-confirmed.js" defer></script>
-<script src="/analytics.js?v=20260925" defer></script>
+<script src="/analytics.js?v=20261006" defer></script>
 <meta property="og:url" content="https://www.platamarine.com/ca/">
 <meta property="og:locale" content="ca_ES">
 <meta property="og:image" content="https://www.platamarine.com/og-image-ca.jpg">
@@ -455,7 +456,7 @@ section[id]{scroll-margin-top:78px}
 .qsearch button:hover{background:var(--wa-hover)}
 @media(max-width:639px){.qsearch label{flex:1 1 100%}.qsearch button{width:100%}}
 </style>
-<link rel="stylesheet" href="/nav.css?v=20260925">
+<link rel="stylesheet" href="/nav.css?v=20261006">
 </head>
 <body>
 
@@ -474,7 +475,7 @@ section[id]{scroll-margin-top:78px}
       <a href="/ca/#contacto">Contacte</a>
     </nav>
     <a class="btn btn-wa top-cta" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20vull%20parlar%20sobre%20un%20vaixell." target="_blank" rel="noopener">Parlar amb en Juan</a>
-    <div class="langsw" aria-label="Idioma"><a href="https://www.platamarine.com/"><span class="flag flag-es" aria-hidden="true"></span><span class="sr-only">ES</span></a><a href="https://www.platamarine.com/ca/" aria-current="page"><span class="flag flag-ca" aria-hidden="true"></span><span class="sr-only">CA</span></a><a href="https://www.platamarine.com/en/"><span class="flag flag-en" aria-hidden="true"></span><span class="sr-only">EN</span></a></div>
+    <div class="langsw" aria-label="Idioma"><a href="https://www.platamarine.com/"><span class="flag flag-es" aria-hidden="true"></span><span class="sr-only">ES</span></a><a href="https://www.platamarine.com/ca/" aria-current="page"><span class="flag flag-ca" aria-hidden="true"></span><span class="sr-only">CA</span></a><a href="https://www.platamarine.com/en/"><span class="flag flag-en" aria-hidden="true"></span><span class="sr-only">EN</span></a><a href="https://www.platamarine.com/fr/"><span class="flag flag-fr" aria-hidden="true"></span><span class="sr-only">FR</span></a></div>
     <button type="button" class="pmx-btn" id="pmxBtn" aria-expanded="false" aria-controls="pmxPanel" aria-label="Obrir menú" data-open="Obrir menú" data-close="Tancar menú"><span></span></button>
   </div>
   <nav class="pmx-panel" id="pmxPanel" aria-label="Menú mòbil">
@@ -857,9 +858,9 @@ var IMGS={"prestige-32-1": "prestige-32-1.jpg", "prestige-32-2": "prestige-32-2.
   var to; window.addEventListener('resize',function(){clearTimeout(to);to=setTimeout(draw,150);});
 })();
 </script>
-<script src="/contacto.js?v=20260925" defer></script>
-<script src="/nav.js?v=20260925" defer></script>
-<script src="/inventario.js?v=20260925" defer></script>
+<script src="/contacto.js?v=20261006" defer></script>
+<script src="/nav.js?v=20261006" defer></script>
+<script src="/inventario.js?v=20261006" defer></script>
 <script>document.addEventListener("DOMContentLoaded",function(){var g=document.querySelector(".boats");if(!g||!window.PM_INV&&!window.INV)return;var inv=(window.PM_INV||window.INV);var P={};(inv.boats||[]).forEach(function(b){P[b.slug]=b.price||0});[].slice.call(g.querySelectorAll(".boat[data-pm-boat]")).sort(function(a,b){return (P[b.dataset.pmBoat]||0)-(P[a.dataset.pmBoat]||0)}).forEach(function(c){g.appendChild(c)})});</script>
 </body>
 </html>
