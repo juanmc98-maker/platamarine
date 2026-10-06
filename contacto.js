@@ -42,7 +42,7 @@
   var MAXY=new Date().getFullYear()+1;
   if(yearEl){ yearEl.removeAttribute('min'); yearEl.setAttribute('max',String(MAXY)); }
   if(link) link.setAttribute('data-no-track','');
-  var sent=false;
+  var sent=false, busy=false;
   function v(id){var el=document.getElementById(id);return el?el.value.trim():'';}
   function track(name,method){if(window.pmTrack) window.pmTrack(name,{form_id:'valoracion',contact_method:method||'',contact_purpose:'seller',placement:'valora'});}
   function build(){
@@ -79,7 +79,7 @@
 
   /* Envío directo: confirmación solo con ok:true del servidor; si falla, no se borra nada. */
   function sendDirect(){
-    if(sent) return;
+    if(sent||busy) return;
     if(!valid()) return;
     if(!window.submitConfirmed){ if(status){status.hidden=false;status.textContent=T.fail;} if(fallback) fallback.hidden=false; return; }
     var detail='Modelo: '+v('modelo')+(v('anio')?' ('+v('anio')+')':'')+' | Puerto: '+v('puerto')+(v('anuncio')?' | Anuncio: '+v('anuncio'):'');
@@ -87,12 +87,14 @@
     if(submitBtn){ submitBtn.disabled=true; submitBtn.dataset.lbl=submitBtn.dataset.lbl||submitBtn.textContent; submitBtn.textContent=T.sendingBtn; }
     if(status){ status.hidden=false; status.textContent=T.sending; }
     if(fallback) fallback.hidden=true;
-    window.submitConfirmed(LEADS_URL,payload,'json').then(function(){
-      sent=true;
+    busy=true;
+    window.submitConfirmed(LEADS_URL,payload,'json',f).then(function(){
+      sent=true; busy=false;
       if(status) status.textContent=T.ok;
       if(submitBtn) submitBtn.textContent=T.okBtn;
       track('generate_lead',null);
     }).catch(function(){
+      busy=false;
       if(status) status.textContent=T.fail;
       if(fallback) fallback.hidden=true;
       if(submitBtn){ submitBtn.disabled=false; submitBtn.textContent=submitBtn.dataset.lbl||T.send; }

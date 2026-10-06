@@ -81,5 +81,37 @@
       }
     }
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', sync); else sync();
+  /* Mensajes de WhatsApp según el estado (6 oct 2026): en una ficha reservada o vendida, ningún enlace
+     debe preparar un mensaje que la describa como disponible. Se reescriben los enlaces wa.me que nombran al barco. */
+  var WA = {
+    reserved: {
+      es: function (b) { return 'Hola Juan, he visto que el ' + b.name + ' de ' + b.year + ' está reservado. Si la reserva no sigue adelante, ¿me avisas? Y si tienes algo parecido, también me interesa.'; },
+      ca: function (b) { return 'Hola Juan, he vist que el ' + b.name + ' del ' + b.year + ' està reservat. Si la reserva no tira endavant, m\'avises? I si tens alguna cosa semblant, també m\'interessa.'; },
+      en: function (b) { return 'Hi Juan, I see the ' + b.year + ' ' + b.name + ' is reserved. If the reservation falls through, could you let me know? I\'m also interested in anything similar.'; },
+      fr: function (b) { return 'Bonjour Juan, je vois que le ' + b.name + ' de ' + b.year + ' est réservé. Si la réservation n\'aboutit pas, pouvez-vous me prévenir ? Je suis aussi intéressé par quelque chose de similaire.'; }
+    },
+    sold: {
+      es: function (b) { return 'Hola Juan, he visto la ficha del ' + b.name + ' de ' + b.year + ', que ya está vendido. Busco algo parecido, ¿me ayudas?'; },
+      ca: function (b) { return 'Hola Juan, he vist la fitxa del ' + b.name + ' del ' + b.year + ', que ja està venut. Busco alguna cosa semblant, m\'ajudes?'; },
+      en: function (b) { return 'Hi Juan, I saw the listing for the ' + b.year + ' ' + b.name + ', which is already sold. I\'m looking for something similar, can you help?'; },
+      fr: function (b) { return 'Bonjour Juan, j\'ai vu la fiche du ' + b.name + ' de ' + b.year + ', déjà vendu. Je cherche quelque chose de similaire, pouvez-vous m\'aider ?'; }
+    }
+  };
+  function waByStatus() {
+    var m = location.pathname.match(/\/barcos\/([a-z0-9-]+)\.html$/);
+    var b = m && INV.get(m[1]);
+    if (!b || !WA[b.status]) return;
+    var text = encodeURIComponent(WA[b.status][INV.lang()](b));
+    var links = document.querySelectorAll('a[href*="wa.me/34633742973"]');
+    for (var i = 0; i < links.length; i++) {
+      var h = links[i].getAttribute('href'), q = h.indexOf('?text=');
+      if (q < 0) continue;
+      var t = ''; try { t = decodeURIComponent(h.slice(q + 6)); } catch (e) { continue; }
+      if (t.indexOf(b.name) < 0 && t.indexOf(b.name.replace(/^\S+\s/, '')) < 0) continue;
+      links[i].setAttribute('href', h.slice(0, q) + '?text=' + text);
+    }
+  }
+  INV.waText = function (b, lang) { return WA[b.status] ? WA[b.status][lang](b) : null; };
+  function boot() { sync(); waByStatus(); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
 })();
