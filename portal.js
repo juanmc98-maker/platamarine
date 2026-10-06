@@ -20,6 +20,9 @@
         if (f.kind && b.kind !== f.kind) return false;
         if (f.maxTitle && b.title > f.maxTitle) return false;
         if (f.q && !new RegExp(f.q, 'i').test(b.name)) return false;
+        if (f.types && !f.types.some(function (t) { return (b.types || []).indexOf(t) >= 0; })) return false;
+        if (f.minLen && !(b.length >= f.minLen)) return false;
+        if (f.maxLen && !(b.length <= f.maxLen)) return false;
         return true;
       }).sort(function (a, b) { return (b.price || 0) - (a.price || 0); });
       var empty = box.parentNode.querySelector('.pm-empty');

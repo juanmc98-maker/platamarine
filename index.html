@@ -457,6 +457,7 @@ section[id]{scroll-margin-top:78px}
 @media(max-width:639px){.qsearch label{flex:1 1 100%}.qsearch button{width:100%}}
 </style>
 <link rel="stylesheet" href="/nav.css?v=20261006m">
+<style id="ux-oct">/* Revisión UX 6 oct 2026 */#venta .boat .desc,#venta .boat .thumbs{display:none}#guias .guias-cards img{display:none}#guias .guias-cards .gc-body{padding-top:18px}#comprar .buy-alt{margin-top:14px;font-family:var(--display);font-size:15px}#valora .sell-lead{max-width:62ch;color:var(--ink-2);margin-top:12px}@media(min-width:900px){#guias .guias-cards{grid-template-columns:repeat(4,1fr)}}</style>
 </head>
 <body>
 
@@ -506,20 +507,9 @@ section[id]{scroll-margin-top:78px}
           <a class="btn btn-pill" href="#valora">Quiero vender mi barco</a>
           <a class="btn btn-pill ghost" href="barcos/">Ver barcos en venta</a>
         </div>
-        <p style="margin:14px 0 0"><a class="hero-valora" href="herramientas/valora-tu-barco.html" style="color:#fff;font-family:var(--display);font-size:15px;font-weight:600;text-decoration:underline;text-underline-offset:4px">¿No sabes qué precio pedir? Mira qué influye en el precio de tu barco (2 min) →</a></p>
         <p class="hero-micro">Honorarios al cerrar la venta · Sin exclusiva ni adelantos</p>
       </div>
     </div>
-  </section>
-
-  <section class="qsearch" aria-label="Búsqueda rápida de barcos">
-    <form action="barcos/" method="get">
-      <p class="qs-ttl">¿Buscas barco?</p>
-      <label>Tipo<select name="tipo"><option value="all">Motor o vela</option><option value="motor">Motor</option><option value="vela">Vela</option></select></label>
-      <label>Presupuesto<select name="precio"><option value="all">Cualquiera</option><option value="0-30000">Hasta 30.000 €</option><option value="30000-60000">30.000 – 60.000 €</option><option value="60000-100000">60.000 – 100.000 €</option><option value="100000-">Más de 100.000 €</option></select></label>
-      <label>Zona<select name="zona"><option value="all">Todas</option><option value="cataluna">Cataluña</option><option value="baleares">Baleares</option><option value="valencia">Comunidad Valenciana</option><option value="galicia">Galicia</option></select></label>
-      <button type="submit">Buscar barcos</button>
-    </form>
   </section>
 
   <section class="sec alt" id="venta">
@@ -602,45 +592,12 @@ section[id]{scroll-margin-top:78px}
     </div>
   </section>
 
-  <section class="service-switch" aria-label="Vender o comprar">
-    <div class="wrap">
-      <article class="service-card">
-        <img class="service-img" src="https://images.unsplash.com/photo-1587365001066-8263b7061a38?auto=format&fit=crop&w=900&h=506&q=75" alt="Barcos a motor amarrados en un puerto deportivo del Mediterráneo" loading="lazy" width="900" height="506">
-        <p class="service-kicker">Propietarios</p>
-        <h2>Quiero vender mi barco</h2>
-        <p>Me cuentas qué barco tienes y dónde está, y te digo qué precio tiene sentido y cómo plantearía la venta.</p>
-        <div class="boat-cta" style="margin-top:20px">
-          <a class="btn btn-sea" href="#valora">Cuéntame qué barco tienes</a>
-          <a class="btn btn-ghost" href="herramientas/valora-tu-barco.html">¿No sabes qué precio pedir? Mira qué influye (2 min)</a>
-        </div>
-      </article>
-      <article class="service-card">
-        <img class="service-img" src="https://images.pexels.com/photos/14223217/pexels-photo-14223217.jpeg?auto=compress&cs=tinysrgb&w=900&h=506&fit=crop" alt="Familia disfrutando de una lancha a motor" loading="lazy" width="900" height="506">
-        <p class="service-kicker">Compradores</p>
-        <h2>Estoy buscando barco</h2>
-        <p>Mira los barcos que gestiono ahora, también por zona: <a href="comprar/barcos-segunda-mano-cataluna.html">Cataluña</a>, <a href="comprar/barcos-segunda-mano-costa-brava.html">Costa Brava</a> y <a href="comprar/barcos-segunda-mano-baleares.html">Baleares</a>. Si no está el que buscas, te ayudo a encontrarlo.</p>
-        <div class="boat-cta" style="margin-top:20px">
-          <a class="btn btn-sea" href="barcos/">Ver barcos en venta</a>
-          <a class="btn btn-ghost" href="#comprar">¿No encuentras el tuyo? Te ayudo a buscarlo</a>
-        </div>
-      </article>
-    </div>
-  </section>
-  <section class="sec" id="vender">
-    <span id="condiciones"></span>
-    <div class="wrap">
-      <p class="eyebrow">Cómo trabajo</p>
-      <h2>¿Para qué un broker, si puedo anunciarlo yo?</h2>
-      <p class="sec-lead">Puedes, claro. La diferencia está en todo lo que pasa entre publicar el anuncio y cobrar: el precio, la ficha, las consultas, las visitas, la negociación y los papeles. Sin exclusiva, sin adelantos y con las condiciones por escrito antes de empezar.</p>
-      <p style="margin-top:22px"><a class="btn btn-ghost" href="/vender-barco/">Cómo trabajo, paso a paso</a></p>
-    </div>
-  </section>
-
   <section class="sec final" id="valora">
+    <span id="vender"></span><span id="condiciones"></span>
     <div class="wrap">
       <p class="eyebrow">Vender</p>
-      <h2>¿Tienes un barco y estás pensando en venderlo? Cuéntame cuál es y lo estudiamos.</h2>
-      <p class="intro">Dime el modelo y dónde está. Puedes añadir tu anuncio si ya lo tienes. Primero hablamos del barco; esta consulta no es un encargo de venta.</p>
+      <h2>¿Piensas vender tu barco? Cuéntame cuál es y lo estudiamos.</h2>
+      <p class="intro sell-lead">La diferencia de trabajar con un broker está en todo lo que pasa entre publicar el anuncio y cobrar: el precio, la ficha, las consultas, las visitas, la negociación y los papeles. Sin exclusiva, sin adelantos y con las condiciones por escrito antes de empezar. Esta consulta no es un encargo de venta. <a href="/vender-barco/">Cómo trabajo, paso a paso</a>.</p>
       <form id="valoracion" class="form-grid" data-contact-intent="seller" novalidate>
         <div class="field span2">
           <label for="modelo">Marca y modelo <i>*</i></label>
@@ -672,7 +629,7 @@ section[id]{scroll-margin-top:78px}
           <button class="btn btn-ghost" type="button" id="porWhatsapp">O por WhatsApp</button>
           <button class="btn btn-ghost" type="button" id="porEmail">O por email</button>
         </div>
-        <p class="form-help">Al pulsar «Enviar consulta» me llega directamente a mí; verás aquí mismo la confirmación cuando la haya recibido. Si prefieres, también puedes escribirme por WhatsApp o email con los botones de arriba, aunque no hayas rellenado todo. Los campos con * son obligatorios para el envío desde la web.</p>
+        <p class="form-help">Te confirmo aquí mismo cuando me llegue. Si lo prefieres, escríbeme por WhatsApp o email con los botones de arriba. Los campos con * son obligatorios.</p>
         <p id="contactoEstado" class="form-help" role="status" aria-live="polite" hidden></p>
         <p class="form-help" id="contactoAlternativa" hidden><a id="continuarContacto">Abrir el mensaje preparado</a></p>
       </form>
@@ -685,12 +642,11 @@ section[id]{scroll-margin-top:78px}
         <div>
           <p class="eyebrow">Buscas barco</p>
           <h2>¿No encuentras el tuyo? Te ayudo a buscarlo.</h2>
-          <p class="intro">Antes, echa un vistazo a los <a href="barcos/">barcos que gestiono</a>. Si no está el tuyo, me cuentas uso, presupuesto y dónde lo tendrás: busco en España y Europa, compruebo lo que falte antes de que te desplaces y te acompaño en la visita, la negociación y los papeles.</p>
+          <p class="intro">Antes, echa un vistazo a los <a href="barcos/">barcos que gestiono</a>. Si no está el tuyo, me cuentas uso, presupuesto y dónde lo tendrás: busco en España y Europa, compruebo lo que falte antes de que te desplaces y te acompaño en la visita, la negociación y los papeles. También por zona: <a href="/comprar/barcos-segunda-mano-cataluna.html">Cataluña</a>, <a href="/comprar/barcos-segunda-mano-costa-brava.html">Costa Brava</a> y <a href="/comprar/barcos-segunda-mano-baleares.html">Baleares</a>.</p>
           <div class="boat-cta" style="margin-top:26px">
             <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20estoy%20buscando%20barco.%20Tipo%3A%20%20%7C%20Presupuesto%3A%20%20%7C%20Zona%3A%20" target="_blank" rel="noopener">Cuéntame qué estás buscando</a>
-            <a class="btn btn-ghost" href="que-barco-necesito.html">¿No sabes qué barco? Haz el test (2 min)</a>
-            <a class="btn btn-ghost" href="alertas/">Crear alerta: te aviso si entra el tuyo</a>
           </div>
+          <p class="buy-alt"><a href="alertas/">Crear alerta: te aviso si entra el tuyo</a></p>
         </div>
         <div>
           <div class="buy-facts">

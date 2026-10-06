@@ -25,6 +25,7 @@
    - generate_lead: formulario recibido y confirmado por el servidor (ok:true).
    - newsletter_signup: alta a novedades confirmada por el servidor.
    - contact_form_start / contact_form_error / pdf_ficha / click_boat / quiz_complete: solo GA4.
+   - select_path (label buy|sell): elige comprar o vender fuera del menú. view_form: el formulario llegó a verse. click_boat lleva placement (desde dónde se abrió la ficha). Añadidos el 6 oct 2026.
    "Contacto cualificado" no se mide aquí: requiere una validación posterior real (p. ej. marcarlo en la hoja de leads). */
 (function(){
   var SAFE=['form_id','contact_method','contact_purpose','placement','boat','file_type','quiz','result_type','label','lang','tool'];
@@ -40,7 +41,7 @@
     if(!/^[a-z_]{3,40}$/.test(name||''))return;
     var safe=clean(params||{});
     // evita duplicados del mismo evento en menos de 1,5 s (doble clic, dos manejadores)
-    var key=name+'|'+(safe.form_id||'')+'|'+(safe.contact_method||'')+'|'+(safe.boat||'');
+    var key=name+'|'+(safe.form_id||'')+'|'+(safe.contact_method||'')+'|'+(safe.boat||'')+'|'+(safe.label||'');
     var now=Date.now(); if(last[key]&&now-last[key]<1500)return; last[key]=now;
     if(window.__pmAnalyticsAllowed&&window.__pmga&&window.gtag){try{window.gtag('event',name,safe);}catch(e){}}
     var m=META[name];
@@ -60,10 +61,19 @@
     if(method){
       if(a.hasAttribute('data-no-track')) return; // enlaces que ya se miden desde su propio script
       if(/^https:\/\/wa\.me\/\?text=/.test(href)) return; // "compartir por WhatsApp" no es contacto
-      window.pmTrack('contact_intent',{contact_method:method,contact_purpose:a.closest('#valora,#vender')?'seller':/\/barcos\//.test(location.pathname)?'buyer':'general',placement:where(a).replace(/[^a-zA-Z0-9_-]/g,'_')||'page',boat:boat});
+      window.pmTrack('contact_intent',{contact_method:method,contact_purpose:(a.closest('#valora,#vender')||/^\/(ca\/|en\/|fr\/)?(vender-barco|vender)\//.test(location.pathname))?'seller':/\/(barcos|comprar)\//.test(location.pathname)?'buyer':'general',placement:where(a).replace(/[^a-zA-Z0-9_-]/g,'_')||'page',boat:boat});
     }
-    else if(a.matches('a[href*="/barcos/"],a[href*="barcos/"]')&&!a.matches('nav a')){window.pmTrack('click_boat',{boat:(href.match(/([a-z0-9-]+)\.html$/)||[])[1]||''});}
+    else if(!a.closest('nav,.pmx-panel')&&(/(^|\/)vender-barco\/?(#.*)?$/.test(href)||href==='#valora'||/^(\/(ca|en|fr))?\/?barcos\/?$/.test(href))){window.pmTrack('select_path',{label:/barcos\/?$/.test(href)?'buy':'sell',placement:where(a).replace(/[^a-zA-Z0-9_-]/g,'_')||'page'});}
+    else if(a.matches('a[href*="/barcos/"],a[href*="barcos/"]')&&!a.matches('nav a')){window.pmTrack('click_boat',{boat:(href.match(/([a-z0-9-]+)\.html$/)||[])[1]||'',placement:where(a).replace(/[^a-zA-Z0-9_-]/g,'_')||'page'});}
   },true);
+  /* view_form: el formulario de contacto llegó a verse (una vez por página). Sirve para separar "no lo vio" de "lo vio y no escribió". */
+  function watchForms(){
+    if(!('IntersectionObserver' in window))return;
+    var seen={};
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){var id=e.target.id;if(e.isIntersecting&&!seen[id]){seen[id]=true;window.pmTrack('view_form',{form_id:id});io.unobserve(e.target);}});},{threshold:0.4});
+    document.querySelectorAll('form[id]').forEach(function(f){if(f.closest('#pm-nl'))return;io.observe(f);});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',watchForms);else watchForms();
   var started={};
   document.addEventListener('input',function(e){
     var f=e.target.closest('form'); if(!f||!f.id||started[f.id]) return;
