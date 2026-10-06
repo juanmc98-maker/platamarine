@@ -1,31 +1,31 @@
-/* Consentimiento de analítica y marketing. Versión 2026-09-28 (Configurar por finalidad, atribución borrada al retirar). i18n ES/CA/EN/FR. */
+/* Consentimiento de analítica y marketing. Versión 2026-10-07 (Microsoft Clarity dentro de analítica) (Configurar por finalidad, atribución borrada al retirar). i18n ES/CA/EN/FR. */
 (function () {
 'use strict';
-var GID = 'G-MJ6S489CXQ', FID = '1618955459947483', KEY = 'pm_privacy_v3', OLD = 'pm_cookies', OLD2 = 'pm_privacy_v2';
-var VERSION = '2026-09-16', MAX_AGE = 365 * 86400000;
+var CID = 'ytnexwm14p', GID = 'G-MJ6S489CXQ', FID = '1618955459947483', KEY = 'pm_privacy_v3', OLD = 'pm_cookies', OLD2 = 'pm_privacy_v2';
+var VERSION = '2026-10-07', MAX_AGE = 365 * 86400000;
 var allowedA = false, allowedM = false, loadedGA = false, loadedFB = false, box, opener;
 var AKEY = 'pm_attr', AMAX = 90 * 86400000;
 var LANG = location.pathname.indexOf('/ca/') === 0 ? 'ca' : (location.pathname.indexOf('/en/') === 0 ? 'en' : (location.pathname.indexOf('/fr/') === 0 ? 'fr' : 'es'));
 var T = {
 es: {
 aria: 'Preferencias de cookies',
-cfg: '<p><strong>Configurar cookies</strong></p><label class="opt"><input type="checkbox" data-opt="analytics"> <span><b>Analítica</b> (Google Analytics): cuántas visitas tiene la web y qué páginas se leen.</span></label><label class="opt"><input type="checkbox" data-opt="marketing"> <span><b>Publicidad</b> (Google Ads y Meta): medir si nuestros anuncios funcionan.</span></label><div class="choices"><button type="button" data-choice="back">Volver</button><button type="button" data-choice="save">Guardar mi elección</button></div>',
-html: '<p><strong>Tú decides sobre las cookies.</strong> Con tu permiso, Google Analytics mide las visitas a esta web y Meta (Facebook/Instagram) nos ayuda a medir y mejorar nuestros anuncios. Puedes rechazarlas y usar todos los servicios igualmente. Guardamos tu elección durante 12 meses. <a href="/cookies.html">Política de cookies</a>.</p><div class="choices"><button type="button" data-choice="no">Rechazar todo</button><button type="button" data-choice="config">Configurar</button><button type="button" data-choice="all">Aceptar todo</button></div>'
+cfg: '<p><strong>Configurar cookies</strong></p><label class="opt"><input type="checkbox" data-opt="analytics"> <span><b>Analítica</b> (Google Analytics y Microsoft Clarity): cuántas visitas tiene la web, qué páginas se leen y cómo se usan, con mapas de calor y grabaciones sin los datos que escribes.</span></label><label class="opt"><input type="checkbox" data-opt="marketing"> <span><b>Publicidad</b> (Google Ads y Meta): medir si nuestros anuncios funcionan.</span></label><div class="choices"><button type="button" data-choice="back">Volver</button><button type="button" data-choice="save">Guardar mi elección</button></div>',
+html: '<p><strong>Tú decides sobre las cookies.</strong> Con tu permiso, Google Analytics y Microsoft Clarity miden las visitas a esta web y cómo se usa y Meta (Facebook/Instagram) nos ayuda a medir y mejorar nuestros anuncios. Puedes rechazarlas y usar todos los servicios igualmente. Guardamos tu elección durante 12 meses. <a href="/cookies.html">Política de cookies</a>.</p><div class="choices"><button type="button" data-choice="no">Rechazar todo</button><button type="button" data-choice="config">Configurar</button><button type="button" data-choice="all">Aceptar todo</button></div>'
 },
 ca: {
 aria: 'Preferències de galetes',
-cfg: '<p><strong>Configurar galetes</strong></p><label class="opt"><input type="checkbox" data-opt="analytics"> <span><b>Analítica</b> (Google Analytics): quantes visites té la web i quines pàgines es llegeixen.</span></label><label class="opt"><input type="checkbox" data-opt="marketing"> <span><b>Publicitat</b> (Google Ads i Meta): mesurar si els nostres anuncis funcionen.</span></label><div class="choices"><button type="button" data-choice="back">Tornar</button><button type="button" data-choice="save">Desar la meva elecció</button></div>',
-html: '<p><strong>Tu decideixes sobre les galetes.</strong> Amb el teu permís, Google Analytics mesura les visites d\'aquesta web i Meta (Facebook/Instagram) ens ajuda a mesurar i millorar els nostres anuncis. Pots rebutjar-les i fer servir tots els serveis igualment. Guardem la teva elecció durant 12 mesos. <a href="/ca/cookies.html">Política de galetes</a>.</p><div class="choices"><button type="button" data-choice="no">Rebutjar-ho tot</button><button type="button" data-choice="config">Configurar</button><button type="button" data-choice="all">Acceptar-ho tot</button></div>'
+cfg: '<p><strong>Configurar galetes</strong></p><label class="opt"><input type="checkbox" data-opt="analytics"> <span><b>Analítica</b> (Google Analytics i Microsoft Clarity): quantes visites té el web, quines pàgines es llegeixen i com es fan servir, amb mapes de calor i enregistraments sense les dades que escrius.</span></label><label class="opt"><input type="checkbox" data-opt="marketing"> <span><b>Publicitat</b> (Google Ads i Meta): mesurar si els nostres anuncis funcionen.</span></label><div class="choices"><button type="button" data-choice="back">Tornar</button><button type="button" data-choice="save">Desar la meva elecció</button></div>',
+html: '<p><strong>Tu decideixes sobre les galetes.</strong> Amb el teu permís, Google Analytics i Microsoft Clarity mesuren les visites d\'aquest web i com es fa servir i Meta (Facebook/Instagram) ens ajuda a mesurar i millorar els nostres anuncis. Pots rebutjar-les i fer servir tots els serveis igualment. Guardem la teva elecció durant 12 mesos. <a href="/ca/cookies.html">Política de galetes</a>.</p><div class="choices"><button type="button" data-choice="no">Rebutjar-ho tot</button><button type="button" data-choice="config">Configurar</button><button type="button" data-choice="all">Acceptar-ho tot</button></div>'
 },
 en: {
 aria: 'Cookie preferences',
-cfg: '<p><strong>Cookie settings</strong></p><label class="opt"><input type="checkbox" data-opt="analytics"> <span><b>Analytics</b> (Google Analytics): how many visits the site gets and which pages are read.</span></label><label class="opt"><input type="checkbox" data-opt="marketing"> <span><b>Advertising</b> (Google Ads and Meta): measuring whether our ads work.</span></label><div class="choices"><button type="button" data-choice="back">Back</button><button type="button" data-choice="save">Save my choice</button></div>',
-html: '<p><strong>You decide about cookies.</strong> With your permission, Google Analytics measures visits to this site and Meta (Facebook/Instagram) helps us measure and improve our ads. You can reject them and still use every service. We keep your choice for 12 months. <a href="/en/cookies.html">Cookie policy</a>.</p><div class="choices"><button type="button" data-choice="no">Reject all</button><button type="button" data-choice="config">Settings</button><button type="button" data-choice="all">Accept all</button></div>'
+cfg: '<p><strong>Cookie settings</strong></p><label class="opt"><input type="checkbox" data-opt="analytics"> <span><b>Analytics</b> (Google Analytics and Microsoft Clarity): how many visits the site gets, which pages are read and how they are used, with heatmaps and recordings that exclude what you type.</span></label><label class="opt"><input type="checkbox" data-opt="marketing"> <span><b>Advertising</b> (Google Ads and Meta): measuring whether our ads work.</span></label><div class="choices"><button type="button" data-choice="back">Back</button><button type="button" data-choice="save">Save my choice</button></div>',
+html: '<p><strong>You decide about cookies.</strong> With your permission, Google Analytics and Microsoft Clarity measure visits to this site and how it is used and Meta (Facebook/Instagram) helps us measure and improve our ads. You can reject them and still use every service. We keep your choice for 12 months. <a href="/en/cookies.html">Cookie policy</a>.</p><div class="choices"><button type="button" data-choice="no">Reject all</button><button type="button" data-choice="config">Settings</button><button type="button" data-choice="all">Accept all</button></div>'
 },
 fr: {
 aria: 'Préférences de cookies',
-cfg: '<p><strong>Paramètres des cookies</strong></p><label class="opt"><input type="checkbox" data-opt="analytics"> <span><b>Mesure d\'audience</b> (Google Analytics) : combien de visites reçoit le site et quelles pages sont lues.</span></label><label class="opt"><input type="checkbox" data-opt="marketing"> <span><b>Publicité</b> (Google Ads et Meta) : mesurer si nos annonces fonctionnent.</span></label><div class="choices"><button type="button" data-choice="back">Retour</button><button type="button" data-choice="save">Enregistrer mon choix</button></div>',
-html: '<p><strong>C\'est vous qui décidez pour les cookies.</strong> Avec votre accord, Google Analytics mesure les visites de ce site et Meta (Facebook/Instagram) nous aide à mesurer et à améliorer nos annonces. Vous pouvez les refuser et utiliser tous les services quand même. Nous conservons votre choix pendant 12 mois. <a href="/fr/cookies.html">Politique de cookies</a>.</p><div class="choices"><button type="button" data-choice="no">Tout refuser</button><button type="button" data-choice="config">Paramétrer</button><button type="button" data-choice="all">Tout accepter</button></div>'
+cfg: '<p><strong>Paramètres des cookies</strong></p><label class="opt"><input type="checkbox" data-opt="analytics"> <span><b>Mesure d\'audience</b> (Google Analytics et Microsoft Clarity) : combien de visites reçoit le site, quelles pages sont lues et comment elles sont utilisées, avec des cartes de chaleur et des enregistrements sans les données que vous saisissez.</span></label><label class="opt"><input type="checkbox" data-opt="marketing"> <span><b>Publicité</b> (Google Ads et Meta) : mesurer si nos annonces fonctionnent.</span></label><div class="choices"><button type="button" data-choice="back">Retour</button><button type="button" data-choice="save">Enregistrer mon choix</button></div>',
+html: '<p><strong>C\'est vous qui décidez pour les cookies.</strong> Avec votre accord, Google Analytics et Microsoft Clarity mesurent les visites de ce site et son utilisation et Meta (Facebook/Instagram) nous aide à mesurer et à améliorer nos annonces. Vous pouvez les refuser et utiliser tous les services quand même. Nous conservons votre choix pendant 12 mois. <a href="/fr/cookies.html">Politique de cookies</a>.</p><div class="choices"><button type="button" data-choice="no">Tout refuser</button><button type="button" data-choice="config">Paramétrer</button><button type="button" data-choice="all">Tout accepter</button></div>'
 }
 };
 /* Atribución de origen (UTM/gclid/referrer), solo con consentimiento de analítica.
@@ -88,10 +88,17 @@ document.cookie = name + '=; Max-Age=0; path=' + path + (domain ? '; domain=' + 
 }); });
 });
 }
+var loadedCL = false;
+function loadClarity() {
+if (loadedCL || !CID || CID.indexOf('_') === 0) return; loadedCL = true;
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,'clarity','script',CID);
+window.clarity('consent');
+}
 function enableAnalytics() {
 allowedA = true; window.__pmAnalyticsAllowed = true; window['ga-disable-' + GID] = false;
 window.gtag('consent', 'update', {analytics_storage:'granted'});
 captureAttribution();
+loadClarity();
 if (loadedGA) return;
 loadedGA = true; window.__pmga = true;
 var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GID; document.head.appendChild(s);
