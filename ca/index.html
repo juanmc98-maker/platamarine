@@ -457,6 +457,7 @@ section[id]{scroll-margin-top:78px}
 @media(max-width:639px){.qsearch label{flex:1 1 100%}.qsearch button{width:100%}}
 </style>
 <link rel="stylesheet" href="/nav.css?v=20261006m">
+<style id="ux-oct">/* Revisión UX 6 oct 2026 */#venta .boat .desc,#venta .boat .thumbs{display:none}#guias .guias-cards img{display:none}#guias .guias-cards .gc-body{padding-top:18px}#comprar .buy-alt{margin-top:14px;font-family:var(--display);font-size:15px}#valora .sell-lead{max-width:62ch;color:var(--ink-2);margin-top:12px}@media(min-width:900px){#guias .guias-cards{grid-template-columns:repeat(4,1fr)}}</style>
 </head>
 <body>
 
@@ -506,20 +507,9 @@ section[id]{scroll-margin-top:78px}
           <a class="btn btn-pill" href="#valora">Vull vendre el meu vaixell</a>
           <a class="btn btn-pill ghost" href="barcos/">Veure vaixells en venda</a>
         </div>
-        <p style="margin:14px 0 0"><a class="hero-valora" href="herramientas/valora-tu-barco.html" style="color:#fff;font-family:var(--display);font-size:15px;font-weight:600;text-decoration:underline;text-underline-offset:4px">No saps quin preu demanar? Mira què influeix en el preu del teu vaixell (2 min) →</a></p>
         <p class="hero-micro">Honoraris en tancar la venda · Sense exclusiva ni avançaments</p>
       </div>
     </div>
-  </section>
-
-  <section class="qsearch" aria-label="Cerca ràpida de vaixells">
-    <form action="/ca/barcos/" method="get">
-      <p class="qs-ttl">Busques vaixell?</p>
-      <label>Tipus<select name="tipo"><option value="all">Motor o vela</option><option value="motor">Motor</option><option value="vela">Vela</option></select></label>
-      <label>Pressupost<select name="precio"><option value="all">Qualsevol</option><option value="0-30000">Fins a 30.000 €</option><option value="30000-60000">30.000 – 60.000 €</option><option value="60000-100000">60.000 – 100.000 €</option><option value="100000-">Més de 100.000 €</option></select></label>
-      <label>Zona<select name="zona"><option value="all">Totes</option><option value="cataluna">Catalunya</option><option value="baleares">Balears</option><option value="valencia">Comunitat Valenciana</option><option value="galicia">Galícia</option></select></label>
-      <button type="submit">Cercar vaixells</button>
-    </form>
   </section>
 
   <section class="sec alt" id="venta">
@@ -602,45 +592,12 @@ section[id]{scroll-margin-top:78px}
     </div>
   </section>
 
-  <section class="service-switch" aria-label="Vendre o comprar">
-    <div class="wrap">
-      <article class="service-card">
-        <img class="service-img" src="https://images.unsplash.com/photo-1587365001066-8263b7061a38?auto=format&fit=crop&w=900&h=506&q=75" alt="Vaixells a motor amarrats en un port esportiu del Mediterrani" loading="lazy" width="900" height="506">
-        <p class="service-kicker">Propietaris</p>
-        <h2>Vull vendre el meu vaixell</h2>
-        <p>M'expliques quin vaixell tens i on és, i et dic quin preu té sentit i com plantejaria la venda.</p>
-        <div class="boat-cta" style="margin-top:20px">
-          <a class="btn btn-sea" href="#valora">Explica'm quin vaixell tens</a>
-          <a class="btn btn-ghost" href="/ca/herramientas/valora-tu-barco.html">No saps quin preu demanar? Mira què hi influeix (2 min)</a>
-        </div>
-      </article>
-      <article class="service-card">
-        <img class="service-img" src="https://images.pexels.com/photos/14223217/pexels-photo-14223217.jpeg?auto=compress&cs=tinysrgb&w=900&h=506&fit=crop" alt="Família gaudint d'una llanxa a motor" loading="lazy" width="900" height="506">
-        <p class="service-kicker">Compradors</p>
-        <h2>Estic buscant vaixell</h2>
-        <p>Mira els vaixells que gestiono ara, també per zona: <a href="/ca/comprar/barcos-segunda-mano-cataluna.html">Catalunya</a>, <a href="/ca/comprar/barcos-segunda-mano-costa-brava.html">Costa Brava</a> i <a href="/ca/comprar/barcos-segunda-mano-baleares.html">Balears</a>. Si no hi és el que busques, t'ajudo a trobar-lo.</p>
-        <div class="boat-cta" style="margin-top:20px">
-          <a class="btn btn-sea" href="barcos/">Veure vaixells en venda</a>
-          <a class="btn btn-ghost" href="#comprar">No trobes el teu? T'ajudo a buscar-lo</a>
-        </div>
-      </article>
-    </div>
-  </section>
-  <section class="sec" id="vender">
-    <span id="condiciones"></span>
-    <div class="wrap">
-      <p class="eyebrow">Com treballo</p>
-      <h2>Per a què un broker, si ho puc anunciar jo mateix?</h2>
-      <p class="sec-lead">Pots, és clar. La diferència és tot el que passa entre publicar l'anunci i cobrar: el preu, la fitxa, les consultes, les visites, la negociació i els papers. Sense exclusiva, sense avançaments i amb les condicions per escrit abans de començar.</p>
-      <p style="margin-top:22px"><a class="btn btn-ghost" href="/ca/vender-barco/">Com treballo, pas a pas</a></p>
-    </div>
-  </section>
-
   <section class="sec final" id="valora">
+    <span id="vender"></span><span id="condiciones"></span>
     <div class="wrap">
       <p class="eyebrow">Vendre</p>
-      <h2>Tens un vaixell i estàs pensant a vendre'l? Explica'm quin és i ho estudiem.</h2>
-      <p class="intro">Digues-me el model i on és. Pots afegir el teu anunci si ja el tens. Primer parlem del vaixell; aquesta consulta no és un encàrrec de venda.</p>
+      <h2>Penses vendre el teu vaixell? Explica'm quin és i l'estudiem.</h2>
+      <p class="intro sell-lead">La diferència de treballar amb un broker és tot el que passa entre publicar l'anunci i cobrar: el preu, la fitxa, les consultes, les visites, la negociació i els papers. Sense exclusiva, sense avançaments i amb les condicions per escrit abans de començar. Aquesta consulta no és un encàrrec de venda. <a href="/ca/vender-barco/">Com treballo, pas a pas</a>.</p>
       <form id="valoracion" class="form-grid" data-contact-intent="seller" novalidate>
         <div class="field span2">
           <label for="modelo">Marca i model <i>*</i></label>
@@ -672,7 +629,7 @@ section[id]{scroll-margin-top:78px}
           <button class="btn btn-ghost" type="button" id="porWhatsapp">O per WhatsApp</button>
           <button class="btn btn-ghost" type="button" id="porEmail">O per email</button>
         </div>
-        <p class="form-help">En prémer «Enviar consulta» m'arriba directament a mi; veuràs aquí mateix la confirmació quan l'hagi rebuda. Si ho prefereixes, també em pots escriure per WhatsApp o email amb els botons de dalt, encara que no ho hagis omplert tot. Els camps amb * són obligatoris per a l'enviament des de la web.</p>
+        <p class="form-help">Et confirmo aquí mateix quan m'arribi. Si ho prefereixes, escriu-me per WhatsApp o correu amb els botons de dalt. Els camps amb * són obligatoris.</p>
         <p id="contactoEstado" class="form-help" role="status" aria-live="polite" hidden></p>
         <p class="form-help" id="contactoAlternativa" hidden><a id="continuarContacto">Obrir el missatge preparat</a></p>
       </form>
@@ -685,12 +642,11 @@ section[id]{scroll-margin-top:78px}
         <div>
           <p class="eyebrow">Busques vaixell</p>
           <h2>No trobes el teu? T'ajudo a buscar-lo.</h2>
-          <p class="intro">Abans, fes un cop d'ull als <a href="barcos/">vaixells que gestiono</a>. Si no hi és el teu, m'expliques l'ús, el pressupost i on el tindràs: busco a Espanya i Europa, comprovo el que falti abans que et desplacis i t'acompanyo en la visita, la negociació i els papers.</p>
+          <p class="intro">Abans, fes un cop d'ull als <a href="barcos/">vaixells que gestiono</a>. Si no hi és el teu, m'expliques l'ús, el pressupost i on el tindràs: busco a Espanya i Europa, comprovo el que falti abans que et desplacis i t'acompanyo en la visita, la negociació i els papers. També per zona: <a href="/ca/comprar/barcos-segunda-mano-cataluna.html">Catalunya</a>, <a href="/ca/comprar/barcos-segunda-mano-costa-brava.html">Costa Brava</a> i <a href="/ca/comprar/barcos-segunda-mano-baleares.html">Balears</a>.</p>
           <div class="boat-cta" style="margin-top:26px">
             <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20estic%20buscant%20vaixell.%20Tipus%3A%20%20%7C%20Pressupost%3A%20%20%7C%20Zona%3A%20" target="_blank" rel="noopener">Explica'm què estàs buscant</a>
-            <a class="btn btn-ghost" href="/ca/que-barco-necesito.html">No saps quin vaixell? Fes el test (2 min)</a>
-            <a class="btn btn-ghost" href="/ca/alertas/">Crear alerta: t'aviso si entra el teu</a>
           </div>
+          <p class="buy-alt"><a href="/ca/alertas/">Crear alerta: t'aviso si entra el teu</a></p>
         </div>
         <div>
           <div class="buy-facts">
