@@ -164,3 +164,13 @@
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
 })();
+
+/* Solo en francés: enlaces para quien vive en Francia en el menú Comprar. */
+(function(){
+  if(location.pathname.indexOf('/fr/')!==0)return;
+  var L=[['/fr/comprar/barcos-ocasion-espana-compradores-franceses.html','Vous vivez en France ? Bateaux en Espagne'],['/fr/guias/comprar-barco-espana-matricular-francia.html','Acheter en Espagne, immatriculer en France'],['/fr/guias/barco-frances-en-cataluna.html','Votre bateau en Catalogne']];
+  function add(box){if(!box)return;L.forEach(function(it){if(box.querySelector('a[href="'+it[0]+'"]'))return;var a=document.createElement('a');a.href=it[0];a.textContent=it[1];if(location.pathname===it[0])a.setAttribute('aria-current','page');box.appendChild(a);});}
+  add(document.getElementById('pmxM2'));
+  var g=document.querySelectorAll('#pmxPanel .pmx-grp');
+  for(var i=0;i<g.length;i++){if(g[i].querySelector('a[href$="/modelos/"]')){add(g[i]);break;}}
+})();
