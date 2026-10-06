@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qu’est-ce qui influe sur la valeur de votre bateau ? | Plata Marine</title>
+<meta name="description" content="Répondez à quelques questions sur votre bateau (type, longueur, année, moteur, état et papiers) et je vous dirai ce qui joue en faveur de son prix et ce qui le fait baisser. Gratuit.">
+<link rel="canonical" href="https://www.platamarine.com/fr/herramientas/valora-tu-barco.html">
+<link rel="alternate" hreflang="es" href="https://www.platamarine.com/herramientas/valora-tu-barco.html">
+<link rel="alternate" hreflang="ca" href="https://www.platamarine.com/ca/herramientas/valora-tu-barco.html">
+<link rel="alternate" hreflang="en" href="https://www.platamarine.com/en/herramientas/valora-tu-barco.html">
+<link rel="alternate" hreflang="fr" href="https://www.platamarine.com/fr/herramientas/valora-tu-barco.html">
+<link rel="alternate" hreflang="x-default" href="https://www.platamarine.com/herramientas/valora-tu-barco.html">
+<link rel="icon" type="image/png" href="/logo-plata-marine.png">
+<meta property="og:title" content="Qu’est-ce qui influe sur la valeur de votre bateau ? | Plata Marine">
+<meta property="og:description" content="Répondez à quelques questions sur votre bateau et je vous dirai ce qui joue en votre faveur et ce qui fera baisser le prix, avant de vous donner une vraie estimation. Gratuit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.platamarine.com/fr/herramientas/valora-tu-barco.html">
+<meta property="og:image" content="https://www.platamarine.com/og-image-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="stylesheet" href="/guias/guias.css">
+<style>.pm-modal{position:fixed;inset:0;background:rgba(13,28,39,.55);display:flex;align-items:center;justify-content:center;z-index:50;padding:16px}
+.pm-box{background:#fff;border-radius:10px;max-width:440px;width:100%;padding:26px 24px;box-shadow:0 24px 60px rgba(13,28,39,.3);position:relative}
+.pm-box h3{font-family:var(--display);font-size:1.25rem;margin:0 0 8px;line-height:1.2}
+.pm-box p{font-size:15px;color:var(--ink-2);margin:0 0 14px}
+.pm-box input[type=email],.pm-box input[type=tel]{width:100%;font:16px var(--serif);padding:11px 12px;border:1px solid var(--plata-2);border-radius:6px;margin-bottom:10px;box-sizing:border-box}
+.pm-box label.chk{display:flex;gap:8px;align-items:flex-start;font-family:var(--display);font-size:13px;color:var(--ink-2);margin-bottom:8px;line-height:1.4}
+.pm-box .btn{width:100%;margin-top:6px;cursor:pointer}
+.pm-box .skip{display:block;text-align:center;font-family:var(--display);font-size:13px;color:var(--ink-2);margin-top:12px;background:none;border:0;cursor:pointer;text-decoration:underline}
+.pm-box .msg{font-family:var(--display);font-size:13px;color:#c0392b;margin:0 0 8px}
+.pm-box .msg.ok{color:#2e8b57}
+.pm-box .legal{font-family:var(--display);font-size:11px;color:var(--ink-3,#7F929E);line-height:1.4;margin:12px 0 0}
+.pm-modal.hidden{display:none}
+
+.qz .qcard{background:#fff;border:1px solid var(--plata);border-radius:8px;padding:18px 20px;margin:0 0 14px}
+.qz .qcard h3{font-family:var(--display);font-size:1.05rem;margin:0 0 10px;line-height:1.3}
+.qz .qcard .step{display:block;font-family:var(--display);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+.qz .hint{font-size:13.5px;color:var(--ink-2);margin:-4px 0 8px}
+.qz .opt{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:6px;cursor:pointer;font-size:15.5px;line-height:1.35}
+.qz .opt:hover{background:rgba(127,146,158,.10)}
+.qz .opt input{margin-top:4px;flex:none}
+.qz .bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 0 22px}
+.qz .bar .btn{cursor:pointer}
+.qz .prog{height:6px;background:rgba(127,146,158,.25);border-radius:3px;margin:0 0 18px;overflow:hidden}
+.qz .prog i{display:block;height:100%;background:var(--brass);width:0;transition:width .25s}
+.qz .res{background:var(--sea-deep);color:#D5DDE2;padding:24px 26px;border-radius:6px;margin:0 0 22px}
+.qz .res h2{color:#fff;font-size:1.5rem;margin:0 0 6px}
+.qz .res h3{color:#fff;font-family:var(--display);font-size:1.05rem;margin:18px 0 6px}
+.qz .res p{margin:0 0 10px}
+.qz .res a{color:#fff}
+.qz .res ul{margin:0 0 10px 18px;padding:0}
+.qz .res li{margin:0 0 6px}
+.qz .res .alt{font-size:15px;color:#B7C3CB}
+.hidden{display:none}
+</style>
+<script type="application/ld+json">
+[{"@context": "https://schema.org", "@type": "WebApplication", "name": "Estimez votre bateau", "applicationCategory": "UtilityApplication", "operatingSystem": "Web", "inLanguage": "fr", "provider": {"@type": "Organization", "name": "Plata Marine"}, "url": "https://www.platamarine.com/fr/herramientas/valora-tu-barco.html", "description": "Répondez à neuf questions sur votre bateau (type, longueur, année, moteur, heures, entretien, papiers, emplacement et s’il est déjà en vente) et je vous dirai ce qui joue en faveur de son prix et ce qui peut le faire baisser, avant de vous donner une vraie estimation. Gratuit, sans inscription."}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Pourquoi ne me donnez-vous pas un prix exact ici ?", "acceptedAnswer": {"@type": "Answer", "text": "Un prix réel dépend de choses qu’un formulaire ne peut pas saisir : l’état du moteur vu sur place, les papiers concrets et ce qui se vend vraiment en ce moment dans votre gamme. Cet outil vous donne les points clés ; je calcule le prix de mise en vente en regardant votre bateau et le marché actuel, gratuitement et sans engagement."}}, {"@type": "Question", "name": "Combien de temps faut-il pour vendre un bateau d’occasion ?", "acceptedAnswer": {"@type": "Answer", "text": "Cela dépend du type, de la longueur et de la période de l’année : hors saison (automne et hiver), c’est généralement plus long. À titre indicatif, plusieurs mois, c’est normal même avec un prix raisonnable ; une annonce et un prix bien préparés peuvent raccourcir ce délai, mais méfiez-vous de quiconque promet une vente rapide sans avoir vu le bateau."}}, {"@type": "Question", "name": "Puis-je vendre si le bateau n’est pas à jour d’entretien ou de papiers ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Le plus courant est d’ajuster le prix ou de régler ce que vous pouvez avant. Ce qu’il ne faut pas faire, c’est le cacher : cela finit souvent par sortir lors de l’expertise ou de l’essai en mer, et complique davantage la vente que de le dire dès le départ."}}, {"@type": "Question", "name": "Cette estimation coûte-t-elle quelque chose ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Ni cet outil ni la première conversation ne coûtent quoi que ce soit. Je ne facture une commission que si je m’occupe de la vente et qu’elle aboutit, et c’est toujours mis par écrit avant de commencer."}}]}]
+</script>
+<link rel="stylesheet" href="/nav.css?v=20261006">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Plata Marine", "item": "https://www.platamarine.com/fr/"}, {"@type": "ListItem", "position": 2, "name": "Outils", "item": "https://www.platamarine.com/fr/herramientas/"}, {"@type": "ListItem", "position": 3, "name": "Voyez ce qui influe sur le prix de votre bateau", "item": "https://www.platamarine.com/fr/herramientas/valora-tu-barco.html"}]}</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/fr/" aria-label="Plata Marine, accueil"><img class="brand-logo" src="/logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
+    <nav class="nav pmx-nav" aria-label="Rubriques">
+      <a href="/fr/barcos/">Bateaux</a>
+      <div class="pmx-dd cur"><button type="button" aria-expanded="false" aria-controls="pmxM1">Vendre</button><div class="pmx-menu" id="pmxM1"><a href="/fr/vender-barco/">Vendre mon bateau</a><a href="/fr/herramientas/valora-tu-barco.html" aria-current="page">Qu’est-ce qui influe sur le prix de mon bateau ?</a><a href="/fr/papeles-fiscalidad/">Papiers et fiscalité</a><a href="/fr/guias/que-hace-un-broker-nautico.html">Ce que fait un courtier nautique</a><a href="/fr/vender/broker-nautico-barcelona-maresme.html">Vendre à Barcelone et dans le Maresme</a><a href="/fr/vender/guia-fotos-barco.html">Comment photographier votre bateau</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM2">Acheter</button><div class="pmx-menu" id="pmxM2"><a href="/fr/barcos/">Bateaux à vendre</a><a href="/fr/#comprar">Je cherche un bateau</a><a href="/fr/alertas/">Prévenez-moi des nouveaux bateaux</a><a href="/fr/que-barco-necesito.html">De quel bateau ai-je besoin ?</a><a href="/fr/modelos/">Modèles : points à vérifier et prix</a><a href="/fr/comprar/">Acheter un bateau : par zone et par type</a><a href="/fr/precios/">Prix des bateaux d’occasion</a><a href="/fr/herramientas/">Calculatrices : taxes, coûts, financement</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM3">Apprendre</button><div class="pmx-menu" id="pmxM3"><a href="/fr/guias/">Guides</a><a href="/fr/actualidad/">Actualités</a><a href="/fr/navegante/">Guide du plaisancier</a><a href="/fr/titulaciones/">Permis bateau</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM4">Services</button><div class="pmx-menu" id="pmxM4"><a href="/fr/servicios/">Expertise, papiers, chantier naval et plus</a><a href="/fr/servicios/directorio.html">Annuaire des entreprises</a><a href="/fr/servicios/escuelas.html">Écoles nautiques</a><a href="/fr/servicios/amarres.html">Places de port</a></div></div>
+      <a href="/fr/#juan">Qui suis-je</a>
+      <a href="/fr/#contacto">Contact</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/34633742973?text=Bonjour%20Juan%2C%20j%27ai%20fait%20l%27estimation%20de%20mon%20bateau%20sur%20votre%20site." target="_blank" rel="noopener">Parler à Juan</a><div class="langsw" aria-label="Langue"><a href="https://www.platamarine.com/herramientas/valora-tu-barco.html"><span class="flag flag-es" aria-hidden="true"></span><span class="sr-only">ES</span></a><a href="https://www.platamarine.com/ca/herramientas/valora-tu-barco.html"><span class="flag flag-ca" aria-hidden="true"></span><span class="sr-only">CA</span></a><a href="https://www.platamarine.com/en/herramientas/valora-tu-barco.html"><span class="flag flag-en" aria-hidden="true"></span><span class="sr-only">EN</span></a><a href="https://www.platamarine.com/fr/herramientas/valora-tu-barco.html" aria-current="page"><span class="flag flag-fr" aria-hidden="true"></span><span class="sr-only">FR</span></a></div>
+    <button type="button" class="pmx-btn" id="pmxBtn" aria-expanded="false" aria-controls="pmxPanel" aria-label="Ouvrir le menu" data-open="Ouvrir le menu" data-close="Fermer le menu"><span></span></button>
+  </div>
+  <nav class="pmx-panel" id="pmxPanel" aria-label="Menu mobile">
+    <div class="pmx-in">
+      <div class="pmx-grp"><a href="/fr/barcos/">Bateaux</a></div>
+      <div class="pmx-grp"><p>Vendre</p><a href="/fr/vender-barco/">Vendre mon bateau</a><a href="/fr/herramientas/valora-tu-barco.html" aria-current="page">Qu’est-ce qui influe sur le prix de mon bateau ?</a><a href="/fr/papeles-fiscalidad/">Papiers et fiscalité</a><a href="/fr/guias/que-hace-un-broker-nautico.html">Ce que fait un courtier nautique</a><a href="/fr/vender/broker-nautico-barcelona-maresme.html">Vendre à Barcelone et dans le Maresme</a><a href="/fr/vender/guia-fotos-barco.html">Comment photographier votre bateau</a></div>
+      <div class="pmx-grp"><p>Acheter</p><a href="/fr/barcos/">Bateaux à vendre</a><a href="/fr/#comprar">Je cherche un bateau</a><a href="/fr/alertas/">Prévenez-moi des nouveaux bateaux</a><a href="/fr/que-barco-necesito.html">De quel bateau ai-je besoin ?</a><a href="/fr/modelos/">Modèles : points à vérifier et prix</a><a href="/fr/comprar/">Acheter un bateau : par zone et par type</a><a href="/fr/precios/">Prix des bateaux d’occasion</a><a href="/fr/herramientas/">Calculatrices : taxes, coûts, financement</a></div>
+      <div class="pmx-grp"><p>Apprendre</p><a href="/fr/guias/">Guides</a><a href="/fr/actualidad/">Actualités</a><a href="/fr/navegante/">Guide du plaisancier</a><a href="/fr/titulaciones/">Permis bateau</a></div>
+      <div class="pmx-grp"><p>Services</p><a href="/fr/servicios/">Expertise, papiers, chantier naval et plus</a><a href="/fr/servicios/directorio.html">Annuaire des entreprises</a><a href="/fr/servicios/escuelas.html">Écoles nautiques</a><a href="/fr/servicios/amarres.html">Places de port</a></div>
+      <div class="pmx-grp"><a href="/fr/#juan">Qui suis-je</a></div>
+      <div class="pmx-grp"><a href="/fr/#contacto">Contact</a></div>
+      <div class="pmx-wide"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Bonjour%20Juan%2C%20j%27aimerais%20parler%20d%27un%20bateau." target="_blank" rel="noopener">Parler à Juan</a></div>
+    </div>
+  </nav>
+</header>
+
+<main class="art">
+  <div class="wrap">
+    <article>
+      <header>
+        <p class="eyebrow">Outils · Estimez votre bateau</p>
+        <h1>Voyez ce qui influe sur le prix de votre bateau</h1>
+        <div class="meta"><span>Par Juan Morante</span><span>Septembre 2026</span></div>
+        <p class="lead">Chaque bateau est différent : je ne vais donc pas vous donner ici un chiffre exact sans l’avoir vu, je l’inventerais. Mais si vous répondez à ces neuf questions, je vous dirai ce qui joue en faveur de votre prix et ce qui le fera baisser, pour que vous ayez déjà les idées claires quand nous en parlerons.</p>
+      </header>
+
+      <div class="prose qz" id="qz">
+        <div class="prog"><i id="prog"></i></div>
+        <div id="result" class="res hidden"></div>
+        <div id="questions"></div>
+        <div class="bar hidden" id="endbar"><button class="btn btn-wa" id="check">Voir ce qui influe sur mon prix</button><button class="btn btn-ghost" id="again">Recommencer</button></div>
+        <p class="aviso">Il s’agit d’une orientation basée sur vos réponses, pas d’une estimation : pour un vrai prix de mise en vente, je dois voir le bateau et ses papiers. Si vous le souhaitez, envoyez-moi le résultat et nous le regarderons tranquillement.</p>
+      </div>
+      <div class="prose">
+        <h2 id="faq" style="margin-top:36px">Questions fréquentes avant de vendre</h2>
+        <details><summary>Pourquoi ne me donnez-vous pas un prix exact ici ?</summary><p>Un prix réel dépend de choses qu’un formulaire ne peut pas saisir : l’état du moteur vu sur place, les papiers concrets et ce qui se vend vraiment en ce moment dans votre gamme. Cet outil vous donne les points clés ; je calcule le prix de mise en vente en regardant votre bateau et le marché actuel, gratuitement et sans engagement.</p></details>
+        <details><summary>Combien de temps faut-il pour vendre un bateau d’occasion ?</summary><p>Cela dépend du type, de la longueur et de la période de l’année : hors saison (automne et hiver), c’est généralement plus long. À titre indicatif, plusieurs mois, c’est normal même avec un prix raisonnable ; une annonce et un prix bien préparés peuvent raccourcir ce délai, mais méfiez-vous de quiconque promet une vente rapide sans avoir vu le bateau.</p></details>
+        <details><summary>Puis-je vendre si le bateau n’est pas à jour d’entretien ou de papiers ?</summary><p>Oui. Le plus courant est d’ajuster le prix ou de régler ce que vous pouvez avant. Ce qu’il ne faut pas faire, c’est le cacher : cela finit souvent par sortir lors de l’expertise ou de l’essai en mer, et complique davantage la vente que de le dire dès le départ.</p></details>
+        <details><summary>Cette estimation coûte-t-elle quelque chose ?</summary><p>Non. Ni cet outil ni la première conversation ne coûtent quoi que ce soit. Je ne facture une commission que si je m’occupe de la vente et qu’elle aboutit, et c’est toujours mis par écrit avant de commencer.</p></details>
+      </div>
+    </article>
+
+    <div class="pm-modal hidden" id="pmModal" role="dialog" aria-modal="true" aria-labelledby="pmModalTitle">
+      <div class="pm-box">
+        <h3 id="pmModalTitle">Je vous envoie ce résumé par e-mail ?</h3>
+        <p>Je vous envoie par écrit les points qui influent sur le prix de votre bateau, pour que vous les ayez sous la main quand nous en parlerons.</p>
+        <form id="pmLeadForm" novalidate>
+          <input type="email" id="pmEmail" placeholder="vous@email.com" autocomplete="email" required><input type="tel" id="pmTel" placeholder="Votre téléphone (facultatif, si vous préférez WhatsApp)" autocomplete="tel" inputmode="tel" maxlength="20">
+          <label class="chk"><input type="checkbox" id="pmConsent" required> <span>J’accepte que Plata Marine conserve mon e-mail pour m’envoyer ce résumé, conformément à la <a href="/fr/privacidad.html" target="_blank" rel="noopener">politique de confidentialité</a>.</span></label>
+          <label class="chk"><input type="checkbox" id="pmNews"> <span>Je souhaite recevoir de temps en temps des articles et des guides de Plata Marine par e-mail (vous pouvez vous désabonner à tout moment).</span></label>
+          <p class="msg hidden" id="pmMsg"></p>
+          <button type="submit" class="btn btn-wa" id="pmSend">Envoyez-moi le résumé</button>
+          <button type="button" class="skip" id="pmSkip">Voir le résultat sans e-mail</button>
+          <p class="legal">Responsable du traitement : Juan Morante Cruz (Plata Marine). Finalité : vous envoyer ce résumé et, uniquement si vous cochez la case, des nouveautés du site. Vous pouvez exercer vos droits d’accès, de rectification et d’effacement à juan@platamarine.com. Plus d’informations dans la <a href="/fr/privacidad.html" target="_blank" rel="noopener">politique de confidentialité</a>.</p>
+        <p class="legal">Vous pouvez aussi <a href="mailto:juan@platamarine.com">écrire à juan@platamarine.com</a>. Si aucune confirmation n’apparaît, vérifiez avec moi avant de l’envoyer à nouveau.</p></form>
+      </div>
+    </div>
+
+    <aside class="aside" aria-label="Contact et navigation">
+      <div class="card">
+        <p class="eyebrow">On parle de votre bateau ?</p>
+        <h3>Dites-moi le résultat et nous fixerons le prix de mise en vente.</h3>
+        <p>Je vous aide à vendre votre bateau, à moteur ou à voile. Je suis basé en Catalogne et je m’occupe aussi d’opérations aux Baléares et dans d’autres zones quand le bateau le justifie. Rémunéré uniquement au succès, sans exclusivité et sans frais à l’avance.</p>
+        <a class="btn btn-wa" href="https://wa.me/34633742973?text=Bonjour%20Juan%2C%20j%27ai%20fait%20l%27estimation%20de%20mon%20bateau%20sur%20votre%20site." target="_blank" rel="noopener">Parler à Juan sur WhatsApp</a>
+      </div>
+      <nav class="toc" aria-label="Sommaire">
+        <p class="eyebrow">Sur cette page</p>
+        <ol>
+          <li><a href="#qz">L’estimation</a></li>
+          <li><a href="#faq">Questions fréquentes</a></li>
+        </ol>
+      </nav>
+      <div class="rel">
+        <p class="eyebrow">À lire aussi</p>
+        <a href="/fr/guias/precio-barco-ocasion.html">Comment fixer le prix d’un bateau d’occasion</a>
+        <a href="/fr/guias/papeles-vender-barco-cambio-titularidad.html">Papiers pour vendre et changement de propriétaire</a>
+        <a href="/fr/guias/que-hace-un-broker-nautico.html">Ce que fait un courtier nautique et combien il facture</a>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<footer class="foot">
+<div class="wrap">
+<div class="line">
+<span>© 2026 Plata Marine · Sabadell, Barcelona · <a href="mailto:juan@platamarine.com">juan@platamarine.com</a></span>
+<a href="/fr/aviso-legal.html">Mentions légales</a> · <a href="/fr/privacidad.html">Confidentialité</a> · <a href="/fr/cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Site web par rotulito.com</a>
+</div>
+</div>
+<p class="wrap"><button type="button" data-cookie-settings>Paramètres des cookies</button></p></footer>
+
+<script>
+(function(){
+var Q=[
+ {"id":"tipo","q":"De quel type de bateau s’agit-il ?","o":[
+   {"t":"Semi-rigide","v":{"tipo":"semi-rigide"}},
+   {"t":"Open à console centrale","v":{"tipo":"open"}},
+   {"t":"Sundeck ou bowrider","v":{"tipo":"sundeck"}},
+   {"t":"Walkaround","v":{"tipo":"walkaround"}},
+   {"t":"Bateau cabine","v":{"tipo":"bateau cabine"}},
+   {"t":"Pilothouse (timonerie)","v":{"tipo":"pilothouse"}},
+   {"t":"Fly (flybridge)","v":{"tipo":"fly"}},
+   {"t":"Voilier","v":{"tipo":"voilier"}},
+   {"t":"Pas sûr / je ne sais pas","v":{"tipo":"bateau"}}
+ ]},
+ {"id":"eslora","q":"Quelle est sa longueur ?","o":[
+   {"t":"Moins de 6 mètres","v":{"eslora":"moins de 6 m"}},
+   {"t":"De 6 à 8 mètres","v":{"eslora":"de 6 à 8 m"}},
+   {"t":"De 8 à 10 mètres","v":{"eslora":"de 8 à 10 m"}},
+   {"t":"De 10 à 12 mètres","v":{"eslora":"de 10 à 12 m"}},
+   {"t":"Plus de 12 mètres","v":{"eslora":"plus de 12 m"}}
+ ]},
+ {"id":"anio","q":"De quelle année est-il ?","o":[
+   {"t":"2021 ou après","v":{"anio":"2021+","etapa":"nou"}},
+   {"t":"De 2016 à 2020","v":{"anio":"2016-2020","etapa":"recent"}},
+   {"t":"De 2010 à 2015","v":{"anio":"2010-2015","etapa":"mitjà"}},
+   {"t":"De 2000 à 2009","v":{"anio":"2000-2009","etapa":"mitjà"}},
+   {"t":"Avant 2000","v":{"anio":"avant 2000","etapa":"clàssic"}}
+ ]},
+ {"id":"motor","q":"Quelle motorisation a-t-il ?","o":[
+   {"t":"Hors-bord (essence)","v":{"motor":"hors-bord essence"}},
+   {"t":"In-bord diesel","v":{"motor":"in-bord diesel"}},
+   {"t":"In-bord essence","v":{"motor":"in-bord essence"}},
+   {"t":"Voilier avec moteur auxiliaire","v":{"motor":"auxiliaire de voilier"}},
+   {"t":"Plus d’un moteur","v":{"motor":"plusieurs moteurs"}}
+ ]},
+ {"id":"horas","q":"Combien d’heures a le moteur ?","o":[
+   {"t":"Moins de 200 heures","v":{"horas":"poques"}},
+   {"t":"De 200 à 500 heures","v":{"horas":"mitjanes"}},
+   {"t":"De 500 à 1 000 heures","v":{"horas":"notables"}},
+   {"t":"Plus de 1 000 heures","v":{"horas":"moltes"}},
+   {"t":"Je ne sais pas exactement","v":{"horas":"no ho sé"}}
+ ]},
+ {"id":"mantenimiento","q":"Comment est l’entretien ?","o":[
+   {"t":"À jour, avec factures et carnet d’entretien conservés","v":{"mantenimiento":"al dia"}},
+   {"t":"Bien entretenu, mais tout n’est pas documenté","v":{"mantenimiento":"sense documentar"}},
+   {"t":"Quelques travaux à faire avant de vendre","v":{"mantenimiento":"amb feines pendents"}}
+ ]},
+ {"id":"papeles","q":"Comment sont les papiers ?","o":[
+   {"t":"Tout est en règle à ma connaissance","v":{"papeles":"en regla"}},
+   {"t":"Je n’en suis pas tout à fait sûr","v":{"papeles":"no del tot segur"}},
+   {"t":"Je sais qu’il manque quelque chose (inspection, changement de moteur non déclaré…)","v":{"papeles":"falta alguna cosa"}}
+ ]},
+ {"id":"zona","q":"Où se trouve le bateau ?","o":[
+   {"t":"Barcelone ville","v":{"zona":"Barcelone"}},
+   {"t":"Maresme","v":{"zona":"Maresme"}},
+   {"t":"Costa Brava","v":{"zona":"Costa Brava"}},
+   {"t":"Garraf et Tarragone","v":{"zona":"Garraf et Tarragone"}},
+   {"t":"Îles Baléares","v":{"zona":"Baléares"}},
+   {"t":"Une autre zone","v":{"zona":"autre zone"}}
+ ]},
+ {"id":"anunciado","q":"Est-il déjà mis en vente ?","o":[
+   {"t":"Non, pas encore","v":{"anunciado":"no"}},
+   {"t":"Oui, récemment (moins d’un mois)","v":{"anunciado":"recent"}},
+   {"t":"Oui, depuis un à deux mois","v":{"anunciado":"mid"}},
+   {"t":"Oui, depuis un moment (plus de deux mois)","v":{"anunciado":"antic"}}
+ ]}
+];
+var el=function(id){return document.getElementById(id)};
+var HR={'poques':'moins de 200','mitjanes':'200-500','notables':'500-1 000','moltes':'plus de 1 000','no ho sé':'inconnu'},MT={'al dia':'à jour','sense documentar':'non documenté','amb feines pendents':'travaux en attente'},PP={'en regla':'en règle','no del tot segur':'pas sûr','falta alguna cosa':'il manque quelque chose'},AN={'no':'non','recent':'récemment','antic':'depuis un moment'};
+var LEADS_URL='https://script.google.com/macros/s/AKfycbwJtBkktakE0qgmu_b8oHOOopCDnG6BDpBjg2zBUsZKi8l3_OBEuez_OHWmE9j8qCBF/exec';
+var lastResult=null,_scrollTo=null;
+function openLeadModal(result,scrollId){lastResult=result;_scrollTo=scrollId;
+  if(LEADS_URL.indexOf('http')===0){el('pmModal').classList.remove('hidden');setTimeout(function(){el('pmEmail').focus()},200);}
+  else window.scrollTo({top:el(scrollId).offsetTop-90,behavior:'smooth'});}
+function closeModal(){el('pmModal').classList.add('hidden');if(_scrollTo)window.scrollTo({top:el(_scrollTo).offsetTop-90,behavior:'smooth'});}
+el('pmSkip').onclick=closeModal;
+el('pmLeadForm').onsubmit=function(ev){
+  ev.preventDefault();var em=el('pmEmail').value.trim(),msg=el('pmMsg');msg.className='msg';
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Vérifiez votre e-mail, il ne semble pas correct.';return;}var tel=el('pmTel').value.trim();if(tel&&!/^\+?[0-9 ().-]{6,20}$/.test(tel)){msg.textContent='Vérifiez votre numéro de téléphone, il semble incomplet.';return;}
+  if(!el('pmConsent').checked){msg.textContent='J\'ai besoin que vous acceptiez la politique de confidentialité pour pouvoir vous l\'envoyer.';return;}
+  var btn=el('pmSend');btn.disabled=true;var lbl=btn.textContent;btn.textContent='Envoi…';
+  var payload=Object.assign({email:em,telefono:tel,consent:true,newsletter:el('pmNews').checked,consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
+  window.submitConfirmed(LEADS_URL,payload,'json').then(function(){try{if(window.pmTrack)window.pmTrack('generate_lead',{form_id:'resultado_valoracion',contact_purpose:'result'});}catch(x){}
+    msg.className='msg ok';msg.textContent='Résumé enregistré. Le résultat reste affiché à l\'écran.';btn.textContent='Envoyé';
+    setTimeout(closeModal,1800);
+  }).catch(function(){try{if(window.pmTrack)window.pmTrack('contact_form_error',{form_id:'resultado_valoracion'});}catch(x){}msg.textContent='Nous n\'avons pas pu confirmer la réception. Vos données sont toujours à l\'écran. Avant de renvoyer, vérifiez avec juan@platamarine.com ou sur WhatsApp.';btn.disabled=false;btn.textContent=lbl;});
+};
+
+function render(){
+  var h='';
+  Q.forEach(function(q,i){
+    h+='<div class="qcard" id="q'+i+'"><span class="step">Question '+(i+1)+' sur '+Q.length+'</span><h3>'+q.q+'</h3>';
+    q.o.forEach(function(o,j){h+='<label class="opt"><input type="radio" name="q'+i+'" value="'+j+'"> <span>'+o.t+'</span></label>'});
+if(q.id==='tipo'){h+='<label for="marcaModelo" class="hint" style="display:block;margin-top:10px;font-weight:600;color:var(--ink)">Marque et modèle <span style="color:#c0392b">*</span> <span style="font-weight:400">(obligatoire pour voir le résultat)</span></label><input type="text" id="marcaModelo" placeholder="Ex. : Quicksilver 675" style="width:100%;font:15px var(--serif);padding:9px 10px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box"><p class="hint" id="marcaModeloMsg" style="display:none;color:#c0392b;margin-top:6px">Indiquez-nous au moins la marque de votre bateau, cela nous aide à mieux l\'estimer.</p>';}
+if(q.id==='motor'){h+='<p class="hint" style="margin-top:10px">Puissance en ch, si vous la connaissez (facultatif)</p><input type="text" id="potenciaCV" placeholder="Ex. : 250 ch" style="width:100%;font:15px var(--serif);padding:9px 10px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box">';}
+if(q.id==='anunciado'){h+='<div class="qcard hidden" id="qDonde"><h3>Où est-il annoncé ?</h3>'+[['wallapop','Wallapop ou un autre site de petites annonces'],['portal','Portail nautique spécialisé'],['broker','Avec un autre courtier'],['redes','Réseaux sociaux'],['otro','Autre']].map(function(e){return '<label class="opt"><input type="radio" name="donde" value="'+e[0]+'"> <span>'+e[1]+'</span></label>'}).join('')+'</div><div class="qcard hidden" id="qExclusiva"><h3>Avez-vous accordé l\'exclusivité à ce courtier ?</h3><label class="opt"><input type="radio" name="exclusiva" value="si"> <span>Oui, en exclusivité</span></label><label class="opt"><input type="radio" name="exclusiva" value="no"> <span>Non, sans exclusivité</span></label></div>';}
+
+    h+='</div>';
+  });
+  h+='<div class="qcard" id="qEquipo"><span class="step">Facultatif</span><h3>Équipement et extras</h3><p class="hint">Cochez ce qu\'il possède (pas nécessaire pour voir le résultat).</p>'+[['toldo','Taud ou bimini'],['plotter','Traceur / GPS'],['molinete','Guindeau électrique'],['duchapopa','Douche de poupe'],['wc','WC'],['aa','Climatisation'],['generador','Groupe électrogène'],['pasarela','Passerelle'],['bow','Propulseur d\'étrave']].map(function(e){return '<label class="opt"><input type="checkbox" name="equipo" value="'+e[0]+'"> <span>'+e[1]+'</span></label>'}).join('')+'</div>';
+el('questions').innerHTML=h;el('endbar').classList.remove('hidden');el('check').classList.remove('hidden');el('result').classList.add('hidden');
+var mmI=el('marcaModelo');if(mmI)mmI.addEventListener('input',function(){if(mmI.value.trim()){mmI.style.borderColor='';var mg=el('marcaModeloMsg');if(mg)mg.style.display='none';if(document.querySelector('input[name=q0]:checked'))el('q0').style.borderColor='';}});el('questions').addEventListener('change',function(e){if(e.target.name&&/^q\d+$/.test(e.target.name)){var cq=el(e.target.name);if(cq&&!(e.target.name==='q0'&&mmI&&!mmI.value.trim()))cq.style.borderColor='';}});
+  document.querySelectorAll('#questions input').forEach(function(x){x.addEventListener('change',prog)});prog();
+el('questions').addEventListener('change',function(e){
+if(e.target.name && /^q\d+$/.test(e.target.name)){
+var qi=parseInt(e.target.name.substring(1));
+if(Q[qi] && Q[qi].id==='anunciado'){
+var val=Q[qi].o[parseInt(e.target.value)].v.anunciado;var show=(val!=='no');
+el('qDonde').classList.toggle('hidden',!show);if(!show)el('qExclusiva').classList.add('hidden');
+}}
+if(e.target.name==='donde'){el('qExclusiva').classList.toggle('hidden',e.target.value!=='broker');}
+});
+
+}
+function prog(){var n=0;Q.forEach(function(q,i){if(document.querySelector('input[name=q'+i+']:checked'))n++});el('prog').style.width=Math.round(100*n/Q.length)+'%';}
+function check(){
+  var missing=[];Q.forEach(function(q,i){if(!document.querySelector('input[name=q'+i+']:checked'))missing.push(i)});
+  var mm=el('marcaModelo');var mmEmpty=mm&&!mm.value.trim();if(missing.length||mmEmpty){var c=el('q'+(missing.length?missing[0]:0));c.style.borderColor='#c0392b';if(mmEmpty&&mm){mm.style.borderColor='#c0392b';var mg=el('marcaModeloMsg');if(mg)mg.style.display='block';}window.scrollTo({top:c.offsetTop-90,behavior:'smooth'});return;}
+  var v={};Q.forEach(function(q,i){var sel=document.querySelector('input[name=q'+i+']:checked');var o=q.o[parseInt(sel.value)];Object.assign(v,o.v||{});});
+v.marca=(el('marcaModelo')&&el('marcaModelo').value.trim())||'';
+v.potencia=(el('potenciaCV')&&el('potenciaCV').value.trim())||'';
+v.equipo=Array.from(document.querySelectorAll('input[name=equipo]:checked')).map(function(x){return x.value}).join(', ');
+var dSel=document.querySelector('input[name=donde]:checked');v.donde=dSel?dSel.value:'';
+var eSel=document.querySelector('input[name=exclusiva]:checked');v.exclusiva=eSel?eSel.value:'';
+
+
+  var notes=[];
+  if(v.etapa==='nou')notes.push('À moins de 5 ans, vous êtes encore dans la phase de dépréciation la plus forte : de petites différences d\'état ou d\'heures pèsent beaucoup sur le prix.');
+  else if(v.etapa==='recent'||v.etapa==='mitjà')notes.push('Dans cette tranche d\'âge, le prix s\'est déjà bien stabilisé : ce qui compte le plus, c\'est l\'état réel du bateau, pas l\'année exacte.');
+  else notes.push('À partir de là, l\'année compte moins que l\'entretien : un bateau plus ancien avec un moteur et une coque bien soignés peut se vendre plus cher qu\'un plus récent mais négligé.');
+
+  if(v.tipo==='voilier'||v.motor==='auxiliaire de voilier')notes.push('Sur un voilier, l\'état des voiles, du gréement (et la date de son remplacement) et de la coque compte autant que le moteur auxiliaire. Si vous avez des dates ou des factures de ces travaux, c\'est un vrai plus.');
+  if(v.horas==='poques')notes.push('Peu d\'heures pour son âge, c\'est un atout, surtout si elles sont appuyées par des factures d\'entretien.');
+  else if(v.horas==='notables')notes.push('Entre 500 et 1 000 heures, c\'est un usage normal pour beaucoup de bateaux. Ce qui compte le plus, c\'est de pouvoir montrer les entretiens réalisés : gardez-les sous la main, c\'est l\'une des premières choses que demande un acheteur sérieux.');
+  else if(v.horas==='moltes')notes.push('Avec plus de 1 000 heures, un acheteur regardera surtout l\'historique du moteur. Beaucoup d\'heures avec des entretiens documentés ne sont pas un problème en soi ; en cas de doute, l\'avis d\'un mécanicien de confiance aide à garder la négociation sur de bons rails.');
+  else if(v.horas==='no ho sé')notes.push('Mieux vaut connaître les heures exactes avant de fixer un prix : c\'est l\'une des premières questions qu\'on vous posera.');
+
+  if(v.mantenimiento==='al dia')notes.push('Avoir les factures d\'entretien sous la main est l\'une des choses qui rassurent le plus un acheteur : je les montre chaque fois que je peux.');
+  else if(v.mantenimiento==='sense documentar')notes.push('Être bien entretenu aide, mais sans justificatifs les acheteurs se méfient par défaut. Si vous pouvez retrouver d\'anciennes factures, cela en vaut la peine.');
+  else notes.push('S\'il y a des travaux en attente, il est presque toujours plus rentable de les faire, ou de baisser le prix en conséquence et de le dire, que de cacher quelque chose qui sortira à l\'essai en mer.');
+
+  if(v.papeles==='en regla')notes.push('Avec les papiers en règle, la vente va plus vite : c\'est l\'une des premières choses que je vérifie en préparant une annonce.');
+  else if(v.papeles==='no del tot segur')notes.push('Avant de l\'annoncer, il vaut mieux vérifier l\'inspection technique (ITB), que les éventuels changements de moteur ont été déclarés et que la propriété est claire. Je l\'explique dans le guide des papiers pour vendre.');
+  else notes.push('Si vous savez qu\'il manque quelque chose (inspection expirée, changement de moteur non déclaré…), mieux vaut le régler ou au moins en connaître le coût avant de fixer un prix : cela change la négociation.');
+
+  if(v.anunciado==='mid')notes.push('Après un ou deux mois en ligne, on voit déjà comment se comporte l\'annonce : si peu de demandes sérieuses arrivent, il vaut la peine de revoir le prix, les photos et l\'endroit où elle est publiée avant de changer autre chose.');
+  else if(v.anunciado==='antic')notes.push('Une annonce qui reste des mois sans bouger est rarement un problème du bateau lui-même : c\'est généralement le prix, les photos ou l\'endroit où elle est publiée. Il vaut la peine de revoir cela avant de baisser le prix à l\'aveugle.');
+  else if(v.anunciado==='no')notes.push('Si rien n\'est encore publié, la première étape est un prix de mise en vente bien argumenté, pas simplement publier et attendre.');
+
+  if(v.donde==='broker'){notes.push(v.exclusiva==='si'?'Si vous l\'avez déjà confié en exclusivité à un autre courtier, vérifiez les conditions de sortie du contrat avant de travailler avec quelqu\'un d\'autre.':'Si un autre courtier l\'a sans exclusivité, vous pouvez continuer à étudier d\'autres options sans problème.');}
+else if(v.donde==='wallapop')notes.push('Wallapop donne beaucoup de visibilité mais aussi beaucoup de curieux sans réelle intention d\'acheter : il vaut la peine de bien filtrer avant de montrer le bateau.');
+else if(v.donde==='portal')notes.push('Être sur un portail spécialisé est un bon point de départ : assurez-vous que les photos et le prix sont à jour.');
+else if(v.donde==='redes')notes.push('Les réseaux sociaux donnent de la visibilité mais concluent rarement une vente à eux seuls : mieux vaut les combiner avec une annonce sur un portail sérieux.');
+var h='<h2>Ce qui pèsera le plus sur le prix de votre '+(v.marca?v.marca:v.tipo)+'</h2>';
+  h+='<p>Longueur : '+v.eslora+', année : '+v.anio+', motorisation : '+v.motor+(v.potencia?' ('+v.potencia+')':'')+'. Voici ce que je regarderais en premier :</p>';
+  h+='<ul>';notes.forEach(function(n){h+='<li>'+n+'</li>'});h+='</ul>';
+  h+='<h3>Prochaines étapes</h3><p><a href="/fr/guias/precio-barco-ocasion.html">Comment fixer le prix d\'un bateau d\'occasion</a> · <a href="/fr/guias/papeles-vender-barco-cambio-titularidad.html">Papiers pour vendre</a></p>';
+  var T={},TD={};Q.forEach(function(q,i){var s=document.querySelector('input[name=q'+i+']:checked');T[q.id]=q.o[parseInt(s.value)].t;});['donde','exclusiva'].forEach(function(n){var s=document.querySelector('input[name='+n+']:checked');if(s&&!s.closest('.hidden'))TD[n]=s.parentNode.querySelector('span').textContent.trim();});
+var waTexto='Bonjour Juan, j\'ai fait l\'estimation de mon bateau sur votre site. C\'est un '+(v.marca||'bateau')+' ('+T.tipo+'). Longueur : '+T.eslora+'. Année : '+T.anio+'. Moteur : '+T.motor+(v.potencia?' ('+v.potencia+')':'')+'. Heures : '+T.horas+'. Entretien : '+T.mantenimiento+'. Papiers : '+T.papeles+'. Zone : '+T.zona+'. En vente ? : '+T.anunciado+(TD.donde?' ('+TD.donde+(TD.exclusiva?', '+TD.exclusiva:'')+')':'')+'. Pouvons-nous en parler ?';
+h+='<p style="margin-top:14px"><a class="btn btn-wa" href="https://wa.me/34633742973?text='+encodeURIComponent(waTexto)+'" target="_blank" rel="noopener">Demander une estimation personnalisée</a></p>';
+el('result').innerHTML=h;el('result').classList.remove('hidden');el('check').classList.add('hidden');
+  var det='Type : '+v.tipo+(v.marca?' ('+v.marca+')':'')+' | Longueur : '+v.eslora+' | Année : '+v.anio+' | Moteur : '+v.motor+(v.potencia?' '+v.potencia:'')+' | Heures : '+HR[v.horas]+' | Entretien : '+MT[v.mantenimiento]+' | Papiers : '+PP[v.papeles]+' | Zone : '+v.zona+' | En vente : '+AN[v.anunciado]+(v.donde?' ('+v.donde+(v.exclusiva?', exclusivité '+v.exclusiva:'')+')':'')+(v.equipo?' | Équipement : '+v.equipo:'');
+openLeadModal({source:'valora-tu-barco-fr',intent:'vendedor',ok:'',total:'',pass:true,detail:det,page:location.pathname,ua:navigator.userAgent.slice(0,120)},'result');
+}
+el('check').onclick=check;
+el('again').onclick=function(){render();window.scrollTo({top:el('qz').offsetTop-90,behavior:'smooth'})};
+render();
+})();
+</script>
+<script src="/nav.js?v=20261006" defer></script>
+<script src="/consent.js?v=20261006" defer></script>
+<script src="/submit-confirmed.js" defer></script>
+<script src="/analytics.js?v=20261006" defer></script>
+</body>
+</html>
