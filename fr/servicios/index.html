@@ -107,7 +107,6 @@ h2[id]{scroll-margin-top:90px}
 
         <div class="pmf">
           <form id="svcItb" novalidate>
-            <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true"><label>Empresa<input type="text" name="empresa_web" tabindex="-1" autocomplete="off"></label></div>
 
             <div class="row">
               <div class="f"><label class="l">Port ou zone où se trouve le bateau</label><input type="text" name="puerto" placeholder="Port Masnou, Vilanova, port à sec de…"></div>
@@ -139,7 +138,6 @@ h2[id]{scroll-margin-top:90px}
 
         <div class="pmf">
           <form id="svcGestoria" novalidate>
-            <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true"><label>Empresa<input type="text" name="empresa_web" tabindex="-1" autocomplete="off"></label></div>
 
             <div class="row">
               <div class="f"><label class="l">Quelle démarche vous faut-il</label><select name="tramite"><option value="">Choisissez une option</option><option>Changement de nom (vente)</option><option>Immatriculation d’un bateau neuf</option><option>Importation / changement de pavillon</option><option>Changement de liste (6 ↔ 7)</option><option>Radiation ou exportation</option><option>Duplicata de documents</option><option>Autre (détails ci-dessous)</option></select></div>
@@ -167,7 +165,6 @@ h2[id]{scroll-margin-top:90px}
 
         <div class="pmf">
           <form id="svcVaradero" novalidate>
-            <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true"><label>Empresa<input type="text" name="empresa_web" tabindex="-1" autocomplete="off"></label></div>
 
             <div class="row">
               <div class="f"><label class="l">Port ou zone où se trouve le bateau</label><input type="text" name="puerto" placeholder="Port Masnou, Vilanova, Roses…"></div>
@@ -210,7 +207,6 @@ h2[id]{scroll-margin-top:90px}
 
         <div class="pmf">
           <form id="svcTransporte" novalidate>
-            <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true"><label>Empresa<input type="text" name="empresa_web" tabindex="-1" autocomplete="off"></label></div>
             <div class="row">
               <div class="f"><label class="l">Port ou zone de départ</label><input type="text" name="origen" placeholder="Port Masnou, Vilanova…"></div>
               <div class="f"><label class="l">Port ou zone d’arrivée</label><input type="text" name="destino" placeholder="Où il doit arriver"></div>
@@ -290,7 +286,7 @@ function pmWire(f,build){
   if(!f)return;
   f.addEventListener('submit',function(ev){
     ev.preventDefault();var msg=f.querySelector('.msg');msg.className='msg';msg.textContent='';
-    if(pmVal(f,'empresa_web')){return;}
+    
     function bad(t,n){msg.textContent=t;var x=n&&f.querySelector('[name='+n+']');if(x){x.setAttribute('aria-invalid','true');x.focus();}}
     [].forEach.call(f.querySelectorAll('[aria-invalid]'),function(x){x.removeAttribute('aria-invalid');});
     var nom=pmVal(f,'nombre');if(!nom){bad('J’ai besoin de votre nom pour pouvoir vous aider.','nombre');return;}
