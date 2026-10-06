@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Créer une alerte bateau · Plata Marine</title>
+<meta name="description" content="Dites-moi quel bateau vous cherchez et je vous préviendrai quand il en arrivera un qui convient. Pas de newsletter : je vous écris moi-même, uniquement quand il y a quelque chose de concret.">
+<link rel="canonical" href="https://www.platamarine.com/fr/alertas/">
+<link rel="alternate" hreflang="es" href="https://www.platamarine.com/alertas/">
+<link rel="alternate" hreflang="ca" href="https://www.platamarine.com/ca/alertas/">
+<link rel="alternate" hreflang="en" href="https://www.platamarine.com/en/alertas/">
+<link rel="alternate" hreflang="fr" href="https://www.platamarine.com/fr/alertas/">
+<link rel="alternate" hreflang="x-default" href="https://www.platamarine.com/alertas/">
+<link rel="icon" type="image/png" href="/logo-plata-marine.png">
+<meta property="og:title" content="Créer une alerte bateau">
+<meta property="og:description" content="Dites-moi quel bateau vous cherchez et je vous préviendrai quand il en arrivera un qui convient. Pas de newsletter : je vous écris moi-même, uniquement quand il y a quelque chose de concret.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.platamarine.com/fr/alertas/">
+<meta property="og:image" content="https://www.platamarine.com/og-image-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="stylesheet" href="/guias/guias.css">
+<style>.pmf{background:#fff;border:1px solid var(--plata);border-radius:8px;padding:22px 22px 18px;margin:0 0 22px}
+.pmf h2{margin-top:0}
+.pmf .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pmf .f{margin:0 0 12px}
+.pmf label.l{display:block;font-family:var(--display);font-size:13px;font-weight:600;color:var(--ink-2);margin:0 0 5px}
+.pmf input[type=text],.pmf input[type=email],.pmf input[type=tel],.pmf select,.pmf textarea{width:100%;font:16px var(--serif);padding:10px 12px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box;background:#fff;color:var(--ink)}
+.pmf textarea{min-height:90px;resize:vertical}
+.pmf label.chk{display:flex;gap:8px;align-items:flex-start;font-family:var(--display);font-size:13px;color:var(--ink-2);margin:0 0 8px;line-height:1.4}
+.pmf .btn{cursor:pointer}
+.pmf .msg{font-family:var(--display);font-size:13.5px;color:#c0392b;margin:8px 0 0}
+.pmf .msg.ok{color:#2e8b57}
+.pmf .legal{font-family:var(--display);font-size:11.5px;color:var(--ink-3,#7F929E);line-height:1.45;margin:12px 0 0}
+.pmf .opt-note{font-family:var(--display);font-size:12.5px;color:var(--ink-2);margin:-6px 0 10px}
+.disc{background:rgba(181,138,44,.08);border-left:3px solid var(--brass);padding:12px 16px;border-radius:0 6px 6px 0;font-size:14.5px;margin:0 0 22px}
+.disc p{margin:0}
+@media (max-width:640px){.pmf .row{grid-template-columns:1fr}}
+.langsw{display:flex;gap:6px;align-items:center;font-size:.78rem;font-weight:600}.langsw a{display:inline-flex;align-items:center;padding:3px;border-radius:4px}.langsw a[aria-current="page"]{background:rgba(13,28,39,.08)}.flag{display:block;width:20px;height:14px;border-radius:2px;box-shadow:inset 0 0 0 1px rgba(13,28,39,.18);background-size:cover;background-position:center}.flag-es{background-image:linear-gradient(#AA151B 0 25%,#F1BF00 25% 75%,#AA151B 75% 100%)}.flag-ca{background-image:repeating-linear-gradient(#FFCE00 0 11.11%,#DA121A 11.11% 22.22%)}.flag-en{background-color:#00247D;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 36'%3E%3Cpath d='M0 0L60 36M60 0L0 36' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0L60 36M60 0L0 36' stroke='%23C8102E' stroke-width='2.4'/%3E%3Cpath d='M30 0V36M0 18H60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30 0V36M0 18H60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E")}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.langsw a{padding:3px 7px;border-radius:4px;text-decoration:none;color:inherit;opacity:.65}
+.langsw a[aria-current="page"]{opacity:1;text-decoration:underline}
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebPage", "name": "Créer une alerte bateau", "description": "Dites-moi quel bateau vous cherchez (type, longueur, budget et zone) et, quand un bateau qui convient arrivera dans nos annonces, je vous écrirai moi-même. Pas de newsletter automatique : uniquement quand il y a quelque chose de concret.", "url": "https://www.platamarine.com/fr/alertas/", "inLanguage": "fr", "publisher": {"@type": "Organization", "name": "Plata Marine"}}
+</script>
+<link rel="stylesheet" href="/nav.css?v=20261006">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Plata Marine", "item": "https://www.platamarine.com/fr/"}, {"@type": "ListItem", "position": 2, "name": "Créez une alerte : je vous préviens quand le bateau que vous cherchez arrive", "item": "https://www.platamarine.com/fr/alertas/"}]}</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/fr/" aria-label="Plata Marine, accueil"><img class="brand-logo" src="/logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
+    <nav class="nav pmx-nav" aria-label="Rubriques">
+      <a href="/fr/barcos/">Bateaux</a>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM1">Vendre</button><div class="pmx-menu" id="pmxM1"><a href="/fr/vender-barco/">Vendre mon bateau</a><a href="/fr/herramientas/valora-tu-barco.html">Qu’est-ce qui influe sur le prix de mon bateau ?</a><a href="/fr/papeles-fiscalidad/">Papiers et fiscalité</a><a href="/fr/guias/que-hace-un-broker-nautico.html">Ce que fait un courtier nautique</a><a href="/fr/vender/broker-nautico-barcelona-maresme.html">Vendre à Barcelone et dans le Maresme</a><a href="/fr/vender/guia-fotos-barco.html">Comment photographier votre bateau</a></div></div>
+      <div class="pmx-dd cur"><button type="button" aria-expanded="false" aria-controls="pmxM2">Acheter</button><div class="pmx-menu" id="pmxM2"><a href="/fr/barcos/">Bateaux à vendre</a><a href="/fr/#comprar">Je cherche un bateau</a><a href="/fr/alertas/" aria-current="page">Prévenez-moi des nouveaux bateaux</a><a href="/fr/que-barco-necesito.html">De quel bateau ai-je besoin ?</a><a href="/fr/modelos/">Modèles : points à vérifier et prix</a><a href="/fr/comprar/">Acheter un bateau : par zone et par type</a><a href="/fr/precios/">Prix des bateaux d’occasion</a><a href="/fr/herramientas/">Calculatrices : taxes, coûts, financement</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM3">Apprendre</button><div class="pmx-menu" id="pmxM3"><a href="/fr/guias/">Guides</a><a href="/fr/actualidad/">Actualités</a><a href="/fr/navegante/">Guide du plaisancier</a><a href="/fr/titulaciones/">Permis bateau</a></div></div>
+      <div class="pmx-dd"><button type="button" aria-expanded="false" aria-controls="pmxM4">Services</button><div class="pmx-menu" id="pmxM4"><a href="/fr/servicios/">Expertise, papiers, chantier naval et plus</a><a href="/fr/servicios/directorio.html">Annuaire des entreprises</a><a href="/fr/servicios/escuelas.html">Écoles nautiques</a><a href="/fr/servicios/amarres.html">Places de port</a></div></div>
+      <a href="/fr/#juan">Qui suis-je</a>
+      <a href="/fr/#contacto">Contact</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/34633742973?text=Bonjour%20Juan%2C%20je%20cherche%20un%20bateau%20et%20j%E2%80%99aimerais%20que%20vous%20me%20pr%C3%A9veniez%20s%E2%80%99il%20en%20arrive%20un." target="_blank" rel="noopener">Parler à Juan</a>
+    <div class="langsw" aria-label="Langue"><a href="https://www.platamarine.com/alertas/"><span class="flag flag-es" aria-hidden="true"></span><span class="sr-only">ES</span></a><a href="https://www.platamarine.com/ca/alertas/"><span class="flag flag-ca" aria-hidden="true"></span><span class="sr-only">CA</span></a><a href="https://www.platamarine.com/en/alertas/"><span class="flag flag-en" aria-hidden="true"></span><span class="sr-only">EN</span></a><a href="https://www.platamarine.com/fr/alertas/" aria-current="page"><span class="flag flag-fr" aria-hidden="true"></span><span class="sr-only">FR</span></a></div>
+    <button type="button" class="pmx-btn" id="pmxBtn" aria-expanded="false" aria-controls="pmxPanel" aria-label="Ouvrir le menu" data-open="Ouvrir le menu" data-close="Fermer le menu"><span></span></button>
+  </div>
+  <nav class="pmx-panel" id="pmxPanel" aria-label="Menu mobile">
+    <div class="pmx-in">
+      <div class="pmx-grp"><a href="/fr/barcos/">Bateaux</a></div>
+      <div class="pmx-grp"><p>Vendre</p><a href="/fr/vender-barco/">Vendre mon bateau</a><a href="/fr/herramientas/valora-tu-barco.html">Qu’est-ce qui influe sur le prix de mon bateau ?</a><a href="/fr/papeles-fiscalidad/">Papiers et fiscalité</a><a href="/fr/guias/que-hace-un-broker-nautico.html">Ce que fait un courtier nautique</a><a href="/fr/vender/broker-nautico-barcelona-maresme.html">Vendre à Barcelone et dans le Maresme</a><a href="/fr/vender/guia-fotos-barco.html">Comment photographier votre bateau</a></div>
+      <div class="pmx-grp"><p>Acheter</p><a href="/fr/barcos/">Bateaux à vendre</a><a href="/fr/#comprar">Je cherche un bateau</a><a href="/fr/alertas/" aria-current="page">Prévenez-moi des nouveaux bateaux</a><a href="/fr/que-barco-necesito.html">De quel bateau ai-je besoin ?</a><a href="/fr/modelos/">Modèles : points à vérifier et prix</a><a href="/fr/comprar/">Acheter un bateau : par zone et par type</a><a href="/fr/precios/">Prix des bateaux d’occasion</a><a href="/fr/herramientas/">Calculatrices : taxes, coûts, financement</a></div>
+      <div class="pmx-grp"><p>Apprendre</p><a href="/fr/guias/">Guides</a><a href="/fr/actualidad/">Actualités</a><a href="/fr/navegante/">Guide du plaisancier</a><a href="/fr/titulaciones/">Permis bateau</a></div>
+      <div class="pmx-grp"><p>Services</p><a href="/fr/servicios/">Expertise, papiers, chantier naval et plus</a><a href="/fr/servicios/directorio.html">Annuaire des entreprises</a><a href="/fr/servicios/escuelas.html">Écoles nautiques</a><a href="/fr/servicios/amarres.html">Places de port</a></div>
+      <div class="pmx-grp"><a href="/fr/#juan">Qui suis-je</a></div>
+      <div class="pmx-grp"><a href="/fr/#contacto">Contact</a></div>
+      <div class="pmx-wide"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Bonjour%20Juan%2C%20j%E2%80%99aimerais%20parler%20d%E2%80%99un%20bateau." target="_blank" rel="noopener">Parler à Juan</a></div>
+    </div>
+  </nav>
+</header>
+
+<main class="art">
+  <div class="wrap">
+    <article>
+      <header>
+        <p class="eyebrow">Acheter · Alerte</p>
+        <h1>Créez une alerte : je vous préviens quand le bateau que vous cherchez arrive</h1>
+        <div class="meta"><span>Gratuit et sans engagement</span><span>Je vous écris moi-même, sans newsletter</span></div>
+        <p class="lead">Dites-moi ce que vous cherchez et je vous préviendrai quand un bateau qui convient arrivera dans nos annonces : avec photos, prix et ce que je sais du bateau. Ce n’est pas une newsletter : si rien qui convienne n’arrive, vous n’aurez pas de nouvelles de moi.</p>
+      </header>
+
+      <div class="prose">
+        <div class="pmf">
+          <form id="alertaForm" novalidate>
+            <div class="row">
+              <div class="f"><label class="l" for="a-tipo">Type de bateau</label><select id="a-tipo" name="tipo"><option value="">Choisissez une option</option><option>Tout ce qui convient</option><option>Voilier</option><option>Console centrale (open)</option><option>Sundeck ou bowrider</option><option>Walkaround</option><option>Bateau cabiné</option><option>Timonier</option><option>Flybridge</option><option>Semi-rigide (pneumatique)</option><option>Autre (je l’explique dans les remarques)</option></select></div>
+              <div class="f"><label class="l" for="a-eslora">Longueur</label><select id="a-eslora" name="eslora"><option value="">Choisissez une option</option><option>Jusqu’à 6 m</option><option>De 6 à 8 m</option><option>De 8 à 10 m</option><option>De 10 à 12 m</option><option>De 12 à 15 m</option><option>Plus de 15 m</option><option>Pas de préférence</option></select></div>
+            </div>
+            <div class="row">
+              <div class="f"><label class="l" for="a-presu">Budget (hors place de port et assurance)</label><select id="a-presu" name="presu"><option value="">Choisissez une option</option><option>Moins de 30 000 €</option><option>De 30 000 à 60 000 €</option><option>De 60 000 à 120 000 €</option><option>De 120 000 à 250 000 €</option><option>Plus de 250 000 €</option><option>Je préfère ne pas le dire pour l’instant</option></select></div>
+              <div class="f"><label class="l" for="a-zona">Zone où vous le garderez</label><select id="a-zona" name="zona"><option value="">Choisissez une option</option><option>Barcelone ville</option><option>Maresme</option><option>Costa Brava</option><option>Garraf et Tarragone</option><option>Delta de l’Èbre</option><option>Îles Baléares</option><option>N’importe quelle zone</option></select></div>
+            </div>
+            <div class="f"><label class="l" for="a-notas">Autre chose que je devrais savoir (facultatif)</label><textarea name="notas" id="a-notas" placeholder="Marques qui vous plaisent, année minimale, hors-bord ou in-bord, si vous êtes pressé…"></textarea></div>
+            <div class="row">
+              <div class="f"><label class="l" for="a-nombre">Nom *</label><input type="text" name="nombre" id="a-nombre" autocomplete="name" placeholder="Comment dois-je vous appeler" required></div>
+              <div class="f"><label class="l" for="a-tel">Téléphone *</label><input type="tel" name="telefono" id="a-tel" autocomplete="tel" placeholder="Indiquez l’indicatif du pays s’il n’est pas espagnol" required inputmode="tel" maxlength="20"></div>
+            </div>
+            <div class="f"><label class="l" for="a-email">E-mail <small>(facultatif)</small></label><input type="email" name="email" id="a-email" autocomplete="email" placeholder="vous@email.com"></div>
+            <label class="chk"><input type="checkbox" name="consent" required> <span>* J’accepte que Plata Marine conserve ces données pour me prévenir lorsqu’un bateau qui convient se présente, conformément à la <a href="/fr/privacidad.html" target="_blank" rel="noopener">politique de confidentialité</a>.</span></label>
+            <label class="chk"><input type="checkbox" name="newsletter"> <span>Envoyez-moi aussi de temps en temps des guides, des actualités et quelques offres d’annonces de Plata Marine (pas de spam, désinscription quand vous voulez).</span></label>
+            
+            <p class="legal req-note">Les champs marqués d’un * sont obligatoires.</p>
+<button type="submit" class="btn btn-wa">Créer mon alerte</button>
+            <p class="msg"></p>
+            <p class="legal">Responsable du traitement : Juan Morante Cruz (Plata Marine), juan@platamarine.com. Finalité : vous prévenir lorsqu’un bateau correspondant à ce que vous cherchez arrive dans nos annonces et, uniquement si vous cochez la case, vous envoyer les nouveautés du site. Base juridique : votre consentement, que vous pouvez retirer à tout moment. Conservation : l’alerte est conservée douze mois ou jusqu’à ce que vous me demandiez de la supprimer. Droits : accès, rectification, effacement, opposition et les autres droits reconnus par le RGPD, en écrivant à juan@platamarine.com ; vous pouvez aussi déposer une réclamation auprès de l’autorité espagnole de protection des données (AEPD). Plus d’informations dans la <a href="/fr/privacidad.html" target="_blank" rel="noopener">politique de confidentialité</a>.</p>
+          <p class="legal">Vous pouvez aussi <a href="mailto:juan@platamarine.com">écrire à juan@platamarine.com</a>. Si vous ne voyez pas de confirmation, vérifiez avant de renvoyer.</p></form>
+        </div>
+
+        <h2 id="como">Comment ça marche</h2>
+        <p>J’enregistre ce que vous cherchez dans ma liste d’acheteurs. Je compare chaque bateau qui arrive dans nos annonces avec cette liste et, s’il convient, je vous écris avec les détails dès que je les ai. Si un bateau ne convient pas tout à fait mais que je pense qu’il pourrait quand même vous intéresser, je vous le dirai tout aussi franchement. Et si vous êtes pressé, cela aide aussi de m’écrire sur WhatsApp : avec ce que vous cherchez, je peux aussi chercher activement auprès de vendeurs particuliers.</p>
+        <h2 id="que-no">Ce que ce n’est pas</h2>
+        <p>Ce n’est ni une liste de diffusion ni une notification automatique des nouvelles annonces. L’alerte est conservée douze mois ; si rien qui convienne n’est arrivé d’ici là, je vous écrirai une fois pour vous demander si vous cherchez toujours, et si vous ne répondez pas, je la supprimerai. Vous pouvez me demander de la supprimer quand vous voulez en répondant à n’importe quel e-mail.</p>
+        <h2 id="antes">Si vous ne savez pas encore quel bateau vous cherchez</h2>
+        <p>Commencez par le <a href="/fr/que-barco-necesito.html">test de deux minutes</a> : il vous indique le type de bateau et la longueur qui vous conviennent, et à partir du résultat vous pouvez créer l’alerte en cochant une case. Le guide des <a href="/fr/guias/tipos-de-barco-a-motor.html">types de bateaux à moteur</a> et le guide <a href="/fr/guias/que-mirar-comprar-barco-segunda-mano.html">ce qu’il faut vérifier en achetant d’occasion</a> vous seront aussi utiles.</p>
+      </div>
+    </article>
+
+    <aside class="aside" aria-label="Contact et navigation">
+      <div class="card">
+        <p class="eyebrow">Vous préférez en parler ?</p>
+        <h3>Dites-moi ce que vous cherchez sur WhatsApp.</h3>
+        <p>Avec le type, le budget et la zone, je peux déjà commencer à chercher auprès de vendeurs particuliers. Sans engagement.</p>
+        <a class="btn btn-wa" href="https://wa.me/34633742973?text=Bonjour%20Juan%2C%20je%20cherche%20un%20bateau.%20Type%20%3A%20%20%7C%20Budget%20%3A%20%20%7C%20Zone%20%3A%20" target="_blank" rel="noopener">Parler à Juan sur WhatsApp</a>
+      </div>
+      <nav class="toc" aria-label="Sommaire">
+        <p class="eyebrow">Sur cette page</p>
+        <ol>
+          <li><a href="#como">Comment ça marche</a></li>
+          <li><a href="#que-no">Ce que ce n’est pas</a></li>
+          <li><a href="#antes">Si vous ne savez pas encore ce que vous cherchez</a></li>
+        </ol>
+      </nav>
+      <div class="rel">
+        <p class="eyebrow">Cela peut aussi vous intéresser</p>
+        <a href="/fr/barcos/">Bateaux à vendre en ce moment</a>
+        <a href="/fr/que-barco-necesito.html">Test : de quel bateau ai-je besoin</a>
+        <a href="/fr/guias/que-mirar-comprar-barco-segunda-mano.html">Ce qu’il faut vérifier en achetant d’occasion</a>
+        <a href="/fr/guias/">Tous les guides</a>
+      </div>
+    </aside>
+
+  </div>
+</main>
+<script>
+(function(){
+var LEADS_URL='https://script.google.com/macros/s/AKfycbwJtBkktakE0qgmu_b8oHOOopCDnG6BDpBjg2zBUsZKi8l3_OBEuez_OHWmE9j8qCBF/exec';
+function pmVal(f,n){var x=f.querySelector('[name='+n+']');if(!x)return '';if(x.type==='checkbox')return x.checked;return (x.value||'').trim();}
+function pmWire(f,build){
+  if(!f)return;
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault();var msg=f.querySelector('.msg');msg.className='msg';msg.textContent='';
+    if(pmVal(f,'empresa_web')){return;}
+    function bad(t,n){msg.textContent=t;var x=n&&f.querySelector('[name='+n+']');if(x){x.setAttribute('aria-invalid','true');x.focus();}}
+    [].forEach.call(f.querySelectorAll('[aria-invalid]'),function(x){x.removeAttribute('aria-invalid');});
+    var nom=pmVal(f,'nombre');if(!nom){bad('J’ai besoin de votre nom pour pouvoir vous aider.','nombre');return;}
+    var tel=pmVal(f,'telefono');if(!/^\+?[0-9 ().-]{6,20}$/.test(tel)||tel.replace(/\D/g,'').length<6){bad('Vérifiez le numéro de téléphone : vous pouvez inclure l’indicatif international, par ex. +33 6 12 34 56 78.','telefono');return;}
+    var em=pmVal(f,'email');if(em&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){bad('Cet e-mail ne semble pas correct, vérifiez-le.','email');return;}
+    if(!pmVal(f,'consent')){bad('Vous devez accepter la politique de confidentialité pour que je puisse vous aider.','consent');return;}
+    var p=build(f);if(!p){return;}
+    p.email=em;p.consent=true;p.consent_v='2026-09';p.consent_at=new Date().toISOString();p.page=location.pathname;p.ua=navigator.userAgent.slice(0,120);
+    var btn=f.querySelector('button[type=submit]');btn.disabled=true;var lbl=btn.textContent;btn.textContent='Envoi…';
+    window.submitConfirmed(LEADS_URL,p,'json').then(function(){
+      msg.className='msg ok';msg.textContent='Demande reçue. Je vous réponds dès que possible.';btn.textContent='Envoyé';
+      try{if(window.pmTrack)pmTrack('generate_lead',{form_id:f.id,contact_purpose:'buyer_alert'});}catch(e){}
+    }).catch(function(){msg.innerHTML='Je n’ai pas pu confirmer la bonne réception de votre demande. Vos données sont toujours là : vous pouvez réessayer dans quelques minutes ou m’écrire sur <a href="https://wa.me/34633742973" target="_blank" rel="noopener">WhatsApp</a> ou à <a href="mailto:juan@platamarine.com">juan@platamarine.com</a>.';btn.disabled=false;btn.textContent=lbl;
+      try{if(window.pmTrack)pmTrack('contact_form_error',{form_id:f.id});}catch(e){}});
+  });
+}
+
+pmWire(document.getElementById('alertaForm'),function(f){
+  var parts=[];
+  [['tipo','Type'],['eslora','Longueur'],['presu','Budget'],['zona','Zone'],['notas','Remarques']].forEach(function(p){var v=pmVal(f,p[0]);if(v)parts.push(p[1]+': '+v);});
+  if(!parts.length){f.querySelector('.msg').textContent='Indiquez-moi au moins le type de bateau, la longueur ou le budget.';return null;}
+  return {source:'alerta',nombre:pmVal(f,'nombre'),telefono:pmVal(f,'telefono'),newsletter:!!pmVal(f,'newsletter'),detail:parts.join(' | ')};
+});
+})();
+</script>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="line">
+      <span>© 2026 Plata Marine · Sabadell, Barcelona · <a href="mailto:juan@platamarine.com">juan@platamarine.com</a></span>
+      <a href="/fr/aviso-legal.html">Mentions légales</a> · <a href="/fr/privacidad.html">Confidentialité</a> · <a href="/fr/cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Site web par rotulito.com</a>
+    </div>
+  </div>
+<p class="wrap"><button type="button" data-cookie-settings>Paramètres des cookies</button></p></footer>
+<script src="/nav.js?v=20261006" defer></script>
+<script src="/consent.js?v=20261006" defer></script>
+<script src="/submit-confirmed.js" defer></script>
+<script src="/analytics.js?v=20261006" defer></script>
+<script src="/inventario.js?v=20261006"></script>
+<script src="/alertas-contexto.js?v=20261006"></script>
+</body>
+</html>
