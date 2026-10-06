@@ -1,4 +1,4 @@
-// Plata Marine · inserta/actualiza el bloque "Barcos parecidos" (ES/CA/EN) en:
+// Plata Marine · inserta/actualiza el bloque "Barcos parecidos" (ES/CA/EN/FR) en:
 //  - cada ficha de /barcos/ (disponibles y vendidas), antes de </main>
 //  - cada página de /modelos/ (antes de "Título, impuestos y gastos fijos")
 //  - el botón "Ver similares" en las tarjetas vendidas del catálogo
@@ -11,14 +11,14 @@ global.document = {readyState: 'complete', querySelectorAll: () => []};
 eval(fs.readFileSync(path.join(ROOT, 'inventario.js'), 'utf8'));
 eval(fs.readFileSync(path.join(ROOT, 'similares.js'), 'utf8'));
 const INV = window.PM_INV, pick = window.PM_SIM_PICK;
-const LANGS = ['es', 'ca', 'en'];
+const LANGS = ['es', 'ca', 'en', 'fr'];
 const pre = l => (l === 'es' ? '' : '/' + l);
 const esc = s => String(s).replace(/[&<>"]/g, m => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[m]));
 const IMG = {'ranieri-azzurra-5m': '/ranieri-azzurra-1.jpg'};
-const price = (n, l) => { const s = String(n).replace(/\B(?=(\d{3})+(?!\d))/g, l === 'en' ? ',' : '.'); return l === 'en' ? '€' + s : s + ' €'; };
+const price = (n, l) => { const s = String(n).replace(/\B(?=(\d{3})+(?!\d))/g, l === 'en' ? ',' : l === 'fr' ? '\u202f' : '.'); return l === 'en' ? '€' + s : s + ' €'; };
 const card = (b, l) => {
   const img = (IMG[b.slug] || '/' + b.slug + '-1.jpg').replace(/\.jpg$/, '');
-  return `<a class="pcard" href="${INV.url(b, l)}"><img src="${img}-m.jpg" srcset="${img}-m.jpg 1000w, ${img}.jpg 1600w" sizes="(max-width: 640px) 100vw, 360px" alt="${esc(b.name)}" loading="lazy" width="1600" height="900"><span class="pc-b"><strong>${esc(b.name)}</strong><span class="pc-p">${price(b.price, l)}${b.vat ? ' <span class="vat">' + (l === 'en' ? '+VAT' : '+IVA') + '</span>' : ''}</span><span class="pc-d">${b.year} · ${esc(b.d[l])}</span><span class="pc-t">${esc(INV.titleFor(b, l))}</span><span class="pc-l">${{es: 'Ver ficha', ca: 'Veure fitxa', en: 'See details'}[l]} →</span></span></a>`;
+  return `<a class="pcard" href="${INV.url(b, l)}"><img src="${img}-m.jpg" srcset="${img}-m.jpg 1000w, ${img}.jpg 1600w" sizes="(max-width: 640px) 100vw, 360px" alt="${esc(b.name)}" loading="lazy" width="1600" height="900"><span class="pc-b"><strong>${esc(b.name)}</strong><span class="pc-p">${price(b.price, l)}${b.vat ? ' <span class="vat">' + (l === 'en' ? '+VAT' : l === 'fr' ? '+TVA' : '+IVA') + '</span>' : ''}</span><span class="pc-d">${b.year} · ${esc(b.d[l])}</span><span class="pc-t">${esc(INV.titleFor(b, l))}</span><span class="pc-l">${{es: 'Ver ficha', ca: 'Veure fitxa', en: 'See details', fr: 'Voir la fiche'}[l]} →</span></span></a>`;
 };
 const TX = {
   es: {avail: 'Otros barcos parecidos', sold: 'Barcos parecidos disponibles', model: 'En venta ahora, de eslora parecida',
@@ -32,7 +32,11 @@ const TX = {
   en: {avail: 'Other similar boats', sold: 'Similar boats available', model: 'For sale now, of a similar length',
        sub: 'Same type, similar length and price, from my listings.', subM: 'Boats from my listings of a similar size. Not this model, but a useful reference.',
        empty: 'Right now I have no other boat available that is similar.', emptyA: 'Set up an alert', emptyB: 'and I will let you know as soon as one that fits comes in.',
-       all: 'See all boats for sale', btn: 'Looking for something similar?'}
+       all: 'See all boats for sale', btn: 'Looking for something similar?'},
+  fr: {avail: 'Autres bateaux similaires', sold: 'Bateaux similaires disponibles', model: 'En vente actuellement, de longueur similaire',
+       sub: 'Même type, longueur et prix approchants, parmi les bateaux que je propose.', subM: 'Des bateaux que je propose, de taille similaire. Ce n’est pas ce modèle, mais ils peuvent vous servir de référence.',
+       empty: 'Pour l’instant, je n’ai pas d’autre bateau disponible qui lui ressemble.', emptyA: 'Créez une alerte', emptyB: 'et je vous préviens dès qu’il en arrive un qui correspond.',
+       all: 'Voir tous les bateaux à vendre', btn: 'Vous cherchez quelque chose de similaire ?'}
 };
 function block(l, ref, head, sub) {
   let r = ref; if (ref.slug) { const me = INV.get(ref.slug); r = {slug: me.slug, kind: me.kind, len: me.length, price: me.status === 'sold' ? 0 : me.price, types: me.types}; }

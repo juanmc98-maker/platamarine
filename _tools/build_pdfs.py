@@ -1,6 +1,6 @@
-"""Genera las fichas PDF de Plata Marine (ES/CA/EN) a partir de la ficha HTML de cada idioma.
+"""Genera las fichas PDF de Plata Marine (ES/CA/EN/FR) a partir de la ficha HTML de cada idioma.
 Uso: python3 build_pdfs.py [slug ...]   (sin argumentos: todos)
-Salida: barcos/<slug>.pdf (ES), barcos/<slug>-ca.pdf, barcos/<slug>-en.pdf
+Salida: barcos/<slug>.pdf (ES), barcos/<slug>-ca.pdf, barcos/<slug>-en.pdf, barcos/<slug>-fr.pdf
 """
 import re, sys, os, io, base64, html, asyncio
 import qrcode
@@ -29,6 +29,12 @@ L = {
             scan='Full listing and all photos', broker='Nautical broker',
             legal='Plata Marine (Juan Morante Cruz) acts as an intermediary: it does not own this boat, does not sell it in its own name or receive the sale price, and gives no warranty of its own on it. The details in this listing are provided by the owner and are indicative; the final details will be those in the sale contract. Price excludes ownership-transfer costs. We recommend a sea trial and an independent survey before you reserve. On boats in our portfolio we charge the buyer no fee.',
             date='Listing updated 02/10/2026'),
+ 'fr': dict(pre='fr/', sale='À VENDRE', sold='VENDU', langtag='Fiche en français', tech='Résumé technique', gal='Galerie',
+            interest='Ce bateau vous intéresse ?', interest2="Écrivez-moi et nous le regardons ensemble, sans engagement.",
+            soldt='Ce bateau est déjà vendu', soldt2='Si vous cherchez un bateau similaire, consultez les bateaux disponibles ou créez une alerte sur le site.',
+            scan='Fiche complète et toutes les photos', broker='Courtier nautique',
+            legal="Plata Marine (Juan Morante Cruz) agit en tant qu'intermédiaire : elle n'est pas propriétaire de ce bateau, ne le vend pas en son nom propre, ne perçoit pas le prix de vente et n'offre aucune garantie propre sur celui-ci. Les données de cette fiche sont fournies par le propriétaire et sont indicatives ; les données définitives seront celles du contrat de vente. Prix hors frais de changement de propriétaire. Nous recommandons un essai en mer et une expertise indépendante avant de réserver. Pour les bateaux de notre portefeuille, nous ne facturons aucun honoraire à l'acheteur.",
+            date='Fiche mise à jour le 06/10/2026'),
 }
 
 def strip(s):
@@ -58,7 +64,7 @@ def parse(slug, lang):
     prose = re.search(r'<div class="prose">(.*?)</div>', t, re.S).group(1)
     h2 = strip(re.search(r'<h2>(.*?)</h2>', prose, re.S).group(1))
     paras = [p for p in re.findall(r'<p>(.*?)</p>', prose, re.S)]
-    thumbs = re.findall(r'data-full="/([a-z0-9-]+-\d+(?:-ca|-en)?\.jpg)"', re.search(r'<div class="gal">(.*?)</div>\s*</div>', t, re.S).group(1))
+    thumbs = re.findall(r'data-full="/([a-z0-9-]+-\d+(?:-ca|-en|-fr)?\.jpg)"', re.search(r'<div class="gal">(.*?)</div>\s*</div>', t, re.S).group(1))
     seen = []
     for x in thumbs:
         if x not in seen: seen.append(x)
@@ -162,7 +168,7 @@ async def main(slugs):
         br = await p.chromium.launch()
         pg = await br.new_page()
         for slug in slugs:
-            for lang in ['es', 'ca', 'en']:
+            for lang in os.environ.get('PM_LANGS', 'es,ca,en,fr').split(','):
                 doc, d = build_html(slug, lang, lw)
                 tmp = '/tmp/claude-0/pdf_%s_%s.html' % (slug, lang)
                 open(tmp, 'w', encoding='utf-8').write(doc)
