@@ -175,10 +175,16 @@
   for(var i=0;i<g.length;i++){if(g[i].querySelector('a[href$="/modelos/"]')){add(g[i]);break;}}
 })();
 
-/* 7a (6 oct 2026): en el menú no se limita la venta a Barcelona: "Vendo en toda Cataluña y Baleares" → /vender-barco/. Provisional hasta las landings por zona (Costa Brava, Tarragona, Baleares). */
+/* Menú · Vender por zona (7 oct 2026): sustituye el enlace de Barcelona-Maresme por la línea de zonas
+   (Costa Brava · Barcelona y Maresme · Tarragona · Baleares). Si el HTML ya trae .pmx-zonas no hace nada. */
 (function(){
   var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
-  var t={'':'Vendo barcos en toda Cataluña y Baleares','/ca':'Venc vaixells a tot Catalunya i Balears','/en':'I sell boats across Catalonia and the Balearics','/fr':'Je vends des bateaux dans toute la Catalogne et aux Baléares'}[pre];
+  if(document.querySelector('.pmx-zonas'))return;
+  var L={'':'Vender por zona','/ca':'Vendre per zona','/en':'Selling by area','/fr':'Vendre par zone'}[pre];
+  var N={'':['Costa Brava','Barcelona y Maresme','Tarragona','Baleares'],'/ca':['Costa Brava','Barcelona i Maresme','Tarragona','Balears'],'/en':['Costa Brava','Barcelona & Maresme','Tarragona','Balearics'],'/fr':['Costa Brava','Barcelone et Maresme','Tarragone','Baléares']}[pre];
+  var S=['broker-nautico-costa-brava.html','broker-nautico-barcelona-maresme.html','broker-nautico-tarragona-costa-daurada.html','broker-nautico-baleares.html'];
+  function make(){var d=document.createElement('div');d.className='pmx-zonas';var s=document.createElement('span');s.textContent=L;d.appendChild(s);
+    for(var i=0;i<S.length;i++){var a=document.createElement('a');a.href=pre+'/vender/'+S[i];a.textContent=N[i];if(p===a.getAttribute('href'))a.setAttribute('aria-current','page');d.appendChild(a);}return d;}
   var as=document.querySelectorAll('.pmx-col a[href$="/vender/broker-nautico-barcelona-maresme.html"], .pmx-grp a[href$="/vender/broker-nautico-barcelona-maresme.html"]');
-  for(var i=0;i<as.length;i++){as[i].textContent=t;as[i].setAttribute('href',pre+'/vender-barco/');as[i].removeAttribute('aria-current');}
+  for(var i=0;i<as.length;i++){as[i].parentNode.replaceChild(make(),as[i]);}
 })();

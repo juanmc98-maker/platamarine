@@ -80,3 +80,9 @@ header.top .pmx-nav>a,header.top .pmx-dd>button{padding:8px 7px}
 @media (max-width:1399px){html[lang="fr"] header.top .pmx-nav>a,html[lang="fr"] header.top .pmx-dd>button{font-size:13px;padding:8px 4px}}
 header.top .brand{flex:none}
 header.top .brand img{max-width:none}
+/* Línea "Vender por zona" del menú */
+.pmx-zonas{padding:6px 12px 8px;font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-size:13px;line-height:1.5}
+.pmx-zonas span{display:block;color:#7F929E;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+header.top .pmx-zonas a,.pmx-panel .pmx-zonas a{display:inline-block;padding:2px 0;margin-right:10px;font-size:13.5px;font-weight:500;color:#17465F;white-space:nowrap}
+.pmx-panel .pmx-zonas{padding:6px 0}
+p.zonas{font-size:.95em}
