@@ -12,7 +12,7 @@
   if(btn&&p){
     btn.addEventListener('click',function(){var o=p.classList.toggle('open');btn.setAttribute('aria-expanded',o?'true':'false');btn.setAttribute('aria-label',btn.getAttribute(o?'data-close':'data-open'));});
     p.addEventListener('click',function(e){if(e.target.closest('a'))closeP();});
-    window.addEventListener('resize',function(){if(window.innerWidth>=1120)closeP();});
+    window.addEventListener('resize',function(){if(window.innerWidth>=1240)closeP();});
   }
 })();
 /* Tablas en móvil: si una tabla no cabe, cada fila se muestra como una ficha con su etiqueta (sin scroll lateral). */

@@ -62,3 +62,21 @@ header.top .menu-btn,header.top .mobile-nav,header.top .pm-mbtn,header.top .pm-m
 .flag-fr{background-image:linear-gradient(90deg,#002395 0 33.33%,#fff 33.33% 66.66%,#ED2939 66.66% 100%)}
 .langsw{flex-shrink:0}
 header .btn-wa{white-space:nowrap}
+/* Menú simplificado (oct 2026): "Recursos" como panel de 4 columnas */
+.pmx-res .pmx-menu.pmx-mega{left:auto;right:-120px;width:min(880px,calc(100vw - 40px));padding:14px 10px 10px;display:none;grid-template-columns:repeat(4,1fr);gap:4px 6px}
+.pmx-res.open .pmx-menu.pmx-mega{display:grid}
+@media (hover:hover){.pmx-res:hover .pmx-menu.pmx-mega{display:grid}}
+.pmx-col p{font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#7F929E;margin:0 0 4px;padding:0 12px}
+header.top .pmx-mega a{white-space:normal;line-height:1.3;padding:8px 12px;font-size:13.5px}
+.pmx-panel .pmx-main a{font-size:16px}
+.pmx-panel .pmx-reshead{grid-column:1/-1;padding:14px 0 0}
+.pmx-panel .pmx-reshead p{font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#17465F;margin:0}
+.pmx-panel .pmx-sub a{font-weight:500;font-size:14.5px;padding:7px 0}
+.pmx-res .pmx-menu.pmx-mega{right:auto;left:50%;transform:translateX(-50%)}
+header.top .nav.pmx-nav{gap:0}
+header.top .pmx-nav>a,header.top .pmx-dd>button{padding:8px 7px}
+@media (max-width:1279px){header.top .pmx-nav>a,header.top .pmx-dd>button{font-size:13.5px;padding:8px 5px}}
+@media (max-width:1239px){header.top .nav.pmx-nav{display:none}header.top .wrap{justify-content:flex-start}header.top .brand{margin-right:auto}.pmx-btn{display:inline-flex}header.top .top-cta{display:none}}
+@media (max-width:1399px){html[lang="fr"] header.top .pmx-nav>a,html[lang="fr"] header.top .pmx-dd>button{font-size:13px;padding:8px 4px}}
+header.top .brand{flex:none}
+header.top .brand img{max-width:none}
