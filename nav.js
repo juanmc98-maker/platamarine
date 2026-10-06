@@ -174,3 +174,11 @@
   var g=document.querySelectorAll('#pmxPanel .pmx-grp');
   for(var i=0;i<g.length;i++){if(g[i].querySelector('a[href$="/modelos/"]')){add(g[i]);break;}}
 })();
+
+/* 7a (6 oct 2026): en el menú no se limita la venta a Barcelona: "Vendo en toda Cataluña y Baleares" → /vender-barco/. Provisional hasta las landings por zona (Costa Brava, Tarragona, Baleares). */
+(function(){
+  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
+  var t={'':'Vendo barcos en toda Cataluña y Baleares','/ca':'Venc vaixells a tot Catalunya i Balears','/en':'I sell boats across Catalonia and the Balearics','/fr':'Je vends des bateaux dans toute la Catalogne et aux Baléares'}[pre];
+  var as=document.querySelectorAll('.pmx-col a[href$="/vender/broker-nautico-barcelona-maresme.html"], .pmx-grp a[href$="/vender/broker-nautico-barcelona-maresme.html"]');
+  for(var i=0;i<as.length;i++){as[i].textContent=t;as[i].setAttribute('href',pre+'/vender-barco/');as[i].removeAttribute('aria-current');}
+})();
