@@ -32,7 +32,7 @@
         d: {es: 'Aprox. 12 m · acero · Solé Mini 62 cv · Alicante', ca: 'Aprox. 12 m · acer · Solé Mini 62 cv · Alacant', en: 'Approx. 12 m · steel · Solé Mini 62 hp · Alicante'}},
       {slug: 'monterey-278-ss', name: 'Monterey 278 SS', year: 2011, kind: 'motor', types: ['sundeck', 'cabinado'], length: 8.4, price: 49990, zone: 'cataluna', area: 'costa-brava', title: 3, status: 'available',
         d: {es: '8,40 m · Volvo Penta 320 cv · Costa Brava', ca: '8,40 m · Volvo Penta 320 cv · Costa Brava', en: '8.40 m · Volvo Penta 320 hp · Costa Brava'}},
-      {slug: 'faeton-730-moraga', name: 'Faeton 730 Moraga', year: 2005, kind: 'motor', types: ['pilothouse', 'walkaround'], length: 7.39, price: 30000, zone: 'baleares', title: 2, status: 'available',
+      {slug: 'faeton-730-moraga', name: 'Faeton 730 Moraga', year: 2005, kind: 'motor', types: ['pilothouse', 'walkaround'], length: 7.39, price: 28900, zone: 'baleares', title: 2, status: 'available',
         d: {es: '7,39 m · Volvo Penta 170 cv · Mallorca', ca: '7,39 m · Volvo Penta 170 cv · Mallorca', en: '7.39 m · Volvo Penta 170 hp · Mallorca'}},
       {slug: 'faeton-730-top-moraga', name: 'Faeton 730 Top Moraga', year: 2003, kind: 'motor', types: ['pilothouse'], length: 7.39, price: 24000, zone: 'baleares', title: 2, status: 'available',
         d: {es: '7,39 m · Volvo Penta 150 cv · Mallorca', ca: '7,39 m · Volvo Penta 150 cv · Mallorca', en: '7.39 m · Volvo Penta 150 hp · Mallorca'}},
