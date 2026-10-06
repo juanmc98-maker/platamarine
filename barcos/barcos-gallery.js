@@ -1,13 +1,14 @@
 (function(){
 "use strict";
 /* ficha-plus: datos clave, descripción plegada y barra móvil (30/09/2026) */
-(function(){ var s=document.createElement('script'); s.src='/barcos/ficha-plus.js?v=20261002'; s.defer=true; document.head.appendChild(s); })();
+(function(){ var s=document.createElement('script'); s.src='/barcos/ficha-plus.js?v=20261006'; s.defer=true; document.head.appendChild(s); })();
 var main = document.getElementById('main');
 if(!main) return;
 var L = {
   es: {dlg:'Foto ampliada', close:'Cerrar', prev:'Foto anterior', next:'Foto siguiente', zoom:'Ampliar foto'},
   ca: {dlg:'Foto ampliada', close:'Tancar', prev:'Foto anterior', next:'Foto següent', zoom:'Ampliar la foto'},
-  en: {dlg:'Enlarged photo', close:'Close', prev:'Previous photo', next:'Next photo', zoom:'Enlarge photo'}
+  en: {dlg:'Enlarged photo', close:'Close', prev:'Previous photo', next:'Next photo', zoom:'Enlarge photo'},
+  fr: {dlg:'Photo agrandie', close:'Fermer', prev:'Photo précédente', next:'Photo suivante', zoom:'Agrandir la photo'}
 }[(document.documentElement.lang || 'es').slice(0,2)] || null;
 if(!L) L = {dlg:'Foto ampliada', close:'Cerrar', prev:'Foto anterior', next:'Foto siguiente', zoom:'Ampliar foto'};
 
