@@ -158,7 +158,7 @@ function pmWire(f,build){
   if(!f)return;
   f.addEventListener('submit',function(ev){
     ev.preventDefault();var msg=f.querySelector('.msg');msg.className='msg';msg.textContent='';
-    if(pmVal(f,'empresa_web')){return;}
+    
     function bad(t,n){msg.textContent=t;var x=n&&f.querySelector('[name='+n+']');if(x){x.setAttribute('aria-invalid','true');x.focus();}}
     [].forEach.call(f.querySelectorAll('[aria-invalid]'),function(x){x.removeAttribute('aria-invalid');});
     var nom=pmVal(f,'nombre');if(!nom){bad('Necesito tu nombre para poder ayudarte.','nombre');return;}
