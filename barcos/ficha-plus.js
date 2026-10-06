@@ -2,14 +2,15 @@
    1) Franja de datos clave con iconos bajo la galería (se genera a partir de la tabla .specs)
    2) Descripción plegada con "Ver más"
    3) Barra fija en móvil con precio + "Consultar este barco"
-   Funciona en ES/CA/EN sin tocar el HTML de cada ficha. */
+   Funciona en ES/CA/EN/FR sin tocar el HTML de cada ficha. */
 (function(){
 "use strict";
 var lang = (document.documentElement.lang || 'es').slice(0,2);
 var T = {
   es: {more:'Ver descripción completa', less:'Ver menos', ask:'Consultar este barco'},
   ca: {more:'Veure la descripció completa', less:'Veure menys', ask:'Consultar aquest vaixell'},
-  en: {more:'Read the full description', less:'Show less', ask:'Ask about this boat'}
+  en: {more:'Read the full description', less:'Show less', ask:'Ask about this boat'},
+  fr: {more:'Lire la description complète', less:'Voir moins', ask:'Demander des infos sur ce bateau'}
 }[lang] || {more:'Ver descripción completa', less:'Ver menos', ask:'Consultar este barco'};
 
 var ICO = {
@@ -22,13 +23,13 @@ var ICO = {
   place:'<svg viewBox="0 0 24 24"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg>'
 };
 var KEYS = [
-  {k:'year',  dt:['año','any','year']},
-  {k:'length',dt:['eslora','length']},
-  {k:'engine',dt:['motor','motores','motors','engine','engines','power']},
-  {k:'hours', dt:['horas','hores','hours']},
-  {k:'pax',   dt:['capacidad','capacitat','capacity','personas','persones','people']},
-  {k:'title', dt:['titulación','titulació','licence','license']},
-  {k:'place', dt:['ubicación','ubicació','location','zona','zone']}
+  {k:'year',  dt:['año','any','year','année']},
+  {k:'length',dt:['eslora','length','longueur']},
+  {k:'engine',dt:['motor','motores','motors','engine','engines','power','moteur','moteurs','puissance']},
+  {k:'hours', dt:['horas','hores','hours','heures']},
+  {k:'pax',   dt:['capacidad','capacitat','capacity','personas','persones','people','capacité','personnes']},
+  {k:'title', dt:['titulación','titulació','licence','license','permis']},
+  {k:'place', dt:['ubicación','ubicació','location','zona','zone','localisation','emplacement']}
 ];
 
 /* 1) Datos clave */
@@ -47,10 +48,10 @@ if(specs && gal){
       var r = rows[K.dt[i]];
       if(r){
         var v = r.value;
-        if(K.k==='engine') v = v.split(/\s[·(]\s?/)[0].replace(/,\s*(diésel|dièsel|diesel|gasolina|petrol)\b.*$/i,'');
+        if(K.k==='engine') v = v.split(/\s[·(]\s?/)[0].replace(/,\s*(diésel|dièsel|diesel|gasolina|petrol|essence)\b.*$/i,'');
         if(K.k==='place') v = v.replace(/\s*\(.*\)\s*$/,'');
-        if(K.k==='title'){ v = v.replace(/PER con pr[áa]cticas de vela/i,'PER (vela)').replace(/PER amb pr[àa]ctiques de vela/i,'PER (vela)').replace(/Spanish PER with sailing endorsement/i,'PER (sail)').replace(/PER with sailing (practice|endorsement)/i,'PER (sail)').replace(/Licencia de Navegaci[óo]n/i,'Licencia').replace(/Llic[èe]ncia de Navegaci[óo]/i,'Llicència').replace(/Patr[óo]n o Capit[áa]n de Yate/i,'PY o CY'); }
-        if(K.k==='hours'){ v = v.replace(/^Sin contador de horas$/i,'Sin contador').replace(/^Sense comptador d'hores$/i,'Sense comptador').replace(/^No hour meter$/i,'No hour meter'); }
+        if(K.k==='title'){ v = v.replace(/PER con pr[áa]cticas de vela/i,'PER (vela)').replace(/PER amb pr[àa]ctiques de vela/i,'PER (vela)').replace(/Spanish PER with sailing endorsement/i,'PER (sail)').replace(/PER with sailing (practice|endorsement)/i,'PER (sail)').replace(/PER avec pratiques de voile/i,'PER (voile)').replace(/Licencia de Navegaci[óo]n/i,'Licencia').replace(/Llic[èe]ncia de Navegaci[óo]/i,'Llicència').replace(/Patr[óo]n o Capit[áa]n de Yate/i,'PY o CY'); }
+        if(K.k==='hours'){ v = v.replace(/^Sin contador de horas$/i,'Sin contador').replace(/^Sense comptador d'hores$/i,'Sense comptador').replace(/^No hour meter$/i,'No hour meter').replace(/^Sans compteur d'heures$/i,'Sans compteur'); }
         if(v.length > 44) v = v.slice(0,42).replace(/\s\S*$/,'') + '…';
         items.push({k:K.k, label:r.label, value:v});
         break;
@@ -60,7 +61,7 @@ if(specs && gal){
   if(items.length >= 3){
     var strip = document.createElement('ul');
     strip.className = 'keyfacts';
-    strip.setAttribute('aria-label', lang==='en' ? 'Key facts' : lang==='ca' ? 'Dades clau' : 'Datos clave');
+    strip.setAttribute('aria-label', lang==='en' ? 'Key facts' : lang==='ca' ? 'Dades clau' : lang==='fr' ? 'Points clés' : 'Datos clave');
     strip.innerHTML = items.map(function(it){
       return '<li><span class="kf-ico" aria-hidden="true">' + ICO[it.k] + '</span><span class="kf-txt"><span class="kf-l">' + it.label + '</span><span class="kf-v">' + it.value + '</span></span></li>';
     }).join('');
@@ -113,12 +114,13 @@ if(ask && price && head && window.matchMedia('(max-width: 639px)').matches){
 }
 })();
 
-/* Enlace a "valora tu barco" al final de la descripción de cada ficha (ES/CA/EN). */
+/* Enlace a "valora tu barco" al final de la descripción de cada ficha (ES/CA/EN/FR). */
 (function(){
   var lang=(document.documentElement.lang||'es').slice(0,2);
   var L={es:['¿Tienes un barco parecido y lo quieres vender? ','Mira qué influye en su precio (2 min)','/herramientas/valora-tu-barco.html'],
     ca:['Tens un vaixell semblant i el vols vendre? ','Mira què influeix en el seu preu (2 min)','/ca/herramientas/valora-tu-barco.html'],
-    en:['Own a similar boat and thinking of selling? ','See what affects its price (2 min)','/en/herramientas/valora-tu-barco.html']}[lang]||null;
+    en:['Own a similar boat and thinking of selling? ','See what affects its price (2 min)','/en/herramientas/valora-tu-barco.html'],
+    fr:['Vous avez un bateau similaire et vous pensez le vendre ? ','Voyez ce qui influe sur son prix (2 min)','/fr/herramientas/valora-tu-barco.html']}[lang]||null;
   var prose=document.querySelector('.prose'); if(!L||!prose||document.getElementById('pm-sell-hint'))return;
   var p=document.createElement('p'); p.id='pm-sell-hint';
   p.style.cssText='margin-top:22px;padding:12px 14px;border-left:3px solid var(--brass,#b8955a);background:rgba(127,146,158,.08);font-size:.95em';
