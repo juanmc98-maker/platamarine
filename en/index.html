@@ -457,6 +457,7 @@ section[id]{scroll-margin-top:78px}
 @media(max-width:639px){.qsearch label{flex:1 1 100%}.qsearch button{width:100%}}
 </style>
 <link rel="stylesheet" href="/nav.css?v=20261006m">
+<style id="ux-oct">/* Revisión UX 6 oct 2026 */#venta .boat .desc,#venta .boat .thumbs{display:none}#guias .guias-cards img{display:none}#guias .guias-cards .gc-body{padding-top:18px}#comprar .buy-alt{margin-top:14px;font-family:var(--display);font-size:15px}#valora .sell-lead{max-width:62ch;color:var(--ink-2);margin-top:12px}@media(min-width:900px){#guias .guias-cards{grid-template-columns:repeat(4,1fr)}}</style>
 </head>
 <body>
 
@@ -506,20 +507,9 @@ section[id]{scroll-margin-top:78px}
           <a class="btn btn-pill" href="#valora">I want to sell my boat</a>
           <a class="btn btn-pill ghost" href="barcos/">See boats for sale</a>
         </div>
-        <p style="margin:14px 0 0"><a class="hero-valora" href="herramientas/valora-tu-barco.html" style="color:#fff;font-family:var(--display);font-size:15px;font-weight:600;text-decoration:underline;text-underline-offset:4px">Not sure what price to ask? See what affects your boat's price (2 min) →</a></p>
         <p class="hero-micro">Fee only on completion · No exclusivity, no upfront costs</p>
       </div>
     </div>
-  </section>
-
-  <section class="qsearch" aria-label="Quick boat search">
-    <form action="/en/barcos/" method="get">
-      <p class="qs-ttl">Looking for a boat?</p>
-      <label>Type<select name="tipo"><option value="all">Motor or sail</option><option value="motor">Motor</option><option value="vela">Sail</option></select></label>
-      <label>Budget<select name="precio"><option value="all">Any</option><option value="0-30000">Up to €30,000</option><option value="30000-60000">€30,000 – €60,000</option><option value="60000-100000">€60,000 – €100,000</option><option value="100000-">Over €100,000</option></select></label>
-      <label>Area<select name="zona"><option value="all">All</option><option value="cataluna">Catalonia</option><option value="baleares">Balearic Islands</option><option value="valencia">Valencia region</option><option value="galicia">Galicia</option></select></label>
-      <button type="submit">Search boats</button>
-    </form>
   </section>
 
   <section class="sec alt" id="venta">
@@ -602,45 +592,12 @@ section[id]{scroll-margin-top:78px}
     </div>
   </section>
 
-  <section class="service-switch" aria-label="Sell or buy">
-    <div class="wrap">
-      <article class="service-card">
-        <img class="service-img" src="https://images.unsplash.com/photo-1587365001066-8263b7061a38?auto=format&fit=crop&w=900&h=506&q=75" alt="Motorboats moored in a Mediterranean marina" loading="lazy" width="900" height="506">
-        <p class="service-kicker">Owners</p>
-        <h2>I want to sell my boat</h2>
-        <p>Tell me what boat you have and where it is, and I'll tell you what price makes sense and how I'd approach the sale.</p>
-        <div class="boat-cta" style="margin-top:20px">
-          <a class="btn btn-sea" href="#valora">Tell me about your boat</a>
-          <a class="btn btn-ghost" href="/en/herramientas/valora-tu-barco.html">Not sure what price to ask? See what affects it (2 min)</a>
-        </div>
-      </article>
-      <article class="service-card">
-        <img class="service-img" src="https://images.pexels.com/photos/14223217/pexels-photo-14223217.jpeg?auto=compress&cs=tinysrgb&w=900&h=506&fit=crop" alt="Family enjoying a motorboat" loading="lazy" width="900" height="506">
-        <p class="service-kicker">Buyers</p>
-        <h2>I'm looking for a boat</h2>
-        <p>Have a look at the boats I'm handling right now, also by area: <a href="/en/comprar/barcos-segunda-mano-cataluna.html">Catalonia</a>, <a href="/en/comprar/barcos-segunda-mano-costa-brava.html">Costa Brava</a> and <a href="/en/comprar/barcos-segunda-mano-baleares.html">the Balearics</a>. If the one you want isn't there, I'll help you find it.</p>
-        <div class="boat-cta" style="margin-top:20px">
-          <a class="btn btn-sea" href="barcos/">See boats for sale</a>
-          <a class="btn btn-ghost" href="#comprar">Can't find yours? I'll help you look</a>
-        </div>
-      </article>
-    </div>
-  </section>
-  <section class="sec" id="vender">
-    <span id="condiciones"></span>
-    <div class="wrap">
-      <p class="eyebrow">How I work</p>
-      <h2>Why use a broker if I can list it myself?</h2>
-      <p class="sec-lead">Sure, you can. The difference lies in everything that happens between publishing the listing and getting paid: the price, the listing itself, enquiries, viewings, negotiation and paperwork. No exclusivity, no upfront fees and the terms in writing before we start.</p>
-      <p style="margin-top:22px"><a class="btn btn-ghost" href="/en/vender-barco/">How I work, step by step</a></p>
-    </div>
-  </section>
-
   <section class="sec final" id="valora">
+    <span id="vender"></span><span id="condiciones"></span>
     <div class="wrap">
       <p class="eyebrow">Sell</p>
-      <h2>Have a boat you're thinking of selling? Tell me about it and we'll take a look.</h2>
-      <p class="intro">Tell me the model and where it's located. You can add your listing link if you already have one. We'll talk about the boat first; this enquiry is not a sales agreement.</p>
+      <h2>Thinking of selling your boat? Tell me about it and I will take a look.</h2>
+      <p class="intro sell-lead">The difference a broker makes lies in everything that happens between publishing the listing and getting paid: the price, the listing itself, enquiries, viewings, negotiation and paperwork. No exclusivity, no upfront fees and the terms in writing before we start. This enquiry is not a sale mandate. <a href="/en/vender-barco/">How I work, step by step</a>.</p>
       <form id="valoracion" class="form-grid" data-contact-intent="seller" novalidate>
         <div class="field span2">
           <label for="modelo">Make and model <i>*</i></label>
@@ -672,7 +629,7 @@ section[id]{scroll-margin-top:78px}
           <button class="btn btn-ghost" type="button" id="porWhatsapp">Or via WhatsApp</button>
           <button class="btn btn-ghost" type="button" id="porEmail">Or by email</button>
         </div>
-        <p class="form-help">Pressing "Send inquiry" sends it straight to me; you'll see the confirmation right here once I've received it. If you'd rather, you can also write to me on WhatsApp or by email with the buttons above, even if you haven't filled everything in. Fields marked * are required to send from the website.</p>
+        <p class="form-help">I will confirm right here when it reaches me. If you prefer, message me on WhatsApp or by email with the buttons above. Fields marked * are required.</p>
         <p id="contactoEstado" class="form-help" role="status" aria-live="polite" hidden></p>
         <p class="form-help" id="contactoAlternativa" hidden><a id="continuarContacto">Open the prepared message</a></p>
       </form>
@@ -685,12 +642,11 @@ section[id]{scroll-margin-top:78px}
         <div>
           <p class="eyebrow">Looking for a boat</p>
           <h2>Can't find yours? I'll help you look.</h2>
-          <p class="intro">First, take a look at the <a href="barcos/">boats I'm currently handling</a>. If yours isn't there, tell me how you'll use it, your budget and where you'll keep it: I search across Spain and Europe, check anything missing before you travel and support you through the viewing, negotiation and paperwork.</p>
+          <p class="intro">First, take a look at the <a href="barcos/">boats I'm currently handling</a>. If yours isn't there, tell me how you'll use it, your budget and where you'll keep it: I search across Spain and Europe, check anything missing before you travel and support you through the viewing, negotiation and paperwork. Also by area: <a href="/en/comprar/barcos-segunda-mano-cataluna.html">Catalonia</a>, <a href="/en/comprar/barcos-segunda-mano-costa-brava.html">Costa Brava</a> and <a href="/en/comprar/barcos-segunda-mano-baleares.html">Balearic Islands</a>.</p>
           <div class="boat-cta" style="margin-top:26px">
             <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hi%20Juan%2C%20I'm%20looking%20for%20a%20boat.%20Type%3A%20%20%7C%20Budget%3A%20%20%7C%20Area%3A%20" target="_blank" rel="noopener">Tell me what you're looking for</a>
-            <a class="btn btn-ghost" href="/en/que-barco-necesito.html">Not sure what boat? Take the test (2 min)</a>
-            <a class="btn btn-ghost" href="/en/alertas/">Set up an alert: I'll notify you if yours comes in</a>
           </div>
+          <p class="buy-alt"><a href="/en/alertas/">Set up an alert: I'll notify you if yours comes in</a></p>
         </div>
         <div>
           <div class="buy-facts">
