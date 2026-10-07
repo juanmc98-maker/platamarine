@@ -18,10 +18,10 @@ def set_meta(s, title, desc):
     return s
 
 BARCOS = {
- 'es': ('Barcos de segunda mano y de ocasión en venta · Plata Marine', 'Barcos de segunda mano y barcas de ocasión en venta, a motor y vela, en Cataluña, Baleares y más zonas. Precio a la vista, ficha completa y PDF, con encargo firmado por el propietario.'),
- 'ca': ('Vaixells de segona mà i d\'ocasió en venda · Plata Marine', 'Vaixells de segona mà i barques d\'ocasió en venda, a motor i vela, a Catalunya, les Balears i més zones. Preu a la vista, fitxa completa i PDF, amb encàrrec signat pel propietari.'),
- 'en': ('Used and pre-owned boats for sale in Spain · Plata Marine', 'Used motorboats and sailboats for sale in Catalonia, the Balearics and beyond. Price shown, full details and PDF, every boat with a sale mandate signed by the owner.'),
- 'fr': ('Bateaux d’occasion à vendre en Espagne · Plata Marine', 'Bateaux à moteur et voiliers d’occasion à vendre en Catalogne, aux Baléares et ailleurs en Espagne. Prix affiché, fiche complète et PDF, avec mandat signé par le propriétaire.'),
+ 'es': ('Barcos de segunda mano en venta · Plata Marine', 'Barcos a motor y veleros de segunda mano en venta. Consulta precios, fotos y fichas en Cataluña, Baleares y otras zonas. Habla con Juan Morante.'),
+ 'ca': ('Vaixells de segona mà en venda · Plata Marine', 'Vaixells a motor i velers de segona mà en venda. Consulta preus, fotos i fitxes a Catalunya, les Balears i altres zones. Parla amb Juan Morante.'),
+ 'en': ('Used boats for sale in Spain · Plata Marine', 'Browse used motorboats and sailboats for sale in Catalonia, the Balearics and beyond. Prices, photos and full boat details. Contact Juan Morante.'),
+ 'fr': ('Bateaux d’occasion à vendre en Espagne · Plata Marine', 'Bateaux à moteur et voiliers d’occasion en Catalogne, aux Baléares et ailleurs en Espagne. Prix, photos et fiches détaillées. Contactez Juan Morante.'),
 }
 TIT = {
  'es': ('Titulación náutica: qué título necesitas para llevar un barco', 'Qué titulación necesitas para llevar un barco según su eslora: Licencia de Navegación, PNB, PER (patrón de barco) y Patrón de Yate. Atribuciones, exámenes en Cataluña y precio.', 'Preguntas frecuentes', [
