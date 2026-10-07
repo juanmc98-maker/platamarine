@@ -6,7 +6,8 @@ import json, re, os, subprocess, sys, html
 sys.path.insert(0, os.path.dirname(__file__))
 from pages_content import PAGES as P1
 from pages_content2 import PAGES as P2
-PAGES = dict(P1); PAGES.update(P2)
+from pages_content3 import PAGES as P3
+PAGES = dict(P1); PAGES.update(P2); PAGES.update(P3)
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 LANGS = ['es', 'ca', 'en', 'fr']
@@ -110,6 +111,8 @@ def build(slug, spec, l):
     return out
 
 if __name__ == '__main__':
+    only = sys.argv[1:]
     for slug, spec in PAGES.items():
+        if only and slug not in only: continue
         for l in LANGS:
             print(build(slug, spec, l))
