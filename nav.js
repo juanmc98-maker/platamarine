@@ -188,3 +188,6 @@
   var as=document.querySelectorAll('.pmx-col a[href$="/vender/broker-nautico-barcelona-maresme.html"], .pmx-grp a[href$="/vender/broker-nautico-barcelona-maresme.html"]');
   for(var i=0;i<as.length;i++){as[i].parentNode.replaceChild(make(),as[i]);}
 })();
+
+/* Buscador de la web (lupa en la cabecera): ver /search.js */
+(function(){if(document.querySelector("script[src^=\"/search.js\"]"))return;var s=document.createElement("script");s.src="/search.js?v=20261007";s.defer=true;document.head.appendChild(s);})();
