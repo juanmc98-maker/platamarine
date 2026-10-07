@@ -6,7 +6,8 @@
    y regenerar sus PDF (ES/CA/EN/FR).
    status: "available" | "reserved" | "sold"
    title: titulación mínima (1 Licencia de Navegación, 2 PNB, 3 PER, 4 Patrón de Yate)
-   types: tipos del cuestionario (open, sundeck, walkaround, cabinado, pilothouse, fly, rib, velero) */
+   types: tipos del cuestionario (open, sundeck, walkaround, cabinado, pilothouse, fly, rib, velero)
+   kind: 'motor' | 'vela' | 'moto-agua' (las motos de agua salen en /comprar/motos-de-agua-segunda-mano.html y en el filtro del catálogo; titulación mínima 1). Tarjeta del catálogo: data-tipo="moto-agua" */
 (function () {
   'use strict';
   var INV = {
