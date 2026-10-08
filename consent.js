@@ -1,4 +1,4 @@
-/* Consentimiento de analítica y marketing. Versión 2026-10-07 (Microsoft Clarity dentro de analítica) (Configurar por finalidad, atribución borrada al retirar). i18n ES/CA/EN/FR. */
+/* Consentimiento de analítica y marketing. Versión 2026-10-08 (Microsoft Clarity dentro de analítica; al retirar el consentimiento se avisa a Clarity y se borran _clck/_clsk) (Configurar por finalidad, atribución borrada al retirar). i18n ES/CA/EN/FR. */
 (function () {
 'use strict';
 var CID = 'ytnexwm14p', GID = 'G-MJ6S489CXQ', FID = '1618955459947483', KEY = 'pm_privacy_v3', OLD = 'pm_cookies', OLD2 = 'pm_privacy_v2';
@@ -82,7 +82,7 @@ var paths = ['/'], segments = location.pathname.split('/');
 for (var i = 1; i < segments.length; i++) paths.push(segments.slice(0, i + 1).join('/'));
 document.cookie.split(';').forEach(function (item) {
 var name = item.split('=')[0].trim();
-if (!/^(_ga(?:_|$)|_gid$|_gat|_gcl_|_fbp$|_fbc$|rt_consent$)/.test(name)) return;
+if (!/^(_ga(?:_|$)|_gid$|_gat|_gcl_|_fbp$|_fbc$|_clck$|_clsk$|rt_consent$)/.test(name)) return;
 domains.forEach(function (domain) { paths.forEach(function (path) {
 document.cookie = name + '=; Max-Age=0; path=' + path + (domain ? '; domain=' + domain : '') + '; SameSite=Lax; Secure';
 }); });
@@ -125,11 +125,11 @@ var hadGA = loadedGA, hadFB = loadedFB;
 var analytics = choice === 'custom' ? !!a : (choice === 'analytics' || choice === 'all');
 var marketing = choice === 'custom' ? !!m : choice === 'all';
 try { localStorage.setItem(KEY, JSON.stringify({version:VERSION, analytics:analytics, marketing:marketing, at:Date.now()})); localStorage.removeItem(OLD); localStorage.removeItem(OLD2); } catch (_) {}
-if (analytics) enableAnalytics(); else { allowedA = false; window.__pmAnalyticsAllowed = false; window['ga-disable-' + GID] = true; window.gtag('consent', 'update', {analytics_storage:'denied'}); dropAttribution(); }
+if (analytics) enableAnalytics(); else { if (loadedCL && window.clarity) { try { window.clarity('consent', false); } catch (_) {} } allowedA = false; window.__pmAnalyticsAllowed = false; window['ga-disable-' + GID] = true; window.gtag('consent', 'update', {analytics_storage:'denied'}); dropAttribution(); }
 if (marketing) enableMarketing(); else { allowedM = false; window.__pmMarketingAllowed = false; window.gtag('consent', 'update', {ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied'}); }
 if (!analytics || !marketing) clearCookies();
 hide();
-if ((!analytics && hadGA) || (!marketing && hadFB)) location.reload();
+if ((!analytics && (hadGA || loadedCL)) || (!marketing && hadFB)) location.reload();
 }
 function show() {
 opener = document.activeElement;
