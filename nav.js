@@ -191,3 +191,11 @@
 
 /* Buscador de la web (lupa en la cabecera): ver /search.js */
 (function(){if(document.querySelector("script[src^=\"/search.js\"]"))return;var s=document.createElement("script");s.src="/search.js?v=20261007";s.defer=true;document.head.appendChild(s);})();
+
+/* Menú · ¿Cuánto vale mi barco? (7 oct 2026): primer enlace de Recursos › Vender, antes de valora-tu-barco. */
+(function(){
+  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
+  var T={'':'¿Cuánto vale mi barco?','/ca':'Quant val el meu vaixell?','/en':'How much is my boat worth?','/fr':'Combien vaut mon bateau ?'}[pre],h=pre+'/cuanto-vale-mi-barco/';
+  var as=document.querySelectorAll('.pmx-col a[href$="/herramientas/valora-tu-barco.html"], .pmx-grp a[href$="/herramientas/valora-tu-barco.html"]');
+  for(var i=0;i<as.length;i++){if(as[i].parentNode.querySelector('a[href="'+h+'"]'))continue;var a=document.createElement('a');a.href=h;a.textContent=T;if(p===h)a.setAttribute('aria-current','page');as[i].parentNode.insertBefore(a,as[i]);}
+})();
