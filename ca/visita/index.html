@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sol·licitar visita · Plata Marine</title>
+<meta name="description" content="Tria dia i hora per veure el vaixell que t’interessa. Ho quadro amb el propietari i et confirmo la visita per WhatsApp.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://www.platamarine.com/ca/visita/">
+<link rel="alternate" hreflang="es" href="https://www.platamarine.com/visita/">
+<link rel="alternate" hreflang="ca" href="https://www.platamarine.com/ca/visita/">
+<link rel="alternate" hreflang="en" href="https://www.platamarine.com/en/visita/">
+<link rel="alternate" hreflang="fr" href="https://www.platamarine.com/fr/visita/">
+<link rel="alternate" hreflang="x-default" href="https://www.platamarine.com/visita/">
+<link rel="icon" type="image/png" href="/logo-plata-marine.png">
+<meta property="og:title" content="Sol·licitar visita">
+<meta property="og:description" content="Tria dia i hora per veure el vaixell que t’interessa. Ho quadro amb el propietari i et confirmo la visita per WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.platamarine.com/ca/visita/">
+<meta property="og:image" content="https://www.platamarine.com/og-image-ca.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="stylesheet" href="/guias/guias.css">
+<style>.pmf{background:#fff;border:1px solid var(--plata);border-radius:8px;padding:22px 22px 18px;margin:0 0 22px}
+.pmf h2{margin-top:0;font-size:1.15rem}
+.pmf .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pmf .f{margin:0 0 12px}
+.pmf label.l{display:block;font-family:var(--display);font-size:13px;font-weight:600;color:var(--ink-2);margin:0 0 5px}
+.pmf input[type=text],.pmf input[type=email],.pmf input[type=tel],.pmf select,.pmf textarea{width:100%;font:16px var(--serif);padding:10px 12px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box;background:#fff;color:var(--ink)}
+.pmf textarea{min-height:80px;resize:vertical}
+.pmf label.chk{display:flex;gap:8px;align-items:flex-start;font-family:var(--display);font-size:13px;color:var(--ink-2);margin:0 0 8px;line-height:1.4}
+.pmf .btn{cursor:pointer}
+.pmf .msg{font-family:var(--display);font-size:13.5px;color:#c0392b;margin:8px 0 0}
+.pmf .msg.ok{color:#2e8b57}
+.pmf .legal{font-family:var(--display);font-size:11.5px;color:var(--ink-3,#7F929E);line-height:1.45;margin:12px 0 0}
+.pmf .step{font-family:var(--display);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin:18px 0 8px}
+.pmf .step:first-child{margin-top:0}
+.v-boat{font-family:var(--display);font-size:14.5px;margin:0 0 6px}
+.v-link{background:none;border:0;padding:0;font:inherit;color:var(--ink-2);text-decoration:underline;cursor:pointer}
+.v-sched{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:18px;align-items:start}
+.v-cal-head{display:flex;align-items:center;justify-content:space-between;font-family:var(--display);font-size:15px;margin:0 0 8px}
+.v-nav{width:34px;height:34px;border:1px solid var(--plata-2);border-radius:6px;background:#fff;font-size:18px;line-height:1;cursor:pointer;color:var(--ink)}
+.v-nav:disabled{opacity:.3;cursor:default}
+.v-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.v-wd{font-family:var(--display);font-size:11.5px;font-weight:600;color:var(--ink-3,#7F929E);text-align:center;padding:2px 0}
+.v-day{position:relative;aspect-ratio:1;min-height:36px;border:1px solid var(--plata-2);border-radius:6px;background:#fff;font-family:var(--display);font-size:14px;color:var(--ink);cursor:pointer}
+.v-day.off{border-color:transparent;color:var(--ink-3,#9AA8B1);cursor:default;opacity:.45}
+.v-day.req::after,.v-dot{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--brass,#B58A2C)}
+.v-day.req::after{position:absolute;left:50%;bottom:4px;margin-left:-2.5px}
+.v-day.sel,.v-hour.sel{background:var(--ink);border-color:var(--ink);color:#fff}
+.v-day:not(.off):hover,.v-hour:hover{border-color:var(--ink)}
+.v-legend{font-family:var(--display);font-size:12px;color:var(--ink-2);margin:8px 0 0}
+.v-hours{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.v-hour{padding:10px 0;border:1px solid var(--plata-2);border-radius:6px;background:#fff;font-family:var(--display);font-size:14.5px;color:var(--ink);cursor:pointer}
+.v-hint{font-family:var(--display);font-size:13.5px;color:var(--ink-2);margin:0 0 10px}
+.v-sum{font-family:var(--display);font-size:14px;font-weight:600;background:rgba(11,118,107,.08);border-radius:6px;padding:10px 12px;margin:14px 0 0}
+.pmf button:focus-visible,.pmf select:focus-visible,.pmf input:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.steps{padding-left:20px}.steps li{margin:0 0 8px}
+@media (max-width:640px){.pmf .row,.v-sched{grid-template-columns:1fr}}
+.langsw{display:flex;gap:6px;align-items:center;font-size:.78rem;font-weight:600}.langsw a{display:inline-flex;align-items:center;padding:3px;border-radius:4px}.langsw a[aria-current="page"]{background:rgba(13,28,39,.08)}.flag{display:block;width:20px;height:14px;border-radius:2px;box-shadow:inset 0 0 0 1px rgba(13,28,39,.18);background-size:cover;background-position:center}.flag-es{background-image:linear-gradient(#AA151B 0 25%,#F1BF00 25% 75%,#AA151B 75% 100%)}.flag-ca{background-image:repeating-linear-gradient(#FFCE00 0 11.11%,#DA121A 11.11% 22.22%)}.flag-en{background-color:#00247D;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 36'%3E%3Cpath d='M0 0L60 36M60 0L0 36' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0L60 36M60 0L0 36' stroke='%23C8102E' stroke-width='2.4'/%3E%3Cpath d='M30 0V36M0 18H60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30 0V36M0 18H60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E")}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.langsw a{padding:3px 7px;border-radius:4px;text-decoration:none;color:inherit;opacity:.65}
+.langsw a[aria-current="page"]{opacity:1;text-decoration:underline}
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebPage", "name": "Crear alerta de vaixell", "description": "Digue'm quin vaixell busques (tipus, eslora, pressupost i zona) i quan n'entri un a cartera que hi encaixi t'escric jo. Sense butlletins automàtics: només quan hi ha alguna cosa de veritat.", "url": "https://www.platamarine.com/ca/visita/", "inLanguage": "ca", "publisher": {"@type": "Organization", "name": "Plata Marine"}}
+</script>
+<link rel="stylesheet" href="/nav.css?v=20261006m">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Plata Marine", "item": "https://www.platamarine.com/ca/"}, {"@type": "ListItem", "position": 2, "name": "Crea una alerta: t'aviso quan entri el vaixell que busques", "item": "https://www.platamarine.com/ca/visita/"}]}</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/ca/" aria-label="Plata Marine, inici"><img class="brand-logo" src="/logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
+    <nav class="nav pmx-nav" aria-label="Seccions">
+      <a href="/ca/barcos/">Vaixells en venda</a>
+      <a href="/ca/vender-barco/">Vendre el meu vaixell</a>
+      <a href="/ca/#comprar">Et busco vaixell</a>
+      <div class="pmx-dd pmx-res"><button type="button" aria-expanded="false" aria-controls="pmxRes">Recursos</button><div class="pmx-menu pmx-mega" id="pmxRes"><div class="pmx-col" id="pmxM1"><p>Vendre</p><a href="/ca/herramientas/valora-tu-barco.html">Què influeix en el preu del meu vaixell?</a><a href="/ca/papeles-fiscalidad/">Papers i impostos</a><a href="/ca/guias/que-hace-un-broker-nautico.html">Què fa un bròker nàutic</a><a href="/ca/vender/broker-nautico-barcelona-maresme.html">Vendre a Barcelona i Maresme</a><a href="/ca/vender/guia-fotos-barco.html">Com fer les fotos del teu vaixell</a></div><div class="pmx-col" id="pmxM2"><p>Comprar</p><a href="/ca/alertas/">Avisa&#x27;m de vaixells nous</a><a href="/ca/que-barco-necesito.html">Quin vaixell necessito?</a><a href="/ca/modelos/">Models: què mirar i preus</a><a href="/ca/comprar/">Comprar vaixell: per zona i tipus</a><a href="/ca/precios/">Preus de vaixells d’ocasió</a><a href="/ca/herramientas/">Calculadores: impostos, costos, finançament</a></div><div class="pmx-col" id="pmxM3"><p>Aprèn</p><a href="/ca/guias/">Guies</a><a href="/ca/actualidad/">Actualitat</a><a href="/ca/navegante/">Guia del navegant</a><a href="/ca/titulaciones/">Titulacions</a></div><div class="pmx-col" id="pmxM4"><p>Serveis</p><a href="/ca/servicios/">ITB, gestoria, varador i més</a><a href="/ca/servicios/directorio.html">Directori d&#x27;empreses</a><a href="/ca/servicios/escuelas.html">Escoles nàutiques</a><a href="/ca/servicios/amarres.html">Amarradors</a></div></div></div>
+      <a href="/ca/#juan">Sobre mi</a>
+      <a href="/ca/#contacto">Contacte</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20m%E2%80%99agradaria%20veure%20un%20vaixell." target="_blank" rel="noopener">Parlar amb Juan</a>
+    <div class="langsw" aria-label="Idioma"><a href="https://www.platamarine.com/visita/"><span class="flag flag-es" aria-hidden="true"></span><span class="sr-only">ES</span></a><a href="https://www.platamarine.com/ca/visita/" aria-current="page"><span class="flag flag-ca" aria-hidden="true"></span><span class="sr-only">CA</span></a><a href="https://www.platamarine.com/en/visita/"><span class="flag flag-en" aria-hidden="true"></span><span class="sr-only">EN</span></a><a href="https://www.platamarine.com/fr/visita/"><span class="flag flag-fr" aria-hidden="true"></span><span class="sr-only">FR</span></a></div>
+    <button type="button" class="pmx-btn" id="pmxBtn" aria-expanded="false" aria-controls="pmxPanel" aria-label="Obrir menú" data-open="Obrir menú" data-close="Tancar menú"><span></span></button>
+  </div>
+  <nav class="pmx-panel" id="pmxPanel" aria-label="Menú mòbil">
+    <div class="pmx-in">
+      <div class="pmx-grp pmx-main"><a href="/ca/barcos/">Vaixells en venda</a><a href="/ca/vender-barco/">Vendre el meu vaixell</a><a href="/ca/#comprar">Et busco vaixell</a></div>
+      <div class="pmx-reshead"><p>Recursos</p></div>
+      <div class="pmx-grp pmx-sub"><p>Vendre</p><a href="/ca/herramientas/valora-tu-barco.html">Què influeix en el preu del meu vaixell?</a><a href="/ca/papeles-fiscalidad/">Papers i impostos</a><a href="/ca/guias/que-hace-un-broker-nautico.html">Què fa un bròker nàutic</a><a href="/ca/vender/broker-nautico-barcelona-maresme.html">Vendre a Barcelona i Maresme</a><a href="/ca/vender/guia-fotos-barco.html">Com fer les fotos del teu vaixell</a></div><div class="pmx-grp pmx-sub"><p>Comprar</p><a href="/ca/alertas/">Avisa&#x27;m de vaixells nous</a><a href="/ca/que-barco-necesito.html">Quin vaixell necessito?</a><a href="/ca/modelos/">Models: què mirar i preus</a><a href="/ca/comprar/">Comprar vaixell: per zona i tipus</a><a href="/ca/precios/">Preus de vaixells d’ocasió</a><a href="/ca/herramientas/">Calculadores: impostos, costos, finançament</a></div><div class="pmx-grp pmx-sub"><p>Aprèn</p><a href="/ca/guias/">Guies</a><a href="/ca/actualidad/">Actualitat</a><a href="/ca/navegante/">Guia del navegant</a><a href="/ca/titulaciones/">Titulacions</a></div><div class="pmx-grp pmx-sub"><p>Serveis</p><a href="/ca/servicios/">ITB, gestoria, varador i més</a><a href="/ca/servicios/directorio.html">Directori d&#x27;empreses</a><a href="/ca/servicios/escuelas.html">Escoles nàutiques</a><a href="/ca/servicios/amarres.html">Amarradors</a></div>
+      <div class="pmx-grp pmx-main"><a href="/ca/#juan">Sobre mi</a><a href="/ca/#contacto">Contacte</a></div>
+      <div class="pmx-wide"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20vull%20parlar%20sobre%20un%20vaixell." target="_blank" rel="noopener">Parlar amb en Juan</a></div>
+    </div>
+  </nav>
+</header>
+
+<main class="art">
+  <div class="wrap">
+    <article>
+      <header>
+        <p class="eyebrow">Comprar · Visita</p>
+        <h1>Sol·licita una visita per veure el vaixell</h1>
+        <div class="meta"><span>Gratuït i sense compromís</span><span>Te la confirmo per WhatsApp</span></div>
+        <p class="lead">Tria el dia i l’hora que et vagin millor. Abans de confirmar-te-la la quadro amb el propietari, i t’escric per WhatsApp amb el dia, l’hora i el punt de trobada.</p>
+      </header>
+
+      <div class="prose">
+        <div class="pmf">
+          <form id="visitaForm" novalidate>
+            <p class="step">1. Vaixell</p>
+            <div class="f" id="v-barco-box" data-label="Vaixell que vols veure"></div>
+            <p class="step">2. Dia i hora</p>
+            <div class="v-sched">
+              <div id="v-cal"></div>
+              <div id="v-horas"></div>
+            </div>
+            <p class="v-sum" id="v-resumen" hidden></p>
+            <p class="step">3. Les teves dades</p>
+            <div class="row">
+              <div class="f"><label class="l" for="v-nombre">Nom *</label><input type="text" name="nombre" id="v-nombre" autocomplete="name" placeholder="Com et dic" required maxlength="80"></div>
+              <div class="f"><label class="l" for="v-tel">Telèfon (WhatsApp) *</label><input type="tel" name="telefono" id="v-tel" autocomplete="tel" placeholder="Amb prefix si no és d’Espanya" required inputmode="tel" maxlength="20"></div>
+            </div>
+            <div class="row">
+              <div class="f"><label class="l" for="v-email">Correu *</label><input type="email" name="email" id="v-email" autocomplete="email" placeholder="el.teu@correu.com" maxlength="120" required></div>
+              <div class="f"><label class="l" for="v-tit">Titulació nàutica <small>(opcional)</small></label><select name="titulacion" id="v-tit"><option value="">Prefereixo no dir-ho</option><option value="Encara no en tinc">Encara no en tinc</option><option value="Llicència de Navegació">Llicència de Navegació</option><option value="PNB">PNB</option><option value="PER">PER</option><option value="Patró de Iot">Patró de Iot</option><option value="Capità de Iot">Capità de Iot</option></select></div>
+            </div>
+            <div class="f"><label class="l" for="v-notas">Alguna cosa que hagi de saber <small>(opcional)</small></label><textarea name="notas" id="v-notas" maxlength="600" placeholder="Si vens acompanyat, si el vols provar a l’aigua, si finances…"></textarea></div>
+            <label class="chk"><input type="checkbox" name="consent" required> <span>* Accepto que Plata Marine faci servir aquestes dades per organitzar la visita, segons la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
+            <label class="chk"><input type="checkbox" name="newsletter"> <span>Avisa’m també, de tant en tant, de guies, novetats i alguna oferta de vaixells en cartera de Plata Marine (res de correu brossa, baixa quan vulguis).</span></label>
+            <p class="legal req-note">Els camps amb * són obligatoris.</p>
+            <button type="submit" class="btn btn-wa">Sol·licitar visita</button>
+            <p class="msg" role="status" aria-live="polite"></p>
+            <p class="legal">Responsable: Juan Morante (Plata Marine), juan@platamarine.com. Finalitat: organitzar la visita que demanes i, només si ho marques, enviar-te novetats del web. Base legal: la teva pròpia sol·licitud (passos previs a una possible compra) i, per a les novetats, el teu consentiment, que pots retirar quan vulguis. Per organitzar la visita li dic al propietari, o a l’intermediari que tingui l’encàrrec, el teu nom i el dia; res més. Conservació: fins a dotze mesos després de la visita, tret que em demanis abans que les esborri. Drets: accés, rectificació, supressió, oposició i els altres que reconeix el RGPD, escrivint a juan@platamarine.com; també pots reclamar davant l’AEPD. Més informació a la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</p>
+            <p class="legal">També pots <a href="mailto:juan@platamarine.com">escriure a juan@platamarine.com</a>. Si no apareix una confirmació, consulta abans de tornar a enviar.</p>
+          </form>
+        </div>
+
+        <h2 id="como">Com funciona</h2>
+        <ol class="steps"><li>Tries el vaixell, el dia i l’hora. Els diumenges són sota petició: em dius la franja i et proposo hora.</li><li>Ho quadro amb el propietari. Fins aleshores la visita queda pendent.</li><li>T’escric per WhatsApp per confirmar-te dia, hora i punt de trobada. El port exacte te’l dono en aquell moment, per la privacitat del propietari.</li></ol>
+        <h2 id="antes">Abans de venir</h2>
+        <p>Si és el teu primer vaixell o dubtes entre diversos, t’ajudarà la guia de <a href="/ca/guias/que-mirar-comprar-barco-segunda-mano.html">què mirar en comprar de segona mà</a>. I si et sorgeix alguna cosa, avisa’m per WhatsApp i movem la visita sense problema.</p>
+      </div>
+    </article>
+
+    <aside class="aside" aria-label="Contacte i navegació">
+      <div class="card">
+        <p class="eyebrow">Prefereixes escriure’m?</p>
+        <h3>Demana’m la visita per WhatsApp.</h3>
+        <p>Digues-me quin vaixell vols veure i quins dies et van bé.</p>
+        <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20m%E2%80%99agradaria%20veure%20un%20vaixell.%20Vaixell%3A%20%20%7C%20Dies%20que%20em%20van%20b%C3%A9%3A%20" target="_blank" rel="noopener">Escriure a Juan per WhatsApp</a>
+      </div>
+      <div class="rel">
+        <p class="eyebrow">També et pot interessar</p>
+        <a href="/ca/barcos/">Vaixells en venda ara</a><a href="/ca/guias/que-mirar-comprar-barco-segunda-mano.html">Què mirar en comprar de segona mà</a><a href="/ca/titulaciones/">Titulacions nàutiques</a>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="line">
+      <span>© 2026 Plata Marine · Sabadell, Barcelona · <a href="mailto:juan@platamarine.com">juan@platamarine.com</a></span>
+      <a href="/ca/aviso-legal.html">Avís legal</a> · <a href="/ca/privacidad.html">Privacitat</a> · <a href="/ca/cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Web per rotulito.com</a>
+    </div>
+  </div>
+<p class="wrap"><button type="button" data-cookie-settings>Configurar les cookies</button></p></footer>
+<script src="/nav.js?v=20261006m" defer></script>
+<script src="/consent.js?v=20261006" defer></script>
+<script src="/submit-confirmed.js" defer></script>
+<script src="/analytics.js?v=20261006" defer></script>
+<script src="/inventario.js?v=20261006" defer></script>
+<script src="/visita/visita.js?v=20261010" defer></script>
+</body>
+</html>
