@@ -115,3 +115,53 @@
   function start(){ window.addEventListener('scroll',onScroll,{passive:true}); timer=setTimeout(show,45000); }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',start); else start();
 })();
+/* Contador propio de visitas y contactos por canal (hoja "Plata Marine · visitas"). Añadido el 10 oct 2026.
+   Solo con consentimiento de analítica, sin cookies propias, sin IP ni datos personales: página, canal, idioma, barco. */
+(function(){
+  var URL='https://script.google.com/macros/s/AKfycbwgYSVM0lD8dnl3vqLYyL5wcyhW4OHDcu_JnmeYlqn3dOFE2ZGPnUp-AIcmMLJPdfFfbQ/exec';
+  if(URL.indexOf('https://script.google.com/')!==0) return;
+  var p=location.pathname, lang=p.indexOf('/ca/')===0?'ca':p.indexOf('/en/')===0?'en':p.indexOf('/fr/')===0?'fr':'es';
+  var bm=p.match(/\/barcos\/([a-z0-9-]+)\.html$/), boat=bm?bm[1]:'';
+  function canalDe(a){
+    if(!a) return 'Directo';
+    var s=(a.utm_source||'').toLowerCase(), m=(a.utm_medium||'').toLowerCase(), r=(a.referrer||'').toLowerCase();
+    if(a.gclid||(/google/.test(s)&&/cpc|paid|ads/.test(m))) return 'Google Ads';
+    if(a.fbclid&&!s) return /instagram/.test(r)?'Instagram':'Facebook';
+    if(/facebook|instagram|meta|ig|fb/.test(s)&&/cpc|paid|ads/.test(m)) return 'Meta Ads';
+    var t=s||r;
+    if(/wallapop/.test(t)) return 'Wallapop';
+    if(/coches\.net|cochesnet/.test(t)) return 'Coches.net';
+    if(/milanuncios/.test(t)) return 'Milanuncios';
+    if(/cosasdebarcos/.test(t)) return 'Cosas de Barcos';
+    if(/instagram/.test(t)) return 'Instagram';
+    if(/facebook|fb\.me/.test(t)) return 'Facebook';
+    if(/whatsapp|wa\.me/.test(t)) return 'WhatsApp';
+    if(/google|bing|duckduckgo|yahoo|ecosia|qwant/.test(t)) return 'Buscador';
+    if(/chatgpt|openai|perplexity|gemini|copilot/.test(t)) return 'Asistentes IA';
+    if(a.source==='direct') return 'Directo';
+    if(s) return s.slice(0,40);
+    try{return new URL(r).hostname.replace(/^www\./,'').slice(0,40);}catch(e){return 'Otro';}
+  }
+  function canal(){return canalDe(window.pmAttribution&&window.pmAttribution());}
+  function enviar(d){
+    if(!window.__pmAnalyticsAllowed) return;
+    d.p=p; d.l=lang; d.c=canal(); if(!d.b&&boat) d.b=boat;
+    var body=JSON.stringify(d);
+    try{ if(navigator.sendBeacon&&navigator.sendBeacon(URL,new Blob([body],{type:'text/plain'}))) return; }catch(e){}
+    try{fetch(URL,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain'},body:body});}catch(e){}
+  }
+  /* visita: se envía al cargar o, si acepta las cookies después, en cuanto las acepta (máx. 2 min) */
+  var entrada=!document.referrer||document.referrer.indexOf(location.origin)!==0;
+  var n=0, iv=setInterval(function(){ if(window.__pmAnalyticsAllowed){clearInterval(iv); enviar({t:'visita',e:entrada?1:0});} else if(++n>120) clearInterval(iv); },1000);
+  /* contactos y leads: se enganchan a la medición que ya existe (window.pmTrack) */
+  var prev=window.pmTrack;
+  if(typeof prev==='function'){
+    window.pmTrack=function(name,params){
+      try{
+        var t=name==='contact_intent'?'contacto':name==='generate_lead'?'lead':name==='newsletter_signup'?'novedades':'';
+        if(t) enviar({t:t,b:(params&&params.boat)||'',m:(params&&(params.contact_method||params.form_id))||''});
+      }catch(e){}
+      return prev.apply(this,arguments);
+    };
+  }
+})();
