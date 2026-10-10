@@ -138,11 +138,23 @@
     sum.hidden = false;
     sum.textContent = T.summary(fmtLong(state.fecha), state.modo === 'horas' ? state.hora : '');
   }
-  function load(keepDay) {
-    cal.innerHTML = '<p class="v-hint">' + T.loading + '</p>';
-    var ctrl = new AbortController(), timer = setTimeout(function () { ctrl.abort(); }, 20000);
+  function getHuecos(intento) {
+    var ctrl = new AbortController(), timer = setTimeout(function () { ctrl.abort(); }, 25000);
     return fetch(API + '?accion=huecos', {credentials: 'omit', signal: ctrl.signal}).then(function (r) { return r.json(); }).then(function (j) {
       clearTimeout(timer);
+      if (!j || !j.ok || !j.dias || !j.dias.length) throw new Error('vacío');
+      return j;
+    }).catch(function (e) {
+      clearTimeout(timer);
+      // el servidor de Google a veces falla en el primer intento: se reintenta dos veces
+      if (intento < 2) return new Promise(function (r) { setTimeout(r, 1500); }).then(function () { return getHuecos(intento + 1); });
+      throw e;
+    });
+  }
+  function load(keepDay) {
+    cal.innerHTML = '<p class="v-hint">' + T.loading + '</p>';
+    var timer = 0;
+    return getHuecos(0).then(function (j) {
       if (!j || !j.ok || !j.dias || !j.dias.length) throw new Error('vacío');
       state.dias = {};
       j.dias.forEach(function (d) { state.dias[d.fecha] = d; });
