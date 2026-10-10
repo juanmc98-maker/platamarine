@@ -11,7 +11,7 @@
   var LANG = path.indexOf('/ca/') === 0 ? 'ca' : path.indexOf('/en/') === 0 ? 'en' : path.indexOf('/fr/') === 0 ? 'fr' : 'es';
   var PRE = LANG === 'es' ? '' : '/' + LANG;
   var T = {
-    es: {wd: ['L', 'M', 'X', 'J', 'V', 'S', 'D'], loading: 'Cargando los días disponibles…', loadFail: 'Ahora mismo no puedo mostrar el calendario. Escríbeme por WhatsApp y lo cuadramos.',
+    es: {pop: {title: 'Solicitud recibida', meanwhile: 'Mientras te lo confirmo', guide: 'Qué revisar el día de la visita', guideSub: 'La lista que uso yo cuando enseño un barco', similar: 'Otros barcos que te pueden gustar', alert: 'Avísame si entra uno parecido', alertSub: 'Te escribo solo si encaja con lo que buscas', close: 'Cerrar', vat: '+IVA'}, wd: ['L', 'M', 'X', 'J', 'V', 'S', 'D'], loading: 'Cargando los días disponibles…', loadFail: 'Ahora mismo no puedo mostrar el calendario. Escríbeme por WhatsApp y lo cuadramos.',
       pickDay: 'Elige primero un día.', noHours: 'Ese día ya no quedan horas libres.', request: 'Este día es bajo solicitud: dime qué franja te va mejor y te propongo una hora.',
       franja: 'Franja que te va mejor', fr: ['Por la mañana', 'A mediodía', 'Por la tarde'], any: 'Todavía no lo sé / quiero ver varios', choose: 'Elige un barco',
       chosen: 'Has elegido', change: 'cambiar', prev: 'Mes anterior', next: 'Mes siguiente', legendReq: 'bajo solicitud',
@@ -20,7 +20,7 @@
       sending: 'Enviando…', ok: 'Solicitud recibida. La visita queda pendiente hasta que la cuadre con el propietario; te escribo por WhatsApp para confirmarte día, hora y punto de encuentro.', okBtn: 'Solicitud enviada ✓',
       taken: 'Esa hora se acaba de ocupar. Elige otra, por favor.', fail: 'No he podido confirmar que tu solicitud ha llegado. Tus datos siguen aquí: vuelve a intentarlo en unos minutos o escríbeme por <a href="https://wa.me/34633742973" target="_blank" rel="noopener">WhatsApp</a>.',
       summary: function (d, h) { return 'Visita: ' + d + (h ? ' a las ' + h : '') + '.'; }},
-    ca: {wd: ['Dl', 'Dt', 'Dc', 'Dj', 'Dv', 'Ds', 'Dg'], loading: 'Carregant els dies disponibles…', loadFail: "Ara mateix no puc mostrar el calendari. Escriu-me per WhatsApp i ho quadrem.",
+    ca: {pop: {title: 'Sol·licitud rebuda', meanwhile: 'Mentre t’ho confirmo', guide: 'Què revisar el dia de la visita', guideSub: 'La llista que faig servir quan ensenyo un vaixell', similar: 'Altres vaixells que et poden agradar', alert: 'Avisa’m si n’entra un de semblant', alertSub: 'T’escric només si encaixa amb el que busques', close: 'Tancar', vat: '+IVA'}, wd: ['Dl', 'Dt', 'Dc', 'Dj', 'Dv', 'Ds', 'Dg'], loading: 'Carregant els dies disponibles…', loadFail: "Ara mateix no puc mostrar el calendari. Escriu-me per WhatsApp i ho quadrem.",
       pickDay: 'Tria primer un dia.', noHours: "Aquest dia ja no queden hores lliures.", request: "Aquest dia és sota petició: digues-me quina franja et va millor i et proposo una hora.",
       franja: 'Franja que et va millor', fr: ['Al matí', 'Al migdia', 'A la tarda'], any: 'Encara no ho sé / vull veure’n diversos', choose: 'Tria un vaixell',
       chosen: 'Has triat', change: 'canviar', prev: 'Mes anterior', next: 'Mes següent', legendReq: 'sota petició',
@@ -29,7 +29,7 @@
       sending: 'Enviant…', ok: "Sol·licitud rebuda. La visita queda pendent fins que la quadri amb el propietari; t’escric per WhatsApp per confirmar-te dia, hora i punt de trobada.", okBtn: 'Sol·licitud enviada ✓',
       taken: "Aquesta hora s’acaba d’ocupar. Tria’n una altra, si us plau.", fail: 'No he pogut confirmar que la sol·licitud ha arribat. Les teves dades segueixen aquí: torna-ho a provar d’aquí a uns minuts o escriu-me per <a href="https://wa.me/34633742973" target="_blank" rel="noopener">WhatsApp</a>.',
       summary: function (d, h) { return 'Visita: ' + d + (h ? ' a les ' + h : '') + '.'; }},
-    en: {wd: ['M', 'T', 'W', 'T', 'F', 'S', 'S'], loading: 'Loading available days…', loadFail: "I can't show the calendar right now. Message me on WhatsApp and we'll arrange it.",
+    en: {pop: {title: 'Request received', meanwhile: 'While I confirm it', guide: 'What to check on viewing day', guideSub: 'The checklist I use when I show a boat', similar: 'Other boats you may like', alert: 'Let me know if a similar one comes in', alertSub: 'I only write if it matches what you are looking for', close: 'Close', vat: '+VAT'}, wd: ['M', 'T', 'W', 'T', 'F', 'S', 'S'], loading: 'Loading available days…', loadFail: "I can't show the calendar right now. Message me on WhatsApp and we'll arrange it.",
       pickDay: 'Choose a day first.', noHours: 'There are no free times left that day.', request: "This day is on request: tell me which part of the day suits you and I'll suggest a time.",
       franja: 'Time of day that suits you', fr: ['Morning', 'Around midday', 'Afternoon'], any: "I don't know yet / I'd like to see several", choose: 'Choose a boat',
       chosen: "You've chosen", change: 'change', prev: 'Previous month', next: 'Next month', legendReq: 'on request',
@@ -38,7 +38,7 @@
       sending: 'Sending…', ok: "Request received. The viewing stays pending until I've arranged it with the owner; I'll message you on WhatsApp to confirm the day, time and meeting point.", okBtn: 'Request sent ✓',
       taken: 'That time has just been taken. Please choose another one.', fail: "I couldn't confirm that your request arrived. Your details are still here: try again in a few minutes or message me on <a href=\"https://wa.me/34633742973\" target=\"_blank\" rel=\"noopener\">WhatsApp</a>.",
       summary: function (d, h) { return 'Viewing: ' + d + (h ? ' at ' + h : '') + '.'; }},
-    fr: {wd: ['L', 'M', 'M', 'J', 'V', 'S', 'D'], loading: 'Chargement des jours disponibles…', loadFail: "Je ne peux pas afficher le calendrier pour le moment. Écrivez-moi sur WhatsApp et nous l’organiserons.",
+    fr: {pop: {title: 'Demande reçue', meanwhile: 'En attendant ma confirmation', guide: 'Que vérifier le jour de la visite', guideSub: 'La liste que j’utilise quand je montre un bateau', similar: 'D’autres bateaux qui pourraient vous plaire', alert: 'Prévenez-moi si un bateau similaire arrive', alertSub: 'Je n’écris que si cela correspond à votre recherche', close: 'Fermer', vat: '+TVA'}, wd: ['L', 'M', 'M', 'J', 'V', 'S', 'D'], loading: 'Chargement des jours disponibles…', loadFail: "Je ne peux pas afficher le calendrier pour le moment. Écrivez-moi sur WhatsApp et nous l’organiserons.",
       pickDay: 'Choisissez d’abord un jour.', noHours: 'Il n’y a plus de créneau libre ce jour-là.', request: 'Ce jour est sur demande : dites-moi quel moment vous convient et je vous proposerai une heure.',
       franja: 'Moment qui vous convient', fr: ['Le matin', 'Vers midi', 'L’après-midi'], any: 'Je ne sais pas encore / je veux en voir plusieurs', choose: 'Choisissez un bateau',
       chosen: 'Vous avez choisi', change: 'modifier', prev: 'Mois précédent', next: 'Mois suivant', legendReq: 'sur demande',
@@ -171,6 +171,54 @@
   }
   load(false);
 
+  /* ---------- ventana tras enviar ---------- */
+  function money(n) { try { return n.toLocaleString(LANG === 'en' ? 'en-GB' : LANG, {maximumFractionDigits: 0}) + ' €'; } catch (e) { return n + ' €'; } }
+  function similares(b) {
+    var ref = b && b.price ? b.price : 0;
+    return boats.filter(function (x) { return !b || (x.slug !== b.slug && (!b.kind || x.kind === b.kind)); })
+      .sort(function (x, y) { return Math.abs((x.price || 0) - ref) - Math.abs((y.price || 0) - ref); })
+      .slice(0, 3);
+  }
+  function popup(b) {
+    var P = T.pop, last = document.activeElement;
+    if (!document.getElementById('pm-pop-css')) {
+      var st = document.createElement('style'); st.id = 'pm-pop-css';
+      st.textContent = '.pm-pop{position:fixed;inset:0;z-index:9999;background:rgba(13,28,39,.55);display:flex;align-items:center;justify-content:center;padding:16px;animation:pmf .2s ease}' +
+        '.pm-pop .bx{background:#fff;border-radius:12px;max-width:520px;width:100%;max-height:calc(100vh - 32px);overflow:auto;box-shadow:0 20px 60px rgba(0,0,0,.3);animation:pmu .25s ease}' +
+        '.pm-pop .hd{position:relative}.pm-pop .hd img{display:block;width:100%;height:170px;object-fit:cover;border-radius:12px 12px 0 0}' +
+        '.pm-pop .ok{display:flex;gap:12px;align-items:flex-start;padding:18px 20px 6px}.pm-pop .ok i{flex:0 0 34px;height:34px;border-radius:50%;background:#0B766B;color:#fff;font:700 18px/34px Arial;text-align:center;font-style:normal}' +
+        '.pm-pop h2{margin:0 0 4px;font:700 19px/1.25 var(--display,Arial);color:var(--ink,#0E3042)}.pm-pop p{margin:0;font:14px/1.5 var(--display,Arial);color:var(--ink-2,#4A5D69)}' +
+        '.pm-pop .sec{padding:12px 20px 0}.pm-pop .lab{font:700 11px var(--display,Arial);letter-spacing:.1em;text-transform:uppercase;color:var(--brass,#B58A2C);margin:8px 0 8px}' +
+        '.pm-pop a.row{display:flex;gap:12px;align-items:center;padding:10px 12px;border:1px solid var(--plata-2,#D5DDE2);border-radius:8px;text-decoration:none;color:var(--ink,#0E3042);margin:0 0 8px;font:600 14px var(--display,Arial)}.pm-pop a.row small{display:block;font-weight:400;color:var(--ink-2,#4A5D69)}.pm-pop a.row:hover{border-color:var(--ink,#0E3042)}' +
+        '.pm-pop .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.pm-pop .cards a{text-decoration:none;color:var(--ink,#0E3042);font:600 12.5px/1.3 var(--display,Arial)}.pm-pop .cards img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;margin:0 0 4px}.pm-pop .cards span{display:block;font-weight:400;color:var(--ink-2,#4A5D69)}.pm-pop .cards b.v{color:#c0392b;font-weight:700}' +
+        '.pm-pop .ft{padding:14px 20px 18px;text-align:right}.pm-pop .x{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.92);font-size:20px;cursor:pointer;color:#0E3042}' +
+        '.pm-pop .btnc{border:1px solid var(--ink,#0E3042);background:#fff;color:var(--ink,#0E3042);border-radius:6px;padding:9px 16px;font:600 14px var(--display,Arial);cursor:pointer}' +
+        '@keyframes pmf{from{opacity:0}}@keyframes pmu{from{transform:translateY(16px);opacity:0}}@media (prefers-reduced-motion:reduce){.pm-pop,.pm-pop .bx{animation:none}}@media (max-width:480px){.pm-pop .cards{grid-template-columns:repeat(2,1fr)}.pm-pop .cards a:nth-child(3){display:none}}';
+      document.head.appendChild(st);
+    }
+    var img = b && b.slug ? '<img src="/' + b.slug + '-1-m.jpg" alt="' + esc(b.name) + '">' : '';
+    var cards = similares(b && b.slug ? b : null).map(function (x) {
+      return '<a href="' + PRE + '/barcos/' + x.slug + '.html"><img src="/' + x.slug + '-1-t.jpg" alt="" loading="lazy">' + esc(x.name) +
+        '<span>' + (x.price ? money(x.price) + (x.vat ? ' <b class="v">' + P.vat + '</b>' : '') : '') + '</span></a>';
+    }).join('');
+    var w = document.createElement('div');
+    w.className = 'pm-pop'; w.setAttribute('role', 'dialog'); w.setAttribute('aria-modal', 'true'); w.setAttribute('aria-labelledby', 'pmPopT');
+    w.innerHTML = '<div class="bx"><div class="hd">' + img + '<button type="button" class="x" aria-label="' + P.close + '">×</button></div>' +
+      '<div class="ok"><i aria-hidden="true">✓</i><div><h2 id="pmPopT">' + P.title + '</h2><p>' + T.ok.replace(/^[^.]+\.\s*/, '') + '</p></div></div>' +
+      '<div class="sec"><p class="lab">' + P.meanwhile + '</p>' +
+      '<a class="row" href="' + PRE + '/guias/que-mirar-comprar-barco-segunda-mano.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E3042" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12l2 2 4-4M9 17h6"/></svg><span>' + P.guide + '<small>' + P.guideSub + '</small></span></a>' +
+      '<a class="row" href="' + PRE + '/alertas/"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E3042" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span>' + P.alert + '<small>' + P.alertSub + '</small></span></a></div>' +
+      (cards ? '<div class="sec"><p class="lab">' + P.similar + '</p><div class="cards">' + cards + '</div></div>' : '') +
+      '<div class="ft"><button type="button" class="btnc">' + P.close + '</button></div></div>';
+    document.body.appendChild(w);
+    function cerrar() { w.remove(); document.removeEventListener('keydown', onKey); if (last && last.focus) last.focus(); }
+    function onKey(e) { if (e.key === 'Escape') cerrar(); }
+    w.addEventListener('click', function (e) { if (e.target === w || e.target.closest('.x,.btnc')) cerrar(); });
+    w.addEventListener('click', function (e) { var a = e.target.closest('a'); if (a) { try { if (window.pmTrack) window.pmTrack('select_content', {form_id: 'visitaForm', label: a.getAttribute('href')}); } catch (x) {} } });
+    document.addEventListener('keydown', onKey);
+    w.querySelector('.x').focus();
+  }
+
   /* ---------- envío ---------- */
   function val(n) { var x = f.querySelector('[name=' + n + ']'); if (!x) return ''; return x.type === 'checkbox' ? x.checked : (x.value || '').trim(); }
   function bad(t, n) {
@@ -203,6 +251,7 @@
     window.submitConfirmed(API, p, 'json', f).then(function () {
       state.sent = true; state.busy = false;
       msg.className = 'msg ok'; msg.textContent = T.ok; btn.textContent = T.okBtn;
+      try { popup(state.barco); } catch (e) {}
       try { if (window.pmTrack) window.pmTrack('generate_lead', {form_id: 'visitaForm', contact_purpose: 'visit', boat: slug}); } catch (e) {}
     }).catch(function (e) {
       state.busy = false; btn.disabled = false; btn.textContent = lbl;
