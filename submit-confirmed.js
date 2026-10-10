@@ -85,7 +85,7 @@ window.submitConfirmed = function (url, body, encoding, form) {
       if (!response.ok || response.type === 'opaque') throw err('unconfirmed');
       var result;
       try { result = await response.json(); } catch (e) { throw err('unconfirmed'); }
-      if (!result || result.ok !== true) throw err('unconfirmed');
+      if (!result || result.ok !== true) { var no = err('unconfirmed'); no.reason = result && result.error ? String(result.error) : ''; throw no; }
       return result;
     } finally { clearTimeout(timer); }
   })();
