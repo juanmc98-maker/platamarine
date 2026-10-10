@@ -113,6 +113,26 @@
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
 })();
 
+/* "Síguenos" en el pie de todas las páginas: Instagram y página de Facebook de Plata Marine (enlaces simples, sin widgets ni cookies de terceros). */
+(function(){
+  function run(){
+    var foot=document.querySelector('footer.foot .wrap'); if(!foot||document.getElementById('pmFollow'))return;
+    var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
+    var t={'':'Síguenos','/ca':'Segueix-nos','/en':'Follow us','/fr':'Suivez-nous'}[pre];
+    var I={ig:'<svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM21.9 7.9c-.1-1.6-.4-3-1.6-4.2S17.7 2.2 16.1 2.1C14.5 2 9.5 2 7.9 2.1 6.3 2.2 4.9 2.5 3.7 3.7S2.2 6.3 2.1 7.9C2 9.5 2 14.5 2.1 16.1c.1 1.6.4 3 1.6 4.2s2.6 1.5 4.2 1.6c1.6.1 6.6.1 8.2 0 1.6-.1 3-.4 4.2-1.6s1.5-2.6 1.6-4.2c.1-1.6.1-6.6 0-8.2zm-2.1 10c-.3.9-1 1.5-1.9 1.9-1.3.5-4.4.4-5.9.4s-4.6.1-5.9-.4c-.9-.3-1.5-1-1.9-1.9-.5-1.3-.4-4.4-.4-5.9s-.1-4.6.4-5.9c.3-.9 1-1.5 1.9-1.9C7.4 3.7 10.5 3.8 12 3.8s4.6-.1 5.9.4c.9.3 1.5 1 1.9 1.9.5 1.3.4 4.4.4 5.9s.1 4.6-.4 5.9z"/></svg>',
+      fb:'<svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.3H7.4V14h2.8v8h3.3z"/></svg>'};
+    var L=[['ig','Instagram','https://www.instagram.com/platamarine/'],['fb','Facebook','https://www.facebook.com/platamarine/']];
+    if(!document.getElementById('pmFollowCss')){var st=document.createElement('style');st.id='pmFollowCss';st.textContent='.pm-follow{border-bottom:1px solid rgba(183,195,203,.22);padding:16px 0 18px}.pm-follow p{font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#7F929E;margin:0 0 10px}.pm-follow-row{display:flex;flex-wrap:wrap;gap:8px}.pm-follow-row a{display:inline-flex;align-items:center;gap:8px;font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-size:13.5px;font-weight:600;color:#fff;text-decoration:none;background:rgba(255,255,255,.08);border:1px solid rgba(183,195,203,.35);border-radius:999px;padding:9px 15px 9px 12px;line-height:1;transition:background .15s}.pm-follow-row a:hover{background:rgba(255,255,255,.16)}.pm-follow-row svg{width:16px;height:16px;fill:currentColor;flex:none}';document.head.appendChild(st);}
+    var box=document.createElement('div');box.id='pmFollow';box.className='pm-follow';
+    var h='<p>'+t+'</p><div class="pm-follow-row">';
+    L.forEach(function(l){h+='<a href="'+l[2]+'" target="_blank" rel="noopener" data-no-track data-follow="'+l[0]+'">'+I[l[0]]+'<span>'+l[1]+'</span></a>';});
+    box.innerHTML=h+'</div>';
+    var sh=document.getElementById('pmShare');
+    if(sh&&sh.parentNode===foot)foot.insertBefore(box,sh.nextSibling);else foot.insertBefore(box,foot.firstChild);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
+})();
+
 /* Enlace "Cómo hacer las fotos de tu barco" en el menú Vender de todas las páginas. */
 (function(){
   var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
