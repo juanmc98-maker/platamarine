@@ -5,16 +5,20 @@
 var main = document.getElementById('main');
 if(!main) return;
 var L = {
-  es: {dlg:'Foto ampliada', close:'Cerrar', prev:'Foto anterior', next:'Foto siguiente', zoom:'Ampliar foto'},
-  ca: {dlg:'Foto ampliada', close:'Tancar', prev:'Foto anterior', next:'Foto següent', zoom:'Ampliar la foto'},
-  en: {dlg:'Enlarged photo', close:'Close', prev:'Previous photo', next:'Next photo', zoom:'Enlarge photo'},
-  fr: {dlg:'Photo agrandie', close:'Fermer', prev:'Photo précédente', next:'Photo suivante', zoom:'Agrandir la photo'}
+  es: {photo:'foto', dlg:'Foto ampliada', close:'Cerrar', prev:'Foto anterior', next:'Foto siguiente', zoom:'Ampliar foto'},
+  ca: {photo:'foto', dlg:'Foto ampliada', close:'Tancar', prev:'Foto anterior', next:'Foto següent', zoom:'Ampliar la foto'},
+  en: {photo:'photo', dlg:'Enlarged photo', close:'Close', prev:'Previous photo', next:'Next photo', zoom:'Enlarge photo'},
+  fr: {photo:'photo', dlg:'Photo agrandie', close:'Fermer', prev:'Photo précédente', next:'Photo suivante', zoom:'Agrandir la photo'}
 }[(document.documentElement.lang || 'es').slice(0,2)] || null;
-if(!L) L = {dlg:'Foto ampliada', close:'Cerrar', prev:'Foto anterior', next:'Foto siguiente', zoom:'Ampliar foto'};
+if(!L) L = {photo:'foto', dlg:'Foto ampliada', close:'Cerrar', prev:'Foto anterior', next:'Foto siguiente', zoom:'Ampliar foto'};
 
 var thumbsWrap = document.querySelector('.thumbs');
 var thumbs = thumbsWrap ? Array.prototype.slice.call(thumbsWrap.querySelectorAll('img')) : [];
-var images = thumbs.length ? thumbs.map(function(t){ return { src: t.getAttribute('data-full') || t.currentSrc || t.src, alt: t.alt || main.alt }; }) : [{ src: main.src, alt: main.alt }];
+/* Texto alternativo por foto: la descripción de la portada solo vale para la primera foto.
+   Las demás usan su propio alt si lo tienen; si no, "Modelo · foto N de M" (no repetir una descripción que no corresponde). */
+var boatName = ((document.querySelector('h1') || {}).textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80);
+var firstAlt = main.alt;
+var images = thumbs.length ? thumbs.map(function(t, i){ return { src: t.getAttribute('data-full') || t.currentSrc || t.src, alt: t.alt || (i === 0 ? firstAlt : (boatName ? boatName + ' · ' : '') + L.photo + ' ' + (i + 1) + ' / ' + thumbs.length) }; }) : [{ src: main.src, alt: main.alt }];
 var current = 0;
 
 function setMain(i){
@@ -22,6 +26,7 @@ function setMain(i){
   var full = images[current].src;
   if (/-\d+\.jpg$/.test(full)) main.srcset = full.replace(/\.jpg$/, '-m.jpg') + ' 1000w, ' + full + ' 1600w'; else main.removeAttribute('srcset');
   main.src = full;
+  main.alt = images[current].alt;
   thumbs.forEach(function(t, idx){ t.className = idx === current ? 'on' : ''; });
 }
 
