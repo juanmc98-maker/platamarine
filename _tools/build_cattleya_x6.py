@@ -33,7 +33,7 @@ D = {
          ('Amarre', 'De alquiler en Ibiza; según el propietario, con posibilidad de subrogación'),
          ('Titulación', 'Licencia de Navegación o superior'), ('Bandera', 'Española'),
          ('ITB', 'Se entrega recién pasada (el propietario la está tramitando ahora)'), ('Garantía', 'Motor con garantía de fábrica hasta mayo de 2028, transferible al comprador'),
-         ('Impuestos', 'Precio sin IVA (vende una sociedad); el desglose se confirma con la documentación antes de reservar')],
+         ('Impuestos', 'Precio sin IVA (vende una sociedad, con factura con IVA). Si la compras para una actividad empresarial, como el chárter, el IVA puede ser deducible: confírmalo con tu asesor. El desglose se confirma con la documentación antes de reservar')],
   h2='Cómo lo veo',
   paras=[
    'Una Cattleya X6 de 2021 que ha trabajado en chárter en Ibiza y se nota en cómo está preparada: bimini sobre estructura de acero inoxidable hecha a medida, solárium de proa con colchonetas y tapicería nuevas de 2026, mesa desmontable de madera y ducha de agua dulce. Es una lancha de día, sencilla y con espacio, pensada para salir a las calas.',
@@ -67,7 +67,7 @@ D = {
          ('Amarratge', 'De lloguer a Eivissa; segons el propietari, amb possibilitat de subrogació'),
          ('Titulació', 'Llicència de Navegació o superior'), ('Bandera', 'Espanyola'),
          ('ITB', "Es lliura acabada de passar (el propietari l'està tramitant ara)"), ('Garantia', 'Motor amb garantia de fàbrica fins al maig del 2028, transferible al comprador'),
-         ('Impostos', 'Preu sense IVA (ven una societat); el desglossament es confirma amb la documentació abans de reservar')],
+         ('Impostos', 'Preu sense IVA (ven una societat, amb factura amb IVA). Si la compres per a una activitat empresarial, com el xàrter, l'IVA pot ser deduïble: confirma-ho amb el teu assessor. El desglossament es confirma amb la documentació abans de reservar')],
   h2='Com el veig',
   paras=[
    'Una Cattleya X6 del 2021 que ha treballat en xàrter a Eivissa i es nota en com està preparada: bimini sobre estructura d\'acer inoxidable feta a mida, solàrium de proa amb matalassets i tapisseria nous del 2026, taula desmuntable de fusta i dutxa d\'aigua dolça. És una llanxa de dia, senzilla i amb espai, pensada per anar a les cales.',
@@ -101,7 +101,7 @@ D = {
          ('Berth', 'Rented berth in Ibiza; according to the owner it can be taken over'),
          ('Licence', 'Navigation Licence or higher'), ('Flag', 'Spanish'),
          ('ITB', 'Delivered with a freshly passed ITB (the owner is arranging it now)'), ('Warranty', 'Engine under factory warranty until May 2028, transferable to the buyer'),
-         ('Taxes', 'Price excludes VAT (sold by a company); the breakdown is confirmed from the documentation before you reserve')],
+         ('Taxes', 'Price excludes VAT (sold by a company, with a VAT invoice). If you buy it for a business activity such as charter, the VAT may be deductible: check with your adviser. The breakdown is confirmed from the documentation before you reserve')],
   h2='My take',
   paras=[
    'A 2021 Cattleya X6 that has been working as a charter boat in Ibiza, and you can tell from how it is set up: a bimini on a custom-made stainless-steel frame, a bow sunbed with cushions and upholstery new in 2026, a removable wooden table and a fresh-water shower. It is a simple, roomy day boat made for going out to the coves.',
