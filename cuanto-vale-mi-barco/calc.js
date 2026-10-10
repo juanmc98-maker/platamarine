@@ -1,4 +1,4 @@
-/* Calculadora "¿Cuánto vale mi barco?" — rangos de /modelos/ (precios pedidos en anuncios, revisados cada mes).
+/* Calculadora "¿Cuánto vale mi barco?" — rangos de /modelos/ (precios pedidos en anuncios, revisados cada mes). Muestra la horquilla observada completa, sin estrecharla.
    Al actualizar /modelos/ y /precios/ (tarea mensual), actualizar también M. No envía datos personales. */
 (function(){
 var M=[
@@ -27,7 +27,7 @@ var sel=$('cvModelo');
 M.forEach(function(m,i){var o=document.createElement('option');o.value=i;o.textContent=m.n;sel.appendChild(o)});
 var o=document.createElement('option');o.value='otro';o.textContent=S.otro;sel.appendChild(o);
 sel.onchange=function(){$('cvOtro').hidden=sel.value!=='otro'};
-function track(r){try{window.pmTrack&&window.pmTrack('tool_result',{tool:'cuanto-vale',result:r})}catch(e){}}
+function track(r){try{window.pmTrack&&window.pmTrack('tool_result',{tool:'cuanto-vale',result_type:r})}catch(e){}}
 function wa(txt){return 'https://wa.me/34633742973?text='+encodeURIComponent(txt)}
 $('cvBtn').onclick=function(){
   var out=$('cvRes'),y=parseInt($('cvAnio').value,10),est=($('cvForm').querySelector('input[name=cvEst]:checked')||{}).value,hr=$('cvHoras').value;
@@ -52,11 +52,11 @@ $('cvBtn').onclick=function(){
       var lo=b[2],hi=b[3];
       if(!hi){h='<h2>'+name+' · '+y+'</h2><p class="cv-big">'+S.desde+' '+fmt(lo)+'</p><p>'+S.pocos+'</p>';}
       else{
-        var w=hi-lo,a,c;
-        if(est==='top'){a=lo+.55*w;c=hi}else if(est==='normal'){a=lo+.25*w;c=lo+.75*w}else{a=lo;c=lo+.4*w}
-        if(hr==='altas'){a-=.1*w;c-=.1*w;if(a<lo&&est!=='obra')a=lo}
-        h='<h2>'+name+' · '+y+'</h2><p class="cv-big">'+fmt(a)+' – '+fmt(c)+'</p>';
+        /* Se muestra la horquilla observada completa. No se estrecha con porcentajes por estado u horas:
+           no hay datos suficientes para justificar esos ajustes; el estado y las horas solo añaden notas. */
+        h='<h2>'+name+' · '+y+'</h2><p class="cv-big">'+fmt(lo)+' – '+fmt(hi)+'</p>';
         h+='<p>'+S.contexto.replace('{a}',fmt(lo)).replace('{b}',fmt(hi)).replace('{y0}',b[0]).replace('{y1}',b[1])+'</p>';
+        if(est==='top'&&S.top)h+='<p>'+S.top+'</p>';
         if(est==='obra')h+='<p>'+S.obra+'</p>';
         if(hr==='altas')h+='<p>'+S.horas+'</p>';
       }
