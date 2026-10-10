@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a viewing · Plata Marine</title>
+<meta name="description" content="Choose a day and time to see the boat you are interested in. I arrange it with the owner and confirm the viewing on WhatsApp.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://www.platamarine.com/en/visita/">
+<link rel="alternate" hreflang="es" href="https://www.platamarine.com/visita/">
+<link rel="alternate" hreflang="ca" href="https://www.platamarine.com/ca/visita/">
+<link rel="alternate" hreflang="en" href="https://www.platamarine.com/en/visita/">
+<link rel="alternate" hreflang="fr" href="https://www.platamarine.com/fr/visita/">
+<link rel="alternate" hreflang="x-default" href="https://www.platamarine.com/visita/">
+<link rel="icon" type="image/png" href="/logo-plata-marine.png">
+<meta property="og:title" content="Book a viewing">
+<meta property="og:description" content="Choose a day and time to see the boat you are interested in. I arrange it with the owner and confirm the viewing on WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.platamarine.com/en/visita/">
+<meta property="og:image" content="https://www.platamarine.com/og-image-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="stylesheet" href="/guias/guias.css">
+<style>.pmf{background:#fff;border:1px solid var(--plata);border-radius:8px;padding:22px 22px 18px;margin:0 0 22px}
+.pmf h2{margin-top:0;font-size:1.15rem}
+.pmf .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pmf .f{margin:0 0 12px}
+.pmf label.l{display:block;font-family:var(--display);font-size:13px;font-weight:600;color:var(--ink-2);margin:0 0 5px}
+.pmf input[type=text],.pmf input[type=email],.pmf input[type=tel],.pmf select,.pmf textarea{width:100%;font:16px var(--serif);padding:10px 12px;border:1px solid var(--plata-2);border-radius:6px;box-sizing:border-box;background:#fff;color:var(--ink)}
+.pmf textarea{min-height:80px;resize:vertical}
+.pmf label.chk{display:flex;gap:8px;align-items:flex-start;font-family:var(--display);font-size:13px;color:var(--ink-2);margin:0 0 8px;line-height:1.4}
+.pmf .btn{cursor:pointer}
+.pmf .msg{font-family:var(--display);font-size:13.5px;color:#c0392b;margin:8px 0 0}
+.pmf .msg.ok{color:#2e8b57}
+.pmf .legal{font-family:var(--display);font-size:11.5px;color:var(--ink-3,#7F929E);line-height:1.45;margin:12px 0 0}
+.pmf .step{font-family:var(--display);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin:18px 0 8px}
+.pmf .step:first-child{margin-top:0}
+.v-boat{font-family:var(--display);font-size:14.5px;margin:0 0 6px}
+.v-link{background:none;border:0;padding:0;font:inherit;color:var(--ink-2);text-decoration:underline;cursor:pointer}
+.v-sched{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:18px;align-items:start}
+.v-cal-head{display:flex;align-items:center;justify-content:space-between;font-family:var(--display);font-size:15px;margin:0 0 8px}
+.v-nav{width:34px;height:34px;border:1px solid var(--plata-2);border-radius:6px;background:#fff;font-size:18px;line-height:1;cursor:pointer;color:var(--ink)}
+.v-nav:disabled{opacity:.3;cursor:default}
+.v-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.v-wd{font-family:var(--display);font-size:11.5px;font-weight:600;color:var(--ink-3,#7F929E);text-align:center;padding:2px 0}
+.v-day{position:relative;aspect-ratio:1;min-height:36px;border:1px solid var(--plata-2);border-radius:6px;background:#fff;font-family:var(--display);font-size:14px;color:var(--ink);cursor:pointer}
+.v-day.off{border-color:transparent;color:var(--ink-3,#9AA8B1);cursor:default;opacity:.45}
+.v-day.req::after,.v-dot{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--brass,#B58A2C)}
+.v-day.req::after{position:absolute;left:50%;bottom:4px;margin-left:-2.5px}
+.v-day.sel,.v-hour.sel{background:var(--ink);border-color:var(--ink);color:#fff}
+.v-day:not(.off):hover,.v-hour:hover{border-color:var(--ink)}
+.v-legend{font-family:var(--display);font-size:12px;color:var(--ink-2);margin:8px 0 0}
+.v-hours{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.v-hour{padding:10px 0;border:1px solid var(--plata-2);border-radius:6px;background:#fff;font-family:var(--display);font-size:14.5px;color:var(--ink);cursor:pointer}
+.v-hint{font-family:var(--display);font-size:13.5px;color:var(--ink-2);margin:0 0 10px}
+.v-sum{font-family:var(--display);font-size:14px;font-weight:600;background:rgba(11,118,107,.08);border-radius:6px;padding:10px 12px;margin:14px 0 0}
+.pmf button:focus-visible,.pmf select:focus-visible,.pmf input:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.steps{padding-left:20px}.steps li{margin:0 0 8px}
+@media (max-width:640px){.pmf .row,.v-sched{grid-template-columns:1fr}}
+.langsw{display:flex;gap:6px;align-items:center;font-size:.78rem;font-weight:600}.langsw a{display:inline-flex;align-items:center;padding:3px;border-radius:4px}.langsw a[aria-current="page"]{background:rgba(13,28,39,.08)}.flag{display:block;width:20px;height:14px;border-radius:2px;box-shadow:inset 0 0 0 1px rgba(13,28,39,.18);background-size:cover;background-position:center}.flag-es{background-image:linear-gradient(#AA151B 0 25%,#F1BF00 25% 75%,#AA151B 75% 100%)}.flag-ca{background-image:repeating-linear-gradient(#FFCE00 0 11.11%,#DA121A 11.11% 22.22%)}.flag-en{background-color:#00247D;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 36'%3E%3Cpath d='M0 0L60 36M60 0L0 36' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0L60 36M60 0L0 36' stroke='%23C8102E' stroke-width='2.4'/%3E%3Cpath d='M30 0V36M0 18H60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30 0V36M0 18H60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E")}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.langsw a{padding:3px 7px;border-radius:4px;text-decoration:none;color:inherit;opacity:.65}
+.langsw a[aria-current="page"]{opacity:1;text-decoration:underline}
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebPage", "name": "Create a boat alert", "description": "Tell me what boat you're looking for (type, length, budget and area) and when a boat that fits comes into our listings I'll write to you myself. No automatic newsletters: only when there's something real.", "url": "https://www.platamarine.com/en/visita/", "inLanguage": "en", "publisher": {"@type": "Organization", "name": "Plata Marine"}}
+</script>
+<link rel="stylesheet" href="/nav.css?v=20261006m">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Plata Marine", "item": "https://www.platamarine.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Create an alert: I'll let you know when the boat you're after comes in", "item": "https://www.platamarine.com/en/visita/"}]}</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/en/" aria-label="Plata Marine, home"><img class="brand-logo" src="/logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
+    <nav class="nav pmx-nav" aria-label="Sections">
+      <a href="/en/barcos/">Boats for sale</a>
+      <a href="/en/vender-barco/">Sell my boat</a>
+      <a href="/en/#comprar">I’ll find you a boat</a>
+      <div class="pmx-dd pmx-res"><button type="button" aria-expanded="false" aria-controls="pmxRes">Resources</button><div class="pmx-menu pmx-mega" id="pmxRes"><div class="pmx-col" id="pmxM1"><p>Selling</p><a href="/en/herramientas/valora-tu-barco.html">What affects my boat’s price?</a><a href="/en/papeles-fiscalidad/">Paperwork and taxes</a><a href="/en/guias/que-hace-un-broker-nautico.html">What a boat broker does</a><a href="/en/vender/broker-nautico-barcelona-maresme.html">Selling in Barcelona and Maresme</a><a href="/en/vender/guia-fotos-barco.html">How to photograph your boat</a></div><div class="pmx-col" id="pmxM2"><p>Buying</p><a href="/en/alertas/">Tell me about new boats</a><a href="/en/que-barco-necesito.html">Which boat do I need?</a><a href="/en/modelos/">Models: what to check and prices</a><a href="/en/comprar/">Buy a boat: by area and type</a><a href="/en/precios/">Used boat prices</a><a href="/en/herramientas/">Calculators: taxes, costs, finance</a></div><div class="pmx-col" id="pmxM3"><p>Learn</p><a href="/en/guias/">Guides</a><a href="/en/actualidad/">News</a><a href="/en/navegante/">Skipper&#x27;s guide</a><a href="/en/titulaciones/">Boating licences</a></div><div class="pmx-col" id="pmxM4"><p>Services</p><a href="/en/servicios/">Inspection, paperwork, boatyard and more</a><a href="/en/servicios/directorio.html">Company directory</a><a href="/en/servicios/escuelas.html">Boating schools</a><a href="/en/servicios/amarres.html">Moorings</a></div></div></div>
+      <a href="/en/#juan">About me</a>
+      <a href="/en/#contacto">Contact</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hi%20Juan%2C%20I%27d%20like%20to%20see%20a%20boat." target="_blank" rel="noopener">Talk to Juan</a>
+    <div class="langsw" aria-label="Language"><a href="https://www.platamarine.com/visita/"><span class="flag flag-es" aria-hidden="true"></span><span class="sr-only">ES</span></a><a href="https://www.platamarine.com/ca/visita/"><span class="flag flag-ca" aria-hidden="true"></span><span class="sr-only">CA</span></a><a href="https://www.platamarine.com/en/visita/" aria-current="page"><span class="flag flag-en" aria-hidden="true"></span><span class="sr-only">EN</span></a><a href="https://www.platamarine.com/fr/visita/"><span class="flag flag-fr" aria-hidden="true"></span><span class="sr-only">FR</span></a></div>
+    <button type="button" class="pmx-btn" id="pmxBtn" aria-expanded="false" aria-controls="pmxPanel" aria-label="Open menu" data-open="Open menu" data-close="Close menu"><span></span></button>
+  </div>
+  <nav class="pmx-panel" id="pmxPanel" aria-label="Mobile menu">
+    <div class="pmx-in">
+      <div class="pmx-grp pmx-main"><a href="/en/barcos/">Boats for sale</a><a href="/en/vender-barco/">Sell my boat</a><a href="/en/#comprar">I’ll find you a boat</a></div>
+      <div class="pmx-reshead"><p>Resources</p></div>
+      <div class="pmx-grp pmx-sub"><p>Selling</p><a href="/en/herramientas/valora-tu-barco.html">What affects my boat’s price?</a><a href="/en/papeles-fiscalidad/">Paperwork and taxes</a><a href="/en/guias/que-hace-un-broker-nautico.html">What a boat broker does</a><a href="/en/vender/broker-nautico-barcelona-maresme.html">Selling in Barcelona and Maresme</a><a href="/en/vender/guia-fotos-barco.html">How to photograph your boat</a></div><div class="pmx-grp pmx-sub"><p>Buying</p><a href="/en/alertas/">Tell me about new boats</a><a href="/en/que-barco-necesito.html">Which boat do I need?</a><a href="/en/modelos/">Models: what to check and prices</a><a href="/en/comprar/">Buy a boat: by area and type</a><a href="/en/precios/">Used boat prices</a><a href="/en/herramientas/">Calculators: taxes, costs, finance</a></div><div class="pmx-grp pmx-sub"><p>Learn</p><a href="/en/guias/">Guides</a><a href="/en/actualidad/">News</a><a href="/en/navegante/">Skipper&#x27;s guide</a><a href="/en/titulaciones/">Boating licences</a></div><div class="pmx-grp pmx-sub"><p>Services</p><a href="/en/servicios/">Inspection, paperwork, boatyard and more</a><a href="/en/servicios/directorio.html">Company directory</a><a href="/en/servicios/escuelas.html">Boating schools</a><a href="/en/servicios/amarres.html">Moorings</a></div>
+      <div class="pmx-grp pmx-main"><a href="/en/#juan">About me</a><a href="/en/#contacto">Contact</a></div>
+      <div class="pmx-wide"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Hi%20Juan%2C%20I%27d%20like%20to%20talk%20about%20a%20boat." target="_blank" rel="noopener">Talk to Juan</a></div>
+    </div>
+  </nav>
+</header>
+
+<main class="art">
+  <div class="wrap">
+    <article>
+      <header>
+        <p class="eyebrow">Buy · Viewing</p>
+        <h1>Request a viewing of the boat</h1>
+        <div class="meta"><span>Free, no obligation</span><span>Confirmed on WhatsApp</span></div>
+        <p class="lead">Choose the day and time that suit you best. Before confirming, I arrange it with the owner, then I message you on WhatsApp with the day, time and meeting point.</p>
+      </header>
+
+      <div class="prose">
+        <div class="pmf">
+          <form id="visitaForm" novalidate>
+            <p class="step">1. Boat</p>
+            <div class="f" id="v-barco-box" data-label="Boat you want to see"></div>
+            <p class="step">2. Day and time</p>
+            <div class="v-sched">
+              <div id="v-cal"></div>
+              <div id="v-horas"></div>
+            </div>
+            <p class="v-sum" id="v-resumen" hidden></p>
+            <p class="step">3. Your details</p>
+            <div class="row">
+              <div class="f"><label class="l" for="v-nombre">Name *</label><input type="text" name="nombre" id="v-nombre" autocomplete="name" placeholder="Your name" required maxlength="80"></div>
+              <div class="f"><label class="l" for="v-tel">Phone (WhatsApp) *</label><input type="tel" name="telefono" id="v-tel" autocomplete="tel" placeholder="With country code if not Spanish" required inputmode="tel" maxlength="20"></div>
+            </div>
+            <div class="row">
+              <div class="f"><label class="l" for="v-email">Email *</label><input type="email" name="email" id="v-email" autocomplete="email" placeholder="you@email.com" maxlength="120" required></div>
+              <div class="f"><label class="l" for="v-tit">Boating licence <small>(optional)</small></label><select name="titulacion" id="v-tit"><option value="">Prefer not to say</option><option value="None yet">None yet</option><option value="Licencia de Navegación (Spanish basic licence)">Licencia de Navegación (Spanish basic licence)</option><option value="PNB">PNB</option><option value="PER">PER</option><option value="Patrón de Yate">Patrón de Yate</option><option value="Capitán de Yate">Capitán de Yate</option><option value="ICC or licence from another country">ICC or licence from another country</option></select></div>
+            </div>
+            <div class="f"><label class="l" for="v-notas">Anything I should know <small>(optional)</small></label><textarea name="notas" id="v-notas" maxlength="600" placeholder="If someone is coming with you, if you would like a sea trial, if you need financing…"></textarea></div>
+            <label class="chk"><input type="checkbox" name="consent" required> <span>* I agree that Plata Marine may use these details to arrange the viewing, as set out in the <a href="/en/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</span></label>
+            <label class="chk"><input type="checkbox" name="newsletter"> <span>Also let me know, from time to time, about guides, news and boats for sale at Plata Marine (no spam, unsubscribe any time).</span></label>
+            <p class="legal req-note">Fields marked * are required.</p>
+            <button type="submit" class="btn btn-wa">Request viewing</button>
+            <p class="msg" role="status" aria-live="polite"></p>
+            <p class="legal">Controller: Juan Morante (Plata Marine), juan@platamarine.com. Purpose: arranging the viewing you request and, only if you tick the box, sending you news from the website. Legal basis: your own request (steps prior to a possible purchase) and, for news, your consent, which you can withdraw at any time. To arrange the viewing I tell the owner, or the intermediary holding the sale mandate, your name and the day; nothing else. Retention: up to twelve months after the viewing, unless you ask me to delete it earlier. Rights: access, rectification, erasure, objection and the other rights under the GDPR, by writing to juan@platamarine.com; you may also complain to the Spanish Data Protection Agency (AEPD). More information in the <a href="/en/privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</p>
+            <p class="legal">You can also <a href="mailto:juan@platamarine.com">write to juan@platamarine.com</a>. If no confirmation appears, please check before sending again.</p>
+          </form>
+        </div>
+
+        <h2 id="como">How it works</h2>
+        <ol class="steps"><li>You choose the boat, the day and the time. Sundays are on request: tell me the time of day and I will suggest a time.</li><li>I arrange it with the owner. Until then, the viewing stays pending.</li><li>I message you on WhatsApp to confirm the day, time and meeting point. I give you the exact marina at that point, to protect the owner’s privacy.</li></ol>
+        <h2 id="antes">Before you come</h2>
+        <p>If it is your first boat or you are deciding between several, the guide on <a href="/en/guias/que-mirar-comprar-barco-segunda-mano.html">what to check when buying second-hand</a> will help. And if something comes up, just tell me on WhatsApp and we will move the viewing.</p>
+      </div>
+    </article>
+
+    <aside class="aside" aria-label="Contact and navigation">
+      <div class="card">
+        <p class="eyebrow">Prefer to message me?</p>
+        <h3>Ask for the viewing on WhatsApp.</h3>
+        <p>Tell me which boat you want to see and which days suit you.</p>
+        <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hi%20Juan%2C%20I%27d%20like%20to%20see%20a%20boat.%20Boat%3A%20%20%7C%20Days%20that%20suit%20me%3A%20" target="_blank" rel="noopener">Message Juan on WhatsApp</a>
+      </div>
+      <div class="rel">
+        <p class="eyebrow">You may also like</p>
+        <a href="/en/barcos/">Boats for sale now</a><a href="/en/guias/que-mirar-comprar-barco-segunda-mano.html">What to check when buying second-hand</a><a href="/en/titulaciones/">Boating licences</a>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="line">
+      <span>© 2026 Plata Marine · Sabadell, Barcelona · <a href="mailto:juan@platamarine.com">juan@platamarine.com</a></span>
+      <a href="/en/aviso-legal.html">Legal notice</a> · <a href="/en/privacidad.html">Privacy</a> · <a href="/en/cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Website by rotulito.com</a>
+    </div>
+  </div>
+<p class="wrap"><button type="button" data-cookie-settings>Cookie settings</button></p></footer>
+<script src="/nav.js?v=20261006m" defer></script>
+<script src="/consent.js?v=20261006" defer></script>
+<script src="/submit-confirmed.js" defer></script>
+<script src="/analytics.js?v=20261006" defer></script>
+<script src="/inventario.js?v=20261006" defer></script>
+<script src="/visita/visita.js?v=20261010" defer></script>
+</body>
+</html>
