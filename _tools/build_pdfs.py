@@ -15,25 +15,25 @@ L = {
             interest='¿Te interesa este barco?', interest2='Escríbeme y lo vemos juntos, sin compromiso.',
             soldt='Este barco ya está vendido', soldt2='Si buscas uno parecido, mira los barcos disponibles o crea una alerta en la web.',
             scan='Ficha completa y todas las fotos', broker='Broker náutico',
-            legal='Plata Marine (Juan Morante Cruz) actúa como intermediario: no es propietario de esta embarcación, no la vende en nombre propio ni recibe el precio de la compraventa, y no ofrece garantía propia sobre ella. Los datos de esta ficha los facilita el propietario y son orientativos; los definitivos serán los del contrato de compraventa. Precio sin gastos de cambio de titularidad. Recomendamos prueba de mar y un peritaje independiente antes de reservar. En barcos de nuestra cartera no cobramos honorarios al comprador.',
-            date='Ficha actualizada el 02/10/2026'),
+            legal='Plata Marine (Juan Morante) actúa como intermediario: no es propietario de esta embarcación, no la vende en nombre propio ni recibe el precio de la compraventa, y no ofrece garantía propia sobre ella. Los datos de esta ficha los facilita el propietario y son orientativos; los definitivos serán los del contrato de compraventa. Precio sin gastos de cambio de titularidad. Recomendamos prueba de mar y un peritaje independiente antes de reservar. En barcos de nuestra cartera no cobramos honorarios al comprador.',
+            date='Ficha actualizada el 10/10/2026'),
  'ca': dict(pre='ca/', sale='EN VENDA', sold='VENUT', langtag='Fitxa en català', tech='Resum tècnic', gal='Galeria',
             interest="T'interessa aquest vaixell?", interest2="Escriu-me i el veiem junts, sense compromís.",
             soldt='Aquest vaixell ja està venut', soldt2='Si en busques un de semblant, mira els vaixells disponibles o crea una alerta al web.',
             scan='Fitxa completa i totes les fotos', broker='Broker nàutic',
-            legal="Plata Marine (Juan Morante Cruz) actua com a intermediari: no és propietari d'aquesta embarcació, no la ven en nom propi ni rep el preu de la compravenda, i no ofereix garantia pròpia sobre ella. Les dades d'aquesta fitxa les facilita el propietari i són orientatives; les definitives seran les del contracte de compravenda. Preu sense despeses de canvi de titularitat. Recomanem prova de mar i un peritatge independent abans de reservar. En vaixells de la nostra cartera no cobrem honoraris al comprador.",
+            legal="Plata Marine (Juan Morante) actua com a intermediari: no és propietari d'aquesta embarcació, no la ven en nom propi ni rep el preu de la compravenda, i no ofereix garantia pròpia sobre ella. Les dades d'aquesta fitxa les facilita el propietari i són orientatives; les definitives seran les del contracte de compravenda. Preu sense despeses de canvi de titularitat. Recomanem prova de mar i un peritatge independent abans de reservar. En vaixells de la nostra cartera no cobrem honoraris al comprador.",
             date='Fitxa actualitzada el 02/10/2026'),
  'en': dict(pre='en/', sale='FOR SALE', sold='SOLD', langtag='Listing in English', tech='Technical summary', gal='Gallery',
             interest='Interested in this boat?', interest2="Message me and we'll look at it together, no obligation.",
             soldt='This boat has been sold', soldt2='If you are after something similar, see the boats available or set up an alert on the website.',
             scan='Full listing and all photos', broker='Nautical broker',
-            legal='Plata Marine (Juan Morante Cruz) acts as an intermediary: it does not own this boat, does not sell it in its own name or receive the sale price, and gives no warranty of its own on it. The details in this listing are provided by the owner and are indicative; the final details will be those in the sale contract. Price excludes ownership-transfer costs. We recommend a sea trial and an independent survey before you reserve. On boats in our portfolio we charge the buyer no fee.',
+            legal='Plata Marine (Juan Morante) acts as an intermediary: it does not own this boat, does not sell it in its own name or receive the sale price, and gives no warranty of its own on it. The details in this listing are provided by the owner and are indicative; the final details will be those in the sale contract. Price excludes ownership-transfer costs. We recommend a sea trial and an independent survey before you reserve. On boats in our portfolio we charge the buyer no fee.',
             date='Listing updated 02/10/2026'),
  'fr': dict(pre='fr/', sale='À VENDRE', sold='VENDU', langtag='Fiche en français', tech='Résumé technique', gal='Galerie',
             interest='Ce bateau vous intéresse ?', interest2="Écrivez-moi et nous le regardons ensemble, sans engagement.",
             soldt='Ce bateau est déjà vendu', soldt2='Si vous cherchez un bateau similaire, consultez les bateaux disponibles ou créez une alerte sur le site.',
             scan='Fiche complète et toutes les photos', broker='Courtier nautique',
-            legal="Plata Marine (Juan Morante Cruz) agit en tant qu'intermédiaire : elle n'est pas propriétaire de ce bateau, ne le vend pas en son nom propre, ne perçoit pas le prix de vente et n'offre aucune garantie propre sur celui-ci. Les données de cette fiche sont fournies par le propriétaire et sont indicatives ; les données définitives seront celles du contrat de vente. Prix hors frais de changement de propriétaire. Nous recommandons un essai en mer et une expertise indépendante avant de réserver. Pour les bateaux de notre portefeuille, nous ne facturons aucun honoraire à l'acheteur.",
+            legal="Plata Marine (Juan Morante) agit en tant qu'intermédiaire : elle n'est pas propriétaire de ce bateau, ne le vend pas en son nom propre, ne perçoit pas le prix de vente et n'offre aucune garantie propre sur celui-ci. Les données de cette fiche sont fournies par le propriétaire et sont indicatives ; les données définitives seront celles du contrat de vente. Prix hors frais de changement de propriétaire. Nous recommandons un essai en mer et une expertise indépendante avant de réserver. Pour les bateaux de notre portefeuille, nous ne facturons aucun honoraire à l'acheteur.",
             date='Fiche mise à jour le 06/10/2026'),
 }
 
@@ -59,7 +59,9 @@ def parse(slug, lang):
     name = strip(re.search(r'<h1>(.*?)</h1>', t, re.S).group(1))
     sub = [strip(x) for x in re.findall(r'<span>(.*?)</span>', re.search(r'<div class="sub">(.*?)</div>', t, re.S).group(1))]
     price = strip(re.search(r'<p class="price">(.*?)</p>', t, re.S).group(1))
-    sold = 'schema.org/SoldOut' in t
+    inv = open(os.path.join(ROOT, 'inventario.js'), encoding='utf-8').read()
+    st = re.search(r"slug: '%s'.*?status: '([a-z]+)'" % re.escape(slug), inv, re.S)
+    sold = 'schema.org/SoldOut' in t or 'status sold' in t or bool(st and st.group(1) == 'sold')
     specs = [(strip(a), strip(b)) for a, b in re.findall(r'<dt>(.*?)</dt><dd>(.*?)</dd>', re.search(r'<dl class="specs">(.*?)</dl>', t, re.S).group(1))]
     prose = re.search(r'<div class="prose">(.*?)</div>', t, re.S).group(1)
     h2 = strip(re.search(r'<h2>(.*?)</h2>', prose, re.S).group(1))
