@@ -96,12 +96,12 @@
     var links=[['wa','WhatsApp','https://api.whatsapp.com/send?text='+e(txt+' '+url)],['fb','Facebook','https://www.facebook.com/sharer/sharer.php?u='+eu],['x','X','https://twitter.com/intent/tweet?url='+eu+'&text='+e(title)],['tg','Telegram','https://t.me/share/url?url='+eu+'&text='+e(title)]];
     var box=document.createElement('div');box.id='pmShare';box.className='pm-share';
     var h='<p>'+T.t+'</p><div class="pm-share-row">';
-    links.forEach(function(l){h+='<a href="'+l[2]+'" target="_blank" rel="noopener" data-net="'+l[0]+'" aria-label="'+T.a+l[1]+'">'+I[l[0]]+'<span>'+l[1]+'</span></a>';});
+    links.forEach(function(l){h+='<a href="'+l[2]+'" target="_blank" rel="noopener" data-no-track data-share data-net="'+l[0]+'" aria-label="'+T.a+l[1]+'">'+I[l[0]]+'<span>'+l[1]+'</span></a>';});
     h+='<button type="button" data-net="copy">'+I.cp+'<span>'+T.c+'</span></button>';
     if(navigator.share)h+='<button type="button" data-net="native">'+I.sh+'<span>'+T.m+'</span></button>';
     box.innerHTML=h+'</div>';
     foot.insertBefore(box,foot.firstChild);
-    function track(n){if(window.pmTrack)window.pmTrack('share',{method:n,content_type:'page'});}
+    function track(n){if(window.pmTrack)window.pmTrack('share',{method:n});}
     box.addEventListener('click',function(ev){
       var el=ev.target.closest('[data-net]');if(!el)return;var n=el.getAttribute('data-net');
       if(n==='copy'){ev.preventDefault();var done=function(){var s=el.querySelector('span'),o=s.textContent;s.textContent=T.ok;el.classList.add('ok');setTimeout(function(){s.textContent=o;el.classList.remove('ok');},1800);};

@@ -28,7 +28,7 @@
    - select_path (label buy|sell): elige comprar o vender fuera del menú. view_form: el formulario llegó a verse. click_boat lleva placement (desde dónde se abrió la ficha). Añadidos el 6 oct 2026.
    "Contacto cualificado" no se mide aquí: requiere una validación posterior real (p. ej. marcarlo en la hoja de leads). */
 (function(){
-  var SAFE=['form_id','contact_method','contact_purpose','placement','boat','file_type','quiz','result_type','label','lang','tool'];
+  var SAFE=['form_id','contact_method','contact_purpose','placement','boat','file_type','quiz','result_type','label','lang','tool','method'];
   var META={contact_intent:['trackCustom','ContactIntent'],generate_lead:['track','Lead'],newsletter_signup:['trackCustom','NewsletterSignup']};
   var lang=location.pathname.indexOf('/ca/')===0?'ca':location.pathname.indexOf('/en/')===0?'en':location.pathname.indexOf('/fr/')===0?'fr':'es';
   var last={};
@@ -38,17 +38,18 @@
     return safe;
   }
   window.pmTrack=function(name,params){
-    if(!/^[a-z_]{3,40}$/.test(name||''))return;
+    if(!/^[a-z_]{3,40}$/.test(name||''))return false;
     var safe=clean(params||{});
     // evita duplicados del mismo evento en menos de 1,5 s (doble clic, dos manejadores)
     var key=name+'|'+(safe.form_id||'')+'|'+(safe.contact_method||'')+'|'+(safe.boat||'')+'|'+(safe.label||'');
-    var now=Date.now(); if(last[key]&&now-last[key]<1500)return; last[key]=now;
+    var now=Date.now(); if(last[key]&&now-last[key]<1500)return false; last[key]=now;
     if(window.__pmAnalyticsAllowed&&window.__pmga&&window.gtag){try{window.gtag('event',name,safe);}catch(e){}}
     var m=META[name];
     if(m&&window.__pmMarketingAllowed&&window.fbq){
       var fp={};['form_id','contact_method','contact_purpose','boat'].forEach(function(k){if(safe[k])fp[k]=safe[k];});
       try{window.fbq(m[0],m[1],fp);}catch(e){}
     }
+    return true; // aceptado (el contador propio solo cuenta lo aceptado: sin duplicados)
   };
   function where(el){var s=el.closest('section,header,footer,aside');return (s&&(s.id||s.className||s.tagName)||'').toString().slice(0,40);}
   document.addEventListener('click',function(e){
@@ -60,7 +61,9 @@
     if(/\.pdf(\?|$)/i.test(href)){ var pm=href.match(/([a-z0-9-]+)\.pdf/i); window.pmTrack('pdf_ficha',{boat:boat||(pm?pm[1]:''),file_type:'pdf'}); return; }
     if(method){
       if(a.hasAttribute('data-no-track')) return; // enlaces que ya se miden desde su propio script
-      if(/^https:\/\/wa\.me\/\?text=/.test(href)) return; // "compartir por WhatsApp" no es contacto
+      // Compartir no es contacto: barra #pmShare y cualquier enlace de WhatsApp sin número de destino (wa.me/?text=, api.whatsapp.com/send?text= sin phone=)
+      if(a.closest('#pmShare,[data-share]')) return;
+      if(method==='whatsapp'&&(/^https:\/\/wa\.me\/?(\?|$)/.test(href)||(/^https:\/\/api\.whatsapp\.com\/send/.test(href)&&!/[?&]phone=\d/.test(href)))) return;
       window.pmTrack('contact_intent',{contact_method:method,contact_purpose:(a.closest('#valora,#vender')||/^\/(ca\/|en\/|fr\/)?(vender-barco|vender)\//.test(location.pathname))?'seller':/\/(barcos|comprar)\//.test(location.pathname)?'buyer':'general',placement:where(a).replace(/[^a-zA-Z0-9_-]/g,'_')||'page',boat:boat});
     }
     else if(!a.closest('nav,.pmx-panel')&&(/(^|\/)vender-barco\/?(#.*)?$/.test(href)||href==='#valora'||/^(\/(ca|en|fr))?\/?barcos\/?$/.test(href))){window.pmTrack('select_path',{label:/barcos\/?$/.test(href)?'buy':'sell',placement:where(a).replace(/[^a-zA-Z0-9_-]/g,'_')||'page'});}
@@ -159,9 +162,11 @@
     window.pmTrack=function(name,params){
       try{
         var t=name==='contact_intent'?'contacto':name==='generate_lead'?'lead':name==='newsletter_signup'?'novedades':'';
-        if(t) enviar({t:t,b:(params&&params.boat)||'',m:(params&&(params.contact_method||params.form_id))||''});
+        var ok=prev.apply(this,arguments);
+        if(ok&&t) enviar({t:t,b:(params&&params.boat)||'',m:(params&&(params.contact_method||params.form_id))||''});
+        return ok;
       }catch(e){}
-      return prev.apply(this,arguments);
+      return false;
     };
   }
 })();

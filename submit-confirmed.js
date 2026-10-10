@@ -48,7 +48,7 @@ window.submitConfirmed = function (url, body, encoding, form) {
   function err(code) { var e = new Error(code); e.code = code; return e; }
   var f = form || window.__pmLastForm;
   if (window.__pmSpam && window.__pmSpam(f)) {
-    try { if (window.pmTrack) window.pmTrack('form_blocked_local', {reason: 'hp'}); } catch (x) {}
+    try { if (window.pmTrack) window.pmTrack('form_blocked_local', {label: 'hp'}); } catch (x) {}
     return Promise.reject(err('blocked'));
   }
   var key = url;
