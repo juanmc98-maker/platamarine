@@ -1,0 +1,37 @@
+/* Ficha v2: puntos sobre la foto e índice lateral. */
+(function(){
+  'use strict';
+  var box = document.querySelector('.v2-spots');
+  if (box) {
+    var T = [];
+    try { T = JSON.parse(box.getAttribute('data-spots')); } catch (e) {}
+    var tip = document.createElement('div');
+    tip.className = 'v2-tip'; tip.hidden = true; tip.setAttribute('role', 'status');
+    box.appendChild(tip);
+    var dots = box.querySelectorAll('.v2-dot');
+    for (var i = 0; i < dots.length; i++) dots[i].addEventListener('click', function(){
+      var d = this, open = d.getAttribute('aria-expanded') === 'true';
+      for (var j = 0; j < dots.length; j++) dots[j].setAttribute('aria-expanded', 'false');
+      if (open || !T[+d.getAttribute('data-t')]) { tip.hidden = true; return; }
+      d.setAttribute('aria-expanded', 'true');
+      var t = T[+d.getAttribute('data-t')];
+      tip.innerHTML = ''; var b = document.createElement('b'); b.textContent = t[0]; tip.appendChild(b); tip.appendChild(document.createTextNode(t[1]));
+      var l = parseFloat(d.style.left), tp = parseFloat(d.style.top);
+      tip.style.top = 'calc(' + tp + '% + 24px)';
+      if (l > 66) { tip.style.left = 'auto'; tip.style.right = '3%'; } else { tip.style.right = 'auto'; tip.style.left = Math.max(2, l - 6) + '%'; }
+      tip.hidden = false;
+    });
+  }
+  var side = document.querySelector('.v2-side');
+  if (side && 'IntersectionObserver' in window) {
+    var links = side.querySelectorAll('a');
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (!e.isIntersecting) return;
+        for (var k = 0; k < links.length; k++) links[k].classList.toggle('on', links[k].getAttribute('href') === '#' + e.target.id);
+        side.classList.toggle('dark', /v2-hero|v2-dark|v2-end/.test(e.target.className));
+      });
+    }, {rootMargin: '-45% 0px -50% 0px'});
+    for (var k = 0; k < links.length; k++) { var s = document.getElementById(links[k].getAttribute('href').slice(1)); if (s) io.observe(s); }
+  }
+})();
