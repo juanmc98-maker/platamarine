@@ -50,7 +50,7 @@
     <url><loc>https://www.platamarine.com/guias/impuesto-matriculacion-barcos.html</loc><lastmod>2026-09-25</lastmod><priority>0.7</priority></url>
     <url><loc>https://www.platamarine.com/guias/comprar-barco-espana-no-residente.html</loc><lastmod>2026-09-27</lastmod><priority>0.7</priority></url>
     <url><loc>https://www.platamarine.com/guias/itb-inspeccion-tecnica-barcos-recreo.html</loc><lastmod>2026-09-25</lastmod><priority>0.7</priority></url>
-    <url><loc>https://www.platamarine.com/guias/lista-6-y-lista-7.html</loc><lastmod>2026-09-25</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/guias/lista-6-y-lista-7.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
     <url><loc>https://www.platamarine.com/guias/nudos-marineros-imprescindibles.html</loc><lastmod>2026-09-25</lastmod><priority>0.7</priority></url>
     <url><loc>https://www.platamarine.com/guias/papeles-vender-barco-cambio-titularidad.html</loc><lastmod>2026-09-25</lastmod><priority>0.7</priority></url>
     <url><loc>https://www.platamarine.com/guias/precio-barco-ocasion.html</loc><lastmod>2026-09-25</lastmod><priority>0.7</priority></url>
@@ -101,7 +101,7 @@
     <url><loc>https://www.platamarine.com/ca/guias/impuesto-matriculacion-barcos.html</loc><lastmod>2026-09-25</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/ca/guias/comprar-barco-espana-no-residente.html</loc><lastmod>2026-09-27</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/ca/guias/itb-inspeccion-tecnica-barcos-recreo.html</loc><lastmod>2026-09-25</lastmod><priority>0.6</priority></url>
-    <url><loc>https://www.platamarine.com/ca/guias/lista-6-y-lista-7.html</loc><lastmod>2026-09-25</lastmod><priority>0.6</priority></url>
+    <url><loc>https://www.platamarine.com/ca/guias/lista-6-y-lista-7.html</loc><lastmod>2026-10-11</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/ca/guias/nudos-marineros-imprescindibles.html</loc><lastmod>2026-09-25</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/ca/guias/papeles-vender-barco-cambio-titularidad.html</loc><lastmod>2026-09-25</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/ca/guias/precio-barco-ocasion.html</loc><lastmod>2026-09-25</lastmod><priority>0.6</priority></url>
@@ -150,7 +150,7 @@
     <url><loc>https://www.platamarine.com/en/guias/impuesto-matriculacion-barcos.html</loc><lastmod>2026-09-25</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/en/guias/comprar-barco-espana-no-residente.html</loc><lastmod>2026-09-27</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/en/guias/itb-inspeccion-tecnica-barcos-recreo.html</loc><lastmod>2026-09-25</lastmod><priority>0.6</priority></url>
-    <url><loc>https://www.platamarine.com/en/guias/lista-6-y-lista-7.html</loc><lastmod>2026-09-25</lastmod><priority>0.6</priority></url>
+    <url><loc>https://www.platamarine.com/en/guias/lista-6-y-lista-7.html</loc><lastmod>2026-10-11</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/en/guias/nudos-marineros-imprescindibles.html</loc><lastmod>2026-09-25</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/en/guias/papeles-vender-barco-cambio-titularidad.html</loc><lastmod>2026-09-25</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/en/guias/cuanto-cuesta-mantener-un-barco-cataluna.html</loc><lastmod>2026-09-28</lastmod><priority>0.6</priority></url>
@@ -330,7 +330,7 @@
     <url><loc>https://www.platamarine.com/fr/guias/impuesto-matriculacion-barcos.html</loc><lastmod>2026-10-06</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/fr/guias/comprar-barco-espana-no-residente.html</loc><lastmod>2026-10-06</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/fr/guias/itb-inspeccion-tecnica-barcos-recreo.html</loc><lastmod>2026-10-06</lastmod><priority>0.6</priority></url>
-    <url><loc>https://www.platamarine.com/fr/guias/lista-6-y-lista-7.html</loc><lastmod>2026-10-06</lastmod><priority>0.6</priority></url>
+    <url><loc>https://www.platamarine.com/fr/guias/lista-6-y-lista-7.html</loc><lastmod>2026-10-11</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/fr/guias/nudos-marineros-imprescindibles.html</loc><lastmod>2026-10-06</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/fr/guias/papeles-vender-barco-cambio-titularidad.html</loc><lastmod>2026-10-06</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/fr/guias/cuanto-cuesta-mantener-un-barco-cataluna.html</loc><lastmod>2026-10-06</lastmod><priority>0.6</priority></url>
@@ -456,4 +456,16 @@
     <url><loc>https://www.platamarine.com/ca/guias/tasacion-barco.html</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
     <url><loc>https://www.platamarine.com/en/guias/tasacion-barco.html</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
     <url><loc>https://www.platamarine.com/fr/guias/tasacion-barco.html</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/astilleros/</loc><lastmod>2026-10-11</lastmod><priority>0.5</priority></url>
+    <url><loc>https://www.platamarine.com/guias/alquilar-mi-barco-charter.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/ca/astilleros/</loc><lastmod>2026-10-11</lastmod><priority>0.5</priority></url>
+    <url><loc>https://www.platamarine.com/ca/guias/alquilar-mi-barco-charter.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/en/astilleros/</loc><lastmod>2026-10-11</lastmod><priority>0.5</priority></url>
+    <url><loc>https://www.platamarine.com/en/guias/alquilar-mi-barco-charter.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/fr/astilleros/</loc><lastmod>2026-10-11</lastmod><priority>0.5</priority></url>
+    <url><loc>https://www.platamarine.com/fr/guias/alquilar-mi-barco-charter.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/guias/listas-matricula-barcos-espana.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/ca/guias/listas-matricula-barcos-espana.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/en/guias/listas-matricula-barcos-espana.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/fr/guias/listas-matricula-barcos-espana.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
 </urlset>
