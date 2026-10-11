@@ -5,7 +5,7 @@
   'use strict';
   var f=document.getElementById('astilleroForm'); if(!f) return;
   var LEADS_URL='https://script.google.com/macros/s/AKfycbwJtBkktakE0qgmu_b8oHOOopCDnG6BDpBjg2zBUsZKi8l3_OBEuez_OHWmE9j8qCBF/exec';
-  var LANG=location.pathname.indexOf('/ca/')===0?'ca':location.pathname.indexOf('/en/')===0?'en':location.pathname.indexOf('/fr/')===0?'fr':'es';
+  var LANG=location.pathname.indexOf('/ca/')===0?'ca':location.pathname.indexOf('/en/')===0?'en':location.pathname.indexOf('/fr/')===0?'fr':location.pathname.indexOf('/it/')===0?'it':'es';
   var T={
     es:{req:'Completa este campo.',name:'Escribe tu nombre (solo letras).',email:'Revisa el email, por ejemplo nombre@astillero.com.',tel:'Revisa el teléfono: con prefijo internacional, por ejemplo +39 333 123 4567.',url:'El enlace no parece correcto. Si no lo tienes, déjalo en blanco.',
         sending:'Enviando…',ok:'Mensaje recibido. Te contesto en 24 horas laborables.',okBtn:'Enviado ✓',send:'Enviar',
@@ -18,7 +18,10 @@
         fail:'I could not confirm that your message arrived. Your details are still here: please try again in a few minutes or write to juan@platamarine.com.'},
     fr:{req:'Veuillez remplir ce champ.',name:'Indiquez votre nom (lettres uniquement).',email:"Vérifiez l'e-mail, par exemple nom@chantier.com.",tel:"Vérifiez le numéro, avec l'indicatif international, par exemple +33 6 12 34 56 78.",url:"Le lien ne semble pas correct. Si vous ne l'avez pas, laissez ce champ vide.",
         sending:'Envoi…',ok:'Message reçu. Je vous réponds sous 24 heures ouvrées.',okBtn:'Envoyé ✓',send:'Envoyer',
-        fail:"Je n'ai pas pu confirmer que votre message est bien arrivé. Vos informations sont toujours là : réessayez dans quelques minutes ou écrivez à juan@platamarine.com."}
+        fail:"Je n'ai pas pu confirmer que votre message est bien arrivé. Vos informations sont toujours là : réessayez dans quelques minutes ou écrivez à juan@platamarine.com."},
+    it:{req:'Compilate questo campo.',name:'Scrivete il vostro nome (solo lettere).',email:"Controllate l'e-mail, ad esempio nome@cantiere.it.",tel:'Controllate il telefono, con il prefisso internazionale, ad esempio +39 333 123 4567.',url:'Il link non sembra corretto. Se non lo avete, lasciate il campo vuoto.',
+        sending:'Invio in corso…',ok:'Messaggio ricevuto. Rispondo entro 24 ore lavorative.',okBtn:'Inviato ✓',send:'Invia',
+        fail:'Non ho potuto confermare che il messaggio sia arrivato. I vostri dati sono ancora qui: riprovate tra qualche minuto o scrivete a juan@platamarine.com.'},
   }[LANG];
   function el(id){return document.getElementById(id);}
   function v(id){var e=el(id);return e?e.value.trim():'';}
