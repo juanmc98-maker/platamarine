@@ -9,23 +9,25 @@ from urllib.parse import quote
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 BASE = 'https://www.platamarine.com'
 LANGS = ['es', 'ca', 'en', 'fr']
-PRE = {'es': '', 'ca': '/ca', 'en': '/en', 'fr': '/fr'}
+PRE = {'es': '', 'ca': '/ca', 'en': '/en', 'fr': '/fr', 'it': '/it'}
+YARD_LANGS = LANGS + ['it']  # la página de astilleros también en italiano (excepción aprobada por Juan, 11 oct 2026)
 TODAY = '2026-10-11'
 
 def shell(lang):
-    p = os.path.join(ROOT, ('' if lang == 'es' else lang + '/') + 'guias/lista-6-y-lista-7.html')
+    src = 'en' if lang == 'it' else lang
+    p = os.path.join(ROOT, ('' if src == 'es' else src + '/') + 'guias/lista-6-y-lista-7.html')
     t = open(p, encoding='utf-8').read()
     b0 = t.index('<body>'); m0 = t.index('<main'); f0 = t.index('</main>') + len('</main>')
     header = t[b0:m0]
     footer = t[f0:]
     # rutas relativas → absolutas
-    header = header.replace('href="../"', 'href="%s/"' % PRE[lang]).replace('src="../logo', 'src="/logo')
-    footer = re.sub(r'href="\.\./(aviso-legal|privacidad|cookies)\.html"', lambda m: 'href="%s/%s.html"' % (PRE[lang], m.group(1)), footer)
+    header = header.replace('href="../"', 'href="%s/"' % PRE['en' if lang == 'it' else lang]).replace('src="../logo', 'src="/logo')
+    footer = re.sub(r'href="\.\./(aviso-legal|privacidad|cookies)\.html"', lambda m: 'href="%s/%s.html"' % (PRE['en' if lang == 'it' else lang], m.group(1)), footer)
     return header, footer
 
-def head(lang, path, title, desc, schema, crumbs, extra=''):
+def head(lang, path, title, desc, schema, crumbs, extra='', langs=None):
     url = BASE + PRE[lang] + path
-    alts = ''.join('<link rel="alternate" hreflang="%s" href="%s%s%s">\n' % (l, BASE, PRE[l], path) for l in LANGS)
+    alts = ''.join('<link rel="alternate" hreflang="%s" href="%s%s%s">\n' % (l, BASE, PRE[l], path) for l in (langs or LANGS))
     alts += '<link rel="alternate" hreflang="x-default" href="%s%s">\n' % (BASE, path)
     bc = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(crumbs)]}
@@ -39,14 +41,15 @@ def head(lang, path, title, desc, schema, crumbs, extra=''):
             '<link rel="stylesheet" href="/nav.css?v=20261006m">\n<script type="application/ld+json">%s</script>\n%s</head>\n'
             % (lang, title, desc, url, alts, title, desc, url, json.dumps(schema, ensure_ascii=False), json.dumps(bc, ensure_ascii=False), extra))
 
-def fix_header(h, lang, path, wa_text, wa_label=None):
+def fix_header(h, lang, path, wa_text, wa_label=None, langs=None):
     # enlace de WhatsApp de la cabecera y selector de idioma apuntando a esta página
     h = re.sub(r'(<a class="btn btn-wa" href="https://wa\.me/34633742973\?text=)[^"]*', lambda m: m.group(1) + quote(wa_text), h, count=1)
     def lsw(m):
         out = []
-        for l in LANGS:
+        for l in (langs or LANGS):
             cur = ' aria-current="page"' if l == lang else ''
-            out.append('<a href="%s%s%s"%s><span class="flag flag-%s" aria-hidden="true"></span><span class="sr-only">%s</span></a>' % (BASE, PRE[l], path, cur, l, l.upper()))
+            flag = '<span class="flag flag-%s" aria-hidden="true"></span>' % l if l != 'it' else '<span aria-hidden="true" style="font:600 12px/1 sans-serif">IT</span>'
+            out.append('<a href="%s%s%s"%s>%s<span class="sr-only">%s</span></a>' % (BASE, PRE[l], path, cur, flag, l.upper()))
         return '<div class="langsw" aria-label="%s">%s</div>' % (m.group(1), ''.join(out))
     h = re.sub(r'<div class="langsw" aria-label="([^"]*)">.*?</div>', lsw, h, count=1, flags=re.S)
     return h
@@ -134,8 +137,8 @@ A = {
   toc=['Com treballo', 'Què et puc aportar', 'Amb quines drassanes encaixo', 'Escriu-me'],
   fine='Aquesta pàgina explica com treballo; no és una oferta vinculant. Les condicions de cada col·laboració s’acorden per escrit amb cada drassana.'),
 'en': dict(
-  title='Boat builders: sales representation in Catalonia · Plata Marine',
-  desc='Boat builders with no dealer in Catalonia: I can represent you as a commission-based sales agent, with no stock required. How I work and contact form.',
+  title='Boat builders: dealer and sales agent in Catalonia, Spain · Plata Marine',
+  desc='Looking for a boat dealer or sales agent in Spain? I represent boat builders in Catalonia (Barcelona, Costa Brava) as a commission-based agent, with no stock required.',
   crumbs=['Plata Marine', 'For boat builders'],
   eyebrow='For boat builders', h1='Do you build boats and have no one representing you in Catalonia yet?',
   meta=['Juan Morante', 'Plata Marine · Catalonia'],
@@ -209,6 +212,45 @@ A = {
   fine='Cette page explique comment je travaille ; ce n’est pas une offre contractuelle. Les conditions de chaque collaboration sont convenues par écrit avec chaque chantier.'),
 }
 
+
+A['it'] = dict(
+  title='Cantieri nautici: agente e rappresentanza in Catalogna (Spagna) · Plata Marine',
+  desc='Cantiere senza rivenditore in Catalogna? Vi rappresento come agente commerciale a provvigione a Barcellona e in Costa Brava, senza bisogno di stock. Come lavoro e modulo di contatto.',
+  crumbs=['Plata Marine', 'Per i cantieri nautici'],
+  eyebrow='Per i cantieri nautici', h1='Costruite barche e non avete ancora nessuno che vi rappresenti in Catalogna?',
+  meta=['Juan Morante', 'Plata Marine · Catalogna'],
+  lead='Sono Juan Morante, broker nautico in Catalogna. Cerco cantieri che non abbiano ancora un rivenditore qui, per rappresentarli come agente commerciale a provvigione: presento le vostre barche agli acquirenti della zona e seguo ogni vendita fino alla firma.',
+  body='''<h2 id="como">Come lavoro</h2>
+<ul>
+<li><strong>Agente commerciale a provvigione.</strong> Lavoro con un contratto di agenzia (legge spagnola 12/1992) e vengo pagato solo sulle vendite concluse.</li>
+<li><strong>Nessuno stock né barca dimostrativa da parte mia.</strong> Le prove in mare si organizzano con il cantiere o con la barca di un cliente disposto a mostrarla.</li>
+<li><strong>Ordine e fattura sono del cantiere.</strong> Io presento il marchio, rispondo alle richieste, accompagno le visite e seguo ogni trattativa fino alla firma.</li>
+<li><strong>Stesso prezzo di listino.</strong> Il cliente paga lo stesso prezzo che pagherebbe acquistando direttamente in fabbrica.</li>
+</ul>
+<h2 id="aporto">Cosa posso offrirvi</h2>
+<ul>
+<li>12 anni a contatto con il pubblico, prima nella vendita di veicoli e oggi come broker nautico, ascoltando ciò di cui ha bisogno ogni cliente.</li>
+<li>Un sito, <a href="/en/">www.platamarine.com</a>, in quattro lingue, con guide, calcolatori e barche in vendita, letto da acquirenti della Catalogna e delle Baleari.</li>
+<li>Assistenza in spagnolo, catalano e inglese (in italiano e francese, con l’aiuto di un traduttore).</li>
+<li>Conoscenza del cliente locale: quali lunghezze e quali tipi di barca si vendono in Costa Brava, nel Maresme, a Barcellona e in Costa Daurada.</li>
+</ul>
+<h2 id="encaje">Con quali cantieri lavoro</h2>
+<ul>
+<li>Senza rivenditore ufficiale in Catalogna (se lo avete già, non voglio pestare i piedi a nessuno).</li>
+<li>Con marcatura CE e organismo notificato verificabile.</li>
+<li>Barche a motore di qualsiasi lunghezza e tipo; barche a vela, da valutare caso per caso.</li>
+<li>Disposti a fornire schede tecniche, foto, listino prezzi e tempi di consegna reali.</li>
+</ul>
+<p>Di solito si comincia con una telefonata o una e-mail per conoscerci, vedere la vostra gamma e capire se corrisponde a ciò che cercano gli acquirenti di qui. Se è così, mettiamo tutto per iscritto: zona, provvigione, modalità di pagamento e registrazione dei clienti che presento.</p>''',
+  form_title='Scrivetemi', form_intro='Raccontatemi chi siete e quali barche costruite. Rispondo entro 24 ore lavorative.',
+  f=dict(yard='Cantiere o marchio', web='Sito web', country='Paese', name='Il vostro nome', role='Ruolo', email='E-mail', tel='Telefono', msg='Messaggio', opt='facoltativo',
+         ph_yard='Cantiere del Mare', ph_web='https://…', ph_country='Italia', ph_name='Marco', ph_role='Export manager', ph_email='nome@cantiere.it', ph_tel='+39 3xx xxx xxxx', ph_msg='Gamma, lunghezze, dove vendete oggi…',
+         send='Invia', legal='Titolare: Juan Morante (Plata Marine). Userò questi dati solo per rispondere al vostro messaggio e valutare una possibile collaborazione commerciale. Potete esercitare i vostri diritti scrivendo a juan@platamarine.com. <a href="/en/privacidad.html">Informativa sulla privacy</a> (in inglese).', req='I campi con * sono obbligatori.'),
+  aside_eyebrow='Preferite WhatsApp?', aside_h='Scrivetemi direttamente.', aside_p='Ditemi di quale cantiere siete e vi rispondo lì.', aside_btn='Scrivi a Juan su WhatsApp',
+  wa='Buongiorno Juan, vi scrivo da un cantiere nautico e vorrei parlare di rappresentanza in Catalogna.',
+  toc=['Come lavoro', 'Cosa posso offrirvi', 'Con quali cantieri lavoro', 'Scrivetemi'],
+  fine='Questa pagina spiega come lavoro; non è un’offerta vincolante. Le condizioni di ogni collaborazione si concordano per iscritto con ciascun cantiere. Testo scritto con l’aiuto di un traduttore.')
+
 FORM_CSS = '''<style>
 .yard-form{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;margin:18px 0 8px}
 .yard-form .span2{grid-column:1/-1}
@@ -225,14 +267,16 @@ FORM_CSS = '''<style>
 '''
 
 def build_astilleros():
-    for lang in LANGS:
+    for lang in YARD_LANGS:
         d = A[lang]; F = d['f']; path = '/astilleros/'
         url = BASE + PRE[lang] + path
         schema = {"@context": "https://schema.org", "@type": "WebPage", "name": d['h1'], "description": d['desc'], "inLanguage": lang, "url": url,
                   "author": {"@type": "Person", "name": "Juan Morante"}, "publisher": {"@type": "Organization", "name": "Plata Marine"}, "dateModified": TODAY}
         crumbs = [(d['crumbs'][0], BASE + PRE[lang] + '/'), (d['crumbs'][1], url)]
         H, Fo = shell(lang)
-        H = fix_header(H, lang, path, d['wa'])
+        H = fix_header(H, lang, path, d['wa'], langs=YARD_LANGS)
+        if lang == 'it':
+            H = H.replace('<html lang="en">', '<html lang="it">')
         def fld(id_, lab, ph, req=True, typ='text', span=False, extra=''):
             star = ' <i>*</i>' if req else ' <small>(%s)</small>' % F['opt']
             return '<div class="%s"><label for="%s">%s%s</label><input id="%s" name="%s" type="%s" placeholder="%s"%s%s></div>' % (
@@ -284,7 +328,7 @@ def build_astilleros():
 </main>''' % (d['eyebrow'], d['h1'], d['meta'][0], d['meta'][1], d['lead'], d['body'], d['form_title'], d['form_intro'], form, d['fine'],
               d['aside_eyebrow'], d['aside_h'], d['aside_p'], wa(d['wa']), d['aside_btn'], toc)
         Fo = Fo.replace('<script src="/analytics.js', '<script src="/astilleros/astilleros.js?v=20261011" defer></script>\n<script src="/analytics.js')
-        out = head(lang, path, d['title'], d['desc'], schema, crumbs, FORM_CSS) + H + main + Fo
+        out = head(lang, path, d['title'], d['desc'], schema, crumbs, FORM_CSS, langs=YARD_LANGS) + H + main + Fo
         dest = os.path.join(ROOT, ('' if lang == 'es' else lang + '/') + 'astilleros/index.html')
         os.makedirs(os.path.dirname(dest), exist_ok=True)
         open(dest, 'w', encoding='utf-8').write(out)
