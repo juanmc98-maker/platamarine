@@ -5,7 +5,7 @@ Uso: python3 _tools/ficha_v2.py   (idempotente: si la ficha ya es v2 no hace nad
 import re, pathlib, html as H
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SLUG = 'prestige-32'
-PHOTO = lambda n, s='': f'/{SLUG}-{n}{s}.jpg'
+PHOTO = lambda n, s='': f'/{SLUG}-{n}{s}.jpg'  # usa el SLUG vigente (cambia con load())
 
 T = {
  'es': dict(
@@ -102,6 +102,8 @@ T = {
   end_h='Vous voulez le voir sur place ?', end_p="Il est à Minorque et se visite sur rendez-vous. Je vous raconte son historique et on organise la visite.", visit='Demander une visite'),
 }
 SPOTS_XY = [(50, 24), (39, 37), (24, 41), (74, 50), (89, 58)]
+# Fotos de cada bloque (número de foto del barco)
+PH = dict(hero=1, spots=1, m1=(16, 17), m2=5, i1=7, i2=9, i3=(12, 14), end=2)
 IDS = ['barco', 'cubierta', 'mando', 'interior', 'ficha', 'fotos', 'visita']
 
 def img(n, alt, cls='', eager=False):
@@ -137,7 +139,7 @@ def build(lang):
     side = '<nav class="v2-side" aria-label="%s">' % t['navlabel'] + ''.join(
         f'<a href="#{i}"><span>{n}</span><i></i></a>' for i, n in zip(IDS, t['nav'])) + '</nav>'
     hero = f'''<section class="v2-hero" id="barco">
-<img class="v2-hero-img" src="{PHOTO(1)}" srcset="{PHOTO(1,'-m')} 1000w, {PHOTO(1)} 1600w" sizes="100vw" alt="{H.escape(t['hero_alt'])}" fetchpriority="high">
+<img class="v2-hero-img" src="{PHOTO(PH['hero'])}" srcset="{PHOTO(PH['hero'],'-m')} 1000w, {PHOTO(PH['hero'])} 1600w" sizes="100vw" alt="{H.escape(t['hero_alt'])}" fetchpriority="high">
 <div class="v2-hero-in wrap head" data-pm-boat="{SLUG}">
 <div>{status}
 {h1}
@@ -158,20 +160,20 @@ def build(lang):
     sections = f'''<div class="wrap v2-note">{note.strip()}</div>
 <section class="v2-sec" id="cubierta"><div class="wrap">
 <p class="v2-k">{t['cub_k']}</p><h2>{t['cub_h']}</h2><p class="v2-lead">{t['cub_p']}</p>
-<div class="v2-spots" data-spots="{data}">{img(1, t['hero_alt'])}{dots}</div>
+<div class="v2-spots" data-spots="{data}">{img(PH['spots'], t.get('spots_alt', t['hero_alt']))}{dots}</div>
 <ol class="v2-legend">{legend}</ol>
 </div></section>
 <section class="v2-sec v2-band" id="mando"><div class="wrap">
 <p class="v2-k">{t['man_k']}</p><h2>{t['man_h']}</h2>
-{blk(duo(16, 17, t['m1_alt']), t['m1_h'], t['m1_p'])}
-{blk(one(5, t['m2_alt']), t['m2_h'], t['m2_p'], True)}
+{blk(duo(*PH['m1'], t['m1_alt']), t['m1_h'], t['m1_p'])}
+{blk(one(PH['m2'], t['m2_alt']), t['m2_h'], t['m2_p'], True)}
 <div class="v2-mid"><p>{t['mid']}</p>{wa(t['ask'], 'ficha_historial')}</div>
 </div></section>
 <section class="v2-sec" id="interior"><div class="wrap">
 <p class="v2-k">{t['int_k']}</p><h2>{t['int_h']}</h2>
-{blk(one(7, t['i1_alt']), t['i1_h'], t['i1_p'])}
-{blk(one(9, t['i2_alt']), t['i2_h'], t['i2_p'], True)}
-{blk(duo(12, 14, t['i3_alt']), t['i3_h'], t['i3_p'])}
+{blk(one(PH['i1'], t['i1_alt']), t['i1_h'], t['i1_p'])}
+{blk(one(PH['i2'], t['i2_alt']), t['i2_h'], t['i2_p'], True)}
+{blk(duo(*PH['i3'], t['i3_alt']), t['i3_h'], t['i3_p'])}
 </div></section>
 <section class="v2-sec v2-dark" id="ficha"><div class="wrap">
 <p class="v2-k">{t['fic_k']}</p><h2>{t['fic_h']}</h2>
@@ -182,7 +184,7 @@ def build(lang):
 <section class="v2-sec" id="fotos"><div class="wrap">
 <h2>{t['gal_h']}</h2><p class="v2-lead">{t['gal_p']}</p>{gal}</div></section>
 '''
-    end = f'''<section class="v2-end" id="visita" style="--bg:url('{PHOTO(2,"-m")}')"><div class="wrap">
+    end = f'''<section class="v2-end" id="visita" style="--bg:url('{PHOTO(PH['end'],"-m")}')"><div class="wrap">
 <h2>{t['end_h']}</h2><p>{t['end_p']}</p>
 <div class="v2-ctas">{vis()}{wa(t['ask'], 'ficha_cierre', 'btn v2-ghost')}</div>
 </div></section>
@@ -203,5 +205,16 @@ def build(lang):
     p.write_text(s2)
     print(lang, 'ok', len(s), '->', len(s2))
 
+def load(slug):
+    """Carga la configuración de otro barco desde _tools/ficha_v2_boats/<slug>.py (SLUG, T, SPOTS_XY, PH)."""
+    import importlib.util
+    global SLUG, T, SPOTS_XY, PH
+    pth = pathlib.Path(__file__).resolve().parent / 'ficha_v2_boats' / (slug.replace('-', '_') + '.py')
+    spec = importlib.util.spec_from_file_location('cfg', pth); cfg = importlib.util.module_from_spec(spec); spec.loader.exec_module(cfg)
+    SLUG, T, SPOTS_XY, PH = cfg.SLUG, cfg.T, cfg.SPOTS_XY, cfg.PH
+
 if __name__ == '__main__':
-    for l in T: build(l)
+    import sys
+    for slug in (sys.argv[1:] or ['prestige-32']):
+        if slug != 'prestige-32': load(slug)
+        for l in T: build(l)

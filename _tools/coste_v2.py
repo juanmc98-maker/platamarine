@@ -14,6 +14,11 @@ BOATS = {
               'ca': "L'amarrament va a part: l'actual és de lloguer i no es transmet amb el vaixell, i el preu depèn molt del port.",
               'en': 'The berth is extra: the current one is rented and does not go with the boat, and the price depends a lot on the marina.',
               'fr': "La place de port est en plus : l'actuelle est louée et n'est pas cédée avec le bateau, et le prix dépend beaucoup du port."}),
+    'oceanis-50': dict(len=14.75, eng='sv', hp=110, val=155000, hrs=60, fuel=1.60,
+        moor={'es': 'El amarre va aparte: el actual es de alquiler, y el precio depende mucho del puerto.',
+              'ca': "L'amarrament va a part: l'actual és de lloguer, i el preu depèn molt del port.",
+              'en': 'The berth is extra: the current one is rented, and the price depends a lot on the marina.',
+              'fr': "La place de port est en plus : l'actuelle est louée, et le prix dépend beaucoup du port."}),
 }
 
 def cost(b):
