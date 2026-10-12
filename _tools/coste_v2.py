@@ -7,7 +7,13 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 BOATS = {
     # slug: eslora, motor (fb/ig/id/sv como la calculadora), cv, valor, horas/año, €/l
-    'prestige-32': dict(len=10.65, eng='id', hp=260, val=89000, hrs=60, fuel=1.60),
+    # hp = potencia total (2 x 260 cv). engtxt: cómo se describe el motor en la letra pequeña. moor: texto del amarre propio del barco
+    'prestige-32': dict(len=10.65, eng='id', hp=520, val=89000, hrs=60, fuel=1.60,
+        engtxt={'es': '2 motores diésel de 260 cv', 'ca': '2 motors dièsel de 260 cv', 'en': 'twin 260 hp diesels', 'fr': '2 moteurs diesel de 260 ch'},
+        moor={'es': 'El amarre va aparte: el actual es de alquiler y no se transmite con el barco, y el precio depende mucho del puerto.',
+              'ca': "L'amarrament va a part: l'actual és de lloguer i no es transmet amb el vaixell, i el preu depèn molt del port.",
+              'en': 'The berth is extra: the current one is rented and does not go with the boat, and the price depends a lot on the marina.',
+              'fr': "La place de port est en plus : l'actuelle est louée et n'est pas cédée avec le bateau, et le prix dépend beaucoup du port."}),
 }
 
 def cost(b):
@@ -31,27 +37,34 @@ T = {
  'es': dict(nav='Coste al año', k='Coste al año', h='¿Cuánto cuesta mantenerlo?',
   lead='Estimación sin amarre, navegando unas {hrs} horas al año.', y='al año', nf='sin combustible', about='≈',
   rows=['Seguro (todo riesgo)', 'Mantenimiento del motor', 'Varada, limpieza y antifouling', 'ITB (prorrateada)', 'Ánodos, baterías y pequeños extras', 'Combustible ({hrs} h)'], tot='Total sin amarre',
-  moor='El amarre va aparte: el actual es de alquiler y no se transmite con el barco, y el precio depende mucho del puerto.',
+  moor='El amarre va aparte y su precio depende mucho del puerto.',
   btn='Calcularlo con tus datos y tu puerto', path='/herramientas/coste-mantener-barco.html',
-  small='Cálculo orientativo con la calculadora de la web (eslora {len}, diésel de {hp} cv, gasóleo a {fuel} €/l). Cada barco y cada dueño gastan distinto: puede variar mucho y no es vinculante.'),
+  small='Cálculo orientativo con la calculadora de la web (eslora {len}, {eng}, combustible a {fuel} €/l). Cada barco y cada dueño gastan distinto: puede variar mucho y no es vinculante.'),
  'ca': dict(nav='Cost anual', k='Cost anual', h='Quant costa mantenir-lo?',
   lead="Estimació sense amarrament, navegant unes {hrs} hores l'any.", y="l'any", nf='sense combustible', about='≈',
   rows=['Assegurança (tot risc)', 'Manteniment del motor', 'Varada, neteja i antifouling', 'ITB (prorratejada)', 'Ànodes, bateries i petits extres', 'Combustible ({hrs} h)'], tot='Total sense amarrament',
-  moor="L'amarrament va a part: l'actual és de lloguer i no es transmet amb el vaixell, i el preu depèn molt del port.",
+  moor="L'amarrament va a part i el preu depèn molt del port.",
   btn='Calcular-ho amb les teves dades i el teu port', path='/ca/herramientas/coste-mantener-barco.html',
-  small="Càlcul orientatiu amb la calculadora del web (eslora {len}, dièsel de {hp} cv, gasoil a {fuel} €/l). Cada vaixell i cada propietari gasten diferent: pot variar molt i no és vinculant."),
+  small="Càlcul orientatiu amb la calculadora del web (eslora {len}, {eng}, combustible a {fuel} €/l). Cada vaixell i cada propietari gasten diferent: pot variar molt i no és vinculant."),
  'en': dict(nav='Running costs', k='Running costs', h='How much does it cost to keep?',
   lead='Estimate without a berth, cruising about {hrs} hours a year.', y='a year', nf='without fuel', about='≈',
   rows=['Insurance (fully comprehensive)', 'Engine servicing', 'Haul-out, cleaning and antifouling', 'ITB inspection (pro rata)', 'Anodes, batteries and small extras', 'Fuel ({hrs} h)'], tot='Total without berth',
-  moor="The berth is extra: the current one is rented and does not go with the boat, and the price depends a lot on the marina.",
+  moor="The berth is extra and its price depends a lot on the marina.",
   btn='Work it out with your own figures and marina', path='/en/herramientas/coste-mantener-barco.html',
-  small="Rough estimate using the calculator on this website (length {len}, {hp} hp diesel, diesel at €{fuel}/l). Every boat and owner spends differently: it can vary a lot and is not binding."),
+  small="Rough estimate using the calculator on this website (length {len}, {eng}, fuel at €{fuel}/l). Every boat and owner spends differently: it can vary a lot and is not binding."),
  'fr': dict(nav='Coût annuel', k='Coût annuel', h='Combien coûte son entretien ?',
   lead='Estimation sans place de port, avec environ {hrs} heures de navigation par an.', y='par an', nf='sans carburant', about='≈',
   rows=['Assurance (tous risques)', 'Entretien du moteur', 'Carénage, nettoyage et antifouling', 'ITB (au prorata)', 'Anodes, batteries et petits extras', 'Carburant ({hrs} h)'], tot='Total sans place de port',
-  moor="La place de port est en plus : l'actuelle est louée et n'est pas cédée avec le bateau, et le prix dépend beaucoup du port.",
+  moor="La place de port est en plus et son prix dépend beaucoup du port.",
   btn='Le calculer avec vos données et votre port', path='/fr/herramientas/coste-mantener-barco.html',
-  small="Estimation indicative avec le calculateur du site (longueur {len}, diesel de {hp} ch, gazole à {fuel} €/l). Chaque bateau et chaque propriétaire dépensent différemment : cela peut beaucoup varier et n'engage à rien."),
+  small="Estimation indicative avec le calculateur du site (longueur {len}, {eng}, carburant à {fuel} €/l). Chaque bateau et chaque propriétaire dépensent différemment : cela peut beaucoup varier et n'engage à rien."),
+}
+
+ENG = {
+ 'es': {'fb': 'fueraborda de gasolina de {hp} cv', 'ig': 'motor de gasolina de {hp} cv', 'id': 'diésel de {hp} cv', 'sv': 'velero con diésel de {hp} cv'},
+ 'ca': {'fb': 'forabord de gasolina de {hp} cv', 'ig': 'motor de gasolina de {hp} cv', 'id': 'dièsel de {hp} cv', 'sv': 'veler amb dièsel de {hp} cv'},
+ 'en': {'fb': '{hp} hp petrol outboard', 'ig': '{hp} hp petrol engine', 'id': '{hp} hp diesel', 'sv': 'sailing boat with {hp} hp diesel'},
+ 'fr': {'fb': 'hors-bord essence de {hp} ch', 'ig': 'moteur essence de {hp} ch', 'id': 'diesel de {hp} ch', 'sv': 'voilier avec diesel de {hp} ch'},
 }
 
 CSS = """
@@ -73,13 +86,14 @@ PREFILL = ("try{var q=new URLSearchParams(location.search);[['len','c_len'],['hp
 
 def section(slug, b, lang):
     t = T[lang]; c = cost(b); total = sum(c); dec = '.' if lang == 'en' else ','
-    f = lambda s: s.format(hrs=b['hrs'], hp=b['hp'], len=f"{b['len']:.2f}".replace('.', dec) + ' m', fuel=f"{b['fuel']:.2f}".replace('.', dec))
+    eng = b.get('engtxt', {}).get(lang) or ENG[lang][b['eng']].format(hp=b['hp'])
+    f = lambda s: s.format(hrs=b['hrs'], hp=b['hp'], eng=eng, len=f"{b['len']:.2f}".replace('.', dec) + ' m', fuel=f"{b['fuel']:.2f}".replace('.', dec))
     rows = ''.join(f'<tr><td>{f(n)}</td><td>{eur(v, lang)}</td></tr>' for n, v in zip(t['rows'], c))
     q = f"?len={str(b['len']).replace('.', ',')}&amp;eng={b['eng']}&amp;hp={b['hp']}&amp;val={b['val']}"
     return f'''<section class="v2-sec v2-band" id="coste"><div class="wrap">
 <p class="v2-k">{t['k']}</p><h2>{t['h']}</h2>
 <div class="v2-cost"><div class="v2-cost-big"><p class="v2-lead">{f(t['lead'])}</p><b>{t['about']} {eur(r500(total), lang)} <small>{t['y']}</small></b><span>{t['about']} {eur(r500(total - c[5]), lang)} {t['nf']}</span>
-<p>{t['moor']}</p><a class="btn btn-wa" href="{t['path']}{q}">{t['btn']}</a></div>
+<p>{b.get('moor', {}).get(lang, t['moor'])}</p><a class="btn btn-wa" href="{t['path']}{q}">{t['btn']}</a></div>
 <div><table>{rows}<tr class="t"><td><b>{t['tot']}</b></td><td>{eur(total, lang)}</td></tr></table>
 <p class="v2-small">{f(t['small'])}</p></div></div>
 </div></section>
@@ -90,8 +104,11 @@ def run():
         for lang, t in T.items():
             p = ROOT / ('' if lang == 'es' else lang) / 'barcos' / f'{slug}.html'
             s = p.read_text()
-            if 'id="coste"' in s: print(slug, lang, 'ya tiene coste'); continue
             assert 'class="boat v2"' in s
+            if 'id="coste"' in s:
+                s2 = re.sub(r'<section class="v2-sec v2-band" id="coste">.*?</section>\n', lambda m: section(slug, b, lang), s, count=1, flags=re.S)
+                if s2 != s: p.write_text(s2); print(slug, lang, 'coste actualizado')
+                continue
             a = '<section class="v2-sec v2-dark" id="ficha">'
             assert s.count(a) == 1
             s = s.replace(a, section(slug, b, lang) + a, 1)

@@ -1,4 +1,6 @@
-"""Genera la ficha de la Jeanneau Prestige 32 (ES/CA/EN) a partir de la ficha de la Starfisher 840 como plantilla.
+"""OBSOLETO (11 oct 2026): NO relanzar, pisaría la ficha viva (v2, francés, ITB, 2 motores). La ficha se mantiene con
+_tools/ficha_v2.py, _tools/coste_v2.py y _tools/fix_prestige_motores.py.
+Genera la ficha de la Jeanneau Prestige 32 (ES/CA/EN) a partir de la ficha de la Starfisher 840 como plantilla.
 Uso: python3 _tools/build_prestige_32.py   (desde cualquier sitio)
 Los datos pendientes del propietario van como "se confirma con la documentación"; al llegar, editar D y regenerar."""
 import re, os, html, json
