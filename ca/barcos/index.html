@@ -309,6 +309,14 @@ function apply(push){
   s.forEach(function(c){g.appendChild(c)});
   cnt.textContent=n===1?cnt.dataset.one:cnt.dataset.many.replace('{n}',n);
   none.hidden=n>0;
+  /* Sin coincidencias: enseñar los 3 barcos disponibles más parecidos (cuantos más filtros cumplen, antes) */
+  var nr=document.querySelector('.bnear');if(nr)nr.remove();
+  if(!n){var sc=cards.filter(function(c){return c.dataset.sold!=='1'}).map(function(c){var s=0,v=+c.dataset.precio;
+    if(tipo!=='all'&&c.dataset.tipo===tipo)s+=3;if(zn!=='all'&&c.dataset.zona===zn)s+=2;if(cb!=='all'&&c.dataset.comb===cb)s+=1;if(mt!=='all'&&c.dataset.motor===mt)s+=1;
+    if(tl!=='all'&&+tl>=+c.dataset.titulo)s+=2;if(pr!=='all'){var r=pr.split('-'),lo=+r[0]||0,hi=r[1]===''?1e12:+r[1];s+=(v>=lo*0.8&&v<=hi*1.25)?2:-1;}
+    return [s,c];}).sort(function(a,b){return b[0]-a[0]||a[1].dataset.precio-b[1].dataset.precio}).slice(0,3);
+    if(sc.length){var pnr=document.createElement('p');pnr.className='bnear';pnr.style.margin='18px 0 6px';pnr.innerHTML='<strong>El més semblant que tinc ara en cartera:</strong>';g.parentNode.insertBefore(pnr,g);
+      sc.forEach(function(x,i){x[1].hidden=false;g.insertBefore(x[1],g.children[i]||null)});}}
   var act=tipo!=='all'||tl!=='all'||pr!=='all'||zn!=='all'||cb!=='all'||mt!=='all'||o!=='pd';
   f.querySelector('.bclear').hidden=!act;
   if(push){var p=new URLSearchParams();if(tipo!=='all')p.set('tipo',tipo);if(tl!=='all')p.set('titulo',tl);if(o!=='pd')p.set('orden',o);if(pr!=='all')p.set('precio',pr);if(zn!=='all')p.set('zona',zn);if(cb!=='all')p.set('combustible',cb);if(mt!=='all')p.set('motor',mt);
