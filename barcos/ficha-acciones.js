@@ -56,6 +56,63 @@
     vis[v].textContent = T.visit;
   }
 
+  /* 1b) "¿Qué te falta para decidirte?": un toque, respuesta concreta y recuento anónimo (con consentimiento de analítica) */
+  (function () {
+    var host = document.querySelector('aside.aside .card');
+    if (!host) return;
+    var nm = b.name || (document.querySelector('h1') || {}).textContent || b.slug;
+    var WA = function (t) { return 'https://wa.me/34633742973?text=' + encodeURIComponent(t); };
+    var coste = document.getElementById('coste') ? '#coste' : PRE + '/herramientas/coste-mantener-barco.html';
+    var F = {
+      es: {h: '¿Qué te falta para decidirte?', s: 'Un toque y te ayudo con eso.', o: [
+        ['precio', 'El precio', 'Cuéntame tu presupuesto y te digo si encaja o te busco alternativas.', 'Escribirme', WA('Hola Juan, me interesa el ' + nm + ' pero el precio se me va un poco. ¿Lo hablamos?')],
+        ['verlo', 'Verlo en persona', 'Elige día y hora y lo vemos juntos.', 'Solicitar visita', PRE + '/visita/?barco=' + b.slug],
+        ['gastos', 'Lo que cuesta mantenerlo', 'Aquí tienes una estimación de lo que cuesta al año.', 'Ver el coste', coste],
+        ['titulo', 'Qué título necesito', 'Te explico qué titulación hace falta para cada barco.', 'Ver titulaciones', PRE + '/titulaciones/'],
+        ['amarre', 'Dónde amarrarlo', 'Te oriento sobre amarres y precios por zona.', 'Ver amarres', PRE + '/servicios/amarres.html'],
+        ['datos', 'Más fotos o datos', 'Pregúntame lo que quieras saber y te contesto.', 'Preguntar por WhatsApp', WA('Hola Juan, quería más información del ' + nm + '.')]]},
+      ca: {h: 'Què et falta per decidir-te?', s: 'Un toc i t’hi ajudo.', o: [
+        ['precio', 'El preu', 'Explica’m el teu pressupost i et dic si encaixa o et busco alternatives.', 'Escriure’m', WA('Hola Juan, m’interessa el ' + nm + ' però el preu se m’escapa una mica. En parlem?')],
+        ['verlo', 'Veure’l en persona', 'Tria dia i hora i el veiem junts.', 'Sol·licitar visita', PRE + '/visita/?barco=' + b.slug],
+        ['gastos', 'El que costa mantenir-lo', 'Aquí tens una estimació del que costa l’any.', 'Veure el cost', coste],
+        ['titulo', 'Quin títol necessito', 'T’explico quina titulació cal per a cada vaixell.', 'Veure titulacions', PRE + '/titulaciones/'],
+        ['amarre', 'On amarrar-lo', 'T’oriento sobre amarratges i preus per zona.', 'Veure amarratges', PRE + '/servicios/amarres.html'],
+        ['datos', 'Més fotos o dades', 'Pregunta’m el que vulguis i et responc.', 'Preguntar per WhatsApp', WA('Hola Juan, voldria més informació del ' + nm + '.')]]},
+      en: {h: 'What’s holding you back?', s: 'One tap and I’ll help you with it.', o: [
+        ['precio', 'The price', 'Tell me your budget and I’ll tell you if it fits or find you alternatives.', 'Message me', WA('Hi Juan, I like the ' + nm + ' but the price is a bit above my budget. Can we talk?')],
+        ['verlo', 'Seeing it in person', 'Pick a day and time and we’ll see it together.', 'Book a viewing', PRE + '/visita/?barco=' + b.slug],
+        ['gastos', 'Running costs', 'Here is an estimate of what it costs per year.', 'See the costs', coste],
+        ['titulo', 'Which licence I need', 'I explain which licence each boat requires in Spain.', 'See licences', PRE + '/titulaciones/'],
+        ['amarre', 'Where to moor it', 'I can point you to berths and prices by area.', 'See berths', PRE + '/servicios/amarres.html'],
+        ['datos', 'More photos or details', 'Ask me anything you want to know and I’ll reply.', 'Ask on WhatsApp', WA('Hi Juan, I’d like more information about the ' + nm + '.')]]},
+      fr: {h: 'Qu’est-ce qui vous fait hésiter ?', s: 'Un clic et je vous aide.', o: [
+        ['precio', 'Le prix', 'Dites-moi votre budget : je vous dis s’il convient ou je vous cherche des alternatives.', 'M’écrire', WA('Bonjour Juan, le ' + nm + ' m’intéresse mais le prix dépasse un peu mon budget. On en parle ?')],
+        ['verlo', 'Le voir sur place', 'Choisissez un jour et une heure et on le voit ensemble.', 'Demander une visite', PRE + '/visita/?barco=' + b.slug],
+        ['gastos', 'Ce qu’il coûte à l’entretien', 'Voici une estimation de son coût annuel.', 'Voir le coût', coste],
+        ['titulo', 'Le permis nécessaire', 'Je vous explique quel permis il faut en Espagne pour chaque bateau.', 'Voir les permis', PRE + '/titulaciones/'],
+        ['amarre', 'Où l’amarrer', 'Je vous oriente sur les places de port et leurs prix par zone.', 'Voir les places', PRE + '/servicios/amarres.html'],
+        ['datos', 'Plus de photos ou d’infos', 'Posez-moi vos questions, je vous réponds.', 'Demander sur WhatsApp', WA('Bonjour Juan, je voudrais plus d’informations sur le ' + nm + '.')]]}
+    }[lang];
+    if (!F) return;
+    var st = document.createElement('style');
+    st.textContent = '.pm-ft{margin:16px 0 0}.pm-ft h3{margin:.2em 0 .3em}.pm-ft .ops{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}.pm-ft .ops button{font:600 13px var(--display);padding:7px 11px;border-radius:999px;border:1px solid var(--plata-2,#c9d3da);background:#fff;color:var(--ink,#0E3042);cursor:pointer}.pm-ft .ops button[aria-pressed=true]{background:var(--ink,#0E3042);color:#fff;border-color:var(--ink,#0E3042)}.pm-ft .r{margin:12px 0 0;font-size:15px}.pm-ft .r a{display:inline-block;margin-top:8px}';
+    document.head.appendChild(st);
+    var box = document.createElement('div');
+    box.className = 'card pm-ft';
+    box.innerHTML = '<h3>' + F.h + '</h3><p>' + F.s + '</p><div class="ops">' + F.o.map(function (o) { return '<button type="button" aria-pressed="false" data-k="' + o[0] + '">' + o[1] + '</button>'; }).join('') + '</div><div class="r" aria-live="polite"></div>';
+    host.parentNode.insertBefore(box, host.nextSibling);
+    var r = box.querySelector('.r');
+    box.querySelectorAll('.ops button').forEach(function (bt) {
+      bt.addEventListener('click', function () {
+        var o = F.o.filter(function (x) { return x[0] === bt.dataset.k; })[0];
+        box.querySelectorAll('.ops button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === bt)); });
+        var ext = o[4].indexOf('http') === 0;
+        r.innerHTML = o[2] + '<br><a class="btn ' + (ext ? 'btn-wa' : 'btn-ghost') + '" href="' + o[4] + '"' + (ext ? ' target="_blank" rel="noopener"' : '') + '>' + o[3] + '</a>';
+        try { if (window.pmCount) window.pmCount({t: 'falta', m: o[0], b: b.slug}); } catch (e) {}
+        try { if (window.gtag) window.gtag('event', 'que_falta', {reason: o[0], boat: b.slug}); } catch (e) {}
+      });
+    });
+  })();
   /* 2) Presupuesto de traslado */
   var card = document.querySelector('aside.aside .card');
   if (!card) return;
