@@ -72,7 +72,7 @@
         var r = search(q);
         list.innerHTML = r.length ? r.map(function (x) { return '<li><a href="' + esc(x.u) + '"><strong>' + esc(x.t) + '</strong>' + (x.d ? '<span>' + esc(x.d) + '</span>' : '') + '</a></li>'; }).join('')
           : '<li class="pms-none">' + esc(T.none) + ' <a href="' + wa + '" target="_blank" rel="noopener">' + esc(T.help) + '</a></li>';
-        clearTimeout(timer); timer = setTimeout(function () { if (window.pmTrack) window.pmTrack('site_search', {label: r.length ? 'con_resultados' : 'sin_resultados'}); }, 1500);
+        clearTimeout(timer); timer = setTimeout(function () { if (window.pmTrack) window.pmTrack('site_search', {label: r.length ? 'con_resultados' : 'sin_resultados'}); try { if (window.pmCount) window.pmCount({t: 'busqueda', m: norm(q).slice(0, 80), e: r.length}); } catch (e) {} }, 1500);
       });
     }
     function open() { ov.hidden = false; document.documentElement.style.overflow = 'hidden'; load(); setTimeout(function () { inp.focus(); }, 30); }

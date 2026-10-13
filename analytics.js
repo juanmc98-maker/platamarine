@@ -153,6 +153,7 @@
     try{ if(navigator.sendBeacon&&navigator.sendBeacon(URL,new Blob([body],{type:'text/plain'}))) return; }catch(e){}
     try{fetch(URL,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain'},body:body});}catch(e){}
   }
+  window.pmCount=enviar; /* búsquedas y respuestas de las fichas */
   /* visita: se envía al cargar o, si acepta las cookies después, en cuanto las acepta (máx. 2 min) */
   var entrada=!document.referrer||document.referrer.indexOf(location.origin)!==0;
   var n=0, iv=setInterval(function(){ if(window.__pmAnalyticsAllowed){clearInterval(iv); enviar({t:'visita',e:entrada?1:0});} else if(++n>120) clearInterval(iv); },1000);
