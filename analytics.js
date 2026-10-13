@@ -123,8 +123,9 @@
 (function(){
   var URL='https://script.google.com/macros/s/AKfycbwgYSVM0lD8dnl3vqLYyL5wcyhW4OHDcu_JnmeYlqn3dOFE2ZGPnUp-AIcmMLJPdfFfbQ/exec';
   if(URL.indexOf('https://script.google.com/')!==0) return;
+  var APP='https://platagarage-prueba.netlify.app/platagarage/api/w/marine'; /* app de gestión: mismo dato, para verlo en el panel */
   var p=location.pathname, lang=p.indexOf('/ca/')===0?'ca':p.indexOf('/en/')===0?'en':p.indexOf('/fr/')===0?'fr':'es';
-  var bm=p.match(/\/barcos\/([a-z0-9-]+)\.html$/), boat=bm?bm[1]:'';
+  var bm=p.match(/\/barcos\/([a-z0-9-]+?)(?:\.html)?$/), boat=bm&&bm[1]!=='index'?bm[1]:'';
   function canalDe(a){
     if(!a) return 'Directo';
     var s=(a.utm_source||'').toLowerCase(), m=(a.utm_medium||'').toLowerCase(), r=(a.referrer||'').toLowerCase();
@@ -150,6 +151,7 @@
     if(!window.__pmAnalyticsAllowed) return;
     d.p=p; d.l=lang; d.c=canal(); if(!d.b&&boat) d.b=boat;
     var body=JSON.stringify(d);
+    try{ if(navigator.sendBeacon) navigator.sendBeacon(APP,new Blob([body],{type:'text/plain'})); }catch(e){}
     try{ if(navigator.sendBeacon&&navigator.sendBeacon(URL,new Blob([body],{type:'text/plain'}))) return; }catch(e){}
     try{fetch(URL,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain'},body:body});}catch(e){}
   }
