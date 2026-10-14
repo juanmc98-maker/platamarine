@@ -126,8 +126,8 @@
         <h3 id="pmModalTitle">T'envio el resultat per correu?</h3>
         <p>T'envio el tipus de vaixell que t'encaixa, l'eslora orientativa i les guies per seguir, perquè ho tinguis a mà quan miris anuncis.</p>
         <form id="pmLeadForm" novalidate>
-          <input type="email" id="pmEmail" placeholder="tu@correu.com" autocomplete="email" required><input type="tel" id="pmTel" placeholder="El teu telèfon (opcional, si prefereixes WhatsApp)" autocomplete="tel" inputmode="tel" maxlength="20">
-          <label class="chk"><input type="checkbox" id="pmConsent" required> <span>Accepto que Plata Marine guardi el meu correu per enviar-me el resultat, segons la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
+          <input type="text" id="pmName" placeholder="El teu nom" autocomplete="name" maxlength="60" required> <input type="email" id="pmEmail" placeholder="tu@correu.com (opcional)" autocomplete="email"><input type="tel" id="pmTel" placeholder="El teu telèfon (per avisar-te per WhatsApp)" autocomplete="tel" inputmode="tel" maxlength="20" required>
+          <label class="chk"><input type="checkbox" id="pmConsent" required> <span>Accepto que Plata Marine guardi les meves dades per enviar-me el resultat, segons la <a href="/ca/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>.</span></label>
           <label class="chk"><input type="checkbox" id="pmAlert"> <span>Avisa'm si entra a cartera un vaixell que encaixi amb aquest resultat (t'escric jo, només quan hi hagi alguna cosa).</span></label>
           <label class="chk"><input type="checkbox" id="pmNews"> <span>Vull rebre de tant en tant articles i guies de Plata Marine per correu (et pots donar de baixa quan vulguis).</span></label>
           <p class="msg hidden" id="pmMsg"></p>
@@ -176,11 +176,10 @@ function openLeadModal(result,scrollId){lastResult=result;_scrollTo=scrollId;
 function closeModal(){el('pmModal').classList.add('hidden');if(_scrollTo)window.scrollTo({top:el(_scrollTo).offsetTop-90,behavior:'smooth'});}
 el('pmSkip').onclick=closeModal;
 el('pmLeadForm').onsubmit=function(ev){
-  ev.preventDefault();var em=el('pmEmail').value.trim(),msg=el('pmMsg');msg.className='msg';
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Revisa el correu, no sembla correcte.';return;}var tel=el('pmTel').value.trim();if(tel&&!/^\+?[0-9 ().-]{6,20}$/.test(tel)){msg.textContent='Revisa el telèfon, sembla incomplet.';return;}
+  ev.preventDefault();var em=el('pmEmail').value.trim(),msg=el('pmMsg');msg.className='msg';var nm=el('pmName').value.trim();if(nm.length<2||/[0-9@]|https?:|www\./i.test(nm)){msg.textContent='Escriu el teu nom, si us plau.';return;}var tel=el('pmTel').value.trim(),td=tel.replace(/[\s().-]/g,'');if(!(/^(\+34|0034)?[6-9][0-9]{8}$/.test(td)||/^(\+|00)[1-9][0-9]{7,14}$/.test(td))){msg.textContent='Revisa el telèfon: necessito un número vàlid per poder avisar-te.';return;}if(em&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Revisa el correu, no sembla correcte.';return;}
   if(!el('pmConsent').checked){msg.textContent='Necessito que acceptis la política de privacitat per poder enviar-te’l.';return;}
   var btn=el('pmSend');btn.disabled=true;var lbl=btn.textContent;btn.textContent='Enviant…';
-  var payload=Object.assign({email:em,telefono:tel,consent:true,newsletter:el('pmNews').checked,alerta:!!(el('pmAlert')&&el('pmAlert').checked),consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
+  var payload=Object.assign({nombre:nm,email:em,telefono:tel,consent:true,newsletter:el('pmNews').checked,alerta:!!(el('pmAlert')&&el('pmAlert').checked),consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
   window.submitConfirmed(LEADS_URL,payload,'json').then(function(){try{if(window.pmTrack)window.pmTrack('generate_lead',{form_id:'resultado_que_barco',contact_purpose:'result'});}catch(x){}
     msg.className='msg ok';msg.textContent='Sol·licitud registrada. El resultat també continua disponible a la pantalla.';btn.textContent='Enviat';
     setTimeout(closeModal,1800);
