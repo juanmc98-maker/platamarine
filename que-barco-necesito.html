@@ -126,13 +126,13 @@
         <h3 id="pmModalTitle">¿Te envío el resultado por correo?</h3>
         <p>Te mando el tipo de barco que te encaja, la eslora orientativa y las guías para seguir, para que lo tengas a mano cuando mires anuncios.</p>
         <form id="pmLeadForm" novalidate>
-          <input type="email" id="pmEmail" placeholder="tu@correo.com" autocomplete="email" required>          <input type="tel" id="pmTel" placeholder="Tu teléfono (opcional, por si prefieres WhatsApp)" autocomplete="tel" inputmode="tel" maxlength="20">
-          <label class="chk"><input type="checkbox" id="pmConsent" required> <span>Acepto que Plata Marine guarde mi correo para enviarme el resultado, según la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
+          <input type="text" id="pmName" placeholder="Tu nombre" autocomplete="name" maxlength="60" required> <input type="email" id="pmEmail" placeholder="tu@correo.com (opcional)" autocomplete="email">          <input type="tel" id="pmTel" placeholder="Tu teléfono (para avisarte por WhatsApp)" autocomplete="tel" inputmode="tel" maxlength="20" required>
+          <label class="chk"><input type="checkbox" id="pmConsent" required> <span>Acepto que Plata Marine guarde mis datos para enviarme el resultado, según la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
           <label class="chk"><input type="checkbox" id="pmAlert"> <span>Avísame si entra en cartera un barco que encaje con este resultado (te escribo yo, solo cuando haya algo).</span></label>
           <label class="chk"><input type="checkbox" id="pmNews"> <span>Quiero recibir de vez en cuando artículos y guías de Plata Marine por correo (puedes darte de baja cuando quieras).</span></label>
           <p class="msg hidden" id="pmMsg"></p>
           <button type="submit" class="btn btn-wa" id="pmSend">Enviarme el resultado</button>
-          <button type="button" class="skip" id="pmSkip">Ver el resultado sin correo</button>
+          <button type="button" class="skip" id="pmSkip">Ver el resultado sin dejar datos</button>
           <p class="legal">Responsable: Juan Morante (Plata Marine). Finalidad: enviarte el resultado y, solo si lo marcas, avisarte de barcos que encajen o enviarte novedades de la web. Puedes ejercer tus derechos de acceso, rectificación y supresión en juan@platamarine.com. Más información en la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</p>
         <p class="legal">También puedes <a href="mailto:juan@platamarine.com">escribir a juan@platamarine.com</a>. Si no aparece una confirmación, consulta antes de volver a enviar.</p></form>
       </div>
@@ -176,11 +176,10 @@ function openLeadModal(result,scrollId){lastResult=result;_scrollTo=scrollId;
 function closeModal(){el('pmModal').classList.add('hidden');if(_scrollTo)window.scrollTo({top:el(_scrollTo).offsetTop-90,behavior:'smooth'});}
 el('pmSkip').onclick=closeModal;
 el('pmLeadForm').onsubmit=function(ev){
-  ev.preventDefault();var em=el('pmEmail').value.trim(),msg=el('pmMsg');msg.className='msg';
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Revisa el correo, no parece correcto.';return;}var tel=el('pmTel').value.trim();if(tel&&!/^\+?[0-9 ().-]{6,20}$/.test(tel)){msg.textContent='Revisa el teléfono, parece incompleto.';return;}
+  ev.preventDefault();var em=el('pmEmail').value.trim(),msg=el('pmMsg');msg.className='msg';var nm=el('pmName').value.trim();if(nm.length<2||/[0-9@]|https?:|www\./i.test(nm)){msg.textContent='Escribe tu nombre, por favor.';return;}var tel=el('pmTel').value.trim(),td=tel.replace(/[\s().-]/g,'');if(!(/^(\+34|0034)?[6-9][0-9]{8}$/.test(td)||/^(\+|00)[1-9][0-9]{7,14}$/.test(td))){msg.textContent='Revisa el teléfono: necesito un número válido para poder avisarte.';return;}if(em&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Revisa el correo, no parece correcto.';return;}
   if(!el('pmConsent').checked){msg.textContent='Necesito que aceptes la política de privacidad para poder enviártelo.';return;}
   var btn=el('pmSend');btn.disabled=true;var lbl=btn.textContent;btn.textContent='Enviando…';
-  var payload=Object.assign({email:em,telefono:tel,consent:true,newsletter:el('pmNews').checked,alerta:!!(el('pmAlert')&&el('pmAlert').checked),consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
+  var payload=Object.assign({nombre:nm,email:em,telefono:tel,consent:true,newsletter:el('pmNews').checked,alerta:!!(el('pmAlert')&&el('pmAlert').checked),consent_v:'2026-09',consent_at:new Date().toISOString()},lastResult||{});
   window.submitConfirmed(LEADS_URL,payload,'json').then(function(){try{if(window.pmTrack)window.pmTrack('generate_lead',{form_id:'resultado_que_barco',contact_purpose:'result'});}catch(x){}
     msg.className='msg ok';msg.textContent='Solicitud registrada. El resultado también sigue disponible en pantalla.';btn.textContent='Enviado';
     setTimeout(closeModal,1800);
