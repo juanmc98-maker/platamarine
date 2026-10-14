@@ -5,6 +5,17 @@ var CID = 'ytnexwm14p', GID = 'G-MJ6S489CXQ', FID = '1618955459947483', KEY = 'p
 var VERSION = '2026-10-07', MAX_AGE = 365 * 86400000;
 var allowedA = false, allowedM = false, loadedGA = false, loadedFB = false, box, opener;
 var AKEY = 'pm_attr', AMAX = 90 * 86400000;
+/* Visitas propias: abrir la web una vez con ?soyjuan marca este navegador y deja de medirlo (GA4, Clarity, Meta y contador propio). ?soyjuan=0 lo desactiva. */
+var OWNER = false;
+try {
+var oq = new URLSearchParams(location.search);
+if (oq.has('soyjuan')) {
+if (oq.get('soyjuan') === '0') localStorage.removeItem('pm_owner'); else localStorage.setItem('pm_owner', '1');
+oq.delete('soyjuan'); var oqs = oq.toString();
+history.replaceState(null, '', location.pathname + (oqs ? '?' + oqs : '') + location.hash);
+}
+OWNER = localStorage.getItem('pm_owner') === '1';
+} catch (_) {}
 var LANG = location.pathname.indexOf('/ca/') === 0 ? 'ca' : (location.pathname.indexOf('/en/') === 0 ? 'en' : (location.pathname.indexOf('/fr/') === 0 ? 'fr' : 'es'));
 var T = {
 es: {
@@ -95,6 +106,7 @@ if (loadedCL || !CID || CID.indexOf('_') === 0) return; loadedCL = true;
 window.clarity('consent');
 }
 function enableAnalytics() {
+if (OWNER) return;
 allowedA = true; window.__pmAnalyticsAllowed = true; window['ga-disable-' + GID] = false;
 window.gtag('consent', 'update', {analytics_storage:'granted'});
 captureAttribution();
@@ -107,6 +119,7 @@ window.gtag('config', GID, {send_page_view:false, allow_google_signals:false, al
 window.gtag('event', 'page_view', {page_location:cleanUrl(), page_referrer:refOrigin(), page_title:document.title});
 }
 function enableMarketing() {
+if (OWNER) return;
 allowedM = true; window.__pmMarketingAllowed = true;
 window.gtag('consent', 'update', {ad_storage:'granted', ad_user_data:'granted', ad_personalization:'granted'});
 if (loadedFB) return;
