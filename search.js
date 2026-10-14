@@ -1,6 +1,6 @@
 /* Plata Marine · buscador de la web (lupa en la cabecera). Busca en títulos, encabezados y descripciones
    de todas las páginas del idioma actual (/search/<idioma>.json, generado con _tools/build_search_index.py).
-   Sin servicios externos ni cookies; la medición solo envía el número de resultados, nunca lo que se escribe. */
+   Sin servicios externos ni cookies; la medición (solo con consentimiento de analítica) envía lo que se escribe sin números largos, para no guardar teléfonos. */
 (function () {
   'use strict';
   var p = location.pathname, lang = p.indexOf('/ca/') === 0 ? 'ca' : p.indexOf('/en/') === 0 ? 'en' : p.indexOf('/fr/') === 0 ? 'fr' : 'es';
@@ -72,7 +72,7 @@
         var r = search(q);
         list.innerHTML = r.length ? r.map(function (x) { return '<li><a href="' + esc(x.u) + '"><strong>' + esc(x.t) + '</strong>' + (x.d ? '<span>' + esc(x.d) + '</span>' : '') + '</a></li>'; }).join('')
           : '<li class="pms-none">' + esc(T.none) + ' <a href="' + wa + '" target="_blank" rel="noopener">' + esc(T.help) + '</a></li>';
-        clearTimeout(timer); timer = setTimeout(function () { if (window.pmTrack) window.pmTrack('site_search', {label: r.length ? 'con_resultados' : 'sin_resultados'}); try { if (window.pmCount) window.pmCount({t: 'busqueda', m: norm(q).slice(0, 80), e: r.length}); } catch (e) {} }, 1500);
+        clearTimeout(timer); timer = setTimeout(function () { if (window.pmTrack) window.pmTrack('site_search', {label: r.length ? 'con_resultados' : 'sin_resultados'}); try { if (window.pmCount) window.pmCount({t: 'busqueda', m: norm(q).replace(/\d(?: ?\d){6,}/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 80), e: r.length}); } catch (e) {} }, 1500);
       });
     }
     function open() { ov.hidden = false; document.documentElement.style.overflow = 'hidden'; load(); setTimeout(function () { inp.focus(); }, 30); }
