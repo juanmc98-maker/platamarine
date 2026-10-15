@@ -1,623 +1,144 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Équipement de sécurité obligatoire à bord (Espagne 2026) : tableau par zone de navigation | Plata Marine</title>
-  <meta name="description" content="Ce qu'il faut obligatoirement avoir à bord selon la zone de navigation : gilets de sauvetage, fusées, extincteur, trousse de secours et plus. Guide basé sur le Décret Royal 339/2021.">
-  <link rel="canonical" href="https://www.platamarine.com/fr/guias/equipo-seguridad-barco-obligatorio">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Équipement de sécurité obligatoire à bord (Espagne 2026) : tableau par zone de navigation">
-  <meta property="og:description" content="Ce qu'il faut obligatoirement avoir à bord selon la zone de navigation : gilets, fusées, extincteur, trousse de secours et plus.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1668535941112-9e105f6e8b46?w=1200&q=80&fit=crop">
-  <meta property="og:url" content="https://www.platamarine.com/fr/guias/equipo-seguridad-barco-obligatorio">
-  <meta property="og:site_name" content="Plata Marine">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="alternate" hreflang="es" href="https://www.platamarine.com/guias/equipo-seguridad-barco-obligatorio">
-  <link rel="alternate" hreflang="ca" href="https://www.platamarine.com/ca/guias/equipo-seguridad-barco-obligatorio">
-  <link rel="alternate" hreflang="en" href="https://www.platamarine.com/en/guias/equipo-seguridad-barco-obligatorio">
-  <link rel="alternate" hreflang="fr" href="https://www.platamarine.com/fr/guias/equipo-seguridad-barco-obligatorio">
-  <link rel="alternate" hreflang="x-default" href="https://www.platamarine.com/guias/equipo-seguridad-barco-obligatorio">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Article",
-        "headline": "Équipement de sécurité obligatoire à bord (Espagne 2026) : tableau par zone de navigation",
-        "description": "Ce qu'il faut obligatoirement avoir à bord selon la zone de navigation : gilets de sauvetage, fusées, extincteur, trousse de secours et plus.",
-        "image": "https://images.unsplash.com/photo-1668535941112-9e105f6e8b46?w=1200&q=80&fit=crop",
-        "author": {
-          "@type": "Person",
-          "name": "Juan Morante",
-          "url": "https://www.platamarine.com/sobre-mi"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Plata Marine",
-          "url": "https://www.platamarine.com",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.platamarine.com/logo-plata-marine.png"
-          }
-        },
-        "datePublished": "2026-10-15",
-        "dateModified": "2026-10-15",
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "https://www.platamarine.com/fr/guias/equipo-seguridad-barco-obligatorio"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.platamarine.com/fr/"},
-          {"@type":"ListItem","position":2,"name":"Guides","item":"https://www.platamarine.com/fr/guias/"},
-          {"@type":"ListItem","position":3,"name":"Équipement de sécurité obligatoire à bord"}
-        ]
-      }
-    ]
-  }
-  </script>
-
-  <link rel="stylesheet" href="/pm.css">
-  <link rel="stylesheet" href="/guias/guias.css">
-
-  <style>
-    /* ── Styles spécifiques à ce guide ──────────────────────────────── */
-    .zonas-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-      gap: .5rem;
-      margin: 1.25rem 0 1.75rem;
-    }
-    .zona-chip {
-      padding: .6rem .75rem;
-      border-radius: 8px;
-      font-size: .85rem;
-      line-height: 1.35;
-    }
-    .zona-chip strong { display: block; font-size: 1rem; }
-    .zona-chip span   { display: block; opacity: .75; font-size: .78rem; }
-    .zona-7 { background: #e8f5e9; color: #1b5e20; }
-    .zona-6 { background: #f1f8e9; color: #33691e; }
-    .zona-5 { background: #fffde7; color: #e65100; }
-    .zona-4 { background: #fff3e0; color: #bf360c; }
-    .zona-3 { background: #fbe9e7; color: #b71c1c; }
-    .zona-2 { background: #fce4ec; color: #880e4f; }
-    .zona-1 { background: #ede7f6; color: #311b92; }
-
-    .tabla-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.25rem 0; }
-    .tabla-equipo {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: .86rem;
-      min-width: 680px;
-    }
-    .tabla-equipo th,
-    .tabla-equipo td {
-      padding: .55rem .7rem;
-      border: 1px solid #dee2e6;
-      text-align: center;
-      vertical-align: middle;
-    }
-    .tabla-equipo thead th {
-      background: #0e3042;
-      color: #fff;
-      font-weight: 600;
-      font-size: .8rem;
-    }
-    .tabla-equipo tbody th[scope="row"] {
-      text-align: left;
-      font-weight: 600;
-      background: #f8f9fa;
-      white-space: nowrap;
-    }
-    .tabla-equipo tbody tr:hover td,
-    .tabla-equipo tbody tr:hover th { background: #f0f4f8; }
-    .check { color: #0B766B; font-weight: 700; }
-    .dash  { color: #aaa; }
-
-    .nota-legal {
-      font-size: .8rem;
-      color: #666;
-      background: #f8f9fa;
-      border-left: 3px solid #dee2e6;
-      padding: .6rem .9rem;
-      margin: 1.25rem 0;
-      border-radius: 0 4px 4px 0;
-    }
-
-    .fuentes-list { padding-left: 1.25rem; }
-    .fuentes-list li { margin-bottom: .4rem; font-size: .88rem; }
-
-    .guia-toc {
-      background: #f0f6ff;
-      border: 1px solid #c8ddf8;
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
-      margin: 1.5rem 0 2rem;
-    }
-    .toc-title { font-weight: 700; margin: 0 0 .5rem; font-size: .9rem; }
-    .guia-toc ol { margin: 0; padding-left: 1.3rem; }
-    .guia-toc li { margin-bottom: .25rem; font-size: .9rem; }
-
-    .guias-relacionadas { margin-top: 2.5rem; border-top: 1px solid #e9ecef; padding-top: 1.5rem; }
-    .guias-rel-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: .75rem;
-      margin-top: 1rem;
-    }
-    .guia-rel-card {
-      display: block;
-      padding: .9rem 1rem;
-      background: #f8f9fa;
-      border: 1px solid #e9ecef;
-      border-radius: 8px;
-      font-size: .88rem;
-      text-decoration: none;
-      color: #0e3042;
-      font-weight: 500;
-      transition: background .15s, border-color .15s;
-    }
-    .guia-rel-card:hover { background: #e8f0fe; border-color: #8ab4f8; }
-
-    .note-traducteur {
-      font-size: .82rem;
-      color: #555;
-      background: #fffbf0;
-      border-left: 3px solid #f5c842;
-      padding: .6rem .9rem;
-      margin: 2rem 0 1rem;
-      border-radius: 0 4px 4px 0;
-    }
-
-    /* responsive adjustments */
-    @media (max-width: 480px) {
-      .zonas-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Équipement de sécurité obligatoire en Espagne par zone (2026)</title>
+<meta name="description" content="L&#x27;équipement de sécurité obligatoire à bord en Espagne selon la zone : gilets, fusées, extincteurs, trousse de secours et assèchement. D&#x27;après le RD 339/2021.">
+<link rel="canonical" href="https://www.platamarine.com/fr/guias/equipo-seguridad-barco-obligatorio">
+<link rel="alternate" hreflang="es" href="https://www.platamarine.com/guias/equipo-seguridad-barco-obligatorio">
+<link rel="alternate" hreflang="ca" href="https://www.platamarine.com/ca/guias/equipo-seguridad-barco-obligatorio">
+<link rel="alternate" hreflang="en" href="https://www.platamarine.com/en/guias/equipo-seguridad-barco-obligatorio">
+<link rel="alternate" hreflang="fr" href="https://www.platamarine.com/fr/guias/equipo-seguridad-barco-obligatorio">
+<link rel="alternate" hreflang="x-default" href="https://www.platamarine.com/guias/equipo-seguridad-barco-obligatorio">
+<link rel="icon" type="image/png" href="/logo-plata-marine.png">
+<meta property="og:title" content="Équipement de sécurité obligatoire en Espagne par zone (2026)">
+<meta property="og:description" content="L&#x27;équipement de sécurité obligatoire à bord en Espagne selon la zone : gilets, fusées, extincteurs, trousse de secours et assèchement. D&#x27;après le RD 339/2021.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.platamarine.com/fr/guias/equipo-seguridad-barco-obligatorio">
+<meta property="og:image" content="https://www.platamarine.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="stylesheet" href="/guias/guias.css">
+<style>
+.zonas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin:18px 0 22px}
+.zona-chip{padding:10px 12px;border-radius:8px;line-height:1.3;font-size:.85rem}
+.zona-chip strong{display:block;font-size:1rem}
+.zona-chip span{display:block;opacity:.8;font-size:.8rem}
+.zona-7{background:#e8f5e9;color:#1b5e20}.zona-6{background:#f1f8e9;color:#33691e}.zona-5{background:#fffde7;color:#8a4b00}
+.zona-4{background:#fff3e0;color:#a33a0b}.zona-3{background:#fbe9e7;color:#9e1b1b}.zona-2{background:#fce4ec;color:#880e4f}.zona-1{background:#ede7f6;color:#311b92}
+.tabla-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:16px 0 6px;border:1px solid #dfe5e8;border-radius:8px}
+.tabla-equipo{width:100%;border-collapse:collapse;font-size:.85rem;min-width:640px;background:#fff}
+.tabla-equipo th,.tabla-equipo td{padding:8px 9px;border-bottom:1px solid #e6ebee;border-left:1px solid #eef2f4;text-align:center;vertical-align:middle;line-height:1.3}
+.tabla-equipo thead th{background:#0E3042;color:#fff;font-weight:600;font-size:.8rem}
+.tabla-equipo tbody th{text-align:left;font-weight:600;background:#f6f8f9;position:sticky;left:0;min-width:130px;max-width:170px}
+.tabla-equipo thead th:first-child{position:sticky;left:0;z-index:1}
+.tabla-equipo small{font-size:.78rem}
+.tabla-hint{font-size:.8rem;opacity:.75;margin:0 0 18px}
+@media(min-width:900px){.tabla-hint{display:none}}
+.check{color:#0B766B;font-weight:700}.dash{color:#9aa5ab}
+.tabla-equipo th{text-transform:none;letter-spacing:0;font-family:inherit}.tabla-equipo thead th{white-space:nowrap;padding:8px 6px}
+.tabla-equipo{min-width:600px}@media(min-width:900px){.tabla-equipo{min-width:0}}
+.tabla-equipo tbody th{min-width:120px;max-width:150px;font-size:.82rem}
+.fuentes-list{padding-left:1.2rem}.fuentes-list li{font-size:.9rem}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Équipement de sécurité obligatoire à bord en Espagne : quoi emporter selon la zone", "inLanguage": "fr", "url": "https://www.platamarine.com/fr/guias/equipo-seguridad-barco-obligatorio", "description": "L'équipement de sécurité obligatoire à bord en Espagne selon la zone : gilets, fusées, extincteurs, trousse de secours et assèchement. D'après le RD 339/2021.", "dateModified": "2026-10-15", "datePublished": "2026-10-15", "author": {"@type": "Person", "name": "Juan Morante"}, "publisher": {"@type": "Organization", "name": "Plata Marine", "url": "https://www.platamarine.com/"}}</script>
+<link rel="stylesheet" href="/nav.css?v=20261006m">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Plata Marine", "item": "https://www.platamarine.com/fr/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.platamarine.com/fr/guias/"}, {"@type": "ListItem", "position": 3, "name": "Équipement de sécurité obligatoire à bord en Espagne : quoi emporter selon la zone", "item": "https://www.platamarine.com/fr/guias/equipo-seguridad-barco-obligatorio"}]}</script>
 </head>
 <body>
 
-  <!-- ═══ HEADER / NAV (nav.js remplit le menu) ══════════════════════ -->
-  <header class="site-header">
-    <nav class="nav-main" aria-label="Navigation principale">
-      <a href="/fr/" class="logo-link" aria-label="Accueil Plata Marine">
-        <img src="/logo-plata-marine.png" alt="Plata Marine" width="140" height="40" loading="eager">
-      </a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/fr/" aria-label="Plata Marine, accueil"><img class="brand-logo" src="/logo-plata-marine-1200.png" alt="Plata Marine" width="1200" height="400"></a>
+    <nav class="nav pmx-nav" aria-label="Rubriques">
+      <a href="/fr/barcos/">Bateaux à vendre</a>
+      <a href="/fr/vender-barco/">Vendre mon bateau</a>
+      <a href="/fr/#comprar">Je cherche votre bateau</a>
+      <div class="pmx-dd pmx-res"><button type="button" aria-expanded="false" aria-controls="pmxRes">Ressources</button><div class="pmx-menu pmx-mega" id="pmxRes"><div class="pmx-col" id="pmxM1"><p>Vendre</p><a href="/fr/herramientas/valora-tu-barco.html">Qu’est-ce qui influe sur le prix de mon bateau ?</a><a href="/fr/papeles-fiscalidad/">Papiers et fiscalité</a><a href="/fr/guias/que-hace-un-broker-nautico.html">Ce que fait un courtier nautique</a><a href="/fr/vender/broker-nautico-barcelona-maresme.html">Vendre à Barcelone et dans le Maresme</a><a href="/fr/vender/guia-fotos-barco.html">Comment photographier votre bateau</a></div><div class="pmx-col" id="pmxM2"><p>Acheter</p><a href="/fr/alertas/">Prévenez-moi des nouveaux bateaux</a><a href="/fr/que-barco-necesito.html">De quel bateau ai-je besoin ?</a><a href="/fr/modelos/">Modèles : points à vérifier et prix</a><a href="/fr/comprar/">Acheter un bateau : par zone et par type</a><a href="/fr/precios/">Prix des bateaux d’occasion</a><a href="/fr/herramientas/">Calculatrices : taxes, coûts, financement</a></div><div class="pmx-col" id="pmxM3"><p>Apprendre</p><a href="/fr/guias/">Guides</a><a href="/fr/actualidad/">Actualités</a><a href="/fr/navegante/">Guide du plaisancier</a><a href="/fr/titulaciones/">Permis bateau</a></div><div class="pmx-col" id="pmxM4"><p>Services</p><a href="/fr/servicios/">Expertise, papiers, chantier naval et plus</a><a href="/fr/servicios/directorio.html">Annuaire des entreprises</a><a href="/fr/servicios/escuelas.html">Écoles nautiques</a><a href="/fr/servicios/amarres.html">Places de port</a></div></div></div>
+      <a href="/fr/#juan">Qui suis-je</a>
+      <a href="/fr/#contacto">Contact</a>
     </nav>
-  </header>
-
-  <!-- ═══ MAIN ═════════════════════════════════════════════════════════ -->
-  <main>
-    <article class="guia" itemscope itemtype="https://schema.org/Article">
-
-      <!-- Image hero -->
-      <div class="guia-hero">
-        <img
-          src="https://images.unsplash.com/photo-1668535941112-9e105f6e8b46?w=1200&q=80&fit=crop"
-          alt="Équipement de sécurité à bord d'un bateau de plaisance"
-          width="1200" height="480"
-          loading="eager"
-          fetchpriority="high"
-        >
-      </div>
-
-      <div class="guia-wrap">
-
-        <!-- Fil d'Ariane -->
-        <nav class="breadcrumb" aria-label="Fil d'Ariane">
-          <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-              <a href="/fr/" itemprop="item"><span itemprop="name">Accueil</span></a>
-              <meta itemprop="position" content="1">
-            </li>
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-              <a href="/fr/guias/" itemprop="item"><span itemprop="name">Guides</span></a>
-              <meta itemprop="position" content="2">
-            </li>
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-              <span itemprop="name" aria-current="page">Équipement de sécurité obligatoire</span>
-              <meta itemprop="position" content="3">
-            </li>
-          </ol>
-        </nav>
-
-        <p class="guia-cat">Sécurité · Réglementation</p>
-
-        <h1 itemprop="headline">
-          Équipement de sécurité obligatoire à bord :<br>
-          ce qu'il faut emporter selon la zone de navigation (Espagne 2026)
-        </h1>
-
-        <p class="guia-byline">
-          Par <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-            <a href="/fr/#juan" itemprop="url"><span itemprop="name">Juan Morante</span></a>
-          </span>
-          ·
-          <time itemprop="datePublished" datetime="2026-10-15">Octobre 2026</time>
-          · 8&nbsp;min de lecture
-        </p>
-
-        <!-- Intro -->
-        <p class="guia-intro">
-          Acheter un bateau d'occasion pour découvrir qu'il manque des fusées de détresse, que l'extincteur est périmé ou que les gilets de sauvetage ne sont pas du bon type est plus courant qu'il n'y paraît. Savoir à l'avance ce qu'exige la loi vous permet de négocier le prix, de demander au vendeur de compléter l'équipement avant de signer, ou de calculer le coût réel du bateau dès le premier jour. Ce guide reprend ce qu'impose la réglementation espagnole en vigueur — le <strong>Décret Royal 339/2021</strong>, du 18 mai — dans un tableau que vous pouvez consulter avant d'acheter ou avant chaque sortie.
-        </p>
-
-        <!-- TOC -->
-        <nav class="guia-toc" aria-label="Sommaire de l'article">
-          <p class="toc-title">Sommaire</p>
-          <ol>
-            <li><a href="#zonas">Les 7 zones de navigation</a></li>
-            <li><a href="#tabla">Tableau récapitulatif par zone</a></li>
-            <li><a href="#chalecos">Gilets de sauvetage : flottabilité et types</a></li>
-            <li><a href="#bengalas">Fusées : validité et péremption</a></li>
-            <li><a href="#extintor">Extincteur à bord</a></li>
-            <li><a href="#botiquin">Trousse de secours</a></li>
-            <li><a href="#comunicaciones">VHF et radiobalise (non obligatoires, mais…)</a></li>
-            <li><a href="#consejo">Ce qu'il faut demander au vendeur avant d'acheter</a></li>
-            <li><a href="#fuentes">Sources</a></li>
-          </ol>
-        </nav>
-
-
-        <!-- ── 1. ZONES ─────────────────────────────────────────── -->
-        <section id="zonas">
-          <h2>Les 7 zones de navigation en Espagne</h2>
-
-          <p>La réglementation espagnole classe les eaux en sept zones selon la distance à la côte ou à un port de refuge. Plus la zone est élevée (numéro plus bas), plus la loi exige d'équipement. La <strong>zone 7</strong> comprend les eaux intérieures et abritées ; la <strong>zone 1</strong> correspond à la navigation océanique sans limite.</p>
-
-          <div class="zonas-grid" aria-label="Zones de navigation">
-            <div class="zona-chip zona-7"><strong>Zone 7</strong><span>Eaux abritées, ports</span></div>
-            <div class="zona-chip zona-6"><strong>Zone 6</strong><span>Jusqu'à 2 nm de la côte</span></div>
-            <div class="zona-chip zona-5"><strong>Zone 5</strong><span>Jusqu'à 5 nm</span></div>
-            <div class="zona-chip zona-4"><strong>Zone 4</strong><span>Jusqu'à 12 nm</span></div>
-            <div class="zona-chip zona-3"><strong>Zone 3</strong><span>Jusqu'à 25 nm</span></div>
-            <div class="zona-chip zona-2"><strong>Zone 2</strong><span>Jusqu'à 60 nm</span></div>
-            <div class="zona-chip zona-1"><strong>Zone 1</strong><span>Sans limite de distance</span></div>
-          </div>
-
-          <p>La grande majorité des bateaux à moteur de plaisance de 6 à 12 mètres naviguant le long de la côte catalane opèrent en <strong>zones 4 à 6</strong> (entre 2 et 12 milles nautiques de la côte). Le document de départ en navigation du bateau — établi par la Capitainerie Maritime ou, pour les sorties nationales, tenu en ordre par le patron — précise la zone et le nombre maximal de personnes autorisées à bord.</p>
-        </section>
-
-
-        <!-- ── 2. TABLEAU ─────────────────────────────────────────── -->
-        <section id="tabla">
-          <h2>Tableau de l'équipement minimum obligatoire par zone</h2>
-
-          <p>Le tableau est basé sur le <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2021-8268" rel="noopener noreferrer" target="_blank">Décret Royal 339/2021, du 18 mai</a>. Le chiffre indique la quantité minimale ; <span class="check">✓</span> signifie obligatoire sans quantité fixe ; <span class="dash">—</span> indique que cet élément n'est pas obligatoire dans cette zone (bien qu'il soit toujours recommandé de l'emporter).</p>
-
-          <div class="tabla-scroll">
-            <table class="tabla-equipo">
-              <caption class="sr-only">Équipement obligatoire par zone de navigation en Espagne (DR 339/2021)</caption>
-              <thead>
-                <tr>
-                  <th scope="col">Élément</th>
-                  <th scope="col">Zone 7</th>
-                  <th scope="col">Zone 6</th>
-                  <th scope="col">Zone 5</th>
-                  <th scope="col">Zone 4</th>
-                  <th scope="col">Zone 3</th>
-                  <th scope="col">Zones 1–2</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Gilets de sauvetage</th>
-                  <td>1/pers.<br><small>100 N</small></td>
-                  <td>1/pers.<br><small>100 N</small></td>
-                  <td>1/pers.<br><small>100 N</small></td>
-                  <td>1/pers.<br><small>150 N</small></td>
-                  <td>1/pers.<br><small>150 N</small></td>
-                  <td>1/pers.<br><small>150–275 N</small></td>
-                </tr>
-                <tr>
-                  <th scope="row">Lumière sur gilet</th>
-                  <td class="dash">—</td>
-                  <td><small>Navigation de nuit uniquement</small></td>
-                  <td><small>Navigation de nuit uniquement</small></td>
-                  <td class="check">✓</td>
-                  <td class="check">✓</td>
-                  <td class="check">✓</td>
-                </tr>
-                <tr>
-                  <th scope="row">Bouée couronne + ligne de sauvetage</th>
-                  <td class="dash">—</td>
-                  <td class="dash">—</td>
-                  <td class="dash">—</td>
-                  <td>1 (avec lumière)</td>
-                  <td>1 (avec lumière)</td>
-                  <td>2 (une avec lumière)</td>
-                </tr>
-                <tr>
-                  <th scope="row">Fusées à main (rouges)</th>
-                  <td class="dash">—</td>
-                  <td class="dash">—</td>
-                  <td class="dash">—</td>
-                  <td>3</td>
-                  <td>6</td>
-                  <td>6</td>
-                </tr>
-                <tr>
-                  <th scope="row">Fusées à parachute</th>
-                  <td class="dash">—</td>
-                  <td class="dash">—</td>
-                  <td class="dash">—</td>
-                  <td>3</td>
-                  <td>6</td>
-                  <td>6</td>
-                </tr>
-                <tr>
-                  <th scope="row">Signaux fumigènes flottants</th>
-                  <td class="dash">—</td>
-                  <td class="dash">—</td>
-                  <td class="dash">—</td>
-                  <td class="dash">—</td>
-                  <td>1</td>
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <th scope="row">Radeau de survie</th>
-                  <td class="dash">—</td>
-                  <td class="dash">—</td>
-                  <td class="dash">—</td>
-                  <td class="dash">—</td>
-                  <td><small>✓ ISO 9650<br>pack B</small></td>
-                  <td><small>✓ SOLAS<br>pack A</small></td>
-                </tr>
-                <tr>
-                  <th scope="row">Extincteur portable (34 B min.)</th>
-                  <td colspan="6" style="text-align:left"><span class="check">✓</span> Sur tout bateau à moteur. La quantité dépend de la longueur, non de la zone (voir section <a href="#extintor">Extincteur</a>).</td>
-                </tr>
-                <tr>
-                  <th scope="row">Pompe d'assèchement</th>
-                  <td colspan="4"><small>Manuelle ou électrique + seau ≥ 5 L</small></td>
-                  <td colspan="2"><small>Pompe motorisée + manuelle + 2 seaux</small></td>
-                </tr>
-                <tr>
-                  <th scope="row">Ancre + câblot de mouillage</th>
-                  <td colspan="6"><span class="check">✓</span> Toutes zones. Longueur du câblot : minimum 5 × longueur totale.</td>
-                </tr>
-                <tr>
-                  <th scope="row">Corne de brume</th>
-                  <td colspan="6"><span class="check">✓</span> Toutes zones.</td>
-                </tr>
-                <tr>
-                  <th scope="row">Lampe torche étanche (+ rechange)</th>
-                  <td colspan="6"><span class="check">✓</span> Toutes zones. Inclure ampoule et piles de rechange.</td>
-                </tr>
-                <tr>
-                  <th scope="row">Réflecteur radar</th>
-                  <td colspan="6"><span class="check">✓</span> Obligatoire sur les coques non métalliques.</td>
-                </tr>
-                <tr>
-                  <th scope="row">Pavillon national</th>
-                  <td colspan="6"><span class="check">✓</span> Toutes zones.</td>
-                </tr>
-                <tr>
-                  <th scope="row">Rame de secours</th>
-                  <td colspan="6"><span class="check">✓</span> Sur les embarcations de moins de 8 mètres.</td>
-                </tr>
-                <tr>
-                  <th scope="row">Amarres</th>
-                  <td colspan="6"><span class="check">✓</span> Minimum deux. Toutes zones.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p class="nota-legal">
-            Tableau indicatif établi à partir du Décret Royal 339/2021, du 18 mai (BOE n° 118). Il peut contenir des inexactitudes ou devenir obsolète suite à des modifications ultérieures. Avant tout départ en navigation ou inspection, consultez toujours la réglementation officielle en vigueur ou la Capitainerie Maritime de votre zone.
-          </p>
-        </section>
-
-
-        <!-- ── CTA 1 ─────────────────────────────────────────────── -->
-        <div class="cta-box">
-          <p>Vous envisagez d'acheter un bateau d'occasion ?</p>
-          <a href="https://api.whatsapp.com/send?phone=34633742973&text=Bonjour%2C+je+voudrais+des+informations+sur+l'achat+d'un+bateau" class="btn btn-wa" rel="nofollow noopener" target="_blank">
-            Me contacter sur WhatsApp
-          </a>
-        </div>
-
-
-        <!-- ── 3. GILETS DE SAUVETAGE ──────────────────────────────── -->
-        <section id="chalecos">
-          <h2>Gilets de sauvetage : flottabilité, marquage et révision</h2>
-
-          <p>La flottabilité minimale (en Newtons) exigée par la loi dépend de la zone pour laquelle le bateau est autorisé à naviguer :</p>
-
-          <ul>
-            <li><strong>100 N</strong> — zones 5, 6 et 7 (navigation jusqu'à 5 nm). Maintient une personne consciente sur le dos, mais ne retourne pas une personne inconsciente.</li>
-            <li><strong>150 N</strong> — zones 3 et 4 (jusqu'à 25 nm). Retourne une personne inconsciente sur le dos et maintient la tête hors de l'eau.</li>
-            <li><strong>275 N</strong> — zones 1 et 2 (océanique). Flottabilité et temps de survie plus élevés en eaux agitées ou combinaisons de survie intégrées.</li>
-          </ul>
-
-          <p>Tous les gilets doivent porter le <strong>marquage CE</strong> avec la norme correspondante. Les gilets des zones 3 et au-delà doivent obligatoirement intégrer un <strong>feu à éclats automatique</strong> qui s'active à l'immersion. Ceux des zones 1 et 2 doivent également porter un sifflet et un réflecteur.</p>
-
-          <p>Les gilets gonflables — les plus utilisés aujourd'hui pour leur confort — nécessitent une <strong>révision annuelle</strong> du mécanisme de déclenchement et de la cartouche de CO₂. Lors de l'achat d'un bateau d'occasion, vérifiez que chaque gilet porte une étiquette de révision en cours de validité et que la cartouche n'a pas été perforée.</p>
-        </section>
-
-
-        <!-- ── 4. FUSÉES ─────────────────────────────────────── -->
-        <section id="bengalas">
-          <h2>Fusées et signaux pyrotechniques : péremption et élimination</h2>
-
-          <p>Les fusées de détresse marines <strong>expirent trois ans après la date de fabrication</strong> (ou à la date indiquée sur l'emballage). Passée cette date, elles sont invalides lors d'une inspection, même si elles peuvent encore techniquement fonctionner.</p>
-
-          <p>Pour la <strong>zone 4</strong> (la plus courante sur la côte catalane, jusqu'à 12 nm), la dotation minimale est :</p>
-          <ul>
-            <li>3 fusées à main (rouges)</li>
-            <li>3 fusées à parachute (rouges)</li>
-          </ul>
-
-          <p>Pour les zones 1, 2 et 3, la dotation monte à 6 de chaque type, avec des signaux fumigènes flottants orange ajoutés à partir de la zone 3.</p>
-
-          <p><strong>Les fusées périmées ne se jettent pas à la poubelle.</strong> Certains ports de plaisance disposent de points de collecte ; sinon, contactez la Capitainerie Maritime ou le service de gestion des déchets dangereux de votre municipalité. Conservez-les toujours séparées des neuves pour ne pas les confondre.</p>
-        </section>
-
-
-        <!-- ── 5. EXTINCTEUR ─────────────────────────────────── -->
-        <section id="extintor">
-          <h2>Extincteur à bord : combien et de quel type</h2>
-
-          <p>L'extincteur est obligatoire sur tout bateau à moteur, quelle que soit la zone de navigation. La quantité minimale <strong>dépend de la longueur du bateau, non de la zone</strong> :</p>
-
-          <ul>
-            <li>Moins de 15 m : <strong>1 extincteur portable 34 B</strong> (poudre sèche ABC ou CO₂ marin)</li>
-            <li>De 15 à 20 m : <strong>2 extincteurs 34 B</strong></li>
-            <li>De 20 à 24 m : <strong>3 extincteurs 34 B</strong></li>
-          </ul>
-
-          <p>Les hors-bords jusqu'à 7,5 kW sur des embarcations de moins de 6 m peuvent être exemptés dans certains cas ; en cas de doute, consultez votre Capitainerie Maritime. Les bateaux à moteur inboard ou intégré doivent également avoir l'extincteur accessible depuis le cockpit, et non enfermé sous le pont hors de portée.</p>
-
-          <p>Les extincteurs nécessitent une <strong>révision périodique</strong> (généralement annuelle pour les extincteurs à poudre sèche). Vérifiez l'étiquette de révision et l'état du sceau lors de l'achat d'un bateau d'occasion : un extincteur hors révision peut poser des problèmes lors de l'inspection technique (ITB) ou d'un contrôle de la Guardia Civil del Mar.</p>
-        </section>
-
-
-        <!-- ── 6. TROUSSE DE SECOURS ─────────────────────────────── -->
-        <section id="botiquin">
-          <h2>Trousse de secours</h2>
-
-          <p>L'<strong>Arrêté FOM/1254/2002</strong> réglemente la trousse médicale pour les embarcations de plaisance avec équipage rémunéré. Pour les <strong>bateaux privés sans équipage professionnel à bord</strong>, la réglementation ne détaille pas le contenu minimal, mais le bateau doit disposer de matériel de premiers secours adapté.</p>
-
-          <p>Pour une navigation côtière habituelle en zones 4 à 6, une trousse raisonnable comprend :</p>
-          <ul>
-            <li>Analgésiques (ibuprofène ou paracétamol)</li>
-            <li>Antihistaminique pour les piqûres ou réactions allergiques</li>
-            <li>Pansements, compresses et bandages de différentes tailles</li>
-            <li>Sérum physiologique pour le lavage des plaies</li>
-            <li>Antiseptique (chlorhexidine ou povidone iodée)</li>
-            <li>Ciseaux à bout rond et pinces</li>
-            <li>Gants en latex ou vinyle</li>
-            <li>Couverture de survie thermique</li>
-          </ul>
-
-          <p>Lors de l'achat d'un bateau d'occasion, vérifiez les dates de péremption des médicaments dans la trousse de secours : il est très courant de les trouver tous périmés. Un réapprovisionnement de base ne coûte pas plus de 30 à 50 €.</p>
-        </section>
-
-
-        <!-- ── 7. VHF ET RADIOBALISE ────────────────────────────────── -->
-        <section id="comunicaciones">
-          <h2>VHF et radiobalise : non obligatoires, mais potentiellement vitaux</h2>
-
-          <p>Le Décret Royal 339/2021 <strong>n'oblige pas à emporter une radio VHF ni une radiobalise</strong> sur les embarcations de plaisance privées. Cependant, leur absence peut être déterminante en cas d'urgence.</p>
-
-          <p>La <strong>VHF marine</strong> vous permet de communiquer sur le canal 16 (canal de détresse et de veille permanente du Salvamento Marítimo) et de coordonner avec d'autres bateaux. Un appareil portable homologué coûte entre 80 et 250 €. À partir de la zone 4, il est très recommandé ; en zone 3 ou au-delà, pratiquement indispensable. Si vous naviguez de nuit ou par visibilité réduite, envisagez d'en emporter un même si vous sortez près des côtes.</p>
-
-          <p>La <strong>radiobalise EPIRB</strong> émet un signal de détresse à 406 MHz que le système COSPAS-SARSAT relaie aux centres de secours. Pour être utile, elle doit être <strong>enregistrée auprès du SASEMAR</strong> (Société de Sauvetage et de Sécurité Maritimes espagnole) avec les données du bateau ; sans enregistrement, elle peut générer une fausse alerte sans mener à aucun sauvetage. L'enregistrement est gratuit sur leur site web. Notez que l'intervalle de révision de la radiobalise est de deux ans.</p>
-
-          <p>Le <strong>PLB</strong> (balise de détresse personnelle) fonctionne comme l'EPIRB mais se porte sur soi ; utile sur les voiliers ou les bateaux où la possibilité de tomber à l'eau est réelle.</p>
-        </section>
-
-
-        <!-- ── 8. CONSEIL DU COURTIER ────────────────────────────── -->
-        <section id="consejo">
-          <h2>Ce qu'il faut demander au vendeur avant de signer le compromis de vente</h2>
-
-          <p>Lorsque j'évalue un bateau d'occasion pour un client, la première chose que nous examinons est la documentation et l'équipement de sécurité. Points concrets à vérifier :</p>
-
-          <ul>
-            <li>Le <strong>document de départ en navigation</strong> : confirme pour quelle zone le bateau est autorisé et la capacité maximale en personnes. Si l'équipement actuel ne couvre pas cette zone, il faut le mettre à jour avant de partir.</li>
-            <li>Les <strong>gilets de sauvetage</strong> : nombre suffisant pour l'équipage maximal du document, type correct pour la zone, marquage CE en vigueur et — s'ils sont gonflables — révision annuelle à jour.</li>
-            <li>Les <strong>fusées</strong> : vérifiez la date de péremption sur chaque emballage. Avoir le bon nombre ne suffit pas si elles sont périmées.</li>
-            <li>L'<strong>extincteur</strong> : étiquette de révision valide et sceau intact.</li>
-            <li>La dernière <strong>ITB</strong> (Inspection Technique des Bateaux) : elle vérifie que le bateau respectait bien son équipement obligatoire. Si des anomalies sont constatées, demandez qu'elles soient corrigées avant la vente.</li>
-          </ul>
-
-          <p>Un équipement incomplet ou périmé n'est pas nécessairement un obstacle à l'achat ; c'est un argument pour négocier le prix. Renouveler un kit complet pour la zone 4 sur un bateau de 8 à 10 mètres (gilets 150 N, fusées, extincteur et bouée couronne) coûte environ <strong>400 à 800 €</strong> selon les marques et ce que le bateau possède déjà en bon état.</p>
-        </section>
-
-
-        <!-- CTA 2 -->
-        <div class="cta-box">
-          <p>Si vous cherchez un bateau sur la côte catalane et souhaitez de l'aide pour vérifier l'équipement avant d'acheter, contactez-moi.</p>
-          <a href="/comprar/" class="btn btn-primary">Comment je vous aide à acheter un bateau</a>
-        </div>
-
-
-        <!-- Note légale globale -->
-        <p class="nota-legal">
-          Ce guide est indicatif et peut contenir des erreurs ou devenir obsolète suite à des modifications réglementaires. Pour tout départ en navigation ou inspection, consultez toujours la réglementation officielle publiée au BOE et la Capitainerie Maritime de votre zone. Les informations contenues ici n'ont pas de caractère contraignant. Plus d'informations : <a href="/fr/guias/">Guides Plata Marine</a>.
-        </p>
-
-
-        <!-- ── SOURCES ──────────────────────────────────────────── -->
-        <section id="fuentes">
-          <h2>Sources</h2>
-          <ul class="fuentes-list">
-            <li>
-              <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2021-8268" rel="noopener noreferrer" target="_blank">
-                Décret Royal 339/2021, du 18 mai, réglementant l'équipement de sécurité et de prévention de la pollution des embarcations de plaisance — BOE n° 118 (19/05/2021)
-              </a>
-            </li>
-            <li>
-              <a href="https://m.fomento.gob.es/MFOM/LANG_CASTELLANO/DIRECCIONES_GENERALES/MARINA_MERCANTE/NAUTICA_DE_RECREO/Responsabilidades/Equipos_de_seguridad/" rel="noopener noreferrer" target="_blank">
-                Équipement obligatoire sur les embarcations de plaisance — Ministère espagnol des Transports et de la Mobilité Durable (Marine Marchande)
-              </a>
-            </li>
-            <li>
-              <a href="https://nautica.safeformacion.com/blog/equipo-de-seguridad-obligatorio-en-barcos-que-llevar-segun-la-zona/" rel="noopener noreferrer" target="_blank">
-                Équipement de sécurité obligatoire en navigation de plaisance — SAFE Náutica
-              </a>
-            </li>
-          </ul>
-        </section>
-
-
-        <!-- ── GUIDES CONNEXES ───────────────────────────────── -->
-        <section class="guias-relacionadas">
-          <h2>Vous pourriez aussi trouver utile</h2>
-          <div class="guias-rel-grid">
-            <a href="/fr/guias/que-mirar-comprar-barco-segunda-mano" class="guia-rel-card">
-              Ce qu'il faut vérifier avant d'acheter un bateau d'occasion
-            </a>
-            <a href="/fr/guias/itb-inspeccion-tecnica-barcos-recreo" class="guia-rel-card">
-              L'ITB : inspection technique des bateaux de plaisance
-            </a>
-            <a href="/herramientas/coste-mantener-barco" class="guia-rel-card">
-              Calculateur : coût annuel d'un bateau
-            </a>
-          </div>
-        </section>
-
-        <!-- Note traducteur -->
-        <p class="note-traducteur">
-          <strong>Note de traduction :</strong> Cette page est une traduction de l'article original en espagnol. La réglementation décrite s'applique exclusivement aux embarcations naviguant dans les eaux espagnoles. En cas de divergence entre cette traduction et le texte officiel du Décret Royal 339/2021 (BOE), le texte espagnol prévaut.
-        </p>
-
-      </div><!-- /guia-wrap -->
-    </article>
-  </main>
-
-
-  <!-- ═══ FOOTER ════════════════════════════════════════════════════ -->
-  <footer class="site-footer">
-    <div class="footer-wrap">
-      <p class="footer-brand">
-        <a href="/fr/">Plata Marine</a> · Courtier nautique en Catalogne ·
-        <a href="https://www.platamarine.com">www.platamarine.com</a>
-      </p>
-      <nav class="footer-nav" aria-label="Pied de page">
-        <a href="/aviso-legal">Mentions légales</a>
-        <a href="/privacidad">Confidentialité</a>
-        <a href="/cookies">Cookies</a>
-        <a href="/fr/#contacto">Contact</a>
-      </nav>
-      <p class="footer-copy">
-        <small>© 2026 Plata Marine · Informations indicatives, des erreurs sont possibles, rien n'est contraignant.</small>
-      </p>
+    <a class="btn btn-wa" href="https://wa.me/34633742973?text=Bonjour%20Juan%2C%20j%27aimerais%20parler%20d%27un%20bateau." target="_blank" rel="noopener">Parler à Juan</a><div class="langsw" aria-label="Langue"><a href="https://www.platamarine.com/guias/equipo-seguridad-barco-obligatorio"><span class="flag flag-es" aria-hidden="true"></span><span class="sr-only">ES</span></a><a href="https://www.platamarine.com/ca/guias/equipo-seguridad-barco-obligatorio"><span class="flag flag-ca" aria-hidden="true"></span><span class="sr-only">CA</span></a><a href="https://www.platamarine.com/en/guias/equipo-seguridad-barco-obligatorio"><span class="flag flag-en" aria-hidden="true"></span><span class="sr-only">EN</span></a><a href="https://www.platamarine.com/fr/guias/equipo-seguridad-barco-obligatorio" aria-current="page"><span class="flag flag-fr" aria-hidden="true"></span><span class="sr-only">FR</span></a></div>
+    <button type="button" class="pmx-btn" id="pmxBtn" aria-expanded="false" aria-controls="pmxPanel" aria-label="Ouvrir le menu" data-open="Ouvrir le menu" data-close="Fermer le menu"><span></span></button>
+  </div>
+  <nav class="pmx-panel" id="pmxPanel" aria-label="Menu mobile">
+    <div class="pmx-in">
+      <div class="pmx-grp pmx-main"><a href="/fr/barcos/">Bateaux à vendre</a><a href="/fr/vender-barco/">Vendre mon bateau</a><a href="/fr/#comprar">Je cherche votre bateau</a></div>
+      <div class="pmx-reshead"><p>Ressources</p></div>
+      <div class="pmx-grp pmx-sub"><p>Vendre</p><a href="/fr/herramientas/valora-tu-barco.html">Qu’est-ce qui influe sur le prix de mon bateau ?</a><a href="/fr/papeles-fiscalidad/">Papiers et fiscalité</a><a href="/fr/guias/que-hace-un-broker-nautico.html">Ce que fait un courtier nautique</a><a href="/fr/vender/broker-nautico-barcelona-maresme.html">Vendre à Barcelone et dans le Maresme</a><a href="/fr/vender/guia-fotos-barco.html">Comment photographier votre bateau</a></div><div class="pmx-grp pmx-sub"><p>Acheter</p><a href="/fr/alertas/">Prévenez-moi des nouveaux bateaux</a><a href="/fr/que-barco-necesito.html">De quel bateau ai-je besoin ?</a><a href="/fr/modelos/">Modèles : points à vérifier et prix</a><a href="/fr/comprar/">Acheter un bateau : par zone et par type</a><a href="/fr/precios/">Prix des bateaux d’occasion</a><a href="/fr/herramientas/">Calculatrices : taxes, coûts, financement</a></div><div class="pmx-grp pmx-sub"><p>Apprendre</p><a href="/fr/guias/">Guides</a><a href="/fr/actualidad/">Actualités</a><a href="/fr/navegante/">Guide du plaisancier</a><a href="/fr/titulaciones/">Permis bateau</a></div><div class="pmx-grp pmx-sub"><p>Services</p><a href="/fr/servicios/">Expertise, papiers, chantier naval et plus</a><a href="/fr/servicios/directorio.html">Annuaire des entreprises</a><a href="/fr/servicios/escuelas.html">Écoles nautiques</a><a href="/fr/servicios/amarres.html">Places de port</a></div>
+      <div class="pmx-grp pmx-main"><a href="/fr/#juan">Qui suis-je</a><a href="/fr/#contacto">Contact</a></div>
+      <div class="pmx-wide"><a class="btn btn-wa" href="https://wa.me/34633742973?text=Bonjour%20Juan%2C%20j%27aimerais%20parler%20d%27un%20bateau." target="_blank" rel="noopener">Parler à Juan</a></div>
     </div>
-  </footer>
+  </nav>
+</header>
 
+<main class="art">
+  <div class="wrap">
+    <article>
+      <header>
+        <p class="eyebrow">Guides · Sécurité</p>
+        <h1>Équipement de sécurité obligatoire à bord en Espagne : quoi emporter selon la zone</h1>
+        <div class="meta"><span>Par Juan Morante</span><span>Mis à jour en octobre 2026</span><span>6 min de lecture</span></div>
+        <p class="lead">Acheter un bateau puis découvrir qu'il manque des fusées, que l'extincteur n'a pas été révisé ou que les gilets ne correspondent pas à sa zone arrive plus souvent qu'on ne le croit. Voici ce qu'exige la réglementation espagnole en vigueur, le <strong>Décret royal 339/2021</strong>, classé par zone de navigation pour le vérifier avant d'acheter ou avant de sortir.</p>
+      </header>
 
-  <!-- ═══ SCRIPTS ══════════════════════════════════════════════════ -->
-  <script src="/nav.js" defer></script>
-  <script src="/consent.js" defer></script>
-  <script src="/analytics.js" defer></script>
+      <div class="prose">
+<h2 id="zonas">Les 7 zones de navigation</h2><p>La réglementation espagnole découpe la mer en sept zones selon l'éloignement de la côte ou d'un abri. Plus le chiffre est bas, plus vous pouvez aller loin et plus il faut d'équipement.</p><div class="zonas-grid"><div class="zona-chip zona-7"><strong>Zone 7</strong><span>Eaux abritées, ports et baies</span></div><div class="zona-chip zona-6"><strong>Zone 6</strong><span>Jusqu'à 2 milles d'un abri</span></div><div class="zona-chip zona-5"><strong>Zone 5</strong><span>Jusqu'à 5 milles d'un abri</span></div><div class="zona-chip zona-4"><strong>Zone 4</strong><span>Jusqu'à 12 milles des côtes</span></div><div class="zona-chip zona-3"><strong>Zone 3</strong><span>Jusqu'à 25 milles</span></div><div class="zona-chip zona-2"><strong>Zone 2</strong><span>Jusqu'à 60 milles</span></div><div class="zona-chip zona-1"><strong>Zone 1</strong><span>Sans limite</span></div></div><p>L'équipement doit couvrir la zone la plus éloignée où vous naviguerez. Si vous ne savez pas jusqu'à quelle zone votre bateau peut aller, regardez ses papiers ou renseignez-vous auprès de la Capitanía.</p>
+<h2 id="tabla">Équipement minimum par zone</h2><p>Le chiffre indique la quantité minimale, <span class="check">✓</span> signifie obligatoire et <span class="dash">—</span> que la réglementation ne l'exige pas dans cette zone (même si l'avoir à bord ne fait jamais de mal). Le tableau résume les articles 6 à 20 du Décret royal 339/2021.</p><div class="tabla-scroll"><table class="tabla-equipo"><caption class="sr-only">Équipement de sécurité minimum par zone de navigation (Décret royal 339/2021)</caption><thead><tr><th scope="col">Équipement</th><th scope="col">Zone 7</th><th scope="col">Zone 6</th><th scope="col">Zone 5</th><th scope="col">Zone 4</th><th scope="col">Zone 3</th><th scope="col">Zone 2</th><th scope="col">Zone 1</th></tr></thead><tbody>
+<tr><th scope="row">Gilets (1 par personne)</th><td colspan="3">100 N</td><td colspan="3">150 N</td><td>275 N<br><small>+1 en plus</small></td></tr>
+<tr><th scope="row">Feu sur le gilet</th><td colspan="4"><small>Si vous naviguez de nuit</small></td><td colspan="3"><span class="check">✓</span></td></tr>
+<tr><th scope="row">Bouée avec feu et ligne</th><td colspan="3"><span class="dash">—</span></td><td colspan="3">1</td><td>2<br><small>la 2e sans feu</small></td></tr>
+<tr><th scope="row">Feux à main</th><td><span class="dash">—</span></td><td>3</td><td>3</td><td>3</td><td>6</td><td>6</td><td>6</td></tr>
+<tr><th scope="row">Fusées parachutes</th><td colspan="3"><span class="dash">—</span></td><td>3</td><td>6</td><td>6</td><td>6</td></tr>
+<tr><th scope="row">Signaux fumigènes flottants</th><td colspan="4"><span class="dash">—</span></td><td>1</td><td>1</td><td>2</td></tr>
+<tr><th scope="row">Radeau de survie</th><td colspan="4"><span class="dash">—</span></td><td colspan="3"><small>Pour tout le monde à bord</small></td></tr>
+<tr><th scope="row">Trousse de secours</th><td colspan="3"><span class="dash">—</span></td><td colspan="4"><small>Type « radeau de survie »</small></td></tr>
+<tr><th scope="row">Assèchement</th><td><small>Pompe manuelle ou électrique</small></td><td colspan="3"><small>Pompe manuelle ou électrique + seau de 5 l</small></td><td colspan="3"><small>Pompe moteur + pompe manuelle + 2 seaux</small></td></tr>
+<tr><th scope="row">Extincteurs</th><td colspan="7"><small>Selon le manuel du constructeur (bateaux CE) ou selon la longueur et la puissance. Voir <a href="#extintor">extincteurs</a>.</small></td></tr>
+<tr><th scope="row">Ligne de mouillage</th><td colspan="7"><small>Au moins 5 fois la longueur du bateau, avec une chaîne au moins égale à la longueur (jusqu'à 6 m, un simple cordage suffit)</small></td></tr>
+<tr><th scope="row">Corne de brume</th><td colspan="7"><span class="check">✓</span></td></tr>
+<tr><th scope="row">Lampe étanche et piles de rechange</th><td colspan="7"><span class="check">✓</span></td></tr>
+<tr><th scope="row">Réflecteur radar</th><td colspan="7"><small>✓ Coques non métalliques</small></td></tr>
+<tr><th scope="row">Pavillon espagnol</th><td colspan="7"><span class="check">✓</span></td></tr>
+<tr><th scope="row">Amarres</th><td colspan="7"><small>Au moins 2</small></td></tr>
+</tbody></table></div><p class="tabla-hint">Faites glisser le tableau pour voir toutes les zones.</p>
+<h2 id="chalecos">Gilets de sauvetage</h2><p>Il faut au moins un gilet par personne à bord, et un de plus en zone 1. Les enfants doivent avoir un gilet adapté à leur taille et à leur poids. La flottabilité minimale dépend de la zone :</p><ul><li><strong>100 N</strong> en zones 5, 6 et 7.</li><li><strong>150 N</strong> en zones 2, 3 et 4.</li><li><strong>275 N</strong> en zone 1.</li></ul><p>Chaque gilet a son feu. En zones 4 à 7, si vous ne naviguez que de jour, la réglementation permet de s'en passer.</p><p>Les gilets gonflables se révisent selon les indications du fabricant, dans une station de service agréée. Si vous achetez un bateau, regardez l'étiquette de la dernière révision de chacun.</p>
+<h2 id="senales">Feux à main, fusées et fumigènes</h2><ul><li><strong>Zones 5 et 6 :</strong> 3 feux à main.</li><li><strong>Zone 4 :</strong> 3 feux à main et 3 fusées parachutes.</li><li><strong>Zones 2 et 3 :</strong> 6 feux, 6 fusées et 1 signal fumigène flottant.</li><li><strong>Zone 1 :</strong> 6 feux, 6 fusées et 2 signaux fumigènes.</li></ul><p>En zone 7, ils ne sont pas exigés. Chaque emballage porte une date de péremption : vérifiez-la et remplacez ceux qui vont expirer. Les produits périmés ne vont pas à la poubelle ; demandez à votre port ou à votre shipchandler où les déposer.</p>
+<h2 id="extintor">Extincteurs</h2><p>Si le bateau porte le marquage CE, les extincteurs sont ceux indiqués par le constructeur dans le manuel du bateau. Sinon, la réglementation tient compte de la longueur et de la puissance du moteur :</p><ul><li><strong>Selon la longueur :</strong> 1 extincteur 34B jusqu'à 15 m (sous 10 m, seulement s'il y a un espace habitable fermé), 2 de 15 à 20 m et 3 de 20 à 24 m.</li><li><strong>Selon la puissance :</strong> 1 extincteur 34B jusqu'à 220 kW (non exigé pour un hors-bord jusqu'à 25 kW) et, au-delà de 220 kW, une capacité totale de 0,3 × la puissance.</li></ul><p>Chaque extincteur doit contenir au moins 2 kg d'agent, et l'un d'eux doit être accessible depuis le poste de barre. À l'achat, regardez l'étiquette de la dernière révision et vérifiez que le scellé est intact.</p>
+<h2 id="botiquin">Trousse de secours</h2><p>En zones 1 à 4, les bateaux sans équipage professionnel doivent avoir une trousse de secours au contenu du type « radeaux de survie » (annexe II du Décret royal 258/1999), avec le guide sanitaire. En zones 5 à 7 elle n'est pas obligatoire, mais une trousse de base est toujours utile. À l'achat d'un bateau, vérifiez les dates : on trouve souvent des médicaments périmés.</p>
+<h2 id="achique">Assèchement et mouillage</h2><ul><li><strong>Zone 7 :</strong> une pompe manuelle ou électrique.</li><li><strong>Zones 4, 5 et 6 :</strong> une pompe manuelle ou électrique et un seau d'au moins 5 litres.</li><li><strong>Zones 1, 2 et 3 :</strong> une pompe entraînée par le moteur ou une autre source d'énergie, une pompe manuelle et deux seaux d'au moins 5 litres.</li></ul><p>La ligne de mouillage doit mesurer au moins cinq fois la longueur du bateau, avec une longueur de chaîne égale à celle du bateau. Les bateaux de 6 mètres ou moins peuvent n'avoir qu'un cordage. Le poids de l'ancre dépend de la longueur.</p>
+<h2 id="radio">VHF et balise de détresse</h2><p>Le Décret royal 339/2021 ne traite ni de la radio ni des balises de détresse : elles ont leur propre réglementation. Même si votre zone ne l'exige pas, une VHF à l'écoute du canal 16 est l'un des équipements les plus utiles en cas de problème en mer.</p>
+<h2 id="comprar">Ce qu'il faut vérifier avant d'acheter un bateau</h2><ul><li>Les <strong>papiers du bateau</strong> : jusqu'à quelle zone il peut naviguer et combien de personnes il peut embarquer.</li><li>Les <strong>gilets</strong> : en nombre suffisant, avec la flottabilité de la zone et, s'ils sont gonflables, révisés.</li><li>Les <strong>feux et fusées</strong> : la date de péremption de chaque emballage.</li><li>Les <strong>extincteurs</strong> : étiquette de révision et scellé.</li><li>La dernière <strong>ITB</strong> : si des défauts ont été notés, demandez qu'ils soient corrigés avant la vente.</li></ul><p>Un élément manquant ou périmé ne doit pas bloquer l'achat. C'est un point de plus pour discuter du prix.</p>
+<h2 id="fuentes">Source</h2><ul class="fuentes-list"><li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2021-8268" target="_blank" rel="noopener">Décret royal 339/2021 du 18 mai sur l'équipement de sécurité et de prévention de la pollution des bateaux de plaisance (texte consolidé, BOE, en espagnol)</a>. Il a remplacé l'Ordre FOM/1144/2003 et a été modifié par le Décret royal 587/2022 pour les radeaux.</li></ul>
+      </div>
+        <p class="aviso aviso-fiscal" style="font-size:.82em;opacity:.85">Information indicative fondée sur le texte consolidé du Décret royal 339/2021, revu en octobre 2026. Avant un contrôle, consultez le BOE ou la Capitanía Marítima de votre zone. Nous ne parlons pas français et utilisons un traducteur. Nous pouvons nous tromper et rien sur cette page n'est contractuel.</p>
+    </article>
 
+    <aside class="aside" aria-label="WhatsApp">
+      <div class="card">
+        <p class="eyebrow">Vous achetez un bateau ?</p>
+        <h3>Je vous aide à voir ce qui lui manque.</h3>
+        <p>Dites-moi quel bateau vous regardez et où vous comptez naviguer, et nous passons l'équipement en revue ensemble. Sans engagement.</p>
+        <a class="btn btn-wa" href="https://wa.me/34633742973?text=Bonjour%20Juan%2C%20j%27ai%20une%20question%20sur%20l%27%C3%A9quipement%20de%20s%C3%A9curit%C3%A9%20d%27un%20bateau." target="_blank" rel="noopener">Parler à Juan sur WhatsApp</a>
+      </div>
+      <nav class="toc" aria-label="Dans ce guide"><p class="eyebrow">Dans ce guide</p><ol><li><a href="#zonas">Les 7 zones</a></li><li><a href="#tabla">Tableau par zone</a></li><li><a href="#chalecos">Gilets</a></li><li><a href="#senales">Feux et fusées</a></li><li><a href="#extintor">Extincteurs</a></li><li><a href="#botiquin">Trousse de secours</a></li><li><a href="#achique">Assèchement et mouillage</a></li><li><a href="#radio">VHF</a></li><li><a href="#comprar">Avant d'acheter</a></li><li><a href="#fuentes">Source</a></li></ol></nav>
+      <div class="rel"><p class="eyebrow">Autres guides</p><a href="/fr/guias/que-mirar-comprar-barco-segunda-mano">Ce qu'il faut vérifier en achetant un bateau d'occasion</a><a href="/fr/guias/itb-inspeccion-tecnica-barcos-recreo">L'ITB, le contrôle technique des bateaux de plaisance</a><a href="/fr/guias/">Tous les guides</a></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="line">
+      <span>© 2026 Plata Marine · Sabadell, Barcelona · <a href="mailto:juan@platamarine.com">juan@platamarine.com</a></span>
+      <a href="/fr/aviso-legal.html">Mentions légales</a> · <a href="/fr/privacidad.html">Confidentialité</a> · <a href="/fr/cookies.html">Cookies</a> · <a href="https://rotulito.com" target="_blank" rel="noopener">Site web par rotulito.com</a>
+    </div>
+  </div>
+<p class="wrap"><button type="button" data-cookie-settings>Paramètres des cookies</button></p></footer>
+<script src="/nav.js?v=20261006m" defer></script>
+<script src="/consent.js?v=20261006" defer></script>
+<script src="/submit-confirmed.js" defer></script>
+<script src="/analytics.js?v=20261006" defer></script>
 </body>
 </html>
