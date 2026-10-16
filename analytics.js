@@ -137,14 +137,14 @@
     if(/coches\.net|cochesnet/.test(t)) return 'Coches.net';
     if(/milanuncios/.test(t)) return 'Milanuncios';
     if(/cosasdebarcos/.test(t)) return 'Cosas de Barcos';
-    if(/instagram/.test(t)) return 'Instagram';
+    if(/instagram/.test(t)||s==='ig') return 'Instagram';
     if(/facebook|fb\.me/.test(t)) return 'Facebook';
     if(/whatsapp|wa\.me/.test(t)) return 'WhatsApp';
     if(/google|bing|duckduckgo|yahoo|ecosia|qwant/.test(t)) return 'Buscador';
     if(/chatgpt|openai|perplexity|gemini|copilot/.test(t)) return 'Asistentes IA';
     if(a.source==='direct') return 'Directo';
     if(s) return s.slice(0,40);
-    try{return new URL(r).hostname.replace(/^www\./,'').slice(0,40);}catch(e){return 'Otro';}
+    try{return new window.URL(r).hostname.replace(/^www\./,'').slice(0,40);}catch(e){return 'Otro';}
   }
   function canal(){return canalDe(window.pmAttribution&&window.pmAttribution());}
   function enviar(d){
