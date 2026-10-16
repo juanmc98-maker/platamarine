@@ -38,11 +38,13 @@ T = {
   "h1": "Semirrígidas que se construyen para ir rápido. Y para ti.",
   "lead": "SKIPPER fabrica en Grecia semirrígidas de alto rendimiento de 11 a 12,4 metros. Te ayudo a elegir modelo y motores, y estoy contigo hasta el día de la entrega.",
   "cta": "Hablar con Juan", "cta2": "Ver modelos y precios",
-  "stats": [("70–80", "nudos de velocidad máxima"), ("24°", "de astilla muerta"), ("Cat. B", "navegación en altura"), ("2015", "año de fundación")],
+  "stats": [("70–80", "nudos de velocidad máxima"), ("24°", "de astilla muerta"), ("Cat. B", "navegación en altura"), ("+10", "años construyendo barcos")],
   "models_h": "Elige tu SKIPPER", "models_p": "Toca un modelo, elige motores y verás el precio al momento.",
   "labels": {"loa": "Eslora", "beam": "Manga", "pax": "Personas", "vmax": "Velocidad máx.", "fuel": "Combustible", "cat": "Categoría", "weight": "Peso sin motores", "dr": "Astilla muerta"},
   "pick": "Elige motorización", "price": "Precio con esta motorización", "vat": "+IVA", "licence": "Titulación: PER o superior",
   "ask": "Pedir presupuesto oficial", "from": "desde",
+  "onreq": "Precio a consultar", "onreq_s": "A consultar", "ask_req": "Pedir precio",
+  "wa_req": "Hola Juan, me interesa el SKIPPER {m}. ¿Me pasas precio?",
   "wa_cfg": "Hola Juan, me interesa el SKIPPER {m} con {e}. ¿Me preparas el presupuesto oficial?",
   "wa_gen": "Hola Juan, me interesa un SKIPPER. ¿Me ayudas a elegir modelo?",
   "cmp_h": "Los tres, cara a cara", "cmp_model": "Modelo", "cmp_price": "Desde",
@@ -76,11 +78,13 @@ T = {
   "h1": "RIBs built to go fast. And built for you.",
   "lead": "SKIPPER builds high-performance RIBs from 11 to 12.4 metres in Greece. I help you choose model and engines, and I'm with you until delivery day.",
   "cta": "Talk to Juan", "cta2": "See models and prices",
-  "stats": [("70–80", "knots top speed"), ("24°", "deadrise"), ("Cat. B", "offshore design category"), ("2015", "year founded")],
+  "stats": [("70–80", "knots top speed"), ("24°", "deadrise"), ("Cat. B", "offshore design category"), ("10+", "years building boats")],
   "models_h": "Choose your SKIPPER", "models_p": "Tap a model, pick the engines and see the price instantly.",
   "labels": {"loa": "Length", "beam": "Beam", "pax": "Persons", "vmax": "Top speed", "fuel": "Fuel", "cat": "Category", "weight": "Dry weight", "dr": "Deadrise"},
   "pick": "Choose engines", "price": "Price with these engines", "vat": "+VAT", "licence": "Licence: Spanish PER or higher",
   "ask": "Ask for the official quote", "from": "from",
+  "onreq": "Price on request", "onreq_s": "On request", "ask_req": "Ask for the price",
+  "wa_req": "Hi Juan, I'm interested in the SKIPPER {m}. Could you send me the price?",
   "wa_cfg": "Hi Juan, I'm interested in the SKIPPER {m} with {e}. Can you prepare the official quote?",
   "wa_gen": "Hi Juan, I'm interested in a SKIPPER. Can you help me choose a model?",
   "cmp_h": "All three, side by side", "cmp_model": "Model", "cmp_price": "From",
@@ -131,7 +135,7 @@ CSS = r"""
 .sk-logo{height:34px;width:auto;margin:0 0 26px;display:block}
 .sk-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;margin:0 0 16px;padding:7px 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;backdrop-filter:blur(6px)}
 .sk-eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sea2)}
-.sk-hero h1{color:#fff!important;font-size:clamp(36px,6vw,72px);line-height:1.02;font-weight:800;margin:0 0 18px;max-width:900px}
+.sk-hero h1{color:#fff!important;font-size:clamp(34px,5vw,62px);line-height:1.02;font-weight:800;margin:0 0 14px;max-width:820px}
 .sk-hero .lead{font-size:clamp(17px,2vw,20px);line-height:1.55;max-width:600px;margin:0 0 30px;color:rgba(255,255,255,.88)}
 .sk-btns{display:flex;gap:12px;flex-wrap:wrap}
 .sk-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;border-radius:999px;padding:15px 26px;text-decoration:none;font-size:16px;transition:transform .15s,background .15s;border:0;cursor:pointer;font-family:inherit}
@@ -144,71 +148,71 @@ CSS = r"""
 .sk-stats div{padding:26px 10px;border-right:1px solid rgba(255,255,255,.08)}.sk-stats div:last-child{border-right:0}
 .sk-stats b{display:block;font-family:var(--hk);font-size:clamp(26px,3.4vw,38px);font-weight:800;line-height:1}
 .sk-stats span{font-size:13.5px;opacity:.65}
-.sk-sec{padding:96px 0}.sk-sec>.wrap{max-width:1180px;padding:0 24px}
+.sk-sec{padding:64px 0;scroll-margin-top:100px}.sk-sec>.wrap{max-width:1180px;padding:0 24px}
 .sk-kick{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sea);font-weight:700;margin:0 0 10px}
-.sk-sec h2{font-size:clamp(30px,4.4vw,48px);line-height:1.05;margin:0 0 12px;color:var(--ink)}
-.sk-sub{font-size:18px;opacity:.75;margin:0 0 40px;max-width:640px}
-.sk-tabs{display:flex;gap:6px;background:#EEF2F4;border-radius:999px;padding:6px;width:max-content;max-width:100%;overflow-x:auto;margin:0 0 30px}
-.sk-tabs button{font:inherit;font-weight:700;font-size:15px;border:0;background:transparent;color:var(--ink);padding:11px 22px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.sk-sec h2{font-size:clamp(26px,3.2vw,38px);line-height:1.08;margin:0 0 10px;color:var(--ink)}
+.sk-sub{font-size:16px;opacity:.75;margin:0 0 26px;max-width:640px}
+.sk-tabs{display:flex;gap:6px;background:#EEF2F4;border-radius:999px;padding:5px;width:max-content;max-width:100%;overflow-x:auto;margin:0 0 20px}
+.sk-tabs button{font:inherit;font-weight:700;font-size:15px;border:0;background:transparent;color:var(--ink);padding:9px 18px;border-radius:999px;cursor:pointer;white-space:nowrap}
 .sk-tabs button[aria-selected=true]{background:var(--ink);color:#fff}
-.sk-panel{display:grid;grid-template-columns:1.25fr 1fr;gap:0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 30px 60px -40px rgba(14,48,66,.45)}
+.sk-panel{display:grid;grid-template-columns:1.15fr 1fr;align-items:start;gap:0;border:1px solid var(--line);border-radius:22px;overflow:clip;background:#fff;box-shadow:0 30px 60px -40px rgba(14,48,66,.45)}
 .sk-panel[hidden]{display:none}
-.sk-media{background:var(--night);position:relative;min-height:420px}
-.sk-media>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .35s}
-.sk-thumbs{position:absolute;left:16px;bottom:16px;display:flex;gap:8px;z-index:2}
-.sk-thumbs button{width:66px;height:44px;border-radius:8px;border:2px solid rgba(255,255,255,.5);padding:0;overflow:hidden;cursor:pointer;background:#000}
-.sk-thumbs button[aria-pressed=true]{border-color:#fff}
+.sk-media{background:#fff;padding:18px;position:sticky;top:96px}
+.sk-media>img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:14px;background:#EEF2F4}
+.sk-thumbs{display:flex;gap:8px;margin-top:10px}
+.sk-thumbs button{width:88px;height:55px;border-radius:9px;border:2px solid transparent;opacity:.75;padding:0;overflow:hidden;cursor:pointer;background:#000}
+.sk-thumbs button[aria-pressed=true]{border-color:var(--sea);opacity:1}
 .sk-thumbs img{width:100%;height:100%;object-fit:cover;display:block}
-.sk-info{padding:30px 30px 28px;display:flex;flex-direction:column}
-.sk-info h3{font-size:34px;margin:0 0 4px;color:var(--ink)}
-.sk-tag{margin:0 0 20px;opacity:.7;font-size:15.5px}
-.sk-spec{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:12px;margin:0 0 22px}
-.sk-spec div{padding:11px 10px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sk-info{padding:22px 26px 22px 8px;display:flex;flex-direction:column}
+.sk-info h3{font-size:28px;margin:0 0 2px;color:var(--ink)}
+.sk-tag{margin:0 0 14px;opacity:.7;font-size:15px}
+.sk-spec{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:12px;margin:0 0 16px}
+.sk-spec div{padding:8px 10px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
 .sk-spec div:nth-child(4n){border-right:0}.sk-spec div:nth-last-child(-n+4){border-bottom:0}
-.sk-spec dt{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;opacity:.55;margin:0 0 3px}
-.sk-spec dd{margin:0;font-weight:700;color:var(--ink);font-size:15px}
+.sk-spec dt{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;opacity:.55;margin:0 0 2px;line-height:1.3}
+.sk-spec dd{margin:0;font-weight:700;color:var(--ink);font-size:14px}
 .sk-pick{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;opacity:.6;margin:0 0 8px;font-weight:700}
-.sk-eng{display:grid;gap:7px;margin:0 0 20px}
-.sk-eng label{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 13px;cursor:pointer;font-size:14.5px;transition:border-color .15s,background .15s}
+.sk-eng{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:0 0 16px}
+.sk-eng label{display:flex;flex-direction:column;align-items:flex-start;gap:2px;border:1px solid var(--line);border-radius:10px;padding:8px 10px;cursor:pointer;font-size:13px;line-height:1.3;transition:border-color .15s,background .15s}
 .sk-eng label:hover{border-color:rgba(14,48,66,.35)}
-.sk-eng input{accent-color:var(--sea);margin:0 10px 0 0}
+.sk-eng input{accent-color:var(--sea);margin:0 7px 0 0;flex:none}
 .sk-eng label>span:first-child{display:flex;align-items:center}
-.sk-eng label b{white-space:nowrap;color:var(--ink)}
+.sk-eng label b{white-space:nowrap;color:var(--ink);padding-left:20px;font-size:13.5px}
 .sk-eng label:has(input:checked){border-color:var(--sea);background:#F0F8F7}
-.sk-total{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:18px;margin-top:auto}
+.sk-total{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px;margin-top:auto}
 .sk-total small{display:block;font-size:12.5px;opacity:.6;margin-bottom:2px}
-.sk-total strong{font-family:var(--hk);font-size:34px;color:var(--ink);line-height:1}
+.sk-total strong{font-family:var(--hk);font-size:30px;color:var(--ink);line-height:1}
 .vat{color:#C62828;font-weight:800;font-size:15px;margin-left:6px}
 .sk-lic{font-size:13px;opacity:.6;margin:6px 0 0}
 .sk-cmp{overflow-x:auto;border:1px solid var(--line);border-radius:16px}
-.sk-cmp table{width:100%;border-collapse:collapse;min-width:620px;font-size:15px}
-.sk-cmp th,.sk-cmp td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+.sk-cmp table{width:100%;border-collapse:collapse;min-width:620px;font-size:14px}
+.sk-cmp th,.sk-cmp td{padding:10px 16px;text-align:left;border-bottom:1px solid var(--line)}
 .sk-cmp thead th{background:var(--ink);color:#fff;font-family:var(--hk);font-size:17px}
 .sk-cmp tbody th{font-weight:600;opacity:.7;font-size:13.5px;text-transform:uppercase;letter-spacing:.05em;width:24%}
 .sk-cmp tr:last-child td,.sk-cmp tr:last-child th{border-bottom:0}
 .sk-cmp td b{color:var(--ink)}
 .sk-dark{background:var(--night);color:#fff}.sk-dark h2{color:#fff!important}.sk-dark .sk-sub{color:rgba(255,255,255,.75);opacity:1}.sk-dark .sk-kick{color:var(--sea2)}
-.sk-tech{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.sk-tech img{width:100%;height:auto;border-radius:18px;display:block}
+.sk-tech{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+.sk-tech img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:16px;display:block}
 .sk-tech ol{list-style:none;margin:0;padding:0;counter-reset:t}
-.sk-tech li{counter-increment:t;padding:18px 0 18px 54px;position:relative;border-top:1px solid rgba(255,255,255,.12)}
-.sk-tech li:before{content:"0" counter(t);position:absolute;left:0;top:18px;font-family:var(--hk);font-weight:800;font-size:22px;color:var(--sea2)}
-.sk-tech b{display:block;font-size:18px;margin-bottom:5px}.sk-tech span{color:rgba(255,255,255,.72);line-height:1.55;font-size:15.5px}
+.sk-tech li{counter-increment:t;padding:12px 0 12px 44px;position:relative;border-top:1px solid rgba(255,255,255,.12)}
+.sk-tech li:before{content:"0" counter(t);position:absolute;left:0;top:12px;font-family:var(--hk);font-weight:800;font-size:18px;color:var(--sea2)}
+.sk-tech b{display:block;font-size:16px;margin-bottom:3px}.sk-tech span{color:rgba(255,255,255,.72);line-height:1.5;font-size:14.5px}
 .sk-note{font-size:12.5px;opacity:.5;margin:14px 0 0}
-.sk-std{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.sk-std{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}
 .sk-std img{width:100%;height:auto;border-radius:18px;background:var(--night);display:block}
 .sk-chips{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 18px;padding:0;list-style:none}
-.sk-chips li{border:1px solid var(--line);border-radius:999px;padding:9px 15px;font-size:14.5px;font-weight:600;color:var(--ink);background:#F7FAFB}
+.sk-chips li{border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13.5px;font-weight:600;color:var(--ink);background:#F7FAFB}
 .sk-chips li:before{content:"✓";color:var(--sea);margin-right:7px;font-weight:800}
-.sk-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;counter-reset:s;list-style:none;margin:0;padding:0}
+.sk-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s;list-style:none;margin:0;padding:0}
 .sk-steps li{counter-increment:s;border-top:3px solid var(--ink);padding-top:18px}
-.sk-steps li:before{content:"0" counter(s);font-family:var(--hk);font-weight:800;font-size:30px;color:var(--sea);display:block;margin-bottom:10px}
-.sk-steps b{display:block;font-size:18px;color:var(--ink);margin-bottom:6px}.sk-steps span{font-size:15.5px;opacity:.75;line-height:1.55}
+.sk-steps li:before{content:"0" counter(s);font-family:var(--hk);font-weight:800;font-size:24px;color:var(--sea);display:block;margin-bottom:6px}
+.sk-steps b{display:block;font-size:16px;color:var(--ink);margin-bottom:4px}.sk-steps span{font-size:14.5px;opacity:.75;line-height:1.5}
 .sk-about{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.sk-about div{border-radius:18px;padding:30px;background:#F3F6F7}
+.sk-about div{border-radius:16px;padding:24px;background:#F3F6F7}
 .sk-about div:first-child{background:var(--ink);color:#fff}
 .sk-about img{height:22px;width:auto;margin-bottom:16px;display:block}
-.sk-about p{margin:0;font-size:16.5px;line-height:1.6}
+.sk-about p{margin:0;font-size:15px;line-height:1.55}
 .sk-about b{font-family:var(--hk);display:block;font-size:20px;margin-bottom:14px;color:var(--ink)}
 .sk-end{position:relative;color:#fff;text-align:center;overflow:hidden;background:var(--night)}
 .sk-end>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
@@ -217,10 +221,10 @@ CSS = r"""
 .sk-end .sk-btns{justify-content:center}
 .sk-small{font-size:12.5px;color:rgba(255,255,255,.6);max-width:780px;margin:36px auto 0;line-height:1.55}
 .sk-float{position:fixed;right:16px;bottom:16px;z-index:50;display:none}
-@media (max-width:980px){.sk-panel{grid-template-columns:1fr}.sk-media{min-height:0;aspect-ratio:16/10}.sk-tech,.sk-std{grid-template-columns:1fr;gap:34px}.sk-steps{grid-template-columns:1fr 1fr}}
+@media (max-width:980px){.sk-panel{grid-template-columns:1fr}.sk-media{position:static;padding:12px 12px 0}.sk-info{padding:18px 18px 20px}.sk-tech,.sk-std{grid-template-columns:1fr;gap:34px}.sk-steps{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.sk-hero{min-height:88vh}.sk-hero .wrap{padding:0 18px 46px}.sk-logo{height:26px}
 .sk-stats .wrap{grid-template-columns:1fr 1fr;padding:0 8px}.sk-stats div:nth-child(2){border-right:0}.sk-stats div:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.08)}
-.sk-sec{padding:64px 0}.sk-sec>.wrap{padding:0 18px}.sk-info{padding:22px 18px}.sk-spec{grid-template-columns:repeat(2,1fr)}
+.sk-sec{padding:44px 0}.sk-sec>.wrap{padding:0 18px}.sk-info{padding:16px 14px 18px}.sk-thumbs button{width:70px;height:44px}.sk-spec{grid-template-columns:repeat(2,1fr)}
 .sk-spec div:nth-child(4n){border-right:1px solid var(--line)}.sk-spec div:nth-child(2n){border-right:0}.sk-spec div:nth-last-child(-n+4){border-bottom:1px solid var(--line)}.sk-spec div:nth-last-child(-n+2){border-bottom:0}
 .sk-steps,.sk-about{grid-template-columns:1fr}.sk-btn{width:100%}.sk-total .sk-btn{width:100%}}
 @media (prefers-reduced-motion:reduce){.sk-hero>img{animation:none;transform:none}}
@@ -277,33 +281,39 @@ def build(lang):
             f'<label><span><input type="radio" name="e-{m["id"]}" value="{n}" data-fmt="{eur(p, lang)}"{" checked" if j == 0 else ""}>{n}</span><b>{eur(p, lang)}</b></label>'
             for j, (n, p) in enumerate(m["engines"]))
         imgs = [m["img"]] + m["gal"]
-        thumbs = "".join(
+        thumbs = "" if len(imgs) < 2 else "".join(
             f'<button type="button" aria-pressed="{"true" if k == 0 else "false"}" aria-label="{k + 1}" data-src="{F}{g}.jpg" data-srcset="{F}{g}-m.jpg 900w, {F}{g}.jpg 1920w">'
             f'<img src="{F}{g}-m.jpg" alt="" loading="lazy" width="900" height="506"></button>' for k, g in enumerate(imgs))
         tplmsg = t["wa_cfg"].replace("{m}", m["name"])
+        if m["engines"]:
+            buy = f'''<p class="sk-pick">{t["pick"]}</p>
+    <div class="sk-eng">{eng}</div>
+    <div class="sk-total"><div><small>{t["price"]}</small><strong data-total>{eur(m["engines"][0][1], lang)}</strong><span class="vat">{t["vat"]}</span><p class="sk-lic">{t["licence"]}</p></div>
+    <a class="sk-btn pri" data-wa data-base="{base}" data-tpl="{tplmsg}" href="{wa(tplmsg.replace("{e}", m["engines"][0][0]))}" target="_blank" rel="noopener">{WA_SVG}{t["ask"]}</a></div>'''
+        else:
+            buy = f'''<p class="sk-pick">{m["eng_note"][lang]}</p>
+    <div class="sk-total"><div><small>{t["price"]}</small><strong>{t["onreq"]}</strong><p class="sk-lic">{t["licence"]}</p></div>
+    <a class="sk-btn pri" href="{wa(t["wa_req"].replace("{m}", m["name"]))}" target="_blank" rel="noopener">{WA_SVG}{t["ask_req"]}</a></div>'''
         panels.append(f'''<div class="sk-panel" id="p-{m["id"]}" role="tabpanel"{"" if i == 0 else " hidden"}>
   <div class="sk-media">{pic(m["img"], "SKIPPER " + m["name"], "(max-width:980px) 100vw, 60vw", lazy=i != 0)}<div class="sk-thumbs">{thumbs}</div></div>
   <div class="sk-info">
     <h3>SKIPPER {m["name"]}</h3><p class="sk-tag">{m["tag"][lang]}</p>
     <dl class="sk-spec">{spec}</dl>
-    <p class="sk-pick">{t["pick"]}</p>
-    <div class="sk-eng">{eng}</div>
-    <div class="sk-total"><div><small>{t["price"]}</small><strong data-total>{eur(m["engines"][0][1], lang)}</strong><span class="vat">{t["vat"]}</span><p class="sk-lic">{t["licence"]}</p></div>
-    <a class="sk-btn pri" data-wa data-base="{base}" data-tpl="{tplmsg}" href="{wa(tplmsg.replace("{e}", m["engines"][0][0]))}" target="_blank" rel="noopener">{WA_SVG}{t["ask"]}</a></div>
+    {buy}
   </div>
 </div>''')
 
-    rows = [(t["cmp_price"], [f'<b>{eur(min(p for _, p in m["engines"]), lang)}</b> <span class="vat">{t["vat"]}</span>' for m in MODELS])]
+    rows = [(t["cmp_price"], [(f'<b>{eur(min(p for _, p in m["engines"]), lang)}</b> <span class="vat">{t["vat"]}</span>' if m["engines"] else t["onreq_s"]) for m in MODELS])]
     for k in ("loa", "beam", "pax", "vmax", "fuel", "weight"):
         rows.append((L[k], [(m["spec"] if lang == "es" else m["spec_en"])[k] for m in MODELS]))
-    rows.append((t["pick"], [str(len(m["engines"])) + (" opciones" if lang == "es" else " options") for m in MODELS]))
+    rows.append((t["pick"], [(str(len(m["engines"])) + (" opciones" if lang == "es" else " options")) if m["engines"] else "—" for m in MODELS]))
     cmp = ('<table><thead><tr><th>' + t["cmp_model"] + '</th>' + "".join(f'<th>{m["name"]}</th>' for m in MODELS) + '</tr></thead><tbody>' +
            "".join('<tr><th>' + a + '</th>' + "".join(f'<td>{v}</td>' for v in vals) + '</tr>' for a, vals in rows) + '</tbody></table>')
 
     offers = [{"@type": "Product", "name": "SKIPPER " + m["name"], "brand": {"@type": "Brand", "name": "SKIPPER Powerboats"},
                "image": "https://www.platamarine.com" + F + m["img"] + ".jpg",
-               "offers": {"@type": "AggregateOffer", "priceCurrency": "EUR", "lowPrice": min(p for _, p in m["engines"]),
-                          "highPrice": max(p for _, p in m["engines"]), "offerCount": len(m["engines"])}} for m in MODELS]
+               **({"offers": {"@type": "AggregateOffer", "priceCurrency": "EUR", "lowPrice": min(p for _, p in m["engines"]),
+                          "highPrice": max(p for _, p in m["engines"]), "offerCount": len(m["engines"])}} if m["engines"] else {})} for m in MODELS]
     ld = {"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "name": t["title"], "description": t["desc"], "inLanguage": lang, "url": url,
            "publisher": {"@type": "Organization", "name": "Plata Marine"}}, *offers]}
     crumbs = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
