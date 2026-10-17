@@ -67,7 +67,7 @@ T = {
   "about_sk": "SKIPPER es la marca de BSK Marine, astillero fundado en 2015 en Koropi, a las afueras de Atenas. En pocos años ha llevado sus semirrígidas por todo el Mediterráneo.",
   "about_me": "Yo soy Juan Morante, de Plata Marine. Soy el contacto de SKIPPER en Cataluña y Baleares: te asesoro, te acompaño a ver el barco y me ocupo de que todo llegue bien hasta el amarre.",
   "end_h": "¿Te imaginas en uno?", "end_p": "Escríbeme y lo vemos con calma. Sin compromiso.",
-  "small": "Precios orientativos del configurador oficial de SKIPPER (octubre de 2026), sin transporte, matriculación ni impuestos. Especificaciones según las fichas del astillero. Pueden cambiar y no son vinculantes: el precio final es siempre el del presupuesto oficial de SKIPPER. Podemos equivocarnos; si ves un error, avísanos.",
+  "small": "Precios orientativos en fábrica, según el configurador oficial de SKIPPER (octubre de 2026). No incluyen IVA, transporte, matriculación ni el Impuesto Especial sobre Determinados Medios de Transporte (IEDMT), que se aplica a las embarcaciones de más de 8 m matriculadas en España y depende del uso y del abanderamiento. Especificaciones según las fichas del astillero. Pueden cambiar y no son vinculantes: el precio final es siempre el de la oferta oficial de SKIPPER, así que pide la tuya personalizada. Podemos equivocarnos; si ves un error, avísanos.",
   "crumb": "SKIPPER Powerboats",
  },
  "en": {
@@ -107,7 +107,7 @@ T = {
   "about_sk": "SKIPPER is the brand of BSK Marine, a shipyard founded in 2015 in Koropi, just outside Athens. In a few years its RIBs have spread across the Mediterranean.",
   "about_me": "I'm Juan Morante, from Plata Marine. I'm SKIPPER's contact in Catalonia and the Balearics: I advise you, come with you to see the boat and make sure everything reaches your berth properly.",
   "end_h": "Can you picture yourself in one?", "end_p": "Message me and we'll go through it calmly. No commitment.",
-  "small": "Indicative prices from SKIPPER's official configurator (October 2026), excluding transport, registration and taxes. Specs from the shipyard's technical sheets. They may change and are not binding: the final price is always SKIPPER's official quote. We may be wrong; if you spot a mistake, let us know.",
+  "small": "Indicative ex-factory prices from SKIPPER's official configurator (October 2026). They exclude VAT, transport, registration and the Spanish registration tax (IEDMT), which applies to boats over 8 m registered in Spain and depends on use and flag. Specs from the shipyard's technical sheets. They may change and are not binding: the final price is always SKIPPER's official offer, so ask for your own tailored offer. We may be wrong; if you spot a mistake, let us know.",
   "crumb": "SKIPPER Powerboats",
  },
 }
