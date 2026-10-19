@@ -48,6 +48,37 @@
   var g=document.querySelectorAll('#pmxPanel .pmx-grp');
   for(var i=0;i<g.length;i++){var a=g[i].querySelector('a[href$="/modelos/"]');if(a){add(g[i]);break;}}
 })();
+/* Enlace "Barcos nuevos" (índice de marcas nuevas) en el menú Comprar de todas las páginas. */
+(function(){
+  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
+  var t={'':'Barcos nuevos','/ca':'Vaixells nous','/en':'New boats','/fr':'Bateaux neufs'}[pre],h=pre+'/barcos-nuevos/';
+  function add(box){if(!box||box.querySelector('a[href="'+h+'"]'))return;var a=document.createElement('a');a.href=h;a.textContent=t;if(p===h||p===h+'index.html')a.setAttribute('aria-current','page');box.appendChild(a);}
+  add(document.getElementById('pmxM2'));
+  var g=document.querySelectorAll('#pmxPanel .pmx-grp');
+  for(var i=0;i<g.length;i++){if(g[i].querySelector('a[href$="/modelos/"]')){add(g[i]);break;}}
+})();
+/* "Barcos en venta" con dos accesos: Barcos nuevos y Segunda mano.
+   Escritorio: desplegable al pasar el ratón o al llegar con el teclado. Móvil: dos enlaces sangrados debajo. */
+(function(){
+  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
+  var T={'':['Barcos nuevos','Segunda mano'],'/ca':['Vaixells nous','Segona mà'],'/en':['New boats','Pre-owned'],'/fr':['Bateaux neufs','Occasion']}[pre];
+  var h=pre+'/barcos/',hn=pre+'/barcos-nuevos/',onN=(p===hn||p===hn+'index.html');
+  var L=[[hn,T[0]],[h+'#segunda-mano',T[1]]];
+  function fill(box){L.forEach(function(it){var a=document.createElement('a');a.href=it[0];a.textContent=it[1];if(it[0]===hn&&onN)a.setAttribute('aria-current','page');box.appendChild(a);});}
+  var top=document.querySelector('header.top .pmx-nav>a[href="'+h+'"]');
+  if(top){
+    var dd=document.createElement('div');dd.className='pmx-dd pmx-bev'+(onN?' cur':'');
+    top.parentNode.insertBefore(dd,top);dd.appendChild(top);
+    var m=document.createElement('div');m.className='pmx-menu';m.id='pmxBev';fill(m);dd.appendChild(m);
+    dd.addEventListener('keydown',function(e){if(e.key==='Escape'){dd.classList.add('shut');top.focus();}});
+    dd.addEventListener('mouseleave',function(){dd.classList.remove('shut');});
+    dd.addEventListener('focusout',function(e){if(!dd.contains(e.relatedTarget))dd.classList.remove('shut');});
+  }
+  var mt=document.querySelector('#pmxPanel .pmx-main a[href="'+h+'"]');
+  if(mt&&!mt.parentNode.querySelector('.pmx-bevsub')){
+    var s=document.createElement('div');s.className='pmx-bevsub';fill(s);mt.parentNode.insertBefore(s,mt.nextSibling);
+  }
+})();
 /* Enlace "Barcos nuevos SKIPPER" en el menú Comprar de todas las páginas. */
 (function(){
   var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';

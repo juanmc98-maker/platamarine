@@ -86,3 +86,16 @@ header.top .brand img{max-width:none}
 header.top .pmx-zonas a,.pmx-panel .pmx-zonas a{display:inline-block;padding:2px 0;margin-right:10px;font-size:13.5px;font-weight:500;color:#17465F;white-space:nowrap}
 .pmx-panel .pmx-zonas{padding:6px 0}
 p.zonas{font-size:.95em}
+/* "Barcos en venta" con desplegable Barcos nuevos / Segunda mano (ver nav.js) */
+header.top .pmx-bev>a{font-family:"Archivo","Helvetica Neue",Arial,sans-serif;font-weight:500;font-size:14px;letter-spacing:.01em;color:#44545F;text-decoration:none;padding:8px 7px;border-radius:6px;display:inline-flex;align-items:center;gap:4px;line-height:1.2;white-space:nowrap}
+header.top .pmx-bev>a::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translate(-2px,-2px);margin-left:3px;opacity:.7}
+header.top .pmx-bev>a:hover,header.top .pmx-bev:focus-within>a{color:#0D1C27;background:rgba(13,28,39,.05)}
+@media (hover:hover){header.top .pmx-bev:hover>a{color:#0D1C27;background:rgba(13,28,39,.05)}}
+header.top .pmx-bev>a[aria-current],header.top .pmx-bev.cur>a{color:#0D1C27;font-weight:600}
+.pmx-bev .pmx-menu{min-width:190px}
+.pmx-bev:focus-within .pmx-menu{display:block}
+.pmx-bev.shut .pmx-menu{display:none!important}
+@media (max-width:1279px){header.top .pmx-bev>a{font-size:13.5px;padding:8px 5px}}
+@media (max-width:1399px){html[lang="fr"] header.top .pmx-bev>a{font-size:13px;padding:8px 4px}}
+.pmx-panel .pmx-bevsub{margin:-2px 0 6px 2px;padding-left:14px;border-left:2px solid #B7C3CB}
+.pmx-panel .pmx-main .pmx-bevsub a{font-size:15px;font-weight:500;padding:7px 0}
