@@ -48,6 +48,15 @@
   var g=document.querySelectorAll('#pmxPanel .pmx-grp');
   for(var i=0;i<g.length;i++){var a=g[i].querySelector('a[href$="/modelos/"]');if(a){add(g[i]);break;}}
 })();
+/* Enlace "Barcos nuevos SKIPPER" en el menú Comprar de todas las páginas. */
+(function(){
+  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
+  var t={'':'Barcos nuevos SKIPPER','/ca':'Vaixells nous SKIPPER','/en':'New SKIPPER boats','/fr':'Bateaux neufs SKIPPER'}[pre],h=pre+'/skipper/';
+  function add(box){if(!box||box.querySelector('a[href="'+h+'"]'))return;var a=document.createElement('a');a.href=h;a.textContent=t;if(p===h||p===h+'index.html')a.setAttribute('aria-current','page');box.appendChild(a);}
+  add(document.getElementById('pmxM2'));
+  var g=document.querySelectorAll('#pmxPanel .pmx-grp');
+  for(var i=0;i<g.length;i++){if(g[i].querySelector('a[href$="/modelos/"]')){add(g[i]);break;}}
+})();
 /* Enlace "Broker en Barcelona y Maresme" en el menú Vender de todas las páginas. */
 (function(){
   var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
