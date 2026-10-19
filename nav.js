@@ -63,7 +63,7 @@
   var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
   var T={'':['Barcos nuevos','Segunda mano'],'/ca':['Vaixells nous','Segona mà'],'/en':['New boats','Pre-owned'],'/fr':['Bateaux neufs','Occasion']}[pre];
   var h=pre+'/barcos/',hn=pre+'/barcos-nuevos/',onN=(p===hn||p===hn+'index.html');
-  var L=[[hn,T[0]],[h+'#segunda-mano',T[1]]];
+  var L=[[h+'#nuevos',T[0]],[h+'#segunda-mano',T[1]]];
   function fill(box){L.forEach(function(it){var a=document.createElement('a');a.href=it[0];a.textContent=it[1];if(it[0]===hn&&onN)a.setAttribute('aria-current','page');box.appendChild(a);});}
   var top=document.querySelector('header.top .pmx-nav>a[href="'+h+'"]');
   if(top){
