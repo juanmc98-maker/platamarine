@@ -493,4 +493,8 @@
     <url><loc>https://www.platamarine.com/ca/barcos-nuevos/</loc><lastmod>2026-10-19</lastmod><priority>0.8</priority></url>
     <url><loc>https://www.platamarine.com/en/barcos-nuevos/</loc><lastmod>2026-10-19</lastmod><priority>0.8</priority></url>
     <url><loc>https://www.platamarine.com/fr/barcos-nuevos/</loc><lastmod>2026-10-19</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/sunrise/</loc><lastmod>2026-10-19</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/ca/sunrise/</loc><lastmod>2026-10-19</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/en/sunrise/</loc><lastmod>2026-10-19</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/fr/sunrise/</loc><lastmod>2026-10-19</lastmod><priority>0.7</priority></url>
 </urlset>
