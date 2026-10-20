@@ -10,6 +10,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SLUG = 'prestige-32'
 TPL = 'starfisher-840'
 N_PHOTOS = 18
+ALT_NAME = 'Jeanneau Prestige 32'  # alt de las miniaturas: "{Modelo} – foto N" / "photo N"
 
 D = {
  'es': dict(
@@ -66,7 +67,7 @@ D = {
          ('Cabines', '2 (proa i cabina amb TV)'), ('Banys', '1'),
          ('Coberta', 'Flybridge amb bimini i segon lloc de govern · solàrium de proa · plataforma de bany · pescant amb auxiliar i forabord'),
          ('Electrònica', 'Plotter/sonda · VHF · instrumentació del motor als dos llocs'),
-         ('Amarratge', 'No inclòs (és de lloguer i no es transmet amb l'embarcació)'),
+         ('Amarratge', 'No inclòs (és de lloguer i no es transmet amb l’embarcació)'),
          ('Titulació', 'PER o superior'), ('Bandera', 'Espanyola'),
          ('ITB', 'Es confirma amb la documentació'),
          ('Impostos', 'Ven un particular: no porta IVA; el comprador paga l\'ITP de la seva comunitat')],
@@ -150,7 +151,7 @@ def build(lang):
     t = re.sub(r'<a class="pdf-link" href="[^"]*" download>[^<]*</a>', '<a class="pdf-link" href="%s" download>%s</a>' % (d['pdf'], e(d['pdftxt'])), t, 1)
     t = re.sub(r'<a class="btn btn-ghost" href="[^"]*\.pdf" download>[^<]*</a>', '<a class="btn btn-ghost" href="%s" download>%s</a>' % (d['pdf'], e(d['pdfbtn'])), t, 1)
     t = re.sub(r'(<img class="main" id="main" [^>]*alt=")[^"]*(")', r'\g<1>' + e(d['alt'], quote=True) + r'\2', t, 1)
-    thumbs = ''.join('<img src="/%s-%d-t.jpg" data-full="/%s-%d.jpg" alt="" loading="lazy" data-i="%d"%s>' % (SLUG, i, SLUG, i, i - 1, ' class="on"' if i == 1 else '') for i in range(1, N_PHOTOS + 1))
+    thumbs = ''.join('<img src="/%s-%d-t.jpg" data-full="/%s-%d.jpg" alt="%s – %s %d" loading="lazy" data-i="%d"%s>' % (SLUG, i, SLUG, i, ALT_NAME, 'photo' if lang in ('en', 'fr') else 'foto', i, i - 1, ' class="on"' if i == 1 else '') for i in range(1, N_PHOTOS + 1))
     t = re.sub(r'<div class="thumbs">.*?</div>', '<div class="thumbs">' + thumbs + '</div>', t, 1, re.S)
     dl = '<dl class="specs">' + ''.join('<div><dt>%s</dt><dd>%s</dd></div>' % (e(a), e(b)) for a, b in d['specs']) + '</dl>'
     t = re.sub(r'<dl class="specs">.*?</dl>', dl, t, 1, re.S)

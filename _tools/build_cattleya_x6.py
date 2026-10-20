@@ -8,6 +8,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SLUG = 'cattleya-x6'
 TPL = 'starfisher-840'
 N_PHOTOS = 31
+ALT_NAME = 'Cattleya X6'  # alt de las miniaturas: "{Modelo} – foto N" / "photo N"
 
 D = {
  'es': dict(
@@ -67,7 +68,7 @@ D = {
          ('Amarratge', 'De lloguer a Eivissa; segons el propietari, amb possibilitat de subrogació'),
          ('Titulació', 'Llicència de Navegació o superior'), ('Bandera', 'Espanyola'),
          ('ITB', "Es lliura acabada de passar (el propietari l'està tramitant ara)"), ('Garantia', 'Motor amb garantia de fàbrica fins al maig del 2028, transferible al comprador'),
-         ('Impostos', 'Preu sense IVA (ven una societat, amb factura amb IVA). Si la compres per a una activitat empresarial, com el xàrter, l'IVA pot ser deduïble: confirma-ho amb el teu assessor. El desglossament es confirma amb la documentació abans de reservar')],
+         ('Impostos', 'Preu sense IVA (ven una societat, amb factura amb IVA). Si la compres per a una activitat empresarial, com el xàrter, l’IVA pot ser deduïble: confirma-ho amb el teu assessor. El desglossament es confirma amb la documentació abans de reservar')],
   h2='Com el veig',
   paras=[
    'Una Cattleya X6 del 2021 que ha treballat en xàrter a Eivissa i es nota en com està preparada: bimini sobre estructura d\'acer inoxidable feta a mida, solàrium de proa amb matalassets i tapisseria nous del 2026, taula desmuntable de fusta i dutxa d\'aigua dolça. És una llanxa de dia, senzilla i amb espai, pensada per anar a les cales.',
@@ -151,7 +152,7 @@ def build(lang):
     t = re.sub(r'<a class="btn btn-ghost" href="[^"]*\.pdf" download>[^<]*</a>', '<a class="btn btn-ghost" href="%s" download>%s</a>' % (d['pdf'], e(d['pdfbtn'])), t, 1)
     # gallery
     t = re.sub(r'(<img class="main" id="main" [^>]*alt=")[^"]*(")', r'\g<1>' + e(d['alt'], quote=True) + r'\2', t, 1)
-    thumbs = ''.join('<img src="/%s-%d-t.jpg" data-full="/%s-%d.jpg" alt="" loading="lazy" data-i="%d"%s>' % (SLUG, i, SLUG, i, i - 1, ' class="on"' if i == 1 else '') for i in range(1, N_PHOTOS + 1))
+    thumbs = ''.join('<img src="/%s-%d-t.jpg" data-full="/%s-%d.jpg" alt="%s – %s %d" loading="lazy" data-i="%d"%s>' % (SLUG, i, SLUG, i, ALT_NAME, 'photo' if lang in ('en', 'fr') else 'foto', i, i - 1, ' class="on"' if i == 1 else '') for i in range(1, N_PHOTOS + 1))
     t = re.sub(r'<div class="thumbs">.*?</div>', '<div class="thumbs">' + thumbs + '</div>', t, 1, re.S)
     # specs
     dl = '<dl class="specs">' + ''.join('<div><dt>%s</dt><dd>%s</dd></div>' % (e(a), e(b)) for a, b in d['specs']) + '</dl>'

@@ -128,7 +128,7 @@ def build(lang):
     ask_a = re.search(r'<a class="btn btn-wa btn-ask"[^>]*>', head).group(0)
     ask_href = re.search(r'href="([^"]+)"', ask_a).group(1)
     pdf_a = re.search(r'<a class="pdf-link"[^>]*>.*?</a>', head).group(0)
-    gal = s[g0:n0]
+    gal = gal_src = s[g0:n0]
     note = re.search(r'<p class="muted head-note">.*?</p>\n', s).group(0)
     specs = re.search(r'<dl class="specs">.*?</dl>', s, re.S).group(0)
     visit_a = re.search(r'<a class="btn btn-wa"[^>]*data-wa-context="ficha_visita">[^<]*</a>', s).group(0)
@@ -156,7 +156,18 @@ def build(lang):
     data = H.escape('[' + ','.join('["%s","%s"]' % (a.replace('"', '\\"'), b.replace('"', '\\"')) for a, b in t['spots']) + ']')
     duo = lambda a, b, alts: f'<div class="v2-ph v2-duo">{img(a, alts[0])}{img(b, alts[1])}</div>'
     one = lambda n, alt: f'<div class="v2-ph">{img(n, alt)}</div>'
-    blk = lambda ph, h, ps, rev=False: f'<div class="v2-alt{" rev" if rev else ""}">{ph}<div><h3>{h}</h3>' + ''.join(f'<p>{x}</p>' for x in ([ps] if isinstance(ps, str) else ps)) + '</div></div>'
+    _blk = lambda ph, h, ps, rev=False: f'<div class="v2-alt{" rev" if rev else ""}">{ph}<div><h3>{h}</h3>' + ''.join(f'<p>{x}</p>' for x in ([ps] if isinstance(ps, str) else ps)) + '</div></div>'
+    # Barcos con pocas fotos: un bloque con PH=None no sale; m1/i3 con un solo número llevan una foto en vez de dos
+    def blk(k, rev=False):
+        n = PH.get(k)
+        if n is None: return ''
+        alt = t[k + '_alt']
+        ph = duo(*n, alt) if isinstance(n, tuple) else one(n, alt[0] if isinstance(alt, list) else alt)
+        return _blk(ph, t[k + '_h'], t[k + '_p'], rev)
+    # miniaturas de la galería sin texto alternativo: nombre del barco y número de foto
+    bname = re.sub(r'<[^>]+>', '', h1).strip()
+    fw = {'es': 'foto', 'ca': 'foto', 'en': 'photo', 'fr': 'photo'}[lang]
+    gal = re.sub(r'alt="" loading="lazy" data-i="(\d+)"', lambda m: f'alt="{bname} – {fw} {int(m.group(1)) + 1}" loading="lazy" data-i="{m.group(1)}"', gal)
     sections = f'''<div class="wrap v2-note">{note.strip()}</div>
 <section class="v2-sec" id="cubierta"><div class="wrap">
 <p class="v2-k">{t['cub_k']}</p><h2>{t['cub_h']}</h2><p class="v2-lead">{t['cub_p']}</p>
@@ -165,15 +176,15 @@ def build(lang):
 </div></section>
 <section class="v2-sec v2-band" id="mando"><div class="wrap">
 <p class="v2-k">{t['man_k']}</p><h2>{t['man_h']}</h2>
-{blk(duo(*PH['m1'], t['m1_alt']), t['m1_h'], t['m1_p'])}
-{blk(one(PH['m2'], t['m2_alt']), t['m2_h'], t['m2_p'], True)}
+{blk('m1')}
+{blk('m2', True)}
 <div class="v2-mid"><p>{t['mid']}</p>{wa(t['ask'], 'ficha_historial')}</div>
 </div></section>
 <section class="v2-sec" id="interior"><div class="wrap">
 <p class="v2-k">{t['int_k']}</p><h2>{t['int_h']}</h2>
-{blk(one(PH['i1'], t['i1_alt']), t['i1_h'], t['i1_p'])}
-{blk(one(PH['i2'], t['i2_alt']), t['i2_h'], t['i2_p'], True)}
-{blk(duo(*PH['i3'], t['i3_alt']), t['i3_h'], t['i3_p'])}
+{blk('i1')}
+{blk('i2', True)}
+{blk('i3')}
 </div></section>
 <section class="v2-sec v2-dark" id="ficha"><div class="wrap">
 <p class="v2-k">{t['fic_k']}</p><h2>{t['fic_h']}</h2>
@@ -190,7 +201,7 @@ def build(lang):
 </div></section>
 '''
     # quitar cabecera, galería, nota y specs de su sitio original
-    s2 = s.replace(head, '').replace(gal, '\n').replace(note, '').replace(specs, '')
+    s2 = s.replace(head, '').replace(gal_src, '\n').replace(note, '').replace(specs, '')
     s2, nn = re.subn(r'<main class="boat">\s*<div class="wrap">', lambda m: '<main class="boat v2">\n' + side + '\n' + hero + sections + '<div class="wrap">', s2, count=1)
     assert nn == 1
     # quitar la miga de pan dentro del wrap y ponerla arriba del todo (sigue visible y accesible)
