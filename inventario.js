@@ -6,6 +6,9 @@
    y regenerar sus PDF (ES/CA/EN/FR).
    status: "available" | "reserved" | "sold"
    title: titulación mínima (1 Licencia de Navegación, 2 PNB, 3 PER, 4 Patrón de Yate)
+   tl (opcional): texto de titulación por idioma cuando no encaja en la escala (p. ej. Capitán de Yate en barcos de más de 24 m); title sigue sirviendo para los filtros
+   zone 'extranjero' + area con el país: barcos fuera de España (no salen en los filtros por zona)
+   vatPaid: IVA pagado (informativo); vat: true = precio +IVA
    types: tipos del cuestionario (open, sundeck, walkaround, cabinado, pilothouse, fly, rib, velero)
    kind: 'motor' | 'vela' | 'moto-agua' (las motos de agua salen en /comprar/motos-de-agua-segunda-mano.html y en el filtro del catálogo; titulación mínima 1). Tarjeta del catálogo: data-tipo="moto-agua" */
 (function () {
@@ -15,6 +18,9 @@
     boats: [
       {slug: 'antares-12-fly', name: 'Beneteau Antares 12 Fly', year: 2024, kind: 'motor', types: ['fly', 'cabinado'], length: 12.9, price: 499000, zone: 'cataluna', area: 'costa-daurada', title: 3, status: 'sold',
         d: {es: '12,9 m · 2 x Mercury 400 XL · Costa Daurada (Tarragona)', ca: '12,9 m · 2 x Mercury 400 XL · Costa Daurada (Tarragona)', en: '12.9 m · twin Mercury 400 XL · Costa Daurada (Tarragona)', fr: '12,9 m · 2 x Mercury 400 XL · Costa Daurada (Tarragone)'}},
+      {slug: 'ferretti-80', name: 'Ferretti 80', year: 2002, kind: 'motor', types: ['fly', 'cabinado'], length: 24.38, price: 769990, vatPaid: true, zone: 'extranjero', area: 'grecia', title: 4, status: 'available',
+        tl: {es: 'Capitán de Yate o superior', ca: 'Capità de Iot o superior', en: 'Capitán de Yate or higher', fr: 'Capitán de Yate ou supérieur'},
+        d: {es: '24,38 m · 2 x Caterpillar 1.420 cv · Grecia (Atenas)', ca: '24,38 m · 2 x Caterpillar 1.420 cv · Grècia (Atenes)', en: '24.38 m · twin Caterpillar 1,420 hp · Greece (Athens)', fr: '24,38 m · 2 x Caterpillar 1 420 ch · Grèce (Athènes)'}},
       {slug: 'prestige-32', name: 'Jeanneau Prestige 32', year: 2006, kind: 'motor', types: ['fly', 'cabinado'], length: 10.65, price: 89000, zone: 'baleares', area: 'menorca', title: 3, status: 'available',
         d: {es: '10,65 m · 2 x Volvo Penta D4 260 cv · Menorca', ca: '10,65 m · 2 x Volvo Penta D4 260 cv · Menorca', en: '10.65 m · 2 x Volvo Penta D4 260 hp · Menorca', fr: '10,65 m · 2 x Volvo Penta D4 260 ch · Minorque'}},
       {slug: 'gallart-1050', name: 'Gallart 10.50 Fly', year: 1977, kind: 'motor', types: ['fly', 'cabinado'], length: 9.58, price: 29900, zone: 'cataluna', area: 'costa-brava', title: 3, status: 'available',
@@ -57,7 +63,7 @@
       fr: ['Sans permis', 'Licencia de Navegación ou supérieur', 'PNB ou supérieur', 'PER ou supérieur', 'Patrón de Yate ou supérieur']
     },
     sailLabel: {es: 'PER con prácticas de vela o superior', ca: 'PER amb pràctiques de vela o superior', en: 'PER with sailing practice or higher', fr: 'PER avec pratiques de voile ou supérieur'},
-    titleFor: function (b, lang) { return b.kind === 'vela' && b.title === 3 ? INV.sailLabel[lang] : INV.titleLabel[lang][b.title]; },
+    titleFor: function (b, lang) { if (b.tl) return b.tl[lang]; return b.kind === 'vela' && b.title === 3 ? INV.sailLabel[lang] : INV.titleLabel[lang][b.title]; },
     lang: function () { var p = location.pathname; return p.indexOf('/ca/') === 0 ? 'ca' : p.indexOf('/en/') === 0 ? 'en' : p.indexOf('/fr/') === 0 ? 'fr' : 'es'; },
     get: function (slug) { for (var i = 0; i < INV.boats.length; i++) if (INV.boats[i].slug === slug) return INV.boats[i]; return null; },
     url: function (b, lang) { return (lang === 'es' ? '' : '/' + lang) + '/barcos/' + b.slug + '.html'; },
