@@ -12,5 +12,6 @@ User-agent: *
 Allow: /
 Disallow: /index_2.html
 Disallow: /skipper/folleto/
+Disallow: /precios/informe-precios-barcos-ocasion
 
 Sitemap: https://www.platamarine.com/sitemap.xml
