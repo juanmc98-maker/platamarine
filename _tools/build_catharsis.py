@@ -38,63 +38,63 @@ LI = ['es', 'ca', 'en', 'fr']
 T = {
  'es': dict(
   title='Catharsis 930 nuevo: precio, ficha y fotos · Plata Marine',
-  desc='Catharsis 930, crucero fueraborda de 9,30 m fabricado en Turquía por Avila Marin. Desde 94.990 € +IVA sin motores. Agente en Cataluña.',
+  desc='Catharsis 930, crucero fueraborda de 9,30 m fabricado por Avila Marin. Desde 94.990 € +IVA sin motores. Agente en Cataluña.',
   eyebrow='Barcos nuevos', h1='Catharsis 930: crucero fueraborda de 9,30 metros',
-  intro='Un barco con timonera, dos camarotes y baño, pensado para pasar el día o unos días a bordo con la familia. Lo fabrica Avila Marin en Esmirna (Turquía) y se pide a fábrica: te ayudo a elegir motores y equipamiento. Soy su agente en Cataluña.',
+  intro='Un barco con timonera, dos camarotes y baño, pensado para pasar el día o unos días a bordo con la familia. Lo fabrica Avila Marin y se pide a fábrica: te ayudo a elegir motores y equipamiento. Soy su agente en Cataluña.',
   kick='Agente en Cataluña', h2='El barco',
-  facts=['Fabricado en Turquía por Avila Marin', 'Casco por infusión al vacío', 'Dos camarotes, baño con ducha y cocina', 'Para dos motores fueraborda: no incluidos, se montan a tu elección con presupuesto aparte', 'Entrega: unos 90 días desde el pedido, más el transporte', 'Transporte desde Turquía hasta Barcelona: no incluido, se presupuesta aparte'],
+  facts=['Fabricado por Avila Marin', 'Casco por infusión al vacío', 'Dos camarotes, baño con ducha y cocina', 'Para dos motores fueraborda: no incluidos, se montan a tu elección con presupuesto aparte', 'Entrega: unos 90 días desde el pedido, más el transporte', 'Transporte desde fábrica hasta Barcelona: no incluido, se presupuesta aparte'],
   d='Timonera con puerta corredera de aluminio de tres hojas, bañera con mesa telescópica y ducha, camarote de proa con cama doble y camarote de invitados. De serie lleva molinete eléctrico, nevera, cocina de dos fuegos, WC eléctrico, focos LED, baterías de servicio y depósitos de acero inoxidable.',
   lic='PER o superior', lic_label='Titulación', price_from='Desde', no_eng='sin motores',
   cta='Pedir presupuesto', wa_txt='Hola Juan, me interesa el Catharsis 930.', photos='Fotos del Catharsis 930',
   opt_h='Equipamiento opcional', opt='Teca sintética, plataforma para auxiliar, luces submarinas, hélice de proa, flaps automáticos, calefacción diésel, toldos de verano e invierno, plotters Raymarine de 9" o 12", equipo de sonido Fusion y placas solares (420 W), entre otros. Te paso el precio de cada opción por escrito.',
   spec_h='Ficha técnica',
   used_h='¿Buscas un barco de ocasión?', used_a='Ver barcos de segunda mano →',
-  small='Precio orientativo de octubre de 2026, sin IVA, en fábrica: no incluye motores, equipamiento opcional, transporte, impuesto de matriculación (IEDMT) ni matriculación. El transporte desde Turquía hasta Barcelona no está incluido y se presupuesta aparte. Los motores tampoco están incluidos: se montan a elección del cliente, con presupuesto aparte. Puede cambiar y no es vinculante; el precio final es el del presupuesto por escrito. Ficha técnica según el fabricante; el marcado CE de categoría C es el que indica el astillero. La titulación es orientativa según la eslora: confírmala con tu escuela o con Capitanía. Podemos equivocarnos; si ves un error, avísanos.',
+  small='Precio orientativo de octubre de 2026, sin IVA, en fábrica: no incluye motores, equipamiento opcional, transporte, impuesto de matriculación (IEDMT) ni matriculación. El transporte desde fábrica hasta Barcelona no está incluido y se presupuesta aparte. Los motores tampoco están incluidos: se montan a elección del cliente, con presupuesto aparte. Puede cambiar y no es vinculante; el precio final es el del presupuesto por escrito. Ficha técnica según el fabricante; el marcado CE de categoría C es el que indica el astillero. La titulación es orientativa según la eslora: confírmala con tu escuela o con Capitanía. Podemos equivocarnos; si ves un error, avísanos.',
  ),
  'ca': dict(
   title='Catharsis 930 nou: preu, fitxa i fotos · Plata Marine',
-  desc='Catharsis 930, creuer fora borda de 9,30 m fabricat a Turquia per Avila Marin. Des de 94.990 € +IVA sense motors. Agent a Catalunya.',
+  desc='Catharsis 930, creuer fora borda de 9,30 m fabricat per Avila Marin. Des de 94.990 € +IVA sense motors. Agent a Catalunya.',
   eyebrow='Vaixells nous', h1='Catharsis 930: creuer fora borda de 9,30 metres',
-  intro='Un vaixell amb timonera, dos camarots i bany, pensat per passar el dia o uns dies a bord amb la família. El fabrica Avila Marin a Esmirna (Turquia) i es demana a fàbrica: t\'ajudo a triar motors i equipament. En sóc l\'agent a Catalunya.',
+  intro='Un vaixell amb timonera, dos camarots i bany, pensat per passar el dia o uns dies a bord amb la família. El fabrica Avila Marin i es demana a fàbrica: t\'ajudo a triar motors i equipament. En sóc l\'agent a Catalunya.',
   kick='Agent a Catalunya', h2='El vaixell',
-  facts=['Fabricat a Turquia per Avila Marin', 'Buc per infusió al buit', 'Dos camarots, bany amb dutxa i cuina', 'Per a dos motors fora borda: no inclosos, es munten a la teva elecció amb pressupost a part', 'Lliurament: uns 90 dies des de la comanda, més el transport', 'Transport des de Turquia fins a Barcelona: no inclòs, es pressuposta a part'],
+  facts=['Fabricat per Avila Marin', 'Buc per infusió al buit', 'Dos camarots, bany amb dutxa i cuina', 'Per a dos motors fora borda: no inclosos, es munten a la teva elecció amb pressupost a part', 'Lliurament: uns 90 dies des de la comanda, més el transport', 'Transport des de fàbrica fins a Barcelona: no inclòs, es pressuposta a part'],
   d='Timonera amb porta corredissa d\'alumini de tres fulles, banyera amb taula telescòpica i dutxa, camarot de proa amb llit doble i camarot de convidats. De sèrie porta molinet elèctric, nevera, cuina de dos focs, WC elèctric, focus LED, bateries de servei i dipòsits d\'acer inoxidable.',
   lic='PER o superior', lic_label='Titulació', price_from='Des de', no_eng='sense motors',
   cta='Demanar pressupost', wa_txt='Hola Juan, m\'interessa el Catharsis 930.', photos='Fotos del Catharsis 930',
   opt_h='Equipament opcional', opt='Teca sintètica, plataforma per a auxiliar, llums submarins, hèlix de proa, flaps automàtics, calefacció dièsel, tendals d\'estiu i d\'hivern, plotters Raymarine de 9" o 12", equip de so Fusion i plaques solars (420 W), entre d\'altres. Et passo el preu de cada opció per escrit.',
   spec_h='Fitxa tècnica',
   used_h='Busques un vaixell d\'ocasió?', used_a='Veure vaixells de segona mà →',
-  small='Preu orientatiu d\'octubre de 2026, sense IVA, a fàbrica: no inclou motors, equipament opcional, transport, impost de matriculació (IEDMT) ni matriculació. El transport des de Turquia fins a Barcelona no està inclòs i es pressuposta a part. Els motors tampoc no hi estan inclosos: es munten a elecció del client, amb pressupost a part. Pot canviar i no és vinculant; el preu final és el del pressupost per escrit. Fitxa tècnica segons el fabricant; el marcatge CE de categoria C és el que indica la drassana. La titulació és orientativa segons l\'eslora: confirma-la amb la teva escola o amb Capitania. Ens podem equivocar; si hi veus un error, avisa\'ns.',
+  small='Preu orientatiu d\'octubre de 2026, sense IVA, a fàbrica: no inclou motors, equipament opcional, transport, impost de matriculació (IEDMT) ni matriculació. El transport des de fàbrica fins a Barcelona no està inclòs i es pressuposta a part. Els motors tampoc no hi estan inclosos: es munten a elecció del client, amb pressupost a part. Pot canviar i no és vinculant; el preu final és el del pressupost per escrit. Fitxa tècnica segons el fabricant; el marcatge CE de categoria C és el que indica la drassana. La titulació és orientativa segons l\'eslora: confirma-la amb la teva escola o amb Capitania. Ens podem equivocar; si hi veus un error, avisa\'ns.',
  ),
  'en': dict(
   title='New Catharsis 930: price, specs and photos · Plata Marine',
-  desc='Catharsis 930, a 9.30 m outboard cruiser built in Turkey by Avila Marin. From €94,990 +VAT without engines. Agent in Catalonia.',
+  desc='Catharsis 930, a 9.30 m outboard cruiser built by Avila Marin. From €94,990 +VAT without engines. Agent in Catalonia.',
   eyebrow='New boats', h1='Catharsis 930: a 9.30-metre outboard cruiser',
-  intro='A boat with a wheelhouse, two cabins and a bathroom, made for day trips or a few days on board with the family. Built by Avila Marin in Izmir (Turkey) and ordered from the factory: I help you choose engines and equipment. I am their agent in Catalonia.',
+  intro='A boat with a wheelhouse, two cabins and a bathroom, made for day trips or a few days on board with the family. Built by Avila Marin and ordered from the factory: I help you choose engines and equipment. I am their agent in Catalonia.',
   kick='Agent in Catalonia', h2='The boat',
-  facts=['Built in Turkey by Avila Marin', 'Vacuum-infused hull', 'Two cabins, bathroom with shower and galley', 'For twin outboard engines: not included, fitted to your choice and quoted separately', 'Delivery: about 90 days from order, plus transport', 'Transport from Turkey to Barcelona: not included, quoted separately'],
+  facts=['Built by Avila Marin', 'Vacuum-infused hull', 'Two cabins, bathroom with shower and galley', 'For twin outboard engines: not included, fitted to your choice and quoted separately', 'Delivery: about 90 days from order, plus transport', 'Transport from the factory to Barcelona: not included, quoted separately'],
   d='Wheelhouse with a three-panel sliding aluminium door, cockpit with telescopic table and shower, forward cabin with double bed and a guest cabin. Standard equipment includes electric windlass, fridge, two-burner hob, electric toilet, LED searchlight, service batteries and stainless steel tanks.',
   lic='Spanish PER or higher', lic_label='Licence', price_from='From', no_eng='without engines',
   cta='Request a quote', wa_txt='Hi Juan, I am interested in the Catharsis 930.', photos='Photos of the Catharsis 930',
   opt_h='Optional equipment', opt='Synthetic teak, tender platform, underwater lights, bow thruster, automatic trim tabs, diesel heater, summer and winter covers, 9" or 12" Raymarine plotters, Fusion sound system and solar panels (420 W), among others. I will send you the price of each option in writing.',
   spec_h='Specifications',
   used_h='Looking for a used boat?', used_a='See used boats →',
-  small='Indicative price as of October 2026, ex-works, excluding VAT: it does not include engines, optional equipment, transport, Spanish registration tax (IEDMT) or registration. Transport from Turkey to Barcelona is not included and is quoted separately. Engines are not included either: they are fitted to the customer\'s choice and quoted separately. It may change and is not binding; the final price is the one in the written quote. Specifications as stated by the builder; the CE category C marking is as declared by the builder. The licence shown is indicative, based on length under Spanish rules: please confirm it with your school or the Harbour Master. We may be wrong; if you spot an error, let us know.',
+  small='Indicative price as of October 2026, ex-works, excluding VAT: it does not include engines, optional equipment, transport, Spanish registration tax (IEDMT) or registration. Transport from the factory to Barcelona is not included and is quoted separately. Engines are not included either: they are fitted to the customer\'s choice and quoted separately. It may change and is not binding; the final price is the one in the written quote. Specifications as stated by the builder; the CE category C marking is as declared by the builder. The licence shown is indicative, based on length under Spanish rules: please confirm it with your school or the Harbour Master. We may be wrong; if you spot an error, let us know.',
  ),
  'fr': dict(
   title='Catharsis 930 neuf : prix, fiche et photos · Plata Marine',
-  desc='Catharsis 930, cruiser hors-bord de 9,30 m construit en Turquie par Avila Marin. À partir de 94 990 € HT sans moteurs. Agent en Catalogne.',
+  desc='Catharsis 930, cruiser hors-bord de 9,30 m construit par Avila Marin. À partir de 94 990 € HT sans moteurs. Agent en Catalogne.',
   eyebrow='Bateaux neufs', h1='Catharsis 930 : cruiser hors-bord de 9,30 mètres',
-  intro='Un bateau avec timonerie, deux cabines et salle d\'eau, pensé pour la journée ou quelques jours à bord en famille. Construit par Avila Marin à Izmir (Turquie) et commandé à l\'usine : je vous aide à choisir les moteurs et l\'équipement. Je suis leur agent en Catalogne.',
+  intro='Un bateau avec timonerie, deux cabines et salle d\'eau, pensé pour la journée ou quelques jours à bord en famille. Construit par Avila Marin et commandé à l\'usine : je vous aide à choisir les moteurs et l\'équipement. Je suis leur agent en Catalogne.',
   kick='Agent en Catalogne', h2='Le bateau',
-  facts=['Construit en Turquie par Avila Marin', 'Coque en infusion sous vide', 'Deux cabines, salle d\'eau avec douche et cuisine', 'Pour deux moteurs hors-bord : non inclus, montés selon votre choix sur devis séparé', 'Livraison : environ 90 jours après la commande, plus le transport', 'Transport de la Turquie jusqu\'à Barcelone : non inclus, sur devis séparé'],
+  facts=['Construit par Avila Marin', 'Coque en infusion sous vide', 'Deux cabines, salle d\'eau avec douche et cuisine', 'Pour deux moteurs hors-bord : non inclus, montés selon votre choix sur devis séparé', 'Livraison : environ 90 jours après la commande, plus le transport', 'Transport de l\'usine jusqu\'à Barcelone : non inclus, sur devis séparé'],
   d='Timonerie avec porte coulissante en aluminium à trois vantaux, cockpit avec table télescopique et douche, cabine avant avec lit double et cabine invités. En série : guindeau électrique, réfrigérateur, réchaud deux feux, WC électrique, projecteur LED, batteries de service et réservoirs en inox.',
   lic='PER espagnol ou supérieur', lic_label='Permis', price_from='À partir de', no_eng='sans moteurs',
   cta='Demander un devis', wa_txt='Bonjour Juan, le Catharsis 930 m\'intéresse.', photos='Photos du Catharsis 930',
   opt_h='Options', opt='Teck synthétique, plateforme pour annexe, éclairage sous-marin, propulseur d\'étrave, flaps automatiques, chauffage diesel, tauds été et hiver, traceurs Raymarine 9" ou 12", système audio Fusion et panneaux solaires (420 W), entre autres. Je vous envoie le prix de chaque option par écrit.',
   spec_h='Fiche technique',
   used_h='Vous cherchez un bateau d\'occasion ?', used_a='Voir les bateaux d\'occasion →',
-  small='Prix indicatif d\'octobre 2026, départ usine, hors TVA : il n\'inclut pas les moteurs, les options, le transport, la taxe d\'immatriculation espagnole (IEDMT) ni l\'immatriculation. Le transport de la Turquie jusqu\'à Barcelone n\'est pas inclus et fait l\'objet d\'un devis séparé. Les moteurs ne sont pas inclus non plus : ils sont montés selon le choix du client, sur devis séparé. Il peut changer et n\'est pas contractuel ; le prix final est celui du devis écrit. Fiche technique selon le constructeur ; le marquage CE catégorie C est celui déclaré par le chantier. Le permis indiqué est indicatif, selon la longueur d\'après les règles espagnoles : vérifiez-le auprès de votre école ou de la Capitainerie. Nous pouvons nous tromper ; si vous voyez une erreur, dites-le-nous. Nous ne parlons pas français : nous utilisons un traducteur, merci de votre indulgence.',
+  small='Prix indicatif d\'octobre 2026, départ usine, hors TVA : il n\'inclut pas les moteurs, les options, le transport, la taxe d\'immatriculation espagnole (IEDMT) ni l\'immatriculation. Le transport de l\'usine jusqu\'à Barcelone n\'est pas inclus et fait l\'objet d\'un devis séparé. Les moteurs ne sont pas inclus non plus : ils sont montés selon le choix du client, sur devis séparé. Il peut changer et n\'est pas contractuel ; le prix final est celui du devis écrit. Fiche technique selon le constructeur ; le marquage CE catégorie C est celui déclaré par le chantier. Le permis indiqué est indicatif, selon la longueur d\'après les règles espagnoles : vérifiez-le auprès de votre école ou de la Capitainerie. Nous pouvons nous tromper ; si vous voyez une erreur, dites-le-nous. Nous ne parlons pas français : nous utilisons un traducteur, merci de votre indulgence.',
  ),
 }
 VAT = {'es': '+IVA', 'ca': '+IVA', 'en': '+VAT', 'fr': 'HT'}
@@ -126,12 +126,13 @@ def build(lang):
     head = re.sub(r'(<meta property="og:image" content=")[^"]*', f'\\g<1>{BASE}/{SLUG}/fotos/catharsis-930-1.jpg', head)
     head = re.sub(r'<meta property="og:image:width"[^>]*>\n?<meta property="og:image:height"[^>]*>', '<meta property="og:image:width" content="1400">\n<meta property="og:image:height" content="788">', head)
     head = head.replace('/barcos-nuevos/', f'/{SLUG}/')
-    crumbs = {'es': ('Inicio', 'Barcos en venta'), 'ca': ('Inici', 'Vaixells en venda'), 'en': ('Home', 'Boats for sale'), 'fr': ('Accueil', 'Bateaux à vendre')}[lang]
+    crumbs = {'es': ('Inicio', 'Barcos en venta', 'Barcos nuevos'), 'ca': ('Inici', 'Vaixells en venda', 'Vaixells nous'), 'en': ('Home', 'Boats for sale', 'New boats'), 'fr': ('Accueil', 'Bateaux à vendre', 'Bateaux neufs')}[lang]
     ld = [
         {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Plata Marine", "item": f"{BASE}{p}/"},
             {"@type": "ListItem", "position": 2, "name": crumbs[1], "item": f"{BASE}{p}/barcos/"},
-            {"@type": "ListItem", "position": 3, "name": "Catharsis 930", "item": url}]},
+            {"@type": "ListItem", "position": 3, "name": crumbs[2], "item": f"{BASE}{p}/barcos-nuevos/"},
+            {"@type": "ListItem", "position": 4, "name": "Catharsis 930", "item": url}]},
         {"@context": "https://schema.org", "@type": "Product", "name": "Catharsis 930", "brand": {"@type": "Brand", "name": "Catharsis"},
          "manufacturer": {"@type": "Organization", "name": "Avila Marin"}, "image": f"{BASE}/{SLUG}/fotos/catharsis-930-1.jpg", "description": t['d'],
          "offers": {"@type": "Offer", "price": str(PRICE), "priceCurrency": "EUR", "availability": "https://schema.org/PreOrder", "url": url,
@@ -151,7 +152,7 @@ def build(lang):
     facts = ''.join(f'<li>{html.escape(f)}</li>' for f in t['facts'])
     main = f'''<main class="boat">
   <div class="wrap">
-    <p class="crumb"><a href="{p}/">{crumbs[0]}</a> · <a href="{p}/barcos/">{crumbs[1]}</a> · Catharsis 930</p>
+    <p class="crumb"><a href="{p}/">{crumbs[0]}</a> · <a href="{p}/barcos/">{crumbs[1]}</a> · <a href="{p}/barcos-nuevos/">{crumbs[2]}</a> · Catharsis 930</p>
     <div class="head">
       <div>
         <p class="eyebrow">{t['eyebrow']}</p>
@@ -192,5 +193,6 @@ def build(lang):
     print('ok', lang, len(out))
 
 
-for l in LANGS:
-    build(l)
+if __name__ == '__main__':
+    for l in LANGS:
+        build(l)

@@ -57,14 +57,14 @@
   var g=document.querySelectorAll('#pmxPanel .pmx-grp');
   for(var i=0;i<g.length;i++){if(g[i].querySelector('a[href$="/modelos/"]')){add(g[i]);break;}}
 })();
-/* "Barcos en venta" con tres accesos: Barcos nuevos, Segunda mano y Otras marcas nuevas (/marcas/).
+/* "Barcos en venta" con dos accesos: Barcos nuevos (/barcos-nuevos/, todas las marcas juntas) y Segunda mano.
    Escritorio: desplegable al pasar el ratón o al llegar con el teclado. Móvil: dos enlaces sangrados debajo. */
 (function(){
   var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
-  var T={'':['Barcos nuevos','Segunda mano','Otras marcas nuevas'],'/ca':['Vaixells nous','Segona mà','Altres marques noves'],'/en':['New boats','Pre-owned','Other new brands'],'/fr':['Bateaux neufs','Occasion','Autres marques neuves']}[pre];
-  var h=pre+'/barcos/',hn=pre+'/barcos-nuevos/',hm=pre+'/marcas/',onM=(p===hm||p===hm+'index.html'),onN=(p===hn||p===hn+'index.html'||onM);
-  var L=[[h+'#nuevos',T[0]],[h+'#segunda-mano',T[1]],[hm,T[2]]];
-  function fill(box){L.forEach(function(it){var a=document.createElement('a');a.href=it[0];a.textContent=it[1];if(it[0]===hm&&onM)a.setAttribute('aria-current','page');box.appendChild(a);});}
+  var T={'':['Barcos nuevos','Segunda mano'],'/ca':['Vaixells nous','Segona mà'],'/en':['New boats','Pre-owned'],'/fr':['Bateaux neufs','Occasion']}[pre];
+  var h=pre+'/barcos/',hn=pre+'/barcos-nuevos/',onN=(p===hn||p===hn+'index.html');
+  var L=[[hn,T[0]],[h+'#segunda-mano',T[1]]];
+  function fill(box){L.forEach(function(it){var a=document.createElement('a');a.href=it[0];a.textContent=it[1];if(it[0]===hn&&onN)a.setAttribute('aria-current','page');box.appendChild(a);});}
   var top=document.querySelector('header.top .pmx-nav>a[href="'+h+'"]');
   if(top){
     var dd=document.createElement('div');dd.className='pmx-dd pmx-bev'+(onN?' cur':'');
@@ -78,15 +78,6 @@
   if(mt&&!mt.parentNode.querySelector('.pmx-bevsub')){
     var s=document.createElement('div');s.className='pmx-bevsub';fill(s);mt.parentNode.insertBefore(s,mt.nextSibling);
   }
-})();
-/* Enlace "Barcos nuevos SKIPPER" en el menú Comprar de todas las páginas. */
-(function(){
-  var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
-  var t={'':'Barcos nuevos SKIPPER','/ca':'Vaixells nous SKIPPER','/en':'New SKIPPER boats','/fr':'Bateaux neufs SKIPPER'}[pre],h=pre+'/skipper/';
-  function add(box){if(!box||box.querySelector('a[href="'+h+'"]'))return;var a=document.createElement('a');a.href=h;a.textContent=t;if(p===h||p===h+'index.html')a.setAttribute('aria-current','page');box.appendChild(a);}
-  add(document.getElementById('pmxM2'));
-  var g=document.querySelectorAll('#pmxPanel .pmx-grp');
-  for(var i=0;i<g.length;i++){if(g[i].querySelector('a[href$="/modelos/"]')){add(g[i]);break;}}
 })();
 /* Enlace "Broker en Barcelona y Maresme" en el menú Vender de todas las páginas. */
 (function(){

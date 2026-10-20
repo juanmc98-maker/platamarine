@@ -34,11 +34,11 @@ def num(s, lang):
 T = {
  'es': dict(
   title='Barcos Sunrise nuevos de 4 a 7 m: precios y modelos · Plata Marine',
-  desc='Barcos nuevos Sunrise fabricados en Polonia, de 4 a 7 m, desde 5.990 € +IVA. Distribuidor en Cataluña: te ayudo a elegir modelo, motor y equipamiento.',
+  desc='Barcos nuevos Sunrise de 4 a 7 m, desde 5.990 € +IVA. Distribuidor en Cataluña: te ayudo a elegir modelo, motor y equipamiento.',
   crumb_last='Sunrise', eyebrow='Barcos nuevos', h1='Sunrise: barcos nuevos de 4 a 7 metros',
-  intro='Barcos sencillos y fáciles de mantener, fabricados en Polonia por Sunrise Yacht. Se piden a fábrica y te ayudo a elegir el modelo, el motor y el equipamiento. Soy su distribuidor en Cataluña.',
+  intro='Barcos sencillos y fáciles de mantener, fabricados por Sunrise Yacht. Se piden a fábrica y te ayudo a elegir el modelo, el motor y el equipamiento. Soy su distribuidor en Cataluña.',
   kick='Distribuidor en Cataluña', h2='Los modelos',
-  facts=['Fabricados en Polonia', 'Categoría de diseño CE: C (certifica PRS)', 'Entrega: de 4 a 12 semanas según modelo', 'Garantía: 3 años desde la entrega', 'Pago: 40 % al hacer el pedido y el resto cuando el barco está listo para el transporte', 'Transporte a Barcelona: unos 2.000 € por barco, aparte'],
+  facts=['Categoría de diseño CE: C (certifica PRS)', 'Entrega: de 4 a 12 semanas según modelo', 'Garantía: 3 años desde la entrega', 'Pago: 40 % al hacer el pedido y el resto cuando el barco está listo para el transporte', 'Transporte desde fábrica hasta Barcelona: unos 2.000 € por barco, aparte'],
   len='Eslora', beam='Manga', pax='Personas', hp='Motor', hp_max='hasta {} CV', hp_eco='Eléctrico, incluido',
   lic={'sin': 'Sin titulación con motor de hasta 15 CV (uso privado, de día, a 2 millas como máximo y mayor de 18 años); con más, Licencia de Navegación o superior', 'ln': 'Licencia de Navegación o superior', 'pnb': 'PNB o superior'},
   lic_label='Titulación', price_from='Desde', no_eng='sin motor', with_eng='motor incluido',
@@ -56,11 +56,11 @@ T = {
  ),
  'ca': dict(
   title='Vaixells Sunrise nous de 4 a 7 m: preus i models · Plata Marine',
-  desc='Vaixells nous Sunrise fabricats a Polònia, de 4 a 7 m, des de 5.990 € +IVA. Distribuïdor a Catalunya: t\'ajudo a triar model, motor i equipament.',
+  desc='Vaixells nous Sunrise de 4 a 7 m, des de 5.990 € +IVA. Distribuïdor a Catalunya: t\'ajudo a triar model, motor i equipament.',
   crumb_last='Sunrise', eyebrow='Vaixells nous', h1='Sunrise: vaixells nous de 4 a 7 metres',
-  intro='Vaixells senzills i fàcils de mantenir, fabricats a Polònia per Sunrise Yacht. Es demanen a fàbrica i t\'ajudo a triar el model, el motor i l\'equipament. En sóc el distribuïdor a Catalunya.',
+  intro='Vaixells senzills i fàcils de mantenir, fabricats per Sunrise Yacht. Es demanen a fàbrica i t\'ajudo a triar el model, el motor i l\'equipament. En sóc el distribuïdor a Catalunya.',
   kick='Distribuïdor a Catalunya', h2='Els models',
-  facts=['Fabricats a Polònia', 'Categoria de disseny CE: C (certifica PRS)', 'Lliurament: de 4 a 12 setmanes segons el model', 'Garantia: 3 anys des del lliurament', 'Pagament: 40 % en fer la comanda i la resta quan el vaixell és a punt per al transport', 'Transport a Barcelona: uns 2.000 € per vaixell, a part'],
+  facts=['Categoria de disseny CE: C (certifica PRS)', 'Lliurament: de 4 a 12 setmanes segons el model', 'Garantia: 3 anys des del lliurament', 'Pagament: 40 % en fer la comanda i la resta quan el vaixell és a punt per al transport', 'Transport des de fàbrica fins a Barcelona: uns 2.000 € per vaixell, a part'],
   len='Eslora', beam='Mànega', pax='Persones', hp='Motor', hp_max='fins a {} CV', hp_eco='Elèctric, inclòs',
   lic={'sin': 'Sense titulació amb motor de fins a 15 CV (ús privat, de dia, a 2 milles com a màxim i major de 18 anys); amb més, Llicència de Navegació o superior', 'ln': 'Llicència de Navegació o superior', 'pnb': 'PNB o superior'},
   lic_label='Titulació', price_from='Des de', no_eng='sense motor', with_eng='motor inclòs',
@@ -78,11 +78,11 @@ T = {
  ),
  'en': dict(
   title='New Sunrise boats from 4 to 7 m: prices and models · Plata Marine',
-  desc='New Sunrise boats built in Poland, from 4 to 7 m, from €5,990 +VAT. Dealer in Catalonia: I help you choose the model, engine and equipment.',
+  desc='New Sunrise boats from 4 to 7 m, from €5,990 +VAT. Dealer in Catalonia: I help you choose the model, engine and equipment.',
   crumb_last='Sunrise', eyebrow='New boats', h1='Sunrise: new boats from 4 to 7 metres',
-  intro='Simple, easy-to-maintain boats built in Poland by Sunrise Yacht. They are ordered from the factory and I help you choose the model, engine and equipment. I am their dealer in Catalonia.',
+  intro='Simple, easy-to-maintain boats built by Sunrise Yacht. They are ordered from the factory and I help you choose the model, engine and equipment. I am their dealer in Catalonia.',
   kick='Dealer in Catalonia', h2='The models',
-  facts=['Built in Poland', 'CE design category: C (certified by PRS)', 'Delivery: 4 to 12 weeks depending on the model', 'Warranty: 3 years from delivery', 'Payment: 40% when ordering and the rest when the boat is ready for transport', 'Transport to Barcelona: about €2,000 per boat, extra'],
+  facts=['CE design category: C (certified by PRS)', 'Delivery: 4 to 12 weeks depending on the model', 'Warranty: 3 years from delivery', 'Payment: 40% when ordering and the rest when the boat is ready for transport', 'Transport from the factory to Barcelona: about €2,000 per boat, extra'],
   len='Length', beam='Beam', pax='People', hp='Engine', hp_max='up to {} hp', hp_eco='Electric, included',
   lic={'sin': 'No licence needed with an engine up to 15 hp (private use, daytime, within 2 miles, aged 18 or over); above that, Licencia de Navegación or higher', 'ln': 'Spanish Licencia de Navegación or higher', 'pnb': 'Spanish PNB or higher'},
   lic_label='Licence', price_from='From', no_eng='without engine', with_eng='engine included',
@@ -100,11 +100,11 @@ T = {
  ),
  'fr': dict(
   title='Bateaux neufs Sunrise de 4 à 7 m : prix et modèles · Plata Marine',
-  desc='Bateaux neufs Sunrise fabriqués en Pologne, de 4 à 7 m, à partir de 5 990 € HT. Distributeur en Catalogne : je vous aide à choisir le modèle, le moteur et l\'équipement.',
+  desc='Bateaux neufs Sunrise de 4 à 7 m, à partir de 5 990 € HT. Distributeur en Catalogne : je vous aide à choisir le modèle, le moteur et l\'équipement.',
   crumb_last='Sunrise', eyebrow='Bateaux neufs', h1='Sunrise : bateaux neufs de 4 à 7 mètres',
-  intro='Des bateaux simples et faciles à entretenir, fabriqués en Pologne par Sunrise Yacht. Ils se commandent à l\'usine et je vous aide à choisir le modèle, le moteur et l\'équipement. Je suis leur distributeur en Catalogne.',
+  intro='Des bateaux simples et faciles à entretenir, fabriqués par Sunrise Yacht. Ils se commandent à l\'usine et je vous aide à choisir le modèle, le moteur et l\'équipement. Je suis leur distributeur en Catalogne.',
   kick='Distributeur en Catalogne', h2='Les modèles',
-  facts=['Fabriqués en Pologne', 'Catégorie de conception CE : C (certifiée par PRS)', 'Livraison : de 4 à 12 semaines selon le modèle', 'Garantie : 3 ans à partir de la livraison', 'Paiement : 40 % à la commande et le reste quand le bateau est prêt pour le transport', 'Transport jusqu\'à Barcelone : environ 2 000 € par bateau, en sus'],
+  facts=['Catégorie de conception CE : C (certifiée par PRS)', 'Livraison : de 4 à 12 semaines selon le modèle', 'Garantie : 3 ans à partir de la livraison', 'Paiement : 40 % à la commande et le reste quand le bateau est prêt pour le transport', 'Transport de l\'usine jusqu\'à Barcelone : environ 2 000 € par bateau, en sus'],
   len='Longueur', beam='Largeur', pax='Personnes', hp='Moteur', hp_max='jusqu\'à {} ch', hp_eco='Électrique, inclus',
   lic={'sin': 'Sans permis avec un moteur jusqu\'à 15 ch (usage privé, de jour, à 2 milles maximum, 18 ans révolus) ; au-delà, Licencia de Navegación ou supérieur (règles espagnoles)', 'ln': 'Licencia de Navegación espagnole ou supérieur', 'pnb': 'PNB espagnol ou supérieur'},
   lic_label='Permis', price_from='À partir de', no_eng='sans moteur', with_eng='moteur inclus',
@@ -144,6 +144,7 @@ CSS = """
 .sr-b .pr small{font-weight:500;font-size:.8rem;color:var(--ink-2);margin-left:6px}
 .sr-b .btn{align-self:flex-start;margin-top:6px}
 .sr-hint{font-size:.78rem;color:var(--ink-2)}
+.sr-m{scroll-margin-top:86px}
 @media (max-width:820px){.sr-facts{grid-template-columns:1fr 1fr}.sr-m{grid-template-columns:1fr}}
 @media (max-width:520px){.sr-facts{grid-template-columns:1fr}.sr-b .btn{align-self:stretch;text-align:center}}
 """
@@ -158,19 +159,20 @@ def build(lang):
     head, rest = tpl.split('</head>', 1)
     # quitar JSON-LD y metas que cambian
     head = re.sub(r'<script type="application/ld\+json">.*?</script>\n?', '', head, flags=re.S)
-    head = re.sub(r'<title>.*?</title>', f'<title>{html.escape(t["title"])}</title>', head)
+    head = re.sub(r'<title>.*?</title>', f'<title>{html.escape(t["title"].replace(" · Plata Marine", ""))}</title>', head)
     head = re.sub(r'(<meta name="description" content=")[^"]*', lambda m: m.group(1) + html.escape(t['desc']), head)
     head = re.sub(r'(<meta property="og:title" content=")[^"]*', lambda m: m.group(1) + html.escape(t['title']), head)
     head = re.sub(r'(<meta property="og:description" content=")[^"]*', lambda m: m.group(1) + html.escape(t['desc']), head)
     head = re.sub(r'(<meta property="og:image" content=")[^"]*', f'\\g<1>{BASE}/sunrise/fotos/645-1.jpg', head)
     head = re.sub(r'<meta property="og:image:width"[^>]*>\n?<meta property="og:image:height"[^>]*>', '<meta property="og:image:width" content="1000">\n<meta property="og:image:height" content="600">', head)
     head = head.replace('/barcos-nuevos/', '/sunrise/')
-    crumbs = {'es': ('Inicio', 'Barcos en venta'), 'ca': ('Inici', 'Vaixells en venda'), 'en': ('Home', 'Boats for sale'), 'fr': ('Accueil', 'Bateaux à vendre')}[lang]
+    crumbs = {'es': ('Inicio', 'Barcos en venta', 'Barcos nuevos'), 'ca': ('Inici', 'Vaixells en venda', 'Vaixells nous'), 'en': ('Home', 'Boats for sale', 'New boats'), 'fr': ('Accueil', 'Bateaux à vendre', 'Bateaux neufs')}[lang]
     ld = [
         {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Plata Marine", "item": f"{BASE}{p}/"},
             {"@type": "ListItem", "position": 2, "name": crumbs[1], "item": f"{BASE}{p}/barcos/"},
-            {"@type": "ListItem", "position": 3, "name": "Sunrise", "item": url}]},
+            {"@type": "ListItem", "position": 3, "name": crumbs[2], "item": f"{BASE}{p}/barcos-nuevos/"},
+            {"@type": "ListItem", "position": 4, "name": "Sunrise", "item": url}]},
         {"@context": "https://schema.org", "@type": "ItemList", "name": t['h1'], "url": url, "itemListElement": [
             {"@type": "ListItem", "position": i + 1, "item": {"@type": "Product", "name": f"Sunrise {m[1]}", "brand": {"@type": "Brand", "name": "Sunrise"},
               "image": f"{BASE}/sunrise/fotos/{m[0]}-1.jpg", "description": t['d'][m[0]],
@@ -206,7 +208,7 @@ def build(lang):
     facts = ''.join(f'<li>{html.escape(f)}</li>' for f in t['facts'])
     main = f'''<main class="boat">
   <div class="wrap">
-    <p class="crumb"><a href="{p}/">{crumbs[0]}</a> · <a href="{p}/barcos/">{crumbs[1]}</a> · Sunrise</p>
+    <p class="crumb"><a href="{p}/">{crumbs[0]}</a> · <a href="{p}/barcos/">{crumbs[1]}</a> · <a href="{p}/barcos-nuevos/">{crumbs[2]}</a> · Sunrise</p>
     <div class="head">
       <div>
         <p class="eyebrow">{t['eyebrow']}</p>
@@ -235,5 +237,6 @@ def build(lang):
     open(f'{ROOT}{p}/sunrise/index.html', 'w', encoding='utf-8').write(out)
     print('ok', lang, len(out))
 
-for l in LANGS:
-    build(l)
+if __name__ == '__main__':
+    for l in LANGS:
+        build(l)
