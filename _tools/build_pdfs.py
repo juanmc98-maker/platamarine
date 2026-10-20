@@ -70,7 +70,7 @@ def parse(slug, lang):
     seen = []
     for x in thumbs:
         if x not in seen: seen.append(x)
-    url = 'https://www.platamarine.com/' + L[lang]['pre'] + 'barcos/' + slug + '.html'
+    url = 'https://www.platamarine.com/' + L[lang]['pre'] + 'barcos/' + slug
     return dict(name=name, sub=sub, price=price, sold=sold, specs=specs, h2=h2, paras=paras, photos=seen, url=url)
 
 CSS = '''
