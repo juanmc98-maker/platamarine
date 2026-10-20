@@ -1,4 +1,6 @@
 /* Plata Marine · acciones de la ficha (ES/CA/EN/FR), solo en barcos disponibles:
+   0) Contacto también arriba, junto al precio (visita + WhatsApp) y bloque "También te ayudo con"
+      tras la descripción, que enlaza solo a servicios que ya existen en la web.
    1) "Quiero verlo en persona" lleva a la agenda de visitas (/visita/?barco=…), dentro de la web.
    2) Recuadro "Presupuesto de traslado": por carretera y, si el barco lo permite, navegando.
       La solicitud entra en la hoja de leads (source "traslado"); Juan pide el presupuesto y contesta. */
@@ -55,6 +57,71 @@
     vis[v].setAttribute('data-wa-context', 'ficha_agenda');
     vis[v].textContent = T.visit;
   }
+
+  /* 1a) Contacto también arriba, junto al precio: visita y WhatsApp a la vista (el de abajo se mantiene) */
+  (function () {
+    var ask = document.querySelector('.price-box .btn-ask');
+    if (!ask || document.querySelector('.pm-topc')) return;
+    var C = {es: ['Solicitar visita', 'o'], ca: ['Sol·licitar visita', 'o'], en: ['Book a viewing', 'or'], fr: ['Demander une visite', 'ou']}[lang];
+    var st = document.createElement('style');
+    st.textContent = '.pm-topc{margin:2px 0 0;font-family:var(--display);font-size:14px;line-height:1.5}.pm-topc a{color:inherit;text-decoration:underline;text-underline-offset:3px;font-weight:600}.pm-topc .sep{opacity:.7;margin:0 4px}';
+    document.head.appendChild(st);
+    var p = document.createElement('p');
+    p.className = 'pm-topc';
+    p.innerHTML = '<a href="' + PRE + '/visita/?barco=' + encodeURIComponent(b.slug) + '" data-wa-context="ficha_visita_arriba">' + C[0] + '</a><span class="sep">' + C[1] + '</span>' +
+      '<a href="' + ask.getAttribute('href') + '" target="_blank" rel="noopener" data-wa-context="ficha_wa_arriba">WhatsApp +34 633 742 973</a>';
+    var after = ask.parentNode.classList.contains('v2-ctas') ? ask.parentNode : ask;
+    after.parentNode.insertBefore(p, after.nextSibling);
+  })();
+
+  /* 1c) "También te ayudo con": solo servicios que ya existen en la web */
+  (function () {
+    var prose = document.querySelector('.prose');
+    if (!prose || document.querySelector('.pm-extra')) return;
+    var S = {
+      es: {h: 'También te ayudo con', o: [
+        ['Verlo en persona', 'Eliges día y hora y lo vemos juntos.', PRE + '/visita/?barco=' + encodeURIComponent(b.slug)],
+        ['Llevarlo a otro puerto', mar ? 'Te pido presupuesto de traslado por carretera o navegando.' : 'Te pido presupuesto de traslado por carretera.', '#pm-traslado'],
+        ['Papeles e impuestos', 'Cambio de titularidad, impuestos de la compra y documentación.', PRE + '/papeles-fiscalidad/'],
+        ['Amarre', 'Amarres en traspaso o alquiler de otros clientes.', PRE + '/servicios/amarres.html'],
+        ['ITB, gestoría, varadero y seguro', 'Te pongo en contacto con quien lo haría yo.', PRE + '/servicios/']]},
+      ca: {h: 'També t’ajudo amb', o: [
+        ['Veure’l en persona', 'Tries dia i hora i el veiem junts.', PRE + '/visita/?barco=' + encodeURIComponent(b.slug)],
+        ['Portar-lo a un altre port', mar ? 'Et demano pressupost de trasllat per carretera o navegant.' : 'Et demano pressupost de trasllat per carretera.', '#pm-traslado'],
+        ['Papers i impostos', 'Canvi de titularitat, impostos de la compra i documentació.', PRE + '/papeles-fiscalidad/'],
+        ['Amarratge', 'Amarradors en traspàs o lloguer d’altres clients.', PRE + '/servicios/amarres.html'],
+        ['ITB, gestoria, varador i assegurança', 'Et poso en contacte amb qui ho faria jo.', PRE + '/servicios/']]},
+      en: {h: 'I can also help you with', o: [
+        ['Seeing it in person', 'Pick a day and time and we’ll see it together.', PRE + '/visita/?barco=' + encodeURIComponent(b.slug)],
+        ['Moving it to another marina', mar ? 'I get you a delivery quote by road or by sea.' : 'I get you a delivery quote by road.', '#pm-traslado'],
+        ['Paperwork and taxes', 'Change of ownership, purchase taxes and documents.', PRE + '/papeles-fiscalidad/'],
+        ['A berth', 'Berths for transfer or rent from other clients.', PRE + '/servicios/amarres.html'],
+        ['Inspection, paperwork, haul-out and insurance', 'I put you in touch with who I’d use.', PRE + '/servicios/']]},
+      fr: {h: 'Je peux aussi vous aider pour', o: [
+        ['Le voir sur place', 'Vous choisissez le jour et l’heure et on le voit ensemble.', PRE + '/visita/?barco=' + encodeURIComponent(b.slug)],
+        ['L’emmener dans un autre port', mar ? 'Je vous obtiens un devis de transport par la route ou par la mer.' : 'Je vous obtiens un devis de transport par la route.', '#pm-traslado'],
+        ['Papiers et fiscalité', 'Changement de propriétaire, taxes d’achat et documents.', PRE + '/papeles-fiscalidad/'],
+        ['Une place de port', 'Places à céder ou à louer d’autres clients.', PRE + '/servicios/amarres.html'],
+        ['Inspection, formalités, mise à sec et assurance', 'Je vous mets en contact avec ceux à qui je ferais appel.', PRE + '/servicios/']]}
+    }[lang];
+    if (!S) return;
+    var st = document.createElement('style');
+    st.textContent = '#pm-traslado{scroll-margin-top:84px}.pm-extra{margin:26px 0 0;padding:18px 18px 8px;border:1px solid var(--plata,#dde3e8);border-radius:var(--radius,10px);background:#fff}.pm-extra h3{margin:0 0 10px;font-size:1.15rem}.pm-extra ul{list-style:none;margin:0;padding:0}.pm-extra li{border-top:1px solid var(--plata,#dde3e8)}.pm-extra li:first-child{border-top:0}.pm-extra a{display:block;padding:10px 0;text-decoration:none;color:var(--ink,#0E3042)}.pm-extra b{display:block;font-family:var(--display);font-size:15px}.pm-extra span{display:block;font-size:14px;color:var(--ink-2,#44545F);line-height:1.4}.pm-extra a:hover b{text-decoration:underline}';
+    document.head.appendChild(st);
+    var box = document.createElement('div');
+    box.className = 'pm-extra';
+    box.innerHTML = '<h3>' + S.h + '</h3><ul>' + S.o.map(function (o) { return '<li><a href="' + o[2] + '"><b>' + o[0] + '</b><span>' + o[1] + '</span></a></li>'; }).join('') + '</ul>';
+    prose.parentNode.appendChild(box);
+    var tr = box.querySelector('a[href="#pm-traslado"]');
+    tr.addEventListener('click', function (ev) {
+      var t = document.getElementById('pm-traslado');
+      if (!t) { tr.parentNode.style.display = 'none'; return; }
+      ev.preventDefault();
+      var tg = t.querySelector('button[aria-controls]');
+      if (tg && tg.getAttribute('aria-expanded') !== 'true') tg.click();
+      t.scrollIntoView({behavior: 'smooth', block: 'start'});
+    });
+  })();
 
   /* 1b) "¿Qué te falta para decidirte?": un toque, respuesta concreta y recuento anónimo (con consentimiento de analítica) */
   (function () {
@@ -125,6 +192,7 @@
   var opts = '<option>' + T.road + '</option>' + (mar ? '<option>' + T.sea + '</option><option>' + T.any + '</option>' : '');
   var box = document.createElement('div');
   box.className = 'card pm-tr';
+  box.id = 'pm-traslado';
   box.innerHTML = '<p class="eyebrow">' + T.ey + '</p><h3>' + T.h + '</h3><p>' + T.p + '</p>' +
     '<button type="button" class="btn btn-ghost" aria-expanded="false" aria-controls="pmTrForm">' + T.open + '</button>' +
     '<form id="pmTrForm" hidden novalidate>' +
