@@ -57,14 +57,14 @@
   var g=document.querySelectorAll('#pmxPanel .pmx-grp');
   for(var i=0;i<g.length;i++){if(g[i].querySelector('a[href$="/modelos/"]')){add(g[i]);break;}}
 })();
-/* "Barcos en venta" con dos accesos: Barcos nuevos y Segunda mano.
+/* "Barcos en venta" con tres accesos: Barcos nuevos, Segunda mano y Otras marcas nuevas (/marcas/).
    Escritorio: desplegable al pasar el ratón o al llegar con el teclado. Móvil: dos enlaces sangrados debajo. */
 (function(){
   var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
-  var T={'':['Barcos nuevos','Segunda mano'],'/ca':['Vaixells nous','Segona mà'],'/en':['New boats','Pre-owned'],'/fr':['Bateaux neufs','Occasion']}[pre];
-  var h=pre+'/barcos/',hn=pre+'/barcos-nuevos/',onN=(p===hn||p===hn+'index.html');
-  var L=[[h+'#nuevos',T[0]],[h+'#segunda-mano',T[1]]];
-  function fill(box){L.forEach(function(it){var a=document.createElement('a');a.href=it[0];a.textContent=it[1];if(it[0]===hn&&onN)a.setAttribute('aria-current','page');box.appendChild(a);});}
+  var T={'':['Barcos nuevos','Segunda mano','Otras marcas nuevas'],'/ca':['Vaixells nous','Segona mà','Altres marques noves'],'/en':['New boats','Pre-owned','Other new brands'],'/fr':['Bateaux neufs','Occasion','Autres marques neuves']}[pre];
+  var h=pre+'/barcos/',hn=pre+'/barcos-nuevos/',hm=pre+'/marcas/',onM=(p===hm||p===hm+'index.html'),onN=(p===hn||p===hn+'index.html'||onM);
+  var L=[[h+'#nuevos',T[0]],[h+'#segunda-mano',T[1]],[hm,T[2]]];
+  function fill(box){L.forEach(function(it){var a=document.createElement('a');a.href=it[0];a.textContent=it[1];if(it[0]===hm&&onM)a.setAttribute('aria-current','page');box.appendChild(a);});}
   var top=document.querySelector('header.top .pmx-nav>a[href="'+h+'"]');
   if(top){
     var dd=document.createElement('div');dd.className='pmx-dd pmx-bev'+(onN?' cur':'');
