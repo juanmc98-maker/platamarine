@@ -8,7 +8,7 @@
   'use strict';
   var INV = window.PM_INV;
   if (!INV || !INV.boats) return;
-  var slug = (location.pathname.match(/\/barcos\/([^\/]+)\.html$/) || [])[1];
+  var slug = (location.pathname.match(/\/barcos\/([a-z0-9-]+)(?:\.html)?\/?$/) || [])[1];
   var b = null;
   for (var i = 0; i < INV.boats.length; i++) if (INV.boats[i].slug === slug) b = INV.boats[i];
   if (!b || b.status !== 'available') return;
