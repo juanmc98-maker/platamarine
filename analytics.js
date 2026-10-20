@@ -56,7 +56,7 @@
     var a=e.target.closest('a,button'); if(!a) return;
     var href=a.getAttribute('href')||'';
     var method=/^https:\/\/(wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)\//.test(href)?'whatsapp':href.indexOf('mailto:')===0?'email':href.indexOf('tel:')===0?'phone':'';
-    var boat='',m=location.pathname.match(/\/barcos\/([a-z0-9-]+)\.html$/);
+    var boat='',m=location.pathname.match(/\/barcos\/([a-z0-9-]+)(?:\.html)?\/?$/);
     if(m) boat=m[1]; else { var card=a.closest('article'); var l=card&&card.querySelector('a[href*="barcos/"][href$=".html"]'); var mm=l&&(l.getAttribute('href')||'').match(/([a-z0-9-]+)\.html$/); if(mm) boat=mm[1]; }
     if(/\.pdf(\?|$)/i.test(href)){ var pm=href.match(/([a-z0-9-]+)\.pdf/i); window.pmTrack('pdf_ficha',{boat:boat||(pm?pm[1]:''),file_type:'pdf'}); return; }
     if(method){

@@ -105,7 +105,7 @@
     }
   };
   function waByStatus() {
-    var m = location.pathname.match(/\/barcos\/([a-z0-9-]+)\.html$/);
+    var m = location.pathname.match(/\/barcos\/([a-z0-9-]+)(?:\.html)?\/?$/);
     var b = m && INV.get(m[1]);
     if (!b || !WA[b.status]) return;
     var text = encodeURIComponent(WA[b.status][INV.lang()](b));
