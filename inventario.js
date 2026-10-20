@@ -18,8 +18,8 @@
     boats: [
       {slug: 'antares-12-fly', name: 'Beneteau Antares 12 Fly', year: 2024, kind: 'motor', types: ['fly', 'cabinado'], length: 12.9, price: 499000, zone: 'cataluna', area: 'costa-daurada', title: 3, status: 'sold',
         d: {es: '12,9 m · 2 x Mercury 400 XL · Costa Daurada (Tarragona)', ca: '12,9 m · 2 x Mercury 400 XL · Costa Daurada (Tarragona)', en: '12.9 m · twin Mercury 400 XL · Costa Daurada (Tarragona)', fr: '12,9 m · 2 x Mercury 400 XL · Costa Daurada (Tarragone)'}},
-      {slug: 'ferretti-80', name: 'Ferretti 80', year: 2002, kind: 'motor', types: ['fly', 'cabinado'], length: 24.38, price: 769990, vatPaid: true, zone: 'extranjero', area: 'grecia', title: 4, status: 'available',
-        tl: {es: 'Capitán de Yate o superior', ca: 'Capità de Iot o superior', en: 'Capitán de Yate or higher', fr: 'Capitán de Yate ou supérieur'},
+      {slug: 'ferretti-80', name: 'Ferretti 80', year: 2002, kind: 'motor', types: ['fly', 'cabinado'], length: 24.38, price: 769990, vatPaid: true, zone: 'extranjero', area: 'grecia', title: 3, status: 'available',
+        tl: {es: 'PER con la habilitación hasta 24 m o superior', ca: 'PER amb l\'habilitació fins a 24 m o superior', en: 'Spanish PER with the up-to-24 m endorsement or higher', fr: 'PER espagnol avec l\'habilitation jusqu\'à 24 m ou supérieur'},
         d: {es: '24,38 m · 2 x Caterpillar 1.420 cv · Grecia (Atenas)', ca: '24,38 m · 2 x Caterpillar 1.420 cv · Grècia (Atenes)', en: '24.38 m · twin Caterpillar 1,420 hp · Greece (Athens)', fr: '24,38 m · 2 x Caterpillar 1 420 ch · Grèce (Athènes)'}},
       {slug: 'prestige-32', name: 'Jeanneau Prestige 32', year: 2006, kind: 'motor', types: ['fly', 'cabinado'], length: 10.65, price: 89000, zone: 'baleares', area: 'menorca', title: 3, status: 'available',
         d: {es: '10,65 m · 2 x Volvo Penta D4 260 cv · Menorca', ca: '10,65 m · 2 x Volvo Penta D4 260 cv · Menorca', en: '10.65 m · 2 x Volvo Penta D4 260 hp · Menorca', fr: '10,65 m · 2 x Volvo Penta D4 260 ch · Minorque'}},
