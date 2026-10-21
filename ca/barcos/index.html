@@ -117,6 +117,7 @@
       <fieldset><legend>Tipus</legend><div class="seg" data-f="tipo"><button type="button" data-v="all" aria-pressed="true">Tots</button><button type="button" data-v="motor" aria-pressed="false">Motor</button><button type="button" data-v="vela" aria-pressed="false">Vela</button><button type="button" data-v="moto-agua" aria-pressed="false" hidden>Moto d'aigua</button></div></fieldset>
       <fieldset><label for="f-tit">Quin títol tens?</label><select id="f-tit"><option value="all">Qualsevol</option><option value="0">Sense títol</option><option value="1">Llicència de Navegació</option><option value="2">PNB</option><option value="3">PER</option><option value="4">Patró o Capità de Iot</option></select></fieldset>
       <fieldset><label for="f-pre">Preu</label><select id="f-pre"><option value="all">Qualsevol</option><option value="0-30000">Fins a 30.000 €</option><option value="30000-60000">30.000 – 60.000 €</option><option value="60000-100000">60.000 – 100.000 €</option><option value="100000-">Més de 100.000 €</option></select></fieldset>
+      <fieldset><label for="f-esl">Eslora</label><select id="f-esl"><option value="all">Qualsevol</option><option value="0-6">Fins a 6 m</option><option value="6-8">6 – 8 m</option><option value="8-10">8 – 10 m</option><option value="10-12">10 – 12 m</option><option value="12-">Més de 12 m</option></select></fieldset>
       <fieldset><label for="f-zon">Zona</label><select id="f-zon"><option value="all">Totes</option><option value="cataluna">Catalunya</option><option value="baleares">Balears</option><option value="valencia">Comunitat Valenciana</option><option value="galicia">Galícia</option></select></fieldset>
       <details class="bmore"><summary>Més filtres</summary><fieldset><label for="f-comb">Combustible</label><select id="f-comb"><option value="all">Qualsevol</option><option value="diesel">Dièsel</option><option value="gasolina">Benzina</option></select></fieldset>
       <fieldset><label for="f-mot">Motor</label><select id="f-mot"><option value="all">Qualsevol</option><option value="intra">Intrabord (eix o cua)</option><option value="fuera">Forabord</option></select></fieldset></details>
@@ -463,16 +464,18 @@
 (function(){
 var g=document.querySelector('.bgrid');if(!g)return;
 var cards=[].slice.call(g.querySelectorAll('.bcard'));
-var f=document.querySelector('.bfilt'),tsel=f.querySelector('#f-tit'),osel=f.querySelector('#f-ord'),psel=f.querySelector('#f-pre'),zsel=f.querySelector('#f-zon'),csel=f.querySelector('#f-comb'),msel=f.querySelector('#f-mot'),cnt=f.querySelector('.bcount'),none=document.querySelector('.bnone');
+var f=document.querySelector('.bfilt'),tsel=f.querySelector('#f-tit'),osel=f.querySelector('#f-ord'),psel=f.querySelector('#f-pre'),zsel=f.querySelector('#f-zon'),csel=f.querySelector('#f-comb'),msel=f.querySelector('#f-mot'),esel=f.querySelector('#f-esl'),cnt=f.querySelector('.bcount'),none=document.querySelector('.bnone');
 var tbs=[].slice.call(f.querySelectorAll('.seg[data-f="tipo"] button')),ebs=[].slice.call(f.querySelectorAll('.seg[data-f="estado"] button'));
 var tipo='all',est='all';
 /* Estado: nuevo (barcos nuevos de todas las marcas, data-new="1") o usado (el resto). En la URL va como #nuevos / #segunda-mano. */
+/* Eslora leída del texto de cada tarjeta ("10,65 m"), para el filtro de eslora */
+cards.forEach(function(c){var m=/(\d+(?:[.,]\d+)?)\s*m\b/.exec(c.textContent);if(m)c.dataset.eslora=m[1].replace(',','.');});
 function isNew(c){return c.dataset.new==='1'}
 function seg(bs,v){bs.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.v===v?'true':'false')})}
 function hashEst(h){return h==='#nuevos'?'nuevo':h==='#segunda-mano'?'usado':null}
 function apply(push){
-  var tl=tsel.value,o=osel.value,pr=psel.value,zn=zsel.value,cb=csel.value,mt=msel.value,n=0;
-  var any=tipo!=='all'||est!=='all'||tl!=='all'||pr!=='all'||zn!=='all'||cb!=='all'||mt!=='all';
+  var tl=tsel.value,o=osel.value,pr=psel.value,zn=zsel.value,cb=csel.value,mt=msel.value,es=esel.value,n=0;
+  var any=tipo!=='all'||est!=='all'||tl!=='all'||pr!=='all'||zn!=='all'||cb!=='all'||mt!=='all'||es!=='all';
   cards.forEach(function(c){
     var ok=(tipo==='all'||c.dataset.tipo===tipo);
     if(est!=='all')ok=ok&&((est==='nuevo')===isNew(c));
@@ -481,6 +484,7 @@ function apply(push){
     if(zn!=='all')ok=ok&&c.dataset.zona===zn;
     if(cb!=='all')ok=ok&&c.dataset.comb===cb;
     if(mt!=='all')ok=ok&&c.dataset.motor===mt;
+    if(es!=='all'){var re=es.split('-'),le=+c.dataset.eslora;ok=ok&&!!le&&le>+re[0]&&(re[1]===''||le<=+re[1]);}
     if(c.dataset.sold==='1'&&any)ok=false;
     c.hidden=!ok;if(ok&&c.dataset.sold!=='1')n++;
   });
@@ -503,7 +507,7 @@ function apply(push){
     if(sc.length){var pnr=document.createElement('p');pnr.className='bnear';pnr.style.margin='18px 0 6px';pnr.innerHTML='<strong>El més semblant que tinc ara en cartera:</strong>';g.parentNode.insertBefore(pnr,g);
       sc.forEach(function(x,i){x[1].hidden=false;g.insertBefore(x[1],g.children[i]||null)});}}
   f.querySelector('.bclear').hidden=!(any||o!=='pd');
-  if(push){var p=new URLSearchParams();if(tipo!=='all')p.set('tipo',tipo);if(tl!=='all')p.set('titulo',tl);if(o!=='pd')p.set('orden',o);if(pr!=='all')p.set('precio',pr);if(zn!=='all')p.set('zona',zn);if(cb!=='all')p.set('combustible',cb);if(mt!=='all')p.set('motor',mt);
+  if(push){var p=new URLSearchParams();if(tipo!=='all')p.set('tipo',tipo);if(tl!=='all')p.set('titulo',tl);if(o!=='pd')p.set('orden',o);if(pr!=='all')p.set('precio',pr);if(zn!=='all')p.set('zona',zn);if(cb!=='all')p.set('combustible',cb);if(mt!=='all')p.set('motor',mt);if(es!=='all')p.set('eslora',es);
     var q=p.toString();history.replaceState(null,'',location.pathname+(q?'?'+q:'')+(est==='nuevo'?'#nuevos':est==='usado'?'#segunda-mano':''));
     clearTimeout(window.__pmFT);window.__pmFT=setTimeout(function(){
       if(window.gtag)try{gtag('event','filtro_barcos',{estado:est,tipo:tipo,titulo:tl,orden:o,precio:pr,zona:zn,combustible:cb,motor:mt,resultados:n})}catch(e){}
@@ -513,9 +517,9 @@ function apply(push){
 tbs.forEach(function(b){b.addEventListener('click',function(){tipo=b.dataset.v;seg(tbs,tipo);apply(true);});});
 ebs.forEach(function(b){b.addEventListener('click',function(){est=b.dataset.v;seg(ebs,est);apply(true);});});
 document.querySelectorAll('.bclear').forEach(function(b){b.addEventListener('click',function(){
-  tipo='all';est='all';tsel.value='all';psel.value='all';zsel.value='all';csel.value='all';msel.value='all';osel.value='pd';
+  tipo='all';est='all';tsel.value='all';psel.value='all';zsel.value='all';csel.value='all';msel.value='all';esel.value='all';osel.value='pd';
   seg(tbs,'all');seg(ebs,'all');apply(true);});});
-tsel.addEventListener('change',function(){apply(true)});psel.addEventListener('change',function(){apply(true)});zsel.addEventListener('change',function(){apply(true)});csel.addEventListener('change',function(){apply(true)});msel.addEventListener('change',function(){apply(true)});osel.addEventListener('change',function(){apply(true)});
+tsel.addEventListener('change',function(){apply(true)});psel.addEventListener('change',function(){apply(true)});zsel.addEventListener('change',function(){apply(true)});csel.addEventListener('change',function(){apply(true)});msel.addEventListener('change',function(){apply(true)});esel.addEventListener('change',function(){apply(true)});osel.addEventListener('change',function(){apply(true)});
 /* Accesos "Barcos nuevos" / "Segunda mano" (tarjetas de arriba y menú): filtran y bajan al listado sin salir de la página. */
 function go(v){est=v;seg(ebs,est);apply(true);var a=document.getElementById('segunda-mano');if(a)a.scrollIntoView({behavior:'smooth',block:'start'});}
 document.addEventListener('click',function(e){
@@ -535,6 +539,7 @@ if(p.get('orden')&&osel.querySelector('option[value="'+p.get('orden')+'"]'))osel
 if(p.get('precio')&&psel.querySelector('option[value="'+p.get('precio')+'"]'))psel.value=p.get('precio');
 if(p.get('zona')&&zsel.querySelector('option[value="'+p.get('zona')+'"]'))zsel.value=p.get('zona');
 if(p.get('combustible')&&csel.querySelector('option[value="'+p.get('combustible')+'"]'))csel.value=p.get('combustible');
+if(p.get('eslora')&&esel.querySelector('option[value="'+p.get('eslora')+'"]'))esel.value=p.get('eslora');
 if(p.get('motor')&&msel.querySelector('option[value="'+p.get('motor')+'"]'))msel.value=p.get('motor');
 apply(false);
 })();
