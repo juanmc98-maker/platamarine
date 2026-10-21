@@ -71,6 +71,11 @@ window.submitConfirmed = function (url, body, encoding, form) {
       if (encoding === 'json') {
         var attribution = (window.pmAttribution && window.pmAttribution()) || null;
         var payload = attribution ? Object.assign({}, body, {attribution: attribution}) : body;
+        // Origen visible en la hoja de leads (columna Datos, junto a "Página"): de qué anuncio o web llega.
+        // Sin consentimiento solo se lee la URL actual (no se guarda nada en el dispositivo).
+        var origen = window.__pmOrigen ? window.__pmOrigen(attribution) : '';
+        if (origen && payload && typeof payload === 'object' && typeof payload.page === 'string' && payload.page.indexOf(' · origen: ') < 0)
+          payload = Object.assign({}, payload, {page: payload.page + ' · origen: ' + origen});
         if (payload && typeof payload === 'object') {
           payload = Object.assign({}, payload, {_t: Math.round((Date.now() - window.__pmT0) / 1000), _sid: sid});
           var pn = f && f.querySelector && f.querySelector('#pmNombre');
@@ -173,3 +178,23 @@ window.submitConfirmed = function (url, body, encoding, form) {
     }
   }, true);
 })();
+
+/* Origen del contacto en texto corto: "Google Ads · campaña · palabra", "Meta Ads · campaña · anuncio",
+   "web: dominio" o "directo". Usa la atribución guardada (con consentimiento) o, si no la hay, los parámetros de la URL actual. */
+window.__pmOrigen = function (a) {
+  try {
+    var q = new URLSearchParams(location.search), d = {};
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid'].forEach(function (k) {
+      var v = (a && a[k]) || q.get(k); if (v) d[k] = String(v).replace(/[|=+]/g, ' ').slice(0, 60);
+    });
+    var src = (d.utm_source || '').toLowerCase(), med = (d.utm_medium || '').toLowerCase(), canal = '';
+    if (d.gclid || (/google/.test(src) && /cpc|paid|ads/.test(med))) canal = 'Google Ads';
+    else if (d.fbclid && !src) canal = 'Meta';
+    else if (/facebook|instagram|meta|fb|ig/.test(src)) canal = /cpc|paid|ads/.test(med) ? 'Meta Ads' : 'Meta';
+    else if (src) canal = d.utm_source + (med ? '/' + d.utm_medium : '');
+    if (canal) return [canal, d.utm_campaign, d.utm_term || d.utm_content].filter(Boolean).join(' · ');
+    if (a && a.referrer) return 'web: ' + String(a.referrer).replace(/^https?:\/\/(www\.)?/, '');
+    if (a && a.source === 'direct') return 'directo';
+    return '';
+  } catch (_) { return ''; }
+};
