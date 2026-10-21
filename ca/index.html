@@ -519,6 +519,25 @@ section[id]{scroll-margin-top:78px}
     </div>
   </section>
 
+  <section class="pmfind" aria-label="Cercar vaixell"><style>
+.pmfind{background:var(--paper,#F3F5F6);padding:22px 0 6px}
+.pmfind form{max-width:var(--max,1120px);margin:0 auto;padding:16px var(--pad,20px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) auto;gap:12px;align-items:end}
+.pmfind label{display:flex;flex-direction:column;gap:6px;font-family:var(--display);font-size:13px;font-weight:600;color:var(--ink-2,#44545F)}
+.pmfind select{font:inherit;font-weight:400;font-size:15px;color:var(--ink,#0D1C27);padding:11px 10px;border:1px solid rgba(127,146,158,.5);border-radius:6px;background:#fff;width:100%}
+.pmfind button{font-family:var(--display);font-weight:600;font-size:15px;padding:13px 22px;border:0;border-radius:6px;background:var(--sea-deep,#0E3042);color:#fff;cursor:pointer}
+.pmfind button:hover{background:var(--sea,#17465F)}
+.pmfind button:focus-visible,.pmfind select:focus-visible{outline:2px solid var(--sea,#17465F);outline-offset:2px}
+@media (max-width:760px){.pmfind form{grid-template-columns:1fr 1fr}.pmfind button{grid-column:1/-1;width:100%}}
+</style>
+    <form id="pmFind" action="barcos/" role="search">
+      <label>Estat<select name="estado"><option value="all">Tots</option><option value="usado">Segona mà</option><option value="nuevo">Nous</option></select></label>
+      <label>Tipus<select name="tipo"><option value="all">Tots</option><option value="motor">Motor</option><option value="vela">Vela</option></select></label>
+      <label>Eslora<select name="eslora"><option value="all">Qualsevol</option><option value="0-6">Fins a 6 m</option><option value="6-8">6 – 8 m</option><option value="8-10">8 – 10 m</option><option value="10-12">10 – 12 m</option><option value="12-">Més de 12 m</option></select></label>
+      <label>Preu<select name="precio"><option value="all">Qualsevol</option><option value="0-30000">Fins a 30.000 €</option><option value="30000-60000">30.000 – 60.000 €</option><option value="60000-100000">60.000 – 100.000 €</option><option value="100000-">Més de 100.000 €</option></select></label>
+      <button type="submit">Veure vaixells</button>
+    </form><script>/* Buscador de portada: lleva al catálogo con los mismos filtros (tipo, eslora, precio y estado) */(function(){var f=document.getElementById('pmFind');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var p=new URLSearchParams();['tipo','eslora','precio'].forEach(function(k){var v=f.elements[k].value;if(v&&v!=='all')p.set(k,v);});var est=f.elements.estado.value,q=p.toString();try{if(window.pmCount)window.pmCount({t:'buscador_portada',m:(q||'todo')+(est!=='all'?' | '+est:'')});}catch(x){}location.href=f.getAttribute('action')+(q?'?'+q:'')+(est==='nuevo'?'#nuevos':est==='usado'?'#segunda-mano':'');});})();</script>
+  </section>
+
   <section class="sec alt" id="venta">
     <div class="wrap">
       <div class="sec-head">
@@ -610,6 +629,7 @@ section[id]{scroll-margin-top:78px}
       <p class="eyebrow">Vendre</p>
       <h2>Penses vendre el teu vaixell? Explica'm quin és i l'estudiem.</h2>
       <p class="intro sell-lead">La diferència de treballar amb un broker és tot el que passa entre publicar l'anunci i cobrar: el preu, la fitxa, les consultes, les visites, la negociació i els papers. Sense exclusiva, sense avançaments i amb les condicions per escrit abans de començar. Aquesta consulta no és un encàrrec de venda. <a href="/ca/vender-barco/">Com treballo, pas a pas</a>.</p>
+      <p class="pm-valnote" style="margin-top:12px;font-size:.95rem;color:var(--ink-2)"><strong>Com valoro el teu vaixell:</strong> el comparo amb vaixells semblants (model, any, motor i hores) que s’anuncien ara i amb el temps que porten a la venda, i tinc en compte l’estat i els papers. És una orientació, no un preu garantit. Si vols una primera idea ja, prova la <a href="cuanto-vale-mi-barco/">calculadora de valor</a>.</p>
       <form id="valoracion" class="form-grid" data-contact-intent="seller" novalidate>
         <div class="field span2">
           <label for="modelo">Marca i model <i>*</i></label>
@@ -674,6 +694,19 @@ section[id]{scroll-margin-top:78px}
   </section>
 
 
+
+  <section class="pmbrands" aria-label="Drassanes amb què treballo"><style>.pmbrands{background:#0D1C27;color:#fff;padding:34px 0}.pmbrands .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:18px 40px}.pmbrands .pmb-t{margin:0;font-family:var(--display);font-size:14px;font-weight:600;color:#B7C3CB;letter-spacing:.02em}.pmbrands .pmb-t b{display:block;color:#fff;font-size:18px;margin-top:4px}.pmbrands .pmb-l{display:flex;flex-wrap:wrap;align-items:center;gap:20px 30px;flex:1}.pmbrands .pmb-l a{display:inline-flex;align-items:center;opacity:.85;transition:opacity .15s}.pmbrands .pmb-l a:hover,.pmbrands .pmb-l a:focus-visible{opacity:1}.pmbrands .pmb-l img{height:34px;width:auto;display:block}.pmbrands .pmb-l .pmb-seastorm img{height:15px;width:auto}.pmbrands .pmb-l .pmb-skipper img{height:22px;width:auto}.pmbrands .pmb-l .pmb-txt{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:.14em;color:#fff;text-decoration:none}.pmbrands .pmb-all{color:#fff;font-family:var(--display);font-size:14px;font-weight:600;text-underline-offset:3px}.pmbrands .pmb-t{flex:1 1 auto}.pmbrands .pmb-all{white-space:nowrap}@media (min-width:900px){.pmbrands .pmb-all{order:2}.pmbrands .pmb-l{order:3;flex:1 1 100%;flex-wrap:nowrap;justify-content:space-between;padding-top:6px}}@media (max-width:640px){.pmbrands .wrap{flex-direction:column;align-items:flex-start}}</style>
+    <div class="wrap">
+      <p class="pmb-t">Vaixells nous<b>Drassanes amb què treballo</b></p>
+      <div class="pmb-l">
+        <a class="pmb-skipper" href="/ca/skipper/"><img src="/skipper/fotos/skipper-logo-blanco.png" alt="SKIPPER Powerboats" loading="lazy" width="192" height="22"></a>
+        <a class="pmb-txt" href="/ca/catharsis/">CATHARSIS</a>
+        <a href="/ca/sunrise/"><img src="/sunrise/fotos/sunrise-logo.png" alt="Sunrise" loading="lazy" width="100" height="34"></a>
+        <a class="pmb-seastorm" href="/ca/seastorm/"><img src="/seastorm/fotos/seastorm-logo.png" alt="SeaStorm" loading="lazy" width="280" height="20"></a>
+      </div>
+      <a class="pmb-all" href="/ca/barcos-nuevos/">Veure tots els vaixells nous →</a>
+    </div>
+  </section>
 
   <section class="sec" id="guias">
     <div class="wrap">
