@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Genera /sunrise/ en ES/CA/EN/FR a partir de la plantilla de /barcos-nuevos/.
-Uso: python3 _tools/build_sunrise.py  (desde la raíz del repo)"""
+Uso: python3 _tools/build_sunrise.py  (desde la raíz del repo)
+Después de generar, relanzar SIEMPRE _tools/sunrise_fotos.py (fotos y portada de oct 2026)."""
 import re, json, html, urllib.parse
 
 ROOT = '.'
