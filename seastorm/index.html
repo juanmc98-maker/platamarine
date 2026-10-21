@@ -274,6 +274,50 @@
 .ss-steps,.ss-about{grid-template-columns:1fr}.ss-form{grid-template-columns:1fr}.ss-colors{grid-template-columns:repeat(4,1fr);gap:10px}.ss-colors li{font-size:12.5px}}
 @media (prefers-reduced-motion:reduce){.ss-btn,.ss-card,.ss-float{transition:none}}
 </style>
+
+
+<style id="ss-cfg-css">
+.ss-cfg{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px;align-items:start;margin-top:26px}
+.ss-cfg fieldset{border:0;margin:0 0 22px;padding:0;min-width:0}
+.ss-cfg legend{font-family:var(--display);font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sea);margin-bottom:10px;padding:0}
+.ss-cfg-m{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.ss-cfg-m label,.ss-cfg-e label{position:relative;display:flex;cursor:pointer}
+.ss-cfg input{position:absolute;opacity:0;width:1px;height:1px}
+.ss-cfg-m label>span{display:flex;flex-direction:column;width:100%;border:1.5px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;transition:border-color .15s,box-shadow .15s}
+.ss-cfg-m img,.ss-cfg-m i{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:var(--soft)}
+.ss-cfg-m i{display:flex;align-items:center;justify-content:center;font-style:normal;font-family:var(--display);font-weight:800;font-size:1.3rem;color:var(--ink)}
+.ss-cfg-m b{font-family:var(--display);font-size:.95rem;padding:8px 10px 2px}
+.ss-cfg-m small{font-size:.85rem;color:var(--ink-2,#46606e);padding:0 10px 9px}
+.ss-cfg-m input:checked+span{border-color:var(--sea);box-shadow:0 0 0 3px rgba(11,118,107,.18)}
+.ss-cfg input:focus-visible+span{outline:2px solid var(--ink);outline-offset:2px}
+.ss-cfg-c{display:flex;flex-wrap:wrap;gap:10px}
+.ss-cfg-c label{cursor:pointer;position:relative}
+.ss-cfg-c span{display:block;width:44px;height:44px;border-radius:50%;border:2px solid rgba(14,48,66,.18);transition:box-shadow .15s}
+.ss-cfg-c input:checked+span{box-shadow:0 0 0 3px #fff,0 0 0 5px var(--sea)}
+.ss-cfg-c input:focus-visible+span{outline:2px solid var(--ink);outline-offset:4px}
+.ss-cfg-cn{font-size:.92rem;color:var(--ink-2,#46606e);margin-top:8px}
+.ss-cfg-e{display:grid;gap:8px}
+.ss-cfg-e label>span{display:flex;justify-content:space-between;gap:12px;width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff;font-size:.97rem}
+.ss-cfg-e label>span em{font-style:normal;color:var(--ink-2,#46606e);font-size:.88rem;text-align:right}
+.ss-cfg-e input:checked+span{border-color:var(--sea);box-shadow:0 0 0 3px rgba(11,118,107,.18)}
+.ss-cfg-e input:focus-visible+span{outline:2px solid var(--ink);outline-offset:2px}
+.ss-cfg-e .fixed span{background:var(--soft);cursor:default}
+.ss-cfg-sum{position:sticky;top:84px;background:var(--soft);border-radius:16px;padding:20px 20px 22px}
+.ss-cfg-sum svg{display:block;width:100%;height:auto;margin:-4px 0 6px}
+.ss-cfg-sum h3{font-size:1.3rem;font-weight:800;margin:0 0 4px}
+.ss-cfg-pr{font-family:var(--display);font-size:1.9rem;font-weight:800;line-height:1.1}
+.ss-cfg-pr .vat{font-size:.55em}
+.ss-cfg-vi{font-size:.9rem;color:var(--ink-2,#46606e);margin:2px 0 12px}
+.ss-cfg-sum dl{margin:0;display:grid;gap:8px;font-size:.95rem}
+.ss-cfg-sum dl div{display:grid;grid-template-columns:110px 1fr;gap:10px;border-top:1px solid var(--line);padding-top:8px}
+.ss-cfg-sum dt{color:var(--ink-2,#46606e)}
+.ss-cfg-sum dd{margin:0;font-weight:600}
+.ss-cfg-btns{display:grid;gap:10px;margin-top:16px}
+.ss-cfg-btns .ss-btn{width:100%}
+.ss-cfg-note{font-size:.8rem;line-height:1.5;color:var(--ink-2,#46606e);margin-top:14px}
+@media (max-width:900px){.ss-cfg{grid-template-columns:1fr}.ss-cfg-sum{position:static}}
+@media (max-width:640px){.ss-cfg-m{grid-template-columns:repeat(2,minmax(0,1fr))}.ss-cfg-sum dl div{grid-template-columns:96px 1fr}}
+</style>
 </head>
 <body>
 
@@ -319,7 +363,7 @@
   </div>
 </section>
 <div class="ss-stats"><div class="wrap"><div><b>20 años</b><span>de garantía de casco</span></div><div><b>1 pieza</b><span>casco de polietileno rotomoldeado</span></div><div><b>18–22 cm</b><span>de calado</span></div><div><b>200–380 kg</b><span>de peso del casco</span></div></div></div>
-<nav class="ss-subnav" aria-label="SeaStorm"><div class="wrap"><a href="#modelos">Modelos</a><a href="#comparar">Comparar</a><a href="#llave-en-mano">Llave en mano</a><a href="#colores">Colores</a><a href="#video">Vídeo</a><a href="#faq">Preguntas</a><a href="#presupuesto">Presupuesto</a></div></nav>
+<nav class="ss-subnav" aria-label="SeaStorm"><div class="wrap"><a href="#modelos">Modelos</a><a href="#comparar">Comparar</a><a href="#configurar">Configurar</a><a href="#llave-en-mano">Llave en mano</a><a href="#colores">Colores</a><a href="#video">Vídeo</a><a href="#faq">Preguntas</a><a href="#presupuesto">Presupuesto</a></div></nav>
 <section class="ss-sec" id="modelos">
   <div class="wrap">
     <p class="ss-kick">Cuál es el tuyo</p><h2>Cuatro tamaños, el mismo casco duro</h2><p class="ss-sub">Toca un modelo para ver su ficha, fotos y precio.</p>
@@ -377,6 +421,38 @@
 <section class="ss-sec" id="comparar">
   <div class="wrap"><p class="ss-kick">Comparar</p><h2 style="margin-bottom:24px">Los cuatro, cara a cara</h2><div class="ss-cmp specs"><table><thead><tr><th scope="col">Modelo</th><th scope="col">Desde (+IVA)</th><th scope="col">Eslora</th><th scope="col">Manga</th><th scope="col">Peso del casco</th><th scope="col">Personas</th><th scope="col">Potencia máx.</th><th scope="col">Motor recomendado</th></tr></thead><tbody><tr><th scope="row"><a href="#seastorm-12">SeaStorm 12</a></th><td data-l="Desde (+IVA)" class="pr">4.990 €<span class="vat">+IVA</span></td><td data-l="Eslora">3,66 m</td><td data-l="Manga">1,67 m</td><td data-l="Peso del casco">200 kg</td><td data-l="Personas">4 (cat. C) · 6 (cat. D)</td><td data-l="Potencia máx.">30 CV (22 kW)</td><td data-l="Motor recomendado">25–30 CV, eje largo</td></tr><tr><th scope="row"><a href="#seastorm-13-s">SeaStorm 13 S</a></th><td data-l="Desde (+IVA)" class="pr">6.990 €<span class="vat">+IVA</span></td><td data-l="Eslora">4,00 m</td><td data-l="Manga">1,90 m</td><td data-l="Peso del casco">250 kg</td><td data-l="Personas">5 (cat. C) · 5 (cat. D)</td><td data-l="Potencia máx.">60 CV (44 kW)</td><td data-l="Motor recomendado">40 CV, eje largo</td></tr><tr><th scope="row"><a href="#seastorm-14">SeaStorm 14</a></th><td data-l="Desde (+IVA)" class="pr">7.990 €<span class="vat">+IVA</span></td><td data-l="Eslora">4,28 m</td><td data-l="Manga">1,86 m</td><td data-l="Peso del casco">260 kg</td><td data-l="Personas">5 (cat. C) · 6 (cat. D)</td><td data-l="Potencia máx.">40 CV (30 kW)</td><td data-l="Motor recomendado">30–40 CV, eje largo</td></tr><tr><th scope="row"><a href="#seastorm-17">SeaStorm 17</a></th><td data-l="Desde (+IVA)" class="pr">10.990 €<span class="vat">+IVA</span></td><td data-l="Eslora">5,17 m</td><td data-l="Manga">1,97 m</td><td data-l="Peso del casco">380 kg</td><td data-l="Personas">6 (cat. C) · 8 (cat. D)</td><td data-l="Potencia máx.">80 CV (60 kW)</td><td data-l="Motor recomendado">60 CV, eje largo</td></tr></tbody></table></div></div>
 </section>
+<!--ss-cfg-->
+<section class="ss-sec" id="configurar" style="padding-top:0">
+  <div class="wrap"><p class="ss-kick">Configurador</p><h2>Configura tu SeaStorm</h2><p class="ss-sub">Elige modelo, color, motor y extras. Verás el precio del barco al momento, la titulación que necesitas y lo que te presupuesto aparte.</p>
+  <div class="ss-cfg" id="ssCfg">
+    <div>
+      <fieldset><legend>1. Modelo</legend><div class="ss-cfg-m"><label><input type="radio" name="cfg_m" value="12"><span><img src="/seastorm/fotos/12-1-m.jpg" alt="" width="800" height="600" loading="lazy" decoding="async"><b>SeaStorm 12</b><small>4.990 €<span class="vat">+IVA</span></small></span></label><label><input type="radio" name="cfg_m" value="13-s"><span><i>13 S</i><b>SeaStorm 13 S</b><small>6.990 €<span class="vat">+IVA</span></small></span></label><label><input type="radio" name="cfg_m" value="14" checked><span><img src="/seastorm/fotos/14-1-m.jpg" alt="" width="800" height="600" loading="lazy" decoding="async"><b>SeaStorm 14</b><small>7.990 €<span class="vat">+IVA</span></small></span></label><label><input type="radio" name="cfg_m" value="17"><span><img src="/seastorm/fotos/17-1-m.jpg" alt="" width="800" height="600" loading="lazy" decoding="async"><b>SeaStorm 17</b><small>10.990 €<span class="vat">+IVA</span></small></span></label></div></fieldset>
+      <fieldset><legend>2. Color del casco</legend><div class="ss-cfg-c"><label><input type="radio" name="cfg_c" value="white" checked aria-label="Blanco"><span style="background:#F4F5F2"></span></label><label><input type="radio" name="cfg_c" value="lgrey" aria-label="Gris claro"><span style="background:#B9BEC2"></span></label><label><input type="radio" name="cfg_c" value="dgrey" aria-label="Gris oscuro"><span style="background:#4D555B"></span></label><label><input type="radio" name="cfg_c" value="green" aria-label="Verde"><span style="background:#2F6B3A"></span></label><label><input type="radio" name="cfg_c" value="lime" aria-label="Verde lima"><span style="background:#9BD31F"></span></label><label><input type="radio" name="cfg_c" value="red" aria-label="Rojo"><span style="background:#C62828"></span></label><label><input type="radio" name="cfg_c" value="yellow" aria-label="Amarillo"><span style="background:#F2C511"></span></label></div><p class="ss-cfg-cn" id="ssCfgCn"></p></fieldset>
+      <fieldset><legend>3. Motor</legend><div class="ss-cfg-e" id="ssCfgMot"></div></fieldset>
+      <fieldset><legend>4. Extras</legend><div class="ss-cfg-e">
+        <label><input type="checkbox" name="cfg_x" value="trailer"><span>Remolque adecuado a su peso</span></label>
+        <label><input type="checkbox" name="cfg_x" value="reg"><span>Matriculación y papeles</span></label>
+        <div class="fixed"><label><span>Transporte desde fábrica<em>siempre aparte</em></span></label></div>
+      </div></fieldset>
+    </div>
+    <aside class="ss-cfg-sum" aria-live="polite">
+      <svg viewBox="0 0 400 150" role="img" aria-hidden="true"><path d="M20 112 Q200 126 380 104" fill="none" stroke="#9fb6c0" stroke-width="2" stroke-dasharray="6 6"/><path id="ssCfgHull" d="M28 70 L364 70 Q378 70 382 76 L340 108 Q330 114 312 114 L70 114 Q50 114 40 104 L28 92 Z" fill="#F4F5F2" stroke="#0E3042" stroke-width="2.5" stroke-linejoin="round"/><path d="M30 80 L372 80" stroke="#0E3042" stroke-opacity=".25" stroke-width="2"/><rect x="150" y="44" width="34" height="26" rx="4" fill="#fff" stroke="#0E3042" stroke-width="2.5"/><path d="M156 44 L170 26 L186 26" fill="none" stroke="#0E3042" stroke-width="2.5" stroke-linecap="round"/><path d="M70 70 L70 54 L110 54" fill="none" stroke="#0E3042" stroke-width="2.5" stroke-linecap="round"/><path d="M250 70 L250 58 L330 58 L352 70" fill="none" stroke="#0E3042" stroke-width="2.5" stroke-linejoin="round"/><g id="ssCfgEng"><rect x="6" y="56" width="22" height="30" rx="5" fill="#0E3042"/><rect x="13" y="86" width="8" height="30" fill="#0E3042"/></g></svg>
+      <h3 id="ssCfgName"></h3>
+      <p class="ss-cfg-pr" id="ssCfgPr"></p><p class="ss-cfg-vi" id="ssCfgVi"></p>
+      <dl>
+        <div><dt>Color</dt><dd id="ssCfgCol"></dd></div>
+        <div><dt>Motor</dt><dd id="ssCfgMo"></dd></div>
+        <div><dt>Titulación</dt><dd id="ssCfgLic"></dd></div>
+        <div><dt>Te presupuesto aparte</dt><dd id="ssCfgQ"></dd></div>
+      </dl>
+      <div class="ss-cfg-btns"><a class="ss-btn pri" href="#presupuesto" id="ssCfgGo">Pedir este presupuesto</a><a class="ss-btn wa" href="https://wa.me/34633742973" id="ssCfgWa" target="_blank" rel="noopener">Enviarlo por WhatsApp</a></div>
+      <p class="ss-cfg-note">Precio del barco según la tarifa oficial de SeaStorm para la versión Advantage, sin motor. Motor, remolque, transporte y matriculación se presupuestan aparte y por escrito antes de pedir nada. Los colores en pantalla son orientativos. Información orientativa y no vinculante: podemos equivocarnos.</p>
+    </aside>
+  </div>
+  <script type="application/json" id="ssCfgData">{"lang": "es", "iva": 0.21, "vat": "+IVA", "m": {"12": {"n": "SeaStorm 12", "loa": 3.66, "max": 30, "rec": 30, "p": 4990}, "13-s": {"n": "SeaStorm 13 S", "loa": 4.0, "max": 60, "rec": 40, "p": 6990}, "14": {"n": "SeaStorm 14", "loa": 4.28, "max": 40, "rec": 40, "p": 7990}, "17": {"n": "SeaStorm 17", "loa": 5.17, "max": 80, "rec": 60, "p": 10990}}, "c": {"white": {"hex": "#F4F5F2", "n": "Blanco"}, "lgrey": {"hex": "#B9BEC2", "n": "Gris claro"}, "dgrey": {"hex": "#4D555B", "n": "Gris oscuro"}, "green": {"hex": "#2F6B3A", "n": "Verde"}, "lime": {"hex": "#9BD31F", "n": "Verde lima"}, "red": {"hex": "#C62828", "n": "Rojo"}, "yellow": {"hex": "#F2C511", "n": "Amarillo"}}, "t": {"m_none": "Sin motor", "m_none_d": "Ya tengo uno o lo pongo yo", "m_15": "15 CV", "m_15_d": "Se puede llevar sin titulación", "m_rec": "{cv} CV", "m_rec_d": "El recomendado por el fabricante", "m_max": "{cv} CV", "m_max_d": "La potencia máxima homologada", "lic_none": "Sin titulación: uso privado, de día y a no más de 2 millas de la salida, mayor de 18 años", "lic_ln": "Licencia de Navegación o superior", "q_motor": "motor de {cv} CV", "q_trailer": "remolque", "q_reg": "matriculación y papeles", "q_ship": "transporte desde fábrica", "wa": "Hola Juan, he configurado un SeaStorm en la web: {cfg}. ¿Me preparas presupuesto?", "msg": "Configuración: {cfg}", "sum_vat": "con IVA"}}</script>
+  </div>
+</section>
+<!--/ss-cfg-->
 <section class="ss-sec" style="padding-top:0">
   <div class="wrap ss-split">
     <img src="/seastorm/fotos/14-4.jpg" srcset="/seastorm/fotos/14-4-m.jpg 800w, /seastorm/fotos/14-4.jpg 1200w" sizes="(max-width:1020px) 100vw, 540px" alt="SeaStorm 14" width="1200" height="900" loading="lazy" decoding="async">
@@ -488,5 +564,6 @@
 </script>
 <script src="/submit-confirmed.js" defer></script>
 <script src="/seastorm/seastorm.js?v=20261020" defer></script>
+<script src="/seastorm/config.js" defer></script>
 </body>
 </html>
