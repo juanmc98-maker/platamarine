@@ -17,7 +17,7 @@ VAT = {'es': '+IVA', 'ca': '+IVA', 'en': '+VAT', 'fr': 'HT'}
 # slug, nombre, eslora (m), CV máx, CV recomendados (texto, valor para "recomendado"), PVP sin IVA, foto o None
 M = [
  ('12',   'SeaStorm 12',   3.66, 30, '25–30', 30, 4990, '/seastorm/fotos/12-1-m.jpg'),
- ('13-s', 'SeaStorm 13 S', 4.00, 60, '40',    40, 6990, None),
+ ('13-s', 'SeaStorm 13 S', 4.00, 60, '40',    40, 6990, '/seastorm/fotos/13-s-1-m.jpg'),
  ('14',   'SeaStorm 14',   4.28, 40, '30–40', 40, 7990, '/seastorm/fotos/14-1-m.jpg'),
  ('17',   'SeaStorm 17',   5.17, 80, '60',    60, 10990, '/seastorm/fotos/17-1-m.jpg'),
 ]
