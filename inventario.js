@@ -4,7 +4,7 @@
    Al cambiar el estado de un barco aquí, actualizar también en la misma subida:
    su ficha en los 4 idiomas (JSON-LD "availability"), su tarjeta del catálogo (data-sold)
    y regenerar sus PDF (ES/CA/EN/FR).
-   status: "available" | "reserved" | "sold"
+   status: "available" | "reserved" | "sold" | "paused" (retirado temporalmente: se ocultan sus tarjetas y la ficha muestra un aviso con noindex)
    title: titulación mínima (1 Licencia de Navegación, 2 PNB, 3 PER, 4 Patrón de Yate)
    tl (opcional): texto de titulación por idioma cuando no encaja en la escala (p. ej. Capitán de Yate en barcos de más de 24 m); title sigue sirviendo para los filtros
    zone 'extranjero' + area con el país: barcos fuera de España (no salen en los filtros por zona)
@@ -39,7 +39,7 @@
         d: {es: 'Aprox. 12 m · acero · Solé Mini 62 cv · Alicante', ca: 'Aprox. 12 m · acer · Solé Mini 62 cv · Alacant', en: 'Approx. 12 m · steel · Solé Mini 62 hp · Alicante', fr: 'Env. 12 m · acier · Solé Mini 62 ch · Alicante'}},
       {slug: 'monterey-278-ss', name: 'Monterey 278 SS', year: 2011, kind: 'motor', types: ['sundeck', 'cabinado'], length: 8.4, price: 49990, zone: 'cataluna', area: 'costa-brava', title: 3, status: 'available',
         d: {es: '8,40 m · Volvo Penta 320 cv · Costa Brava', ca: '8,40 m · Volvo Penta 320 cv · Costa Brava', en: '8.40 m · Volvo Penta 320 hp · Costa Brava', fr: '8,40 m · Volvo Penta 320 ch · Costa Brava'}},
-      {slug: 'faeton-730-moraga', name: 'Faeton 730 Moraga', year: 2005, kind: 'motor', types: ['pilothouse', 'walkaround'], length: 7.39, price: 28900, zone: 'baleares', title: 2, status: 'available',
+      {slug: 'faeton-730-moraga', name: 'Faeton 730 Moraga', year: 2005, kind: 'motor', types: ['pilothouse', 'walkaround'], length: 7.39, price: 28900, zone: 'baleares', title: 2, status: 'paused',
         d: {es: '7,39 m · Volvo Penta 170 cv · Mallorca', ca: '7,39 m · Volvo Penta 170 cv · Mallorca', en: '7.39 m · Volvo Penta 170 hp · Mallorca', fr: '7,39 m · Volvo Penta 170 ch · Majorque'}},
       {slug: 'faeton-730-top-moraga', name: 'Faeton 730 Top Moraga', year: 2003, kind: 'motor', types: ['pilothouse'], length: 7.39, price: 24000, zone: 'baleares', title: 2, status: 'available',
         d: {es: '7,39 m · Volvo Penta 150 cv · Mallorca', ca: '7,39 m · Volvo Penta 150 cv · Mallorca', en: '7.39 m · Volvo Penta 150 hp · Mallorca', fr: '7,39 m · Volvo Penta 150 ch · Majorque'}},
@@ -51,10 +51,10 @@
         d: {es: '5,00 m · Johnson 60 cv · Costa Daurada', ca: '5,00 m · Johnson 60 cv · Costa Daurada', en: '5.00 m · Johnson 60 hp · Costa Daurada', fr: '5,00 m · Johnson 60 ch · Costa Daurada'}}
     ],
     label: {
-      es: {available: 'Disponible', reserved: 'Reservado', sold: 'Vendido'},
-      ca: {available: 'Disponible', reserved: 'Reservat', sold: 'Venut'},
-      en: {available: 'Available', reserved: 'Reserved', sold: 'Sold'},
-      fr: {available: 'Disponible', reserved: 'Réservé', sold: 'Vendu'}
+      es: {available: 'Disponible', reserved: 'Reservado', sold: 'Vendido', paused: 'Retirado temporalmente'},
+      ca: {available: 'Disponible', reserved: 'Reservat', sold: 'Venut', paused: 'Retirat temporalment'},
+      en: {available: 'Available', reserved: 'Reserved', sold: 'Sold', paused: 'Temporarily withdrawn'},
+      fr: {available: 'Disponible', reserved: 'Réservé', sold: 'Vendu', paused: 'Retiré temporairement'}
     },
     titleLabel: {
       es: ['Sin título', 'Licencia de Navegación o superior', 'PNB o superior', 'PER o superior', 'Patrón de Yate o superior'],
@@ -119,6 +119,33 @@
     }
   }
   INV.waText = function (b, lang) { return WA[b.status] ? WA[b.status][lang](b) : null; };
-  function boot() { sync(); waByStatus(); }
+  /* Barcos retirados temporalmente (status 'paused'): se ocultan sus tarjetas en toda la web y,
+     en su propia ficha, se avisa arriba y se pide a los buscadores que no la indexen. */
+  var PAUSE_MSG = {
+    es: 'Este barco está retirado temporalmente de la venta. Si te interesa algo parecido, escríbenos y te ayudamos.',
+    ca: 'Aquest vaixell està retirat temporalment de la venda. Si t\'interessa alguna cosa semblant, escriu-nos i t\'ajudem.',
+    en: 'This boat is temporarily withdrawn from sale. If you are interested in something similar, write to us and we will help you.',
+    fr: 'Ce bateau est temporairement retiré de la vente. Si quelque chose de similaire vous intéresse, écrivez-nous et nous vous aiderons.'
+  };
+  function paused() {
+    var m = location.pathname.match(/\/barcos\/([a-z0-9-]+)(?:\.html)?\/?$/);
+    var here = m ? m[1] : null;
+    INV.boats.forEach(function (b) {
+      if (b.status !== 'paused') return;
+      var els = document.querySelectorAll('a.pcard[href*="/barcos/' + b.slug + '"], .bcard[data-pm-boat="' + b.slug + '"]');
+      for (var i = 0; i < els.length; i++) els[i].style.display = 'none';
+      if (here === b.slug) {
+        var meta = document.createElement('meta'); meta.name = 'robots'; meta.content = 'noindex';
+        document.head.appendChild(meta);
+        var box = document.createElement('div');
+        box.setAttribute('role', 'status');
+        box.style.cssText = 'background:#fff4d6;color:#0E3042;border:1px solid #e8c770;padding:14px 16px;margin:12px auto;max-width:1100px;border-radius:10px;font-size:15px;line-height:1.45';
+        box.textContent = PAUSE_MSG[INV.lang()];
+        var main = document.querySelector('main') || document.body;
+        main.insertBefore(box, main.firstChild);
+      }
+    });
+  }
+  function boot() { sync(); waByStatus(); paused(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
 })();
