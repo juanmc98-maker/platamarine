@@ -333,6 +333,7 @@ section[id]{scroll-margin-top:78px}
 .hero-logo{width:min(520px,60vw);max-width:520px;height:auto;display:block;filter:brightness(0) invert(1) drop-shadow(0 4px 24px rgba(0,0,0,.35))}
 .hero .hero-title h1{color:#fff;max-width:none;margin:26px 0 0;font-family:var(--serif);font-weight:300;font-size:clamp(1.3rem,2.8vw,2.1rem);letter-spacing:.22em;text-transform:uppercase;text-shadow:0 2px 20px rgba(0,0,0,.35)}
 .hero-sub{max-width:52ch;margin-top:14px;color:#E3E9EC;font-family:var(--display);font-weight:400;letter-spacing:.04em;font-size:clamp(.9rem,1.2vw,1.02rem);text-shadow:0 1px 14px rgba(0,0,0,.35)}
+.hero-hit{position:absolute;inset:0;z-index:1}.hero-title{z-index:2;pointer-events:none}.hero-title a{pointer-events:auto}
 .hero-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px}
 .btn-pill{border-radius:999px;padding:15px 28px;background:var(--wa);color:#fff;font-size:15px}
 .btn-pill:hover{background:var(--wa-hover)}
@@ -506,6 +507,7 @@ section[id]{scroll-margin-top:78px}
     <div class="hero-photo">
       <video class="hero-video" muted loop playsinline webkit-playsinline disablepictureinpicture preload="none" poster="/hero-poster.jpg" aria-hidden="true"></video>
       <script>/* Primero la foto (poster); el vídeo se pide al terminar de cargar la página y una sola versión según pantalla. Sin vídeo con movimiento reducido o ahorro de datos. */(function(){var v=document.querySelector(".hero-video");if(!v)return;if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)return;var c=navigator.connection;if(c&&(c.saveData||/(^|-)2g$/.test(c.effectiveType||"")))return;function start(){v.src=window.innerWidth<=768?"/hero-540.mp4":"/hero-720.mp4";v.preload="auto";v.autoplay=true;go();}if(document.readyState==="complete")setTimeout(start,0);else window.addEventListener("load",function(){setTimeout(start,0)},{once:true});function go(){v.muted=true;v.defaultMuted=true;v.addEventListener("playing",function(){v.classList.remove("off")});function p(){if(!v.src)return;var r=v.play();if(r&&r.catch)r.catch(function(){v.classList.add("off")})}p();["touchstart","scroll","click"].forEach(function(e){window.addEventListener(e,p,{once:true,passive:true})});document.addEventListener("visibilitychange",function(){if(!document.hidden)p()})}})();</script>
+      <a class="hero-hit" href="barcos/" tabindex="-1" aria-hidden="true"></a>
       <div class="hero-title">
         <p class="hero-eyebrow">Juan Morante · Bróker náutico en Cataluña y Baleares</p>
         <h1>Te ayudo a vender tu barco<br class="hbr"> o a encontrar el que buscas</h1>
