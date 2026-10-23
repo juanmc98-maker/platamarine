@@ -460,19 +460,19 @@
     <url><loc>https://www.platamarine.com/ca/guias/tasacion-barco.html</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
     <url><loc>https://www.platamarine.com/en/guias/tasacion-barco.html</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
     <url><loc>https://www.platamarine.com/fr/guias/tasacion-barco.html</loc><lastmod>2026-10-07</lastmod><priority>0.8</priority></url>
-    <url><loc>https://www.platamarine.com/astilleros/</loc><lastmod>2026-10-11</lastmod><priority>0.5</priority></url>
+    <url><loc>https://www.platamarine.com/astilleros/</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
     <url><loc>https://www.platamarine.com/guias/alquilar-mi-barco-charter.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-    <url><loc>https://www.platamarine.com/ca/astilleros/</loc><lastmod>2026-10-11</lastmod><priority>0.5</priority></url>
+    <url><loc>https://www.platamarine.com/ca/astilleros/</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
     <url><loc>https://www.platamarine.com/ca/guias/alquilar-mi-barco-charter.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-    <url><loc>https://www.platamarine.com/en/astilleros/</loc><lastmod>2026-10-11</lastmod><priority>0.5</priority></url>
+    <url><loc>https://www.platamarine.com/en/astilleros/</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
     <url><loc>https://www.platamarine.com/en/guias/alquilar-mi-barco-charter.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-    <url><loc>https://www.platamarine.com/fr/astilleros/</loc><lastmod>2026-10-11</lastmod><priority>0.5</priority></url>
+    <url><loc>https://www.platamarine.com/fr/astilleros/</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
     <url><loc>https://www.platamarine.com/fr/guias/alquilar-mi-barco-charter.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
     <url><loc>https://www.platamarine.com/guias/listas-matricula-barcos-espana.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
     <url><loc>https://www.platamarine.com/ca/guias/listas-matricula-barcos-espana.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
     <url><loc>https://www.platamarine.com/en/guias/listas-matricula-barcos-espana.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
     <url><loc>https://www.platamarine.com/fr/guias/listas-matricula-barcos-espana.html</loc><lastmod>2026-10-11</lastmod><priority>0.7</priority></url>
-    <url><loc>https://www.platamarine.com/it/astilleros/</loc><lastmod>2026-10-11</lastmod><priority>0.5</priority></url>
+    <url><loc>https://www.platamarine.com/it/astilleros/</loc><lastmod>2026-10-23</lastmod><priority>0.5</priority></url>
     <url><loc>https://www.platamarine.com/guias/equipo-seguridad-barco-obligatorio</loc><lastmod>2026-10-15</lastmod><priority>0.7</priority></url>
     <url><loc>https://www.platamarine.com/ca/guias/equipo-seguridad-barco-obligatorio</loc><lastmod>2026-10-15</lastmod><priority>0.7</priority></url>
     <url><loc>https://www.platamarine.com/en/guias/equipo-seguridad-barco-obligatorio</loc><lastmod>2026-10-15</lastmod><priority>0.7</priority></url>
@@ -521,10 +521,14 @@
     <url><loc>https://www.platamarine.com/fr/skipper/barcelona/</loc><lastmod>2026-10-19</lastmod><priority>0.7</priority></url>
     <url><loc>https://www.platamarine.com/fr/skipper/costa-brava/</loc><lastmod>2026-10-19</lastmod><priority>0.7</priority></url>
     <url><loc>https://www.platamarine.com/fr/skipper/menorca/</loc><lastmod>2026-10-19</lastmod><priority>0.7</priority></url>
-    <url><loc>https://www.platamarine.com/barcos-nuevos/</loc><lastmod>2026-10-20</lastmod><priority>0.8</priority></url>
-    <url><loc>https://www.platamarine.com/ca/barcos-nuevos/</loc><lastmod>2026-10-20</lastmod><priority>0.8</priority></url>
-    <url><loc>https://www.platamarine.com/en/barcos-nuevos/</loc><lastmod>2026-10-20</lastmod><priority>0.8</priority></url>
-    <url><loc>https://www.platamarine.com/fr/barcos-nuevos/</loc><lastmod>2026-10-20</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/barcos-nuevos/</loc><lastmod>2026-10-23</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/ca/barcos-nuevos/</loc><lastmod>2026-10-23</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/en/barcos-nuevos/</loc><lastmod>2026-10-23</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/fr/barcos-nuevos/</loc><lastmod>2026-10-23</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/marco/</loc><lastmod>2026-10-23</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/ca/marco/</loc><lastmod>2026-10-23</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/en/marco/</loc><lastmod>2026-10-23</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/fr/marco/</loc><lastmod>2026-10-23</lastmod><priority>0.7</priority></url>
     <url><loc>https://www.platamarine.com/catharsis/</loc><lastmod>2026-10-20</lastmod><priority>0.7</priority></url>
     <url><loc>https://www.platamarine.com/ca/catharsis/</loc><lastmod>2026-10-20</lastmod><priority>0.7</priority></url>
     <url><loc>https://www.platamarine.com/en/catharsis/</loc><lastmod>2026-10-20</lastmod><priority>0.7</priority></url>
