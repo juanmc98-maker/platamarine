@@ -37,8 +37,8 @@
   function render(){
     var st=state(), m=st.m;
     $('ssCfgName').textContent=m.n;
-    $('ssCfgPr').innerHTML=eur(m.p)+'<span class="vat">'+(D.vat||'+IVA')+'</span>';
-    $('ssCfgVi').textContent=eur(m.p*(1+D.iva))+' '+T.sum_vat;
+    $('ssCfgPr').innerHTML=eur(m.p)+'<span class="vat">'+(D.vat||'+ impuestos')+'</span>';
+    $('ssCfgVi').textContent='';
     $('ssCfgCol').textContent=st.c.n; $('ssCfgCn').textContent=st.c.n;
     $('ssCfgHull').setAttribute('fill',st.c.hex);
     $('ssCfgEng').style.display=st.cv?'':'none';
