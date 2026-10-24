@@ -471,6 +471,28 @@ section[id]{scroll-margin-top:78px}
 <link rel="stylesheet" href="/nav.css?v=20261006m">
 <style id="ux-oct">#venta .boat .desc,#venta .boat .thumbs{display:none}#guias .guias-cards img{display:none}#guias .guias-cards .gc-body{padding-top:18px}#comprar .buy-alt{margin-top:14px;font-family:var(--display);font-size:15px}#valora .sell-lead{max-width:62ch;color:var(--ink-2);margin-top:12px}@media(min-width:900px){#guias .guias-cards{grid-template-columns:repeat(4,1fr)}}</style>
 <style>@media (max-width:640px){.hero-photo{height:auto}.hero-title{position:relative;inset:auto;min-height:min(calc(100svh - 70px),600px);padding-top:40px;padding-bottom:36px}}</style>
+<style id="pm-apple">
+.sec h2,.sk-band h2{font-family:"Hanken Grotesk",var(--display);font-stretch:100%;font-weight:700;letter-spacing:-.02em}
+.pm-steps{list-style:none;margin:26px 0 10px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;counter-reset:pmst}
+.pm-steps li{counter-increment:pmst;border-top:1px solid rgba(127,146,158,.45);padding-top:14px}
+.pm-steps li:before{content:counter(pmst);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--sea-deep,#0E3042);color:#fff;font:600 14px "Hanken Grotesk",var(--display);margin-bottom:10px}
+.pm-steps strong{display:block;font:650 1.08rem/1.25 "Hanken Grotesk",var(--display);margin-bottom:6px}
+.pm-steps p{margin:0;color:var(--ink-2,#44545F);font-size:.98rem;line-height:1.5}
+.pm-stepnote{font-size:.92rem;color:var(--ink-2,#44545F);margin:4px 0 22px}
+.buy-facts.icons div{display:flex;align-items:center;gap:12px}
+.buy-facts.icons svg{width:30px;height:30px;flex:0 0 30px;color:var(--sea,#17465F)}
+.buy-facts.icons strong{font:650 1.02rem/1.25 "Hanken Grotesk",var(--display)}
+.boat .boat-meta{margin:6px 0 14px;color:var(--ink-2,#44545F);font-size:.98rem}
+#venta .boat .specs,#venta .boat .desc,#venta .boat .btn-wa{display:none}
+#venta .boat .boat-cta .btn-ghost{width:100%}
+.who-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.who-btns a{display:inline-flex;align-items:center;padding:12px 20px;border-radius:999px;font:600 15px "Hanken Grotesk",var(--display);text-decoration:none;border:1px solid rgba(255,255,255,.55);color:#fff}
+.who-btns a.on{background:#fff;color:var(--sea-deep,#0E3042);border-color:#fff}
+.foot .more-links{font-size:.9rem;color:rgba(255,255,255,.75);margin:0 0 18px;line-height:1.7}
+.foot .more-links a{color:rgba(255,255,255,.88)}
+@media(min-width:900px){#guias .guias-cards{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:760px){.pm-steps{grid-template-columns:1fr;gap:14px}}
+</style>
 </head>
 <body>
 
@@ -511,7 +533,6 @@ section[id]{scroll-margin-top:78px}
       <div class="hero-title">
         <p class="hero-eyebrow">Juan Morante · Bróker náutico en Cataluña y Baleares</p>
         <h1>Te ayudo a vender tu barco<br class="hbr"> o a encontrar el que buscas</h1>
-        <p class="hero-sub">Barcos a motor y veleros de ocasión. Precio con criterio, anuncio cuidado y acompañamiento hasta la entrega.</p>
         <div class="hero-btns">
           <a class="btn btn-pill" href="#valora">Quiero vender mi barco</a>
           <a class="btn btn-pill ghost" href="barcos/">Ver barcos en venta</a>
@@ -629,8 +650,8 @@ section[id]{scroll-margin-top:78px}
     <div class="wrap">
       <p class="eyebrow">Vender</p>
       <h2>¿Piensas vender tu barco? Cuéntame cuál es y lo estudiamos.</h2>
-      <p class="intro sell-lead">La diferencia de trabajar con un broker está en todo lo que pasa entre publicar el anuncio y cobrar: el precio, la ficha, las consultas, las visitas, la negociación y los papeles. Sin exclusiva, sin adelantos y con las condiciones por escrito antes de empezar. Esta consulta no es un encargo de venta. <a href="/vender-barco/">Cómo trabajo, paso a paso</a>.</p>
-      <p class="pm-valnote" style="margin-top:12px;font-size:.95rem;color:var(--ink-2)"><strong>Cómo valoro tu barco:</strong> comparo con barcos parecidos (modelo, año, motor y horas) que se anuncian ahora y con el tiempo que llevan a la venta, y tengo en cuenta el estado y los papeles. Es una orientación, no un precio garantizado. Si quieres una primera idea ya, prueba la <a href="cuanto-vale-mi-barco/">calculadora de valor</a>.</p>
+      <ol class="pm-steps"><li><strong>Me cuentas tu barco</strong><p>Modelo, año y dónde está. Con eso te doy una primera orientación de precio.</p></li><li><strong>Lo preparamos</strong><p>Precio con criterio, fotos y una ficha cuidada. Condiciones por escrito, sin exclusiva ni adelantos.</p></li><li><strong>Te acompaño hasta el final</strong><p>Consultas, visitas, negociación y papeles. Honorarios al cerrar la venta.</p></li></ol>
+      <p class="pm-stepnote">Esta consulta no es un encargo de venta. <a href="/vender-barco/">Cómo trabajo, paso a paso</a> · <a href="cuanto-vale-mi-barco/">Calcula una primera idea de valor</a></p>
       <form id="valoracion" class="form-grid" data-contact-intent="seller" novalidate>
         <div class="field span2">
           <label for="modelo">Marca y modelo <i>*</i></label>
@@ -675,7 +696,7 @@ section[id]{scroll-margin-top:78px}
         <div>
           <p class="eyebrow">Buscas barco</p>
           <h2>¿No encuentras el tuyo? Te ayudo a buscarlo.</h2>
-          <p class="intro">Antes, echa un vistazo a los <a href="barcos/">barcos que gestiono</a>. Si no está el tuyo, me cuentas uso, presupuesto y dónde lo tendrás: busco en España y Europa, compruebo lo que falte antes de que te desplaces y te acompaño en la visita, la negociación y los papeles. También por zona: <a href="/comprar/barcos-segunda-mano-cataluna.html">barcos de segunda mano en Cataluña</a>, <a href="/comprar/barcos-segunda-mano-costa-brava.html">en la Costa Brava</a> y <a href="/comprar/barcos-segunda-mano-baleares.html">en Mallorca y Baleares</a>.</p>
+          <p class="intro">Cuéntame uso, presupuesto y zona. Lo busco en España y Europa, compruebo lo que falte antes de que te desplaces y te acompaño hasta la firma.</p>
           <div class="boat-cta" style="margin-top:26px">
             <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20estoy%20buscando%20barco.%20Tipo%3A%20%20%7C%20Presupuesto%3A%20%20%7C%20Zona%3A%20" target="_blank" rel="noopener">Cuéntame qué estás buscando</a>
           </div>
@@ -683,13 +704,9 @@ section[id]{scroll-margin-top:78px}
           <p class="buy-alt buy-new" style="margin-top:10px">¿Buscas barco nuevo? Representamos <strong>SKIPPER Powerboats</strong> en España: <a href="/skipper/">ver modelos, fotos y precios</a>.</p>
         </div>
         <div>
-          <div class="buy-facts">
-            <div><strong>Cualquier eslora</strong><p>De la semirrígida al fly. El presupuesto lo marcas tú.</p></div>
-            <div><strong>España y Europa</strong><p>Particulares y profesionales.</p></div>
-            <div><strong>A éxito</strong><p>Honorarios por escrito, solo si compras.</p></div>
-            <div><strong>Cartera propia</strong><p>Si compras un barco de mi cartera, no pagas honorarios de comprador.</p></div>
-          </div>
+          <div class="buy-facts icons"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15h18l-2.5 4h-13zM6 15V9l6-5 6 5v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><strong>Cualquier eslora</strong></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><strong>España y Europa</strong></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.6 2.6L16 9.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Solo a éxito</strong></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 12h9M18 12v3M21 12v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><strong>Cartera propia</strong></div></div>
         </div>
+      </div>
       </div>
     </div>
   </section>
@@ -721,9 +738,7 @@ section[id]{scroll-margin-top:78px}
         <li><a href="guias/impuesto-matriculacion-barcos.html"><img src="https://images.unsplash.com/photo-1626266061368-46a8f578ddd6?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Fiscalidad</span><strong>Impuesto de matriculación: por qué los 8 metros lo cambian todo</strong><span class="gc-more">Leer la guía →</span></span></a></li>
         <li><a href="guias/precio-barco-ocasion.html"><img src="https://images.unsplash.com/photo-1604671801989-586dde3c1574?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Precio</span><strong>Cómo poner precio a un barco de ocasión</strong><span class="gc-more">Leer la guía →</span></span></a></li>
         <li><a href="guias/que-mirar-comprar-barco-segunda-mano.html"><img src="https://images.unsplash.com/photo-1605050287918-5e2be7797f73?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Compra</span><strong>Qué mirar al comprar un barco de segunda mano de 7 a 12 m</strong><span class="gc-more">Leer la guía →</span></span></a></li>
-      <li><a href="guias/nudos-marineros-imprescindibles.html"><img src="https://images.pexels.com/photos/38843881/pexels-photo-38843881.jpeg?auto=compress&cs=tinysrgb&w=800" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Náutica</span><strong>8 nudos marineros imprescindibles, explicados paso a paso</strong><span class="gc-more">Leer la guía →</span></span></a></li>
       </ul>
-      <p class="more-links">También: <a href="papeles-fiscalidad/">papeles e impuestos</a> · <a href="guias/amarres-cataluna-tipos-precios-alquiler-compra.html">amarres en Cataluña (tarifas 2026)</a> · <a href="titulaciones/">titulaciones y test del PER</a> · <a href="modelos/">fichas de modelos de ocasión</a> · <a href="guias/"><strong>todas las guías</strong></a> · <a href="precios/">precios de barcos de ocasión</a> · <a href="herramientas/">calculadoras</a> · <a href="comprar/">comprar barco por zona y tipo</a></p>
     </div>
   </section>
 
@@ -736,18 +751,16 @@ section[id]{scroll-margin-top:78px}
         <div class="who">
           <p class="eyebrow">Quién hay detrás</p>
           <h2>Juan Morante</h2>
-          <p>Soy Juan Morante. Vengo de la compraventa de vehículos, donde llevo años valorando, negociando y cerrando operaciones con particulares cada semana desde nuestra oficina de Sabadell (<a href="https://www.platagarage.com" target="_blank" rel="noopener">Plata Garage</a>). Además, tengo mi propio barco y navego por la costa catalana.</p>
-          <p>Llevo 12 años trabajando con personas: primero vendiendo bicicletas, luego coches y ahora barcos. Mi trabajo siempre ha sido el mismo: escuchar qué necesita cada uno y proponerle la mejor solución.</p>
-          <p>Con Plata Marine llevo esa experiencia comercial al mundo del barco, como broker náutico. Me encargo personalmente de la gestión y te explico lo que veo: qué precio tiene sentido, qué falta por comprobar y qué oferta merece la pena valorar.</p>
-          <p>Quiero que, cuando vuelvas a cambiar de coche o de barco, sepas a quién llamar.</p>
-                              <blockquote class="fquote"><p>"No prometo vender rápido, prometo hacerlo bien: con la documentación en regla, el precio justo y sin dejarte solo en ningún paso."</p></blockquote>
+          <p>Vengo de la compraventa de vehículos (<a href="https://www.platagarage.com" target="_blank" rel="noopener">Plata Garage</a>, Sabadell) y llevo 12 años trabajando de cara al público: escuchar qué necesita cada uno y proponerle la mejor solución. Tengo mi propio barco y me encargo personalmente de cada gestión.</p>
+<blockquote class="fquote"><p>"No prometo vender rápido, prometo hacerlo bien: con la documentación en regla, el precio justo y sin dejarte solo en ningún paso."</p></blockquote>
+          <div class="who-btns"><a class="on" href="https://wa.me/34633742973" target="_blank" rel="noopener">Escríbeme por WhatsApp</a><a href="mailto:juan@platamarine.com">Enviar un email</a></div>
           <p class="yard-note" style="font-size:.92em;opacity:.85;margin-top:18px">¿Fabricas barcos y aún no tienes distribuidor en Cataluña? <a href="/astilleros/">Mira cómo puedo representarte</a>.</p>
 </div>
         <div>
           <dl class="contact" id="contacto">
             <div class="row"><dt>WhatsApp</dt><dd><a href="https://wa.me/34633742973" target="_blank" rel="noopener">633 742 973</a><small>Hablas directamente conmigo.</small></dd></div>
             <div class="row"><dt>Email</dt><dd><a href="mailto:juan@platamarine.com">juan@platamarine.com</a></dd></div>
-            <div class="row"><dt>Oficina</dt><dd>C/ Tetuán 92, 08203 Sabadell<small>Barcelona</small></dd></div>
+            <div class="row"><dt>Oficina</dt><dd>Sabadell<small>Barcelona</small></dd></div>
             <div class="row"><dt>Zona</dt><dd>Base en Cataluña<small>Operaciones en Baleares y otras zonas cuando el barco lo justifica</small></dd></div>
           </dl>
         </div>
@@ -760,6 +773,7 @@ section[id]{scroll-margin-top:78px}
 
 <footer class="foot">
   <div class="wrap">
+    <p class="more-links"><a href="papeles-fiscalidad/">papeles e impuestos</a> · <a href="guias/amarres-cataluna-tipos-precios-alquiler-compra.html">amarres en Cataluña (tarifas 2026)</a> · <a href="titulaciones/">titulaciones y test del PER</a> · <a href="modelos/">fichas de modelos de ocasión</a> · <a href="guias/"><strong>todas las guías</strong></a> · <a href="precios/">precios de barcos de ocasión</a> · <a href="herramientas/">calculadoras</a> · <a href="comprar/">comprar barco por zona y tipo</a> · Comprar por zona: <a href="/comprar/barcos-segunda-mano-cataluna.html">barcos de segunda mano en Cataluña</a>, <a href="/comprar/barcos-segunda-mano-costa-brava.html">en la Costa Brava</a>, <a href="/comprar/barcos-segunda-mano-baleares.html">en Mallorca y Baleares</a></p>
     <div class="legal-links">
       <a href="aviso-legal.html">Aviso legal</a>
       <a href="privacidad.html">Privacidad</a>
@@ -857,6 +871,6 @@ var IMGS={"ferretti-80-1": "/ferretti-80-1.jpg", "ferretti-80-3": "/ferretti-80-
 <script src="/contacto.js?v=20261006b" defer></script>
 <script src="/nav.js?v=20261006m" defer></script>
 <script src="/inventario.js?v=20261006" defer></script>
-<script src="/portada-cartera.js?v=20261023" defer></script>
+<script src="/portada-cartera.js?v=20261024" defer></script>
 </body>
 </html>
