@@ -14,6 +14,10 @@ TAR = {m['name']: m for m in json.load(open(os.path.join(D, 'tarifa.json')))}
 TR = json.load(open(os.path.join(D, 'strings_tr.json')))
 EX = json.load(open(os.path.join(D, 'existing.json')))
 PH = json.load(open(os.path.join(D, 'photos.json')))
+# Bloque 'Para quién es' (para_quien.json): para quién, frente al modelo hermano y motores
+PQ = json.load(open(os.path.join(D, 'para_quien.json'))) if os.path.exists(os.path.join(D, 'para_quien.json')) else {}
+PQ_KICK = {'es': '¿Es para ti?', 'ca': 'És per a tu?', 'en': 'Is it for you?', 'fr': 'Est-ce pour vous ?'}
+PQ_CSS = '.mm-pq{border-top:1px solid var(--line)}.mm-who{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.mm-who>div{border:1px solid var(--line);border-radius:14px;padding:18px 20px;background:#fff}.mm-who h3{font-family:var(--display);font-size:1.08rem;font-weight:700;margin:0 0 8px;color:var(--ink)}.mm-who p{margin:0;line-height:1.6;color:var(--ink-2);font-size:.96rem}@media(max-width:900px){.mm-who{grid-template-columns:1fr}}'
 LANGS = {'es': '', 'ca': '/ca', 'en': '/en', 'fr': '/fr'}
 SITE = 'https://www.platamarine.com'
 V = '20261024b'
@@ -50,8 +54,8 @@ T = {
 'es': dict(
  home='Inicio', boats='Barcos en venta', new='Barcos nuevos', vat='+ impuestos', noeng='sin motores', from_='Desde', ask='Precio bajo consulta',
  nav=['Fotos', 'Configurar', 'De serie', 'Ficha', 'Presupuesto'],
- t_title='Mar.Co {n}: fotos, precio y configurador · Plata Marine',
- t_desc='Mar.Co {n} nuevo, bajo pedido: {k} fotos del astillero, ficha técnica, equipamiento de serie y configurador con la tarifa oficial. {p}',
+ t_title='Mar.Co {n}: precio y configurador · Plata Marine',
+ t_desc='Mar.Co {n} nuevo, bajo pedido: {k} fotos, ficha técnica y configurador con la tarifa oficial. {p}',
  t_desc_ask='Mar.Co {n} nuevo, bajo pedido: fotos del astillero y ficha técnica. Precio bajo consulta.',
  kind={'cab': 'Cabinada', 'open': 'Open'}, h_cta='Configúrala', h_ph='Ver las {k} fotos',
  g_k='Fotos', g_h='La {n}, por dentro y por fuera', g_sub='Fotos oficiales del astillero. Toca cualquiera para verla en grande y pasa de una a otra con las flechas. Pueden mostrar equipamiento opcional.',
@@ -98,8 +102,8 @@ T = {
 'ca': dict(
  home='Inici', boats='Vaixells en venda', new='Vaixells nous', vat='+ impostos', noeng='sense motors', from_='Des de', ask='Preu a consultar',
  nav=['Fotos', 'Configurar', 'De sèrie', 'Fitxa', 'Pressupost'],
- t_title='Mar.Co {n}: fotos, preu i configurador · Plata Marine',
- t_desc='Mar.Co {n} nova, per encàrrec: {k} fotos de la drassana, fitxa tècnica, equipament de sèrie i configurador amb la tarifa oficial. {p}',
+ t_title='Mar.Co {n}: preu i configurador · Plata Marine',
+ t_desc='Mar.Co {n} nova, per encàrrec: {k} fotos, fitxa tècnica i configurador amb la tarifa oficial. {p}',
  t_desc_ask='Mar.Co {n} nova, per encàrrec: fotos de la drassana i fitxa tècnica. Preu a consultar.',
  kind={'cab': 'Cabinada', 'open': 'Open'}, h_cta='Configura-la', h_ph='Veure les {k} fotos',
  g_k='Fotos', g_h='La {n}, per dins i per fora', g_sub='Fotos oficials de la drassana. Toca qualsevol per veure-la en gran i passa d’una a l’altra amb les fletxes. Poden mostrar equipament opcional.',
@@ -146,8 +150,8 @@ T = {
 'en': dict(
  home='Home', boats='Boats for sale', new='New boats', vat='+ taxes', noeng='without engines', from_='From', ask='Price on request',
  nav=['Photos', 'Configure', 'Standard', 'Specs', 'Quote'],
- t_title='Mar.Co {n}: photos, price and configurator · Plata Marine',
- t_desc='New Mar.Co {n}, built to order: {k} shipyard photos, specifications, standard equipment and a configurator with the official price list. {p}',
+ t_title='Mar.Co {n}: price & configurator · Plata Marine',
+ t_desc='New Mar.Co {n}, built to order: {k} photos, specs and a configurator with the official price list. {p}',
  t_desc_ask='New Mar.Co {n}, built to order: shipyard photos and specifications. Price on request.',
  kind={'cab': 'Cabin RIB', 'open': 'Open RIB'}, h_cta='Configure yours', h_ph='See all {k} photos',
  g_k='Photos', g_h='The {n}, inside and out', g_sub='Official shipyard photos. Tap any of them to enlarge it and move between them with the arrows. They may show optional equipment.',
@@ -194,8 +198,8 @@ T = {
 'fr': dict(
  home='Accueil', boats='Bateaux à vendre', new='Bateaux neufs', vat='+ taxes', noeng='sans moteurs', from_='À partir de', ask='Prix sur demande',
  nav=['Photos', 'Configurer', 'De série', 'Fiche', 'Devis'],
- t_title='Mar.Co {n} : photos, prix et configurateur · Plata Marine',
- t_desc='Mar.Co {n} neuf, sur commande : {k} photos du chantier, fiche technique, équipement de série et configurateur avec le tarif officiel. {p}',
+ t_title='Mar.Co {n} : prix et configurateur · Plata Marine',
+ t_desc='Mar.Co {n} neuf, sur commande : {k} photos, fiche technique et configurateur au tarif officiel. {p}',
  t_desc_ask='Mar.Co {n} neuf, sur commande : photos du chantier et fiche technique. Prix sur demande.',
  kind={'cab': 'Semi-rigide cabine', 'open': 'Semi-rigide open'}, h_cta='Configurez-le', h_ph='Voir les {k} photos',
  g_k='Photos', g_h='Le {n}, dedans et dehors', g_sub='Photos officielles du chantier. Touchez-en une pour l’agrandir et passez de l’une à l’autre avec les flèches. Elles peuvent montrer des options.',
@@ -557,12 +561,15 @@ def page(lg, mi):
     k = len(ph)
     pstr = (f"{t['from_']} {eur(price, lg)} {t['vat']} {t['noeng']}." if price else '')
     title = t['t_title'].format(n=name)
+    if not tar:  # sin configurador (E-Motion 44)
+        title = title.replace('precio y configurador', 'precio y ficha técnica').replace('preu i configurador', 'preu i fitxa tècnica').replace('price & configurator', 'price and specifications').replace('prix et configurateur', 'prix et fiche technique')
+    if len(title) > 60: title = title.replace(' et configurateur', ', configurateur')
     dsc = (t['t_desc'].format(n=name, k=k, p=pstr) if price and k else (t['t_desc_ask'].format(n=name) if not price else t['t_desc'].format(n=name, k=k, p=pstr).replace(' 0 ', ' ')))
     if price and not k:
         dsc = {'es': f'Mar.Co {name} nueva, bajo pedido: ficha técnica, equipamiento de serie y configurador con la tarifa oficial. {pstr}',
                'ca': f'Mar.Co {name} nova, per encàrrec: fitxa tècnica, equipament de sèrie i configurador amb la tarifa oficial. {pstr}',
-               'en': f'New Mar.Co {name}, built to order: specifications, standard equipment and a configurator with the official price list. {pstr}',
-               'fr': f'Mar.Co {name} neuf, sur commande : fiche technique, équipement de série et configurateur avec le tarif officiel. {pstr}'}[lg]
+               'en': f'New Mar.Co {name}, built to order: specifications and a configurator with the official price list. {pstr}',
+               'fr': f'Mar.Co {name} neuf, sur commande : fiche technique et configurateur avec le tarif officiel. {pstr}'}[lg]
     hero_big, hero_m = cover(slug, cov or 1)
     og = SITE + hero_big
     alts = ''.join(f'<link rel="alternate" hreflang="{l2}" href="{SITE}{p2}/marco/{slug}/">\n' for l2, p2 in LANGS.items()) + f'<link rel="alternate" hreflang="x-default" href="{SITE}/marco/{slug}/">\n'
@@ -570,9 +577,11 @@ def page(lg, mi):
     ld_b = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(crumbs)]}
     prod = {"@context": "https://schema.org", "@type": "Product", "name": full, "brand": {"@type": "Brand", "name": "Mar.Co"}, "url": url,
             "image": [SITE + img_url(slug, n) for n, _, _ in ph[:6]] or [og], "description": desc(slug, lg)}
+    if not price:  # sin precio no es un Product válido para Google: página sobre la marca
+        prod["@type"] = "WebPage"; prod["about"] = prod.pop("brand")
     if price:
         prod["offers"] = {"@type": "Offer", "priceCurrency": "EUR", "price": price, "availability": "https://schema.org/PreOrder", "url": url,
-                          "priceSpecification": {"@type": "UnitPriceSpecification", "price": price, "priceCurrency": "EUR", "valueAddedTaxIncluded": False}}
+                          "priceSpecification": {"@type": "UnitPriceSpecification", "price": price, "priceCurrency": "EUR", "valueAddedTaxIncluded": False}, "itemCondition": "https://schema.org/NewCondition"}
     head = f'''<!doctype html>
 <html lang="{lg}">
 <head>
@@ -596,6 +605,7 @@ def page(lg, mi):
 <script type="application/ld+json">{json.dumps(prod, ensure_ascii=False)}</script>
 {base_style}
 <style>{CSS}</style>
+<style>{PQ_CSS}</style>
 </head>
 '''
     sp = specs(slug, lg)
@@ -687,6 +697,11 @@ def page(lg, mi):
     lic_key = {'es': 'Titulación', 'ca': 'Titulació', 'en': 'Licence', 'fr': 'Permis'}[lg]
     spd = ''.join(f'<div><dt>{E(kk)}</dt><dd>{E(vv)}</dd></div>' for kk, vv in sp.items())
     o.append(f'<section class="mm-sec{" alt" if not tar else ""}" id="ficha"><div class="wrap"><p class="k">{t["f_k"]}</p><h2>{t["f_h"]}</h2><dl class="mm-spec">{spd}</dl></div></section>\n')
+    # Para quién es / frente al modelo hermano / motores
+    pq = PQ.get(slug, {}).get(lg)
+    if pq:
+        cards = ''.join(f'<div><h3>{E(a)}</h3><p>{E(b)}</p></div>' for a, b in pq['c'])
+        o.append(f'<section class="mm-sec mm-pq" id="para-quien"><div class="wrap"><p class="k">{PQ_KICK[lg]}</p><h2>{E(pq["h"])}</h2><div class="mm-who">{cards}</div></div></section>\n')
     # Vídeos
     if vids:
         poster = [img_url(slug, n) for n, _, _ in ph[1:3]] or [hero_big]
