@@ -64,6 +64,18 @@
     top.forEach(function (b) { frag.appendChild(have[b.slug] || build(b)); delete have[b.slug]; });
     Object.keys(have).forEach(function (k) { have[k].parentNode.removeChild(have[k]); });
     grid.appendChild(frag);
+    var VIEW = {es: 'Ver barco', ca: 'Veure el vaixell', en: 'View boat', fr: 'Voir le bateau'}[lang];
+    [].forEach.call(grid.querySelectorAll('.boat'), function (c) {
+      var dt = c.querySelectorAll('.specs dt'), dd = c.querySelectorAll('.specs dd');
+      if (dd.length && !c.querySelector('.boat-meta')) {
+        var parts = [dd[0].textContent, dd[1] ? dd[1].textContent : ''];
+        [].forEach.call(dt, function (x, k) { if (/^(Ubicaci|Location|Emplacement|Localisation)/i.test(x.textContent.trim())) parts.push(dd[k].textContent); });
+        var p = document.createElement('p'), h = c.querySelector('.boat-head');
+        p.className = 'boat-meta'; p.textContent = parts.filter(Boolean).join(' · ');
+        if (h) h.parentNode.insertBefore(p, h.nextSibling);
+      }
+      var g = c.querySelector('.boat-cta .btn-ghost'); if (g) g.textContent = VIEW;
+    });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
 })();
