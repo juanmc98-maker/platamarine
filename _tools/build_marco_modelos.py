@@ -63,7 +63,7 @@ T = {
  cats={'top': 'Hard-Top, roll-bar y toldos', 'deck': 'Revestimientos de cubierta', 'paint': 'Pintura', 'comfort': 'Confort a bordo', 'elec': 'Electrónica, luz y sonido', 'gear': 'Maniobra, fondeo y popa', 'cover': 'Fundas', 'other': 'Otros'},
  one='Solo una opción de este grupo', sum_h='Tu {n}', sum_base='Barco', sum_opts='Opcionales', sum_none='Ninguno',
  sum_tot='Total sin impuestos', sum_iva='Con IVA (21 %)', sum_eng='Motores', sum_extra='Motores, transporte desde fábrica e impuesto de matriculación, aparte.',
- b_send='Pedir presupuesto con esta configuración', b_share='Copiar enlace', b_copied='Enlace copiado', b_print='Descargar resumen (PDF)', b_reset='Empezar de nuevo',
+ b_send='Pedir presupuesto con esta configuración', b_share='Copiar enlace', b_copied='Enlace copiado', b_reset='Empezar de nuevo',
  s_k='Equipamiento de serie', s_h='Lo que lleva de serie', f_k='Ficha técnica', f_h='Datos técnicos',
  v_k='Vídeo', v_h='La {n} en el agua', v_sub='Vídeos oficiales de Mar.Co. Se cargan desde YouTube solo cuando le das al play.', v_play='Reproducir el vídeo',
  how_h='Cómo se compra una Mar.Co', how=[('Lo hablamos', 'Me cuentas cómo vas a usarla y te ayudo a elegir modelo, motores y opcionales.'), ('Presupuesto por escrito', 'Con tu configuración te paso el precio cerrado: barco, opcionales, motores y transporte.'), ('Pedido a fábrica', 'Se fabrica a tu medida en Italia. Yo me ocupo del pedido y del seguimiento.'), ('Entrega', 'Te acompaño en la entrega, los papeles y la matriculación.')],
@@ -82,6 +82,11 @@ T = {
  end_h='¿Hablamos de tu {n}?', end_p='Escríbeme y lo vemos con calma. Sin compromiso.', wa='Escribir por WhatsApp',
  wa_txt='Hola Juan, me interesa la Mar.Co {n}.',
  small='Precios de la tarifa pública del astillero (revisión 09/2026), sin IVA, sin motores y en fábrica (EXW, Italia). No incluyen motores, transporte, impuesto de matriculación (IEDMT) ni matriculación. El IVA mostrado es orientativo (21 %). Pueden cambiar y no son vinculantes: el precio final es el del presupuesto por escrito. Fotos, vídeos y datos técnicos del fabricante; las fotos pueden mostrar equipamiento opcional. La titulación es orientativa: confírmala con tu escuela o con Capitanía. Podemos equivocarnos; si ves un error, avísanos.',
+  b_print='Descargar oferta en PDF',
+ dl_h='Descarga tu oferta en PDF', dl_p='Déjame tus datos y te descargas la oferta con tu configuración y un número de oferta, para que lo hablemos cuando quieras.', dl_btn='Descargar PDF', dl_wait='Preparando tu oferta…', dl_close='Cerrar',
+ sh_offer='Oferta', sh_for='Preparada para', sh_date='Fecha', sh_cfg='Tu configuración', sh_specs='Datos principales', sh_scan='Escanea el código para ver o cambiar esta configuración en la web',
+ sh_valid='Oferta orientativa con los precios de la tarifa oficial del astillero (revisión 09/2026). No es vinculante: el precio final es el del presupuesto por escrito. Motores, transporte desde fábrica, impuesto de matriculación y matriculación, aparte.',
+ sh_lic='Titulación',
  print_h='Resumen de configuración', print_d='Fecha', print_c='Plata Marine · Juan Morante · +34 633 742 973 · juan@platamarine.com · www.platamarine.com',
  nophoto='Fotos de este modelo, próximamente', e44_note='Te paso el precio y la lista de opcionales del E-Motion 44 por escrito.',
  lic_per='PER o superior', lic_pnb='PNB o superior',
@@ -104,7 +109,7 @@ T = {
  cats={'top': 'Hard-Top, roll-bar i tendals', 'deck': 'Revestiments de coberta', 'paint': 'Pintura', 'comfort': 'Confort a bord', 'elec': 'Electrònica, llum i so', 'gear': 'Maniobra, fondeig i popa', 'cover': 'Fundes', 'other': 'Altres'},
  one='Només una opció d’aquest grup', sum_h='La teva {n}', sum_base='Vaixell', sum_opts='Opcionals', sum_none='Cap',
  sum_tot='Total sense impostos', sum_iva='Amb IVA (21 %)', sum_eng='Motors', sum_extra='Motors, transport des de fàbrica i impost de matriculació, a part.',
- b_send='Demanar pressupost amb aquesta configuració', b_share='Copiar l’enllaç', b_copied='Enllaç copiat', b_print='Descarregar resum (PDF)', b_reset='Tornar a començar',
+ b_send='Demanar pressupost amb aquesta configuració', b_share='Copiar l’enllaç', b_copied='Enllaç copiat', b_reset='Tornar a començar',
  s_k='Equipament de sèrie', s_h='El que porta de sèrie', f_k='Fitxa tècnica', f_h='Dades tècniques',
  v_k='Vídeo', v_h='La {n} a l’aigua', v_sub='Vídeos oficials de Mar.Co. Es carreguen des de YouTube només quan li dones al play.', v_play='Reproduir el vídeo',
  how_h='Com es compra una Mar.Co', how=[('Ho parlem', 'M’expliques com la faràs servir i t’ajudo a triar model, motors i opcionals.'), ('Pressupost per escrit', 'Amb la teva configuració et passo el preu tancat: vaixell, opcionals, motors i transport.'), ('Comanda a fàbrica', 'Es fabrica a mida a Itàlia. Jo m’ocupo de la comanda i del seguiment.'), ('Entrega', 'T’acompanyo a l’entrega, els papers i la matriculació.')],
@@ -123,6 +128,11 @@ T = {
  end_h='En parlem, de la teva {n}?', end_p='Escriu-me i ho mirem amb calma. Sense compromís.', wa='Escriure per WhatsApp',
  wa_txt='Hola Juan, m’interessa la Mar.Co {n}.',
  small='Preus de la tarifa pública de la drassana (revisió 09/2026), sense IVA, sense motors i a fàbrica (EXW, Itàlia). No inclouen motors, transport, impost de matriculació (IEDMT) ni matriculació. L’IVA que es mostra és orientatiu (21 %). Poden canviar i no són vinculants: el preu final és el del pressupost per escrit. Fotos, vídeos i dades tècniques del fabricant; les fotos poden mostrar equipament opcional. La titulació és orientativa: confirma-la amb la teva escola o amb Capitania. Ens podem equivocar; si veus un error, avisa’ns.',
+  b_print='Descarregar oferta en PDF',
+ dl_h='Descarrega la teva oferta en PDF', dl_p='Deixa’m les teves dades i et descarregues l’oferta amb la teva configuració i un número d’oferta, perquè en parlem quan vulguis.', dl_btn='Descarregar PDF', dl_wait='Preparant la teva oferta…', dl_close='Tancar',
+ sh_offer='Oferta', sh_for='Preparada per a', sh_date='Data', sh_cfg='La teva configuració', sh_specs='Dades principals', sh_scan='Escaneja el codi per veure o canviar aquesta configuració al web',
+ sh_valid='Oferta orientativa amb els preus de la tarifa oficial de la drassana (revisió 09/2026). No és vinculant: el preu final és el del pressupost per escrit. Motors, transport des de fàbrica, impost de matriculació i matriculació, a part.',
+ sh_lic='Titulació',
  print_h='Resum de configuració', print_d='Data', print_c='Plata Marine · Juan Morante · +34 633 742 973 · juan@platamarine.com · www.platamarine.com',
  nophoto='Fotos d’aquest model, aviat', e44_note='Et passo el preu i la llista d’opcionals de l’E-Motion 44 per escrit.',
  lic_per='PER o superior', lic_pnb='PNB o superior',
@@ -145,7 +155,7 @@ T = {
  cats={'top': 'Hard-Top, roll-bar and sunshades', 'deck': 'Deck coverings', 'paint': 'Paint', 'comfort': 'Comfort on board', 'elec': 'Electronics, lighting and audio', 'gear': 'Anchoring, handling and stern', 'cover': 'Covers', 'other': 'Other'},
  one='Only one option in this group', sum_h='Your {n}', sum_base='Boat', sum_opts='Options', sum_none='None',
  sum_tot='Total excl. taxes', sum_iva='Incl. VAT (21%)', sum_eng='Engines', sum_extra='Engines, transport from the factory and registration tax are extra.',
- b_send='Request a quote for this configuration', b_share='Copy link', b_copied='Link copied', b_print='Download summary (PDF)', b_reset='Start again',
+ b_send='Request a quote for this configuration', b_share='Copy link', b_copied='Link copied', b_reset='Start again',
  s_k='Standard equipment', s_h='What comes as standard', f_k='Specifications', f_h='Technical data',
  v_k='Video', v_h='The {n} on the water', v_sub='Official Mar.Co videos. They only load from YouTube when you press play.', v_play='Play the video',
  how_h='How to buy a Mar.Co', how=[('We talk', 'Tell me how you will use it and I will help you choose model, engines and options.'), ('Written quote', 'With your configuration I send you a firm price: boat, options, engines and transport.'), ('Factory order', 'It is built to order in Italy. I handle the order and follow it up.'), ('Delivery', 'I am with you at delivery, with the paperwork and the registration.')],
@@ -164,6 +174,11 @@ T = {
  end_h='Shall we talk about your {n}?', end_p='Write to me and we will look at it calmly. No commitment.', wa='Message on WhatsApp',
  wa_txt='Hi Juan, I am interested in the Mar.Co {n}.',
  small='Prices from the shipyard’s public price list (revision 09/2026), excluding VAT, without engines and ex works (EXW, Italy). They do not include engines, transport, Spanish registration tax (IEDMT) or registration. The VAT shown is a guide (21%). They may change and are not binding: the final price is the one in the written quote. Photos, videos and technical data from the manufacturer; photos may show optional equipment. The licence is a guide only: please check with your school or the harbour authority. We may make mistakes; if you spot one, please let us know.',
+  b_print='Download offer as PDF',
+ dl_h='Download your offer as PDF', dl_p='Leave me your details and download the offer with your configuration and an offer number, so we can talk about it whenever you like.', dl_btn='Download PDF', dl_wait='Preparing your offer…', dl_close='Close',
+ sh_offer='Offer', sh_for='Prepared for', sh_date='Date', sh_cfg='Your configuration', sh_specs='Main data', sh_scan='Scan the code to view or change this configuration on the website',
+ sh_valid='Indicative offer based on the shipyard’s official price list (revision 09/2026). Not binding: the final price is the one in the written quote. Engines, transport from the factory, registration tax and registration are extra.',
+ sh_lic='Licence',
  print_h='Configuration summary', print_d='Date', print_c='Plata Marine · Juan Morante · +34 633 742 973 · juan@platamarine.com · www.platamarine.com',
  nophoto='Photos of this model coming soon', e44_note='I will send you the E-Motion 44 price and options list in writing.',
  lic_per='Spanish PER or higher', lic_pnb='Spanish PNB or higher',
@@ -186,7 +201,7 @@ T = {
  cats={'top': 'Hard-Top, roll-bar et tauds', 'deck': 'Revêtements de pont', 'paint': 'Peinture', 'comfort': 'Confort à bord', 'elec': 'Électronique, éclairage et audio', 'gear': 'Mouillage, manœuvre et poupe', 'cover': 'Housses', 'other': 'Autres'},
  one='Une seule option dans ce groupe', sum_h='Votre {n}', sum_base='Bateau', sum_opts='Options', sum_none='Aucune',
  sum_tot='Total hors taxes', sum_iva='TVA espagnole incl. (21 %)', sum_eng='Moteurs', sum_extra='Moteurs, transport depuis l’usine et taxe d’immatriculation en sus.',
- b_send='Demander un devis pour cette configuration', b_share='Copier le lien', b_copied='Lien copié', b_print='Télécharger le résumé (PDF)', b_reset='Recommencer',
+ b_send='Demander un devis pour cette configuration', b_share='Copier le lien', b_copied='Lien copié', b_reset='Recommencer',
  s_k='Équipement de série', s_h='Ce qui est de série', f_k='Fiche technique', f_h='Caractéristiques techniques',
  v_k='Vidéo', v_h='Le {n} sur l’eau', v_sub='Vidéos officielles de Mar.Co. Elles ne se chargent depuis YouTube que lorsque vous appuyez sur lecture.', v_play='Lire la vidéo',
  how_h='Comment acheter un Mar.Co', how=[('On en parle', 'Vous me dites comment vous allez l’utiliser et je vous aide à choisir modèle, moteurs et options.'), ('Devis écrit', 'Avec votre configuration je vous envoie un prix ferme : bateau, options, moteurs et transport.'), ('Commande à l’usine', 'Il est construit sur commande en Italie. Je m’occupe de la commande et du suivi.'), ('Livraison', 'Je vous accompagne à la livraison, pour les papiers et l’immatriculation.')],
@@ -205,6 +220,11 @@ T = {
  end_h='On parle de votre {n} ?', end_p='Écrivez-moi et on regarde ça tranquillement. Sans engagement.', wa='Écrire sur WhatsApp',
  wa_txt='Bonjour Juan, le Mar.Co {n} m’intéresse.',
  small='Prix du tarif public du chantier (révision 09/2026), hors TVA, sans moteurs et départ usine (EXW, Italie). Ils n’incluent pas les moteurs, le transport, la taxe d’immatriculation espagnole (IEDMT) ni l’immatriculation. La TVA affichée est indicative (21 %). Ils peuvent changer et ne sont pas contractuels : le prix final est celui du devis écrit. Photos, vidéos et données techniques du constructeur ; les photos peuvent montrer des options. Le permis est indicatif : vérifiez auprès de votre école ou de la Capitainerie. Nous pouvons nous tromper ; si vous voyez une erreur, dites-le-nous.',
+  b_print='Télécharger l’offre en PDF',
+ dl_h='Téléchargez votre offre en PDF', dl_p='Laissez-moi vos coordonnées et téléchargez l’offre avec votre configuration et un numéro d’offre, pour en parler quand vous voulez.', dl_btn='Télécharger le PDF', dl_wait='Préparation de votre offre…', dl_close='Fermer',
+ sh_offer='Offre', sh_for='Préparée pour', sh_date='Date', sh_cfg='Votre configuration', sh_specs='Données principales', sh_scan='Scannez le code pour voir ou modifier cette configuration sur le site',
+ sh_valid='Offre indicative basée sur le tarif officiel du chantier (révision 09/2026). Non contractuelle : le prix final est celui du devis écrit. Moteurs, transport depuis l’usine, taxe d’immatriculation et immatriculation en sus.',
+ sh_lic='Permis',
  print_h='Résumé de configuration', print_d='Date', print_c='Plata Marine · Juan Morante · +34 633 742 973 · juan@platamarine.com · www.platamarine.com',
  nophoto='Photos de ce modèle bientôt', e44_note='Je vous envoie par écrit le prix et la liste d’options de l’E-Motion 44.',
  lic_per='PER espagnol ou supérieur', lic_pnb='PNB espagnol ou supérieur',
@@ -295,6 +315,7 @@ CSS = """
 .mm-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,10,14,.82) 0,rgba(6,10,14,.25) 55%,rgba(6,10,14,.1) 100%)}
 .mm-hero .wrap{position:relative;z-index:1;padding-bottom:clamp(28px,6vw,64px);width:100%}
 .mm-kick{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--plata);margin:0 0 8px}
+.mm-blogo{display:block;height:clamp(34px,5vw,52px);width:auto;margin:0 0 14px}
 .mm-hero h1{font-family:var(--display);font-size:clamp(2.4rem,7vw,4.6rem);line-height:.98;font-weight:800;font-stretch:90%;margin:0;color:#fff}
 .mm-hero p.d{max-width:58ch;margin:14px 0 0;font-size:1.05rem;line-height:1.55;color:rgba(255,255,255,.9)}
 .mm-price{font-family:var(--display);font-size:clamp(1.3rem,3vw,1.7rem);font-weight:700;margin:18px 0 0}
@@ -419,16 +440,56 @@ CSS = """
 .mm-end p{color:rgba(255,255,255,.85);margin:0 0 22px}
 .mm-end .mm-ctas{justify-content:center}
 .mm-small{font-size:.8rem;line-height:1.55;color:var(--ink-2);margin:28px auto 48px;max-width:90ch}
-.mm-print{display:none}
+
 @media (max-width:1000px){.mm-cfg{grid-template-columns:1fr}.mm-sum{position:static}.mm-how{grid-template-columns:1fr 1fr}
  .mm-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--ink);color:#fff;padding:10px 16px calc(10px + env(safe-area-inset-bottom));align-items:center;gap:12px;box-shadow:0 -10px 30px rgba(0,0,0,.25);transform:translateY(110%);transition:transform .25s}
  .mm-bar.on{transform:none}.mm-bar div{flex:1;line-height:1.2}.mm-bar small{display:block;font-size:.72rem;color:rgba(255,255,255,.7)}
  .mm-bar b{font-family:var(--display);font-size:1.15rem}.mm-bar .vat{color:#ff8a80}.mm-bar a{background:var(--wa);color:#fff;text-decoration:none;font:600 .9rem var(--display);padding:10px 16px;border-radius:999px;white-space:nowrap}}
 @media (max-width:760px){.mm-keys{grid-template-columns:repeat(3,1fr)}.mm-keys div:nth-child(3){border-right:0}.mm-keys div:nth-child(n+4){border-top:1px solid var(--line)}
  .mm-gal{grid-template-columns:repeat(2,1fr)}.mm-gal.fold figure:nth-child(n+8){display:none}.mm-std{columns:1}.mm-spec{grid-template-columns:1fr 1fr}.mm-form{grid-template-columns:1fr}.mm-how{grid-template-columns:1fr}.mm-hero{min-height:74vh}}
-@media print{body *{visibility:hidden}.mm-print,.mm-print *{visibility:visible}.mm-print{display:block;position:absolute;left:0;top:0;width:100%;color:#000;font:12pt/1.45 Arial,sans-serif}
- .mm-print h1{font-size:20pt;margin:0 0 4pt}.mm-print table{width:100%;border-collapse:collapse;margin-top:10pt}.mm-print td{padding:4pt 0;border-bottom:1px solid #ccc}.mm-print td:last-child{text-align:right;white-space:nowrap}
- .mm-print .t td{font-weight:700;border-bottom:2px solid #000}.mm-print img.l{height:34pt}.mm-print img.ph{width:100%;max-height:200pt;object-fit:cover;margin:10pt 0}.mm-print p{font-size:9pt;color:#444}.mm-print .vat{color:#C62828;font-weight:700}}
+.mm-dl{position:fixed;inset:0;z-index:2147483001;background:rgba(6,10,14,.6);display:flex;align-items:center;justify-content:center;padding:16px}
+.mm-dl[hidden]{display:none}
+.mm-dl>div{background:#fff;border-radius:16px;max-width:460px;width:100%;padding:24px 22px;box-shadow:0 30px 80px rgba(0,0,0,.35);max-height:92vh;overflow:auto;position:relative}
+.mm-dl h3{font-family:var(--display);font-size:1.3rem;margin:0 0 8px;padding-right:30px}
+.mm-dl p.i{color:var(--ink-2);font-size:.93rem;line-height:1.5;margin:0 0 14px}
+.mm-dl .x{position:absolute;top:10px;right:12px;border:0;background:none;font-size:26px;cursor:pointer;color:var(--ink-2)}
+.mm-dl .mm-form{grid-template-columns:1fr}
+#mm-sheet{display:none}
+@media print{@page{size:A4;margin:0}
+ html,body{background:#fff!important}body>*:not(#mm-sheet){display:none!important}
+ #mm-sheet{display:block;color:#0D1C27;font:9.5pt/1.4 "Helvetica Neue",Arial,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ #mm-sheet .pg{width:210mm;box-sizing:border-box;padding:10mm 13mm 8mm;position:relative}
+ #mm-sheet .hd{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #B58A2C;padding-bottom:5mm}
+ #mm-sheet .hd img{height:10mm;width:auto}#mm-sheet .hd img.b{height:9mm}
+ #mm-sheet .meta{display:flex;justify-content:space-between;align-items:flex-end;margin:4mm 0 3mm}
+ #mm-sheet .meta .k{font-size:7.5pt;letter-spacing:.14em;text-transform:uppercase;color:#17465F;font-weight:700}
+ #mm-sheet .meta h1{font-size:23pt;line-height:1.05;margin:1.5mm 0 1mm;font-weight:800}
+ #mm-sheet .meta .s{color:#44545F}
+ #mm-sheet .ref{text-align:right;border:1px solid #0D1C27;border-radius:3mm;padding:2.5mm 4mm}
+ #mm-sheet .ref b{display:block;font-size:12pt;letter-spacing:.04em}
+ #mm-sheet .ref span{font-size:7.5pt;color:#44545F;display:block}
+ #mm-sheet .hero{width:100%;height:62mm;object-fit:cover;border-radius:3mm;display:block}
+ #mm-sheet .th{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5mm;margin-top:2.5mm}
+ #mm-sheet .th img{width:100%;height:21mm;object-fit:cover;border-radius:2mm;display:block}
+ #mm-sheet .cols{display:grid;grid-template-columns:1.55fr 1fr;gap:7mm;margin-top:4.5mm;font-size:8.6pt}
+ #mm-sheet h2{font-size:8pt;letter-spacing:.14em;text-transform:uppercase;color:#17465F;margin:0 0 2mm;font-weight:700}
+ #mm-sheet table{width:100%;border-collapse:collapse}
+ #mm-sheet td{padding:1.1mm 0;border-bottom:.3mm solid #dfe4e7;vertical-align:top}
+ #mm-sheet td:last-child{text-align:right;white-space:nowrap;padding-left:3mm;font-weight:600}
+ #mm-sheet dl{margin:0;display:grid;grid-template-columns:1fr auto;gap:1.4mm 3mm}
+ #mm-sheet dt{color:#44545F}#mm-sheet dd{margin:0;text-align:right;font-weight:700}
+ #mm-sheet .tot{margin-top:4mm;background:#0D1C27;color:#fff;border-radius:3mm;padding:4.5mm 5mm;display:flex;justify-content:space-between;align-items:center;page-break-inside:avoid}
+ #mm-sheet .tot .l{font-size:8pt;letter-spacing:.12em;text-transform:uppercase;color:#B7C3CB}
+ #mm-sheet .tot .v{font-size:20pt;font-weight:800}
+ #mm-sheet .tot .vat{color:#ff8a80;font-size:10pt;font-weight:800;margin-left:2mm}
+ #mm-sheet .tot .iva{font-size:8.5pt;color:#B7C3CB;text-align:right}
+ #mm-sheet .ft{display:flex;gap:6mm;align-items:center;margin-top:4mm;page-break-inside:avoid}
+ #mm-sheet .ft .qr{width:24mm;height:24mm;flex:none}#mm-sheet .ft .qr svg{width:100%;height:100%;display:block}
+ #mm-sheet .ft .c b{font-size:11pt;display:block}#mm-sheet .ft .c{line-height:1.55}
+ #mm-sheet .ft .c small{display:block;color:#44545F;font-size:7.5pt}
+ #mm-sheet .sm{font-size:6.8pt;color:#6b7a84;margin-top:3mm;line-height:1.4}
+ #mm-sheet.many .th{display:none}#mm-sheet.many .hero{height:52mm}
+}
 """
 
 def page(lg, mi):
@@ -511,7 +572,7 @@ def page(lg, mi):
     navs += [('ficha', t['nav'][3]), ('presupuesto', t['nav'][4])]
     o = [head, header, '\n<main class="mm">\n']
     o.append(f'<section class="mm-hero" id="barco"><img src="{hero_big}" srcset="{hero_m} 640w, {hero_big} 1600w" sizes="100vw" alt="{E(full)}" fetchpriority="high"><div class="wrap">'
-             f'<p class="mm-kick">Mar.Co · {t["kind"][kind]} · {eslora:.2f} m</p>'.replace('.', ',' if lg != 'en' else '.', 0)
+             f'<img class="mm-blogo" src="/barcos-nuevos/logos/marco-blanco.png" alt="Mar.Co" width="447" height="99" data-nolb><p class="mm-kick">{t["kind"][kind]} · {eslora:.2f} m</p>'.replace('.', ',' if lg != 'en' else '.', 0)
              + f'<h1>{E(full)}</h1><p class="d">{E(desc(slug, lg))}</p><p class="mm-price">{prc_html}</p><div class="mm-ctas">'
              + (f'<a class="mm-btn pri" href="#configurar">{t["h_cta"]}</a>' if tar else f'<a class="mm-btn pri" href="#presupuesto">{t["nav"][4]}</a>')
              + (f'<a class="mm-btn gho" href="#fotos">{t["h_ph"].format(k=k)}</a>' if k else '') + '</div></div></section>\n')
@@ -620,10 +681,24 @@ def page(lg, mi):
     o.append(f'<div class="wrap"><p class="mm-small">{t["small"]}</p></div>\n')
     # Bloque de impresión
     if tar:
-        o.append(f'<div class="mm-print" id="mm-print-box" aria-hidden="true"><img class="l" src="/logo-plata-marine.png" alt="Plata Marine"><h1>{E(full)}</h1><p>{t["print_h"]} · {t["print_d"]}: <span data-date></span></p><img class="ph" src="{hero_big}" alt="" data-nolb><table id="mm-pt"></table><p>{t["sum_extra"]}</p><p>{t["small"]}</p><p>{t["print_c"]}</p></div>\n')
+        o.append(f'''<div class="mm-dl" id="mm-dl" hidden role="dialog" aria-modal="true" aria-labelledby="mm-dl-h"><div><button type="button" class="x" aria-label="{t["dl_close"]}">×</button><h3 id="mm-dl-h">{t["dl_h"]}</h3><p class="i">{t["dl_p"]}</p>
+<form id="mcDl" class="mm-form" novalidate data-contact-intent="marco_pdf">
+<div><label for="dl_name">{t["q_name"]} <i>*</i></label><input id="dl_name" name="dl_name" type="text" required autocomplete="name" maxlength="60"></div>
+<div><label for="dl_tel">{t["q_tel"]} <i>*</i></label><input id="dl_tel" name="dl_tel" type="tel" required autocomplete="tel" inputmode="tel" maxlength="20" placeholder="+34 6xx xxx xxx"></div>
+<div><label for="dl_email">{t["q_email"]} <i>*</i></label><input id="dl_email" name="dl_email" type="email" required autocomplete="email" maxlength="100"></div>
+<p class="help">{t["q_priv"]} <a href="{P}/privacidad.html">{t["q_privl"]}</a>.</p>
+<div><label for="dl_consent" style="display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px;line-height:1.45;margin:0;cursor:pointer"><input id="dl_consent" name="dl_consent" type="checkbox" required style="width:20px;height:20px;min-width:20px;margin:1px 0 0;padding:0;accent-color:#0B766B"><span>{t["q_cons"]}&nbsp;<i>*</i></span></label></div>
+<div><button type="submit" id="dl_send">{t["dl_btn"]}</button></div>
+<p id="dl_status" class="help" role="status" aria-live="polite" hidden></p>
+</form></div></div>
+''')
         data = {'base': tar['price'], 'inf': tar.get('infusion') or 0, 'name': full, 'lang': lg,
                 'opts': [[tr(op['n'], lg), op['p']] for op in tar['opt']],
-                'L': {k2: t[k2] for k2 in ('sum_none', 'b_copied', 'b_share', 'c_std', 'c_inf', 'sum_base', 'sum_eng', 'sum_opts', 'sum_tot', 'sum_iva', 'vat')}, 'eng': t['eng_label']}
+                'L': {k2: t[k2] for k2 in ('sum_none', 'b_copied', 'b_share', 'c_std', 'c_inf', 'sum_base', 'sum_eng', 'sum_opts', 'sum_tot', 'sum_iva', 'vat', 'noeng', 'dl_wait', 'dl_btn', 'sh_offer', 'sh_for', 'sh_date', 'sh_cfg', 'sh_specs', 'sh_scan', 'sh_valid', 'sh_lic')}, 'eng': t['eng_label'],
+                'kind': t['kind'][kind] + ' · ' + ((f'{eslora:.2f}'.replace('.', ',') if lg != 'en' else f'{eslora:.2f}') + ' m'),
+                'code': ''.join(w[0] for w in name.replace('-', ' ').split()).upper()[:3] + re.sub(r'\\D', '', name)[:2],
+                'specs': [[k3, v3] for k3, v3 in list(sp.items())[:9]] + [[t['f_k'] and {'es': 'Titulación', 'ca': 'Titulació', 'en': 'Licence', 'fr': 'Permis'}[lg], lic(lg, eslora)]] if not any(k3.lower().startswith(('titul', 'licence', 'permis')) for k3 in sp) else [[k3, v3] for k3, v3 in list(sp.items()) if not k3.lower().startswith(('compart', 'diámetro', 'diàmetre', 'tube', 'diamètre'))][:10],
+                'hero': hero_big, 'thumbs': [img_url(slug, n) for n, _, _ in ph[1:4]], 'brandlogo': '/barcos-nuevos/logos/marco.png'}
         o.append(f'<script>window.MC_CFG={json.dumps(data, ensure_ascii=False)};</script>\n<script src="/marco/marco-config.js?v={V}" defer></script>\n')
     o.append(f'<script src="/submit-confirmed.js" defer></script>\n<script src="/marco/marco-form.js?v={V}" defer></script>\n')
     o.append('</main>\n')
