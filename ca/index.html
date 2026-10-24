@@ -471,6 +471,28 @@ section[id]{scroll-margin-top:78px}
 <link rel="stylesheet" href="/nav.css?v=20261006m">
 <style id="ux-oct">#venta .boat .desc,#venta .boat .thumbs{display:none}#guias .guias-cards img{display:none}#guias .guias-cards .gc-body{padding-top:18px}#comprar .buy-alt{margin-top:14px;font-family:var(--display);font-size:15px}#valora .sell-lead{max-width:62ch;color:var(--ink-2);margin-top:12px}@media(min-width:900px){#guias .guias-cards{grid-template-columns:repeat(4,1fr)}}</style>
 <style>@media (max-width:640px){.hero-photo{height:auto}.hero-title{position:relative;inset:auto;min-height:min(calc(100svh - 70px),600px);padding-top:40px;padding-bottom:36px}}</style>
+<style id="pm-apple">
+.sec h2,.sk-band h2{font-family:"Hanken Grotesk",var(--display);font-stretch:100%;font-weight:700;letter-spacing:-.02em}
+.pm-steps{list-style:none;margin:26px 0 10px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;counter-reset:pmst}
+.pm-steps li{counter-increment:pmst;border-top:1px solid rgba(127,146,158,.45);padding-top:14px}
+.pm-steps li:before{content:counter(pmst);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--sea-deep,#0E3042);color:#fff;font:600 14px "Hanken Grotesk",var(--display);margin-bottom:10px}
+.pm-steps strong{display:block;font:650 1.08rem/1.25 "Hanken Grotesk",var(--display);margin-bottom:6px}
+.pm-steps p{margin:0;color:var(--ink-2,#44545F);font-size:.98rem;line-height:1.5}
+.pm-stepnote{font-size:.92rem;color:var(--ink-2,#44545F);margin:4px 0 22px}
+.buy-facts.icons div{display:flex;align-items:center;gap:12px}
+.buy-facts.icons svg{width:30px;height:30px;flex:0 0 30px;color:var(--sea,#17465F)}
+.buy-facts.icons strong{font:650 1.02rem/1.25 "Hanken Grotesk",var(--display)}
+.boat .boat-meta{margin:6px 0 14px;color:var(--ink-2,#44545F);font-size:.98rem}
+#venta .boat .specs,#venta .boat .desc,#venta .boat .btn-wa{display:none}
+#venta .boat .boat-cta .btn-ghost{width:100%}
+.who-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.who-btns a{display:inline-flex;align-items:center;padding:12px 20px;border-radius:999px;font:600 15px "Hanken Grotesk",var(--display);text-decoration:none;border:1px solid rgba(255,255,255,.55);color:#fff}
+.who-btns a.on{background:#fff;color:var(--sea-deep,#0E3042);border-color:#fff}
+.foot .more-links{font-size:.9rem;color:rgba(255,255,255,.75);margin:0 0 18px;line-height:1.7}
+.foot .more-links a{color:rgba(255,255,255,.88)}
+@media(min-width:900px){#guias .guias-cards{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:760px){.pm-steps{grid-template-columns:1fr;gap:14px}}
+</style>
 </head>
 <body>
 
@@ -511,7 +533,6 @@ section[id]{scroll-margin-top:78px}
       <div class="hero-title">
         <p class="hero-eyebrow">Juan Morante · Broker nàutic a Catalunya i Balears</p>
         <h1>T'ajudo a vendre el teu vaixell<br class="hbr"> o a trobar el que busques</h1>
-        <p class="hero-sub">Vaixells a motor i velers d'ocasió. Preu amb criteri, anunci cuidat i acompanyament fins al lliurament.</p>
         <div class="hero-btns">
           <a class="btn btn-pill" href="#valora">Vull vendre el meu vaixell</a>
           <a class="btn btn-pill ghost" href="barcos/">Veure vaixells en venda</a>
@@ -629,8 +650,8 @@ section[id]{scroll-margin-top:78px}
     <div class="wrap">
       <p class="eyebrow">Vendre</p>
       <h2>Penses vendre el teu vaixell? Explica'm quin és i l'estudiem.</h2>
-      <p class="intro sell-lead">La diferència de treballar amb un broker és tot el que passa entre publicar l'anunci i cobrar: el preu, la fitxa, les consultes, les visites, la negociació i els papers. Sense exclusiva, sense avançaments i amb les condicions per escrit abans de començar. Aquesta consulta no és un encàrrec de venda. <a href="/ca/vender-barco/">Com treballo, pas a pas</a>.</p>
-      <p class="pm-valnote" style="margin-top:12px;font-size:.95rem;color:var(--ink-2)"><strong>Com valoro el teu vaixell:</strong> el comparo amb vaixells semblants (model, any, motor i hores) que s’anuncien ara i amb el temps que porten a la venda, i tinc en compte l’estat i els papers. És una orientació, no un preu garantit. Si vols una primera idea ja, prova la <a href="cuanto-vale-mi-barco/">calculadora de valor</a>.</p>
+      <ol class="pm-steps"><li><strong>Em parles del teu vaixell</strong><p>Model, any i on és. Amb això et dono una primera orientació de preu.</p></li><li><strong>El preparem</strong><p>Preu amb criteri, fotos i una fitxa acurada. Condicions per escrit, sense exclusiva ni avançaments.</p></li><li><strong>T'acompanyo fins al final</strong><p>Consultes, visites, negociació i papers. Honoraris en tancar la venda.</p></li></ol>
+      <p class="pm-stepnote">Aquesta consulta no és un encàrrec de venda. <a href="/ca/vender-barco/">Com treballo, pas a pas</a> · <a href="/ca/cuanto-vale-mi-barco/">Calcula una primera idea de valor</a></p>
       <form id="valoracion" class="form-grid" data-contact-intent="seller" novalidate>
         <div class="field span2">
           <label for="modelo">Marca i model <i>*</i></label>
@@ -675,7 +696,7 @@ section[id]{scroll-margin-top:78px}
         <div>
           <p class="eyebrow">Busques vaixell</p>
           <h2>No trobes el teu? T'ajudo a buscar-lo.</h2>
-          <p class="intro">Abans, fes un cop d'ull als <a href="barcos/">vaixells que gestiono</a>. Si no hi és el teu, m'expliques l'ús, el pressupost i on el tindràs: busco a Espanya i Europa, comprovo el que falti abans que et desplacis i t'acompanyo en la visita, la negociació i els papers. També per zona: <a href="/ca/comprar/barcos-segunda-mano-cataluna.html">vaixells de segona mà a Catalunya</a>, <a href="/ca/comprar/barcos-segunda-mano-costa-brava.html">a la Costa Brava</a> i <a href="/ca/comprar/barcos-segunda-mano-baleares.html">a Mallorca i les Balears</a>.</p>
+          <p class="intro">Explica'm ús, pressupost i zona. El busco a Espanya i Europa, comprovo el que falti abans que et desplacis i t'acompanyo fins a la signatura.</p>
           <div class="boat-cta" style="margin-top:26px">
             <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20estic%20buscant%20vaixell.%20Tipus%3A%20%20%7C%20Pressupost%3A%20%20%7C%20Zona%3A%20" target="_blank" rel="noopener">Explica'm què estàs buscant</a>
           </div>
@@ -683,13 +704,9 @@ section[id]{scroll-margin-top:78px}
           <p class="buy-alt buy-new" style="margin-top:10px">Busques vaixell nou? Representem <strong>SKIPPER Powerboats</strong> a Espanya: <a href="/ca/skipper/">mira models, fotos i preus</a>.</p>
         </div>
         <div>
-          <div class="buy-facts">
-            <div><strong>Qualsevol eslora</strong><p>De la semirígida al fly. El pressupost el marques tu.</p></div>
-            <div><strong>Espanya i Europa</strong><p>Particulars i professionals.</p></div>
-            <div><strong>A èxit</strong><p>Honoraris per escrit, només si compres.</p></div>
-            <div><strong>Cartera pròpia</strong><p>Si compres un vaixell de la meva cartera, no pagues honoraris de comprador.</p></div>
-          </div>
+          <div class="buy-facts icons"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15h18l-2.5 4h-13zM6 15V9l6-5 6 5v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><strong>Qualsevol eslora</strong></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><strong>Espanya i Europa</strong></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.6 2.6L16 9.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Només a èxit</strong></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 12h9M18 12v3M21 12v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><strong>Cartera pròpia</strong></div></div>
         </div>
+      </div>
       </div>
     </div>
   </section>
@@ -722,7 +739,6 @@ section[id]{scroll-margin-top:78px}
         <li><a href="/ca/guias/precio-barco-ocasion.html"><img src="https://images.unsplash.com/photo-1604671801989-586dde3c1574?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Preu</span><strong>Com posar preu a un vaixell d'ocasió</strong><span class="gc-more">Llegir la guia →</span></span></a></li>
         <li><a href="/ca/guias/que-mirar-comprar-barco-segunda-mano.html"><img src="https://images.unsplash.com/photo-1605050287918-5e2be7797f73?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Compra</span><strong>Què mirar en comprar un vaixell de segona mà de 7 a 12 m</strong><span class="gc-more">Llegir la guia →</span></span></a></li>
       </ul>
-      <p class="more-links">També: <a href="/ca/papeles-fiscalidad/">papers i impostos</a> · <a href="/ca/guias/amarres-cataluna-tipos-precios-alquiler-compra.html">amarratges a Catalunya (tarifes 2026)</a> · <a href="/ca/titulaciones/">titulacions i test del PER</a> · <a href="/ca/modelos/">fitxes de models d'ocasió</a> · <a href="/ca/guias/"><strong>totes les guies</strong></a> · <a href="/ca/precios/">preus de vaixells d'ocasió</a> · <a href="/ca/herramientas/">calculadores</a> · <a href="/ca/comprar/">comprar vaixell per zona i tipus</a></p>
     </div>
   </section>
 
@@ -735,11 +751,9 @@ section[id]{scroll-margin-top:78px}
         <div class="who">
           <p class="eyebrow">Qui hi ha darrere</p>
           <h2>Juan Morante</h2>
-          <p>Sóc Juan Morante. Vinc de la compravenda de vehicles, on porto anys valorant, negociant i tancant operacions amb particulars cada setmana des de la nostra oficina de Sabadell (<a href="https://www.platagarage.com" target="_blank" rel="noopener">Plata Garage</a>). A més, tinc el meu propi vaixell i navego per la costa catalana.</p>
-          <p>Porto 12 anys treballant amb persones: primer venent bicicletes, després cotxes i ara vaixells. La meva feina sempre ha estat la mateixa: escoltar què necessita cadascú i proposar-li la millor solució.</p>
-          <p>Amb Plata Marine porto aquesta experiència comercial al món del vaixell, com a broker nàutic. Em faig càrrec personalment de la gestió i t'explico el que veig: quin preu té sentit, què falta per comprovar i quina oferta val la pena valorar.</p>
-          <p>Vull que, quan tornis a canviar de cotxe o de vaixell, sàpigues a qui trucar.</p>
-                    <blockquote class="fquote"><p>"No prometo vendre ràpid, prometo fer-ho bé: amb la documentació en regla, el preu just i sense deixar-te sol en cap pas."</p></blockquote>
+          <p>Vinc de la compravenda de vehicles (<a href="https://www.platagarage.com" target="_blank" rel="noopener">Plata Garage</a>, Sabadell) i porto 12 anys treballant de cara al públic: escoltar què necessita cadascú i proposar-li la millor solució. Tinc el meu propi vaixell i m'encarrego personalment de cada gestió.</p>
+<blockquote class="fquote"><p>"No prometo vendre ràpid, prometo fer-ho bé: amb la documentació en regla, el preu just i sense deixar-te sol en cap pas."</p></blockquote>
+          <div class="who-btns"><a class="on" href="https://wa.me/34633742973" target="_blank" rel="noopener">Escriu-me per WhatsApp</a><a href="mailto:juan@platamarine.com">Enviar un correu</a></div>
           <p class="yard-note" style="font-size:.92em;opacity:.85;margin-top:18px">Fabriques vaixells i encara no tens distribuïdor a Catalunya? <a href="/ca/astilleros/">Mira com et puc representar</a>.</p>
 
         </div>
@@ -747,7 +761,7 @@ section[id]{scroll-margin-top:78px}
           <dl class="contact" id="contacto">
             <div class="row"><dt>WhatsApp</dt><dd><a href="https://wa.me/34633742973" target="_blank" rel="noopener">633 742 973</a><small>Parles directament amb mi.</small></dd></div>
             <div class="row"><dt>Email</dt><dd><a href="mailto:juan@platamarine.com">juan@platamarine.com</a></dd></div>
-            <div class="row"><dt>Oficina</dt><dd>C/ Tetuán 92, 08203 Sabadell<small>Barcelona</small></dd></div>
+            <div class="row"><dt>Oficina</dt><dd>Sabadell<small>Barcelona</small></dd></div>
             <div class="row"><dt>Zona</dt><dd>Base a Catalunya<small>Operacions a Balears i altres zones quan el vaixell ho justifica</small></dd></div>
           </dl>
         </div>
@@ -760,6 +774,7 @@ section[id]{scroll-margin-top:78px}
 
 <footer class="foot">
   <div class="wrap">
+    <p class="more-links"><a href="/ca/papeles-fiscalidad/">papers i impostos</a> · <a href="/ca/guias/amarres-cataluna-tipos-precios-alquiler-compra.html">amarratges a Catalunya (tarifes 2026)</a> · <a href="/ca/titulaciones/">titulacions i test del PER</a> · <a href="/ca/modelos/">fitxes de models d'ocasió</a> · <a href="/ca/guias/"><strong>totes les guies</strong></a> · <a href="/ca/precios/">preus de vaixells d'ocasió</a> · <a href="/ca/herramientas/">calculadores</a> · <a href="/ca/comprar/">comprar vaixell per zona i tipus</a> · Comprar per zona: <a href="/ca/comprar/barcos-segunda-mano-cataluna.html">vaixells de segona mà a Catalunya</a>, <a href="/ca/comprar/barcos-segunda-mano-costa-brava.html">a la Costa Brava</a>, <a href="/ca/comprar/barcos-segunda-mano-baleares.html">a Mallorca i les Balears</a></p>
     <div class="legal-links">
       <a href="/ca/aviso-legal.html">Avís legal</a>
       <a href="/ca/privacidad.html">Privacitat</a>
@@ -857,6 +872,6 @@ var IMGS={"ferretti-80-1": "/ferretti-80-1.jpg", "ferretti-80-3": "/ferretti-80-
 <script src="/contacto.js?v=20261006b" defer></script>
 <script src="/nav.js?v=20261006m" defer></script>
 <script src="/inventario.js?v=20261006" defer></script>
-<script src="/portada-cartera.js?v=20261023" defer></script>
+<script src="/portada-cartera.js?v=20261024" defer></script>
 </body>
 </html>
