@@ -13,7 +13,7 @@ Fuentes (octubre de 2026):
 - Datos técnicos, motor recomendado, colores y garantía: fichas y página de garantía de seastorm-boat.com.
 - Vídeo: canal oficial de YouTube "SeaStorm Boats" (@SeaStormBoats), id cJr6jiFQrH4 (el que tiene incrustado su web).
 - PVP: "Dealers Price List 2027" de Ceranos Invest OÜ, columna "RRP w/o VAT", configuración ADVANTAGE (la única de la tarifa),
-  redondeado hacia arriba a .990 por decisión de Juan. RRP original: 17 -> 10.928, 14 -> 7.253, 13s -> 6.683, 12 -> 4.454.
+  precio exacto de tarifa por decisión de Juan (24 oct 2026): 17 -> 10.928, 14 -> 7.253, 13s -> 6.683, 12 -> 4.454.
 - Titulación: RD 875/2014, art. 10.1.a en la redacción del RD 1188/2025 (vigente desde el 1 de octubre de 2026):
   sin título solo uso privado, motor hasta 5 m de eslora y potencia nominal máxima de 15 CV sin dispositivo reductor,
   de día y a no más de 2 millas de la salida, mayor de 18 años. Licencia de Navegación: hasta 6 m de eslora."""
@@ -30,10 +30,10 @@ IVA = 0.21
 
 # slug, nombre, eslora, manga, peso casco kg, calado cm, carga kg, pers. C, pers. D, CV máx, kW máx, CV recomendados, PVP sin IVA, eslora>5 m
 M = [
- ('12',   'SeaStorm 12',   '3,66', '1,67', 200, 18, 380, 4, 6, 30, 22, '25–30', 4990, False),
- ('13-s', 'SeaStorm 13 S', '4,00', '1,90', 250, 20, 475, 5, 5, 60, 44, '40', 6990, False),
- ('14',   'SeaStorm 14',   '4,28', '1,86', 260, 18, 475, 5, 6, 40, 30, '30–40', 7990, False),
- ('17',   'SeaStorm 17',   '5,17', '1,97', 380, 22, 610, 6, 8, 80, 60, '60', 10990, True),
+ ('12',   'SeaStorm 12',   '3,66', '1,67', 200, 18, 380, 4, 6, 30, 22, '25–30', 4454, False),
+ ('13-s', 'SeaStorm 13 S', '4,00', '1,90', 250, 20, 475, 5, 5, 60, 44, '40', 6683, False),
+ ('14',   'SeaStorm 14',   '4,28', '1,86', 260, 18, 475, 5, 6, 40, 30, '30–40', 7253, False),
+ ('17',   'SeaStorm 17',   '5,17', '1,97', 380, 22, 610, 6, 8, 80, 60, '60', 10928, True),
 ]
 HERO = '17-3'      # foto de portada (fondo del hero)
 VIDEO_POSTER = '17-1'
@@ -63,8 +63,8 @@ def kg(n, lang):
 
 T = {
  'es': dict(
-  title='SeaStorm en Cataluña: barcos de polietileno desde 4.990 € · Plata Marine',
-  desc='Barcos SeaStorm 12, 13 S, 14 y 17 de polietileno (HDPE), de 3,66 a 5,17 m, con 20 años de garantía de casco. Desde 4.990 € +IVA. Dealer en Cataluña: presupuesto llave en mano.',
+  title='SeaStorm en Cataluña: barcos de polietileno desde 4.454 € · Plata Marine',
+  desc='Barcos SeaStorm 12, 13 S, 14 y 17 de polietileno (HDPE), de 3,66 a 5,17 m, con 20 años de garantía de casco. Desde 4.454 € +IVA. Dealer en Cataluña: presupuesto llave en mano.',
   crumbs=('Inicio', 'Barcos nuevos'),
   eyebrow='Dealer SeaStorm en Cataluña',
   h1='Barcos de polietileno con 20 años de garantía de casco',
@@ -149,8 +149,8 @@ T = {
   small='Precios orientativos, sin IVA, según el PVP recomendado de la tarifa 2027 de SeaStorm, versión Advantage, en fábrica: no incluyen motor, equipamiento opcional, remolque, transporte ni matriculación. El importe con IVA se calcula al 21 % como referencia. Transporte y plazos orientativos: dependen de la carga y de la fábrica. Datos técnicos, colores y garantía según la web del fabricante (octubre de 2026). La titulación es orientativa, según el Real Decreto 875/2014 en su redacción vigente desde el 1 de octubre de 2026: confírmala con tu escuela o con Capitanía. Pueden cambiar y no son vinculantes; el precio final es el del presupuesto por escrito. Podemos equivocarnos; si ves un error, avísanos.',
  ),
  'ca': dict(
-  title='SeaStorm a Catalunya: vaixells de polietilè des de 4.990 € · Plata Marine',
-  desc='Vaixells SeaStorm 12, 13 S, 14 i 17 de polietilè (HDPE), de 3,66 a 5,17 m, amb 20 anys de garantia de buc. Des de 4.990 € +IVA. Dealer a Catalunya: pressupost clau en mà.',
+  title='SeaStorm a Catalunya: vaixells de polietilè des de 4.454 € · Plata Marine',
+  desc='Vaixells SeaStorm 12, 13 S, 14 i 17 de polietilè (HDPE), de 3,66 a 5,17 m, amb 20 anys de garantia de buc. Des de 4.454 € +IVA. Dealer a Catalunya: pressupost clau en mà.',
   crumbs=('Inici', 'Vaixells nous'),
   eyebrow='Dealer SeaStorm a Catalunya',
   h1='Vaixells de polietilè amb 20 anys de garantia de buc',
@@ -235,8 +235,8 @@ T = {
   small='Preus orientatius, sense IVA, segons el PVP recomanat de la tarifa 2027 de SeaStorm, versió Advantage, a fàbrica: no inclouen motor, equipament opcional, remolc, transport ni matriculació. L\'import amb IVA es calcula al 21 % com a referència. Transport i terminis orientatius: depenen de la càrrega i de la fàbrica. Dades tècniques, colors i garantia segons la web del fabricant (octubre de 2026). La titulació és orientativa, segons el Reial decret 875/2014 en la redacció vigent des de l\'1 d\'octubre de 2026: confirma-la amb la teva escola o amb Capitania. Poden canviar i no són vinculants; el preu final és el del pressupost per escrit. Ens podem equivocar; si hi veus un error, avisa\'ns.',
  ),
  'en': dict(
-  title='SeaStorm in Catalonia: polyethylene boats from €4,990 · Plata Marine',
-  desc='SeaStorm 12, 13 S, 14 and 17 polyethylene (HDPE) boats, 3.66 to 5.17 m, with a 20-year hull warranty. From €4,990 +VAT. Dealer in Catalonia: turnkey quotes.',
+  title='SeaStorm in Catalonia: polyethylene boats from €4,454 · Plata Marine',
+  desc='SeaStorm 12, 13 S, 14 and 17 polyethylene (HDPE) boats, 3.66 to 5.17 m, with a 20-year hull warranty. From €4,454 +VAT. Dealer in Catalonia: turnkey quotes.',
   crumbs=('Home', 'New boats'),
   eyebrow='SeaStorm dealer in Catalonia',
   h1='Polyethylene boats with a 20-year hull warranty',
@@ -321,8 +321,8 @@ T = {
   small='Indicative prices, excluding VAT, based on the recommended retail price in SeaStorm\'s 2027 price list, Advantage version, ex-works: they do not include engine, optional equipment, trailer, transport or registration. The VAT-inclusive amount uses 21% as a reference. Transport and lead times are indicative and depend on the load and the factory. Technical data, colours and warranty from the manufacturer\'s website (October 2026). The licence shown is indicative, based on Spanish Royal Decree 875/2014 as worded since 1 October 2026: please confirm it with your school or the Harbour Master. They may change and are not binding; the final price is the one in the written quote. We may be wrong; if you spot an error, let us know.',
  ),
  'fr': dict(
-  title='SeaStorm en Catalogne : bateaux en polyéthylène dès 4 990 € · Plata Marine',
-  desc='Bateaux SeaStorm 12, 13 S, 14 et 17 en polyéthylène (HDPE), de 3,66 à 5,17 m, coque garantie 20 ans. À partir de 4 990 € HT. Concessionnaire en Catalogne : devis clé en main.',
+  title='SeaStorm en Catalogne : bateaux en polyéthylène dès 4 454 € · Plata Marine',
+  desc='Bateaux SeaStorm 12, 13 S, 14 et 17 en polyéthylène (HDPE), de 3,66 à 5,17 m, coque garantie 20 ans. À partir de 4 454 € HT. Concessionnaire en Catalogne : devis clé en main.',
   crumbs=('Accueil', 'Bateaux neufs'),
   eyebrow='Concessionnaire SeaStorm en Catalogne',
   h1='Bateaux en polyéthylène, coque garantie 20 ans',
