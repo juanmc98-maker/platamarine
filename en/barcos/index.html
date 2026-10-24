@@ -110,8 +110,10 @@
     .tbadge{display:inline-block;align-self:flex-start;margin-top:10px;font-size:.78rem;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--paper-2,#eef1f3);color:var(--ink,#0d1c27)}
     .bcard[hidden]{display:none}
     @media (max-width:640px){.bfilt{flex-direction:column;align-items:stretch}.bfilt .bcount{margin-left:0}.bfilt .seg button{flex:1}}
+    .bquick{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 14px}.bquick button{font:inherit;font-size:.9rem;font-weight:600;padding:8px 14px;border-radius:999px;border:1px solid rgba(14,48,66,.18);background:var(--paper-2,#eef1f3);color:var(--ink,#0d1c27);cursor:pointer}.bquick button[aria-pressed="true"]{background:var(--ink,#0d1c27);color:#fff;border-color:var(--ink,#0d1c27)}.bquick button:focus-visible{outline:2px solid #0B766B;outline-offset:2px}
     </style>
     <span class="banc" id="segunda-mano"></span><span class="banc" id="nuevos"></span>
+    <div class="bquick" role="group" aria-label="Quick filters"><button type="button" data-k="estado" data-v="usado" aria-pressed="false">Pre-owned</button><button type="button" data-k="#f-pre" data-v="0-30000" aria-pressed="false">Up to €30,000</button><button type="button" data-k="#f-tit" data-v="1" aria-pressed="false">With a Licencia de Navegación</button><button type="button" data-k="#f-zon" data-v="baleares" aria-pressed="false">Balearic Islands</button></div>
     <div class="bfilt" role="search">
       <fieldset><legend>Condition</legend><div class="seg" data-f="estado"><button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="nuevo" aria-pressed="false">New</button><button type="button" data-v="usado" aria-pressed="false">Pre-owned</button></div></fieldset>
       <fieldset><legend>Type</legend><div class="seg" data-f="tipo"><button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="motor" aria-pressed="false">Motor</button><button type="button" data-v="vela" aria-pressed="false">Sail</button><button type="button" data-v="moto-agua" aria-pressed="false" hidden>Jet ski</button></div></fieldset>
@@ -596,7 +598,7 @@ apply(false);
 <p class="wrap"><button type="button" data-cookie-settings>Cookie settings</button></p></footer>
 <script src="/nav.js?v=20261019" defer></script>
 <script src="/inventario.js?v=20261006" defer></script>
-<script src="/favoritos.js?v=20261006" defer></script>
+<script src="/favoritos.js?v=20261006" defer></script><script src="/barcos/accesos.js?v=20261025" defer></script>
 <script id="ux-oct-js">(function(){var d=document.querySelector(".bmore");if(!d)return;function chk(){var c=document.getElementById("f-comb"),m=document.getElementById("f-mot");if((c&&c.value!=="all")||(m&&m.value!=="all"))d.open=true;}chk();window.addEventListener("pageshow",chk);})();</script>
 <script id="ux-jetski">(function(){var b=document.querySelector('.seg button[data-v="moto-agua"]');if(b&&document.querySelector('.bcard[data-tipo="moto-agua"]'))b.hidden=false;})();</script>
 <script>(function(){var n=new Date();[].forEach.call(document.querySelectorAll('.pm-drop[data-until]'),function(e){if(n>new Date(e.getAttribute('data-until')+'T23:59:59'))e.parentNode.removeChild(e)})})();</script>
