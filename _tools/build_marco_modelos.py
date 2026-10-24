@@ -16,7 +16,7 @@ EX = json.load(open(os.path.join(D, 'existing.json')))
 PH = json.load(open(os.path.join(D, 'photos.json')))
 LANGS = {'es': '', 'ca': '/ca', 'en': '/en', 'fr': '/fr'}
 SITE = 'https://www.platamarine.com'
-V = '20261024'
+V = '20261024b'
 
 # slug, nombre, clave tarifa, tipo (cab/open), eslora m, vídeos oficiales, foto de portada (n), foto de cierre
 IEDMT = {'e-motion-36', 'r-evolution-x36', 'r-evolution-35', 'e-motion-32'}  # eslora en papeles > 8 m seguro (tarifa: 9,98 m homologada o más)
