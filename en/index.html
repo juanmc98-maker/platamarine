@@ -471,6 +471,28 @@ section[id]{scroll-margin-top:78px}
 <link rel="stylesheet" href="/nav.css?v=20261006m">
 <style id="ux-oct">#venta .boat .desc,#venta .boat .thumbs{display:none}#guias .guias-cards img{display:none}#guias .guias-cards .gc-body{padding-top:18px}#comprar .buy-alt{margin-top:14px;font-family:var(--display);font-size:15px}#valora .sell-lead{max-width:62ch;color:var(--ink-2);margin-top:12px}@media(min-width:900px){#guias .guias-cards{grid-template-columns:repeat(4,1fr)}}</style>
 <style>@media (max-width:640px){.hero-photo{height:auto}.hero-title{position:relative;inset:auto;min-height:min(calc(100svh - 70px),600px);padding-top:40px;padding-bottom:36px}}</style>
+<style id="pm-apple">
+.sec h2,.sk-band h2{font-family:"Hanken Grotesk",var(--display);font-stretch:100%;font-weight:700;letter-spacing:-.02em}
+.pm-steps{list-style:none;margin:26px 0 10px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;counter-reset:pmst}
+.pm-steps li{counter-increment:pmst;border-top:1px solid rgba(127,146,158,.45);padding-top:14px}
+.pm-steps li:before{content:counter(pmst);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--sea-deep,#0E3042);color:#fff;font:600 14px "Hanken Grotesk",var(--display);margin-bottom:10px}
+.pm-steps strong{display:block;font:650 1.08rem/1.25 "Hanken Grotesk",var(--display);margin-bottom:6px}
+.pm-steps p{margin:0;color:var(--ink-2,#44545F);font-size:.98rem;line-height:1.5}
+.pm-stepnote{font-size:.92rem;color:var(--ink-2,#44545F);margin:4px 0 22px}
+.buy-facts.icons div{display:flex;align-items:center;gap:12px}
+.buy-facts.icons svg{width:30px;height:30px;flex:0 0 30px;color:var(--sea,#17465F)}
+.buy-facts.icons strong{font:650 1.02rem/1.25 "Hanken Grotesk",var(--display)}
+.boat .boat-meta{margin:6px 0 14px;color:var(--ink-2,#44545F);font-size:.98rem}
+#venta .boat .specs,#venta .boat .desc,#venta .boat .btn-wa{display:none}
+#venta .boat .boat-cta .btn-ghost{width:100%}
+.who-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.who-btns a{display:inline-flex;align-items:center;padding:12px 20px;border-radius:999px;font:600 15px "Hanken Grotesk",var(--display);text-decoration:none;border:1px solid rgba(255,255,255,.55);color:#fff}
+.who-btns a.on{background:#fff;color:var(--sea-deep,#0E3042);border-color:#fff}
+.foot .more-links{font-size:.9rem;color:rgba(255,255,255,.75);margin:0 0 18px;line-height:1.7}
+.foot .more-links a{color:rgba(255,255,255,.88)}
+@media(min-width:900px){#guias .guias-cards{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:760px){.pm-steps{grid-template-columns:1fr;gap:14px}}
+</style>
 </head>
 <body>
 
@@ -511,7 +533,6 @@ section[id]{scroll-margin-top:78px}
       <div class="hero-title">
         <p class="hero-eyebrow">Juan Morante · Yacht broker in Catalonia and the Balearics</p>
         <h1>I help you sell your boat<br class="hbr"> or find the one you are looking for</h1>
-        <p class="hero-sub">Pre-owned motorboats and sailing yachts. A well-reasoned price, a carefully prepared listing and support through to handover.</p>
         <div class="hero-btns">
           <a class="btn btn-pill" href="#valora">I want to sell my boat</a>
           <a class="btn btn-pill ghost" href="barcos/">See boats for sale</a>
@@ -629,8 +650,8 @@ section[id]{scroll-margin-top:78px}
     <div class="wrap">
       <p class="eyebrow">Sell</p>
       <h2>Thinking of selling your boat? Tell me about it and I will take a look.</h2>
-      <p class="intro sell-lead">The difference a broker makes lies in everything that happens between publishing the listing and getting paid: the price, the listing itself, enquiries, viewings, negotiation and paperwork. No exclusivity, no upfront fees and the terms in writing before we start. This enquiry is not a sale mandate. <a href="/en/vender-barco/">How I work, step by step</a>.</p>
-      <p class="pm-valnote" style="margin-top:12px;font-size:.95rem;color:var(--ink-2)"><strong>How I value your boat:</strong> I compare it with similar boats (model, year, engine and hours) currently for sale and how long they have been listed, and I take condition and paperwork into account. It is guidance, not a guaranteed price. For a first idea right now, try the <a href="cuanto-vale-mi-barco/">value calculator</a>.</p>
+      <ol class="pm-steps"><li><strong>Tell me about your boat</strong><p>Model, year and where it is. That is enough for a first price guide.</p></li><li><strong>We get it ready</strong><p>A sensible price, photos and a careful listing. Terms in writing, no exclusivity and no upfront fees.</p></li><li><strong>I stay with you to the end</strong><p>Enquiries, viewings, negotiation and paperwork. My fee is paid when the sale closes.</p></li></ol>
+      <p class="pm-stepnote">This enquiry is not a sale mandate. <a href="/en/vender-barco/">How I work, step by step</a> · <a href="/en/cuanto-vale-mi-barco/">Get a first idea of value</a></p>
       <form id="valoracion" class="form-grid" data-contact-intent="seller" novalidate>
         <div class="field span2">
           <label for="modelo">Make and model <i>*</i></label>
@@ -675,7 +696,7 @@ section[id]{scroll-margin-top:78px}
         <div>
           <p class="eyebrow">Looking for a boat</p>
           <h2>Can't find yours? I'll help you look.</h2>
-          <p class="intro">First, take a look at the <a href="barcos/">boats I'm currently handling</a>. If yours isn't there, tell me how you'll use it, your budget and where you'll keep it: I search across Spain and Europe, check anything missing before you travel and support you through the viewing, negotiation and paperwork. Also by area: <a href="/en/comprar/barcos-segunda-mano-cataluna.html">used boats for sale in Catalonia</a>, <a href="/en/comprar/barcos-segunda-mano-costa-brava.html">on the Costa Brava</a> and <a href="/en/comprar/barcos-segunda-mano-baleares.html">in Mallorca and the Balearic Islands</a>.</p>
+          <p class="intro">Tell me how you will use it, your budget and the area. I search in Spain and Europe, check what is missing before you travel and stay with you until signing.</p>
           <div class="boat-cta" style="margin-top:26px">
             <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hi%20Juan%2C%20I'm%20looking%20for%20a%20boat.%20Type%3A%20%20%7C%20Budget%3A%20%20%7C%20Area%3A%20" target="_blank" rel="noopener">Tell me what you're looking for</a>
           </div>
@@ -683,13 +704,9 @@ section[id]{scroll-margin-top:78px}
           <p class="buy-alt buy-new" style="margin-top:10px">Looking for a new boat? We represent <strong>SKIPPER Powerboats</strong> in Spain: <a href="/en/skipper/">see models, photos and prices</a>.</p>
         </div>
         <div>
-          <div class="buy-facts">
-            <div><strong>Any length</strong><p>From RIBs to flybridge cruisers. You set the budget.</p></div>
-            <div><strong>Spain and Europe</strong><p>Private sellers and dealers.</p></div>
-            <div><strong>Success fee</strong><p>Fee agreed in writing, only if you buy.</p></div>
-            <div><strong>Boats from my own portfolio</strong><p>If you buy a boat from my own portfolio, you pay no buyer's fee.</p></div>
-          </div>
+          <div class="buy-facts icons"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15h18l-2.5 4h-13zM6 15V9l6-5 6 5v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><strong>Any length</strong></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><strong>Spain and Europe</strong></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.6 2.6L16 9.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Success fee only</strong></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 12h9M18 12v3M21 12v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><strong>My own listings</strong></div></div>
         </div>
+      </div>
       </div>
     </div>
   </section>
@@ -722,7 +739,6 @@ section[id]{scroll-margin-top:78px}
         <li><a href="/en/guias/precio-barco-ocasion.html"><img src="https://images.unsplash.com/photo-1604671801989-586dde3c1574?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Price</span><strong>How to price a used boat</strong><span class="gc-more">Read the guide →</span></span></a></li>
         <li><a href="/en/guias/que-mirar-comprar-barco-segunda-mano.html"><img src="https://images.unsplash.com/photo-1605050287918-5e2be7797f73?auto=format&fit=crop&w=800&q=70" alt="" loading="lazy" width="800" height="500"><span class="gc-body"><span class="gc-tag">Buying</span><strong>What to check when buying a used boat from 7 to 12 m</strong><span class="gc-more">Read the guide →</span></span></a></li>
       </ul>
-      <p class="more-links">Also: <a href="/en/papeles-fiscalidad/">paperwork and taxes</a> · <a href="/en/guias/amarres-cataluna-tipos-precios-alquiler-compra.html">moorings in Catalonia (2026 rates)</a> · <a href="/en/titulaciones/">boating licences and the PER test</a> · <a href="/en/modelos/">used model listings</a> · <a href="/en/guias/"><strong>all guides</strong></a> · <a href="/en/precios/">used boat prices</a> · <a href="/en/herramientas/">calculators</a> · <a href="/en/comprar/">buy a boat by area and type</a></p>
     </div>
   </section>
 
@@ -735,11 +751,9 @@ section[id]{scroll-margin-top:78px}
         <div class="who">
           <p class="eyebrow">Who's behind it</p>
           <h2>Juan Morante</h2>
-          <p>I'm Juan Morante. I come from the car trade, where for years I've been valuing, negotiating and closing deals with private sellers every week from our office in Sabadell (<a href="https://www.platagarage.com" target="_blank" rel="noopener">Plata Garage</a>). I also have my own boat and sail the Catalan coast.</p>
-          <p>I've spent 12 years working with people: first selling bicycles, then cars and now boats. My job has always been the same: listening to what each person needs and suggesting the best solution.</p>
-          <p>With Plata Marine I bring that commercial experience to the boat trade. I handle the management personally and tell you what I see: what price makes sense, what still needs checking and which offers are worth considering.</p>
-          <p>I want you to know who to call, next time you change your car or your boat.</p>
-                    <blockquote class="fquote"><p>"I don't promise a fast sale. I promise to do it right: paperwork in order, a fair price, and you're never on your own along the way."</p></blockquote>
+          <p>I come from the car trade (<a href="https://www.platagarage.com" target="_blank" rel="noopener">Plata Garage</a>, Sabadell) and have spent 12 years working with customers: listening to what each person needs and offering the best solution. I have my own boat and handle every sale personally.</p>
+<blockquote class="fquote"><p>"I don't promise a fast sale. I promise to do it right: paperwork in order, a fair price, and you're never on your own along the way."</p></blockquote>
+          <div class="who-btns"><a class="on" href="https://wa.me/34633742973" target="_blank" rel="noopener">Message me on WhatsApp</a><a href="mailto:juan@platamarine.com">Send an email</a></div>
           <p class="yard-note" style="font-size:.92em;opacity:.85;margin-top:18px">Do you build boats and have no dealer in Catalonia yet? <a href="/en/astilleros/">See how I can represent you</a>.</p>
 
         </div>
@@ -747,7 +761,7 @@ section[id]{scroll-margin-top:78px}
           <dl class="contact" id="contacto">
             <div class="row"><dt>WhatsApp</dt><dd><a href="https://wa.me/34633742973" target="_blank" rel="noopener">633 742 973</a><small>You speak directly with me.</small></dd></div>
             <div class="row"><dt>Email</dt><dd><a href="mailto:juan@platamarine.com">juan@platamarine.com</a></dd></div>
-            <div class="row"><dt>Office</dt><dd>C/ Tetuán 92, 08203 Sabadell<small>Barcelona</small></dd></div>
+            <div class="row"><dt>Office</dt><dd>Sabadell<small>Barcelona</small></dd></div>
             <div class="row"><dt>Area</dt><dd>Based in Catalonia<small>Deals in the Balearics and other areas when the boat justifies it</small></dd></div>
           </dl>
         </div>
@@ -760,6 +774,7 @@ section[id]{scroll-margin-top:78px}
 
 <footer class="foot">
   <div class="wrap">
+    <p class="more-links"><a href="/en/papeles-fiscalidad/">paperwork and taxes</a> · <a href="/en/guias/amarres-cataluna-tipos-precios-alquiler-compra.html">moorings in Catalonia (2026 rates)</a> · <a href="/en/titulaciones/">boating licences and the PER test</a> · <a href="/en/modelos/">used model listings</a> · <a href="/en/guias/"><strong>all guides</strong></a> · <a href="/en/precios/">used boat prices</a> · <a href="/en/herramientas/">calculators</a> · <a href="/en/comprar/">buy a boat by area and type</a> · Buy by area: <a href="/en/comprar/barcos-segunda-mano-cataluna.html">used boats for sale in Catalonia</a>, <a href="/en/comprar/barcos-segunda-mano-costa-brava.html">on the Costa Brava</a>, <a href="/en/comprar/barcos-segunda-mano-baleares.html">in Mallorca and the Balearic Islands</a></p>
     <div class="legal-links">
       <a href="/en/aviso-legal.html">Legal notice</a>
       <a href="/en/privacidad.html">Privacy</a>
@@ -857,6 +872,6 @@ var IMGS={"ferretti-80-1": "/ferretti-80-1.jpg", "ferretti-80-3": "/ferretti-80-
 <script src="/contacto.js?v=20261006b" defer></script>
 <script src="/nav.js?v=20261006m" defer></script>
 <script src="/inventario.js?v=20261006" defer></script>
-<script src="/portada-cartera.js?v=20261023" defer></script>
+<script src="/portada-cartera.js?v=20261024" defer></script>
 </body>
 </html>
