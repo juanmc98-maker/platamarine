@@ -15,7 +15,24 @@ function state(){
   return {v:v,e:e,o:sel};
 }
 function base(s){return s.v&&C.inf?C.inf:C.base;}
+/* compatibilidades: lo que necesita cada opcional y con qué choca */
+function enforce(){
+  for(var it=0;it<6;it++){
+    var prov={},changed=false;
+    opts.forEach(function(o){if(o.checked&&o.dataset.pv)o.dataset.pv.split(' ').forEach(function(k){prov[k]=1;});});
+    opts.forEach(function(o){
+      var why=[];
+      (o.dataset.rq||'').split(' ').forEach(function(k){if(k&&!prov[k])why.push(C.why[k]);});
+      (o.dataset.nr||'').split(' ').forEach(function(k){if(k&&prov[k])why.push(C.why['x_'+k]);});
+      var lab=o.closest('label'),n=lab&&lab.querySelector('.mm-why');
+      if(why.length){if(o.checked){o.checked=false;changed=true;}o.disabled=true;if(lab)lab.classList.add('off');if(n){n.hidden=false;n.textContent=why[0];}}
+      else{o.disabled=false;if(lab)lab.classList.remove('off');if(n)n.hidden=true;}
+    });
+    if(!changed)break;
+  }
+}
 function render(){
+  enforce();
   var s=state(),b=base(s),sum=0;
   var ul=$('mm-sl');ul.innerHTML='';
   s.o.forEach(function(i){var o=C.opts[i];sum+=o[1]||0;var li=document.createElement('li');var a=document.createElement('span');a.textContent=o[0];var p=document.createElement('span');p.textContent='+'+eur(o[1]||0);li.appendChild(a);li.appendChild(p);ul.appendChild(li);});
@@ -24,6 +41,7 @@ function render(){
   $('mm-so').textContent=s.o.length?(s.o.length+' · '+eur(sum)):L.sum_none;
   $('mm-st').textContent=eur(b+sum);
   $('mm-si').textContent=eur((b+sum)*1.21);
+  if($('mm-ie')){$('mm-ie').textContent=eur((b+sum)*0.12);$('mm-ia').textContent=eur((b+sum)*1.33);}
   var bt=$('mm-bt'); if(bt) bt.textContent=eur(b+sum);
   [].forEach.call(box.querySelectorAll('.mm-cat'),function(d){var n=d.querySelectorAll('input:checked').length;var i=d.querySelector('summary i');i.hidden=!n;i.textContent=n;});
   var h='#cfg='+s.v+'-'+s.e+(s.o.length?'-'+s.o.join('.'):'');
@@ -37,7 +55,7 @@ function text(s,b,sum){
   var t=[C.name+' · '+(s.v&&C.inf?L.c_inf:L.c_std)+': '+eur(b)];
   t.push(L.sum_eng+': '+C.eng[s.e]);
   s.o.forEach(function(i){t.push('+ '+C.opts[i][0]+': '+eur(C.opts[i][1]||0));});
-  t.push(L.sum_tot+': '+eur(b+sum)+' '+L.vat);
+  t.push(L.sum_tot+': '+eur(b+sum)+' '+L.vat);t.push(L.sum_iva+': '+eur((b+sum)*1.21));if(C.iedmt){t.push(L.ie_l+': '+eur((b+sum)*0.12));t.push(L.ie_all+': '+eur((b+sum)*1.33));}
   return t.join('\n');
 }
 box.addEventListener('change',function(e){
@@ -81,7 +99,7 @@ function sheet(no,s){
    '<div class="ref"><span>'+esc(L.sh_offer)+' nº</span><b>'+no+'</b><span>'+esc(L.sh_date)+': '+dt+'</span></div></div>'+
    '<img class="hero" src="'+C.hero+'" alt="">'+(th?'<div class="th">'+th+'</div>':'')+
    '<div class="cols"><div><h2>'+esc(L.sh_cfg)+'</h2><table>'+rows+'</table></div><div><h2>'+esc(L.sh_specs)+'</h2><dl>'+specs+'</dl></div></div>'+
-   '<div class="tot"><div><div class="l">'+esc(L.sum_tot)+'</div><div class="v">'+eur(b+sum)+'<span class="vat">'+esc(L.vat)+'</span></div></div><div class="iva">'+esc(L.sum_iva)+'<br><b style="color:#fff;font-size:11pt">'+eur((b+sum)*1.21)+'</b></div></div>'+
+   '<div class="tot"><div><div class="l">'+esc(L.sum_tot)+'</div><div class="v">'+eur(b+sum)+'<span class="vat">'+esc(L.vat)+'</span></div></div><div class="iva">'+esc(L.sum_iva)+': <b style="color:#fff">'+eur((b+sum)*1.21)+'</b>'+(C.iedmt?'<br>'+esc(L.ie_l)+': <b style="color:#fff">'+eur((b+sum)*0.12)+'</b><br>'+esc(L.ie_all)+'<br><b style="color:#fff;font-size:12pt">'+eur((b+sum)*1.33)+'</b>':'<br><span style="font-size:7pt">'+esc(L.ie_unk)+'</span>')+'</div></div>'+
    '<div class="ft">'+(qr?'<div class="qr">'+qr+'</div>':'')+'<div class="c"><small>'+esc(L.sh_scan)+'</small><b>Juan Morante · Plata Marine</b>+34 633 742 973 · juan@platamarine.com · www.platamarine.com</div></div>'+
    '<p class="sm">'+esc(L.sh_valid)+'</p></div>';
   var el=$('mm-sheet');if(!el){el=document.createElement('div');el.id='mm-sheet';document.body.appendChild(el);}

@@ -19,6 +19,7 @@ SITE = 'https://www.platamarine.com'
 V = '20261024'
 
 # slug, nombre, clave tarifa, tipo (cab/open), eslora m, vídeos oficiales, foto de portada (n), foto de cierre
+IEDMT = {'e-motion-36', 'r-evolution-x36', 'r-evolution-35', 'e-motion-32'}  # eslora en papeles > 8 m seguro (tarifa: 9,98 m homologada o más)
 MODELS = [
  ('e-motion-44', 'E-Motion 44', None, 'cab', 13.50, [], 3, 14),
  ('e-motion-36', 'E-Motion 36', 'E-MOTION 36', 'cab', 10.70, ['Bf60mN_Imvk', '2n4Izcv3VIg'], 1, 7),
@@ -83,9 +84,11 @@ T = {
  wa_txt='Hola Juan, me interesa la Mar.Co {n}.',
  small='Precios de la tarifa pública del astillero (revisión 09/2026), sin IVA, sin motores y en fábrica (EXW, Italia). No incluyen motores, transporte, impuesto de matriculación (IEDMT) ni matriculación. El IVA mostrado es orientativo (21 %). Pueden cambiar y no son vinculantes: el precio final es el del presupuesto por escrito. Fotos, vídeos y datos técnicos del fabricante; las fotos pueden mostrar equipamiento opcional. La titulación es orientativa: confírmala con tu escuela o con Capitanía. Podemos equivocarnos; si ves un error, avísanos.',
   b_print='Descargar oferta en PDF',
+ ie_l='Impuesto de matriculación (12 %)', ie_all='Total con IVA e impuesto de matriculación', ie_note='Calculado sobre barco y opcionales. Motores y transporte, aparte.', ie_unk='Impuesto de matriculación: depende de la eslora que figure en los papeles del barco; te lo confirmo en el presupuesto.',
+ why={'ht':'Requiere el Hard-Top','rb':'Requiere el roll-bar','br':'Requiere el soporte de motores (bracket)','aft':'Requiere un toldo de popa','win':'Requiere el molinete','plot':'Requiere un GPS Garmin','aud':'Requiere un equipo de audio','lp':'Requiere los puntos de izado','x_ht':'Con Hard-Top, elige la versión para Hard-Top','x_rb':'Solo sin roll-bar','x_br':'Con bracket, elige la versión con bracket','x_fullcov':'Incluida en la funda completa','x_chcov':'Incluida en la funda de consola y banco'},
  dl_h='Descarga tu oferta en PDF', dl_p='Déjame tus datos y te descargas la oferta con tu configuración y un número de oferta, para que lo hablemos cuando quieras.', dl_btn='Descargar PDF', dl_wait='Preparando tu oferta…', dl_close='Cerrar',
  sh_offer='Oferta', sh_for='Preparada para', sh_date='Fecha', sh_cfg='Tu configuración', sh_specs='Datos principales', sh_scan='Escanea el código para ver o cambiar esta configuración en la web',
- sh_valid='Oferta orientativa con los precios de la tarifa oficial del astillero (revisión 09/2026). No es vinculante: el precio final es el del presupuesto por escrito. Motores, transporte desde fábrica, impuesto de matriculación y matriculación, aparte.',
+ sh_valid='Oferta orientativa con los precios de la tarifa oficial del astillero (revisión 09/2026). No es vinculante: el precio final es el del presupuesto por escrito. Motores, transporte desde fábrica y gastos de matriculación, aparte.',
  sh_lic='Titulación',
  print_h='Resumen de configuración', print_d='Fecha', print_c='Plata Marine · Juan Morante · +34 633 742 973 · juan@platamarine.com · www.platamarine.com',
  nophoto='Fotos de este modelo, próximamente', e44_note='Te paso el precio y la lista de opcionales del E-Motion 44 por escrito.',
@@ -129,9 +132,11 @@ T = {
  wa_txt='Hola Juan, m’interessa la Mar.Co {n}.',
  small='Preus de la tarifa pública de la drassana (revisió 09/2026), sense IVA, sense motors i a fàbrica (EXW, Itàlia). No inclouen motors, transport, impost de matriculació (IEDMT) ni matriculació. L’IVA que es mostra és orientatiu (21 %). Poden canviar i no són vinculants: el preu final és el del pressupost per escrit. Fotos, vídeos i dades tècniques del fabricant; les fotos poden mostrar equipament opcional. La titulació és orientativa: confirma-la amb la teva escola o amb Capitania. Ens podem equivocar; si veus un error, avisa’ns.',
   b_print='Descarregar oferta en PDF',
+ ie_l='Impost de matriculació (12 %)', ie_all='Total amb IVA i impost de matriculació', ie_note='Calculat sobre vaixell i opcionals. Motors i transport, a part.', ie_unk='Impost de matriculació: depèn de l’eslora que consti als papers del vaixell; t’ho confirmo al pressupost.',
+ why={'ht':'Requereix el Hard-Top','rb':'Requereix el roll-bar','br':'Requereix el suport de motors (bracket)','aft':'Requereix un tendal de popa','win':'Requereix el molinet','plot':'Requereix un GPS Garmin','aud':'Requereix un equip d’àudio','lp':'Requereix els punts d’hissada','x_ht':'Amb Hard-Top, tria la versió per a Hard-Top','x_rb':'Només sense roll-bar','x_br':'Amb bracket, tria la versió amb bracket','x_fullcov':'Inclosa a la funda completa','x_chcov':'Inclosa a la funda de consola i banc'},
  dl_h='Descarrega la teva oferta en PDF', dl_p='Deixa’m les teves dades i et descarregues l’oferta amb la teva configuració i un número d’oferta, perquè en parlem quan vulguis.', dl_btn='Descarregar PDF', dl_wait='Preparant la teva oferta…', dl_close='Tancar',
  sh_offer='Oferta', sh_for='Preparada per a', sh_date='Data', sh_cfg='La teva configuració', sh_specs='Dades principals', sh_scan='Escaneja el codi per veure o canviar aquesta configuració al web',
- sh_valid='Oferta orientativa amb els preus de la tarifa oficial de la drassana (revisió 09/2026). No és vinculant: el preu final és el del pressupost per escrit. Motors, transport des de fàbrica, impost de matriculació i matriculació, a part.',
+ sh_valid='Oferta orientativa amb els preus de la tarifa oficial de la drassana (revisió 09/2026). No és vinculant: el preu final és el del pressupost per escrit. Motors, transport des de fàbrica i despeses de matriculació, a part.',
  sh_lic='Titulació',
  print_h='Resum de configuració', print_d='Data', print_c='Plata Marine · Juan Morante · +34 633 742 973 · juan@platamarine.com · www.platamarine.com',
  nophoto='Fotos d’aquest model, aviat', e44_note='Et passo el preu i la llista d’opcionals de l’E-Motion 44 per escrit.',
@@ -175,9 +180,11 @@ T = {
  wa_txt='Hi Juan, I am interested in the Mar.Co {n}.',
  small='Prices from the shipyard’s public price list (revision 09/2026), excluding VAT, without engines and ex works (EXW, Italy). They do not include engines, transport, Spanish registration tax (IEDMT) or registration. The VAT shown is a guide (21%). They may change and are not binding: the final price is the one in the written quote. Photos, videos and technical data from the manufacturer; photos may show optional equipment. The licence is a guide only: please check with your school or the harbour authority. We may make mistakes; if you spot one, please let us know.',
   b_print='Download offer as PDF',
+ ie_l='Spanish registration tax (12%)', ie_all='Total incl. VAT and registration tax', ie_note='Calculated on boat and options. Engines and transport are extra.', ie_unk='Registration tax: depends on the length stated in the boat’s papers; I will confirm it in the quote.',
+ why={'ht':'Requires the Hard-Top','rb':'Requires the roll-bar','br':'Requires the engine bracket','aft':'Requires an aft sunshade','win':'Requires the windlass','plot':'Requires a Garmin GPS','aud':'Requires an audio system','lp':'Requires the lifting points','x_ht':'With the Hard-Top, choose the Hard-Top version','x_rb':'Only without roll-bar','x_br':'With the bracket, choose the bracket version','x_fullcov':'Included in the full cover','x_chcov':'Included in the console and helm bench cover'},
  dl_h='Download your offer as PDF', dl_p='Leave me your details and download the offer with your configuration and an offer number, so we can talk about it whenever you like.', dl_btn='Download PDF', dl_wait='Preparing your offer…', dl_close='Close',
  sh_offer='Offer', sh_for='Prepared for', sh_date='Date', sh_cfg='Your configuration', sh_specs='Main data', sh_scan='Scan the code to view or change this configuration on the website',
- sh_valid='Indicative offer based on the shipyard’s official price list (revision 09/2026). Not binding: the final price is the one in the written quote. Engines, transport from the factory, registration tax and registration are extra.',
+ sh_valid='Indicative offer based on the shipyard’s official price list (revision 09/2026). Not binding: the final price is the one in the written quote. Engines, transport from the factory and registration fees are extra.',
  sh_lic='Licence',
  print_h='Configuration summary', print_d='Date', print_c='Plata Marine · Juan Morante · +34 633 742 973 · juan@platamarine.com · www.platamarine.com',
  nophoto='Photos of this model coming soon', e44_note='I will send you the E-Motion 44 price and options list in writing.',
@@ -221,9 +228,11 @@ T = {
  wa_txt='Bonjour Juan, le Mar.Co {n} m’intéresse.',
  small='Prix du tarif public du chantier (révision 09/2026), hors TVA, sans moteurs et départ usine (EXW, Italie). Ils n’incluent pas les moteurs, le transport, la taxe d’immatriculation espagnole (IEDMT) ni l’immatriculation. La TVA affichée est indicative (21 %). Ils peuvent changer et ne sont pas contractuels : le prix final est celui du devis écrit. Photos, vidéos et données techniques du constructeur ; les photos peuvent montrer des options. Le permis est indicatif : vérifiez auprès de votre école ou de la Capitainerie. Nous pouvons nous tromper ; si vous voyez une erreur, dites-le-nous.',
   b_print='Télécharger l’offre en PDF',
+ ie_l='Taxe d’immatriculation espagnole (12 %)', ie_all='Total TVA et taxe d’immatriculation incl.', ie_note='Calculé sur le bateau et les options. Moteurs et transport en sus.', ie_unk='Taxe d’immatriculation : dépend de la longueur indiquée dans les papiers du bateau ; je vous la confirme dans le devis.',
+ why={'ht':'Nécessite le Hard-Top','rb':'Nécessite le roll-bar','br':'Nécessite le support moteurs (bracket)','aft':'Nécessite un taud arrière','win':'Nécessite le guindeau','plot':'Nécessite un GPS Garmin','aud':'Nécessite un système audio','lp':'Nécessite les points de levage','x_ht':'Avec le Hard-Top, choisissez la version Hard-Top','x_rb':'Uniquement sans roll-bar','x_br':'Avec le bracket, choisissez la version avec bracket','x_fullcov':'Incluse dans la housse complète','x_chcov':'Incluse dans la housse console et banquette'},
  dl_h='Téléchargez votre offre en PDF', dl_p='Laissez-moi vos coordonnées et téléchargez l’offre avec votre configuration et un numéro d’offre, pour en parler quand vous voulez.', dl_btn='Télécharger le PDF', dl_wait='Préparation de votre offre…', dl_close='Fermer',
  sh_offer='Offre', sh_for='Préparée pour', sh_date='Date', sh_cfg='Votre configuration', sh_specs='Données principales', sh_scan='Scannez le code pour voir ou modifier cette configuration sur le site',
- sh_valid='Offre indicative basée sur le tarif officiel du chantier (révision 09/2026). Non contractuelle : le prix final est celui du devis écrit. Moteurs, transport depuis l’usine, taxe d’immatriculation et immatriculation en sus.',
+ sh_valid='Offre indicative basée sur le tarif officiel du chantier (révision 09/2026). Non contractuelle : le prix final est celui du devis écrit. Moteurs, transport depuis l’usine et frais d’immatriculation en sus.',
  sh_lic='Permis',
  print_h='Résumé de configuration', print_d='Date', print_c='Plata Marine · Juan Morante · +34 633 742 973 · juan@platamarine.com · www.platamarine.com',
  nophoto='Photos de ce modèle bientôt', e44_note='Je vous envoie par écrit le prix et la liste d’options de l’E-Motion 44.',
@@ -262,8 +271,44 @@ EXCL = [
  ('charg', r'battery charger'),
  ('lift', r'lifting points|lifting slings|2 lifting points'),
  ('aft', r'^aft sunshade|^aft bimini|rear sunshade awning|rear sun awning'),
- ('hardtop', r'hard-top with'),
+ ('hardtop', r'hard-top with|^fiberglass roll-bar'),
+ ('frg', r'^42 l drawer fridge|^42 l top-down fridge'),
 ]
+# Compatibilidades (revisadas a mano sobre la tarifa 09/2026): qué aporta cada opción y qué necesita / con qué choca
+PROV = [
+ ('ht', r'hard-top with'), ('rb', r'^fiberglass roll-bar'), ('br', r'^fiberglass bracket'),
+ ('aft', r'^aft sunshade|^aft bimini|rear sunshade awning|rear sun awning'),
+ ('win', r'^electrical winch|^electric winch'), ('plot', r'garmin (9013|1223|923)|echomap'),
+ ('aud', r'^audio:|stereo system'), ('lp', r'^2 lifting points'),
+ ('fullcov', r'^full canvas cover|^cover for inflated'), ('chcov', r'^console and helm bench canvas cover'),
+]
+REQ = [
+ (r'\(with hard-top\)|\(hard-top\)|for hard-top|on hard-top|windshield wiper|for t-top', ['ht']),
+ (r'^4 extra speakers', ['ht', 'aud']),
+ (r'\(roll-bar\)|roll-bar lowering|hinges kit for fiberglass roll-bar|handrails for roll-bar', ['rb']),
+ (r'\(with bracket\)', ['br']),
+ (r'side and aft sunshade extension|side sunshade extension|rear sunshade extension', ['aft']),
+ (r'windlass remote|hand-held controller for winch', ['win']),
+ (r'sd card reader', ['plot']),
+ (r'^lifting slings', ['lp']),
+]
+NOREQ = [
+ (r'\(no roll-bar\)', ['rb']),
+ (r'^lifting points & slings kit$', ['br']),
+ (r'^aft sunshade with 4 carbon poles|^aft bimini with 4 stainless', ['ht']),
+ (r'^console canvas cover|^helm.bench canvas cover|^cover for console and driving seat', ['fullcov', 'chcov']),
+ (r'^console and helm bench canvas cover', ['fullcov']),
+]
+def rules(names):
+    low = [n.lower() for n in names]
+    have = set(k for k, rx in PROV for l in low if re.search(rx, l))
+    out = []
+    for l in low:
+        pv = [k for k, rx in PROV if re.search(rx, l)]
+        rq = [k for rx, ks in REQ if re.search(rx, l) for k in ks if k in have and k not in pv]
+        nr = [k for rx, ks in NOREQ if re.search(rx, l) for k in ks if k in have]
+        out.append((pv, rq, nr))
+    return out
 
 def cat(n):
     l = n.lower()
@@ -378,6 +423,7 @@ CSS = """
 .mm-opt span{flex:1}
 .mm-opt small{display:block;color:var(--ink-2);font-size:.78rem}
 .mm-opt b{font-family:var(--display);white-space:nowrap}
+.mm-opt.off{opacity:.45;cursor:not-allowed}.mm-opt .mm-why{color:#b45309}
 .mm-sum{position:sticky;top:64px;background:var(--ink);color:#fff;border-radius:16px;padding:22px;box-shadow:0 30px 60px -40px rgba(13,28,39,.7)}
 .mm-sum img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:10px;margin-bottom:14px;display:block}
 .mm-sum h3{font-family:var(--display);font-size:1.25rem;font-weight:800;margin:0 0 12px;color:#fff}
@@ -390,6 +436,7 @@ CSS = """
 .mm-tot .big{font-family:var(--display);font-size:1.9rem;font-weight:800;line-height:1.1}
 .mm-tot .big .vat{color:#ff8a80}
 .mm-tot p{margin:4px 0 0;font-size:.85rem;color:rgba(255,255,255,.75)}
+.mm-tot p.mm-all{color:#fff;font-size:.95rem}.mm-tot p.mm-all b{font-family:var(--display)}
 .mm-sum .mm-btn{width:100%;margin-top:12px}
 .mm-acts{display:flex;gap:8px;margin-top:8px}
 .mm-acts button{flex:1;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:9px 8px;font:600 .82rem var(--display);cursor:pointer}
@@ -482,7 +529,7 @@ CSS = """
  #mm-sheet .tot .l{font-size:8pt;letter-spacing:.12em;text-transform:uppercase;color:#B7C3CB}
  #mm-sheet .tot .v{font-size:20pt;font-weight:800}
  #mm-sheet .tot .vat{color:#ff8a80;font-size:10pt;font-weight:800;margin-left:2mm}
- #mm-sheet .tot .iva{font-size:8.5pt;color:#B7C3CB;text-align:right}
+ #mm-sheet .tot .iva{font-size:8pt;color:#B7C3CB;text-align:right;max-width:75mm;line-height:1.5}
  #mm-sheet .ft{display:flex;gap:6mm;align-items:center;margin-top:4mm;page-break-inside:avoid}
  #mm-sheet .ft .qr{width:24mm;height:24mm;flex:none}#mm-sheet .ft .qr svg{width:100%;height:100%;display:block}
  #mm-sheet .ft .c b{font-size:11pt;display:block}#mm-sheet .ft .c{line-height:1.55}
@@ -573,7 +620,7 @@ def page(lg, mi):
     o = [head, header, '\n<main class="mm">\n']
     o.append(f'<section class="mm-hero" id="barco"><img src="{hero_big}" srcset="{hero_m} 640w, {hero_big} 1600w" sizes="100vw" alt="{E(full)}" fetchpriority="high"><div class="wrap">'
              f'<img class="mm-blogo" src="/barcos-nuevos/logos/marco-blanco.png" alt="Mar.Co" width="447" height="99" data-nolb><p class="mm-kick">{t["kind"][kind]} · {eslora:.2f} m</p>'.replace('.', ',' if lg != 'en' else '.', 0)
-             + f'<h1>{E(full)}</h1><p class="d">{E(desc(slug, lg))}</p><p class="mm-price">{prc_html}</p><div class="mm-ctas">'
+             + f'<h1><span class="sr-only">Mar.Co </span>{E(name)}</h1><p class="d">{E(desc(slug, lg))}</p><p class="mm-price">{prc_html}</p><div class="mm-ctas">'
              + (f'<a class="mm-btn pri" href="#configurar">{t["h_cta"]}</a>' if tar else f'<a class="mm-btn pri" href="#presupuesto">{t["nav"][4]}</a>')
              + (f'<a class="mm-btn gho" href="#fotos">{t["h_ph"].format(k=k)}</a>' if k else '') + '</div></div></section>\n')
     o[-1] = o[-1].replace(f'· {eslora:.2f} m', '· ' + (f'{eslora:.2f}'.replace('.', ',') if lg != 'en' else f'{eslora:.2f}') + ' m')
@@ -591,6 +638,8 @@ def page(lg, mi):
         opts = []
         for i, op in enumerate(tar['opt']):
             opts.append(dict(i=i, n=tr(op['n'], lg), p=op['p'], c=cat(op['n']), x=excl(op['n'])))
+        for op, (pv, rq, nr) in zip(opts, rules([o['n'] for o in tar['opt']])):
+            op['pv'], op['rq'], op['nr'] = pv, rq, nr
         groups = {}
         for op in opts: groups.setdefault(op['c'], []).append(op)
         # exclusivos: solo si hay 2+ en el grupo
@@ -610,9 +659,10 @@ def page(lg, mi):
             one_html = '<small>' + t['one'] + '</small>'
             for op in sorted(groups[c], key=lambda z: z['p'] or 0):
                 xg = op['x'] if cnt.get(op['x'], 0) > 1 else ''
-                rows += (f'<label class="mm-opt"><input type="checkbox" name="mmo" value="{op["i"]}" data-p="{op["p"] or 0}"{(' data-x="' + xg + '"') if xg else ""}>'
-                         f'<span>{E(op["n"])}{one_html if xg else ""}</span><b>+{eur(op["p"], lg)}</b></label>')
+                rows += (f'<label class="mm-opt"><input type="checkbox" name="mmo" value="{op["i"]}" data-p="{op["p"] or 0}"{(' data-x="' + xg + '"') if xg else ""}{(' data-pv="' + ' '.join(op['pv']) + '"') if op['pv'] else ''}{(' data-rq="' + ' '.join(op['rq']) + '"') if op['rq'] else ''}{(' data-nr="' + ' '.join(op['nr']) + '"') if op['nr'] else ''}>'
+                         f'<span>{E(op["n"])}{one_html if xg else ""}<small class="mm-why" hidden></small></span><b>+{eur(op["p"], lg)}</b></label>')
             cats_html += f'<details class="mm-cat" data-c="{c}"><summary>{t["cats"][c]}<i hidden></i></summary>{rows}</details>'
+        ie_html = (f'<p>{t["ie_l"]}: <span id="mm-ie"></span></p><p class="mm-all">{t["ie_all"]}: <b id="mm-ia"></b></p><p>{t["ie_note"]}</p>' if slug in IEDMT else f'<p>{t["ie_unk"]}</p><p>{t["sum_extra"]}</p>')
         o.append(f'''<section class="mm-sec alt" id="configurar"><div class="wrap"><p class="k">{t["c_k"]}</p><h2>{E(t["c_h"].format(n=name))}</h2><p class="s">{t["c_sub"]}</p>
 <div class="mm-cfg" id="mm-cfg" data-base="{tar['price']}" data-inf="{tar.get('infusion') or 0}" data-lang="{lg}">
 <div>
@@ -622,7 +672,7 @@ def page(lg, mi):
 </div>
 <aside class="mm-sum" aria-live="polite"><img src="{hero_m}" alt="" loading="lazy" data-nolb><h3>{E(t["sum_h"].format(n=name))}</h3>
 <dl><dt>{t["sum_base"]}</dt><dd id="mm-sb"></dd><dt>{t["sum_eng"]}</dt><dd id="mm-se"></dd><dt>{t["sum_opts"]}</dt><dd id="mm-so"></dd></dl><ul id="mm-sl"></ul>
-<div class="mm-tot"><div class="big"><span id="mm-st"></span><span class="vat">{t["vat"]}</span></div><p>{t["sum_iva"]}: <span id="mm-si"></span></p><p>{t["sum_extra"]}</p></div>
+<div class="mm-tot"><div class="big"><span id="mm-st"></span><span class="vat">{t["vat"]}</span></div><p>{t["sum_iva"]}: <span id="mm-si"></span></p>{ie_html}</div>
 <a class="mm-btn pri" href="#presupuesto" id="mm-send">{t["b_send"]}</a>
 <div class="mm-acts"><button type="button" id="mm-share">{t["b_share"]}</button><button type="button" id="mm-print">{t["b_print"]}</button></div>
 <div class="mm-acts"><button type="button" id="mm-reset">{t["b_reset"]}</button></div>
@@ -694,7 +744,7 @@ def page(lg, mi):
 ''')
         data = {'base': tar['price'], 'inf': tar.get('infusion') or 0, 'name': full, 'lang': lg,
                 'opts': [[tr(op['n'], lg), op['p']] for op in tar['opt']],
-                'L': {k2: t[k2] for k2 in ('sum_none', 'b_copied', 'b_share', 'c_std', 'c_inf', 'sum_base', 'sum_eng', 'sum_opts', 'sum_tot', 'sum_iva', 'vat', 'noeng', 'dl_wait', 'dl_btn', 'sh_offer', 'sh_for', 'sh_date', 'sh_cfg', 'sh_specs', 'sh_scan', 'sh_valid', 'sh_lic')}, 'eng': t['eng_label'],
+                'L': {k2: t[k2] for k2 in ('sum_none', 'b_copied', 'b_share', 'c_std', 'c_inf', 'sum_base', 'sum_eng', 'sum_opts', 'sum_tot', 'sum_iva', 'vat', 'noeng', 'dl_wait', 'dl_btn', 'sh_offer', 'sh_for', 'sh_date', 'sh_cfg', 'sh_specs', 'sh_scan', 'sh_valid', 'sh_lic', 'ie_l', 'ie_all', 'ie_unk')}, 'eng': t['eng_label'], 'why': t['why'], 'iedmt': slug in IEDMT,
                 'kind': t['kind'][kind] + ' · ' + ((f'{eslora:.2f}'.replace('.', ',') if lg != 'en' else f'{eslora:.2f}') + ' m'),
                 'code': ''.join(w[0] for w in name.replace('-', ' ').split()).upper()[:3] + re.sub(r'\\D', '', name)[:2],
                 'specs': [[k3, v3] for k3, v3 in list(sp.items())[:9]] + [[t['f_k'] and {'es': 'Titulación', 'ca': 'Titulació', 'en': 'Licence', 'fr': 'Permis'}[lg], lic(lg, eslora)]] if not any(k3.lower().startswith(('titul', 'licence', 'permis')) for k3 in sp) else [[k3, v3] for k3, v3 in list(sp.items()) if not k3.lower().startswith(('compart', 'diámetro', 'diàmetre', 'tube', 'diamètre'))][:10],
