@@ -1,0 +1,1521 @@
+[
+ {
+  "name": "E-MOTION 36",
+  "price": 283000,
+  "specs": {
+   "Overall length": "10,70 m",
+   "Weight (Infusion System)": "3.000 kg",
+   "Internal length": "9,49 m",
+   "Max persons": "16",
+   "Overall width": "3,60 m",
+   "Fuel tank capacity": "765 L",
+   "Tube diameter": "50-64 cm",
+   "Water tank capacity": "277 L",
+   "Chambers": "7",
+   "Max power": "2*600 hp",
+   "Shaft length": "2 XXL",
+   "Design category": "B"
+  },
+  "std": [
+   "765 L stainless steel fuel tank",
+   "Double \"pass-through\" system for dinette access",
+   "270 L fresh water tank",
+   "Control panel in console with magnetothermic switches",
+   "Waste water disposal system with 50 L tank",
+   "Control panel in cabin with magnetothermic switches",
+   "Electric telescopic multifunction table",
+   "220 v electrical system with circuit braker (shorepower)",
+   "Electrical winch with 10 kg stainless steel anchor and 50 m chain",
+   "Courtesy lighting: 20 LED lights on deck",
+   "Aft deck shower",
+   "6 LED lights in cabin and toilet",
+   "Complete cabin furnishings",
+   "Complete exterior cushions in closed-cell foam and Drycel",
+   "Toilet room with sink and electric wc",
+   "Complete cabin cushions set",
+   "Shower cabin with water collection tank and drain pump",
+   "Side storages in dinette area",
+   "Helm bench with comfort seats and sink",
+   "Automatic bilge pump",
+   "100 L electrical drawer fridge in helm bench",
+   "Gas springs for the opening of all peaks",
+   "Mooring aid kit: 6 cleats and 1 fairlead (stainless steel)",
+   "Navigation lights, anchor light, horn, and compass",
+   "Retractable stainless steel ladder",
+   "Electric inflation system with pressure gauge"
+  ],
+  "opt": [
+   {
+    "n": "Fiberglass bracket (+50cm hull & extension)",
+    "p": 19900
+   },
+   {
+    "n": "42 L electrical fridge in cabin",
+    "p": 1500
+   },
+   {
+    "n": "Fiberglass Hard-Top with glass windshield",
+    "p": 21500
+   },
+   {
+    "n": "Lifting points & slings kit",
+    "p": 1600
+   },
+   {
+    "n": "Electric windshield wiper with washer",
+    "p": 2600
+   },
+   {
+    "n": "Lifting points & slings kit (with bracket)",
+    "p": 2900
+   },
+   {
+    "n": "Aft sunshade with 4 carbon poles",
+    "p": 3900
+   },
+   {
+    "n": "Battery charger, SS shore plug & cable",
+    "p": 1600
+   },
+   {
+    "n": "Aft sunshade (with Hard-Top)",
+    "p": 2900
+   },
+   {
+    "n": "Battery charger (3 engines)",
+    "p": 2000
+   },
+   {
+    "n": "Side and aft sunshade extension",
+    "p": 1000
+   },
+   {
+    "n": "20 L water heater with mixers",
+    "p": 1500
+   },
+   {
+    "n": "Console canvas cover",
+    "p": 450
+   },
+   {
+    "n": "2 Lumishore rear underwater lights",
+    "p": 1250
+   },
+   {
+    "n": "Helm bench canvas cover",
+    "p": 550
+   },
+   {
+    "n": "Single-burner gas stove",
+    "p": 1000
+   },
+   {
+    "n": "Full canvas cover",
+    "p": 3250
+   },
+   {
+    "n": "Induction cooktop",
+    "p": 500
+   },
+   {
+    "n": "Cabin comfort cushions",
+    "p": 600
+   },
+   {
+    "n": "Inverter with service battery upgrade (190 Ah)",
+    "p": 2700
+   },
+   {
+    "n": "Full metallic paint (custom colour)",
+    "p": 42000
+   },
+   {
+    "n": "Marinco electrically controlled spotlight",
+    "p": 900
+   },
+   {
+    "n": "Metallic paint on helm bench and dashboard",
+    "p": 4500
+   },
+   {
+    "n": "Stern windlass with 5 kg anchor",
+    "p": 3900
+   },
+   {
+    "n": "Metallic paint on Hard-Top (top side)",
+    "p": 3900
+   },
+   {
+    "n": "Audio: Fusion Apollo RA770 and 4 JL M3 speakers",
+    "p": 2900
+   },
+   {
+    "n": "Overall external MarineMat decking 12 mm",
+    "p": 11500
+   },
+   {
+    "n": "4 extra speakers & amplifier for Hard-Top",
+    "p": 1500
+   },
+   {
+    "n": "Full teak exterior decking",
+    "p": 18000
+   },
+   {
+    "n": "Windlass remote with chain counter",
+    "p": 500
+   },
+   {
+    "n": "6mm MarineMat cabin flooring",
+    "p": 2500
+   },
+   {
+    "n": "Garmin 115i VHF radio",
+    "p": 900
+   },
+   {
+    "n": "Bow thruster",
+    "p": 4750
+   },
+   {
+    "n": "Garmin 9013xsv GPS, sonar & chart",
+    "p": 5500
+   },
+   {
+    "n": "Water ski pole (max 1 person)",
+    "p": 900
+   },
+   {
+    "n": "Garmin external SD card reader",
+    "p": 400
+   }
+  ]
+ },
+ {
+  "name": "R-EVOLUTION X36",
+  "price": 222000,
+  "specs": {
+   "Overall length": "10,65 (9,98*) m",
+   "Weight (Infusion System)": "2700 kg",
+   "Internal length": "9,49 m",
+   "Max persons": "16",
+   "Overall width": "3,60 m",
+   "Fuel tank capacity": "750 lt",
+   "Tube diameter": "50-64 cm",
+   "Water tank capacity": "210 lt",
+   "Chambers": "7",
+   "Max power": "516 kw",
+   "Shaft length": "XL,XXL,XL",
+   "Design category": "B"
+  },
+  "std": [
+   "Fiberglass structural bracket with extended aft platform",
+   "70 L top-down electric refrigerator",
+   "750 L fuel tank",
+   "Mooring aid kit: 6 cleats and 1 fairlead (stainless steel)",
+   "210 L fresh water tank",
+   "Bow-sunbed extension in teak with cushion",
+   "Electric telescopic multifunction table",
+   "Retractable stainless steel ladder",
+   "Electrical winch with 10 kg stainless steel anchor and 50 m chain",
+   "Automatic bilge pump",
+   "Retractable telescopic aft sunshade",
+   "Courtesy lighting: 10 LED lights on deck",
+   "Aft deck shower",
+   "Complete exterior cushions in closed-cell foam and Drycel",
+   "Control panel in console with magnetothermic switches",
+   "Gas springs for the opening of all peaks",
+   "Toilet room with sink and electric wc",
+   "Navigation lights, anchor light, horn, and compass",
+   "Waste water disposal system",
+   "Electric inflation system with pressure gauge",
+   "Helm bench with comfort seats and sink"
+  ],
+  "opt": [
+   {
+    "n": "Fiberglass Hard-Top with stainless steel supports",
+    "p": 13500
+   },
+   {
+    "n": "Water ski pole (max 1 person)",
+    "p": 900
+   },
+   {
+    "n": "Side and aft sunshade extension",
+    "p": 1000
+   },
+   {
+    "n": "Lifting points & slings kit",
+    "p": 3000
+   },
+   {
+    "n": "Bow sunshade",
+    "p": 1900
+   },
+   {
+    "n": "Battery charger, SS shore plug & cable",
+    "p": 2000
+   },
+   {
+    "n": "Privacy curtain for toilet compartment",
+    "p": 600
+   },
+   {
+    "n": "20 L water heater with mixers",
+    "p": 1500
+   },
+   {
+    "n": "Console canvas cover",
+    "p": 550
+   },
+   {
+    "n": "2 Lumishore rear underwater lights",
+    "p": 1250
+   },
+   {
+    "n": "Helm bench canvas cover",
+    "p": 650
+   },
+   {
+    "n": "Single-burner gas stove",
+    "p": 1000
+   },
+   {
+    "n": "Full canvas cover",
+    "p": 3250
+   },
+   {
+    "n": "Induction cooktop",
+    "p": 500
+   },
+   {
+    "n": "Full metallic paint (custom colour)",
+    "p": 38000
+   },
+   {
+    "n": "Inverter with service battery upgrade (190 Ah)",
+    "p": 2700
+   },
+   {
+    "n": "Metallic paint on helm bench and dashboard",
+    "p": 5000
+   },
+   {
+    "n": "Rear electrical winch with 5 kg stainless steel anchor",
+    "p": 3900
+   },
+   {
+    "n": "Metallic paint on Hard-Top (top side)",
+    "p": 2900
+   },
+   {
+    "n": "Marinco electrically controlled spotlight",
+    "p": 900
+   },
+   {
+    "n": "Overall MarineMat decking 12 mm",
+    "p": 10500
+   },
+   {
+    "n": "Audio: Fusion Apollo RA770 and 4 JL M3 speakers",
+    "p": 2900
+   },
+   {
+    "n": "Partial MarineMat decking 12 mm",
+    "p": 5000
+   },
+   {
+    "n": "4 extra speakers & amplifier for Hard-Top",
+    "p": 1500
+   },
+   {
+    "n": "Overall teak decking",
+    "p": 19000
+   },
+   {
+    "n": "Windlass remote with chain counter",
+    "p": 500
+   },
+   {
+    "n": "Partial teak decking",
+    "p": 9000
+   },
+   {
+    "n": "Garmin 115i VHF radio",
+    "p": 900
+   },
+   {
+    "n": "Difference for 70 L drawer fridge",
+    "p": 700
+   },
+   {
+    "n": "Garmin 9013xsv GPS, sonar & chart",
+    "p": 5500
+   },
+   {
+    "n": "Bow thruster",
+    "p": 4750
+   },
+   {
+    "n": "Garmin external SD card reader",
+    "p": 400
+   }
+  ],
+  "infusion": 239000
+ },
+ {
+  "name": "R-EVOLUTION 35",
+  "price": 202000,
+  "specs": {
+   "Overall length": "10,65 (9,98*) m",
+   "Weight (Infusion System)": "2.400 kg",
+   "Internal length": "9,49 m",
+   "Max persons": "16",
+   "Overall width": "3,60 m",
+   "Fuel tank capacity": "750 lt",
+   "Tube diameter": "50-64 cm",
+   "Water tank capacity": "210 lt",
+   "Chambers": "7",
+   "Max power": "516 kw",
+   "Shaft length": "2 XXL",
+   "Design category": "B"
+  },
+  "std": [
+   "750 L fuel tank",
+   "70 L top-down electric refrigerator",
+   "210 L fresh water tank",
+   "Mooring aid kit: 6 cleats and 1 fairlead (stainless steel)",
+   "Electric telescopic multifunction table",
+   "Bow-sunbed extension in teak with cushion",
+   "Electrical winch with 10 kg stainless steel anchor and 50 m chain",
+   "Retractable stainless steel ladder",
+   "Retractable telescopic aft sunshade",
+   "Automatic bilge pump",
+   "Aft deck shower",
+   "Courtesy lighting: 10 LED lights on deck",
+   "Control panel in console with magnetothermic switches",
+   "Complete exterior cushions in closed-cell foam and Drycel",
+   "Toilet room with sink and electric wc",
+   "Gas springs for the opening of all peaks",
+   "Waste water disposal system",
+   "Navigation lights, anchor light, horn, and compass",
+   "Helm bench with comfort seats and sink",
+   "Electric inflation system with pressure gauge"
+  ],
+  "opt": [
+   {
+    "n": "Fiberglass Hard-Top with stainless steel supports",
+    "p": 13500
+   },
+   {
+    "n": "Water ski pole (max 1 person)",
+    "p": 900
+   },
+   {
+    "n": "Side and aft sunshade extension",
+    "p": 1000
+   },
+   {
+    "n": "Lifting points & slings kit",
+    "p": 1600
+   },
+   {
+    "n": "Bow sunshade",
+    "p": 1900
+   },
+   {
+    "n": "Battery charger, SS shore plug & cable",
+    "p": 1600
+   },
+   {
+    "n": "Privacy curtain for toilet compartment",
+    "p": 600
+   },
+   {
+    "n": "20 L water heater with mixers",
+    "p": 1500
+   },
+   {
+    "n": "Console canvas cover",
+    "p": 550
+   },
+   {
+    "n": "2 Lumishore rear underwater lights",
+    "p": 1250
+   },
+   {
+    "n": "Helm bench canvas cover",
+    "p": 650
+   },
+   {
+    "n": "Single-burner gas stove",
+    "p": 1000
+   },
+   {
+    "n": "Full canvas cover",
+    "p": 3250
+   },
+   {
+    "n": "Induction cooktop",
+    "p": 500
+   },
+   {
+    "n": "Full metallic paint (custom colour)",
+    "p": 36000
+   },
+   {
+    "n": "Inverter with service battery upgrade (190 Ah)",
+    "p": 2700
+   },
+   {
+    "n": "Metallic paint on helm bench and dashboard",
+    "p": 5000
+   },
+   {
+    "n": "Rear electrical winch with 5 kg stainless steel anchor",
+    "p": 3900
+   },
+   {
+    "n": "Metallic paint on Hard-Top (top side)",
+    "p": 2900
+   },
+   {
+    "n": "Marinco electrically controlled spotlight",
+    "p": 900
+   },
+   {
+    "n": "Overall MarineMat decking 12 mm",
+    "p": 10000
+   },
+   {
+    "n": "Audio: Fusion Apollo RA770 and 4 JL M3 speakers",
+    "p": 2900
+   },
+   {
+    "n": "Partial MarineMat decking 12 mm",
+    "p": 4500
+   },
+   {
+    "n": "4 extra speakers & amplifier for Hard-Top",
+    "p": 1500
+   },
+   {
+    "n": "Overall teak decking",
+    "p": 18000
+   },
+   {
+    "n": "Windlass remote with chain counter",
+    "p": 500
+   },
+   {
+    "n": "Partial teak decking",
+    "p": 8000
+   },
+   {
+    "n": "Garmin 115i VHF radio",
+    "p": 900
+   },
+   {
+    "n": "Difference for 70 L drawer fridge",
+    "p": 700
+   },
+   {
+    "n": "Garmin 9013xsv GPS, sonar & chart",
+    "p": 5500
+   },
+   {
+    "n": "Bow thruster",
+    "p": 4750
+   },
+   {
+    "n": "Garmin external SD card reader",
+    "p": 400
+   }
+  ],
+  "infusion": 219000
+ },
+ {
+  "name": "E-MOTION 32",
+  "price": 185000,
+  "specs": {
+   "Overall length": "9,98 m",
+   "Weight (Infusion System)": "2.500 kg",
+   "Internal length": "8,5 m",
+   "Max persons": "16",
+   "Overall width": "3,27 m",
+   "Fuel tank capacity": "750 lt",
+   "Tube diameter": "50-61 cm",
+   "Water tank capacity": "160 lt",
+   "Chambers": "8",
+   "Max power": "515 kw",
+   "Shaft length": "2 XXL",
+   "Design category": "B"
+  },
+  "std": [
+   "Fuel tank 750 L",
+   "Telescopic stainless steel ladder",
+   "130 L fresh water tank",
+   "Control panel in console with magnetothermic switches",
+   "Electric telescopic multifunction table",
+   "Control panel in cabin with magnetothermic switches",
+   "Electrical winch with 10 kg stainless anchor and chain",
+   "Deck courtesy LED lighting kit",
+   "Aft deck shower",
+   "LED ambient lighting kit for cabin and toilet",
+   "Internal and external sink and tap",
+   "Complete exterior cushions in closed-cell foam and Drycel",
+   "Complete cabin furnishings",
+   "Complete cabin cushions set",
+   "Toilet room with sink and electric wc",
+   "Side storages in dinette area",
+   "EC standard waste water disposal system with L 70 tank",
+   "Automatic bilge pump",
+   "Helm bench with comfort seats and sink",
+   "Gas springs for the opening of all external peaks",
+   "100 L electrical drawer fridge in helm bench",
+   "Electric inflation system with pressure gauge",
+   "Mooring aid kit: 4 cleats and 1 fairlead (stainless steel)",
+   "Navigation lights, anchor light, horn, and compass"
+  ],
+  "opt": [
+   {
+    "n": "Fiberglass roll-bar with navigation lights and horn",
+    "p": 4950
+   },
+   {
+    "n": "Water ski pole (max 1 person)",
+    "p": 900
+   },
+   {
+    "n": "Fiberglass Hard-Top with stainless steel supports",
+    "p": 13500
+   },
+   {
+    "n": "Lifting points & slings kit",
+    "p": 1400
+   },
+   {
+    "n": "Totem for lights, antennas and accessories",
+    "p": 2300
+   },
+   {
+    "n": "Rear electrical winch with 5 kg stainless steel anchor",
+    "p": 3900
+   },
+   {
+    "n": "Aft sunshade",
+    "p": 3200
+   },
+   {
+    "n": "Battery charger, SS shore plug & cable",
+    "p": 1500
+   },
+   {
+    "n": "Side and aft sunshade extension",
+    "p": 950
+   },
+   {
+    "n": "Water heater with mixers",
+    "p": 1500
+   },
+   {
+    "n": "Console canvas cover",
+    "p": 450
+   },
+   {
+    "n": "2 rear underwater lights",
+    "p": 900
+   },
+   {
+    "n": "Helm bench canvas cover",
+    "p": 550
+   },
+   {
+    "n": "Single-burner gas stove",
+    "p": 1000
+   },
+   {
+    "n": "Full canvas cover",
+    "p": 2800
+   },
+   {
+    "n": "Induction cooktop",
+    "p": 500
+   },
+   {
+    "n": "Comfort cushions in cabin",
+    "p": 500
+   },
+   {
+    "n": "Inverter with service battery upgrade (190 Ah)",
+    "p": 2700
+   },
+   {
+    "n": "Full metallic paint (custom colour)",
+    "p": 33000
+   },
+   {
+    "n": "Electrically controlled spotlight",
+    "p": 900
+   },
+   {
+    "n": "Metallic paint on helm bench and dashboard",
+    "p": 4200
+   },
+   {
+    "n": "Audio: JL MM55 and 4 JL M3 speakers",
+    "p": 2800
+   },
+   {
+    "n": "Metallic paint on Hard-Top (top side)",
+    "p": 2900
+   },
+   {
+    "n": "4 extra speakers & amplifier for Hard-Top",
+    "p": 1500
+   },
+   {
+    "n": "Overall MarineMat decking 12 mm",
+    "p": 8500
+   },
+   {
+    "n": "Windlass remote with chain counter",
+    "p": 500
+   },
+   {
+    "n": "Partial MarineMat decking 12 mm",
+    "p": 4800
+   },
+   {
+    "n": "Garmin 115i VHF radio",
+    "p": 900
+   },
+   {
+    "n": "Overall teak decking",
+    "p": 15000
+   },
+   {
+    "n": "Garmin 9013xsv GPS, sonar & chart",
+    "p": 5500
+   },
+   {
+    "n": "Partial teak decking",
+    "p": 9000
+   },
+   {
+    "n": "Garmin external SD card reader",
+    "p": 400
+   },
+   {
+    "n": "Bow thruster",
+    "p": 4750
+   }
+  ],
+  "infusion": 198000
+ },
+ {
+  "name": "E-MOTION 29",
+  "price": 156500,
+  "specs": {
+   "Overall length": "8,90 m",
+   "Weight (Infusion System)": "2.100 kg",
+   "Internal length": "7,60 m",
+   "Max persons": "18",
+   "Overall width": "3,30 m",
+   "Fuel tank capacity": "550 lt",
+   "Tube diameter": "52-65 cm",
+   "Water tank capacity": "160 lt",
+   "Chambers": "7",
+   "Max power": "442 kw",
+   "Shaft length": "2 XL",
+   "Design category": "B"
+  },
+  "std": [
+   "Fuel tank 550 L",
+   "Telescopic stainless steel ladder",
+   "130 L fresh water tank",
+   "Control panel in console with magnetothermic switches",
+   "Electric telescopic multifunction table",
+   "Control panel in cabin with magnetothermic switches",
+   "Electrical winch with 10 kg stainless anchor and chain",
+   "Deck courtesy LED lighting kit",
+   "Aft deck shower",
+   "LED ambient lighting kit for cabin and toilet",
+   "Complete cabin furnishings",
+   "Complete exterior cushions in closed-cell foam and Drycel",
+   "Toilet room with sink and electric wc",
+   "Complete cabin cushions set",
+   "Waste water disposal system",
+   "Side storages in dinette area",
+   "Helm bench with comfort seats and sink",
+   "Automatic bilge pump",
+   "40 L top-down electric refrigerator",
+   "Gas springs for the opening of all external peaks",
+   "Folding cutting board integrated into the helm bench",
+   "Electric inflation system with pressure gauge",
+   "Mooring aid kit: 4 cleats and 1 fairlead (stainless steel)",
+   "Navigation lights, anchor light, horn, and compass"
+  ],
+  "opt": [
+   {
+    "n": "Fiberglass roll-bar with navigation lights and horn",
+    "p": 4950
+   },
+   {
+    "n": "Water ski pole (max 1 person)",
+    "p": 900
+   },
+   {
+    "n": "Fiberglass Hard-Top with stainless steel supports",
+    "p": 13500
+   },
+   {
+    "n": "Lifting points & slings kit",
+    "p": 1400
+   },
+   {
+    "n": "Totem for lights, antennas and accessories",
+    "p": 2300
+   },
+   {
+    "n": "Battery charger, SS shore plug & cable",
+    "p": 1500
+   },
+   {
+    "n": "Aft sunshade",
+    "p": 3200
+   },
+   {
+    "n": "Water heater with mixers",
+    "p": 1500
+   },
+   {
+    "n": "Side and aft sunshade extension",
+    "p": 950
+   },
+   {
+    "n": "2 rear underwater lights",
+    "p": 900
+   },
+   {
+    "n": "Console canvas cover",
+    "p": 450
+   },
+   {
+    "n": "70 L refrigerator upgrade",
+    "p": 1300
+   },
+   {
+    "n": "Helm bench canvas cover",
+    "p": 550
+   },
+   {
+    "n": "Single-burner gas stove",
+    "p": 1000
+   },
+   {
+    "n": "Full canvas cover",
+    "p": 2500
+   },
+   {
+    "n": "Induction cooktop",
+    "p": 500
+   },
+   {
+    "n": "Comfort cushions in cabin",
+    "p": 500
+   },
+   {
+    "n": "Inverter with service battery upgrade (190 Ah)",
+    "p": 2700
+   },
+   {
+    "n": "Full metallic paint (custom colour)",
+    "p": 30000
+   },
+   {
+    "n": "Electrically controlled spotlight",
+    "p": 900
+   },
+   {
+    "n": "Metallic paint on helm bench and dashboard",
+    "p": 3700
+   },
+   {
+    "n": "Audio: JL MM55 and 4 JL M3 speakers",
+    "p": 2800
+   },
+   {
+    "n": "Metallic paint on Hard-Top (top side)",
+    "p": 2900
+   },
+   {
+    "n": "4 extra speakers & amplifier for Hard-Top",
+    "p": 1400
+   },
+   {
+    "n": "Overall MarineMat decking 12 mm",
+    "p": 7800
+   },
+   {
+    "n": "Windlass remote with chain counter",
+    "p": 500
+   },
+   {
+    "n": "Partial MarineMat decking 12 mm",
+    "p": 4500
+   },
+   {
+    "n": "Garmin 115i VHF radio",
+    "p": 900
+   },
+   {
+    "n": "Overall teak decking",
+    "p": 14000
+   },
+   {
+    "n": "Garmin 1223xsv GPS, sonar & chart",
+    "p": 4000
+   },
+   {
+    "n": "Partial teak decking",
+    "p": 8500
+   },
+   {
+    "n": "Garmin external SD card reader",
+    "p": 400
+   },
+   {
+    "n": "Bow thruster",
+    "p": 4750
+   }
+  ],
+  "infusion": 171000
+ },
+ {
+  "name": "TWENTYSIX",
+  "price": 95000,
+  "specs": {
+   "Overall length": "8,43 m",
+   "Weight (Infusion System)": "1.500 kg",
+   "Internal length": "7,40 m",
+   "Max persons": "16",
+   "Overall width": "3,25 m",
+   "Fuel tank capacity": "350 lt",
+   "Tube diameter": "50-61 cm",
+   "Water tank capacity": "120 lt",
+   "Chambers": "6",
+   "Max power": "441,2 kw",
+   "Shaft length": "2L",
+   "Design category": "B"
+  },
+  "std": [
+   "350 L fuel tank",
+   "Control panel in console with magnetothermic switches",
+   "120 L fresh water tank",
+   "Compass",
+   "Aft deck shower",
+   "Automatic bilge pump",
+   "Helm bench with folding backrest",
+   "Deck courtesy LED lighting kit",
+   "70 L insulated icebox and cutting board in helm bench",
+   "Telescopic stainless steel ladder",
+   "Multifunction dinette table with support and cushion",
+   "Complete exterior cushions in closed-cell foam and Drycel",
+   "Prow sundeck extension with cushion",
+   "Gas spring for opening peaks",
+   "Rear sundeck extension with cushion",
+   "Electric inflation system with pressure gauge",
+   "Power grips for haulage at bow",
+   "Navigation lights, anchor light, horn, and compass",
+   "Toilet compartment in console"
+  ],
+  "opt": [
+   {
+    "n": "Fiberglass roll-bar with navigation lights and horn",
+    "p": 4600
+   },
+   {
+    "n": "Faucet in toilet compartment with drain",
+    "p": 500
+   },
+   {
+    "n": "Roll-bar lowering hinge kit",
+    "p": 600
+   },
+   {
+    "n": "Electrical WC with discharge to sea",
+    "p": 1050
+   },
+   {
+    "n": "Fiberglass hard-top with stainless steel supports",
+    "p": 11500
+   },
+   {
+    "n": "EC standard water disposal plant",
+    "p": 1950
+   },
+   {
+    "n": "Stainless steel kit for LED lights and horn (Hard-Top)",
+    "p": 650
+   },
+   {
+    "n": "Electrical winch with steel anchor and chain",
+    "p": 3900
+   },
+   {
+    "n": "Totem for lights, antennas and accessories",
+    "p": 2300
+   },
+   {
+    "n": "Extra inox fuel tank 110 L",
+    "p": 2100
+   },
+   {
+    "n": "2-arch rear sun awning (roll-bar)",
+    "p": 1900
+   },
+   {
+    "n": "Teak for rear platform, steps and sides",
+    "p": 3300
+   },
+   {
+    "n": "3-arch rear sun awning (no roll-bar)",
+    "p": 2200
+   },
+   {
+    "n": "Overall MarineMat decking 9 mm",
+    "p": 4800
+   },
+   {
+    "n": "Side and aft sunshade extension",
+    "p": 900
+   },
+   {
+    "n": "Partial MarineMat decking 9 mm",
+    "p": 2600
+   },
+   {
+    "n": "Bow sunshade extension, with aluminium arch",
+    "p": 1000
+   },
+   {
+    "n": "Lifting slings",
+    "p": 450
+   },
+   {
+    "n": "Console canvas cover",
+    "p": 300
+   },
+   {
+    "n": "Battery charger, SS shore plug & cable",
+    "p": 1450
+   },
+   {
+    "n": "Console and helm bench canvas cover",
+    "p": 800
+   },
+   {
+    "n": "Hertz stereo system with 4 speakers",
+    "p": 1500
+   },
+   {
+    "n": "Privacy curtain for toilet compartment",
+    "p": 500
+   },
+   {
+    "n": "4 Hertz speakers and amplifier kit for Hard-Top",
+    "p": 1200
+   },
+   {
+    "n": "Full canvas cover",
+    "p": 1700
+   },
+   {
+    "n": "Windlass remote with chain counter",
+    "p": 500
+   },
+   {
+    "n": "Faucet in helm bench with drain",
+    "p": 400
+   },
+   {
+    "n": "Garmin 115i VHF radio",
+    "p": 900
+   },
+   {
+    "n": "40 L electrical refrigerator",
+    "p": 1400
+   },
+   {
+    "n": "Garmin 923xsv GPS, sonar & chart",
+    "p": 2900
+   }
+  ],
+  "infusion": 104000
+ },
+ {
+  "name": "R-EVOLUTION X27",
+  "price": 110000,
+  "specs": {
+   "Overall length": "8,32 m",
+   "Weight": "1950 kg",
+   "Internal length": "\\",
+   "Max persons": "14",
+   "Overall width": "3,08 m",
+   "Fuel tank capacity": "375 L",
+   "Tube diameter": "48-56 cm",
+   "Water tank capacity": "105 lt",
+   "Chambers": "6",
+   "Max power": "330,97 kw",
+   "Shaft length": "2 XL",
+   "Design category": "B"
+  },
+  "std": [
+   "375 L fuel tank",
+   "Control panel with 20 magnetothermic switches",
+   "105 L fresh water tank",
+   "Compass",
+   "Aft deck shower",
+   "Retractable stainless steel ladder",
+   "Toilet compartment in console",
+   "Complete exterior cushions in closed-cell foam and Drycel",
+   "Multifunction dinette table with support and cushion",
+   "Side storages in dinette area",
+   "Helm bench with twin adjustable seats",
+   "4 stainless steel cup-holders",
+   "Waste bin in helm bench",
+   "Automatic bilge pump",
+   "Courtesy lighting: 7 LED lights on deck",
+   "Mooring aid kit: 4 cleats and 1 fairlead (stainless steel)",
+   "\"Pass-through\" system for access to dinette",
+   "Gas spring for opening peaks",
+   "Double USB port",
+   "Electrical inflation system"
+  ],
+  "opt": [
+   {
+    "n": "Fiberglass Hard-Top with stainless steel supports",
+    "p": 12500
+   },
+   {
+    "n": "42 L drawer fridge",
+    "p": 1850
+   },
+   {
+    "n": "Stainless steel kit for LED navigation lights and horn",
+    "p": 750
+   },
+   {
+    "n": "Electrical WC with discharge to sea",
+    "p": 1150
+   },
+   {
+    "n": "Totem for lights, antennas and accessories",
+    "p": 2300
+   },
+   {
+    "n": "EC standard water disposal plant",
+    "p": 1950
+   },
+   {
+    "n": "Aft sunshade with 4 carbon poles",
+    "p": 3900
+   },
+   {
+    "n": "Faucet in toilet compartment with drain",
+    "p": 500
+   },
+   {
+    "n": "Aft bimini with 4 stainless steel poles",
+    "p": 2800
+   },
+   {
+    "n": "Electrical winch with steel anchor and chain",
+    "p": 3900
+   },
+   {
+    "n": "Aft bimini with 2 carbon poles (Hard-Top)",
+    "p": 2900
+   },
+   {
+    "n": "Overall teak decking",
+    "p": 7500
+   },
+   {
+    "n": "Aft bimini with 2 steel poles (Hard-Top)",
+    "p": 2000
+   },
+   {
+    "n": "Partial teak decking",
+    "p": 3900
+   },
+   {
+    "n": "Side and aft sunshade extension",
+    "p": 800
+   },
+   {
+    "n": "Overall MarineMat decking 9 mm",
+    "p": 4900
+   },
+   {
+    "n": "Bow sunshade with 2 poles",
+    "p": 2500
+   },
+   {
+    "n": "Partial MarineMat decking 9mm (no deck)",
+    "p": 2600
+   },
+   {
+    "n": "Console canvas cover",
+    "p": 300
+   },
+   {
+    "n": "Lifting points & slings kit",
+    "p": 1000
+   },
+   {
+    "n": "Helm-bench canvas cover",
+    "p": 500
+   },
+   {
+    "n": "Battery charger, SS shore plug & cable",
+    "p": 1500
+   },
+   {
+    "n": "Console and helm bench canvas cover",
+    "p": 850
+   },
+   {
+    "n": "Hertz stereo system with 4 speakers",
+    "p": 1500
+   },
+   {
+    "n": "Privacy curtain for toilet compartment",
+    "p": 500
+   },
+   {
+    "n": "2 Hertz speakers and amplifier kit for T-Top",
+    "p": 800
+   },
+   {
+    "n": "Full canvas cover",
+    "p": 1800
+   },
+   {
+    "n": "Windlass remote with chain counter",
+    "p": 500
+   },
+   {
+    "n": "Faucet in helm bench with drain",
+    "p": 400
+   },
+   {
+    "n": "Garmin 115i VHF radio",
+    "p": 900
+   },
+   {
+    "n": "42 L top-down fridge with foldable cutboard",
+    "p": 1500
+   },
+   {
+    "n": "Garmin 923xsv GPS, sonar & chart",
+    "p": 2900
+   }
+  ]
+ },
+ {
+  "name": "R-EVOLUTION 26",
+  "price": 107000,
+  "specs": {
+   "Overall length": "8,02 m",
+   "Weight": "1600 kg",
+   "Internal length": "\\",
+   "Max persons": "14",
+   "Overall width": "3,08 m",
+   "Fuel tank capacity": "375 L",
+   "Tube diameter": "48-56 cm",
+   "Water tank capacity": "105 lt",
+   "Chambers": "6",
+   "Max power": "330,97 kw",
+   "Shaft length": "1 XL",
+   "Design category": "B"
+  },
+  "std": [
+   "375 L fuel tank",
+   "Control panel with 20 magnetothermic switches",
+   "105 L fresh water tank",
+   "Compass",
+   "Aft deck shower",
+   "Retractable stainless steel ladder",
+   "Toilet compartment in console",
+   "Complete exterior cushions in closed-cell foam and Drycel",
+   "Multifunction dinette table with support and cushion",
+   "Side storages in dinette area",
+   "Helm bench with twin adjustable seats",
+   "4 stainless steel cup-holders",
+   "Waste bin in helm bench",
+   "Automatic bilge pump",
+   "Courtesy lighting: 7 LED lights on deck",
+   "Mooring aid kit: 4 cleats and 1 fairlead (stainless steel)",
+   "\"Pass-through\" system for access to dinette",
+   "Gas spring for opening peaks",
+   "Double USB port",
+   "Electrical inflation system"
+  ],
+  "opt": [
+   {
+    "n": "Fiberglass Hard-Top with stainless steel supports",
+    "p": 12500
+   },
+   {
+    "n": "42 L drawer fridge",
+    "p": 1850
+   },
+   {
+    "n": "Stainless steel kit for LED navigation lights and horn",
+    "p": 750
+   },
+   {
+    "n": "Electrical WC with discharge to sea",
+    "p": 1150
+   },
+   {
+    "n": "Totem for lights, antennas and accessories",
+    "p": 2300
+   },
+   {
+    "n": "EC standard water disposal plant",
+    "p": 1950
+   },
+   {
+    "n": "Aft sunshade with 4 carbon poles",
+    "p": 3900
+   },
+   {
+    "n": "Faucet in toilet compartment with drain",
+    "p": 500
+   },
+   {
+    "n": "Aft bimini with 4 stainless steel poles",
+    "p": 2800
+   },
+   {
+    "n": "Electrical winch with steel anchor and chain",
+    "p": 3900
+   },
+   {
+    "n": "Aft bimini with 2 carbon poles (Hard-Top)",
+    "p": 2900
+   },
+   {
+    "n": "Overall teak decking",
+    "p": 7500
+   },
+   {
+    "n": "Aft bimini with 2 steel poles (Hard-Top)",
+    "p": 2000
+   },
+   {
+    "n": "Partial teak decking",
+    "p": 3900
+   },
+   {
+    "n": "Side and aft sunshade extension",
+    "p": 800
+   },
+   {
+    "n": "Overall MarineMat decking 9 mm",
+    "p": 4900
+   },
+   {
+    "n": "Bow sunshade with 2 poles",
+    "p": 2500
+   },
+   {
+    "n": "Partial MarineMat decking 9 mm (no deck)",
+    "p": 2600
+   },
+   {
+    "n": "Console canvas cover",
+    "p": 300
+   },
+   {
+    "n": "Lifting points & slings kit",
+    "p": 1000
+   },
+   {
+    "n": "Helm-bench canvas cover",
+    "p": 500
+   },
+   {
+    "n": "Battery charger, SS shore plug & cable",
+    "p": 1500
+   },
+   {
+    "n": "Console and helm bench canvas cover",
+    "p": 850
+   },
+   {
+    "n": "Hertz stereo system with 4 speakers",
+    "p": 1500
+   },
+   {
+    "n": "Privacy curtain for toilet compartment",
+    "p": 500
+   },
+   {
+    "n": "2 Hertz speakers and amplifier kit for T-Top",
+    "p": 800
+   },
+   {
+    "n": "Full canvas cover",
+    "p": 1800
+   },
+   {
+    "n": "Windlass remote with chain counter",
+    "p": 500
+   },
+   {
+    "n": "Faucet in helm bench with drain",
+    "p": 400
+   },
+   {
+    "n": "Garmin 115i VHF radio",
+    "p": 900
+   },
+   {
+    "n": "42 L top-down fridge with foldable cutboard",
+    "p": 1500
+   },
+   {
+    "n": "Garmin 923xsv GPS, sonar & chart",
+    "p": 2900
+   }
+  ]
+ },
+ {
+  "name": "TWENTYTHREE",
+  "price": 66000,
+  "specs": {
+   "Overall length": "7,40 m",
+   "Weight": "930 kg",
+   "Internal length": "6,35 m",
+   "Max persons": "14",
+   "Overall width": "2,87 m",
+   "Fuel tank capacity": "300 lt",
+   "Tube diameter": "48-56 cm",
+   "Water tank capacity": "75 lt",
+   "Chambers": "5",
+   "Max power": "224 kw",
+   "Shaft length": "1 XL",
+   "Design category": "C"
+  },
+  "std": [
+   "300 L stainless steel fuel tank installed to EC standards",
+   "Control panel in console with magnetothermic switches",
+   "75 L fresh water tank",
+   "Compass",
+   "Aft deck shower",
+   "Complete exterior cushions in closed-cell foam and Drycel",
+   "Fiberglass helm console",
+   "Telescopic stainless steel ladder",
+   "Helm bench with folding backrest",
+   "Automatic bilge pump",
+   "70 L insulated icebox and cutting board in helm bench",
+   "Mooring aid kit: 4 stainless steel cleats",
+   "Multifunction dinette table with support and cushion",
+   "Deck courtesy LED lighting kit",
+   "Bow sunshade extension with cushion",
+   "Gas springs to open peaks",
+   "Navigation lights, anchor light, horn, and compass",
+   "Oars, inflator, manometer and repair kit"
+  ],
+  "opt": [
+   {
+    "n": "Fiberglass roll-bar, with navigation lights and horn",
+    "p": 3500
+   },
+   {
+    "n": "2 lifting points",
+    "p": 150
+   },
+   {
+    "n": "Reversible hinges kit for fiberglass roll-bar",
+    "p": 500
+   },
+   {
+    "n": "Electric winch with Kg 7,5 anchor in stainless steel",
+    "p": 3700
+   },
+   {
+    "n": "Rear sunshade awning 2 arches",
+    "p": 1600
+   },
+   {
+    "n": "Hand-held controller for winch with chain counter",
+    "p": 450
+   },
+   {
+    "n": "Prow sunshade extension with aluminium arch",
+    "p": 950
+   },
+   {
+    "n": "Bracket, rear fiberglass extension and fender holder",
+    "p": 800
+   },
+   {
+    "n": "Side sunshade extension",
+    "p": 400
+   },
+   {
+    "n": "Overall MarineMat decking 9 mm",
+    "p": 3400
+   },
+   {
+    "n": "Rear sunshade extension",
+    "p": 400
+   },
+   {
+    "n": "Partial MarineMat panelling 9 mm",
+    "p": 2300
+   },
+   {
+    "n": "Tap and drain for sink",
+    "p": 400
+   },
+   {
+    "n": "Stainless steel handrails for roll-bar",
+    "p": 300
+   },
+   {
+    "n": "Cover for inflated/deflated boat",
+    "p": 1200
+   },
+   {
+    "n": "Hertz stereo system with 4 speakers",
+    "p": 1500
+   },
+   {
+    "n": "Cover for console and driving seat",
+    "p": 600
+   },
+   {
+    "n": "Garmin 115i VHF radio",
+    "p": 900
+   },
+   {
+    "n": "40 L storage refrigerator",
+    "p": 1350
+   },
+   {
+    "n": "GPS/eco Garmin Echomap 723xsv with map",
+    "p": 1950
+   },
+   {
+    "n": "Lifting slings",
+    "p": 400
+   }
+  ]
+ }
+]
