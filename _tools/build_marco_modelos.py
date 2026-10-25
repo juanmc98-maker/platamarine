@@ -18,6 +18,15 @@ PH = json.load(open(os.path.join(D, 'photos.json')))
 PQ = json.load(open(os.path.join(D, 'para_quien.json'))) if os.path.exists(os.path.join(D, 'para_quien.json')) else {}
 PQ_KICK = {'es': '¿Es para ti?', 'ca': 'És per a tu?', 'en': 'Is it for you?', 'fr': 'Est-ce pour vous ?'}
 PQ_CSS = '.mm-pq{border-top:1px solid var(--line)}.mm-who{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.mm-who>div{border:1px solid var(--line);border-radius:14px;padding:18px 20px;background:#fff}.mm-who h3{font-family:var(--display);font-size:1.08rem;font-weight:700;margin:0 0 8px;color:var(--ink)}.mm-who p{margin:0;line-height:1.6;color:var(--ink-2);font-size:.96rem}@media(max-width:900px){.mm-who{grid-template-columns:1fr}}'
+# Capacidad: la homologación CE (>12 personas) se muestra con nota de la norma española (RD 339/2021)
+CAP_K = ('homologación ce', 'homologació ce', 'ce rating', 'homologation ce')
+PAX_NOTE = {'es': '* En España, en recreo, máximo 12 pasajeros más la tripulación (RD 339/2021).',
+            'ca': '* A Espanya, en esbarjo, màxim 12 passatgers més la tripulació (RD 339/2021).',
+            'en': '* In Spain, for recreational use, a maximum of 12 passengers plus crew (Royal Decree 339/2021).',
+            'fr': '* En Espagne, en plaisance, 12 passagers maximum plus l’équipage (RD 339/2021).'}
+PAX_CFG = {'es': 'en España, en recreo, máx. 12 pasajeros + tripulación', 'ca': 'a Espanya, en esbarjo, màx. 12 passatgers + tripulació',
+           'en': 'in Spain, recreational use: max. 12 passengers + crew', 'fr': 'en Espagne, en plaisance : 12 passagers max. + équipage'}
+PAX_KEYS_STYLE = 'margin:0;padding:8px 16px;background:#fff;border-bottom:1px solid var(--line);text-align:center;font-size:.8rem;line-height:1.45;color:var(--ink-2)'
 LANGS = {'es': '', 'ca': '/ca', 'en': '/en', 'fr': '/fr'}
 SITE = 'https://www.platamarine.com'
 V = '20261024b'
@@ -615,7 +624,7 @@ def page(lg, mi):
         return '—'
     keys = [(sv('eslora total', 'length overall', 'longueur hors'), {'es': 'Eslora', 'ca': 'Eslora', 'en': 'Length', 'fr': 'Longueur'}[lg]),
             (sv('manga', 'mànega', 'beam', 'largeur'), {'es': 'Manga', 'ca': 'Mànega', 'en': 'Beam', 'fr': 'Largeur'}[lg]),
-            (sv('personas', 'persones', 'people', 'personnes') if slug != 'e-motion-44' else sv('camarotes', 'cabines', 'cabins'), {'es': 'Personas', 'ca': 'Persones', 'en': 'People', 'fr': 'Personnes'}[lg] if slug != 'e-motion-44' else {'es': 'Camarotes', 'ca': 'Cabines', 'en': 'Cabins', 'fr': 'Cabines'}[lg]),
+            ((sv(*CAP_K).rstrip('*'), next(kk for kk in sp if kk.lower().startswith(CAP_K)) + '*') if any(kk.lower().startswith(CAP_K) for kk in sp) else (sv('personas', 'persones', 'people', 'personnes'), {'es': 'Personas', 'ca': 'Persones', 'en': 'People', 'fr': 'Personnes'}[lg])) if slug != 'e-motion-44' else (sv('camarotes', 'cabines', 'cabins'), {'es': 'Camarotes', 'ca': 'Cabines', 'en': 'Cabins', 'fr': 'Cabines'}[lg]),
             (maxpow(slug, lg).split(' (')[0] if '(' in maxpow(slug, lg) and 'kW' in maxpow(slug, lg) else maxpow(slug, lg), {'es': 'Potencia máx.', 'ca': 'Potència màx.', 'en': 'Max. power', 'fr': 'Puiss. max.'}[lg]),
             (lic(lg, eslora).replace(' o superior', '').replace(' or higher', '').replace(' ou supérieur', '').replace('Spanish ', '').replace(' espagnol', ''), {'es': 'Titulación', 'ca': 'Titulació', 'en': 'Licence', 'fr': 'Permis'}[lg])]
     # power in cv for kW values
@@ -634,7 +643,9 @@ def page(lg, mi):
              + (f'<a class="mm-btn pri" href="#configurar">{t["h_cta"]}</a>' if tar else f'<a class="mm-btn pri" href="#presupuesto">{t["nav"][4]}</a>')
              + (f'<a class="mm-btn gho" href="#fotos">{t["h_ph"].format(k=k)}</a>' if k else '') + '</div></div></section>\n')
     o[-1] = o[-1].replace(f'· {eslora:.2f} m', '· ' + (f'{eslora:.2f}'.replace('.', ',') if lg != 'en' else f'{eslora:.2f}') + ' m')
-    o.append('<div class="mm-keys">' + ''.join(f'<div><b>{E(v)}</b><span>{E(l)}</span></div>' for v, l in keys) + '</div>\n')
+    pax = any(vv.endswith('*') and kk.lower().startswith(CAP_K) for kk, vv in sp.items())
+    o.append('<div class="mm-keys">' + ''.join(f'<div><b>{E(v)}</b><span>{E(l)}</span></div>' for v, l in keys) + '</div>'
+             + (f'<p class="mm-pax" style="{PAX_KEYS_STYLE}">{E(PAX_NOTE[lg])}</p>' if pax else '') + '\n')
     o.append('<nav class="mm-sub" aria-label="' + E(full) + '"><div class="wrap">' + ''.join(f'<a href="#{a}"{" class=q" if a == "presupuesto" else ""}>{E(b)}</a>' for a, b in navs) + '</div></nav>\n')
     # Galería
     if k:
@@ -696,7 +707,7 @@ def page(lg, mi):
     # Ficha
     lic_key = {'es': 'Titulación', 'ca': 'Titulació', 'en': 'Licence', 'fr': 'Permis'}[lg]
     spd = ''.join(f'<div><dt>{E(kk)}</dt><dd>{E(vv)}</dd></div>' for kk, vv in sp.items())
-    o.append(f'<section class="mm-sec{" alt" if not tar else ""}" id="ficha"><div class="wrap"><p class="k">{t["f_k"]}</p><h2>{t["f_h"]}</h2><dl class="mm-spec">{spd}</dl></div></section>\n')
+    o.append(f'<section class="mm-sec{" alt" if not tar else ""}" id="ficha"><div class="wrap"><p class="k">{t["f_k"]}</p><h2>{t["f_h"]}</h2><dl class="mm-spec">{spd}</dl>' + (f'<p class="mm-note mm-pax" style="margin:14px 0 0">{E(PAX_NOTE[lg])}</p>' if pax else '') + '</div></section>\n')
     # Para quién es / frente al modelo hermano / motores
     pq = PQ.get(slug, {}).get(lg)
     if pq:
@@ -757,12 +768,13 @@ def page(lg, mi):
 <p id="dl_status" class="help" role="status" aria-live="polite" hidden></p>
 </form></div></div>
 ''')
+        pxc = lambda v: (v[:-1] + f' ({PAX_CFG[lg]})') if v.endswith('*') else v  # nota RD 339/2021 en el PDF del configurador
         data = {'base': tar['price'], 'inf': tar.get('infusion') or 0, 'name': full, 'lang': lg,
                 'opts': [[tr(op['n'], lg), op['p']] for op in tar['opt']],
                 'L': {k2: t[k2] for k2 in ('sum_none', 'b_copied', 'b_share', 'c_std', 'c_inf', 'sum_base', 'sum_eng', 'sum_opts', 'sum_tot', 'sum_iva', 'vat', 'noeng', 'dl_wait', 'dl_btn', 'sh_offer', 'sh_for', 'sh_date', 'sh_cfg', 'sh_specs', 'sh_scan', 'sh_valid', 'sh_lic', 'ie_l', 'ie_all', 'ie_unk')}, 'eng': t['eng_label'], 'why': t['why'], 'iedmt': slug in IEDMT,
                 'kind': t['kind'][kind] + ' · ' + ((f'{eslora:.2f}'.replace('.', ',') if lg != 'en' else f'{eslora:.2f}') + ' m'),
                 'code': ''.join(w[0] for w in name.replace('-', ' ').split()).upper()[:3] + re.sub(r'\\D', '', name)[:2],
-                'specs': [[k3, v3] for k3, v3 in list(sp.items())[:9]] + [[t['f_k'] and {'es': 'Titulación', 'ca': 'Titulació', 'en': 'Licence', 'fr': 'Permis'}[lg], lic(lg, eslora)]] if not any(k3.lower().startswith(('titul', 'licence', 'permis')) for k3 in sp) else [[k3, v3] for k3, v3 in list(sp.items()) if not k3.lower().startswith(('compart', 'diámetro', 'diàmetre', 'tube', 'diamètre'))][:10],
+                'specs': [[k3, pxc(v3)] for k3, v3 in list(sp.items())[:9]] + [[t['f_k'] and {'es': 'Titulación', 'ca': 'Titulació', 'en': 'Licence', 'fr': 'Permis'}[lg], lic(lg, eslora)]] if not any(k3.lower().startswith(('titul', 'licence', 'permis')) for k3 in sp) else [[k3, pxc(v3)] for k3, v3 in list(sp.items()) if not k3.lower().startswith(('compart', 'diámetro', 'diàmetre', 'tube', 'diamètre'))][:10],
                 'hero': hero_big, 'thumbs': [img_url(slug, n) for n, _, _ in ph[1:4]], 'brandlogo': '/barcos-nuevos/logos/marco.png'}
         o.append(f'<script>window.MC_CFG={json.dumps(data, ensure_ascii=False)};</script>\n<script src="/marco/marco-config.js?v={V}" defer></script>\n')
     o.append(f'<script src="/submit-confirmed.js" defer></script>\n<script src="/marco/marco-form.js?v={V}" defer></script>\n')
