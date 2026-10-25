@@ -2,8 +2,8 @@
 Motor: un Volvo Penta D3 de 110 cv, diésel, unas 1.300 h. Sin fotos de interior: la sección "interior" se usa para la cubierta.
 Uso: python3 _tools/ficha_v2.py audax-47"""
 SLUG = 'audax-47'
-SPOTS_XY = [(50, 30), (61, 55), (12, 63), (84, 52)]
-PH = dict(hero=1, spots=1, m1=(7, 13), m2=14, i1=6, i2=9, i3=(10, 12), end=2)
+SPOTS_XY = [(50, 30), (65, 55), (10, 63), (85, 57)]
+PH = dict(hero=1, spots=1, m1=(7, 10), m2=3, i1=6, i2=9, i3=(11, 12), end=2)
 
 T = {
  'es': dict(
@@ -17,8 +17,8 @@ T = {
   man_k='Navegar', man_h='Aparejo y motor',
   m1_h='Aparejo de cúter', m1_p=['Construido por su propietario, diseñador de veleros y navegante.', 'El estado de las velas y de la electrónica se confirma con el propietario.'],
   m1_alt=['Proa navegando, con la vela de proa', 'Cubierta de teca y caseta vistas desde popa'],
-  m2_h='Motor Volvo Penta D3 de 110 cv', m2_p=['Diésel, con unas 1.300 horas según el propietario.', 'En la foto, en el varadero con la obra viva pintada.'],
-  m2_alt='Casco y quilla del Audax 47 en el varadero',
+  m2_h='Motor Volvo Penta D3 de 110 cv', m2_p=['Diésel, con unas 1.300 horas según el propietario.', 'En la foto, amarrado en el pantalán.'],
+  m2_alt='Audax 47 amarrado en el pantalán',
   mid='¿Quieres pedir el historial de mantenimiento o fotos del interior?', ask='Preguntar por WhatsApp',
   int_k='A bordo', int_h='Teca y portillos',
   i1_h='La caseta', i1_p='Portillos redondos que dan luz al interior. Fotos del interior: pídemelas por WhatsApp.', i1_alt='Caseta con portillos redondos',
@@ -39,8 +39,8 @@ T = {
   man_k='Navegar', man_h='Aparell i motor',
   m1_h='Aparell de cúter', m1_p=['Construït pel seu propietari, dissenyador de velers i navegant.', "L'estat de les veles i de l'electrònica es confirma amb el propietari."],
   m1_alt=['Proa navegant, amb la vela de proa', 'Coberta de teca i caseta vistes des de popa'],
-  m2_h='Motor Volvo Penta D3 de 110 cv', m2_p=['Dièsel, amb unes 1.300 hores segons el propietari.', "A la foto, a la drassana amb l'obra viva pintada."],
-  m2_alt="Buc i quilla de l'Audax 47 a la drassana",
+  m2_h='Motor Volvo Penta D3 de 110 cv', m2_p=['Dièsel, amb unes 1.300 hores segons el propietari.', 'A la foto, amarrat al pantalà.'],
+  m2_alt='Audax 47 amarrat al pantalà',
   mid="Vols demanar l'historial de manteniment o fotos de l'interior?", ask='Preguntar per WhatsApp',
   int_k='A bord', int_h='Teca i portells',
   i1_h='La caseta', i1_p="Portells rodons que donen llum a l'interior. Fotos de l'interior: demana-me-les per WhatsApp.", i1_alt='Caseta amb portells rodons',
@@ -61,8 +61,8 @@ T = {
   man_k='Sailing', man_h='Rig and engine',
   m1_h='Cutter rig', m1_p=['Built by her owner, a yacht designer and sailor.', 'The condition of the sails and electronics is to be confirmed with the owner.'],
   m1_alt=['Bow under way, with the headsail', 'Teak deck and deckhouse seen from aft'],
-  m2_h='Volvo Penta D3 110 hp engine', m2_p=['Diesel, with about 1,300 hours according to the owner.', 'In the photo, ashore in the yard with fresh antifouling.'],
-  m2_alt='Hull and keel of the Audax 47 in the boatyard',
+  m2_h='Volvo Penta D3 110 hp engine', m2_p=['Diesel, with about 1,300 hours according to the owner.', 'In the photo, moored on the pontoon.'],
+  m2_alt='Audax 47 moored on the pontoon',
   mid='Would you like the maintenance history or interior photos?', ask='Ask on WhatsApp',
   int_k='On board', int_h='Teak and portholes',
   i1_h='The deckhouse', i1_p='Round portholes that bring light below. Interior photos: ask me on WhatsApp.', i1_alt='Deckhouse with round portholes',
@@ -83,8 +83,8 @@ T = {
   man_k='Naviguer', man_h='Gréement et moteur',
   m1_h='Gréement de cotre', m1_p=['Construit par son propriétaire, architecte de voiliers et navigateur.', "L'état des voiles et de l'électronique est à confirmer avec le propriétaire."],
   m1_alt=["L'avant en navigation, avec la voile d'avant", 'Pont en teck et rouf vus de l’arrière'],
-  m2_h='Moteur Volvo Penta D3 de 110 ch', m2_p=['Diesel, environ 1 300 heures selon le propriétaire.', 'Sur la photo, au chantier avec les œuvres vives repeintes.'],
-  m2_alt="Coque et quille de l'Audax 47 au chantier",
+  m2_h='Moteur Volvo Penta D3 de 110 ch', m2_p=['Diesel, environ 1 300 heures selon le propriétaire.', 'Sur la photo, amarré au ponton.'],
+  m2_alt='Audax 47 amarré au ponton',
   mid="Vous voulez l'historique d'entretien ou des photos de l'intérieur ?", ask='Demander sur WhatsApp',
   int_k='À bord', int_h='Teck et hublots',
   i1_h='Le rouf', i1_p="Des hublots ronds qui donnent de la lumière à l'intérieur. Photos de l'intérieur : demandez-les-moi sur WhatsApp.", i1_alt='Rouf avec hublots ronds',
