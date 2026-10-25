@@ -3,7 +3,7 @@ Motor: un Volvo Penta D3 de 110 cv, diésel, unas 1.300 h. Sin fotos de interior
 Uso: python3 _tools/ficha_v2.py audax-47"""
 SLUG = 'audax-47'
 SPOTS_XY = [(50, 30), (65, 55), (10, 63), (85, 57)]
-PH = dict(hero=1, spots=1, m1=(7, 10), m2=3, i1=6, i2=9, i3=(11, 12), end=2)
+PH = dict(hero=1, spots=1, m1=(7, 10), m2=3, i1=6, i2=9, i3=11, end=2)
 
 T = {
  'es': dict(
