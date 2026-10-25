@@ -14,7 +14,7 @@ SLUG = 'audax-47'
 TPL = 'monterey-278-ss'
 TPL_NAME = 'Monterey 278 SS'
 NAME = 'Audax 47'
-N_PHOTOS = 15
+N_PHOTOS = 12
 W1 = 1600
 
 D = {
