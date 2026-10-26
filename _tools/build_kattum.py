@@ -5,6 +5,7 @@ Uso: python3 _tools/build_kattum.py  (desde la raíz del repo)"""
 import re, json, html, urllib.parse, os, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from build_catharsis import CSS as CT_CSS, JS, eur, LANGS, BASE, WA
+from kattum_config import cfg as kcfg
 
 ROOT = '.'
 SLUG = 'kattum'
@@ -59,7 +60,7 @@ T = {
   price_from='Desde', vat='+ impuestos', vat_note='K30 Open, sin motores', see='Ver los modelos', cta='Pedir presupuesto',
   intro='Kattum Yachts fabrica catamaranes a motor con dos cascos: navegan planos y estables, y la bañera es mucho más ancha que la de una lancha de la misma eslora. Se piden a fábrica y se configuran a medida. Soy su distribuidor para Baleares: te ayudo a elegir modelo, motores y equipamiento, y me encargo de la compra.',
   note='Fotos del astillero. Pueden mostrar equipamiento opcional.',
-  side=['La marca', 'K30 Open', 'K30 Cruiser', 'K40', 'Equipamiento', 'Fotos', 'Presupuesto'],
+  side=['La marca', 'K30 Open', 'K30 Cruiser', 'K40', 'Configurar', 'Equipamiento', 'Fotos', 'Presupuesto'],
   mh='Tres modelos', mh_l='El mismo concepto en tres tamaños: tú eliges cuánto espacio quieres dentro.',
   m={'k30-open': ('Para el día, con todo el espacio fuera', 'Catamarán open con T-top sobre el puesto de mando, asientos modulables, solárium y una plataforma de baño ampliada que se aprovecha mucho cuando se fondea. Lleva un aseo bajo la consola.'),
      'k30-cruiser': ('El K30 con camarote', 'La misma base que el K30 Open, con un camarote doble y un baño completo dentro. Mantiene la bañera amplia y la plataforma de baño, y permite pasar la noche a bordo.'),
@@ -92,7 +93,7 @@ T = {
   price_from='Des de', vat='+ impostos', vat_note='K30 Open, sense motors', see='Veure els models', cta='Demanar pressupost',
   intro='Kattum Yachts fabrica catamarans a motor de dos bucs: naveguen plans i estables, i la banyera és molt més ampla que la d\'una llanxa de la mateixa eslora. Es demanen a fàbrica i es configuren a mida. En sóc el distribuïdor per a les Balears: t\'ajudo a triar model, motors i equipament, i m\'encarrego de la compra.',
   note='Fotos de la drassana. Poden mostrar equipament opcional.',
-  side=['La marca', 'K30 Open', 'K30 Cruiser', 'K40', 'Equipament', 'Fotos', 'Pressupost'],
+  side=['La marca', 'K30 Open', 'K30 Cruiser', 'K40', 'Configurar', 'Equipament', 'Fotos', 'Pressupost'],
   mh='Tres models', mh_l='El mateix concepte en tres mides: tu tries quant espai vols a dins.',
   m={'k30-open': ('Per al dia, amb tot l\'espai a fora', 'Catamarà open amb T-top sobre el lloc de comandament, seients modulables, solàrium i una plataforma de bany ampliada que s\'aprofita molt quan es fondeja. Porta un lavabo sota la consola.'),
      'k30-cruiser': ('El K30 amb camarot', 'La mateixa base que el K30 Open, amb un camarot doble i un bany complet a dins. Manté la banyera àmplia i la plataforma de bany, i permet passar la nit a bord.'),
@@ -125,7 +126,7 @@ T = {
   price_from='From', vat='+ taxes', vat_note='K30 Open, without engines', see='See the models', cta='Request a quote',
   intro='Kattum Yachts builds twin-hull power catamarans: they run flat and stable, and the cockpit is much wider than on a motorboat of the same length. They are ordered from the factory and configured to order. I am their dealer for the Balearic Islands: I help you choose model, engines and equipment, and I handle the purchase.',
   note='Builder\'s photos. They may show optional equipment.',
-  side=['The brand', 'K30 Open', 'K30 Cruiser', 'K40', 'Equipment', 'Photos', 'Quote'],
+  side=['The brand', 'K30 Open', 'K30 Cruiser', 'K40', 'Configure', 'Equipment', 'Photos', 'Quote'],
   mh='Three models', mh_l='The same concept in three sizes: you choose how much space you want inside.',
   m={'k30-open': ('For day trips, with all the space outside', 'Open catamaran with a T-top over the helm, modular seating, sunbed and an extended swim platform that really pays off at anchor. There is a toilet under the console.'),
      'k30-cruiser': ('The K30 with a cabin', 'The same base as the K30 Open, with a double cabin and a full bathroom inside. It keeps the wide cockpit and the swim platform, and lets you spend the night on board.'),
@@ -158,7 +159,7 @@ T = {
   price_from='À partir de', vat='+ taxes', vat_note='K30 Open, sans moteurs', see='Voir les modèles', cta='Demander un devis',
   intro='Kattum Yachts construit des catamarans à moteur à deux coques : ils naviguent à plat et stables, et le cockpit est bien plus large que celui d\'un bateau à moteur de même longueur. Ils sont commandés à l\'usine et configurés sur mesure. Je suis leur distributeur pour les Baléares : je vous aide à choisir le modèle, les moteurs et l\'équipement, et je m\'occupe de l\'achat.',
   note='Photos du chantier. Elles peuvent montrer des options.',
-  side=['La marque', 'K30 Open', 'K30 Cruiser', 'K40', 'Équipement', 'Photos', 'Devis'],
+  side=['La marque', 'K30 Open', 'K30 Cruiser', 'K40', 'Configurer', 'Équipement', 'Photos', 'Devis'],
   mh='Trois modèles', mh_l='Le même concept en trois tailles : vous choisissez l\'espace que vous voulez à l\'intérieur.',
   m={'k30-open': ('Pour la journée, tout l\'espace dehors', 'Catamaran open avec T-top au-dessus du poste de pilotage, sièges modulables, bain de soleil et une plateforme de bain agrandie, très utile au mouillage. Toilettes sous la console.'),
      'k30-cruiser': ('Le K30 avec cabine', 'La même base que le K30 Open, avec une cabine double et une salle d\'eau complète. Il garde le grand cockpit et la plateforme de bain, et permet de passer la nuit à bord.'),
@@ -184,6 +185,8 @@ T = {
   crumbs=('Accueil', 'Bateaux à vendre', 'Bateaux neufs'),
  ),
 }
+
+CFH = {'es': ('Configura tu Kattum', 'Elige modelo, motores y opcionales y ve el precio al momento. Cuando lo tengas, pídeme el presupuesto por escrito.'), 'ca': ('Configura el teu Kattum', "Tria model, motors i opcionals i veu el preu al moment. Quan el tinguis, demana'm el pressupost per escrit."), 'en': ('Configure your Kattum', 'Choose model, engines and options and see the price instantly. When you are ready, ask me for the written quote.'), 'fr': ('Configurez votre Kattum', 'Choisissez le modèle, les moteurs et les options et voyez le prix immédiatement. Ensuite, demandez-moi le devis écrit.')}
 
 CSS = CT_CSS + """
 .kt-model{display:grid;grid-template-columns:1.15fr 1fr;gap:28px;align-items:start;padding:28px 0;border-top:1px solid rgba(14,48,66,.12)}
@@ -247,7 +250,7 @@ def build(lang):
     def wbtn(txt, ctx, msg, cls='btn btn-wa'):
         return f'<a class="{cls}" href="{wa(msg)}" target="_blank" rel="noopener" data-wa-context="{ctx}">{html.escape(txt)}</a>'
 
-    ids = ['marca', 'k30-open', 'k30-cruiser', 'k40', 'equipamiento', 'fotos', 'presupuesto']
+    ids = ['marca', 'k30-open', 'k30-cruiser', 'k40', 'configurar', 'equipamiento', 'fotos', 'presupuesto']
     side = ''.join(f'<a href="#{i}"><span>{html.escape(s)}</span><i></i></a>' for i, s in zip(ids, t['side']))
     sub = ''.join(f'<span>{html.escape(s)}</span>' for s in t['sub'])
     A = t['alt']
@@ -294,7 +297,12 @@ def build(lang):
 <p class="v2-k">{html.escape(t['kick'])}</p><h2>{html.escape(t['mh'])}</h2><p class="v2-lead">{html.escape(t['mh_l'])}</p>
 {models}
 </div></section>
-<section class="v2-sec v2-band" id="equipamiento"><div class="wrap">
+<section class="v2-sec v2-band" id="configurar"><div class="wrap">
+<h2>{html.escape(CFH[lang][0])}</h2><p class="v2-lead">{html.escape(CFH[lang][1])}</p>
+<div id="pm-cfg"></div>
+</div></section>
+<script>window.PM_CFG={json.dumps(kcfg(li), ensure_ascii=False)};</script>
+<section class="v2-sec" id="equipamiento"><div class="wrap">
 <h2>{html.escape(t['e_h'])}</h2>
 <div class="ct-two"><div><h3>{t['std_h']}</h3><ul class="ct-tags">{std}</ul><h3 style="margin-top:20px">{t['k40_h']}</h3><ul class="ct-tags">{k40}</ul></div><div><h3>{t['opt_h']}</h3><ul class="ct-tags opt">{opt}</ul><p class="v2-small" style="margin-top:12px">{html.escape(t['e_note'])}</p></div></div>
 </div></section>
@@ -312,7 +320,7 @@ def build(lang):
 <div class="v2-ctas">{wbtn(t['cta'], 'ficha_cierre', t['wa_end'])}<a class="btn v2-ghost" href="{p}/barcos/#segunda-mano">{html.escape(t['used_a'])}</a></div>
 </div></section>
 <div class="wrap"><p class="nv-small">{html.escape(t['small'])}</p></div>
-</main>{JS}'''
+</main>{JS}<script src="/submit-confirmed.js?v=20261011" defer></script><script src="/barcos-nuevos/pm-config.js?v=20261026" defer></script>'''
     body = re.sub(r'<main class="boat">.*?</main>', lambda m: main, body, flags=re.S)
     out = head + '</head>' + body
     os.makedirs(f'{ROOT}{p}/{SLUG}', exist_ok=True)
