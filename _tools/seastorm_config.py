@@ -21,14 +21,14 @@ M = [
  ('14',   'SeaStorm 14',   4.28, 40, '30–40', 40, 7253, '/seastorm/fotos/14-1-m.jpg'),
  ('17',   'SeaStorm 17',   5.17, 80, '60',    60, 10928, '/seastorm/fotos/17-1-m.jpg'),
 ]
-COLORS = [('#F4F5F2', 'white'), ('#B9BEC2', 'lgrey'), ('#4D555B', 'dgrey'), ('#2F6B3A', 'green'), ('#9BD31F', 'lime'), ('#C62828', 'red'), ('#F2C511', 'yellow')]
+COLORS = [('#F4F5F2', 'white'), ('#B9BEC2', 'lgrey'), ('#4D555B', 'dgrey'), ('#2F6B3A', 'green'), ('#9BD31F', 'lime'), ('#C62828', 'red'), ('#F2C511', 'yellow'), ('#1F4E8C', 'blue'), ('#E8712A', 'orange')]
 
 T = {
  'es': dict(
   nav='Configurar', k='Configurador', h='Configura tu SeaStorm',
   sub='Elige modelo, color, motor y extras. Verás el precio del barco al momento, la titulación que necesitas y lo que te presupuesto aparte.',
   s1='1. Modelo', s2='2. Color del casco', s3='3. Motor', s4='4. Extras',
-  colors={'white': 'Blanco', 'lgrey': 'Gris claro', 'dgrey': 'Gris oscuro', 'green': 'Verde', 'lime': 'Verde lima', 'red': 'Rojo', 'yellow': 'Amarillo'},
+  colors={'white': 'Blanco', 'lgrey': 'Gris claro', 'dgrey': 'Gris oscuro', 'green': 'Verde', 'lime': 'Verde lima', 'red': 'Rojo', 'yellow': 'Amarillo', 'blue': 'Azul', 'orange': 'Naranja'},
   m_none='Sin motor', m_none_d='Ya tengo uno o lo pongo yo',
   m_15='15 CV', m_15_d='Se puede llevar sin titulación',
   m_rec='{cv} CV', m_rec_d='El recomendado por el fabricante',
@@ -47,7 +47,7 @@ T = {
   nav='Configurar', k='Configurador', h='Configura el teu SeaStorm',
   sub="Tria model, color, motor i extres. Veuràs el preu del barco al moment, la titulació que necessites i el que et pressuposto a part.",
   s1='1. Model', s2='2. Color del casc', s3='3. Motor', s4='4. Extres',
-  colors={'white': 'Blanc', 'lgrey': 'Gris clar', 'dgrey': 'Gris fosc', 'green': 'Verd', 'lime': 'Verd llima', 'red': 'Vermell', 'yellow': 'Groc'},
+  colors={'white': 'Blanc', 'lgrey': 'Gris clar', 'dgrey': 'Gris fosc', 'green': 'Verd', 'lime': 'Verd llima', 'red': 'Vermell', 'yellow': 'Groc', 'blue': 'Blau', 'orange': 'Taronja'},
   m_none='Sense motor', m_none_d="Ja en tinc un o el poso jo",
   m_15='15 CV', m_15_d='Es pot portar sense titulació',
   m_rec='{cv} CV', m_rec_d='El recomanat pel fabricant',
@@ -66,7 +66,7 @@ T = {
   nav='Configure', k='Configurator', h='Build your SeaStorm',
   sub='Choose model, colour, engine and extras. You will see the boat price straight away, the licence you need and what I quote separately.',
   s1='1. Model', s2='2. Hull colour', s3='3. Engine', s4='4. Extras',
-  colors={'white': 'White', 'lgrey': 'Light grey', 'dgrey': 'Dark grey', 'green': 'Green', 'lime': 'Lime green', 'red': 'Red', 'yellow': 'Yellow'},
+  colors={'white': 'White', 'lgrey': 'Light grey', 'dgrey': 'Dark grey', 'green': 'Green', 'lime': 'Lime green', 'red': 'Red', 'yellow': 'Yellow', 'blue': 'Blue', 'orange': 'Orange'},
   m_none='No engine', m_none_d='I already have one or will fit my own',
   m_15='15 hp', m_15_d='No licence needed in Spain',
   m_rec='{cv} hp', m_rec_d="The manufacturer's recommendation",
@@ -85,7 +85,7 @@ T = {
   nav='Configurer', k='Configurateur', h='Configurez votre SeaStorm',
   sub='Choisissez le modèle, la couleur, le moteur et les options. Vous verrez tout de suite le prix du bateau, le permis nécessaire et ce que je chiffre à part.',
   s1='1. Modèle', s2='2. Couleur de coque', s3='3. Moteur', s4='4. Options',
-  colors={'white': 'Blanc', 'lgrey': 'Gris clair', 'dgrey': 'Gris foncé', 'green': 'Vert', 'lime': 'Vert citron', 'red': 'Rouge', 'yellow': 'Jaune'},
+  colors={'white': 'Blanc', 'lgrey': 'Gris clair', 'dgrey': 'Gris foncé', 'green': 'Vert', 'lime': 'Vert citron', 'red': 'Rouge', 'yellow': 'Jaune', 'blue': 'Bleu', 'orange': 'Orange'},
   m_none='Sans moteur', m_none_d="J'en ai déjà un ou je le monte moi-même",
   m_15='15 CV', m_15_d='Sans permis en Espagne',
   m_rec='{cv} CV', m_rec_d='Le moteur conseillé par le fabricant',
