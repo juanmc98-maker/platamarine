@@ -13,7 +13,7 @@ import re, json, html
 ROOT = '.'
 LANGS = {'es': '', 'ca': '/ca', 'en': '/en', 'fr': '/fr'}
 IVA = 0.21
-VAT = {'es': '+IVA', 'ca': '+IVA', 'en': '+VAT', 'fr': 'HT'}
+VAT = {'es': '+ impuestos', 'ca': '+ impostos', 'en': '+ taxes', 'fr': '+ taxes'}
 # slug, nombre, eslora (m), CV máx, CV recomendados (texto, valor para "recomendado"), PVP sin IVA, foto o None
 M = [
  ('12',   'SeaStorm 12',   3.66, 30, '25–30', 30, 4454, '/seastorm/fotos/12-1-m.jpg'),
@@ -23,13 +23,30 @@ M = [
 ]
 COLORS = [('#F4F5F2', 'white'), ('#B9BEC2', 'lgrey'), ('#4D555B', 'dgrey'), ('#2F6B3A', 'green'), ('#9BD31F', 'lime'), ('#C62828', 'red'), ('#F2C511', 'yellow'), ('#1F4E8C', 'blue'), ('#E8712A', 'orange')]
 
+# Motores Mercury instalados en fábrica (tarifa "Mercury Electrical Pricelist 2026 v4.26" de SeaStorm, 27 oct 2026).
+# Coste dealer = motor (hoja General ALL) + hélice recomendada (25 CV o más) + "motor installation service" del modelo
+# (incluye preinstalación Mercury, mando y cableado eléctrico con preinstalación de luces; batería y luces aparte).
+# Precio público = coste / 0,70, el mismo 30 % de margen con el que SeaStorm calcula su PVP de los barcos (tarifa 2027).
+MOTOR_WSP = {15: 2972, 20: 3214, 25: 3958, 30: 4259, 40: 4903, 50: 5162, 60: 5785, 80: 8114}
+MOTOR_NAME = {15: 'Mercury F15 ELPT EFI', 20: 'Mercury F20 ELPT EFI', 25: 'Mercury F25 ELPT EFI', 30: 'Mercury F30 ELPT EFI',
+              40: 'Mercury F40 ELPT EFI', 50: 'Mercury F50 ELPT EFI', 60: 'Mercury F60 ELPT EFI', 80: 'Mercury F80 ELPT EFI'}
+INSTALL = {'12': 1075, '13-s': 1375, '14': 1375, '17': 1775}
+PROP = {'12': {15: 0, 20: 0, 25: 106, 30: 106}, '13-s': {20: 0, 40: 160, 60: 160},
+        '14': {25: 106, 30: 106, 40: 136}, '17': {40: 136, 50: 136, 60: 136, 80: 149}}
+
+
+def engines(slug):
+    return [{'cv': cv, 'n': MOTOR_NAME[cv], 'p': round((MOTOR_WSP[cv] + pr + INSTALL[slug]) / 0.70)}
+            for cv, pr in PROP[slug].items()]
+
 T = {
  'es': dict(
   nav='Configurar', k='Configurador', h='Configura tu SeaStorm',
-  sub='Elige modelo, color, motor y extras. Verás el precio del barco al momento, la titulación que necesitas y lo que te presupuesto aparte.',
+  sub='Elige modelo, color, motor y extras. Verás el precio al momento, con el motor Mercury ya instalado en fábrica, la titulación que necesitas y lo que te presupuesto aparte.',
   s1='1. Modelo', s2='2. Color del casco', s3='3. Motor', s4='4. Extras',
   colors={'white': 'Blanco', 'lgrey': 'Gris claro', 'dgrey': 'Gris oscuro', 'green': 'Verde', 'lime': 'Verde lima', 'red': 'Rojo', 'yellow': 'Amarillo', 'blue': 'Azul', 'orange': 'Naranja'},
   m_none='Sin motor', m_none_d='Ya tengo uno o lo pongo yo',
+  m_eng='{cv} CV · {n}', rec='recomendado', nolic='sin titulación', inst='{n}, instalado en fábrica', vi='Barco {b} + motor instalado {e}',
   m_15='15 CV', m_15_d='Se puede llevar sin titulación',
   m_rec='{cv} CV', m_rec_d='El recomendado por el fabricante',
   m_max='{cv} CV', m_max_d='La potencia máxima homologada',
@@ -42,13 +59,14 @@ T = {
   b_form='Pedir este presupuesto', b_wa='Enviarlo por WhatsApp',
   wa='Hola Juan, he configurado un SeaStorm en la web: {cfg}. ¿Me preparas presupuesto?',
   msg='Configuración: {cfg}',
-  note='Precio del barco según la tarifa oficial de SeaStorm para la versión Advantage, sin motor. Motor, remolque, transporte y matriculación se presupuestan aparte y por escrito antes de pedir nada. Los colores en pantalla son orientativos. Información orientativa y no vinculante: podemos equivocarnos.'),
+  note='Precio del barco según la tarifa oficial de SeaStorm para la versión Advantage. El motor Mercury se entrega instalado en fábrica, con mando, cableado y hélice; batería y luces de navegación aparte. Remolque, transporte y matriculación se presupuestan aparte y por escrito antes de pedir nada. Los colores en pantalla son orientativos. Información orientativa y no vinculante: podemos equivocarnos.'),
  'ca': dict(
   nav='Configurar', k='Configurador', h='Configura el teu SeaStorm',
-  sub="Tria model, color, motor i extres. Veuràs el preu del barco al moment, la titulació que necessites i el que et pressuposto a part.",
+  sub='Tria model, color, motor i extres. Veuràs el preu al moment, amb el motor Mercury ja instal·lat a fàbrica, la titulació que necessites i el que et pressuposto a part.',
   s1='1. Model', s2='2. Color del casc', s3='3. Motor', s4='4. Extres',
   colors={'white': 'Blanc', 'lgrey': 'Gris clar', 'dgrey': 'Gris fosc', 'green': 'Verd', 'lime': 'Verd llima', 'red': 'Vermell', 'yellow': 'Groc', 'blue': 'Blau', 'orange': 'Taronja'},
   m_none='Sense motor', m_none_d="Ja en tinc un o el poso jo",
+  m_eng='{cv} CV · {n}', rec='recomanat', nolic='sense titulació', inst='{n}, instal·lat a fàbrica', vi='Barco {b} + motor instal·lat {e}',
   m_15='15 CV', m_15_d='Es pot portar sense titulació',
   m_rec='{cv} CV', m_rec_d='El recomanat pel fabricant',
   m_max='{cv} CV', m_max_d='La potència màxima homologada',
@@ -61,13 +79,14 @@ T = {
   b_form='Demanar aquest pressupost', b_wa='Enviar-ho per WhatsApp',
   wa='Hola Juan, he configurat un SeaStorm a la web: {cfg}. Em prepares pressupost?',
   msg='Configuració: {cfg}',
-  note="Preu del barco segons la tarifa oficial de SeaStorm per a la versió Advantage, sense motor. Motor, remolc, transport i matriculació es pressuposten a part i per escrit abans de demanar res. Els colors en pantalla són orientatius. Informació orientativa i no vinculant: ens podem equivocar."),
+  note="Preu del barco segons la tarifa oficial de SeaStorm per a la versió Advantage. El motor Mercury s'entrega instal·lat a fàbrica, amb comandament, cablejat i hèlix; bateria i llums de navegació a part. Remolc, transport i matriculació es pressuposten a part i per escrit abans de demanar res. Els colors en pantalla són orientatius. Informació orientativa i no vinculant: ens podem equivocar."),
  'en': dict(
   nav='Configure', k='Configurator', h='Build your SeaStorm',
-  sub='Choose model, colour, engine and extras. You will see the boat price straight away, the licence you need and what I quote separately.',
+  sub='Choose model, colour, engine and extras. You will see the price straight away, with the Mercury engine factory-fitted, the licence you need and what I quote separately.',
   s1='1. Model', s2='2. Hull colour', s3='3. Engine', s4='4. Extras',
   colors={'white': 'White', 'lgrey': 'Light grey', 'dgrey': 'Dark grey', 'green': 'Green', 'lime': 'Lime green', 'red': 'Red', 'yellow': 'Yellow', 'blue': 'Blue', 'orange': 'Orange'},
   m_none='No engine', m_none_d='I already have one or will fit my own',
+  m_eng='{cv} hp · {n}', rec='recommended', nolic='no licence', inst='{n}, factory-fitted', vi='Boat {b} + fitted engine {e}',
   m_15='15 hp', m_15_d='No licence needed in Spain',
   m_rec='{cv} hp', m_rec_d="The manufacturer's recommendation",
   m_max='{cv} hp', m_max_d='Maximum rated power',
@@ -80,13 +99,14 @@ T = {
   b_form='Request this quote', b_wa='Send it on WhatsApp',
   wa='Hi Juan, I have built a SeaStorm on your website: {cfg}. Could you prepare a quote?',
   msg='Configuration: {cfg}',
-  note="Boat price from SeaStorm's official price list for the Advantage version, without engine. Engine, trailer, transport and registration are quoted separately and in writing before anything is ordered. On-screen colours are approximate. Guidance only, not binding: we may make mistakes."),
+  note="Boat price from SeaStorm's official price list for the Advantage version. The Mercury engine comes factory-fitted, with remote control, wiring and propeller; battery and navigation lights are extra. Trailer, transport and registration are quoted separately and in writing before anything is ordered. On-screen colours are approximate. Guidance only, not binding: we may make mistakes."),
  'fr': dict(
   nav='Configurer', k='Configurateur', h='Configurez votre SeaStorm',
-  sub='Choisissez le modèle, la couleur, le moteur et les options. Vous verrez tout de suite le prix du bateau, le permis nécessaire et ce que je chiffre à part.',
+  sub='Choisissez le modèle, la couleur, le moteur et les options. Vous verrez tout de suite le prix, avec le moteur Mercury monté en usine, le permis nécessaire et ce que je chiffre à part.',
   s1='1. Modèle', s2='2. Couleur de coque', s3='3. Moteur', s4='4. Options',
   colors={'white': 'Blanc', 'lgrey': 'Gris clair', 'dgrey': 'Gris foncé', 'green': 'Vert', 'lime': 'Vert citron', 'red': 'Rouge', 'yellow': 'Jaune', 'blue': 'Bleu', 'orange': 'Orange'},
   m_none='Sans moteur', m_none_d="J'en ai déjà un ou je le monte moi-même",
+  m_eng='{cv} CV · {n}', rec='conseillé', nolic='sans permis', inst='{n}, monté en usine', vi='Bateau {b} + moteur monté {e}',
   m_15='15 CV', m_15_d='Sans permis en Espagne',
   m_rec='{cv} CV', m_rec_d='Le moteur conseillé par le fabricant',
   m_max='{cv} CV', m_max_d='La puissance maximale homologuée',
@@ -99,7 +119,7 @@ T = {
   b_form='Demander ce devis', b_wa="L'envoyer sur WhatsApp",
   wa="Bonjour Juan, j'ai configuré un SeaStorm sur le site : {cfg}. Pouvez-vous me préparer un devis ?",
   msg='Configuration : {cfg}',
-  note="Prix du bateau selon le tarif officiel SeaStorm pour la version Advantage, sans moteur. Moteur, remorque, transport et immatriculation sont chiffrés à part et par écrit avant toute commande. Les couleurs à l'écran sont indicatives. Information indicative et non contractuelle : nous pouvons nous tromper."),
+  note="Prix du bateau selon le tarif officiel SeaStorm pour la version Advantage. Le moteur Mercury est livré monté en usine, avec commande, câblage et hélice ; batterie et feux de navigation en sus. Remorque, transport et immatriculation sont chiffrés à part et par écrit avant toute commande. Les couleurs à l'écran sont indicatives. Information indicative et non contractuelle : nous pouvons nous tromper."),
 }
 
 CSS = """<style id="ss-cfg-css">
@@ -180,9 +200,9 @@ def section(lang):
         for hx, k in COLORS)
     data = {
         'lang': lang, 'iva': IVA,
-        'vat': VAT[lang], 'm': {s: {'n': n, 'loa': l, 'max': mx, 'rec': rv, 'p': p} for s, n, l, mx, _r, rv, p, _ph in M},
+        'vat': VAT[lang], 'm': {s: {'n': n, 'loa': l, 'max': mx, 'rec': rv, 'p': p, 'eng': engines(s)} for s, n, l, mx, _r, rv, p, _ph in M},
         'c': {k: {'hex': hx, 'n': t['colors'][k]} for hx, k in COLORS},
-        't': {k: t[k] for k in ('m_none', 'm_none_d', 'm_15', 'm_15_d', 'm_rec', 'm_rec_d', 'm_max', 'm_max_d', 'lic_none', 'lic_ln',
+        't': {k: t[k] for k in ('m_none', 'm_none_d', 'm_eng', 'rec', 'nolic', 'inst', 'vi', 'm_15', 'm_15_d', 'm_rec', 'm_rec_d', 'm_max', 'm_max_d', 'lic_none', 'lic_ln',
                                 'q_motor', 'q_trailer', 'q_reg', 'q_ship', 'wa', 'msg', 'sum_vat')},
     }
     return f'''<!--ss-cfg-->
@@ -225,7 +245,7 @@ def run():
         s = open(p, encoding='utf-8').read()
         s = re.sub(r'\n?<!--ss-cfg-->.*?<!--/ss-cfg-->', '', s, flags=re.S)
         s = re.sub(r'<style id="ss-cfg-css">.*?</style>', '', s, flags=re.S)
-        s = s.replace('</head>', CSS + '\n</head>', 1)
+        s = re.sub(r'\n*</head>', '\n' + CSS + '\n</head>', s, count=1)
         i = s.find('id="comparar"')
         j = s.find('</section>', i) + len('</section>')
         s = s[:j] + '\n' + section(lang) + s[j:]
