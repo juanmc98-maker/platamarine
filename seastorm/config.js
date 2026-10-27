@@ -1,6 +1,7 @@
 /* Plata Marine · configurador de /seastorm/ (ES/CA/EN/FR).
    Datos en <script id="ssCfgData"> (los genera _tools/seastorm_config.py).
-   Precio: solo el del barco (tarifa oficial, versión Advantage). Motor, remolque, transporte y matriculación: se presupuestan.
+   Precio: barco (tarifa oficial, versión Advantage) + motor Mercury instalado en fábrica (tarifa Mercury de SeaStorm / 0,70).
+   Remolque, transporte y matriculación: se presupuestan.
    Titulación: sin título hasta 5 m de eslora y 15 CV; si no, Licencia de Navegación o superior (hasta 6 m). */
 (function(){
   'use strict';
@@ -17,42 +18,44 @@
   function fmt(s,o){return s.replace(/\{(\w+)\}/g,function(_,k){return o[k];});}
 
   function motors(){
-    var m=D.m[val('cfg_m')], cur=val('cfg_e')||'rec', opts=[['none',T.m_none,T.m_none_d]];
-    if(m.loa<=5) opts.push(['15',T.m_15,T.m_15_d]);
-    opts.push(['rec',fmt(T.m_rec,{cv:m.rec}),T.m_rec_d]);
-    if(m.max>m.rec) opts.push(['max',fmt(T.m_max,{cv:m.max}),T.m_max_d]);
-    if(!opts.some(function(o){return o[0]===cur;})) cur='rec';
+    var m=D.m[val('cfg_m')], cur=val('cfg_e'), opts=[['0',T.m_none,T.m_none_d]];
+    (m.eng||[]).forEach(function(e){
+      var d='+'+eur(e.p)+(e.cv===m.rec?' · '+T.rec:'')+(m.loa<=5&&e.cv<=15?' · '+T.nolic:'');
+      opts.push([String(e.cv),fmt(T.m_eng,{cv:e.cv,n:e.n}),d]);
+    });
+    if(!opts.some(function(o){return o[0]===cur;})) cur=String(m.rec);
+    if(!opts.some(function(o){return o[0]===cur;})) cur=opts[opts.length>1?1:0][0];
     $('ssCfgMot').innerHTML=opts.map(function(o){
       return '<label><input type="radio" name="cfg_e" value="'+o[0]+'"'+(o[0]===cur?' checked':'')+'><span>'+o[1]+'<em>'+o[2]+'</em></span></label>';
     }).join('');
   }
 
   function state(){
-    var s=val('cfg_m'), m=D.m[s], c=D.c[val('cfg_c')], e=val('cfg_e')||'rec';
-    var cv=e==='none'?0:e==='15'?15:e==='max'?m.max:m.rec;
+    var s=val('cfg_m'), m=D.m[s], c=D.c[val('cfg_c')], cv=parseInt(val('cfg_e')||'0',10);
+    var e=null; (m.eng||[]).forEach(function(x){if(x.cv===cv) e=x;});
+    if(!e) cv=0;
     var x=[].map.call(box.querySelectorAll('input[name="cfg_x"]:checked'),function(i){return i.value;});
     return {s:s,m:m,c:c,e:e,cv:cv,x:x};
   }
 
   function render(){
-    var st=state(), m=st.m;
+    var st=state(), m=st.m, tot=m.p+(st.e?st.e.p:0);
     $('ssCfgName').textContent=m.n;
-    $('ssCfgPr').innerHTML=eur(m.p)+'<span class="vat">'+(D.vat||'+ impuestos')+'</span>';
-    $('ssCfgVi').textContent='';
+    $('ssCfgPr').innerHTML=eur(tot)+'<span class="vat">'+(D.vat||'+ impuestos')+'</span>';
+    $('ssCfgVi').textContent=st.e?fmt(T.vi,{b:eur(m.p),e:eur(st.e.p)}):'';
     $('ssCfgCol').textContent=st.c.n; $('ssCfgCn').textContent=st.c.n;
     $('ssCfgHull').setAttribute('fill',st.c.hex);
     $('ssCfgEng').style.display=st.cv?'':'none';
-    var mo=st.cv?(st.e==='15'?T.m_15:fmt(T.m_rec,{cv:st.cv})):T.m_none;
+    var mo=st.e?fmt(T.inst,{n:st.e.n}):T.m_none;
     $('ssCfgMo').textContent=mo;
     var free=m.loa<=5&&st.cv<=15;
     $('ssCfgLic').textContent=free?T.lic_none:T.lic_ln;
     var q=[];
-    if(st.cv) q.push(fmt(T.q_motor,{cv:st.cv}));
     if(st.x.indexOf('trailer')>-1) q.push(T.q_trailer);
     if(st.x.indexOf('reg')>-1) q.push(T.q_reg);
     q.push(T.q_ship);
     $('ssCfgQ').textContent=q.join(', ');
-    var cfg=m.n+', '+st.c.n.toLowerCase()+', '+mo.toLowerCase()+(st.x.length?', '+q.slice(st.cv?1:0,-1).join(', '):'');
+    var cfg=m.n+', '+st.c.n.toLowerCase()+', '+(st.e?st.e.n:T.m_none.toLowerCase())+', '+eur(tot)+' '+(D.vat||'')+(st.x.length?', '+q.slice(0,-1).join(', '):'');
     $('ssCfgWa').href='https://wa.me/34633742973?text='+encodeURIComponent(fmt(T.wa,{cfg:cfg}));
     box._cfg={st:st,cfg:cfg};
   }
