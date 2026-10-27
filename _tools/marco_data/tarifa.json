@@ -1517,5 +1517,118 @@
     "p": 400
    }
   ]
+ },
+ {
+  "name": "E-MOTION 44",
+  "price": 980000,
+  "specs": {},
+  "std": [
+   "Fiberglass Hard-Top with glass windshield and electric wipers with water pump",
+   "2 electro-hydraulically operated fold-down side platforms",
+   "2 multifunction tables (table or sunbed extension) in the dinette with electric operation",
+   "Electric windlass with 15 kg stainless steel anchor, 75 m stainless steel chain and swivel",
+   "1,700 L stainless steel fuel tank, CE compliant, with flame arrester",
+   "290 L freshwater tank, with 40 L boiler",
+   "90 L grey water tank",
+   "Black water disposal system with 90 L tank, CE certified",
+   "Rear sunshade with 4 carbon fiber poles, with side and aft extension",
+   "Protective covers for dashboard, pilot bench, dinette, and bow sunbed",
+   "2 stern showers and 1 bow shower, with mixer",
+   "Complete electrical system, with batteries and 220V battery charger",
+   "Garmin 16\" 8416xsv GPS with sonar, transducer, charts, and external card reader",
+   "Garmin VHF AIS 315i",
+   "Control panels in the console and cabin, equipped with magnetothermic circuit breakers",
+   "Stereo system: Fusion Apollo 770 source, 6 JL M6 speakers, and amplifier",
+   "Electric-operated garage hatch",
+   "Helm bench with 3 seats, 2 electric drawer fridges 100 L and sink (freezer as an alternative)",
+   "95 kgf bow thruster with controls at console",
+   "Telescopic stainless steel retractable boarding ladder",
+   "Mooring aid kit: 6 stainless steel cleats and 1 stainless steel fairlead",
+   "Courtesy lighting: 24 LED courtesy lights on deck",
+   "Complete external upholstery kit, in closed-cell foam and Drycel",
+   "Complete interior furnishings for owner's cabin and guest cabin",
+   "Toilet compartment with sink, electric toilet, and separate shower enclosure",
+   "2 automatic bilge pumps and 1 manual bilge pump",
+   "Navigation aid kit: navigation lights, anchor light, horn, and compass",
+   "Electric inflator with pressure gauge"
+  ],
+  "opt": [
+   {
+    "n": "Additional Garmin 8416 16\" display",
+    "p": 7500
+   },
+   {
+    "n": "Garmin 18x GMR Fantom radar (radome)",
+    "p": 3000
+   },
+   {
+    "n": "FLIR M232 thermal camera",
+    "p": 5500
+   },
+   {
+    "n": "Electrically controlled spotlight",
+    "p": 900
+   },
+   {
+    "n": "Retractable Besenzoni gangway with electric operation",
+    "p": 20000
+   },
+   {
+    "n": "Paguro 4.5 kW generator + internal air conditioning system",
+    "p": 22500
+   },
+   {
+    "n": "Bow bimini with 4 carbon fiber poles",
+    "p": 4000
+   },
+   {
+    "n": "2 Lumishore underwater lights on the transom, white/blue",
+    "p": 1200
+   },
+   {
+    "n": "2 Lumishore underwater lights on the transom, RGB LED",
+    "p": 8000
+   },
+   {
+    "n": "6 Lumishore underwater lights (2 at the stern + 4 on the sides), RGB LED",
+    "p": 19500
+   },
+   {
+    "n": "Schenker Zen 50 desalination system",
+    "p": 12500
+   },
+   {
+    "n": "Complete external MarineMat 12 mm decking",
+    "p": 22000
+   },
+   {
+    "n": "Complete internal MarineMat 6 mm flooring",
+    "p": 4000
+   },
+   {
+    "n": "Complete external teak 10 mm decking",
+    "p": 35000
+   },
+   {
+    "n": "JPO bow thruster connection system (with bow thruster upgrade)",
+    "p": 5000
+   },
+   {
+    "n": "Pair of induction burners integrated into the helm bench",
+    "p": 1500
+   },
+   {
+    "n": "Electric barbecue integrated into the helm bench",
+    "p": 2500
+   },
+   {
+    "n": "Centralized vacuum cleaner system",
+    "p": 1900
+   },
+   {
+    "n": "Electric cable reel for shore power",
+    "p": 2900
+   }
+  ]
  }
 ]

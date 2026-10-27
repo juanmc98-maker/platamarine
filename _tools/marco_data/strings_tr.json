@@ -1150,5 +1150,281 @@
   "ca": "Comandament a distància del molinet amb comptador de cadena",
   "en": "Windlass remote with chain counter",
   "fr": "Télécommande de guindeau avec compteur de chaîne"
+ },
+ "Fiberglass Hard-Top with glass windshield and electric wipers with water pump": {
+  "es": "Hard-top de fibra con parabrisas de cristal y limpiaparabrisas eléctricos con bomba de agua",
+  "ca": "Hard-top de fibra amb parabrisa de vidre i eixugaparabrisa elèctrics amb bomba d’aigua",
+  "en": "Fiberglass hard-top with glass windshield and electric wipers with water pump",
+  "fr": "Hard-top en fibre avec pare-brise en verre et essuie-glaces électriques avec pompe à eau"
+ },
+ "2 electro-hydraulically operated fold-down side platforms": {
+  "es": "2 plataformas laterales abatibles con accionamiento electrohidráulico",
+  "ca": "2 plataformes laterals abatibles amb accionament electrohidràulic",
+  "en": "2 electro-hydraulic fold-down side platforms",
+  "fr": "2 plateformes latérales rabattables à commande électrohydraulique"
+ },
+ "2 multifunction tables (table or sunbed extension) in the dinette with electric operation": {
+  "es": "2 mesas multifunción eléctricas en la dinette (mesa o ampliación de solárium)",
+  "ca": "2 taules multifunció elèctriques a la dinette (taula o ampliació de solàrium)",
+  "en": "2 electric multifunction tables in the dinette (table or sunbed extension)",
+  "fr": "2 tables multifonctions électriques dans le carré (table ou extension de bain de soleil)"
+ },
+ "Electric windlass with 15 kg stainless steel anchor, 75 m stainless steel chain and swivel": {
+  "es": "Molinete eléctrico con ancla inox de 15 kg, 75 m de cadena inox y giratorio",
+  "ca": "Molinet elèctric amb àncora inox de 15 kg, 75 m de cadena inox i giratori",
+  "en": "Electric windlass with 15 kg stainless anchor, 75 m stainless chain and swivel",
+  "fr": "Guindeau électrique avec ancre inox de 15 kg, 75 m de chaîne inox et émerillon"
+ },
+ "1,700 L stainless steel fuel tank, CE compliant, with flame arrester": {
+  "es": "Depósito de combustible inox de 1.700 L, conforme CE, con apagallamas",
+  "ca": "Dipòsit de combustible inox de 1.700 L, conforme CE, amb apagaflames",
+  "en": "1,700 L stainless fuel tank, CE compliant, with flame arrester",
+  "fr": "Réservoir de carburant inox de 1 700 L, conforme CE, avec pare-flammes"
+ },
+ "290 L freshwater tank, with 40 L boiler": {
+  "es": "Depósito de agua dulce de 290 L con calentador de 40 L",
+  "ca": "Dipòsit d’aigua dolça de 290 L amb escalfador de 40 L",
+  "en": "290 L fresh water tank with 40 L water heater",
+  "fr": "Réservoir d’eau douce de 290 L avec chauffe-eau de 40 L"
+ },
+ "90 L grey water tank": {
+  "es": "Depósito de aguas grises de 90 L",
+  "ca": "Dipòsit d’aigües grises de 90 L",
+  "en": "90 L grey water tank",
+  "fr": "Réservoir d’eaux grises de 90 L"
+ },
+ "Black water disposal system with 90 L tank, CE certified": {
+  "es": "Sistema de aguas negras con depósito de 90 L, certificado CE",
+  "ca": "Sistema d’aigües negres amb dipòsit de 90 L, certificat CE",
+  "en": "Black water system with 90 L tank, CE certified",
+  "fr": "Système d’eaux noires avec réservoir de 90 L, certifié CE"
+ },
+ "Rear sunshade with 4 carbon fiber poles, with side and aft extension": {
+  "es": "Toldo de popa con 4 postes de carbono y extensiones lateral y de popa",
+  "ca": "Tendal de popa amb 4 pals de carboni i extensions lateral i de popa",
+  "en": "Aft sunshade with 4 carbon poles and side and aft extensions",
+  "fr": "Taud de soleil arrière avec 4 mâts carbone et extensions latérale et arrière"
+ },
+ "Protective covers for dashboard, pilot bench, dinette, and bow sunbed": {
+  "es": "Fundas de protección para salpicadero, banco de gobierno, dinette y solárium de proa",
+  "ca": "Fundes de protecció per al tauler, banc de govern, dinette i solàrium de proa",
+  "en": "Protective covers for dashboard, helm bench, dinette and bow sunbed",
+  "fr": "Housses de protection pour tableau de bord, banquette de pilotage, carré et bain de soleil avant"
+ },
+ "2 stern showers and 1 bow shower, with mixer": {
+  "es": "2 duchas de popa y 1 de proa, con mezclador",
+  "ca": "2 dutxes de popa i 1 de proa, amb mesclador",
+  "en": "2 stern showers and 1 bow shower, with mixer",
+  "fr": "2 douches arrière et 1 douche avant, avec mitigeur"
+ },
+ "Complete electrical system, with batteries and 220V battery charger": {
+  "es": "Instalación eléctrica completa con baterías y cargador de 220 V",
+  "ca": "Instal·lació elèctrica completa amb bateries i carregador de 220 V",
+  "en": "Complete electrical system with batteries and 220 V charger",
+  "fr": "Installation électrique complète avec batteries et chargeur 220 V"
+ },
+ "Garmin 16\" 8416xsv GPS with sonar, transducer, charts, and external card reader": {
+  "es": "GPS Garmin 8416xsv de 16\" con sonda, transductor, cartas y lector de tarjetas externo",
+  "ca": "GPS Garmin 8416xsv de 16\" amb sonda, transductor, cartes i lector de targetes extern",
+  "en": "Garmin 16\" 8416xsv GPS with sonar, transducer, charts and external card reader",
+  "fr": "GPS Garmin 8416xsv 16\" avec sondeur, transducteur, cartes et lecteur de cartes externe"
+ },
+ "Garmin VHF AIS 315i": {
+  "es": "VHF Garmin AIS 315i",
+  "ca": "VHF Garmin AIS 315i",
+  "en": "Garmin VHF AIS 315i",
+  "fr": "VHF Garmin AIS 315i"
+ },
+ "Control panels in the console and cabin, equipped with magnetothermic circuit breakers": {
+  "es": "Cuadros eléctricos en consola y cabina con magnetotérmicos",
+  "ca": "Quadres elèctrics a la consola i a la cabina amb magnetotèrmics",
+  "en": "Control panels in console and cabin with circuit breakers",
+  "fr": "Tableaux électriques à la console et en cabine avec disjoncteurs magnétothermiques"
+ },
+ "Stereo system: Fusion Apollo 770 source, 6 JL M6 speakers, and amplifier": {
+  "es": "Equipo de música: fuente Fusion Apollo 770, 6 altavoces JL M6 y amplificador",
+  "ca": "Equip de música: font Fusion Apollo 770, 6 altaveus JL M6 i amplificador",
+  "en": "Stereo: Fusion Apollo 770 source, 6 JL M6 speakers and amplifier",
+  "fr": "Chaîne hi-fi : source Fusion Apollo 770, 6 haut-parleurs JL M6 et amplificateur"
+ },
+ "Electric-operated garage hatch": {
+  "es": "Portón de garaje eléctrico",
+  "ca": "Portó de garatge elèctric",
+  "en": "Electric garage hatch",
+  "fr": "Porte de garage électrique"
+ },
+ "Helm bench with 3 seats, 2 electric drawer fridges 100 L and sink (freezer as an alternative)": {
+  "es": "Banco de gobierno de 3 plazas con 2 neveras eléctricas de cajón de 100 L y fregadero (o congelador)",
+  "ca": "Banc de govern de 3 places amb 2 neveres elèctriques de calaix de 100 L i aigüera (o congelador)",
+  "en": "3-seat helm bench with 2 electric 100 L drawer fridges and sink (or freezer)",
+  "fr": "Banquette de pilotage 3 places avec 2 réfrigérateurs électriques à tiroir de 100 L et évier (ou congélateur)"
+ },
+ "95 kgf bow thruster with controls at console": {
+  "es": "Hélice de proa de 95 kgf con mando en consola",
+  "ca": "Hèlice de proa de 95 kgf amb comandament a la consola",
+  "en": "95 kgf bow thruster with controls at the console",
+  "fr": "Propulseur d’étrave de 95 kgf avec commande à la console"
+ },
+ "Telescopic stainless steel retractable boarding ladder": {
+  "es": "Escalera de baño telescópica inox retráctil",
+  "ca": "Escala de bany telescòpica inox retràctil",
+  "en": "Retractable telescopic stainless boarding ladder",
+  "fr": "Échelle de bain télescopique inox escamotable"
+ },
+ "Mooring aid kit: 6 stainless steel cleats and 1 stainless steel fairlead": {
+  "es": "Kit de amarre: 6 cornamusas y 1 guía de cabo inox",
+  "ca": "Kit d’amarratge: 6 corns i 1 guia de cap inox",
+  "en": "Mooring kit: 6 stainless cleats and 1 stainless fairlead",
+  "fr": "Kit d’amarrage : 6 taquets et 1 chaumard inox"
+ },
+ "Courtesy lighting: 24 LED courtesy lights on deck": {
+  "es": "Iluminación de cortesía: 24 luces LED en cubierta",
+  "ca": "Il·luminació de cortesia: 24 llums LED a coberta",
+  "en": "Courtesy lighting: 24 LED lights on deck",
+  "fr": "Éclairage de courtoisie : 24 LED sur le pont"
+ },
+ "Complete external upholstery kit, in closed-cell foam and Drycel": {
+  "es": "Tapicería exterior completa en espuma de celda cerrada y Drycel",
+  "ca": "Tapisseria exterior completa en escuma de cel·la tancada i Drycel",
+  "en": "Complete exterior upholstery in closed-cell foam and Drycel",
+  "fr": "Sellerie extérieure complète en mousse à cellules fermées et Drycel"
+ },
+ "Complete interior furnishings for owner's cabin and guest cabin": {
+  "es": "Mobiliario completo del camarote del armador y del de invitados",
+  "ca": "Mobiliari complet de la cabina de l’armador i de la de convidats",
+  "en": "Complete interior furnishing of owner’s and guest cabins",
+  "fr": "Aménagement intérieur complet de la cabine propriétaire et de la cabine invités"
+ },
+ "Toilet compartment with sink, electric toilet, and separate shower enclosure": {
+  "es": "Baño con lavabo, WC eléctrico y ducha separada",
+  "ca": "Bany amb lavabo, WC elèctric i dutxa separada",
+  "en": "Head with washbasin, electric toilet and separate shower",
+  "fr": "Salle d’eau avec lavabo, WC électrique et douche séparée"
+ },
+ "2 automatic bilge pumps and 1 manual bilge pump": {
+  "es": "2 bombas de achique automáticas y 1 manual",
+  "ca": "2 bombes d’esgotament automàtiques i 1 de manual",
+  "en": "2 automatic bilge pumps and 1 manual pump",
+  "fr": "2 pompes de cale automatiques et 1 manuelle"
+ },
+ "Navigation aid kit: navigation lights, anchor light, horn, and compass": {
+  "es": "Luces de navegación, luz de fondeo, bocina y compás",
+  "ca": "Llums de navegació, llum de fondeig, botzina i compàs",
+  "en": "Navigation lights, anchor light, horn and compass",
+  "fr": "Feux de navigation, feu de mouillage, klaxon et compas"
+ },
+ "Electric inflator with pressure gauge": {
+  "es": "Inflador eléctrico con manómetro",
+  "ca": "Inflador elèctric amb manòmetre",
+  "en": "Electric inflator with pressure gauge",
+  "fr": "Gonfleur électrique avec manomètre"
+ },
+ "Additional Garmin 8416 16\" display": {
+  "es": "Pantalla Garmin 8416 de 16\" adicional",
+  "ca": "Pantalla Garmin 8416 de 16\" addicional",
+  "en": "Additional Garmin 8416 16\" display",
+  "fr": "Écran Garmin 8416 16\" supplémentaire"
+ },
+ "Garmin 18x GMR Fantom radar (radome)": {
+  "es": "Radar Garmin GMR Fantom 18x (radomo)",
+  "ca": "Radar Garmin GMR Fantom 18x (radom)",
+  "en": "Garmin GMR Fantom 18x radar (radome)",
+  "fr": "Radar Garmin GMR Fantom 18x (radôme)"
+ },
+ "FLIR M232 thermal camera": {
+  "es": "Cámara térmica FLIR M232",
+  "ca": "Càmera tèrmica FLIR M232",
+  "en": "FLIR M232 thermal camera",
+  "fr": "Caméra thermique FLIR M232"
+ },
+ "Retractable Besenzoni gangway with electric operation": {
+  "es": "Pasarela retráctil Besenzoni eléctrica",
+  "ca": "Passarel·la retràctil Besenzoni elèctrica",
+  "en": "Retractable electric Besenzoni gangway",
+  "fr": "Passerelle escamotable électrique Besenzoni"
+ },
+ "Paguro 4.5 kW generator + internal air conditioning system": {
+  "es": "Generador Paguro de 4,5 kW + aire acondicionado interior",
+  "ca": "Generador Paguro de 4,5 kW + aire condicionat interior",
+  "en": "Paguro 4.5 kW generator + interior air conditioning",
+  "fr": "Groupe électrogène Paguro 4,5 kW + climatisation intérieure"
+ },
+ "Bow bimini with 4 carbon fiber poles": {
+  "es": "Bimini de proa con 4 postes de carbono",
+  "ca": "Bimini de proa amb 4 pals de carboni",
+  "en": "Bow bimini with 4 carbon poles",
+  "fr": "Bimini avant avec 4 mâts carbone"
+ },
+ "2 Lumishore underwater lights on the transom, white/blue": {
+  "es": "2 luces subacuáticas Lumishore en espejo de popa, blanco/azul",
+  "ca": "2 llums subaquàtics Lumishore al mirall de popa, blanc/blau",
+  "en": "2 Lumishore underwater lights on the transom, white/blue",
+  "fr": "2 éclairages sous-marins Lumishore au tableau arrière, blanc/bleu"
+ },
+ "2 Lumishore underwater lights on the transom, RGB LED": {
+  "es": "2 luces subacuáticas Lumishore en espejo de popa, LED RGB",
+  "ca": "2 llums subaquàtics Lumishore al mirall de popa, LED RGB",
+  "en": "2 Lumishore underwater lights on the transom, RGB LED",
+  "fr": "2 éclairages sous-marins Lumishore au tableau arrière, LED RGB"
+ },
+ "6 Lumishore underwater lights (2 at the stern + 4 on the sides), RGB LED": {
+  "es": "6 luces subacuáticas Lumishore (2 en popa + 4 en costados), LED RGB",
+  "ca": "6 llums subaquàtics Lumishore (2 a popa + 4 als costats), LED RGB",
+  "en": "6 Lumishore underwater lights (2 aft + 4 on the sides), RGB LED",
+  "fr": "6 éclairages sous-marins Lumishore (2 à l’arrière + 4 sur les côtés), LED RGB"
+ },
+ "Schenker Zen 50 desalination system": {
+  "es": "Desalinizadora Schenker Zen 50",
+  "ca": "Dessalinitzadora Schenker Zen 50",
+  "en": "Schenker Zen 50 watermaker",
+  "fr": "Dessalinisateur Schenker Zen 50"
+ },
+ "Complete external MarineMat 12 mm decking": {
+  "es": "Suelo exterior completo MarineMat de 12 mm",
+  "ca": "Terra exterior complet MarineMat de 12 mm",
+  "en": "Complete exterior MarineMat 12 mm decking",
+  "fr": "Revêtement extérieur complet MarineMat 12 mm"
+ },
+ "Complete internal MarineMat 6 mm flooring": {
+  "es": "Suelo interior completo MarineMat de 6 mm",
+  "ca": "Terra interior complet MarineMat de 6 mm",
+  "en": "Complete interior MarineMat 6 mm flooring",
+  "fr": "Revêtement intérieur complet MarineMat 6 mm"
+ },
+ "Complete external teak 10 mm decking": {
+  "es": "Cubierta exterior completa de teca de 10 mm",
+  "ca": "Coberta exterior completa de teca de 10 mm",
+  "en": "Complete exterior 10 mm teak decking",
+  "fr": "Pont extérieur complet en teck 10 mm"
+ },
+ "JPO bow thruster connection system (with bow thruster upgrade)": {
+  "es": "Conexión de la hélice de proa al joystick JPO (con hélice mejorada)",
+  "ca": "Connexió de l’hèlice de proa al joystick JPO (amb hèlice millorada)",
+  "en": "JPO bow thruster connection (with bow thruster upgrade)",
+  "fr": "Connexion du propulseur d’étrave au joystick JPO (avec propulseur amélioré)"
+ },
+ "Pair of induction burners integrated into the helm bench": {
+  "es": "2 placas de inducción integradas en el banco de gobierno",
+  "ca": "2 plaques d’inducció integrades al banc de govern",
+  "en": "2 induction burners integrated into the helm bench",
+  "fr": "2 plaques à induction intégrées dans la banquette de pilotage"
+ },
+ "Electric barbecue integrated into the helm bench": {
+  "es": "Barbacoa eléctrica integrada en el banco de gobierno",
+  "ca": "Barbacoa elèctrica integrada al banc de govern",
+  "en": "Electric barbecue integrated into the helm bench",
+  "fr": "Barbecue électrique intégré dans la banquette de pilotage"
+ },
+ "Centralized vacuum cleaner system": {
+  "es": "Aspiración centralizada",
+  "ca": "Aspiració centralitzada",
+  "en": "Central vacuum system",
+  "fr": "Aspiration centralisée"
+ },
+ "Electric cable reel for shore power": {
+  "es": "Enrollador eléctrico del cable de toma de puerto",
+  "ca": "Enrotllador elèctric del cable de presa de port",
+  "en": "Electric shore power cable reel",
+  "fr": "Enrouleur électrique du câble de quai"
  }
 }
