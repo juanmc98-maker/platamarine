@@ -241,7 +241,7 @@
 })();
 
 /* Buscador de la web (lupa en la cabecera): ver /search.js */
-(function(){if(document.querySelector("script[src^=\"/search.js\"]"))return;var s=document.createElement("script");s.src="/search.js?v=20261014";s.defer=true;document.head.appendChild(s);})();
+(function(){if(document.querySelector("script[src^=\"/search.js\"]"))return;var s=document.createElement("script");s.src="/search.js?v=20261027";s.defer=true;document.head.appendChild(s);})();
 
 /* Menú · ¿Cuánto vale mi barco? (7 oct 2026): primer enlace de Recursos › Vender, antes de valora-tu-barco. */
 (function(){

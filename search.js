@@ -94,6 +94,14 @@
       if (e.key === 'ArrowUp') { e.preventDefault(); if (li.previousElementSibling) li.previousElementSibling.querySelector('a').focus(); else inp.focus(); }
       if (e.key === 'Escape') close();
     });
+    window.pmSearchOpen = function (q, add) { var was = !ov.hidden; open(); if (q != null) { inp.value = (add && was ? inp.value : '') + q; render(); } inp.focus(); };
+    var hf = document.querySelectorAll('form[data-pms]');
+    for (var k = 0; k < hf.length; k++) (function (f) {
+      var fi = f.querySelector('input');
+      f.addEventListener('submit', function (e) { e.preventDefault(); window.pmSearchOpen(fi.value); });
+      fi.addEventListener('input', function () { var v = fi.value; fi.value = ''; window.pmSearchOpen(v, true); });
+      fi.addEventListener('focus', function () { if (window.matchMedia && matchMedia('(pointer:coarse)').matches) { fi.blur(); window.pmSearchOpen(''); } });
+    })(hf[k]);
     document.addEventListener('keydown', function (e) { if (e.key === '/' && ov.hidden && !/input|textarea|select/i.test((e.target.tagName || ''))) { e.preventDefault(); open(); } });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
