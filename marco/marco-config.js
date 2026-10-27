@@ -8,11 +8,37 @@ var L=C.L, lg=C.lang;
 function eur(n){var s=Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,lg==='en'?',':(lg==='fr'?' ':'.'));return lg==='en'?'€'+s:s+' €';}
 function $(id){return document.getElementById(id);}
 var opts=[].slice.call(box.querySelectorAll('input[name=mmo]'));
+/* motorizaciones Mercury con precio (tarifa Mercury + instalación) */
+var MB=null;
+if(C.mer&&C.mer.length){
+  var st=document.createElement('style');st.textContent='.mm-mer{margin:4px 0 12px;padding:14px;border:1.5px solid var(--line,#dfe5e8);border-radius:12px;background:#fff}.mm-mer h4{margin:0 0 10px;font-size:15px}.mm-mer .mm-ml{display:grid;gap:6px}.mm-mer label{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:9px 12px;border:1px solid var(--line,#dfe5e8);border-radius:10px;cursor:pointer;font-size:14px}.mm-mer label:has(input:checked){border-color:var(--wa,#0B766B);box-shadow:0 0 0 3px rgba(11,118,107,.14)}.mm-mer label.off{opacity:.45;cursor:not-allowed}.mm-mer input{margin:0 8px 0 0;accent-color:var(--wa,#0B766B)}.mm-mer label span{flex:1}.mm-mer label b{white-space:nowrap}.mm-mer .mm-mx{margin-top:10px;display:grid;gap:6px}.mm-mer p{margin:10px 0 0;font-size:12.5px;color:#5b6b75}';document.head.appendChild(st);
+  MB=document.createElement('div');MB.className='mm-mer';MB.id='mm-mer';MB.hidden=true;
+  var hm='<h4>'+L.m_h+'</h4><div class="mm-ml">';
+  C.mer.forEach(function(x,i){hm+='<label><span><input type="radio" name="mmm" value="'+i+'"'+(i?'':' checked')+'>'+x[0]+'</span><b>'+eur(x[1])+'</b></label>';});
+  hm+='</div><div class="mm-mx"><label id="mm-mwl"><span><input type="checkbox" id="mm-mw">'+L.m_w+'</span><b id="mm-mwp"></b></label><label id="mm-mjl"><span><input type="checkbox" id="mm-mj">'+L.m_j+'</span><b id="mm-mjp"></b></label></div><p>'+L.m_n+'</p>';
+  MB.innerHTML=hm;
+  var er=box.querySelector('input[name=mme]'),stp=er&&er.closest('.mm-step'),ch=stp&&stp.querySelector('.mm-choice');
+  if(ch)ch.parentNode.insertBefore(MB,ch.nextSibling);else MB=null;
+}
 function state(){
   var v=+((box.querySelector('input[name=mmv]:checked')||{}).value||0);
   var e=(box.querySelector('input[name=mme]:checked')||{}).value||'adv';
   var sel=opts.filter(function(o){return o.checked;}).map(function(o){return +o.value;});
-  return {v:v,e:e,o:sel};
+  var r={v:v,e:e,o:sel,m:0,w:0,j:0};
+  if(MB&&e==='mer'){r.m=+((MB.querySelector('input[name=mmm]:checked')||{}).value||0);r.w=$('mm-mw').checked?1:0;r.j=$('mm-mj').checked?1:0;}
+  return r;
+}
+function mx(s){return MB&&s.e==='mer'?C.mer[s.m]:null;}
+function ep(s){var x=mx(s);if(!x)return 0;return x[1]+(s.w?x[2]:0)+(s.j&&x[3]>0?x[3]:0);}
+function el(s){var x=mx(s);if(!x)return C.eng[s.e];return x[0]+(s.w?' · '+L.m_w:'')+(x[3]===0?' · JPO '+L.m_inc:(s.j?' · JPO':''));}
+function hk(s){return mx(s)?'mer'+s.m+(s.w?'w':'')+(s.j?'j':''):s.e;}
+function syncMer(){
+  if(!MB)return;var e=(box.querySelector('input[name=mme]:checked')||{}).value;MB.hidden=e!=='mer';
+  var i=+((MB.querySelector('input[name=mmm]:checked')||{}).value||0),x=C.mer[i],j=$('mm-mj'),jl=$('mm-mjl');
+  $('mm-mwp').textContent='+'+eur(x[2]);
+  if(x[3]<0){j.checked=false;j.disabled=true;jl.classList.add('off');$('mm-mjp').textContent='—';}
+  else if(x[3]===0){j.checked=true;j.disabled=true;jl.classList.add('off');$('mm-mjp').textContent=L.m_inc;}
+  else{if(j.disabled){j.checked=false;}j.disabled=false;jl.classList.remove('off');$('mm-mjp').textContent='+'+eur(x[3]);}
 }
 function base(s){return s.v&&C.inf?C.inf:C.base;}
 /* compatibilidades: lo que necesita cada opcional y con qué choca */
@@ -32,17 +58,17 @@ function enforce(){
   }
 }
 function render(){
-  enforce();
-  var s=state(),b=base(s),sum=0;
+  enforce();syncMer();
+  var s=state(),b=base(s),sum=0,ee=ep(s);
   var ul=$('mm-sl');ul.innerHTML='';
   s.o.forEach(function(i){var o=C.opts[i];sum+=o[1]||0;var li=document.createElement('li');var a=document.createElement('span');a.textContent=o[0];var p=document.createElement('span');p.textContent='+'+eur(o[1]||0);li.appendChild(a);li.appendChild(p);ul.appendChild(li);});
   $('mm-sb').textContent=eur(b);
-  $('mm-se').textContent=C.eng[s.e];
+  $('mm-se').textContent=el(s)+(ee?' · '+eur(ee):'');
   $('mm-so').textContent=s.o.length?(s.o.length+' · '+eur(sum)):L.sum_none;
-  $('mm-st').textContent=eur(b+sum);
-  var bt=$('mm-bt'); if(bt) bt.textContent=eur(b+sum);
+  $('mm-st').textContent=eur(b+sum+ee);
+  var bt=$('mm-bt'); if(bt) bt.textContent=eur(b+sum+ee);
   [].forEach.call(box.querySelectorAll('.mm-cat'),function(d){var n=d.querySelectorAll('input:checked').length;var i=d.querySelector('summary i');i.hidden=!n;i.textContent=n;});
-  var h='#cfg='+s.v+'-'+s.e+(s.o.length?'-'+s.o.join('.'):'');
+  var h='#cfg='+s.v+'-'+hk(s)+(s.o.length?'-'+s.o.join('.'):'');
   if(history.replaceState&&(s.v||s.e!=='adv'||s.o.length)) history.replaceState(null,'',h);
   window.MC_SUMMARY=text(s,b,sum);
   var ta=$('mc_cfg'); if(ta&&touched){ta.value=window.MC_SUMMARY;$('mc_cfg_w').hidden=false;}
@@ -51,9 +77,9 @@ function render(){
 var touched=false;
 function text(s,b,sum){
   var t=[C.name+' · '+(s.v&&C.inf?L.c_inf:L.c_std)+': '+eur(b)];
-  t.push(L.sum_eng+': '+C.eng[s.e]);
+  var ee=ep(s);t.push(L.sum_eng+': '+el(s)+(ee?': '+eur(ee):''));
   s.o.forEach(function(i){t.push('+ '+C.opts[i][0]+': '+eur(C.opts[i][1]||0));});
-  t.push(L.sum_tot+': '+eur(b+sum)+' '+L.vat);if(L.tax_note)t.push(L.tax_note);
+  t.push(L.sum_tot+': '+eur(b+sum+ee)+' '+L.vat);if(L.tax_note)t.push(L.tax_note);
   return t.join('\n');
 }
 box.addEventListener('change',function(e){
@@ -63,15 +89,17 @@ box.addEventListener('change',function(e){
   if(window.pmTrack&&t.name) window.pmTrack('configurator_change',{brand:'marco',model:C.name});
 });
 /* restaurar desde el enlace */
-var m=location.hash.match(/^#cfg=(\d)-(mer|oth|adv)(?:-([\d.]+))?$/);
+var m=location.hash.match(/^#cfg=(\d)-(mer|oth|adv)(\d*)(w?)(j?)(?:-([\d.]+))?$/);
 if(m){touched=true;var r=box.querySelector('input[name=mmv][value="'+m[1]+'"]');if(r)r.checked=true;
   var e=box.querySelector('input[name=mme][value="'+m[2]+'"]');if(e)e.checked=true;
+  if(MB&&m[2]==='mer'){var mm=MB.querySelector('input[name=mmm][value="'+(m[3]||0)+'"]');if(mm)mm.checked=true;$('mm-mw').checked=!!m[4];$('mm-mj').checked=!!m[5];}
+  m[3]=m[6];
   (m[3]||'').split('.').forEach(function(i){var o=box.querySelector('input[name=mmo][value="'+i+'"]');if(o){o.checked=true;var d=o.closest('details');if(d)d.open=true;}});
   setTimeout(function(){var c=document.getElementById('configurar');if(c)c.scrollIntoView();},300);}
 render();
 $('mm-send').addEventListener('click',function(){touched=true;render();});
 $('mm-share').addEventListener('click',function(){
-  var s=render(),u=location.origin+location.pathname+'#cfg='+s.v+'-'+s.e+(s.o.length?'-'+s.o.join('.'):''),b=this;
+  var s=render(),u=location.origin+location.pathname+'#cfg='+s.v+'-'+hk(s)+(s.o.length?'-'+s.o.join('.'):''),b=this;
   function ok(){b.textContent=L.b_copied;setTimeout(function(){b.textContent=L.b_share;},2200);}
   if(navigator.share&&/Mobi|Android/i.test(navigator.userAgent)){navigator.share({title:C.name,url:u}).catch(function(){});return;}
   if(navigator.clipboard)navigator.clipboard.writeText(u).then(ok,function(){prompt('',u);});else prompt('',u);
@@ -81,12 +109,12 @@ var LEADS_URL='https://script.google.com/macros/s/AKfycbwJtBkktakE0qgmu_b8oHOOop
 var client=null,dl=$('mm-dl'),dlf=$('mcDl'),last=null;
 function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
 function offerNo(){var d=new Date(),p=function(n){return (n<10?'0':'')+n;};var a='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',r='';for(var i=0;i<4;i++)r+=a.charAt(Math.floor(Math.random()*a.length));return 'PM-MC-'+String(d.getFullYear()).slice(2)+p(d.getMonth()+1)+p(d.getDate())+'-'+r;}
-function cfgUrl(s){return location.origin+location.pathname+'#cfg='+s.v+'-'+s.e+(s.o.length?'-'+s.o.join('.'):'');}
+function cfgUrl(s){return location.origin+location.pathname+'#cfg='+s.v+'-'+hk(s)+(s.o.length?'-'+s.o.join('.'):'');}
 function loadQr(){return new Promise(function(ok){if(window.qrcode)return ok();var sc=document.createElement('script');sc.src='/marco/qr.js';sc.onload=ok;sc.onerror=ok;document.head.appendChild(sc);});}
 function sheet(no,s){
-  var b=base(s),sum=0,rows='';
+  var b=base(s),sum=0,rows='',ee=ep(s);
   rows+='<tr><td>'+esc(L.sum_base+' · '+(s.v&&C.inf?L.c_inf:L.c_std))+' <span style="color:#6b7a84">('+esc(L.noeng)+')</span></td><td>'+eur(b)+'</td></tr>';
-  rows+='<tr><td>'+esc(L.sum_eng)+'</td><td>'+esc(C.eng[s.e])+'</td></tr>';
+  rows+='<tr><td>'+esc(L.sum_eng)+(mx(s)?' · '+esc(el(s)):'')+'</td><td>'+(ee?'+'+eur(ee):esc(C.eng[s.e]))+'</td></tr>';
   s.o.forEach(function(i){sum+=C.opts[i][1]||0;rows+='<tr><td>'+esc(C.opts[i][0])+'</td><td>+'+eur(C.opts[i][1]||0)+'</td></tr>';});
   var specs=C.specs.map(function(x){return '<dt>'+esc(x[0])+'</dt><dd>'+esc(x[1])+'</dd>';}).join('');
   var qr='';try{if(window.qrcode){var q=qrcode(0,'M');q.addData(cfgUrl(s));q.make();qr=q.createSvgTag({cellSize:4,margin:0,scalable:true});}}catch(e){}
@@ -97,7 +125,7 @@ function sheet(no,s){
    '<div class="ref"><span>'+esc(L.sh_offer)+' nº</span><b>'+no+'</b><span>'+esc(L.sh_date)+': '+dt+'</span></div></div>'+
    '<img class="hero" src="'+C.hero+'" alt="">'+(th?'<div class="th">'+th+'</div>':'')+
    '<div class="cols"><div><h2>'+esc(L.sh_cfg)+'</h2><table>'+rows+'</table></div><div><h2>'+esc(L.sh_specs)+'</h2><dl>'+specs+'</dl></div></div>'+
-   '<div class="tot"><div><div class="l">'+esc(L.sum_tot)+'</div><div class="v">'+eur(b+sum)+'<span class="vat">'+esc(L.vat)+'</span></div></div><div class="iva"><span style="font-size:7.5pt">'+esc(L.tax_note||'')+'</span></div></div>'+
+   '<div class="tot"><div><div class="l">'+esc(L.sum_tot)+'</div><div class="v">'+eur(b+sum+ee)+'<span class="vat">'+esc(L.vat)+'</span></div></div><div class="iva"><span style="font-size:7.5pt">'+esc(L.tax_note||'')+'</span></div></div>'+
    '<div class="ft">'+(qr?'<div class="qr">'+qr+'</div>':'')+'<div class="c"><small>'+esc(L.sh_scan)+'</small><b>Juan Morante · Plata Marine</b>+34 633 742 973 · juan@platamarine.com · www.platamarine.com</div></div>'+
    '<p class="sm">'+esc(L.sh_valid)+'</p></div>';
   var el=$('mm-sheet');if(!el){el=document.createElement('div');el.id='mm-sheet';document.body.appendChild(el);}
@@ -144,6 +172,7 @@ $('mm-reset').addEventListener('click',function(){
   opts.forEach(function(o){o.checked=false;});
   var v=box.querySelector('input[name=mmv][value="0"]');if(v)v.checked=true;
   var e=box.querySelector('input[name=mme][value="adv"]');if(e)e.checked=true;
+  if(MB){var m0=MB.querySelector('input[name=mmm][value="0"]');if(m0)m0.checked=true;$('mm-mw').checked=false;$('mm-mj').checked=false;}
   touched=false;var w=$('mc_cfg_w');if(w)w.hidden=true;
   if(history.replaceState)history.replaceState(null,'',location.pathname);render();
 });
