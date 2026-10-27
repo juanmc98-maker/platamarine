@@ -32,9 +32,9 @@ SITE = 'https://www.platamarine.com'
 V = '20261024b'
 
 # slug, nombre, clave tarifa, tipo (cab/open), eslora m, vídeos oficiales, foto de portada (n), foto de cierre
-IEDMT = {'e-motion-36', 'r-evolution-x36', 'r-evolution-35', 'e-motion-32'}  # eslora en papeles > 8 m seguro (tarifa: 9,98 m homologada o más)
+IEDMT = {'e-motion-44', 'e-motion-36', 'r-evolution-x36', 'r-evolution-35', 'e-motion-32'}  # eslora en papeles > 8 m seguro (tarifa: 9,98 m homologada o más)
 MODELS = [
- ('e-motion-44', 'E-Motion 44', None, 'cab', 13.50, [], 3, 14),
+ ('e-motion-44', 'E-Motion 44', 'E-MOTION 44', 'cab', 13.50, [], 3, 14),
  ('e-motion-36', 'E-Motion 36', 'E-MOTION 36', 'cab', 10.70, ['Bf60mN_Imvk', '2n4Izcv3VIg'], 1, 7),
  ('r-evolution-x36', 'R-Evolution X36', 'R-EVOLUTION X36', 'open', 10.65, ['LywzlrPQT1k', 'yq5nMzLWBd8'], 3, 9),
  ('r-evolution-35', 'R-Evolution 35', 'R-EVOLUTION 35', 'open', 10.65, ['YS0CTXe5z3Q'], 1, 24),
@@ -47,7 +47,7 @@ MODELS = [
 ]
 OLD_FOTO = {'e-motion-29': '/marco/fotos/marco-e-motion-29-01', 'twentysix': '/marco/fotos/marco-twentysix-01'}
 
-# E-Motion 44: sin tarifa en la lista de 09/2026; datos de la web del astillero
+# E-Motion 44: tarifa propia del astillero (Rev. 09/2025, marco_data/e44.json); ficha de la web del astillero
 E44 = {
  'es': {'p': ['La cabinada más grande de Mar.Co: 13,50 m, dos camarotes con cuatro plazas para dormir y plataformas laterales abatibles que abren la manga hasta 5,60 m.'],
         'dl': {'Eslora total': '13,50 m', 'Eslora de casco': '13,37 m', 'Manga': '4,55 m', 'Manga con plataformas abiertas': '5,60 m', 'Camarotes': '2 (4 plazas)', 'Peso en seco': '10.000 kg', 'Ángulo de la V': '22°', 'Combustible': '1.700 l', 'Agua dulce': '290 l', 'Potencia máxima': '2.000 hp', 'Categoría de diseño CE': 'B', 'Titulación': 'PER o superior'}},
@@ -286,6 +286,7 @@ EXCL = [
  ('aft', r'^aft sunshade|^aft bimini|rear sunshade awning|rear sun awning'),
  ('hardtop', r'hard-top with|^fiberglass roll-bar'),
  ('frg', r'^42 l drawer fridge|^42 l top-down fridge'),
+ ('uwl', r'lumishore underwater lights on the transom|^6 lumishore underwater'),
 ]
 # Compatibilidades (revisadas a mano sobre la tarifa 09/2026): qué aporta cada opción y qué necesita / con qué choca
 PROV = [
@@ -787,7 +788,9 @@ def page(lg, mi):
     os.makedirs(dst, exist_ok=True)
     open(os.path.join(dst, 'index.html'), 'w').write(out)
 
+ONLY = set(filter(None, os.environ.get('PM_ONLY', '').split(',')))
 for lg in LANGS:
     for i in range(len(MODELS)):
+        if ONLY and MODELS[i][0] not in ONLY: continue
         page(lg, i)
 print('ok', len(LANGS) * len(MODELS), 'páginas')

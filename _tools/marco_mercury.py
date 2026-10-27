@@ -4,7 +4,7 @@
 import json, os, re, sys
 
 ROOT = os.environ.get('PM_ROOT', os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-V = '20261027m'
+V = '20261027n'
 
 # (n, cv): (nombre, tarifa, blanco, jpo [-1 no disponible, 0 incluido], instalación)
 ENG = {
@@ -63,7 +63,17 @@ T = {
                tot_old='moteurs et transport depuis l’usine en sus', tot_new='transport depuis l’usine et moteurs d’une autre marque en sus'),
 }
 
+# E-Motion 44: motorizaciones de su propia tarifa (Rev. 09/2025), con JPO, VesselView 903, instalación y prueba de entrega incluidos
+E44 = json.load(open(os.path.join(ROOT, '_tools', 'marco_data', 'e44.json'), encoding='utf-8'))
+OPT['e-motion-44'] = []
+N44 = {'es': 'Precio de la tarifa del astillero para la E-Motion 44: incluye joystick JPO, pantalla VesselView 903, instalación y prueba antes de la entrega.',
+       'ca': 'Preu de la tarifa de la drassana per a l’E-Motion 44: inclou joystick JPO, pantalla VesselView 903, instal·lació i prova abans del lliurament.',
+       'en': 'Shipyard list price for the E-Motion 44: includes JPO joystick, VesselView 903 display, installation and pre-delivery test.',
+       'fr': 'Prix du tarif chantier pour l’E-Motion 44 : joystick JPO, écran VesselView 903, installation et essai avant livraison inclus.'}
+
 def mer(slug):
+    if slug == 'e-motion-44':
+        return [[n, p, -1, 0] for n, p in E44['eng']]
     out = []
     for k in OPT[slug]:
         n, cv = map(int, k.split('*'))
@@ -80,7 +90,7 @@ for lg, t in T.items():
         if not m: sys.exit('sin MC_CFG: ' + f)
         d = json.loads(m.group(1))
         d['mer'] = mer(slug)
-        d['L'].update({'m_h': t['h'], 'm_w': t['w'], 'm_j': t['j'], 'm_inc': t['inc'], 'm_n': t['n']})
+        d['L'].update({'m_h': t['h'], 'm_w': t['w'], 'm_j': t['j'], 'm_inc': t['inc'], 'm_n': N44[lg] if slug == 'e-motion-44' else t['n']})
         s = s[:m.start(1)] + json.dumps(d, ensure_ascii=False) + s[m.end(1):]
         s = s.replace(t['note_old'], t['note_new']).replace(t['tot_old'], t['tot_new'])
         s = re.sub(r'marco-config\.js\?v=[0-9a-z]+', 'marco-config.js?v=' + V, s)
