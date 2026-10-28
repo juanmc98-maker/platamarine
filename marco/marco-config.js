@@ -74,6 +74,7 @@ function render(){
   var ta=$('mc_cfg'); if(ta&&touched){ta.value=window.MC_SUMMARY;$('mc_cfg_w').hidden=false;}
   return s;
 }
+(function(){var sl=$('mm-sl');if(!sl||document.getElementById('mm-col'))return;var T={es:'Colores: flotadores y tapicería, sin coste. Un color de la fibra distinto del estándar (pintura) tiene coste: te lo detallo en el presupuesto.',ca:'Colors: flotadors i entapissat, sense cost. Un color de la fibra diferent de l\'estàndard (pintura) té cost: t\'ho detallo al pressupost.',en:'Colours: tubes and upholstery at no extra cost. A non-standard fibreglass colour (paint) has an extra cost: I\'ll detail it in the quote.',fr:'Couleurs : boudins et sellerie sans supplément. Une couleur de coque différente du standard (peinture) est en supplément : je la détaille dans le devis.'};var q=document.createElement('p');q.id='mm-col';q.style.cssText='font-size:13px;opacity:.8;margin:10px 0 0;line-height:1.4';q.textContent=T[lg]||T.es;sl.parentNode.insertBefore(q,sl.nextSibling);})();
 var touched=false;
 function text(s,b,sum){
   var t=[C.name+' · '+(s.v&&C.inf?L.c_inf:L.c_std)+': '+eur(b)];
