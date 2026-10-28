@@ -714,16 +714,13 @@ section[id]{scroll-margin-top:78px}
 
 
 
-  <section class="pmbrands" aria-label="Astilleros con los que trabajo"><style>.pmbrands{background:#0D1C27;color:#fff;padding:34px 0}.pmbrands .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:18px 40px}.pmbrands .pmb-t{margin:0;font-family:var(--display);font-size:14px;font-weight:600;color:#B7C3CB;letter-spacing:.02em}.pmbrands .pmb-t b{display:block;color:#fff;font-size:18px;margin-top:4px}.pmbrands .pmb-l{display:flex;flex-wrap:wrap;align-items:center;gap:20px 30px;flex:1}.pmbrands .pmb-l a{display:inline-flex;align-items:center;opacity:.85;transition:opacity .15s}.pmbrands .pmb-l a:hover,.pmbrands .pmb-l a:focus-visible{opacity:1}.pmbrands .pmb-l img{height:34px;width:auto;display:block}.pmbrands .pmb-l .pmb-seastorm img{height:15px;width:auto}.pmbrands .pmb-l .pmb-skipper img{height:22px;width:auto}.pmbrands .pmb-l .pmb-txt{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:.14em;color:#fff;text-decoration:none}.pmbrands .pmb-all{color:#fff;font-family:var(--display);font-size:14px;font-weight:600;text-underline-offset:3px}.pmbrands .pmb-t{flex:1 1 auto}.pmbrands .pmb-all{white-space:nowrap}@media (min-width:900px){.pmbrands .pmb-all{order:2}.pmbrands .pmb-l{order:3;flex:1 1 100%;flex-wrap:nowrap;justify-content:space-between;padding-top:6px}}@media (max-width:640px){.pmbrands .wrap{flex-direction:column;align-items:flex-start}}</style>
-    <div class="wrap">
+  <section class="pmbrands" aria-label="Astilleros con los que trabajo"><style>.pmbrands{background:#0D1C27;color:#fff;padding:34px 0 30px;overflow:hidden}.pmbrands .pmb-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 30px;margin-bottom:22px}.pmbrands .pmb-t{margin:0;font-family:var(--display);font-size:14px;font-weight:600;color:#B7C3CB;letter-spacing:.02em}.pmbrands .pmb-t b{display:block;color:#fff;font-size:18px;margin-top:4px}.pmbrands .pmb-all{color:#fff;font-family:var(--display);font-size:14px;font-weight:600;text-underline-offset:3px;white-space:nowrap}.pmb-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}.pmb-track{display:flex;width:max-content;animation:pmb-run 30s linear infinite}.pmb-marquee:hover .pmb-track,.pmb-marquee:focus-within .pmb-track{animation-play-state:paused}.pmb-set{display:flex;align-items:center;list-style:none;margin:0;padding:0}.pmb-set li{flex:0 0 auto;padding:0 34px}.pmb-set a{display:flex;align-items:center;height:56px;opacity:.82;transition:opacity .15s}.pmb-set a:hover,.pmb-set a:focus-visible{opacity:1}.pmb-set img{display:block;width:auto;max-width:none}@keyframes pmb-run{from{transform:translateX(0)}to{transform:translateX(-50%)}}@media (max-width:640px){.pmb-set li{padding:0 22px}.pmb-set img{transform:scale(.85)}}@media (prefers-reduced-motion:reduce){.pmb-track{animation:none;width:auto;flex-wrap:wrap}.pmb-set[aria-hidden]{display:none}.pmb-set{flex-wrap:wrap;row-gap:10px}.pmb-marquee{-webkit-mask-image:none;mask-image:none}}</style>
+    <div class="wrap pmb-head">
       <p class="pmb-t">Barcos nuevos<b>Astilleros con los que trabajo</b></p>
-      <div class="pmb-l">
-        <a class="pmb-skipper" href="/skipper/"><img src="/skipper/fotos/skipper-logo-blanco.png" alt="SKIPPER Powerboats" loading="lazy" width="192" height="22"></a>
-        <a class="pmb-txt" href="/catharsis/">CATHARSIS</a>
-        <a class="pmb-seastorm" href="/seastorm/"><img src="/seastorm/fotos/seastorm-logo.png" alt="SeaStorm" loading="lazy" width="280" height="20"></a>
-      </div>
       <a class="pmb-all" href="/barcos-nuevos/">Ver todos los barcos nuevos →</a>
     </div>
+    <div class="pmb-marquee" data-marcas><a class="pmb-all pmb-fallback" href="/barcos-nuevos/">Ver todos los barcos nuevos →</a></div>
+    <script src="/marcas.js?v=20261028" defer></script>
   </section>
 
   <section class="sec" id="guias">

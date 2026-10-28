@@ -1,6 +1,7 @@
 /* Consentimiento de analítica y marketing. Versión 2026-10-08 (Microsoft Clarity dentro de analítica; al retirar el consentimiento se avisa a Clarity y se borran _clck/_clsk) (Configurar por finalidad, atribución borrada al retirar). i18n ES/CA/EN/FR. */
 (function () {
 'use strict';
+(function(){try{var s=document.createElement('style');s.textContent='footer p.wrap:has(>[data-cookie-settings]){margin:0 auto;padding-top:4px;padding-bottom:18px;text-align:center}footer [data-cookie-settings]{all:unset;cursor:pointer;font-family:var(--display,Arial,sans-serif);font-size:13px;color:inherit;opacity:.65;text-decoration:underline;text-underline-offset:3px}footer [data-cookie-settings]:hover,footer [data-cookie-settings]:focus-visible{opacity:1}footer [data-cookie-settings]:focus-visible{outline:2px solid currentColor;outline-offset:3px}';(document.head||document.documentElement).appendChild(s);}catch(e){}})();
 var CID = 'ytnexwm14p', GID = 'G-MJ6S489CXQ', FID = '1618955459947483', KEY = 'pm_privacy_v3', OLD = 'pm_cookies', OLD2 = 'pm_privacy_v2';
 var VERSION = '2026-10-07', MAX_AGE = 365 * 86400000;
 var allowedA = false, allowedM = false, loadedGA = false, loadedFB = false, box, opener;
