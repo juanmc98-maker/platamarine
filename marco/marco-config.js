@@ -128,9 +128,9 @@ function sheet(no,s){
    '<div class="tot"><div><div class="l">'+esc(L.sum_tot)+'</div><div class="v">'+eur(b+sum+ee)+'<span class="vat">'+esc(L.vat)+'</span></div></div><div class="iva"><span style="font-size:7.5pt">'+esc(L.tax_note||'')+'</span></div></div>'+
    '<div class="ft">'+(qr?'<div class="qr">'+qr+'</div>':'')+'<div class="c"><small>'+esc(L.sh_scan)+'</small><b>Juan Morante · Plata Marine</b>+34 633 742 973 · juan@platamarine.com · www.platamarine.com</div></div>'+
    '<p class="sm">'+esc(L.sh_valid)+'</p></div>';
-  var el=$('mm-sheet');if(!el){el=document.createElement('div');el.id='mm-sheet';document.body.appendChild(el);}
-  el.innerHTML=h;el.className=s.o.length>9?'many':'';
-  var imgs=[].slice.call(el.querySelectorAll('img'));
+  var sh=$('mm-sheet');if(!sh){sh=document.createElement('div');sh.id='mm-sheet';document.body.appendChild(sh);}
+  sh.innerHTML=h;sh.className=s.o.length>9?'many':'';
+  var imgs=[].slice.call(sh.querySelectorAll('img'));
   return Promise.all(imgs.map(function(i){return i.complete?1:new Promise(function(r){i.onload=i.onerror=r;});}));
 }
 function makePdf(){
