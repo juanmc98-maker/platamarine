@@ -24,7 +24,7 @@
     if (!f.elements.consent.checked) { say(T.consent); return; }
     if (!window.submitConfirmed) { say(T.fail); return; }
     busy = true; if (btn) btn.disabled = true; say(T.sending);
-    var p = { source: 'ideas', nombre: val('nombre'), email: em, detail: 'Tema propuesto: ' + tema, consent: true, lang: LANG, page: location.pathname, ua: navigator.userAgent.slice(0, 120) };
+    var p = { source: 'ideas', nombre: val('alias'), email: em, detail: 'Tema propuesto: ' + tema, consent: true, lang: LANG, page: location.pathname, ua: navigator.userAgent.slice(0, 120) };
     window.submitConfirmed(URL, p, 'json', f).then(function () {
       sent = true; busy = false; say(T.ok); f.reset();
       if (window.pmTrack) window.pmTrack('idea_sugerida', { form_id: 'ideas' });
