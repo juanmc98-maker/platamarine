@@ -62,4 +62,6 @@ function upd(ev){
  document.getElementById('cc-wa').href='https://wa.me/34633742973?text='+encodeURIComponent(msg);
 }
 box.addEventListener('change',upd); upd();
+var LBL={es:'Configurar y pedir presupuesto',ca:'Configurar i demanar pressupost',en:'Configure and get a quote',fr:'Configurer et demander un devis'}[lg];
+[].forEach.call(document.querySelectorAll('.price-box .btn-wa, #presupuesto .btn-wa'),function(a){a.href='#configurar';a.removeAttribute('target');a.removeAttribute('rel');a.removeAttribute('data-wa-context');a.textContent=LBL;});
 })();
