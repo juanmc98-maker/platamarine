@@ -9,7 +9,7 @@ LANGS = {'es': '', 'ca': '/ca', 'en': '/en', 'fr': '/fr'}
 WA = '34633742973'
 SLUG = 'catharsis'
 NPH = 10
-PRICE = 94990  # PVP sin IVA y sin motores (confirmado por Juan, 20 oct 2026)
+PRICE = 103990  # PVP sin IVA y sin motores (confirmado por Juan, 20 oct 2026)
 
 def eur(n, lang):
     s = f'{n:,}'
@@ -38,7 +38,7 @@ LI = ['es', 'ca', 'en', 'fr']
 T = {
  'es': dict(
   title='Catharsis 930 nuevo: precio, ficha y fotos · Plata Marine',
-  desc='Catharsis 930, crucero fueraborda de 9,30 m fabricado por Avila Marin. Desde 94.990 € +IVA sin motores. Agente en Cataluña.',
+  desc='Catharsis 930, crucero fueraborda de 9,30 m fabricado por Avila Marin. Desde 103.990 € +IVA sin motores. Agente en Cataluña.',
   eyebrow='Barcos nuevos', h1='Catharsis 930: crucero fueraborda de 9,30 metros',
   intro='Un barco con timonera, dos camarotes y baño, pensado para pasar el día o unos días a bordo con la familia. Lo fabrica Avila Marin y se pide a fábrica: te ayudo a elegir motores y equipamiento. Soy su agente en Cataluña.',
   kick='Agente en Cataluña', h2='El barco',
@@ -53,7 +53,7 @@ T = {
  ),
  'ca': dict(
   title='Catharsis 930 nou: preu, fitxa i fotos · Plata Marine',
-  desc='Catharsis 930, creuer fora borda de 9,30 m fabricat per Avila Marin. Des de 94.990 € +IVA sense motors. Agent a Catalunya.',
+  desc='Catharsis 930, creuer fora borda de 9,30 m fabricat per Avila Marin. Des de 103.990 € +IVA sense motors. Agent a Catalunya.',
   eyebrow='Vaixells nous', h1='Catharsis 930: creuer fora borda de 9,30 metres',
   intro='Un vaixell amb timonera, dos camarots i bany, pensat per passar el dia o uns dies a bord amb la família. El fabrica Avila Marin i es demana a fàbrica: t\'ajudo a triar motors i equipament. En sóc l\'agent a Catalunya.',
   kick='Agent a Catalunya', h2='El vaixell',
@@ -68,7 +68,7 @@ T = {
  ),
  'en': dict(
   title='New Catharsis 930: price, specs and photos · Plata Marine',
-  desc='Catharsis 930, a 9.30 m outboard cruiser built by Avila Marin. From €94,990 +VAT without engines. Agent in Catalonia.',
+  desc='Catharsis 930, a 9.30 m outboard cruiser built by Avila Marin. From €103,990 +VAT without engines. Agent in Catalonia.',
   eyebrow='New boats', h1='Catharsis 930: a 9.30-metre outboard cruiser',
   intro='A boat with a wheelhouse, two cabins and a bathroom, made for day trips or a few days on board with the family. Built by Avila Marin and ordered from the factory: I help you choose engines and equipment. I am their agent in Catalonia.',
   kick='Agent in Catalonia', h2='The boat',
@@ -83,7 +83,7 @@ T = {
  ),
  'fr': dict(
   title='Catharsis 930 neuf : prix, fiche et photos · Plata Marine',
-  desc='Catharsis 930, cruiser hors-bord de 9,30 m construit par Avila Marin. À partir de 94 990 € HT sans moteurs. Agent en Catalogne.',
+  desc='Catharsis 930, cruiser hors-bord de 9,30 m construit par Avila Marin. À partir de 103 990 € HT sans moteurs. Agent en Catalogne.',
   eyebrow='Bateaux neufs', h1='Catharsis 930 : cruiser hors-bord de 9,30 mètres',
   intro='Un bateau avec timonerie, deux cabines et salle d\'eau, pensé pour la journée ou quelques jours à bord en famille. Construit par Avila Marin et commandé à l\'usine : je vous aide à choisir les moteurs et l\'équipement. Je suis leur agent en Catalogne.',
   kick='Agent en Catalogne', h2='Le bateau',
@@ -347,7 +347,7 @@ def build(lang):
     ]
     head = head.replace('<style>', ''.join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>\n' for x in ld) + '<style>', 1)
     head = head.replace('</style>', CSS + '</style>', 1)
-    head += '<link rel="stylesheet" href="/barcos/ficha-v2.css?v=20261011b">\n<script src="/barcos/ficha-v2.js?v=20261011" defer></script>\n'
+    head += '<link rel="stylesheet" href="/barcos/ficha-v2.css?v=20261011b">\n<script src="/barcos/ficha-v2.js?v=20261011" defer></script>\n<script src="/catharsis/cath-config.js?v=20261028" defer></script>\n'
 
     body = rest.replace('/barcos-nuevos/" aria-current', f'/{SLUG}/" aria-current')
     body = re.sub(r'(<div class="langsw".*?</div>)', lambda m: m.group(1).replace('/barcos-nuevos/', f'/{SLUG}/'), body, flags=re.S)
