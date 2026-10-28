@@ -1,4 +1,4 @@
-/* Buzón "¿De qué quieres que hablemos?" (Actualidad, ES/CA/EN/FR). Envía la sugerencia a la hoja de leads con origen "ideas". */
+/* Buzón "¿De qué quieres que hablemos?" (Actualidad, ES/CA/EN/FR). La sugerencia llega a la hoja de leads como Novedades, con el texto "IDEA PARA ARTÍCULO". El email es obligatorio (el servidor pide un contacto). */
 (function () {
   'use strict';
   var f = document.getElementById('pm-ideas');
@@ -20,11 +20,11 @@
     if (busy || sent) return;
     var tema = val('tema'), em = val('email');
     if (tema.length < 4) { say(T.req); f.elements.tema.focus(); return; }
-    if (em && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { say(T.mail); f.elements.email.focus(); return; }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { say(T.mail); f.elements.email.focus(); return; }
     if (!f.elements.consent.checked) { say(T.consent); return; }
     if (!window.submitConfirmed) { say(T.fail); return; }
     busy = true; if (btn) btn.disabled = true; say(T.sending);
-    var p = { source: 'ideas', nombre: val('alias'), email: em, detail: 'Tema propuesto: ' + tema, consent: true, lang: LANG, page: location.pathname, ua: navigator.userAgent.slice(0, 120) };
+    var p = { source: 'novedades', email: em, newsletter: false, consent: true, consent_v: '2026-09', consent_at: new Date().toISOString(), detail: 'IDEA PARA ARTÍCULO: ' + tema + (val('alias') ? ' · De: ' + val('alias') : '') + ' · Idioma: ' + LANG, page: location.pathname, ua: navigator.userAgent.slice(0, 120) };
     window.submitConfirmed(URL, p, 'json', f).then(function () {
       sent = true; busy = false; say(T.ok); f.reset();
       if (window.pmTrack) window.pmTrack('idea_sugerida', { form_id: 'ideas' });
