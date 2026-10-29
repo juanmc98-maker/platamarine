@@ -4,6 +4,7 @@
   'use strict';
   var MARCAS = [
     { slug: 'skipper',   name: 'SKIPPER Powerboats',           logo: '/skipper/fotos/skipper-logo-blanco.png',       h: 22 },
+    { slug: 'klasea',    name: 'Klase A',                      logo: '/barcos-nuevos/logos/klasea-blanco.png',       h: 48 },
     { slug: 'marco',     name: 'Mar.Co',                       logo: '/barcos-nuevos/logos/marco-blanco.png',        h: 40 },
     { slug: 'catharsis', name: 'Catharsis (Avila Marin)',      logo: '/barcos-nuevos/logos/avila-marin-blanco.png',  h: 54 },
     { slug: 'kattum',    name: 'Kattum Yachts',                logo: '/barcos-nuevos/logos/kattum-blanco.png',       h: 40 },
