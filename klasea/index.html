@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Klase A en España: cruceros, flybridge y lanchas · Plata Marine</title>
-<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://www.platamarine.com/klasea/">
 <meta name="description" content="Toda la gama Klase A en España: cruceros, flybridge y lanchas de 5 a 24 m bajo pedido, entregados en Barcelona con Plata Marine.">
 <link rel="icon" type="image/png" href="/logo-plata-marine.png">
 <link rel="stylesheet" href="/barcos/barcos.css">
@@ -103,7 +103,7 @@
 .ka-hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.6)}.ka-hero .btn-ghost:hover{border-color:#fff}
 .ka-strip{background:var(--k-deep);color:#fff}
 .ka-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.ka-strip div{padding:22px 18px;border-left:1px solid rgba(255,255,255,.12)}.ka-strip div:first-child{border-left:0;padding-left:0}
+.ka-strip .wrap>div{padding:22px 18px;border-left:1px solid rgba(255,255,255,.12)}.ka-strip .wrap>div:first-child{border-left:0;padding-left:0}
 .ka-strip b{display:block;font-family:var(--display);font-size:1.05rem;color:#fff}
 .ka-strip span{font-size:.92rem;color:rgba(255,255,255,.72)}
 .ka-sec{padding:clamp(48px,7vw,88px) 0}
@@ -162,7 +162,7 @@
 .ka-lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:50%;width:46px;height:46px;font-size:26px;line-height:1;cursor:pointer}
 .ka-lb .x{top:14px;right:14px}.ka-lb .p{left:12px;top:50%;transform:translateY(-50%)}.ka-lb .n{right:12px;top:50%;transform:translateY(-50%)}
 .ka-lb p{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:rgba(255,255,255,.8);font-size:14px;margin:0}
-@media(max-width:900px){.ka-feat{grid-template-columns:1fr}.ka-models{grid-template-columns:1fr 1fr}.ka-why{grid-template-columns:1fr}.ka-how{grid-template-columns:1fr 1fr}.ka-strip .wrap{grid-template-columns:1fr 1fr}.ka-strip div:nth-child(3){border-left:0;padding-left:0}}
+@media(max-width:900px){.ka-feat{grid-template-columns:1fr}.ka-models{grid-template-columns:1fr 1fr}.ka-why{grid-template-columns:1fr}.ka-how{grid-template-columns:1fr 1fr}.ka-strip .wrap{grid-template-columns:1fr 1fr}.ka-strip .wrap>div:nth-child(3){border-left:0;padding-left:0}}
 @media(max-width:560px){.ka-hero{background-position:62% center}.ka-models{grid-template-columns:1fr}.ka-how{grid-template-columns:1fr}.ka-equip{columns:1}.ka-mosaic{grid-template-columns:repeat(3,1fr)}.ka-mosaic button:first-child{grid-column:span 3;grid-row:span 2}.ka-mosaic button:nth-child(n+5){display:none}.ka-fly{grid-template-columns:1fr 1fr 1fr}.ka-fly button:first-child{grid-column:span 3;grid-row:auto;aspect-ratio:16/10}.ka-hero .acts .btn{flex:1 1 100%}}
 
 .ka-hero{background-image:url(/klasea/img/k64-ht-01.jpg);background-position:center 60%}
@@ -252,6 +252,22 @@
 .ka-sec.alt .ka-dr img,.ka-sec.alt .ka-prof{mix-blend-mode:multiply}
 @media(max-width:900px){.ka-drs{grid-template-columns:repeat(3,1fr)}.ka-nws{grid-template-columns:1fr 1fr}.ka-mgrid{grid-template-columns:1fr}.ka-buy{position:static}}
 @media(max-width:560px){.ka-drs{grid-template-columns:repeat(2,1fr);gap:20px 12px}.ka-nws{grid-template-columns:1fr}.ka-spec{grid-template-columns:1fr}.ka-car{aspect-ratio:4/3}.ka-ths button{width:88px}.ka-car .nv{width:40px;height:40px}}
+
+.ka-spec div.w{grid-column:1/-1}
+.ka-sticky{display:none}
+@media(max-width:900px){.ka-mgrid{display:flex;flex-direction:column;gap:24px}.ka-buy{order:-1}}
+@media(max-width:700px){.ka-strip .wrap{grid-template-columns:1fr 1fr;padding-top:6px;padding-bottom:6px}.ka-strip .wrap>div,.ka-strip .wrap>div:first-child,.ka-strip .wrap>div:nth-child(3){border-left:0;padding:14px 12px 14px 0}.ka-strip .wrap>div:nth-child(2n){padding-left:14px;border-left:1px solid rgba(255,255,255,.12)}.ka-strip b{font-size:.98rem}.ka-strip span{font-size:.85rem}
+.ka-spec{grid-template-columns:1fr 1fr;gap:0 18px}.ka-spec dd{font-size:1.02rem}
+.ka-mh{gap:12px}.ka-logo.sm{width:42px}
+.ka-sticky{display:flex;transition:transform .25s,opacity .25s;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;justify-content:center;box-shadow:0 10px 28px -8px rgba(0,0,0,.45)}
+.ka-mp{padding-bottom:70px}
+.ka-nws{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 calc(-1*var(--pad));padding:0 var(--pad) 6px}.ka-nw{flex:0 0 82%;scroll-snap-align:start}
+.ka-hero{min-height:560px}.ka-hero h1{font-size:54px}.ka-logo{width:56px}
+.ka-lt{font-size:20px;letter-spacing:.14em}
+.ka-car .nv{display:none}
+.ka-ths button{width:76px}
+}
+.ka-sticky.off{transform:translateY(140%);opacity:0;pointer-events:none}
 </style>
 </head>
 <body>
