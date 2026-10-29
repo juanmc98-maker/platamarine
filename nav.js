@@ -281,3 +281,6 @@
 
 /* visor de fotos común */
 (function(){if(document.querySelector('script[src^="/lightbox.js"]'))return;var s=document.createElement("script");s.src="/lightbox.js?v=20261024";s.defer=true;document.head.appendChild(s);})();
+
+/* financiación orientativa en barcos nuevos */
+(function(){if(!/^\/(ca\/|en\/|fr\/)?(skipper|marco|catharsis|seastorm|squama|kattum)(\/|$)/.test(location.pathname))return;if(document.getElementById("pm-finnew-js"))return;var s=document.createElement("script");s.id="pm-finnew-js";s.src="/barcos-nuevos/fin-new.js?v=20261029";s.defer=true;document.head.appendChild(s);})();
