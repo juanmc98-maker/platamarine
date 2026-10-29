@@ -239,3 +239,6 @@
     });
   });
 })();
+
+/* calculadora de financiación orientativa */
+(function(){if(document.getElementById("pm-fin-js"))return;var s=document.createElement("script");s.id="pm-fin-js";s.src="/barcos/fin-calc.js?v=20261029";s.defer=true;document.head.appendChild(s);})();
