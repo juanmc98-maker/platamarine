@@ -75,11 +75,23 @@ BOATS = {
               'ca': "L'amarrament va a part, i el preu depèn molt del port.",
               'en': 'The berth is extra, and the price depends a lot on the marina.',
               'fr': 'La place de port est en plus, et le prix dépend beaucoup du port.'}),
+    'swift-trawler-34': dict(len=10.98, eng='id', hp=425, val=179990, hrs=60, fuel=1.60,
+        engtxt={'es': 'un motor diésel de 425 cv', 'ca': 'un motor dièsel de 425 cv', 'en': 'a single 425 hp diesel', 'fr': 'un moteur diesel de 425 ch'},
+        moor={'es': 'El amarre va aparte: el actual es de alquiler y no entra en la venta, y el precio depende mucho del puerto.',
+              'ca': "L'amarrament va a part: l'actual és de lloguer i no entra a la venda, i el preu depèn molt del port.",
+              'en': 'The berth is extra: the current one is rented and not included in the sale, and the price depends a lot on the marina.',
+              'fr': "La place de port est en plus : l'actuelle est louée et n'est pas comprise dans la vente, et le prix dépend beaucoup du port."}),
     'sacs-535': dict(len=5.35, eng='fb', hp=115, val=21990, hrs=60, fuel=1.80,
         moor={'es': 'El amarre va aparte. Se vende con remolque y ahora se guarda en garaje, así que también se puede tener en seco.',
               'ca': "L'amarrament va a part. Es ven amb remolc i ara es guarda en un garatge, així que també es pot tenir en sec.",
               'en': 'The berth is extra. It comes with a trailer and is currently kept in a garage, so it can also be kept ashore.',
               'fr': "La place de port est en plus. Vendu avec remorque et actuellement gardé dans un garage, il peut aussi rester à terre."}),
+    'monterey-278-ss': dict(len=8.40, eng='ig', hp=320, val=49990, hrs=60, fuel=1.80,
+        engtxt={'es': 'un motor de gasolina de 320 cv', 'ca': 'un motor de gasolina de 320 cv', 'en': 'a 320 hp petrol engine', 'fr': 'un moteur essence de 320 ch'},
+        moor={'es': 'El amarre va aparte, y el precio depende mucho del puerto.',
+              'ca': "L'amarrament va a part, i el preu depèn molt del port.",
+              'en': 'The berth is extra, and the price depends a lot on the marina.',
+              'fr': 'La place de port est en plus, et le prix dépend beaucoup du port.'}),
 }
 
 def cost(b):
