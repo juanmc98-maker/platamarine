@@ -320,7 +320,7 @@ def build(lang):
 <div class="v2-ctas">{wbtn(t['cta'], 'ficha_cierre', t['wa_end'])}<a class="btn v2-ghost" href="{p}/barcos/#segunda-mano">{html.escape(t['used_a'])}</a></div>
 </div></section>
 <div class="wrap"><p class="nv-small">{html.escape(t['small'])}</p></div>
-</main>{JS}<script src="/submit-confirmed.js?v=20261011" defer></script><script src="/barcos-nuevos/pm-config.js?v=20261026" defer></script>'''
+</main>{JS}<script src="/submit-confirmed.js?v=20261011" defer></script><script src="/barcos-nuevos/pm-config.js?v=20261029" defer></script>'''
     body = re.sub(r'<main class="boat">.*?</main>', lambda m: main, body, flags=re.S)
     out = head + '</head>' + body
     os.makedirs(f'{ROOT}{p}/{SLUG}', exist_ok=True)

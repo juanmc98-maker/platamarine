@@ -254,7 +254,7 @@ def run():
         if 'href="#configurar"' not in s.split('<!--ss-cfg-->')[0]:
             s = re.sub(r'(<a href="#comparar"[^>]*>[^<]*</a>)', r'\1' + f'<a href="#configurar">{nav}</a>', s, count=1)
         if '/seastorm/config.js' not in s:
-            s = s.replace('</body>', '<script src="/seastorm/config.js" defer></script>\n</body>', 1)
+            s = s.replace('</body>', '<script src="/seastorm/config.js?v=20261029" defer></script>\n</body>', 1)
         open(p, 'w', encoding='utf-8').write(s)
         print('ok', p)
 
