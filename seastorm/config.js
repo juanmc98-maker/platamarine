@@ -75,5 +75,28 @@
   $('ssCfgWa').addEventListener('click',function(){
     var c=box._cfg; if(c&&window.pmTrack) window.pmTrack('contact_intent',{method:'whatsapp',placement:'seastorm_config',boat:c.st.m.n});
   });
+  (function(){
+    var wa=$('ssCfgWa'); if(!wa) return;
+    var b=document.createElement('button'); b.type='button'; b.id='ssCfgPdf'; b.className=wa.className;
+    b.style.cssText='display:block;width:100%;margin-top:8px;background:transparent;border:1.5px solid currentColor;cursor:pointer;font:inherit;font-weight:600';
+    b.textContent={es:'Descargar PDF',ca:'Descarregar PDF',en:'Download PDF',fr:'Télécharger le PDF'}[L]||'Descargar PDF';
+    wa.parentNode.insertBefore(b,wa.nextSibling);
+    function data(){
+      render(); var st=box._cfg.st, m=st.m, tot=m.p+(st.e?st.e.p:0);
+      var rows=[[m.n+' · '+st.c.n,eur(m.p)]];
+      rows.push([st.e?fmt(T.inst,{n:st.e.n}):T.m_none, st.e?'+'+eur(st.e.p):'—']);
+      var q=[]; if(st.x.indexOf('trailer')>-1) q.push(T.q_trailer); if(st.x.indexOf('reg')>-1) q.push(T.q_reg);
+      if(q.length) rows.push([q.join(', '),({es:'a presupuestar',ca:'a pressupostar',en:'to be quoted',fr:'sur devis'})[L]||'']);
+      var og=document.querySelector('meta[property="og:image"]'), hero=og?og.content.replace(/^https?:\/\/[^/]+/,''):'', th=[];
+      [].forEach.call(document.querySelectorAll('img'),function(i){var u=i.getAttribute('src')||'';if(u.indexOf('/seastorm/fotos/')>-1&&/\.(jpe?g|webp)$/i.test(u)&&th.indexOf(u)<0)th.push(u);});
+      var num=(m.n.match(/\d+/)||[''])[0], mine=th.filter(function(u){return u.indexOf('/fotos/'+num+'-')>-1;});
+      if(mine.length){hero=mine[0];th=mine.slice(1).concat(th.filter(function(u){return mine.indexOf(u)<0;}));}else th=th.filter(function(u){return u!==hero;});
+      return {brand:'SeaStorm',src:'seastorm',model:m.n,logo:'/barcos-nuevos/logos/seastorm.png',hero:hero,thumbs:th.slice(0,3),rows:rows,total:tot,url:location.href};
+    }
+    b.addEventListener('click',function(){
+      new Promise(function(ok){if(window.PMOffer)return ok();var x=document.createElement('script');x.src='/barcos-nuevos/pm-offer.js?v=20261029';x.onload=ok;x.onerror=ok;document.head.appendChild(x);})
+      .then(function(){if(window.PMOffer)window.PMOffer.open(data);});
+    });
+  })();
   motors(); render();
 })();
