@@ -207,7 +207,7 @@ lb.addEventListener('click',function(e){if(e.target===lb)close()});
 var sx=null;lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});lb.addEventListener('touchend',function(e){if(sx===null)return;var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>40)show(i+(d<0?1:-1));sx=null});
 document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1)});
 })();
-</script><script src="/submit-confirmed.js?v=20261011" defer></script><script src="/barcos-nuevos/pm-config.js?v=20261026" defer></script><script src="/barcos-nuevos/pm-video.js?v=20261027" defer></script>
+</script><script src="/submit-confirmed.js?v=20261011" defer></script><script src="/barcos-nuevos/pm-config.js?v=20261029" defer></script><script src="/barcos-nuevos/pm-video.js?v=20261027" defer></script>
 
 <footer class="foot">
   <div class="wrap">
