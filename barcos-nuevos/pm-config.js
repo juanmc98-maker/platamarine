@@ -51,7 +51,7 @@ function build(mi){
   if(multi){h+='<fieldset><legend>'+L.model+'</legend><div class="pc-ch">';M.forEach(function(x,i){h+=radio('pcm',i,x.name,eur(x.base)+' <span style="font-weight:400;font-size:13px">'+esc(x.inc||'')+'</span>',i===mi);});h+='</div></fieldset>';}
   if(m.eng&&m.eng.length){h+='<fieldset><legend>'+L.eng+'</legend><div class="pc-ch">';m.eng.forEach(function(e,i){h+=radio('pce',i,e[0],e[1]==null?'<span class="ask">'+L.ask+'</span>':(e[1]?'+'+eur(e[1]):'—'),i===0);});h+='</div></fieldset>';}
   if(m.opt&&m.opt.length){h+='<fieldset><legend>'+L.opt+'</legend><div class="pc-ch">';m.opt.forEach(function(o,i){h+='<label><span><input type="checkbox" name="pco" value="'+i+'">'+esc(o[0])+'</span>'+(o[1]==null?'<b class="ask">'+L.ask+'</b>':'<b>+'+eur(o[1])+'</b>')+'</label>';});h+='</div></fieldset>';}
-  h+='</div><aside class="pc-sum" aria-live="polite"><h3>'+esc(m.name)+'</h3><ul id="pc-l"></ul><div class="pc-tot"><span>'+L.tot+'</span><span><span id="pc-t"></span><span class="vat">'+L.tax+'</span></span></div><p class="pc-ask" id="pc-a" hidden></p><small>'+L.note+(C.note?' '+esc(C.note):'')+'</small><button type="button" class="pc-share" id="pc-sh">'+L.share+'</button></aside></div>';
+  h+='</div><aside class="pc-sum" aria-live="polite"><h3>'+esc(m.name)+'</h3><ul id="pc-l"></ul><div class="pc-tot"><span>'+L.tot+'</span><span><span id="pc-t"></span><span class="vat">'+L.tax+'</span></span></div><p class="pc-ask" id="pc-a" hidden></p><small>'+L.note+(C.note?' '+esc(C.note):'')+'</small><button type="button" class="pc-share" id="pc-sh">'+L.share+'</button><button type="button" class="pc-share pc-pdf" id="pc-pdf" style="display:block;margin-top:8px;font-weight:600">'+({es:'Descargar PDF',ca:'Descarregar PDF',en:'Download PDF',fr:'Télécharger le PDF'}[LG])+'</button></aside></div>';
   h+='<form class="pc-form" id="pcForm" novalidate data-contact-intent="config_'+esc(C.src)+'"><h3>'+L.fh+'</h3><p>'+L.fp+'</p>'
    +'<div><label for="pc_name">'+L.name+' *</label><input id="pc_name" type="text" required autocomplete="name" maxlength="60"></div>'
    +'<div><label for="pc_tel">'+L.tel+' *</label><input id="pc_tel" type="tel" required autocomplete="tel" inputmode="tel" maxlength="20" placeholder="+34 6xx xxx xxx"></div>'
@@ -61,12 +61,15 @@ function build(mi){
    +'<div class="s2"><button type="submit" id="pc_send">'+L.send+'</button></div><p>'+L.req+'</p><p id="pc_st" role="status" aria-live="polite" hidden></p></form>';
   box.innerHTML=h;wire();
 }
-var cur=0;
+var cur=0,LAST=null;
+function loadOffer(){return new Promise(function(ok){if(window.PMOffer)return ok();var x=document.createElement('script');x.src='/barcos-nuevos/pm-offer.js?v=20261029';x.onload=ok;x.onerror=ok;document.head.appendChild(x);});}
+function offerData(){summary();var m=sel().m,og=document.querySelector('meta[property="og:image"]'),hero=og?og.content.replace(/^https?:\/\/[^/]+/,''):'';var th=[];[].forEach.call(document.querySelectorAll('img'),function(i){var u=(i.getAttribute('src')||'');if(u.indexOf('/fotos/')>-1&&u.indexOf(C.src)>-1&&/\.(jpe?g|webp)$/i.test(u)&&u.replace(/-m\.jpg$/,'.jpg')!==hero&&th.indexOf(u)<0)th.push(u);});var rows=LAST.lines.slice();if(LAST.ask.length)rows.push([L.askn.replace(/:$/,''),LAST.ask.join(', ')]);return{brand:C.brand,src:C.src,model:m.name,logo:C.logo||(function(){var g=document.querySelector('img[src*="/barcos-nuevos/logos/"]');return g?g.getAttribute('src').replace('-blanco.png','.png'):'';})(),hero:C.hero||hero,thumbs:C.thumbs||th.slice(0,3),rows:rows,total:LAST.tot,url:location.href};}
 function sel(){var m=M[cur],e=box.querySelector('input[name=pce]:checked'),ei=e?+e.value:-1;var o=[].map.call(box.querySelectorAll('input[name=pco]:checked'),function(x){return +x.value;});return{m:m,ei:ei,o:o};}
 function summary(){
   var s=sel(),m=s.m,tot=m.base,lines=[[L.base+' ('+(m.inc||'')+')',eur(m.base)]],ask=[];
   if(s.ei>=0){var e=m.eng[s.ei];if(e[1]==null)ask.push(e[0]);else{tot+=e[1];if(e[1])lines.push([e[0],'+'+eur(e[1])]);}}
   s.o.forEach(function(i){var o=m.opt[i];if(o[1]==null)ask.push(o[0]);else{tot+=o[1];lines.push([o[0],'+'+eur(o[1])]);}});
+  LAST={lines:lines,tot:tot,ask:ask};
   document.getElementById('pc-l').innerHTML=lines.map(function(l){return '<li><span>'+esc(l[0])+'</span><span>'+l[1]+'</span></li>';}).join('');
   document.getElementById('pc-t').textContent=eur(tot);
   var a=document.getElementById('pc-a');a.hidden=!ask.length;a.textContent=ask.length?L.askn+' '+ask.join(', '):'';
@@ -75,6 +78,7 @@ function summary(){
   return m.name+'\n'+lines.map(function(l){return l[0]+': '+l[1];}).join('\n')+(ask.length?'\n'+L.askn+' '+ask.join(', '):'')+'\n'+L.tot+': '+eur(tot)+' '+L.tax;
 }
 function wire(){
+  document.getElementById('pc-pdf').onclick=function(){loadOffer().then(function(){if(window.PMOffer)window.PMOffer.open(offerData);});};
   document.getElementById('pc-sh').onclick=function(){var b=this;summary();var u=location.href;(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){b.textContent=L.copied;},function(){prompt('',u);});};
   var f=document.getElementById('pcForm'),btn=document.getElementById('pc_send'),stt=document.getElementById('pc_st'),busy=false,sent=false;
   function okName(s){return s.length>=2&&/\p{L}/u.test(s)&&!/[0-9@]|https?:|www\./i.test(s);}
