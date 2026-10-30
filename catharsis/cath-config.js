@@ -5,7 +5,8 @@ var lg=(document.documentElement.lang||'es').slice(0,2); if(['es','ca','en','fr'
 var BASE=103990;
 var ENG=[
  {id:'none',p:0,es:['Sin motores','Los vemos juntos según el uso'],ca:['Sense motors','Els triem junts segons l’ús'],en:['No engines','We choose them together for your use'],fr:['Sans moteurs','Nous les choisissons ensemble selon l’usage']},
- {id:'2x250',p:49490,es:['2 × 250 CV','Mercury o Suzuki, montados'],ca:['2 × 250 CV','Mercury o Suzuki, muntats'],en:['2 × 250 hp','Mercury or Suzuki, fitted'],fr:['2 × 250 ch','Mercury ou Suzuki, installés']}
+ {id:'2x250',p:49490,es:['2 × 250 CV','Mercury o Suzuki, montados'],ca:['2 × 250 CV','Mercury o Suzuki, muntats'],en:['2 × 250 hp','Mercury or Suzuki, fitted'],fr:['2 × 250 ch','Mercury ou Suzuki, installés']},
+ {id:'1x400',p:45990,es:['1 × 400 CV','Mercury, montado'],ca:['1 × 400 CV','Mercury, muntat'],en:['1 × 400 hp','Mercury, fitted'],fr:['1 × 400 ch','Mercury, installé']}
 ];
 var OPT=[
  {id:'teca',p:4230,es:'Suelo de teca sintética',ca:'Terra de teca sintètica',en:'Synthetic teak decking',fr:'Pont en teck synthétique'},
