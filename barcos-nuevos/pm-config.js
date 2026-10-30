@@ -104,8 +104,24 @@ function wire(){
 /* estado desde el enlace compartido */
 var mh=/#cfg=(\d+)-(\d+)(?:-([\d.]+))?/.exec(location.hash);
 if(mh&&M[+mh[1]])cur=+mh[1];
-box.addEventListener('change',function(e){if(e.target.name==='pcm'){cur=+e.target.value;build(cur);summary();if(window.pmTrack)window.pmTrack('tool_use',{tool:'config_'+C.src});return;}summary();});
+/* compatibilidades: opt[i][2] = {e:[motores permitidos], req:[opcionales que deben estar ya marcados], need:[opcionales que se añaden solos], x:'grupo excluyente'} */
+var NA={es:'No disponible con esta selección',ca:'No disponible amb aquesta selecció',en:'Not available with this selection',fr:'Indisponible avec cette sélection'}[LG];
+function rules(changed){
+  var m=M[cur];if(!m.opt)return;var s=sel(),boxes=box.querySelectorAll('input[name=pco]'),R=function(i){return m.opt[i][2]||{};};
+  if(changed&&changed.name==='pco'&&changed.checked){var ci=+changed.value,r=R(ci);
+    if(r.x)[].forEach.call(boxes,function(b){var j=+b.value;if(j!==ci&&R(j).x===r.x)b.checked=false;});
+    (r.need||[]).forEach(function(n){var b=box.querySelector('input[name=pco][value="'+n+'"]');if(b&&!b.disabled)b.checked=true;});}
+  var again=true,guard=0;while(again&&guard++<5){again=false;
+    [].forEach.call(boxes,function(b){var i=+b.value,r=R(i),ok=true;
+      if(r.e&&r.e.indexOf(s.ei)<0)ok=false;
+      (r.req||[]).forEach(function(n){var nb=box.querySelector('input[name=pco][value="'+n+'"]');if(!nb||!nb.checked)ok=false;});
+      (r.need||[]).forEach(function(n){var nb=box.querySelector('input[name=pco][value="'+n+'"]');if(nb&&nb.disabled)ok=false;if(b.checked&&nb&&!nb.checked){if(changed&&changed===nb){b.checked=false;again=true;}else if(!nb.disabled){nb.checked=true;again=true;}}});
+      b.disabled=!ok;if(!ok&&b.checked){b.checked=false;again=true;}
+      var lb=b.closest('label');if(lb){lb.style.opacity=ok?'':'.45';lb.style.cursor=ok?'':'not-allowed';lb.title=ok?'':NA;}
+    });}
+}
+box.addEventListener('change',function(e){if(e.target.name==='pcm'){cur=+e.target.value;build(cur);rules();summary();if(window.pmTrack)window.pmTrack('tool_use',{tool:'config_'+C.src});return;}rules(e.target);summary();});
 build(cur);
 if(mh){var e=box.querySelector('input[name=pce][value="'+mh[2]+'"]');if(e)e.checked=true;(mh[3]||'').split('.').forEach(function(i){var o=box.querySelector('input[name=pco][value="'+i+'"]');if(o)o.checked=true;});}
-summary();
+rules();summary();
 })();
