@@ -74,7 +74,7 @@
     titleFor: function (b, lang) { if (b.tl) return b.tl[lang]; return b.kind === 'vela' && b.title === 3 ? INV.sailLabel[lang] : INV.titleLabel[lang][b.title]; },
     lang: function () { var p = location.pathname; return p.indexOf('/ca/') === 0 ? 'ca' : p.indexOf('/en/') === 0 ? 'en' : p.indexOf('/fr/') === 0 ? 'fr' : 'es'; },
     get: function (slug) { for (var i = 0; i < INV.boats.length; i++) if (INV.boats[i].slug === slug) return INV.boats[i]; return null; },
-    url: function (b, lang) { return (lang === 'es' ? '' : '/' + lang) + '/barcos/' + b.slug + '.html'; },
+    url: function (b, lang) { return (lang === 'es' ? '' : '/' + lang) + '/barcos/' + b.slug; },
     available: function () { return INV.boats.filter(function (b) { return b.status === 'available'; }); }
   };
   window.PM_INV = INV;

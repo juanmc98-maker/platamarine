@@ -1,3 +1,5 @@
+/* URL limpia: si se entra por una dirección con .html, se muestra sin él (nov 2026) */
+(function(){try{var p=location.pathname;if(/\.html$/.test(p)&&p.indexOf('googledd')<0){history.replaceState(null,'',p.replace(/index\.html$/,'').replace(/\.html$/,'')+location.search+location.hash);}}catch(e){}})();
 (function(){
   var dds=document.querySelectorAll('.pmx-dd');
   function closeAll(except){for(var i=0;i<dds.length;i++){if(dds[i]!==except){dds[i].classList.remove('open');dds[i].firstElementChild.setAttribute('aria-expanded','false');}}}
@@ -42,7 +44,7 @@
     '/fr':[['/comprar/','Acheter un bateau : par zone et par type'],['/precios/','Prix des bateaux d’occasion'],['/herramientas/','Calculatrices : taxes, coûts, financement']]}[pre];
   function add(box){
     if(!box)return;
-    L.forEach(function(it){var h=pre+it[0];if(box.querySelector('a[href="'+h+'"]'))return;var a=document.createElement('a');a.href=h;a.textContent=it[1];if(p===h||p===h+'index.html')a.setAttribute('aria-current','page');box.appendChild(a);});
+    L.forEach(function(it){var h=pre+it[0];if(box.querySelector('a[href="'+h+'"]'))return;var a=document.createElement('a');a.href=h;a.textContent=it[1];if(p===h||p===h+'./')a.setAttribute('aria-current','page');box.appendChild(a);});
   }
   add(document.getElementById('pmxM2'));
   var g=document.querySelectorAll('#pmxPanel .pmx-grp');
@@ -52,7 +54,7 @@
 (function(){
   var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
   var t={'':'Barcos nuevos','/ca':'Vaixells nous','/en':'New boats','/fr':'Bateaux neufs'}[pre],h=pre+'/barcos-nuevos/';
-  function add(box){if(!box||box.querySelector('a[href="'+h+'"]'))return;var a=document.createElement('a');a.href=h;a.textContent=t;if(p===h||p===h+'index.html')a.setAttribute('aria-current','page');box.appendChild(a);}
+  function add(box){if(!box||box.querySelector('a[href="'+h+'"]'))return;var a=document.createElement('a');a.href=h;a.textContent=t;if(p===h||p===h+'./')a.setAttribute('aria-current','page');box.appendChild(a);}
   add(document.getElementById('pmxM2'));
   var g=document.querySelectorAll('#pmxPanel .pmx-grp');
   for(var i=0;i<g.length;i++){if(g[i].querySelector('a[href$="/modelos/"]')){add(g[i]);break;}}
@@ -62,7 +64,7 @@
 (function(){
   var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
   var T={'':['Barcos nuevos','Segunda mano'],'/ca':['Vaixells nous','Segona mà'],'/en':['New boats','Pre-owned'],'/fr':['Bateaux neufs','Occasion']}[pre];
-  var h=pre+'/barcos/',hn=pre+'/barcos-nuevos/',onN=(p===hn||p===hn+'index.html');
+  var h=pre+'/barcos/',hn=pre+'/barcos-nuevos/',onN=(p===hn||p===hn+'./');
   var L=[[hn,T[0]],[h+'#segunda-mano',T[1]]];
   function fill(box){L.forEach(function(it){var a=document.createElement('a');a.href=it[0];a.textContent=it[1];if(it[0]===hn&&onN)a.setAttribute('aria-current','page');box.appendChild(a);});}
   var top=document.querySelector('header.top .pmx-nav>a[href="'+h+'"]');
@@ -82,29 +84,29 @@
 /* Enlace "Broker en Barcelona y Maresme" en el menú Vender de todas las páginas. */
 (function(){
   var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
-  var t={'':'Vender en Barcelona y Maresme','/ca':'Vendre a Barcelona i Maresme','/en':'Selling in Barcelona and Maresme','/fr':'Vendre à Barcelone et dans le Maresme'}[pre],h=pre+'/vender/broker-nautico-barcelona-maresme.html';
+  var t={'':'Vender en Barcelona y Maresme','/ca':'Vendre a Barcelona i Maresme','/en':'Selling in Barcelona and Maresme','/fr':'Vendre à Barcelone et dans le Maresme'}[pre],h=pre+'/vender/broker-nautico-barcelona-maresme';
   function add(box){if(!box||box.querySelector('a[href="'+h+'"]'))return;var a=document.createElement('a');a.href=h;a.textContent=t;if(p===h)a.setAttribute('aria-current','page');box.appendChild(a);}
   add(document.getElementById('pmxM1'));
   var g=document.querySelectorAll('#pmxPanel .pmx-grp');
-  for(var i=0;i<g.length;i++){if(g[i].querySelector('a[href$="/herramientas/valora-tu-barco.html"]')){add(g[i]);break;}}
+  for(var i=0;i<g.length;i++){if(g[i].querySelector('a[href$="/herramientas/valora-tu-barco"]')){add(g[i]);break;}}
 })();
 /* Enlace "Escuelas náuticas" en el menú Servicios de todas las páginas. */
 (function(){
   var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
-  var t={'':'Escuelas náuticas','/ca':'Escoles nàutiques','/en':'Boating schools','/fr':'Écoles nautiques'}[pre],h=pre+'/servicios/escuelas.html';
+  var t={'':'Escuelas náuticas','/ca':'Escoles nàutiques','/en':'Boating schools','/fr':'Écoles nautiques'}[pre],h=pre+'/servicios/escuelas';
   function add(box){if(!box||box.querySelector('a[href="'+h+'"]'))return;var a=document.createElement('a');a.href=h;a.textContent=t;if(p===h)a.setAttribute('aria-current','page');box.appendChild(a);}
   add(document.getElementById('pmxM4'));
   var g=document.querySelectorAll('#pmxPanel .pmx-grp');
-  for(var i=0;i<g.length;i++){if(g[i].querySelector('a[href$="/servicios/directorio.html"]')){add(g[i]);break;}}
+  for(var i=0;i<g.length;i++){if(g[i].querySelector('a[href$="/servicios/directorio"]')){add(g[i]);break;}}
 })();
 /* Enlace "Amarres" en el menú Servicios de todas las páginas. */
 (function(){
   var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
-  var t={'':'Amarres','/ca':'Amarradors','/en':'Moorings','/fr':'Places de port'}[pre],h=pre+'/servicios/amarres.html';
+  var t={'':'Amarres','/ca':'Amarradors','/en':'Moorings','/fr':'Places de port'}[pre],h=pre+'/servicios/amarres';
   function add(box){if(!box||box.querySelector('a[href="'+h+'"]'))return;var a=document.createElement('a');a.href=h;a.textContent=t;if(p===h)a.setAttribute('aria-current','page');box.appendChild(a);}
   add(document.getElementById('pmxM4'));
   var g=document.querySelectorAll('#pmxPanel .pmx-grp');
-  for(var i=0;i<g.length;i++){if(g[i].querySelector('a[href$="/servicios/directorio.html"]')){add(g[i]);break;}}
+  for(var i=0;i<g.length;i++){if(g[i].querySelector('a[href$="/servicios/directorio"]')){add(g[i]);break;}}
 })();
 /* Barra "Compartir" en el pie de todas las páginas: WhatsApp, Facebook, X, Telegram, copiar enlace y el menú nativo del móvil (Instagram, etc.). */
 (function(){
@@ -167,11 +169,11 @@
 /* Enlace "Cómo hacer las fotos de tu barco" en el menú Vender de todas las páginas. */
 (function(){
   var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
-  var t={'':'Cómo hacer las fotos de tu barco','/ca':'Com fer les fotos del teu vaixell','/en':'How to photograph your boat','/fr':'Comment photographier votre bateau'}[pre],h=pre+'/vender/guia-fotos-barco.html';
+  var t={'':'Cómo hacer las fotos de tu barco','/ca':'Com fer les fotos del teu vaixell','/en':'How to photograph your boat','/fr':'Comment photographier votre bateau'}[pre],h=pre+'/vender/guia-fotos-barco';
   function add(box){if(!box||box.querySelector('a[href="'+h+'"]'))return;var a=document.createElement('a');a.href=h;a.textContent=t;if(p===h)a.setAttribute('aria-current','page');box.appendChild(a);}
   add(document.getElementById('pmxM1'));
   var g=document.querySelectorAll('#pmxPanel .pmx-grp');
-  for(var i=0;i<g.length;i++){if(g[i].querySelector('a[href$="/herramientas/valora-tu-barco.html"]')){add(g[i]);break;}}
+  for(var i=0;i<g.length;i++){if(g[i].querySelector('a[href$="/herramientas/valora-tu-barco"]')){add(g[i]);break;}}
 })();
 
 /* Aviso en letra pequeña al pie de todas las páginas: información orientativa, podemos equivocarnos y nada es vinculante. */
@@ -219,7 +221,7 @@
 /* Solo en francés: enlaces para quien vive en Francia en el menú Comprar. */
 (function(){
   if(location.pathname.indexOf('/fr/')!==0)return;
-  var L=[['/fr/comprar/barcos-ocasion-espana-compradores-franceses.html','Vous vivez en France ? Bateaux en Espagne'],['/fr/guias/comprar-barco-espana-matricular-francia.html','Acheter en Espagne, immatriculer en France'],['/fr/guias/barco-frances-en-cataluna.html','Votre bateau en Catalogne']];
+  var L=[['/fr/comprar/barcos-ocasion-espana-compradores-franceses','Vous vivez en France ? Bateaux en Espagne'],['/fr/guias/comprar-barco-espana-matricular-francia','Acheter en Espagne, immatriculer en France'],['/fr/guias/barco-frances-en-cataluna','Votre bateau en Catalogne']];
   function add(box){if(!box)return;L.forEach(function(it){if(box.querySelector('a[href="'+it[0]+'"]'))return;var a=document.createElement('a');a.href=it[0];a.textContent=it[1];if(location.pathname===it[0])a.setAttribute('aria-current','page');box.appendChild(a);});}
   add(document.getElementById('pmxM2'));
   var g=document.querySelectorAll('#pmxPanel .pmx-grp');
@@ -233,10 +235,10 @@
   if(document.querySelector('.pmx-zonas'))return;
   var L={'':'Vender por zona','/ca':'Vendre per zona','/en':'Selling by area','/fr':'Vendre par zone'}[pre];
   var N={'':['Costa Brava','Barcelona y Maresme','Tarragona','Baleares'],'/ca':['Costa Brava','Barcelona i Maresme','Tarragona','Balears'],'/en':['Costa Brava','Barcelona & Maresme','Tarragona','Balearics'],'/fr':['Costa Brava','Barcelone et Maresme','Tarragone','Baléares']}[pre];
-  var S=['broker-nautico-costa-brava.html','broker-nautico-barcelona-maresme.html','broker-nautico-tarragona-costa-daurada.html','broker-nautico-baleares.html'];
+  var S=['broker-nautico-costa-brava','broker-nautico-barcelona-maresme','broker-nautico-tarragona-costa-daurada','broker-nautico-baleares'];
   function make(){var d=document.createElement('div');d.className='pmx-zonas';var s=document.createElement('span');s.textContent=L;d.appendChild(s);
     for(var i=0;i<S.length;i++){var a=document.createElement('a');a.href=pre+'/vender/'+S[i];a.textContent=N[i];if(p===a.getAttribute('href'))a.setAttribute('aria-current','page');d.appendChild(a);}return d;}
-  var as=document.querySelectorAll('.pmx-col a[href$="/vender/broker-nautico-barcelona-maresme.html"], .pmx-grp a[href$="/vender/broker-nautico-barcelona-maresme.html"]');
+  var as=document.querySelectorAll('.pmx-col a[href$="/vender/broker-nautico-barcelona-maresme"], .pmx-grp a[href$="/vender/broker-nautico-barcelona-maresme"]');
   for(var i=0;i<as.length;i++){as[i].parentNode.replaceChild(make(),as[i]);}
 })();
 
@@ -247,7 +249,7 @@
 (function(){
   var p=location.pathname,pre=p.indexOf('/ca/')===0?'/ca':p.indexOf('/en/')===0?'/en':p.indexOf('/fr/')===0?'/fr':'';
   var T={'':'¿Cuánto vale mi barco?','/ca':'Quant val el meu vaixell?','/en':'How much is my boat worth?','/fr':'Combien vaut mon bateau ?'}[pre],h=pre+'/cuanto-vale-mi-barco/';
-  var as=document.querySelectorAll('.pmx-col a[href$="/herramientas/valora-tu-barco.html"], .pmx-grp a[href$="/herramientas/valora-tu-barco.html"]');
+  var as=document.querySelectorAll('.pmx-col a[href$="/herramientas/valora-tu-barco"], .pmx-grp a[href$="/herramientas/valora-tu-barco"]');
   for(var i=0;i<as.length;i++){if(as[i].parentNode.querySelector('a[href="'+h+'"]'))continue;var a=document.createElement('a');a.href=h;a.textContent=T;if(p===h)a.setAttribute('aria-current','page');as[i].parentNode.insertBefore(a,as[i]);}
 })();
 
