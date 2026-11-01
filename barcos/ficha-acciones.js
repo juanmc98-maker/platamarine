@@ -20,28 +20,28 @@
   var T = {
     es: {visit: 'Solicitar visita', ey: 'Traslado', h: '¿Lo quieres en otro puerto?', p: mar ? 'Te pido presupuesto para llevarlo por carretera o navegando hasta donde lo quieras tener.' : 'Te pido presupuesto para llevarlo por carretera hasta donde lo quieras tener.',
       open: 'Pedir presupuesto de traslado', dest: 'Destino (puerto o población) *', country: 'País', countries: ['España', 'Francia', 'Italia', 'Portugal', 'Otro'], how: 'Cómo', road: 'Por carretera', sea: 'Navegando', any: 'Lo que me recomiendes',
-      name: 'Nombre *', tel: 'Teléfono *', mail: 'Correo *', consent: 'Acepto que Plata Marine use estos datos para enviarme el presupuesto, según la <a href="' + PRE + '/privacidad.html" target="_blank" rel="noopener">política de privacidad</a>. *',
+      name: 'Nombre *', tel: 'Teléfono *', mail: 'Correo *', consent: 'Acepto que Plata Marine use estos datos para enviarme el presupuesto, según la <a href="' + PRE + '/privacidad" target="_blank" rel="noopener">política de privacidad</a>. *',
       note: 'El traslado lo hace una empresa de transporte o un patrón profesional; te paso su presupuesto tal cual, sin compromiso. Para pedirlo solo doy el barco y el destino, no tus datos. Plazos y precio dependen del trayecto y la meteorología.',
       send: 'Pedir presupuesto', sending: 'Enviando…', ok: 'Recibido. Te escribo con el presupuesto en cuanto lo tenga.', okBtn: 'Enviado ✓',
       eDest: 'Dime a dónde lo quieres llevar.', eName: 'Necesito tu nombre.', eTel: 'Revisa el teléfono: puedes escribirlo con prefijo, por ejemplo +34 600 000 000.', eMail: 'Revisa el correo, no parece correcto.', eConsent: 'Necesito que aceptes la política de privacidad.',
       fail: 'No he podido confirmar que ha llegado. Tus datos siguen aquí: vuelve a intentarlo en unos minutos o escríbeme por <a href="https://wa.me/34633742973" target="_blank" rel="noopener">WhatsApp</a>.'},
     ca: {visit: 'Sol·licitar visita', ey: 'Trasllat', h: 'El vols en un altre port?', p: mar ? 'Et demano pressupost per portar-lo per carretera o navegant fins on el vulguis tenir.' : 'Et demano pressupost per portar-lo per carretera fins on el vulguis tenir.',
       open: 'Demanar pressupost de trasllat', dest: 'Destinació (port o població) *', country: 'País', countries: ['Espanya', 'França', 'Itàlia', 'Portugal', 'Altre'], how: 'Com', road: 'Per carretera', sea: 'Navegant', any: 'El que em recomanis',
-      name: 'Nom *', tel: 'Telèfon *', mail: 'Correu *', consent: 'Accepto que Plata Marine faci servir aquestes dades per enviar-me el pressupost, segons la <a href="' + PRE + '/privacidad.html" target="_blank" rel="noopener">política de privacitat</a>. *',
+      name: 'Nom *', tel: 'Telèfon *', mail: 'Correu *', consent: 'Accepto que Plata Marine faci servir aquestes dades per enviar-me el pressupost, segons la <a href="' + PRE + '/privacidad" target="_blank" rel="noopener">política de privacitat</a>. *',
       note: 'El trasllat el fa una empresa de transport o un patró professional; et passo el seu pressupost tal qual, sense compromís. Per demanar-lo només dono el vaixell i la destinació, no les teves dades. Terminis i preu depenen del trajecte i de la meteorologia.',
       send: 'Demanar pressupost', sending: 'Enviant…', ok: 'Rebut. T’escric amb el pressupost tan aviat com el tingui.', okBtn: 'Enviat ✓',
       eDest: 'Digues-me on el vols portar.', eName: 'Necessito el teu nom.', eTel: 'Revisa el telèfon: el pots escriure amb prefix, per exemple +34 600 000 000.', eMail: 'Revisa el correu, no sembla correcte.', eConsent: 'Necessito que acceptis la política de privacitat.',
       fail: 'No he pogut confirmar que ha arribat. Les teves dades segueixen aquí: torna-ho a provar d’aquí a uns minuts o escriu-me per <a href="https://wa.me/34633742973" target="_blank" rel="noopener">WhatsApp</a>.'},
     en: {visit: 'Book a viewing', ey: 'Delivery', h: 'Want it in another marina?', p: mar ? 'I can get you a quote to move it by road or by sea to wherever you want to keep it.' : 'I can get you a quote to move it by road to wherever you want to keep it.',
       open: 'Get a delivery quote', dest: 'Destination (marina or town) *', country: 'Country', countries: ['Spain', 'France', 'Italy', 'Portugal', 'Other'], how: 'How', road: 'By road', sea: 'By sea', any: 'Whatever you recommend',
-      name: 'Name *', tel: 'Phone *', mail: 'Email *', consent: 'I agree that Plata Marine may use these details to send me the quote, as set out in the <a href="' + PRE + '/privacidad.html" target="_blank" rel="noopener">privacy policy</a>. *',
+      name: 'Name *', tel: 'Phone *', mail: 'Email *', consent: 'I agree that Plata Marine may use these details to send me the quote, as set out in the <a href="' + PRE + '/privacidad" target="_blank" rel="noopener">privacy policy</a>. *',
       note: 'The delivery is carried out by a transport company or a professional skipper; I pass on their quote as it is, with no obligation. To request it I only share the boat and the destination, not your details. Timing and price depend on the route and the weather.',
       send: 'Request quote', sending: 'Sending…', ok: "Received. I'll get back to you with the quote as soon as I have it.", okBtn: 'Sent ✓',
       eDest: 'Tell me where you want it delivered.', eName: 'I need your name.', eTel: 'Please check the phone number, e.g. +34 600 000 000.', eMail: "Please check the email, it doesn't look right.", eConsent: 'Please accept the privacy policy.',
       fail: "I couldn't confirm that it arrived. Your details are still here: try again in a few minutes or message me on <a href=\"https://wa.me/34633742973\" target=\"_blank\" rel=\"noopener\">WhatsApp</a>."},
     fr: {visit: 'Demander une visite', ey: 'Convoyage', h: 'Vous le voulez dans un autre port ?', p: mar ? 'Je vous obtiens un devis pour l’acheminer par la route ou par la mer jusqu’à l’endroit de votre choix.' : 'Je vous obtiens un devis pour l’acheminer par la route jusqu’à l’endroit de votre choix.',
       open: 'Demander un devis de transport', dest: 'Destination (port ou ville) *', country: 'Pays', countries: ['France', 'Espagne', 'Italie', 'Portugal', 'Autre'], how: 'Comment', road: 'Par la route', sea: 'Par la mer', any: 'Ce que vous me conseillez',
-      name: 'Nom *', tel: 'Téléphone *', mail: 'E-mail *', consent: 'J’accepte que Plata Marine utilise ces données pour m’envoyer le devis, conformément à la <a href="' + PRE + '/privacidad.html" target="_blank" rel="noopener">politique de confidentialité</a>. *',
+      name: 'Nom *', tel: 'Téléphone *', mail: 'E-mail *', consent: 'J’accepte que Plata Marine utilise ces données pour m’envoyer le devis, conformément à la <a href="' + PRE + '/privacidad" target="_blank" rel="noopener">politique de confidentialité</a>. *',
       note: 'Le transport est assuré par une entreprise de transport ou un skipper professionnel ; je vous transmets leur devis tel quel, sans engagement. Pour le demander, je ne communique que le bateau et la destination, pas vos données. Délais et prix dépendent du trajet et de la météo.',
       send: 'Demander le devis', sending: 'Envoi…', ok: 'Bien reçu. Je vous écris avec le devis dès que je l’ai.', okBtn: 'Envoyé ✓',
       eDest: 'Indiquez-moi où vous voulez le bateau.', eName: 'J’ai besoin de votre nom.', eTel: 'Vérifiez le téléphone, par exemple +33 6 00 00 00 00.', eMail: 'Vérifiez l’e-mail, il ne semble pas correct.', eConsent: 'Merci d’accepter la politique de confidentialité.',
@@ -83,25 +83,25 @@
         ['Verlo en persona', 'Eliges día y hora y lo vemos juntos.', PRE + '/visita/?barco=' + encodeURIComponent(b.slug)],
         ['Llevarlo a otro puerto', mar ? 'Te pido presupuesto de traslado por carretera o navegando.' : 'Te pido presupuesto de traslado por carretera.', '#pm-traslado'],
         ['Papeles e impuestos', 'Cambio de titularidad, impuestos de la compra y documentación.', PRE + '/papeles-fiscalidad/'],
-        ['Amarre', 'Amarres en traspaso o alquiler de otros clientes.', PRE + '/servicios/amarres.html'],
+        ['Amarre', 'Amarres en traspaso o alquiler de otros clientes.', PRE + '/servicios/amarres'],
         ['ITB, gestoría, varadero y seguro', 'Te pongo en contacto con quien lo haría yo.', PRE + '/servicios/']]},
       ca: {h: 'També t’ajudo amb', o: [
         ['Veure’l en persona', 'Tries dia i hora i el veiem junts.', PRE + '/visita/?barco=' + encodeURIComponent(b.slug)],
         ['Portar-lo a un altre port', mar ? 'Et demano pressupost de trasllat per carretera o navegant.' : 'Et demano pressupost de trasllat per carretera.', '#pm-traslado'],
         ['Papers i impostos', 'Canvi de titularitat, impostos de la compra i documentació.', PRE + '/papeles-fiscalidad/'],
-        ['Amarratge', 'Amarradors en traspàs o lloguer d’altres clients.', PRE + '/servicios/amarres.html'],
+        ['Amarratge', 'Amarradors en traspàs o lloguer d’altres clients.', PRE + '/servicios/amarres'],
         ['ITB, gestoria, varador i assegurança', 'Et poso en contacte amb qui ho faria jo.', PRE + '/servicios/']]},
       en: {h: 'I can also help you with', o: [
         ['Seeing it in person', 'Pick a day and time and we’ll see it together.', PRE + '/visita/?barco=' + encodeURIComponent(b.slug)],
         ['Moving it to another marina', mar ? 'I get you a delivery quote by road or by sea.' : 'I get you a delivery quote by road.', '#pm-traslado'],
         ['Paperwork and taxes', 'Change of ownership, purchase taxes and documents.', PRE + '/papeles-fiscalidad/'],
-        ['A berth', 'Berths for transfer or rent from other clients.', PRE + '/servicios/amarres.html'],
+        ['A berth', 'Berths for transfer or rent from other clients.', PRE + '/servicios/amarres'],
         ['Inspection, paperwork, haul-out and insurance', 'I put you in touch with who I’d use.', PRE + '/servicios/']]},
       fr: {h: 'Je peux aussi vous aider pour', o: [
         ['Le voir sur place', 'Vous choisissez le jour et l’heure et on le voit ensemble.', PRE + '/visita/?barco=' + encodeURIComponent(b.slug)],
         ['L’emmener dans un autre port', mar ? 'Je vous obtiens un devis de transport par la route ou par la mer.' : 'Je vous obtiens un devis de transport par la route.', '#pm-traslado'],
         ['Papiers et fiscalité', 'Changement de propriétaire, taxes d’achat et documents.', PRE + '/papeles-fiscalidad/'],
-        ['Une place de port', 'Places à céder ou à louer d’autres clients.', PRE + '/servicios/amarres.html'],
+        ['Une place de port', 'Places à céder ou à louer d’autres clients.', PRE + '/servicios/amarres'],
         ['Inspection, formalités, mise à sec et assurance', 'Je vous mets en contact avec ceux à qui je ferais appel.', PRE + '/servicios/']]}
     }[lang];
     if (!S) return;
@@ -129,35 +129,35 @@
     if (!host) return;
     var nm = b.name || (document.querySelector('h1') || {}).textContent || b.slug;
     var WA = function (t) { return 'https://wa.me/34633742973?text=' + encodeURIComponent(t); };
-    var coste = document.getElementById('coste') ? '#coste' : PRE + '/herramientas/coste-mantener-barco.html';
+    var coste = document.getElementById('coste') ? '#coste' : PRE + '/herramientas/coste-mantener-barco';
     var F = {
       es: {h: '¿Qué te falta para decidirte?', s: 'Un toque y te ayudo con eso.', o: [
         ['precio', 'El precio', 'Cuéntame tu presupuesto y te digo si encaja o te busco alternativas.', 'Escribirme', WA('Hola Juan, me interesa el ' + nm + ' pero el precio se me va un poco. ¿Lo hablamos?')],
         ['verlo', 'Verlo en persona', 'Elige día y hora y lo vemos juntos.', 'Solicitar visita', PRE + '/visita/?barco=' + b.slug],
         ['gastos', 'Lo que cuesta mantenerlo', 'Aquí tienes una estimación de lo que cuesta al año.', 'Ver el coste', coste],
         ['titulo', 'Qué título necesito', 'Te explico qué titulación hace falta para cada barco.', 'Ver titulaciones', PRE + '/titulaciones/'],
-        ['amarre', 'Dónde amarrarlo', 'Te oriento sobre amarres y precios por zona.', 'Ver amarres', PRE + '/servicios/amarres.html'],
+        ['amarre', 'Dónde amarrarlo', 'Te oriento sobre amarres y precios por zona.', 'Ver amarres', PRE + '/servicios/amarres'],
         ['datos', 'Más fotos o datos', 'Pregúntame lo que quieras saber y te contesto.', 'Preguntar por WhatsApp', WA('Hola Juan, quería más información del ' + nm + '.')]]},
       ca: {h: 'Què et falta per decidir-te?', s: 'Un toc i t’hi ajudo.', o: [
         ['precio', 'El preu', 'Explica’m el teu pressupost i et dic si encaixa o et busco alternatives.', 'Escriure’m', WA('Hola Juan, m’interessa el ' + nm + ' però el preu se m’escapa una mica. En parlem?')],
         ['verlo', 'Veure’l en persona', 'Tria dia i hora i el veiem junts.', 'Sol·licitar visita', PRE + '/visita/?barco=' + b.slug],
         ['gastos', 'El que costa mantenir-lo', 'Aquí tens una estimació del que costa l’any.', 'Veure el cost', coste],
         ['titulo', 'Quin títol necessito', 'T’explico quina titulació cal per a cada vaixell.', 'Veure titulacions', PRE + '/titulaciones/'],
-        ['amarre', 'On amarrar-lo', 'T’oriento sobre amarratges i preus per zona.', 'Veure amarratges', PRE + '/servicios/amarres.html'],
+        ['amarre', 'On amarrar-lo', 'T’oriento sobre amarratges i preus per zona.', 'Veure amarratges', PRE + '/servicios/amarres'],
         ['datos', 'Més fotos o dades', 'Pregunta’m el que vulguis i et responc.', 'Preguntar per WhatsApp', WA('Hola Juan, voldria més informació del ' + nm + '.')]]},
       en: {h: 'What’s holding you back?', s: 'One tap and I’ll help you with it.', o: [
         ['precio', 'The price', 'Tell me your budget and I’ll tell you if it fits or find you alternatives.', 'Message me', WA('Hi Juan, I like the ' + nm + ' but the price is a bit above my budget. Can we talk?')],
         ['verlo', 'Seeing it in person', 'Pick a day and time and we’ll see it together.', 'Book a viewing', PRE + '/visita/?barco=' + b.slug],
         ['gastos', 'Running costs', 'Here is an estimate of what it costs per year.', 'See the costs', coste],
         ['titulo', 'Which licence I need', 'I explain which licence each boat requires in Spain.', 'See licences', PRE + '/titulaciones/'],
-        ['amarre', 'Where to moor it', 'I can point you to berths and prices by area.', 'See berths', PRE + '/servicios/amarres.html'],
+        ['amarre', 'Where to moor it', 'I can point you to berths and prices by area.', 'See berths', PRE + '/servicios/amarres'],
         ['datos', 'More photos or details', 'Ask me anything you want to know and I’ll reply.', 'Ask on WhatsApp', WA('Hi Juan, I’d like more information about the ' + nm + '.')]]},
       fr: {h: 'Qu’est-ce qui vous fait hésiter ?', s: 'Un clic et je vous aide.', o: [
         ['precio', 'Le prix', 'Dites-moi votre budget : je vous dis s’il convient ou je vous cherche des alternatives.', 'M’écrire', WA('Bonjour Juan, le ' + nm + ' m’intéresse mais le prix dépasse un peu mon budget. On en parle ?')],
         ['verlo', 'Le voir sur place', 'Choisissez un jour et une heure et on le voit ensemble.', 'Demander une visite', PRE + '/visita/?barco=' + b.slug],
         ['gastos', 'Ce qu’il coûte à l’entretien', 'Voici une estimation de son coût annuel.', 'Voir le coût', coste],
         ['titulo', 'Le permis nécessaire', 'Je vous explique quel permis il faut en Espagne pour chaque bateau.', 'Voir les permis', PRE + '/titulaciones/'],
-        ['amarre', 'Où l’amarrer', 'Je vous oriente sur les places de port et leurs prix par zone.', 'Voir les places', PRE + '/servicios/amarres.html'],
+        ['amarre', 'Où l’amarrer', 'Je vous oriente sur les places de port et leurs prix par zone.', 'Voir les places', PRE + '/servicios/amarres'],
         ['datos', 'Plus de photos ou d’infos', 'Posez-moi vos questions, je vous réponds.', 'Demander sur WhatsApp', WA('Bonjour Juan, je voudrais plus d’informations sur le ' + nm + '.')]]}
     }[lang];
     if (!F) return;

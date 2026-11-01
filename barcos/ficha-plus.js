@@ -117,10 +117,10 @@ if(ask && price && head && window.matchMedia('(max-width: 639px)').matches){
 /* Enlace a "valora tu barco" al final de la descripción de cada ficha (ES/CA/EN/FR). */
 (function(){
   var lang=(document.documentElement.lang||'es').slice(0,2);
-  var L={es:['¿Tienes un barco parecido y lo quieres vender? ','Mira qué influye en su precio (2 min)','/herramientas/valora-tu-barco.html'],
-    ca:['Tens un vaixell semblant i el vols vendre? ','Mira què influeix en el seu preu (2 min)','/ca/herramientas/valora-tu-barco.html'],
-    en:['Own a similar boat and thinking of selling? ','See what affects its price (2 min)','/en/herramientas/valora-tu-barco.html'],
-    fr:['Vous avez un bateau similaire et vous pensez le vendre ? ','Voyez ce qui influe sur son prix (2 min)','/fr/herramientas/valora-tu-barco.html']}[lang]||null;
+  var L={es:['¿Tienes un barco parecido y lo quieres vender? ','Mira qué influye en su precio (2 min)','/herramientas/valora-tu-barco'],
+    ca:['Tens un vaixell semblant i el vols vendre? ','Mira què influeix en el seu preu (2 min)','/ca/herramientas/valora-tu-barco'],
+    en:['Own a similar boat and thinking of selling? ','See what affects its price (2 min)','/en/herramientas/valora-tu-barco'],
+    fr:['Vous avez un bateau similaire et vous pensez le vendre ? ','Voyez ce qui influe sur son prix (2 min)','/fr/herramientas/valora-tu-barco']}[lang]||null;
   var prose=document.querySelector('.prose'); if(!L||!prose||document.getElementById('pm-sell-hint'))return;
   var p=document.createElement('p'); p.id='pm-sell-hint';
   p.style.cssText='margin-top:22px;padding:12px 14px;border-left:3px solid var(--brass,#b8955a);background:rgba(127,146,158,.08);font-size:.95em';
@@ -135,9 +135,9 @@ if(ask && price && head && window.matchMedia('(max-width: 639px)').matches){
   var p=document.createElement('p'); p.id='pm-fr-hint';
   p.style.cssText='margin-top:18px;font-size:.92em;color:var(--ink-2,#44545F)';
   p.appendChild(document.createTextNode('Vous vivez en France ? '));
-  var a=document.createElement('a'); a.href='/fr/guias/comprar-barco-espana-matricular-francia.html'; a.textContent='Comment acheter un bateau en Espagne et l’immatriculer en France';
+  var a=document.createElement('a'); a.href='/fr/guias/comprar-barco-espana-matricular-francia'; a.textContent='Comment acheter un bateau en Espagne et l’immatriculer en France';
   p.appendChild(a); p.appendChild(document.createTextNode(' · '));
-  var b=document.createElement('a'); b.href='/fr/guias/barco-frances-en-cataluna.html'; b.textContent='le garder en Catalogne';
+  var b=document.createElement('a'); b.href='/fr/guias/barco-frances-en-cataluna'; b.textContent='le garder en Catalogne';
   p.appendChild(b); p.appendChild(document.createTextNode('.'));
   prose.parentNode.insertBefore(p, prose.nextSibling);
 })();
