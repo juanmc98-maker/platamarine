@@ -60,7 +60,7 @@ $('cvBtn').onclick=function(){
         if(est==='obra')h+='<p>'+S.obra+'</p>';
         if(hr==='altas')h+='<p>'+S.horas+'</p>';
       }
-      h+='<p><a href="'+P+'/modelos/'+m.s+'.html">'+S.verModelo.replace('{n}',name)+'</a></p>';
+      h+='<p><a href="'+P+'/modelos/'+m.s+'">'+S.verModelo.replace('{n}',name)+'</a></p>';
       track('rango');
     }
     msg=S.waModelo.replace('{n}',name).replace('{y}',y);
