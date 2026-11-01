@@ -61,7 +61,7 @@
   function renderBoat(fixed) {
     if (fixed) {
       var d = fixed.d && fixed.d[LANG] ? ' · ' + fixed.d[LANG] : '';
-      boatBox.innerHTML = '<p class="v-boat">' + T.chosen + ': <a href="' + PRE + '/barcos/' + fixed.slug + '.html"><strong>' + esc(fixed.name) + '</strong></a>' + esc(d) +
+      boatBox.innerHTML = '<p class="v-boat">' + T.chosen + ': <a href="' + PRE + '/barcos/' + fixed.slug + '"><strong>' + esc(fixed.name) + '</strong></a>' + esc(d) +
         ' <button type="button" class="v-link" id="v-cambiar">(' + T.change + ')</button></p>';
       $('#v-cambiar').addEventListener('click', function () { state.barco = null; renderBoat(null); });
       state.barco = fixed;
@@ -198,7 +198,7 @@
     }
     var img = b && b.slug ? '<img src="/' + b.slug + '-1-m.jpg" alt="' + esc(b.name) + '">' : '';
     var cards = similares(b && b.slug ? b : null).map(function (x) {
-      return '<a href="' + PRE + '/barcos/' + x.slug + '.html"><img src="/' + x.slug + '-1-t.jpg" alt="" loading="lazy">' + esc(x.name) +
+      return '<a href="' + PRE + '/barcos/' + x.slug + '"><img src="/' + x.slug + '-1-t.jpg" alt="" loading="lazy">' + esc(x.name) +
         '<span>' + (x.price ? money(x.price) + (x.vat ? ' <b class="v">' + P.vat + '</b>' : '') : '') + '</span></a>';
     }).join('');
     var w = document.createElement('div');
@@ -206,7 +206,7 @@
     w.innerHTML = '<div class="bx"><div class="hd">' + img + '<button type="button" class="x" aria-label="' + P.close + '">×</button></div>' +
       '<div class="ok"><i aria-hidden="true">✓</i><div><h2 id="pmPopT">' + P.title + '</h2><p>' + T.ok.replace(/^[^.]+\.\s*/, '') + '</p></div></div>' +
       '<div class="sec"><p class="lab">' + P.meanwhile + '</p>' +
-      '<a class="row" href="' + PRE + '/guias/que-mirar-comprar-barco-segunda-mano.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E3042" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12l2 2 4-4M9 17h6"/></svg><span>' + P.guide + '<small>' + P.guideSub + '</small></span></a>' +
+      '<a class="row" href="' + PRE + '/guias/que-mirar-comprar-barco-segunda-mano"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E3042" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12l2 2 4-4M9 17h6"/></svg><span>' + P.guide + '<small>' + P.guideSub + '</small></span></a>' +
       '<a class="row" href="' + PRE + '/alertas/"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E3042" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span>' + P.alert + '<small>' + P.alertSub + '</small></span></a></div>' +
       (cards ? '<div class="sec"><p class="lab">' + P.similar + '</p><div class="cards">' + cards + '</div></div>' : '') +
       '<div class="ft"><button type="button" class="btnc">' + P.close + '</button></div></div>';
