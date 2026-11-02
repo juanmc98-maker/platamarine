@@ -55,7 +55,8 @@ ENG.forEach(function(e,i){h+='<label><input type="radio" name="cce" value="'+i+'
 h+='</div></div><div class="cc-step"><h3>'+T.o+'</h3><div class="cc-ops">';
 OPT.forEach(function(o,i){h+='<label class="cc-op"><input type="checkbox" name="cco" value="'+i+'"'+(o.g?' data-g="'+o.g+'"':'')+'><span>'+esc(o[lg])+'</span><em>+'+eur(o.p)+'</em></label>';});
 h+='</div></div></div><aside class="cc-sum"><p>'+T.b+': '+eur(BASE)+'</p><p>'+T.t+'</p><div class="cc-tot" id="cc-tot"></div><ul id="cc-list"></ul><a class="btn btn-wa" id="cc-wa" target="_blank" rel="noopener" data-wa-context="configurador">'+T.cta+'</a><button type="button" class="btn cc-pdf" id="cc-pdf">'+PT.btn+'</button><p class="cc-n">'+T.n+'</p></aside></div></div>';
-sec.innerHTML=h; end.parentNode.insertBefore(sec,end);
+sec.innerHTML=h; var anc=document.getElementById('cubierta')||end; anc.parentNode.insertBefore(sec,anc);
+var ul=document.querySelector('#equipamiento ul.ct-tags.opt'); if(ul){ul.innerHTML=OPT.map(function(o){return '<li>'+esc(o[lg])+' · <b>+'+eur(o.p)+'</b></li>';}).join('');}
 var box=document.getElementById('cath-cfg');
 function upd(ev){
  var t=ev&&ev.target;
