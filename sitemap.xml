@@ -204,7 +204,7 @@
     <url><loc>https://www.platamarine.com/en/titulaciones/test-per</loc><lastmod>2026-09-25</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/navegante/checklist-antes-de-salir-a-navegar</loc><lastmod>2026-09-25</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/navegante/fondear-bien-calas-costa-catalana</loc><lastmod>2026-09-25</lastmod><priority>0.6</priority></url>
-    <url><loc>https://www.platamarine.com/navegante/preparar-barco-fin-de-temporada</loc><lastmod>2026-09-25</lastmod><priority>0.6</priority></url>
+    <url><loc>https://www.platamarine.com/navegante/preparar-barco-fin-de-temporada</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/papeles-fiscalidad/</loc><lastmod>2026-09-25</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/ca/actualidad/fueraborda-intraborda-cola-jet-ips-sistemas-propulsion</loc><lastmod>2026-09-25</lastmod><priority>0.5</priority></url>
     <url><loc>https://www.platamarine.com/ca/actualidad/reforma-bandera-polaca-2026</loc><lastmod>2026-09-25</lastmod><priority>0.5</priority></url>
@@ -212,7 +212,7 @@
     <url><loc>https://www.platamarine.com/ca/herramientas/valora-tu-barco</loc><lastmod>2026-09-25</lastmod><priority>0.5</priority></url>
     <url><loc>https://www.platamarine.com/ca/navegante/checklist-antes-de-salir-a-navegar</loc><lastmod>2026-09-25</lastmod><priority>0.5</priority></url>
     <url><loc>https://www.platamarine.com/ca/navegante/fondear-bien-calas-costa-catalana</loc><lastmod>2026-09-25</lastmod><priority>0.5</priority></url>
-    <url><loc>https://www.platamarine.com/ca/navegante/preparar-barco-fin-de-temporada</loc><lastmod>2026-09-25</lastmod><priority>0.5</priority></url>
+    <url><loc>https://www.platamarine.com/ca/navegante/preparar-barco-fin-de-temporada</loc><lastmod>2026-11-03</lastmod><priority>0.5</priority></url>
     <url><loc>https://www.platamarine.com/ca/papeles-fiscalidad/</loc><lastmod>2026-09-25</lastmod><priority>0.5</priority></url>
     <url><loc>https://www.platamarine.com/en/actualidad/fueraborda-intraborda-cola-jet-ips-sistemas-propulsion</loc><lastmod>2026-09-25</lastmod><priority>0.5</priority></url>
     <url><loc>https://www.platamarine.com/en/actualidad/reforma-bandera-polaca-2026</loc><lastmod>2026-09-25</lastmod><priority>0.5</priority></url>
@@ -220,7 +220,7 @@
     <url><loc>https://www.platamarine.com/en/herramientas/valora-tu-barco</loc><lastmod>2026-09-25</lastmod><priority>0.5</priority></url>
     <url><loc>https://www.platamarine.com/en/navegante/checklist-antes-de-salir-a-navegar</loc><lastmod>2026-09-25</lastmod><priority>0.5</priority></url>
     <url><loc>https://www.platamarine.com/en/navegante/fondear-bien-calas-costa-catalana</loc><lastmod>2026-09-25</lastmod><priority>0.5</priority></url>
-    <url><loc>https://www.platamarine.com/en/navegante/preparar-barco-fin-de-temporada</loc><lastmod>2026-09-25</lastmod><priority>0.5</priority></url>
+    <url><loc>https://www.platamarine.com/en/navegante/preparar-barco-fin-de-temporada</loc><lastmod>2026-11-03</lastmod><priority>0.5</priority></url>
     <url><loc>https://www.platamarine.com/en/papeles-fiscalidad/</loc><lastmod>2026-09-25</lastmod><priority>0.5</priority></url>
     <url><loc>https://www.platamarine.com/ca/cookies</loc><lastmod>2026-09-25</lastmod><priority>0.3</priority></url>
     <url><loc>https://www.platamarine.com/en/cookies</loc><lastmod>2026-09-25</lastmod><priority>0.3</priority></url>
@@ -393,7 +393,7 @@
     <url><loc>https://www.platamarine.com/fr/herramientas/valora-tu-barco</loc><lastmod>2026-10-06</lastmod><priority>0.5</priority></url>
     <url><loc>https://www.platamarine.com/fr/navegante/checklist-antes-de-salir-a-navegar</loc><lastmod>2026-10-06</lastmod><priority>0.5</priority></url>
     <url><loc>https://www.platamarine.com/fr/navegante/fondear-bien-calas-costa-catalana</loc><lastmod>2026-10-06</lastmod><priority>0.5</priority></url>
-    <url><loc>https://www.platamarine.com/fr/navegante/preparar-barco-fin-de-temporada</loc><lastmod>2026-10-06</lastmod><priority>0.5</priority></url>
+    <url><loc>https://www.platamarine.com/fr/navegante/preparar-barco-fin-de-temporada</loc><lastmod>2026-11-03</lastmod><priority>0.5</priority></url>
     <url><loc>https://www.platamarine.com/fr/papeles-fiscalidad/</loc><lastmod>2026-10-06</lastmod><priority>0.5</priority></url>
     <url><loc>https://www.platamarine.com/fr/cookies</loc><lastmod>2026-10-06</lastmod><priority>0.3</priority></url>
     <url><loc>https://www.platamarine.com/fr/privacidad</loc><lastmod>2026-10-06</lastmod><priority>0.3</priority></url>
@@ -681,4 +681,16 @@
 <url><loc>https://www.platamarine.com/fr/skipper/costa-blanca/</loc><lastmod>2026-11-03</lastmod><priority>0.7</priority></url>
 <url><loc>https://www.platamarine.com/fr/skipper/canarias/</loc><lastmod>2026-11-03</lastmod><priority>0.7</priority></url>
 <url><loc>https://www.platamarine.com/fr/skipper/galicia/</loc><lastmod>2026-11-03</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/recordatorios-barco/</loc><lastmod>2026-11-03</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/herramientas/libro-mantenimiento-barco</loc><lastmod>2026-11-03</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/colaboracion-brokers/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+    <url><loc>https://www.platamarine.com/ca/recordatorios-barco/</loc><lastmod>2026-11-03</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/ca/herramientas/libro-mantenimiento-barco</loc><lastmod>2026-11-03</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/ca/colaboracion-brokers/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+    <url><loc>https://www.platamarine.com/en/recordatorios-barco/</loc><lastmod>2026-11-03</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/en/herramientas/libro-mantenimiento-barco</loc><lastmod>2026-11-03</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/en/colaboracion-brokers/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
+    <url><loc>https://www.platamarine.com/fr/recordatorios-barco/</loc><lastmod>2026-11-03</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/fr/herramientas/libro-mantenimiento-barco</loc><lastmod>2026-11-03</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/fr/colaboracion-brokers/</loc><lastmod>2026-11-03</lastmod><priority>0.6</priority></url>
 </urlset>
