@@ -17,7 +17,7 @@ for (const l of ['es', 'ca', 'en', 'fr']) {
     const p = path.join(dir, f); let h = fs.readFileSync(p, 'utf8'); const o = h;
     h = h.replace(/<div class="pm-list" data-f='([^']*)'>[\s\S]*?<\/div>/g, (m, jf) => {
       const F = JSON.parse(jf);
-      const list = INV.available().filter(b => !(F.zone && b.zone !== F.zone) && !(F.area && b.area !== F.area) && !(F.kind && b.kind !== F.kind) && !(F.maxTitle && b.title > F.maxTitle) && !(F.q && !new RegExp(F.q, 'i').test(b.name))).sort((a, b) => b.price - a.price);
+      const list = INV.available().filter(b => !(F.zone && b.zone !== F.zone) && !(F.area && b.area !== F.area) && !(F.kind && b.kind !== F.kind) && !(F.maxTitle && b.title > F.maxTitle) && !(F.q && !new RegExp(F.q, 'i').test(b.name)) && !(F.types && !F.types.some(t => (b.types || []).indexOf(t) >= 0)) && !(F.minLen && !(b.length >= F.minLen)) && !(F.maxLen && !(b.length <= F.maxLen))).sort((a, b) => b.price - a.price);
       return `<div class="pm-list" data-f='${jf}'>` + list.map(b => card(b, l)).join('') + '</div>';
     });
     if (h !== o) { fs.writeFileSync(p, h); n++; console.log('actualizado', path.relative(ROOT, p)); }

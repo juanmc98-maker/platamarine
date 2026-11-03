@@ -119,8 +119,16 @@ def page_foot(d, n):
     return '<div class="foot"><span>%s</span><span>Plata Marine · %s</span><span>%d</span></div>' % (
         html.escape(d['url'].replace('https://', '')), html.escape(d['name']), n)
 
+# Barcos vendidos por un particular sin intermediación: aviso propio en lugar del de intermediario
+LEGAL_SLUG = {'lexsia-xs20': {
+ 'es': 'Venta entre particulares. Los datos de esta ficha son orientativos; los definitivos serán los del contrato de compraventa. Precio sin gastos de cambio de titularidad. Recomendamos prueba de mar y un peritaje independiente antes de reservar.',
+ 'ca': "Venda entre particulars. Les dades d'aquesta fitxa són orientatives; les definitives seran les del contracte de compravenda. Preu sense despeses de canvi de titularitat. Recomanem prova de mar i un peritatge independent abans de reservar.",
+ 'en': 'Private sale. The details in this listing are indicative; the final details will be those in the sale contract. Price excludes ownership-transfer costs. We recommend a sea trial and an independent survey before you reserve.',
+ 'fr': "Vente entre particuliers. Les données de cette fiche sont indicatives ; les données définitives seront celles du contrat de vente. Prix hors frais de changement de propriétaire. Nous recommandons un essai en mer et une expertise indépendante avant de réserver."}}
+
 def build_html(slug, lang, logo_white):
     c = L[lang]; d = parse(slug, lang)
+    if slug in LEGAL_SLUG: c = dict(c, legal=LEGAL_SLUG[slug][lang])
     ph = [img_data(os.path.join(ROOT, x)) for x in d['photos']]
     pages = []
     status = c['sold'] if d['sold'] else c['sale']

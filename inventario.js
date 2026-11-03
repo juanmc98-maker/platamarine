@@ -53,6 +53,8 @@
         d: {es: '7,39 m · Volvo Penta 150 cv · Mallorca', ca: '7,39 m · Volvo Penta 150 cv · Mallorca', en: '7.39 m · Volvo Penta 150 hp · Mallorca', fr: '7,39 m · Volvo Penta 150 ch · Majorque'}},
       {slug: 'starfisher-840', name: 'Starfisher 840 R', year: 2004, kind: 'motor', types: ['pilothouse', 'cabinado'], length: 8.4, price: 50900, zone: 'galicia', title: 3, status: 'available',
         d: {es: 'Aprox. 8,40 m · 2 x Yanmar 200 cv · Galicia', ca: 'Aprox. 8,40 m · 2 x Yanmar 200 cv · Galícia', en: 'Approx. 8.40 m · twin Yanmar 200 hp · Galicia', fr: 'Env. 8,40 m · 2 x Yanmar 200 ch · Galice'}},
+      {slug: 'lexsia-xs20', name: 'Lexsia XS20', year: 2008, kind: 'motor', types: ['cabinado'], length: 5.84, price: 22990, zone: 'cataluna', area: 'costa-brava', title: 1, status: 'available',
+        d: {es: '5,84 m · Suzuki 115 cv · Blanes (Costa Brava)', ca: '5,84 m · Suzuki 115 cv · Blanes (Costa Brava)', en: '5.84 m · Suzuki 115 hp · Blanes (Costa Brava)', fr: '5,84 m · Suzuki 115 ch · Blanes (Costa Brava)'}},
       {slug: 'sacs-535', name: 'Sacs 535', year: 2002, kind: 'motor', types: ['rib'], length: 5.35, price: 21990, zone: 'baleares', title: 1, status: 'available',
         d: {es: '5,35 m · semirrígida · Suzuki 115 cv · Mallorca', ca: '5,35 m · semirígida · Suzuki 115 cv · Mallorca', en: '5.35 m · RIB · Suzuki 115 hp · Mallorca', fr: '5,35 m · semi-rigide · Suzuki 115 ch · Majorque'}},
       {slug: 'ranieri-azzurra-5m', name: 'Ranieri Azzurra 5 m', year: 2004, kind: 'motor', types: ['open'], length: 5, price: 11990, zone: 'cataluna', area: 'costa-daurada', title: 1, status: 'sold',
