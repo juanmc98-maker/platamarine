@@ -541,10 +541,10 @@
     <url><loc>https://www.platamarine.com/fr/skipper/barcelona/</loc><lastmod>2026-10-19</lastmod><priority>0.7</priority></url>
     <url><loc>https://www.platamarine.com/fr/skipper/costa-brava/</loc><lastmod>2026-10-19</lastmod><priority>0.7</priority></url>
     <url><loc>https://www.platamarine.com/fr/skipper/menorca/</loc><lastmod>2026-10-19</lastmod><priority>0.7</priority></url>
-    <url><loc>https://www.platamarine.com/barcos-nuevos/</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
-    <url><loc>https://www.platamarine.com/ca/barcos-nuevos/</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
-    <url><loc>https://www.platamarine.com/en/barcos-nuevos/</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
-    <url><loc>https://www.platamarine.com/fr/barcos-nuevos/</loc><lastmod>2026-10-24</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/barcos-nuevos/</loc><lastmod>2026-11-03</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/ca/barcos-nuevos/</loc><lastmod>2026-11-03</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/en/barcos-nuevos/</loc><lastmod>2026-11-03</lastmod><priority>0.8</priority></url>
+    <url><loc>https://www.platamarine.com/fr/barcos-nuevos/</loc><lastmod>2026-11-03</lastmod><priority>0.8</priority></url>
     <url><loc>https://www.platamarine.com/marco/</loc><lastmod>2026-11-02</lastmod><priority>0.7</priority></url>
     <url><loc>https://www.platamarine.com/ca/marco/</loc><lastmod>2026-11-02</lastmod><priority>0.7</priority></url>
     <url><loc>https://www.platamarine.com/en/marco/</loc><lastmod>2026-11-02</lastmod><priority>0.7</priority></url>
@@ -721,4 +721,8 @@
     <url><loc>https://www.platamarine.com/ca/servicios/cambio-titularidad-barco</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/en/servicios/cambio-titularidad-barco</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
     <url><loc>https://www.platamarine.com/fr/servicios/cambio-titularidad-barco</loc><lastmod>2026-11-01</lastmod><priority>0.6</priority></url>
+    <url><loc>https://www.platamarine.com/brizo/</loc><lastmod>2026-11-03</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/ca/brizo/</loc><lastmod>2026-11-03</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/en/brizo/</loc><lastmod>2026-11-03</lastmod><priority>0.7</priority></url>
+    <url><loc>https://www.platamarine.com/fr/brizo/</loc><lastmod>2026-11-03</lastmod><priority>0.7</priority></url>
 </urlset>
