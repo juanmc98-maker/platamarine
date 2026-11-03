@@ -493,6 +493,21 @@ section[id]{scroll-margin-top:78px}
 @media(min-width:900px){#guias .guias-cards{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:760px){.pm-steps{grid-template-columns:1fr;gap:14px}}
 </style>
+<style id="pm-tb-css">
+.tb-box{margin-top:34px;background:#fff;border:1px solid rgba(127,146,158,.28);border-radius:var(--radius,12px);padding:22px clamp(16px,3vw,28px)}
+.tb-box h3{font-size:1.25rem;font-weight:700;margin:0 0 4px}
+.nh-form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.nh-form .span2{grid-column:1/-1}
+.nh-form label{display:block;font-weight:600;font-size:.9rem;margin-bottom:5px}.nh-form i{color:#C62828;font-style:normal}.nh-form small{font-weight:400;color:var(--ink-2)}
+.nh-form input[type=text],.nh-form input[type=tel],.nh-form input[type=email],.nh-form select,.nh-form textarea{width:100%;font:inherit;padding:11px 12px;border:1px solid rgba(127,146,158,.55);border-radius:8px;background:#fff;color:var(--ink);min-height:44px;box-sizing:border-box}
+.nh-form textarea{min-height:90px;resize:vertical}.nh-form .help{font-size:13.5px;line-height:1.5;color:var(--ink-2);margin:0}
+.nh-cons{display:flex!important;gap:10px;align-items:flex-start;font-weight:400!important;line-height:1.45;cursor:pointer}.nh-cons input{width:20px;height:20px;min-width:20px;margin:1px 0 0;accent-color:#0B766B}
+.nh-form button[type=submit]{font:inherit;font-weight:600;background:#0B766B;color:#fff;border:0;border-radius:8px;padding:13px 24px;min-height:46px;cursor:pointer}.nh-form button:disabled{opacity:.6}
+.buy-sell{margin-top:10px}
+.sv-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
+.sv-c{display:flex;flex-direction:column;gap:6px;padding:18px;background:#fff;border:1px solid rgba(127,146,158,.28);border-radius:var(--radius,12px);text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}
+.sv-c:hover{border-color:rgba(127,146,158,.7);transform:translateY(-1px)}.sv-c b{font-family:var(--display);font-size:1.05rem}.sv-c span{font-size:.93rem;color:var(--ink-2);line-height:1.45;flex:1}.sv-c i{font-style:normal;font-family:var(--display);font-weight:600;font-size:.9rem;color:var(--sea,#0B766B)}
+@media (max-width:820px){.sv-g{grid-template-columns:1fr 1fr}}@media (max-width:560px){.sv-g,.nh-form{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 
@@ -700,18 +715,43 @@ section[id]{scroll-margin-top:78px}
           <h2>¿No encuentras el tuyo? Te ayudo a buscarlo.</h2>
           <p class="intro">Cuéntame uso, presupuesto y zona. Lo busco en España y Europa, compruebo lo que falte antes de que te desplaces y te acompaño hasta la firma.</p>
           <div class="boat-cta" style="margin-top:26px">
-            <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20estoy%20buscando%20barco.%20Tipo%3A%20%20%7C%20Presupuesto%3A%20%20%7C%20Zona%3A%20" target="_blank" rel="noopener">Cuéntame qué estás buscando</a>
+            <span class="tb-wa">¿Prefieres WhatsApp?</span> <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hola%20Juan%2C%20estoy%20buscando%20barco.%20Tipo%3A%20%20%7C%20Presupuesto%3A%20%20%7C%20Zona%3A%20" target="_blank" rel="noopener">Cuéntame qué estás buscando</a>
           </div>
           <p class="buy-alt"><a href="alertas/">Crear alerta: te aviso si entra el tuyo</a></p>
-          <p class="buy-alt buy-new" style="margin-top:10px">¿Buscas barco nuevo? Representamos <strong>SKIPPER Powerboats</strong> en España: <a href="/skipper/">ver modelos, fotos y precios</a>.</p>
+          <p class="buy-alt buy-new" style="margin-top:10px">¿Buscas barco nuevo? Trabajo con SKIPPER, Mar.Co y otras marcas, bajo pedido: <a href="/barcos-nuevos/">ver modelos y precios</a>.</p>
+          <p class="buy-alt buy-sell">¿Tienes barco? Te ayudo a valorarlo y venderlo para que compres el siguiente: <a href="/vender-barco/">Ver cómo lo vendo</a>.</p>
         </div>
         <div>
           <div class="buy-facts icons"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15h18l-2.5 4h-13zM6 15V9l6-5 6 5v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><strong>Cualquier eslora</strong></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><strong>España y Europa</strong></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.6 2.6L16 9.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Solo a éxito</strong></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 12h9M18 12v3M21 12v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><strong>Cartera propia</strong></div></div>
         </div>
       </div>
-      </div>
+      <!-- pm-tb -->
+<div class="tb-box"><h3>Cuéntame qué buscas</h3>
+<form id="tbForm" class="nh-form" novalidate data-contact-intent="busqueda">
+<div><label for="tb_type">Tipo de barco <i>*</i></label><select id="tb_type" required><option>Semirrígida</option><option>Lancha</option><option>Barco cabinado</option><option>Flybridge</option><option>Velero</option><option>Catamarán</option><option>Moto de agua</option><option>Aún no lo sé</option></select></div>
+<div><label for="tb_bud">Presupuesto <i>*</i></label><select id="tb_bud" required><option value=""></option><option>Hasta 30.000 €</option><option>30.000 a 60.000 €</option><option>60.000 a 120.000 €</option><option>120.000 a 250.000 €</option><option>Más de 250.000 €</option></select></div>
+<div><label for="tb_new">¿Nuevo u ocasión?</label><select id="tb_new"><option>Me da igual</option><option>Ocasión</option><option>Nuevo</option></select></div>
+<div><label for="tb_zone">Zona <small>(opcional)</small></label><input id="tb_zone" type="text" maxlength="60" placeholder="Costa Brava, Barcelona, Mallorca…"></div>
+<div><label for="tb_when">¿Para cuándo? <small>(opcional)</small></label><select id="tb_when"><option value=""></option><option>Lo antes posible</option><option>En los próximos 3 meses</option><option>Para la próxima temporada</option><option>Sin prisa, me estoy informando</option></select></div>
+<div><label for="tb_pay">¿Cómo piensas pagarlo? <small>(opcional)</small></label><select id="tb_pay"><option value=""></option><option>Con fondos propios</option><option>Con financiación</option><option>Vendiendo mi barco actual</option><option>Aún no lo sé</option></select></div>
+<div><label for="tb_name">Nombre <i>*</i></label><input id="tb_name" type="text" required autocomplete="name" maxlength="60"></div>
+<div><label for="tb_tel">Teléfono <i>*</i></label><input id="tb_tel" type="tel" required autocomplete="tel" inputmode="tel" maxlength="20" placeholder="+34 6xx xxx xxx"></div>
+<div class="span2"><label for="tb_email">Email <i>*</i></label><input id="tb_email" type="email" required autocomplete="email" maxlength="100"></div>
+<div class="span2"><label for="tb_msg">Algo más <small>(opcional)</small></label><textarea id="tb_msg" maxlength="1500" placeholder="Uso, número de personas, eslora, si tienes amarre…"></textarea></div>
+<p class="help span2">Responsable: Juan Morante (Plata Marine). Usaré estos datos solo para buscarte barco y contestarte. Puedes ejercer tus derechos en juan@platamarine.com. <a href="/privacidad">Política de privacidad</a>.</p>
+<div class="span2"><label for="tb_consent" class="nh-cons"><input id="tb_consent" type="checkbox" required><span>He leído la información de privacidad y acepto que uses estos datos para contestarme.&nbsp;<i>*</i></span></label></div>
+<div class="span2"><button type="submit" id="tb_send">Envíame tu búsqueda</button></div>
+<p class="help span2">Los campos con * son obligatorios.</p><p id="tb_status" class="help span2" role="status" aria-live="polite" hidden></p>
+</form></div>
+<!-- /pm-tb -->
+</div>
     </div>
   </section>
+<!-- pm-serv -->
+<section class="sec sv" id="servicios" aria-labelledby="sv-h"><div class="wrap">
+<p class="eyebrow">Lo que hago por ti</p><h2 id="sv-h">Te acompaño en toda la operación</h2>
+<div class="sv-g"><a class="sv-c" href="/barcos-nuevos/"><b>Asesoramiento</b><span>Comparo modelos y marcas, nuevo u ocasión, según tu uso y presupuesto.</span><i>Barcos nuevos →</i></a><a class="sv-c" href="#comprar"><b>Búsqueda a medida</b><span>Busco el barco en España y Europa y compruebo lo que falte antes de que te desplaces.</span><i>Te busco barco →</i></a><a class="sv-c" href="/vender-barco/"><b>Venta de tu barco</b><span>Valoración, fotos, anuncio y visitas, para vender el tuyo y dar el salto al siguiente.</span><i>Vender mi barco →</i></a><a class="sv-c" href="/servicios/cambio-titularidad-barco"><b>Papeles</b><span>Cambio de titularidad y matriculación con una gestoría náutica colaboradora.</span><i>Cambio de titularidad →</i></a><a class="sv-c" href="/remolques/"><b>Transporte y entrega</b><span>Lo coordino con el astillero o con transportistas, con presupuesto por escrito y aparte.</span><i>Remolques →</i></a><a class="sv-c" href="/servicios/amarres"><b>Amarre</b><span>Te oriento sobre puertos y precios de amarre en Cataluña.</span><i>Amarres →</i></a></div></div></section>
+<!-- /pm-serv -->
 
 
 
@@ -871,5 +911,6 @@ var IMGS={"ferretti-80-1": "/ferretti-80-1.jpg", "ferretti-80-3": "/ferretti-80-
 <script src="/nav.js?v=20261006m" defer></script>
 <script src="/inventario.js?v=20261006" defer></script>
 <script src="/portada-cartera.js?v=20261024" defer></script>
+<script src="/te-busco.js?v=20261103" defer></script>
 </body>
 </html>

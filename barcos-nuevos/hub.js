@@ -92,7 +92,7 @@
     if(sent||busy||!check()) return;
     if(!window.submitConfirmed){ status.hidden=false; status.textContent=T.fail; return; }
     var boat=(v('nh_model')||v('nh_type'));
-    var detail='Barco nuevo | Tipo: '+v('nh_type')+(v('nh_model')?' | Modelo: '+v('nh_model'):'')+(v('nh_bud')?' | Presupuesto: '+v('nh_bud'):'')+(v('nh_zone')?' | Zona: '+v('nh_zone'):'')+' | Email: '+v('nh_email')+(v('nh_msg')?' | Mensaje: '+v('nh_msg'):'');
+    var detail='Barco nuevo | Tipo: '+v('nh_type')+(v('nh_model')?' | Modelo: '+v('nh_model'):'')+(v('nh_bud')?' | Presupuesto: '+v('nh_bud'):'')+(v('nh_zone')?' | Zona: '+v('nh_zone'):'')+(v('nh_when')?' | Cuándo: '+v('nh_when'):'')+(v('nh_pay')?' | Pago: '+v('nh_pay'):'')+' | Email: '+v('nh_email')+(v('nh_msg')?' | Mensaje: '+v('nh_msg'):'');
     var payload={source:'barco_nuevo',barco:'Nuevo: '+boat,nombre:v('nh_name'),telefono:v('nh_tel'),email:v('nh_email'),detail:detail,lang:L,page:location.pathname,ua:navigator.userAgent.slice(0,120),consent:true,consent_v:'2026-10',consent_at:new Date().toISOString()};
     busy=true; btn.disabled=true; btn.textContent=T.sending; status.hidden=false; status.textContent=T.sending;
     window.submitConfirmed(LEADS_URL,payload,'json',f).then(function(){

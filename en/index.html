@@ -493,6 +493,21 @@ section[id]{scroll-margin-top:78px}
 @media(min-width:900px){#guias .guias-cards{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:760px){.pm-steps{grid-template-columns:1fr;gap:14px}}
 </style>
+<style id="pm-tb-css">
+.tb-box{margin-top:34px;background:#fff;border:1px solid rgba(127,146,158,.28);border-radius:var(--radius,12px);padding:22px clamp(16px,3vw,28px)}
+.tb-box h3{font-size:1.25rem;font-weight:700;margin:0 0 4px}
+.nh-form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.nh-form .span2{grid-column:1/-1}
+.nh-form label{display:block;font-weight:600;font-size:.9rem;margin-bottom:5px}.nh-form i{color:#C62828;font-style:normal}.nh-form small{font-weight:400;color:var(--ink-2)}
+.nh-form input[type=text],.nh-form input[type=tel],.nh-form input[type=email],.nh-form select,.nh-form textarea{width:100%;font:inherit;padding:11px 12px;border:1px solid rgba(127,146,158,.55);border-radius:8px;background:#fff;color:var(--ink);min-height:44px;box-sizing:border-box}
+.nh-form textarea{min-height:90px;resize:vertical}.nh-form .help{font-size:13.5px;line-height:1.5;color:var(--ink-2);margin:0}
+.nh-cons{display:flex!important;gap:10px;align-items:flex-start;font-weight:400!important;line-height:1.45;cursor:pointer}.nh-cons input{width:20px;height:20px;min-width:20px;margin:1px 0 0;accent-color:#0B766B}
+.nh-form button[type=submit]{font:inherit;font-weight:600;background:#0B766B;color:#fff;border:0;border-radius:8px;padding:13px 24px;min-height:46px;cursor:pointer}.nh-form button:disabled{opacity:.6}
+.buy-sell{margin-top:10px}
+.sv-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
+.sv-c{display:flex;flex-direction:column;gap:6px;padding:18px;background:#fff;border:1px solid rgba(127,146,158,.28);border-radius:var(--radius,12px);text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}
+.sv-c:hover{border-color:rgba(127,146,158,.7);transform:translateY(-1px)}.sv-c b{font-family:var(--display);font-size:1.05rem}.sv-c span{font-size:.93rem;color:var(--ink-2);line-height:1.45;flex:1}.sv-c i{font-style:normal;font-family:var(--display);font-weight:600;font-size:.9rem;color:var(--sea,#0B766B)}
+@media (max-width:820px){.sv-g{grid-template-columns:1fr 1fr}}@media (max-width:560px){.sv-g,.nh-form{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 
@@ -700,18 +715,43 @@ section[id]{scroll-margin-top:78px}
           <h2>Can't find yours? I'll help you look.</h2>
           <p class="intro">Tell me how you will use it, your budget and the area. I search in Spain and Europe, check what is missing before you travel and stay with you until signing.</p>
           <div class="boat-cta" style="margin-top:26px">
-            <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hi%20Juan%2C%20I'm%20looking%20for%20a%20boat.%20Type%3A%20%20%7C%20Budget%3A%20%20%7C%20Area%3A%20" target="_blank" rel="noopener">Tell me what you're looking for</a>
+            <span class="tb-wa">Prefer WhatsApp?</span> <a class="btn btn-wa" href="https://wa.me/34633742973?text=Hi%20Juan%2C%20I'm%20looking%20for%20a%20boat.%20Type%3A%20%20%7C%20Budget%3A%20%20%7C%20Area%3A%20" target="_blank" rel="noopener">Tell me what you're looking for</a>
           </div>
           <p class="buy-alt"><a href="/en/alertas/">Set up an alert: I'll notify you if yours comes in</a></p>
-          <p class="buy-alt buy-new" style="margin-top:10px">Looking for a new boat? We represent <strong>SKIPPER Powerboats</strong> in Spain: <a href="/en/skipper/">see models, photos and prices</a>.</p>
+          <p class="buy-alt buy-new" style="margin-top:10px">Looking for a new boat? I work with SKIPPER, Mar.Co and other brands, built to order: <a href="/en/barcos-nuevos/">see models and prices</a>.</p>
+          <p class="buy-alt buy-sell">Own a boat? I can help you value and sell it so you can buy the next one: <a href="/en/vender-barco/">See how I sell it</a>.</p>
         </div>
         <div>
           <div class="buy-facts icons"><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15h18l-2.5 4h-13zM6 15V9l6-5 6 5v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><strong>Any length</strong></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><strong>Spain and Europe</strong></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.6 2.6L16 9.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Success fee only</strong></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 12h9M18 12v3M21 12v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><strong>My own listings</strong></div></div>
         </div>
       </div>
-      </div>
+      <!-- pm-tb -->
+<div class="tb-box"><h3>Tell me what you are looking for</h3>
+<form id="tbForm" class="nh-form" novalidate data-contact-intent="busqueda">
+<div><label for="tb_type">Type of boat <i>*</i></label><select id="tb_type" required><option>RIB</option><option>Day boat</option><option>Cabin cruiser</option><option>Flybridge</option><option>Sailing boat</option><option>Catamaran</option><option>Jet ski</option><option>Not sure yet</option></select></div>
+<div><label for="tb_bud">Budget <i>*</i></label><select id="tb_bud" required><option value=""></option><option>Up to €30,000</option><option>€30,000 to €60,000</option><option>€60,000 to €120,000</option><option>€120,000 to €250,000</option><option>Over €250,000</option></select></div>
+<div><label for="tb_new">New or used?</label><select id="tb_new"><option>Either</option><option>Used</option><option>New</option></select></div>
+<div><label for="tb_zone">Area <small>(optional)</small></label><input id="tb_zone" type="text" maxlength="60" placeholder="Costa Brava, Barcelona, Mallorca…"></div>
+<div><label for="tb_when">When do you plan to buy? <small>(optional)</small></label><select id="tb_when"><option value=""></option><option>As soon as possible</option><option>In the next 3 months</option><option>For next season</option><option>No rush, just looking</option></select></div>
+<div><label for="tb_pay">How do you plan to pay? <small>(optional)</small></label><select id="tb_pay"><option value=""></option><option>Own funds</option><option>With financing</option><option>By selling my current boat</option><option>Not sure yet</option></select></div>
+<div><label for="tb_name">Name <i>*</i></label><input id="tb_name" type="text" required autocomplete="name" maxlength="60"></div>
+<div><label for="tb_tel">Phone <i>*</i></label><input id="tb_tel" type="tel" required autocomplete="tel" inputmode="tel" maxlength="20" placeholder="+34 6xx xxx xxx"></div>
+<div class="span2"><label for="tb_email">Email <i>*</i></label><input id="tb_email" type="email" required autocomplete="email" maxlength="100"></div>
+<div class="span2"><label for="tb_msg">Anything else <small>(optional)</small></label><textarea id="tb_msg" maxlength="1500" placeholder="Use, number of people, length, whether you have a berth…"></textarea></div>
+<p class="help span2">Data controller: Juan Morante (Plata Marine). I will only use this data to search for your boat and reply to you. You can exercise your rights at juan@platamarine.com. <a href="/en/privacidad">Privacy policy</a>.</p>
+<div class="span2"><label for="tb_consent" class="nh-cons"><input id="tb_consent" type="checkbox" required><span>I have read the privacy information and agree to you using this data to reply to me.&nbsp;<i>*</i></span></label></div>
+<div class="span2"><button type="submit" id="tb_send">Send me your search</button></div>
+<p class="help span2">Fields marked * are required.</p><p id="tb_status" class="help span2" role="status" aria-live="polite" hidden></p>
+</form></div>
+<!-- /pm-tb -->
+</div>
     </div>
   </section>
+<!-- pm-serv -->
+<section class="sec sv" id="servicios" aria-labelledby="sv-h"><div class="wrap">
+<p class="eyebrow">What I do for you</p><h2 id="sv-h">I am with you through the whole deal</h2>
+<div class="sv-g"><a class="sv-c" href="/en/barcos-nuevos/"><b>Advice</b><span>I compare models and brands, new or used, for your use and budget.</span><i>New boats →</i></a><a class="sv-c" href="#comprar"><b>Tailored search</b><span>I look for the boat in Spain and Europe and check what is missing before you travel.</span><i>Boat search →</i></a><a class="sv-c" href="/en/vender-barco/"><b>Selling your boat</b><span>Valuation, photos, listing and viewings, so you can sell yours and move up.</span><i>Sell my boat →</i></a><a class="sv-c" href="/en/servicios/cambio-titularidad-barco"><b>Paperwork</b><span>Change of ownership and registration with a partner marine agency.</span><i>Change of ownership →</i></a><a class="sv-c" href="/en/remolques/"><b>Transport and delivery</b><span>I coordinate it with the shipyard or carriers, quoted separately in writing.</span><i>Trailers →</i></a><a class="sv-c" href="/en/servicios/amarres"><b>Berth</b><span>I can guide you on marinas and berth prices in Catalonia.</span><i>Berths →</i></a></div></div></section>
+<!-- /pm-serv -->
 
 
 
@@ -872,5 +912,6 @@ var IMGS={"ferretti-80-1": "/ferretti-80-1.jpg", "ferretti-80-3": "/ferretti-80-
 <script src="/nav.js?v=20261006m" defer></script>
 <script src="/inventario.js?v=20261006" defer></script>
 <script src="/portada-cartera.js?v=20261024" defer></script>
+<script src="/te-busco.js?v=20261103" defer></script>
 </body>
 </html>
