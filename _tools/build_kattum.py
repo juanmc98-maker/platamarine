@@ -53,20 +53,20 @@ def loc(v, lang):
 
 T = {
  'es': dict(
-  title='Kattum: catamaranes a motor nuevos, precios y fotos',
-  desc='Catamaranes a motor Kattum K30 Open, K30 Cruiser y K40, de 9,38 a 11,10 m. Desde 175.000 € + impuestos. Distribuidor para Baleares.',
+  title='Kattum: catamaranes a motor nuevos, modelos y fotos',
+  desc='Catamaranes a motor Kattum K30 Open, K30 Cruiser y K40, de 9,38 a 11,10 m. Precio bajo presupuesto. Distribuidor para Baleares.',
   eyebrow='Barcos nuevos', kick='Distribuidor para Baleares', h1='Kattum: catamaranes a motor',
   sub=['De 9,38 a 11,10 m', 'Fueraborda', 'Categoría B', 'Bajo pedido'],
   price_from='Desde', vat='+ impuestos', vat_note='K30 Open, sin motores', see='Ver los modelos', cta='Pedir presupuesto',
   intro='Kattum Yachts fabrica catamaranes a motor con dos cascos: navegan planos y estables, y la bañera es mucho más ancha que la de una lancha de la misma eslora. Se piden a fábrica y se configuran a medida. Soy su distribuidor para Baleares: te ayudo a elegir modelo, motores y equipamiento, y me encargo de la compra.',
   note='Fotos del astillero. Pueden mostrar equipamiento opcional.',
-  side=['La marca', 'K30 Open', 'K30 Cruiser', 'K40', 'Configurar', 'Equipamiento', 'Fotos', 'Presupuesto'],
+  side=['La marca', 'K30 Open', 'K30 Cruiser', 'K40', 'Equipamiento', 'Fotos', 'Presupuesto'],
   mh='Tres modelos', mh_l='El mismo concepto en tres tamaños: tú eliges cuánto espacio quieres dentro.',
   m={'k30-open': ('Para el día, con todo el espacio fuera', 'Catamarán open con T-top sobre el puesto de mando, asientos modulables, solárium y una plataforma de baño ampliada que se aprovecha mucho cuando se fondea. Lleva un aseo bajo la consola.'),
      'k30-cruiser': ('El K30 con camarote', 'La misma base que el K30 Open, con un camarote doble y un baño completo dentro. Mantiene la bañera amplia y la plataforma de baño, y permite pasar la noche a bordo.'),
      'k40': ('Más grande, para hacer crucero', 'El modelo mayor: 11,10 m, dos camarotes dobles y dos aseos independientes, y de serie con dos motores Mercury de 400 cv. El astillero aún no me ha pasado fotos reales del K40; si te interesa, te paso el catálogo por WhatsApp.')},
   eng_no='sin motores', eng_yes='con 2 × Mercury 400 cv',
-  eng_k30='Motores: de 2 × 200 a 2 × 300 cv, Suzuki o Mercury, desde 40.000 € + impuestos (2 × Suzuki 200).',
+  eng_k30='Motores: de 2 × 200 a 2 × 300 cv, Suzuki o Mercury.',
   eng_k40='De serie lleva 2 × Mercury 400 cv. Opción de 2 × 600 cv.',
   wa_m='Hola Juan, me interesa el {}.', go='Pedir precio de este modelo',
   e_h='Qué lleva de serie y qué es opcional', std_h='De serie (K30)', k40_h='Además, en el K40', opt_h='Opcional',
@@ -80,26 +80,26 @@ T = {
   why_h='Cómo lo veo', why='Me gusta el proyecto: un catamarán de 9 metros tiene la bañera de una lancha bastante más grande, navega plano y se mueve menos fondeado, algo que se agradece en las calas de Baleares. Con fuerabordas el mantenimiento suele ser más sencillo. Si dudas entre el Open y el Cruiser, la pregunta es si vas a dormir a bordo.',
   end_h='¿Te preparo un presupuesto?', end_p='Dime qué modelo, motores y opciones te interesan y te paso el precio por escrito, sin compromiso.',
   wa_end='Hola Juan, me interesa un Kattum. ¿Me preparas un presupuesto?', used_a='Ver barcos de segunda mano →',
-  small='Precios de la tarifa 2026 del astillero, sin IVA, en fábrica: K30 Open y K30 Cruiser sin motores; K40 con 2 motores Mercury de 400 cv. No incluyen equipamiento opcional, transporte, matriculación ni el IEDMT cuando corresponda. Pueden cambiar y no son vinculantes; el precio final es el del presupuesto por escrito. Fotos y ficha técnica del fabricante; las fotos pueden mostrar equipamiento opcional. La titulación es orientativa y depende de la eslora que conste en la documentación: confírmala con tu escuela o con Capitanía. Podemos equivocarnos; si ves un error, avísanos.',
+  small='Fotos y ficha técnica del fabricante; las fotos pueden mostrar equipamiento opcional. La titulación es orientativa y depende de la eslora que conste en la documentación: confírmala con tu escuela o con Capitanía. Podemos equivocarnos; si ves un error, avísanos.',
   alt=['Kattum K30 Open navegando', 'Dos Kattum K30 Open navegando', 'Kattum K30 Open de costado', 'Dos Kattum K30 navegando', 'Popa con plataforma y motores', 'Puesto de mando', 'Asientos del puesto de mando', 'Solárium de proa', 'Bañera con sofá', 'Tapicería', 'Pantalla de domótica', 'Kattum K30 Cruiser navegando', 'Kattum K30 Cruiser visto desde arriba', 'Kattum K30 Cruiser navegando', 'Kattum K30 Cruiser de costado', 'Kattum K30 Cruiser navegando', 'Solárium de proa', 'Asientos del puesto de mando', 'Bañera con mesa', 'Bañera y solárium', 'Camarote', 'Baño', 'Camarote doble', 'Cama del camarote'],
   plano='Plano del Kattum K40', close='Cerrar', prev='Anterior', next='Siguiente',
   crumbs=('Inicio', 'Barcos en venta', 'Barcos nuevos'),
  ),
  'ca': dict(
-  title='Kattum: catamarans a motor nous, preus i fotos',
-  desc='Catamarans a motor Kattum K30 Open, K30 Cruiser i K40, de 9,38 a 11,10 m. Des de 175.000 € + impostos. Distribuïdor per a les Balears.',
+  title='Kattum: catamarans a motor nous, models i fotos',
+  desc='Catamarans a motor Kattum K30 Open, K30 Cruiser i K40, de 9,38 a 11,10 m. Preu sota pressupost. Distribuïdor per a les Balears.',
   eyebrow='Vaixells nous', kick='Distribuïdor per a les Balears', h1='Kattum: catamarans a motor',
   sub=['De 9,38 a 11,10 m', 'Fora borda', 'Categoria B', 'Per encàrrec'],
   price_from='Des de', vat='+ impostos', vat_note='K30 Open, sense motors', see='Veure els models', cta='Demanar pressupost',
   intro='Kattum Yachts fabrica catamarans a motor de dos bucs: naveguen plans i estables, i la banyera és molt més ampla que la d\'una llanxa de la mateixa eslora. Es demanen a fàbrica i es configuren a mida. En sóc el distribuïdor per a les Balears: t\'ajudo a triar model, motors i equipament, i m\'encarrego de la compra.',
   note='Fotos de la drassana. Poden mostrar equipament opcional.',
-  side=['La marca', 'K30 Open', 'K30 Cruiser', 'K40', 'Configurar', 'Equipament', 'Fotos', 'Pressupost'],
+  side=['La marca', 'K30 Open', 'K30 Cruiser', 'K40', 'Equipament', 'Fotos', 'Pressupost'],
   mh='Tres models', mh_l='El mateix concepte en tres mides: tu tries quant espai vols a dins.',
   m={'k30-open': ('Per al dia, amb tot l\'espai a fora', 'Catamarà open amb T-top sobre el lloc de comandament, seients modulables, solàrium i una plataforma de bany ampliada que s\'aprofita molt quan es fondeja. Porta un lavabo sota la consola.'),
      'k30-cruiser': ('El K30 amb camarot', 'La mateixa base que el K30 Open, amb un camarot doble i un bany complet a dins. Manté la banyera àmplia i la plataforma de bany, i permet passar la nit a bord.'),
      'k40': ('Més gran, per fer creuer', 'El model més gran: 11,10 m, dos camarots dobles i dos lavabos independents, i de sèrie amb dos motors Mercury de 400 CV. La drassana encara no m\'ha passat fotos reals del K40; si t\'interessa, et passo el catàleg per WhatsApp.')},
   eng_no='sense motors', eng_yes='amb 2 × Mercury 400 CV',
-  eng_k30='Motors: de 2 × 200 a 2 × 300 CV, Suzuki o Mercury, des de 40.000 € + impostos (2 × Suzuki 200).',
+  eng_k30='Motors: de 2 × 200 a 2 × 300 CV, Suzuki o Mercury.',
   eng_k40='De sèrie porta 2 × Mercury 400 CV. Opció de 2 × 600 CV.',
   wa_m='Hola Juan, m\'interessa el {}.', go='Demanar preu d\'aquest model',
   e_h='Què porta de sèrie i què és opcional', std_h='De sèrie (K30)', k40_h='A més, al K40', opt_h='Opcional',
@@ -113,26 +113,26 @@ T = {
   why_h='Com el veig', why='M\'agrada el projecte: un catamarà de 9 metres té la banyera d\'una llanxa força més gran, navega pla i es mou menys fondejat, cosa que s\'agraeix a les cales de les Balears. Amb fora bordes el manteniment sol ser més senzill. Si dubtes entre l\'Open i el Cruiser, la pregunta és si dormiràs a bord.',
   end_h='Et preparo un pressupost?', end_p='Digues-me quin model, motors i opcions t\'interessen i et passo el preu per escrit, sense compromís.',
   wa_end='Hola Juan, m\'interessa un Kattum. Em prepares un pressupost?', used_a='Veure vaixells de segona mà →',
-  small='Preus de la tarifa 2026 de la drassana, sense IVA, a fàbrica: K30 Open i K30 Cruiser sense motors; K40 amb 2 motors Mercury de 400 CV. No inclouen equipament opcional, transport, matriculació ni l\'IEDMT quan correspongui. Poden canviar i no són vinculants; el preu final és el del pressupost per escrit. Fotos i fitxa tècnica del fabricant; les fotos poden mostrar equipament opcional. La titulació és orientativa i depèn de l\'eslora que consti a la documentació: confirma-la amb la teva escola o amb Capitania. Ens podem equivocar; si hi veus un error, avisa\'ns.',
+  small='Fotos i fitxa tècnica del fabricant; les fotos poden mostrar equipament opcional. La titulació és orientativa i depèn de l\'eslora que consti a la documentació: confirma-la amb la teva escola o amb Capitania. Ens podem equivocar; si hi veus un error, avisa\'ns.',
   alt=['Kattum K30 Open navegant', 'Dos Kattum K30 Open navegant', 'Kattum K30 Open de costat', 'Dos Kattum K30 navegant', 'Popa amb plataforma i motors', 'Lloc de comandament', 'Seients del lloc de comandament', 'Solàrium de proa', 'Banyera amb sofà', 'Tapisseria', 'Pantalla de domòtica', 'Kattum K30 Cruiser navegant', 'Kattum K30 Cruiser vist des de dalt', 'Kattum K30 Cruiser navegant', 'Kattum K30 Cruiser de costat', 'Kattum K30 Cruiser navegant', 'Solàrium de proa', 'Seients del lloc de comandament', 'Banyera amb taula', 'Banyera i solàrium', 'Camarot', 'Bany', 'Camarot doble', 'Llit del camarot'],
   plano='Plànol del Kattum K40', close='Tancar', prev='Anterior', next='Següent',
   crumbs=('Inici', 'Vaixells en venda', 'Vaixells nous'),
  ),
  'en': dict(
-  title='Kattum: new power catamarans, prices and photos',
-  desc='Kattum K30 Open, K30 Cruiser and K40 power catamarans, 9.38 to 11.10 m. From €175,000 + taxes. Dealer for the Balearic Islands.',
+  title='Kattum: new power catamarans, models and photos',
+  desc='Kattum K30 Open, K30 Cruiser and K40 power catamarans, 9.38 to 11.10 m. Price on request. Dealer for the Balearic Islands.',
   eyebrow='New boats', kick='Dealer for the Balearic Islands', h1='Kattum: power catamarans',
   sub=['9.38 to 11.10 m', 'Outboard', 'Category B', 'Built to order'],
   price_from='From', vat='+ taxes', vat_note='K30 Open, without engines', see='See the models', cta='Request a quote',
   intro='Kattum Yachts builds twin-hull power catamarans: they run flat and stable, and the cockpit is much wider than on a motorboat of the same length. They are ordered from the factory and configured to order. I am their dealer for the Balearic Islands: I help you choose model, engines and equipment, and I handle the purchase.',
   note='Builder\'s photos. They may show optional equipment.',
-  side=['The brand', 'K30 Open', 'K30 Cruiser', 'K40', 'Configure', 'Equipment', 'Photos', 'Quote'],
+  side=['The brand', 'K30 Open', 'K30 Cruiser', 'K40', 'Equipment', 'Photos', 'Quote'],
   mh='Three models', mh_l='The same concept in three sizes: you choose how much space you want inside.',
   m={'k30-open': ('For day trips, with all the space outside', 'Open catamaran with a T-top over the helm, modular seating, sunbed and an extended swim platform that really pays off at anchor. There is a toilet under the console.'),
      'k30-cruiser': ('The K30 with a cabin', 'The same base as the K30 Open, with a double cabin and a full bathroom inside. It keeps the wide cockpit and the swim platform, and lets you spend the night on board.'),
      'k40': ('Bigger, for cruising', 'The largest model: 11.10 m, two double cabins and two separate heads, with twin 400 hp Mercury engines as standard. The builder has not sent me real photos of the K40 yet; if you are interested, I can send you the brochure on WhatsApp.')},
   eng_no='without engines', eng_yes='with 2 × Mercury 400 hp',
-  eng_k30='Engines: from 2 × 200 to 2 × 300 hp, Suzuki or Mercury, from €40,000 + taxes (2 × Suzuki 200).',
+  eng_k30='Engines: from 2 × 200 to 2 × 300 hp, Suzuki or Mercury.',
   eng_k40='Standard with 2 × Mercury 400 hp. 2 × 600 hp available as an option.',
   wa_m='Hi Juan, I am interested in the {}.', go='Ask for this model\'s price',
   e_h='What is standard and what is optional', std_h='Standard (K30)', k40_h='On the K40, also', opt_h='Optional',
@@ -146,26 +146,26 @@ T = {
   why_h='How I see it', why='I like the project: a 9-metre catamaran has the cockpit of a much bigger motorboat, runs flat and moves less at anchor, which you appreciate in the Balearic coves. With outboards, maintenance is usually simpler. If you are torn between the Open and the Cruiser, the question is whether you will sleep on board.',
   end_h='Shall I prepare a quote?', end_p='Tell me which model, engines and options you are interested in and I will send you the price in writing, with no obligation.',
   wa_end='Hi Juan, I am interested in a Kattum. Could you prepare a quote?', used_a='See used boats →',
-  small='Prices from the builder\'s 2026 price list, ex-works, excluding VAT: K30 Open and K30 Cruiser without engines; K40 with twin 400 hp Mercury engines. They do not include optional equipment, transport, registration or Spanish registration tax (IEDMT) where applicable. They may change and are not binding; the final price is the one in the written quote. Photos and specifications from the builder; photos may show optional equipment. The licence shown is indicative and depends on the registered length: please confirm it with your school or the Harbour Master. We may be wrong; if you spot an error, let us know.',
+  small='Photos and specifications from the builder; photos may show optional equipment. The licence shown is indicative and depends on the registered length: please confirm it with your school or the Harbour Master. We may be wrong; if you spot an error, let us know.',
   alt=['Kattum K30 Open underway', 'Two Kattum K30 Open underway', 'Kattum K30 Open side view', 'Two Kattum K30 underway', 'Stern with platform and engines', 'Helm', 'Helm seats', 'Bow sunbed', 'Cockpit sofa', 'Upholstery', 'Home automation screen', 'Kattum K30 Cruiser underway', 'Kattum K30 Cruiser from above', 'Kattum K30 Cruiser underway', 'Kattum K30 Cruiser side view', 'Kattum K30 Cruiser underway', 'Bow sunbed', 'Helm seats', 'Cockpit with table', 'Cockpit and sunbed', 'Cabin', 'Bathroom', 'Double cabin', 'Cabin bed'],
   plano='Kattum K40 drawing', close='Close', prev='Previous', next='Next',
   crumbs=('Home', 'Boats for sale', 'New boats'),
  ),
  'fr': dict(
-  title='Kattum : catamarans à moteur neufs, prix et photos',
-  desc='Catamarans à moteur Kattum K30 Open, K30 Cruiser et K40, de 9,38 à 11,10 m. À partir de 175 000 € + taxes. Distributeur pour les Baléares.',
+  title='Kattum : catamarans à moteur neufs, modèles et photos',
+  desc='Catamarans à moteur Kattum K30 Open, K30 Cruiser et K40, de 9,38 à 11,10 m. Prix sur demande. Distributeur pour les Baléares.',
   eyebrow='Bateaux neufs', kick='Distributeur pour les Baléares', h1='Kattum : catamarans à moteur',
   sub=['De 9,38 à 11,10 m', 'Hors-bord', 'Catégorie B', 'Sur commande'],
   price_from='À partir de', vat='+ taxes', vat_note='K30 Open, sans moteurs', see='Voir les modèles', cta='Demander un devis',
   intro='Kattum Yachts construit des catamarans à moteur à deux coques : ils naviguent à plat et stables, et le cockpit est bien plus large que celui d\'un bateau à moteur de même longueur. Ils sont commandés à l\'usine et configurés sur mesure. Je suis leur distributeur pour les Baléares : je vous aide à choisir le modèle, les moteurs et l\'équipement, et je m\'occupe de l\'achat.',
   note='Photos du chantier. Elles peuvent montrer des options.',
-  side=['La marque', 'K30 Open', 'K30 Cruiser', 'K40', 'Configurer', 'Équipement', 'Photos', 'Devis'],
+  side=['La marque', 'K30 Open', 'K30 Cruiser', 'K40', 'Équipement', 'Photos', 'Devis'],
   mh='Trois modèles', mh_l='Le même concept en trois tailles : vous choisissez l\'espace que vous voulez à l\'intérieur.',
   m={'k30-open': ('Pour la journée, tout l\'espace dehors', 'Catamaran open avec T-top au-dessus du poste de pilotage, sièges modulables, bain de soleil et une plateforme de bain agrandie, très utile au mouillage. Toilettes sous la console.'),
      'k30-cruiser': ('Le K30 avec cabine', 'La même base que le K30 Open, avec une cabine double et une salle d\'eau complète. Il garde le grand cockpit et la plateforme de bain, et permet de passer la nuit à bord.'),
      'k40': ('Plus grand, pour la croisière', 'Le plus grand modèle : 11,10 m, deux cabines doubles et deux toilettes séparées, avec deux moteurs Mercury de 400 ch de série. Le chantier ne m\'a pas encore envoyé de vraies photos du K40 ; s\'il vous intéresse, je vous envoie la brochure sur WhatsApp.')},
   eng_no='sans moteurs', eng_yes='avec 2 × Mercury 400 ch',
-  eng_k30='Moteurs : de 2 × 200 à 2 × 300 ch, Suzuki ou Mercury, à partir de 40 000 € + taxes (2 × Suzuki 200).',
+  eng_k30='Moteurs : de 2 × 200 à 2 × 300 ch, Suzuki ou Mercury.',
   eng_k40='De série : 2 × Mercury 400 ch. Option 2 × 600 ch.',
   wa_m='Bonjour Juan, le {} m\'intéresse.', go='Demander le prix de ce modèle',
   e_h='Ce qui est de série et ce qui est en option', std_h='De série (K30)', k40_h='En plus, sur le K40', opt_h='En option',
@@ -179,13 +179,14 @@ T = {
   why_h='Mon avis', why='J\'aime le projet : un catamaran de 9 mètres a le cockpit d\'un bateau à moteur bien plus grand, navigue à plat et bouge moins au mouillage, ce qui se remarque dans les criques des Baléares. Avec des hors-bord, l\'entretien est en général plus simple. Si vous hésitez entre l\'Open et le Cruiser, la question est de savoir si vous dormirez à bord.',
   end_h='Je vous prépare un devis ?', end_p='Dites-moi quel modèle, quels moteurs et quelles options vous intéressent et je vous envoie le prix par écrit, sans engagement.',
   wa_end='Bonjour Juan, un Kattum m\'intéresse. Pouvez-vous me préparer un devis ?', used_a='Voir les bateaux d\'occasion →',
-  small='Prix de la liste 2026 du chantier, départ usine, hors TVA : K30 Open et K30 Cruiser sans moteurs ; K40 avec 2 moteurs Mercury de 400 ch. Ils n\'incluent pas les options, le transport, l\'immatriculation ni la taxe d\'immatriculation espagnole (IEDMT) le cas échéant. Ils peuvent changer et ne sont pas contractuels ; le prix final est celui du devis écrit. Photos et fiche technique du constructeur ; les photos peuvent montrer des options. Le permis indiqué est indicatif et dépend de la longueur enregistrée : vérifiez-le auprès de votre école ou de la Capitainerie. Nous pouvons nous tromper ; si vous voyez une erreur, dites-le-nous. Nous ne parlons pas français : nous utilisons un traducteur, merci de votre indulgence.',
+  small='Photos et fiche technique du constructeur ; les photos peuvent montrer des options. Le permis indiqué est indicatif et dépend de la longueur enregistrée : vérifiez-le auprès de votre école ou de la Capitainerie. Nous pouvons nous tromper ; si vous voyez une erreur, dites-le-nous. Nous ne parlons pas français : nous utilisons un traducteur, merci de votre indulgence.',
   alt=['Kattum K30 Open en navigation', 'Deux Kattum K30 Open en navigation', 'Kattum K30 Open de profil', 'Deux Kattum K30 en navigation', 'Arrière avec plateforme et moteurs', 'Poste de pilotage', 'Sièges du poste de pilotage', 'Bain de soleil avant', 'Cockpit avec banquette', 'Sellerie', 'Écran de domotique', 'Kattum K30 Cruiser en navigation', 'Kattum K30 Cruiser vu d\'en haut', 'Kattum K30 Cruiser en navigation', 'Kattum K30 Cruiser de profil', 'Kattum K30 Cruiser en navigation', 'Bain de soleil avant', 'Sièges du poste de pilotage', 'Cockpit avec table', 'Cockpit et bain de soleil', 'Cabine', 'Salle d\'eau', 'Cabine double', 'Lit de la cabine'],
   plano='Plan du Kattum K40', close='Fermer', prev='Précédent', next='Suivant',
   crumbs=('Accueil', 'Bateaux à vendre', 'Bateaux neufs'),
  ),
 }
 
+ASK = {'es': ('Precio bajo presupuesto', 'Te paso el precio por escrito, sin compromiso.'), 'ca': ('Preu sota pressupost', 'Et passo el preu per escrit, sense compromís.'), 'en': ('Price on request', 'I will send you the price in writing, with no obligation.'), 'fr': ('Prix sur demande', 'Je vous envoie le prix par écrit, sans engagement.')}
 CFH = {'es': ('Configura tu Kattum', 'Elige modelo, motores y opcionales y ve el precio al momento. Cuando lo tengas, pídeme el presupuesto por escrito.'), 'ca': ('Configura el teu Kattum', "Tria model, motors i opcionals i veu el preu al moment. Quan el tinguis, demana'm el pressupost per escrit."), 'en': ('Configure your Kattum', 'Choose model, engines and options and see the price instantly. When you are ready, ask me for the written quote.'), 'fr': ('Configurez votre Kattum', 'Choisissez le modèle, les moteurs et les options et voyez le prix immédiatement. Ensuite, demandez-moi le devis écrit.')}
 
 CSS = CT_CSS + """
@@ -235,9 +236,7 @@ def build(lang):
             {"@type": "ListItem", "position": 4, "name": "Kattum", "item": url}]}]
     for m in MODELS:
         ld.append({"@context": "https://schema.org", "@type": "Product", "name": m['name'], "brand": {"@type": "Brand", "name": "Kattum Yachts"},
-                   "image": [f"{BASE}{F}{m['hero']}.jpg"], "description": t['m'][m['id']][1],
-                   "offers": {"@type": "Offer", "price": str(m['price']), "priceCurrency": "EUR", "availability": "https://schema.org/PreOrder", "url": url + '#' + m['id'],
-                              "priceSpecification": {"@type": "PriceSpecification", "price": str(m['price']), "priceCurrency": "EUR", "valueAddedTaxIncluded": False}}})
+                   "image": [f"{BASE}{F}{m['hero']}.jpg"], "description": t['m'][m['id']][1], "url": url + '#' + m['id']})
     head = head.replace('<style>', ''.join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>\n' for x in ld) + '<style>', 1)
     head = head.replace('</style>', CSS + '</style>', 1)
     head += '<link rel="stylesheet" href="/barcos/ficha-v2.css?v=20261011b">\n<script src="/barcos/ficha-v2.js?v=20261011" defer></script>\n'
@@ -250,7 +249,7 @@ def build(lang):
     def wbtn(txt, ctx, msg, cls='btn btn-wa'):
         return f'<a class="{cls}" href="{wa(msg)}" target="_blank" rel="noopener" data-wa-context="{ctx}">{html.escape(txt)}</a>'
 
-    ids = ['marca', 'k30-open', 'k30-cruiser', 'k40', 'configurar', 'equipamiento', 'fotos', 'presupuesto']
+    ids = ['marca', 'k30-open', 'k30-cruiser', 'k40', 'equipamiento', 'fotos', 'presupuesto']
     side = ''.join(f'<a href="#{i}"><span>{html.escape(s)}</span><i></i></a>' for i, s in zip(ids, t['side']))
     sub = ''.join(f'<span>{html.escape(s)}</span>' for s in t['sub'])
     A = t['alt']
@@ -274,7 +273,7 @@ def build(lang):
             phh = '<div class="kt-ph">' + img(m['hero'], altmap.get(m['hero'], m['name'])) + '</div>'
         eng = t['eng_k40'] if m['eng'] else t['eng_k30']
         models += (f'<article class="kt-model" id="{m["id"]}">{phh}<div><h3>{m["name"].replace("Kattum ", "")}</h3><p class="kt-tag">{html.escape(tag)}</p><p>{html.escape(txt)}</p>'
-                   f'<p class="kt-pr">{t["price_from"]} {eur(m["price"], lang)} €<span class="vat">{t["vat"]}</span><small>{html.escape(t["eng_yes"] if m["eng"] else t["eng_no"])}</small></p>'
+                   f'<p class="kt-pr">{ASK[lang][0]}<small>{html.escape(t["eng_yes"] if m["eng"] else t["eng_no"])}</small></p>'
                    f'<p class="kt-eng">{html.escape(eng)} {html.escape(t["dlv_label"])}: {html.escape(t["dlv"][0].lower() + t["dlv"][1:])}.</p><dl class="specs">{rows}</dl>'
                    f'<div class="v2-ctas">{wbtn(t["go"], "ficha_" + m["id"], t["wa_m"].format(m["name"]))}</div></div></article>')
 
@@ -289,7 +288,7 @@ def build(lang):
 <section class="v2-hero" id="marca">
 <img class="v2-hero-img" src="{F}k30-1.jpg" srcset="{F}k30-1-m.jpg 900w, {F}k30-1.jpg 1600w" sizes="100vw" alt="{html.escape(A[0])}" width="1600" height="899" fetchpriority="high" decoding="async">
 <div class="v2-hero-in wrap head"><div><p class="eyebrow" style="color:rgba(255,255,255,.85)">{t['eyebrow']} · {t['kick']}</p><h1>{html.escape(t['h1'])}</h1><div class="sub">{sub}</div></div>
-<div class="price-box"><p class="price">{t['price_from']} {eur(175000, lang)} €<span class="vat">{t['vat']}</span><small>{html.escape(t['vat_note'])}</small></p>
+<div class="price-box"><p class="price">{ASK[lang][0]}<small>{html.escape(ASK[lang][1])}</small></p>
 <div class="v2-ctas">{wbtn(t['cta'], 'ficha_precio', t['wa_end'])}<a class="btn v2-ghost" href="#k30-open">{html.escape(t['see'])}</a></div></div></div>
 </section>
 <div class="wrap v2-note"><img class="kt-logo" src="/barcos-nuevos/logos/kattum.png" alt="Kattum Yachts" width="547" height="145"><p class="muted head-note">{html.escape(t['intro'])} {html.escape(t['note'])}</p></div>
@@ -297,11 +296,6 @@ def build(lang):
 <p class="v2-k">{html.escape(t['kick'])}</p><h2>{html.escape(t['mh'])}</h2><p class="v2-lead">{html.escape(t['mh_l'])}</p>
 {models}
 </div></section>
-<section class="v2-sec v2-band" id="configurar"><div class="wrap">
-<h2>{html.escape(CFH[lang][0])}</h2><p class="v2-lead">{html.escape(CFH[lang][1])}</p>
-<div id="pm-cfg"></div>
-</div></section>
-<script>window.PM_CFG={json.dumps(kcfg(li), ensure_ascii=False)};</script>
 <section class="v2-sec" id="equipamiento"><div class="wrap">
 <h2>{html.escape(t['e_h'])}</h2>
 <div class="ct-two"><div><h3>{t['std_h']}</h3><ul class="ct-tags">{std}</ul><h3 style="margin-top:20px">{t['k40_h']}</h3><ul class="ct-tags">{k40}</ul></div><div><h3>{t['opt_h']}</h3><ul class="ct-tags opt">{opt}</ul><p class="v2-small" style="margin-top:12px">{html.escape(t['e_note'])}</p></div></div>
@@ -320,7 +314,7 @@ def build(lang):
 <div class="v2-ctas">{wbtn(t['cta'], 'ficha_cierre', t['wa_end'])}<a class="btn v2-ghost" href="{p}/barcos/#segunda-mano">{html.escape(t['used_a'])}</a></div>
 </div></section>
 <div class="wrap"><p class="nv-small">{html.escape(t['small'])}</p></div>
-</main>{JS}<script src="/submit-confirmed.js?v=20261011" defer></script><script src="/barcos-nuevos/pm-config.js?v=20261029" defer></script>'''
+</main>{JS}<script src="/submit-confirmed.js?v=20261011" defer></script>'''
     body = re.sub(r'<main class="boat">.*?</main>', lambda m: main, body, flags=re.S)
     out = head + '</head>' + body
     os.makedirs(f'{ROOT}{p}/{SLUG}', exist_ok=True)
