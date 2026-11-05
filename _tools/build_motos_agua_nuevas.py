@@ -32,7 +32,7 @@ T = {
   home='Inicio', nb='Barcos nuevos', crumb='Motos de agua nuevas',
   kick='Motos de agua nuevas', h1='Motos de agua nuevas Sea-Doo y Kawasaki 2027',
   lead='La gama 2027 de las dos marcas, de la Spark para empezar a la Ultra para hacer millas. Me dices cuál te interesa y te paso el precio por escrito, con lo que incluye y el plazo de entrega.',
-  ask='Precio a consultar', btn='Pedir precio', jump_sd='Ver gama Sea-Doo', jump_kw='Ver gama Kawasaki',
+  ask='Precio a consultar', btn='Pedir presupuesto', jump_sd='Ver gama Sea-Doo', jump_kw='Ver gama Kawasaki',
   cv='cv', seats='{n} plazas', stand='De pie',
   wa='Hola Juan, quiero presupuesto de la moto de agua nueva {m} (2027). Te digo mi provincia y si necesito remolque: ', wa_gen='Hola Juan, quiero información sobre una moto de agua nueva.',
   fam={'perf': ('Performance', 'Las más deportivas: casco y motor pensados para correr y girar fuerte.'),
@@ -61,7 +61,7 @@ T = {
   home='Inici', nb='Vaixells nous', crumb="Motos d'aigua noves",
   kick="Motos d'aigua noves", h1="Motos d'aigua noves Sea-Doo i Kawasaki 2027",
   lead="La gamma 2027 de les dues marques, de la Spark per començar a la Ultra per fer milles. Em dius quina t'interessa i et passo el preu per escrit, amb el que inclou i el termini de lliurament.",
-  ask='Preu a consultar', btn='Demanar preu', jump_sd='Veure gamma Sea-Doo', jump_kw='Veure gamma Kawasaki',
+  ask='Preu a consultar', btn='Demanar pressupost', jump_sd='Veure gamma Sea-Doo', jump_kw='Veure gamma Kawasaki',
   cv='cv', seats='{n} places', stand='Dempeus',
   wa="Hola Juan, vull pressupost de la moto d'aigua nova {m} (2027). Et dic la meva província i si necessito remolc: ", wa_gen="Hola Juan, vull informació sobre una moto d'aigua nova.",
   fam={'perf': ('Performance', 'Les més esportives: buc i motor pensats per córrer i girar fort.'),
@@ -90,7 +90,7 @@ T = {
   home='Home', nb='New boats', crumb='New jet skis',
   kick='New jet skis', h1='New 2027 Sea-Doo and Kawasaki jet skis',
   lead="The 2027 range from both brands, from the Spark to get started to the Ultra for long rides. Tell me which one you like and I'll send you the price in writing, with what it includes and the delivery time.",
-  ask='Price on request', btn='Ask for price', jump_sd='See Sea-Doo range', jump_kw='See Kawasaki range',
+  ask='Price on request', btn='Ask for a quote', jump_sd='See Sea-Doo range', jump_kw='See Kawasaki range',
   cv='hp', seats='{n} seats', stand='Stand-up',
   wa="Hi Juan, I'd like a quote for the new {m} jet ski (2027). My area and whether I need a trailer: ", wa_gen="Hi Juan, I'd like information about a new jet ski.",
   fam={'perf': ('Performance', 'The sportiest ones: hull and engine built to go fast and turn hard.'),
@@ -119,7 +119,7 @@ T = {
   home='Accueil', nb='Bateaux neufs', crumb='Jet-skis neufs',
   kick='Jet-skis neufs', h1='Jet-skis neufs Sea-Doo et Kawasaki 2027',
   lead="La gamme 2027 des deux marques, du Spark pour débuter à l'Ultra pour faire des milles. Dites-moi lequel vous intéresse et je vous envoie le prix par écrit, avec ce qui est inclus et le délai de livraison.",
-  ask='Prix sur demande', btn='Demander le prix', jump_sd='Voir la gamme Sea-Doo', jump_kw='Voir la gamme Kawasaki',
+  ask='Prix sur demande', btn='Demander un devis', jump_sd='Voir la gamme Sea-Doo', jump_kw='Voir la gamme Kawasaki',
   cv='ch', seats='{n} places', stand='Debout',
   wa='Bonjour Juan, je voudrais un devis pour le jet-ski neuf {m} (2027). Ma région et si j’ai besoin d’une remorque : ', wa_gen="Bonjour Juan, je voudrais des informations sur un jet-ski neuf.",
   fam={'perf': ('Performance', 'Les plus sportifs : coque et moteur pensés pour aller vite et virer fort.'),
@@ -208,7 +208,60 @@ X = {
 ADD = {'es': {'note': 'Precio a consultar: te paso el presupuesto por escrito con la versión, el equipamiento, los impuestos, el transporte y el plazo de entrega.', 'fil_l': 'Filtrar motos', 'fil': [('all', 'Todas'), ('sea-doo', 'Sea-Doo'), ('kawasaki', 'Kawasaki'), ('ini', 'Para empezar'), ('fam', 'Familia'), ('trav', 'Travesía'), ('dep', 'Deportivas'), ('agua', 'Pesca y arrastre'), ('pie', 'De pie')], 'vs_h': 'Sea-Doo o Kawasaki: modelos que se comparan', 'vs_p': 'Si dudas entre las dos marcas, estos son los modelos que suelen compararse. Las diferencias de equipamiento y precio te las detallo en el presupuesto.', 'vs': [('Familia', 'Sea-Doo GTI SE 170', '170 cv · 3 plazas', 'Kawasaki STX 160LX', '152 cv · 3 plazas'), ('Travesía', 'Sea-Doo GTX 230', '230 cv · 3 plazas', 'Kawasaki Ultra 160LX', '152 cv · 3 plazas'), ('Lo más completo', 'Sea-Doo GTX Limited 350', '350 cv · 3 plazas', 'Kawasaki Ultra 310LX', '300 cv · 3 plazas'), ('Deportivas', 'Sea-Doo RXT-X 350', '350 cv · 3 plazas', 'Kawasaki STX 310RX', '310 cv')]}, 'ca': {'note': "Preu a consultar: et passo el pressupost per escrit amb la versió, l'equipament, els impostos, el transport i el termini de lliurament.", 'fil_l': 'Filtrar motos', 'fil': [('all', 'Totes'), ('sea-doo', 'Sea-Doo'), ('kawasaki', 'Kawasaki'), ('ini', 'Per començar'), ('fam', 'Família'), ('trav', 'Travessia'), ('dep', 'Esportives'), ('agua', 'Pesca i arrossegament'), ('pie', 'Dempeus')], 'vs_h': 'Sea-Doo o Kawasaki: models que es comparen', 'vs_p': "Si dubtes entre les dues marques, aquests són els models que se solen comparar. Les diferències d'equipament i preu te les detallo al pressupost.", 'vs': [('Família', 'Sea-Doo GTI SE 170', '170 cv · 3 places', 'Kawasaki STX 160LX', '152 cv · 3 places'), ('Travessia', 'Sea-Doo GTX 230', '230 cv · 3 places', 'Kawasaki Ultra 160LX', '152 cv · 3 places'), ('El més complet', 'Sea-Doo GTX Limited 350', '350 cv · 3 places', 'Kawasaki Ultra 310LX', '300 cv · 3 places'), ('Esportives', 'Sea-Doo RXT-X 350', '350 cv · 3 places', 'Kawasaki STX 310RX', '310 cv')]}, 'en': {'note': 'Price on request: I send you a written quote with version, equipment, taxes, transport and delivery time.', 'fil_l': 'Filter jet skis', 'fil': [('all', 'All'), ('sea-doo', 'Sea-Doo'), ('kawasaki', 'Kawasaki'), ('ini', 'Beginners'), ('fam', 'Family'), ('trav', 'Touring'), ('dep', 'Sporty'), ('agua', 'Fishing & towing'), ('pie', 'Stand-up')], 'vs_h': 'Sea-Doo or Kawasaki: models people compare', 'vs_p': 'If you are torn between the two brands, these are the models usually compared. I detail equipment and price differences in the quote.', 'vs': [('Family', 'Sea-Doo GTI SE 170', '170 hp · 3 seats', 'Kawasaki STX 160LX', '152 hp · 3 seats'), ('Touring', 'Sea-Doo GTX 230', '230 hp · 3 seats', 'Kawasaki Ultra 160LX', '152 hp · 3 seats'), ('Top of the range', 'Sea-Doo GTX Limited 350', '350 hp · 3 seats', 'Kawasaki Ultra 310LX', '300 hp · 3 seats'), ('Sporty', 'Sea-Doo RXT-X 350', '350 hp · 3 seats', 'Kawasaki STX 310RX', '310 hp')]}, 'fr': {'note': 'Prix sur demande : je vous envoie un devis écrit avec la version, l’équipement, les taxes, le transport et le délai de livraison.', 'fil_l': 'Filtrer les jet-skis', 'fil': [('all', 'Tous'), ('sea-doo', 'Sea-Doo'), ('kawasaki', 'Kawasaki'), ('ini', 'Pour débuter'), ('fam', 'Famille'), ('trav', 'Randonnée'), ('dep', 'Sportifs'), ('agua', 'Pêche et traction'), ('pie', 'Debout')], 'vs_h': 'Sea-Doo ou Kawasaki : modèles comparables', 'vs_p': 'Si vous hésitez entre les deux marques, voici les modèles souvent comparés. Je détaille les différences d’équipement et de prix dans le devis.', 'vs': [('Famille', 'Sea-Doo GTI SE 170', '170 ch · 3 places', 'Kawasaki STX 160LX', '152 ch · 3 places'), ('Randonnée', 'Sea-Doo GTX 230', '230 ch · 3 places', 'Kawasaki Ultra 160LX', '152 ch · 3 places'), ('Le plus complet', 'Sea-Doo GTX Limited 350', '350 ch · 3 places', 'Kawasaki Ultra 310LX', '300 ch · 3 places'), ('Sportifs', 'Sea-Doo RXT-X 350', '350 ch · 3 places', 'Kawasaki STX 310RX', '310 ch')]}}
 for _l in ADD: X[_l].update(ADD[_l])
 
-JS = '''<script>(function(){var bs=document.querySelectorAll('.mj-fil button');function go(f){bs.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-f')===f?'true':'false')});document.querySelectorAll('.mj-c').forEach(function(c){var ok=f==='all'||c.getAttribute('data-use')===f||c.getAttribute('data-brand')===f;c.hidden=!ok});document.querySelectorAll('.mj-fam').forEach(function(m){m.hidden=!m.querySelector('.mj-c:not([hidden])')});document.querySelectorAll('#sea-doo,#kawasaki').forEach(function(sec){sec.hidden=!sec.querySelector('.mj-c:not([hidden])')})}bs.forEach(function(b){b.addEventListener('click',function(){go(b.getAttribute('data-f'))})})})();</script>'''
+# --- Precios "desde" (PVP recomendado del fabricante, gama 2027; fuente: tarifa publicada por el concesionario oficial, nov 2026) ---
+PRICE = {'sd-rxp-x-senna': 39899, 'sd-rxp-x-350-solar-orange': 34799, 'sd-rxt-x-350-solar-orange': 34599, 'sd-gtx-limited': 36099,
+ 'sd-gtx-230': 26899, 'sd-gtx': 24099, 'sd-fishpro-trophy': 31699, 'sd-explorer-pro': 28999, 'sd-wake-pro-230': 27799, 'sd-wake-170': 22299,
+ 'sd-gti-se-teal-blue': 19999, 'sd-gti': 17099, 'sd-trixx-for3-blue-mist': 16499, 'sd-spark-x': 15999, 'sd-spark': 9899,
+ 'kw-ultra-310lx-2027': 30725, 'kw-ultra-310lx-s-2027': 28690, 'kw-ultra-160lx-s-wakesport': 25375, 'kw-ultra-160lx-2027': 24425, 'kw-ultra-160lx-s-2027': 23725,
+ 'kw-stx-310rx': 24350, 'kw-stx-310r': 22850, 'kw-stx-160lx-2027': 21975, 'kw-stx-160lx-s-2027': 20450, 'kw-stx-160r-2027': 20450, 'kw-stx-160x-2027': 19175,
+ 'kw-sx-r-160': 14175, 'kw-sx-x-160': 14175}
+FICHA = {'sd-spark': 'sea-doo-spark', 'sd-gtx': 'sea-doo-gtx-170', 'kw-ultra-310lx-2027': 'kawasaki-ultra-310lx'}
+
+
+def money(n, lang):
+    if lang == 'en': return f'€{n:,}'
+    if lang == 'fr': return f'{n:,}'.replace(',', ' ') + ' €'
+    return f'{n:,}'.replace(',', '.') + ' €'
+
+
+FROM = {'es': 'Desde {p}', 'ca': 'Des de {p}', 'en': 'From {p}', 'fr': 'À partir de {p}'}
+FICHA_T = {'es': 'Ver ficha', 'ca': 'Veure fitxa', 'en': 'See specs', 'fr': 'Voir la fiche'}
+CMP = {'es': ('Comparar', 'Comparar ({n}/3)', 'Quitar', 'Precio desde', 'Potencia', 'Plazas', 'Marca', 'Cerrar', 'Elige hasta 3 motos con «Comparar» para verlas lado a lado.'),
+       'ca': ('Comparar', 'Comparar ({n}/3)', 'Treure', 'Preu des de', 'Potència', 'Places', 'Marca', 'Tancar', 'Tria fins a 3 motos amb «Comparar» per veure-les una al costat de l’altra.'),
+       'en': ('Compare', 'Compare ({n}/3)', 'Remove', 'Price from', 'Power', 'Seats', 'Brand', 'Close', 'Pick up to 3 jet skis with “Compare” to see them side by side.'),
+       'fr': ('Comparer', 'Comparer ({n}/3)', 'Retirer', 'Prix dès', 'Puissance', 'Places', 'Marque', 'Fermer', 'Choisissez jusqu’à 3 jet-skis avec « Comparer » pour les voir côte à côte.')}
+
+T['es'].update(title='Motos de agua nuevas 2027: Sea-Doo y Kawasaki desde 9.899 €',
+  desc='Motos de agua nuevas Sea-Doo y Kawasaki 2027 desde 9.899 €: Spark, GTI, GTX, RXP-X, Ultra, STX y SX-R. Compara modelos y pide presupuesto por WhatsApp.',
+  small='Precios «desde»: PVP recomendado por cada fabricante para la versión de entrada de cada modelo, con IVA e impuesto de matriculación; pueden variar según la comunidad autónoma, la versión, el color y los extras. Modelos y datos de la gama 2027, que pueden cambiar sin aviso. El precio final, la disponibilidad y el plazo de entrega se confirman por escrito. Información orientativa: podemos equivocarnos y no es vinculante.')
+T['es']['faq'][0] = ('¿El precio que veo es el final?', 'Es el precio «desde»: el PVP recomendado por el fabricante para la versión de entrada, con IVA e impuesto de matriculación. Según la versión, el color, los extras y tu comunidad autónoma puede variar, así que te paso el presupuesto cerrado por escrito, detallando qué incluye.')
+T['ca'].update(title="Motos d'aigua noves 2027: Sea-Doo i Kawasaki des de 9.899 €",
+  desc="Motos d'aigua noves Sea-Doo i Kawasaki 2027 des de 9.899 €: Spark, GTI, GTX, RXP-X, Ultra, STX i SX-R. Compara models i demana pressupost per WhatsApp.",
+  small="Preus «des de»: PVP recomanat per cada fabricant per a la versió d'entrada de cada model, amb IVA i impost de matriculació; poden variar segons la comunitat autònoma, la versió, el color i els extres. Models i dades de la gamma 2027, que poden canviar sense avís. El preu final, la disponibilitat i el termini de lliurament es confirmen per escrit. Informació orientativa: ens podem equivocar i no és vinculant.")
+T['ca']['faq'][0] = ('El preu que veig és el final?', "És el preu «des de»: el PVP recomanat pel fabricant per a la versió d'entrada, amb IVA i impost de matriculació. Segons la versió, el color, els extres i la teva comunitat autònoma pot variar, així que et passo el pressupost tancat per escrit, detallant què inclou.")
+T['en'].update(title='New 2027 Sea-Doo and Kawasaki jet skis from €9,899',
+  desc='New 2027 Sea-Doo and Kawasaki jet skis from €9,899: Spark, GTI, GTX, RXP-X, Ultra, STX and SX-R. Compare models and ask for a quote on WhatsApp in Barcelona.',
+  small="“From” prices: each manufacturer's recommended retail price for the entry version of each model, including Spanish VAT and registration tax; they may vary by region, version, colour and extras. Models and data from the 2027 range, which may change without notice. Final price, availability and delivery time are confirmed in writing. Indicative information: we may be wrong and it is not binding.")
+T['en']['faq'][0] = ('Is the price shown the final price?', "It is the “from” price: the manufacturer's recommended retail price for the entry version, including Spanish VAT and registration tax. It can change with version, colour, extras and region, so I send you a closed written quote detailing what it includes.")
+T['fr'].update(title='Jet-skis neufs 2027 Sea-Doo et Kawasaki dès 9 899 €',
+  desc='Jet-skis neufs Sea-Doo et Kawasaki 2027 à partir de 9 899 € : Spark, GTI, GTX, RXP-X, Ultra, STX et SX-R. Comparez et demandez un devis par WhatsApp.',
+  small="Prix « à partir de » : prix de vente conseillé par chaque fabricant pour la version d’entrée de chaque modèle, TVA espagnole et taxe d’immatriculation incluses ; ils peuvent varier selon la région, la version, la couleur et les options. Modèles et données de la gamme 2027, susceptibles de changer sans préavis. Le prix final, la disponibilité et le délai de livraison sont confirmés par écrit. Information indicative : nous pouvons nous tromper et elle n’est pas contractuelle. Nous ne parlons pas français : nous utilisons un traducteur.")
+T['fr']['faq'][0] = ('Le prix affiché est-il le prix final ?', "C’est le prix « à partir de » : le prix conseillé par le fabricant pour la version d’entrée, TVA espagnole et taxe d’immatriculation incluses. Il peut varier selon la version, la couleur, les options et la région ; je vous envoie donc un devis ferme par écrit, en détaillant ce qui est inclus.")
+X['es']['note'] = 'Precios «desde» con IVA e impuesto de matriculación. Te paso el presupuesto cerrado por escrito: versión, equipamiento, transporte y plazo de entrega.'
+X['ca']['note'] = "Preus «des de» amb IVA i impost de matriculació. Et passo el pressupost tancat per escrit: versió, equipament, transport i termini de lliurament."
+X['en']['note'] = '“From” prices include Spanish VAT and registration tax. I send you a closed written quote: version, equipment, transport and delivery time.'
+X['fr']['note'] = 'Prix « à partir de » TVA espagnole et taxe d’immatriculation incluses. Je vous envoie un devis ferme par écrit : version, équipement, transport et délai de livraison.'
+for _l in X:
+    X[_l]['vs'] = [tuple(v) for v in X[_l]['vs']]
+
+def vsp(name, lang):
+    for brand, fams in (('Sea-Doo', SEADOO), ('Kawasaki', KAWA)):
+        for _, ms in fams:
+            for k, m, _, _ in ms:
+                if f'{brand} {m}' == name: return FROM[lang].format(p=money(PRICE[k], lang))
+    return ''
+
+JS = '''<script>(function(){var bar=document.querySelector('.mj-bar'),dlg=document.querySelector('.mj-dlg');if(!bar)return;var cbs=document.querySelectorAll('.mj-cmp input');function sel(){return [].filter.call(cbs,function(c){return c.checked})}function upd(){var s=sel();cbs.forEach(function(c){c.disabled=!c.checked&&s.length>=3});bar.hidden=!s.length;bar.querySelector('span').textContent=bar.querySelector('span').getAttribute('data-t').replace('{n}',s.length)}cbs.forEach(function(c){c.addEventListener('change',upd)});bar.querySelector('.mj-clr').addEventListener('click',function(){cbs.forEach(function(c){c.checked=false});upd()});bar.querySelector('.mj-go').addEventListener('click',function(){var h='';sel().forEach(function(c){h+='<div><img src="'+c.getAttribute('data-img')+'" alt=""><b>'+c.getAttribute('data-cmp')+'</b><p class="pr">'+c.getAttribute('data-p')+'</p><p>'+c.getAttribute('data-cv')+'</p></div>'});dlg.querySelector('.mj-cols').innerHTML=h;dlg.hidden=false});dlg.addEventListener('click',function(e){if(e.target===dlg||e.target.classList.contains('mj-x'))dlg.hidden=true});document.addEventListener('keydown',function(e){if(e.key==='Escape')dlg.hidden=true})})();</script><script>(function(){var bs=document.querySelectorAll('.mj-fil button');function go(f){bs.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-f')===f?'true':'false')});document.querySelectorAll('.mj-c').forEach(function(c){var ok=f==='all'||c.getAttribute('data-use')===f||c.getAttribute('data-brand')===f;c.hidden=!ok});document.querySelectorAll('.mj-fam').forEach(function(m){m.hidden=!m.querySelector('.mj-c:not([hidden])')});document.querySelectorAll('#sea-doo,#kawasaki').forEach(function(sec){sec.hidden=!sec.querySelector('.mj-c:not([hidden])')})}bs.forEach(function(b){b.addEventListener('click',function(){go(b.getAttribute('data-f'))})})})();</script>'''
 
 CSS = """<style>
 .mj-brand{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:0 0 6px}.mj-brand img{height:30px;width:auto;max-width:44%}.mj-brand img.sd{height:22px}
@@ -222,6 +275,9 @@ CSS = """<style>
 .mj-c>div{padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1}
 .mj-c h4{font-size:1.05rem;margin:0}.mj-c .sp{font-size:.9rem;color:#5b6b75;flex:1}.mj-c .pr{font-weight:700;font-size:.95rem}
 .mj-c .btn{margin-top:8px;text-align:center;padding:9px 12px;font-size:.92rem}
+.mj-c .mj-fl{font-weight:600;color:#0B766B;font-size:.9rem;text-decoration:none}.mj-cmp{display:flex;align-items:center;gap:6px;font-size:.85rem;color:#33474f;margin-top:4px;cursor:pointer}
+.mj-bar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:60;background:#0E3042;color:#fff;border-radius:999px;padding:8px 10px 8px 18px;display:flex;align-items:center;gap:10px;box-shadow:0 10px 30px -10px rgba(0,0,0,.5);max-width:calc(100% - 32px)}.mj-bar[hidden],.mj-dlg[hidden]{display:none}.mj-bar .btn{padding:8px 14px}.mj-clr{background:none;border:0;color:#cfe;text-decoration:underline;cursor:pointer}
+.mj-dlg{position:fixed;inset:0;z-index:80;background:rgba(6,15,22,.7);display:flex;align-items:center;justify-content:center;padding:16px}.mj-dlg-in{background:#fff;border-radius:16px;max-width:980px;width:100%;max-height:90vh;overflow:auto;padding:20px;position:relative}.mj-x{position:absolute;top:8px;right:12px;border:0;background:none;font-size:28px;cursor:pointer}.mj-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.mj-cols img{width:100%;aspect-ratio:4/3;object-fit:contain}.mj-cols b{display:block;margin-top:6px}.mj-cols p{margin:4px 0;color:#33474f}
 .mj-note{margin:8px 0 10px;font-weight:600;color:#0E3042}
 .mj-fil{display:flex;flex-wrap:wrap;gap:8px;position:sticky;top:64px;z-index:5;background:#F4F6F7;padding:8px 0}.mj-fil button{font:600 .9rem/1 var(--display,inherit);padding:9px 14px;border-radius:999px;border:1px solid rgba(14,48,66,.25);background:#fff;color:#0E3042;cursor:pointer}.mj-fil button[aria-pressed="true"]{background:#0E3042;color:#fff;border-color:#0E3042}
 .mj-c[hidden],.mj-fam[hidden],section[hidden]{display:none}
@@ -258,7 +314,9 @@ def card(t, key, name, brand, cv, seats):
     elif seats: sp.append(t['seats'].format(n=seats))
     e = html.escape
     return (f'<article class="mj-c" data-use="{USE[key]}" data-brand="{brand.lower()}"><img src="/{SLUG}/fotos/{key}.jpg" alt="{e(full)}" width="900" height="675" loading="lazy">'
-            f'<div><h4>{e(full)}</h4><p class="sp">{" · ".join(sp)}</p><p class="pr">{t["ask"]}</p>'
+            f'<div><h4>{e(full)}</h4><p class="sp">{" · ".join(sp)}</p><p class="pr">{FROM[LANG[0]].format(p=money(PRICE[key], LANG[0]))}</p>'
+            + (f'<a class="mj-fl" href="{PFX[LANG[0]]}/{SLUG}/{FICHA[key]}/">{FICHA_T[LANG[0]]} →</a>' if key in FICHA else '') +
+            f'<label class="mj-cmp"><input type="checkbox" data-cmp="{e(full)}" data-p="{e(FROM[LANG[0]].format(p=money(PRICE[key], LANG[0])))}" data-cv="{e(" · ".join(sp))}" data-img="/{SLUG}/fotos/{key}.jpg"> {CMP[LANG[0]][0]}</label>'
             f'<a class="btn btn-wa" href="{e(wa(t["wa"].format(m=full)))}" target="_blank" rel="noopener" data-wa-context="moto_agua_nueva">{t["btn"]}</a></div></article>')
 
 
@@ -272,7 +330,11 @@ def brand_sec(t, bid, brand, logo, fams):
     return ''.join(out)
 
 
+LANG = ['es']
+
+
 def build(lang):
+    LANG[0] = lang
     t = T[lang]; p = PFX[lang]
     src = open(os.path.join(ROOT, p.lstrip('/'), 'remolques', 'index.html'), encoding='utf-8').read()
     head_top = src[:src.index('<title>')]
@@ -312,10 +374,12 @@ def build(lang):
             f'<div><img class="mj-hero-img" src="/{SLUG}/fotos/sd-gtx-limited.jpg" alt="Sea-Doo GTX Limited 350" width="900" height="636"></div></section>',
             f'<div class="wrap" id="catalogo"><p class="mj-note">{X[lang]["note"]}</p><div class="mj-fil" role="group" aria-label="{X[lang]["fil_l"]}">' +
             ''.join(f'<button type="button" data-f="{k}"{" aria-pressed=\"true\"" if k=="all" else " aria-pressed=\"false\""}>{v}</button>' for k, v in X[lang]['fil']) + '</div></div>',
+            f'<div class="mj-bar" hidden><span data-t="{CMP[lang][1]}"></span><button type="button" class="btn btn-wa mj-go">{CMP[lang][0]}</button><button type="button" class="mj-clr">{CMP[lang][2]}</button></div>'
+            f'<div class="mj-dlg" hidden role="dialog" aria-modal="true"><div class="mj-dlg-in"><button type="button" class="mj-x" aria-label="{CMP[lang][7]}">×</button><div class="mj-cols"></div></div></div>',
             brand_sec(t, 'sea-doo', 'Sea-Doo', 'sea-doo.png', SEADOO),
             brand_sec(t, 'kawasaki', 'Kawasaki', 'kawasaki.png', KAWA),
             f'<section class="rm-sec" id="comparar"><div class="wrap"><h2>{X[lang]["vs_h"]}</h2><p>{X[lang]["vs_p"]}</p><div class="mj-vs">' +
-            ''.join(f'<div><p class="u">{u}</p><p><b>{a}</b><span>{ad}</span></p><p class="o">vs</p><p><b>{b}</b><span>{bd}</span></p></div>' for u, a, ad, b, bd in X[lang]['vs']) + '</div></div></section>',
+            ''.join(f'<div><p class="u">{u}</p><p><b>{a}</b><span>{ad}<br>{vsp(a, lang)}</span></p><p class="o">vs</p><p><b>{b}</b><span>{bd}<br>{vsp(b, lang)}</span></p></div>' for u, a, ad, b, bd in X[lang]['vs']) + '</div></div></section>',
             f'<section class="rm-sec" id="cual"><div class="wrap"><h2>{X[lang]["uso_h"]}</h2><div class="mj-uso">' +
             ''.join(f'<div><h3>{h}</h3><p>{d}</p></div>' for h, d in X[lang]['uso']) + '</div></div></section>',
             f'<section class="rm-sec"><div class="wrap"><h2>{t["how_h"]}</h2><div class="rm-grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">' +
