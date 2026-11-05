@@ -114,7 +114,7 @@ def page(m, lang):
         rows = list(zip(l['rows'], m['spec'][lang])); key4 = [rows[j] for j in (1, 8, 6, 7)]
     gal = sorted(x for x in os.listdir(os.path.join(ROOT, SLUG, 'fotos')) if re.fullmatch(rf'g-{re.escape(m["key"])}-\d+\.jpg', x))
     gal_html = (f'<section class="rm-sec"><div class="wrap"><h2>{GAL[lang][0]}</h2><div class="mf-gal">' +
-                ''.join(f'<img src="/{SLUG}/fotos/{x}" alt="{e(m["name"])} 2027 · {i+1}" loading="lazy">' for i, x in enumerate(gal)) +
+                ''.join(f'<img class="pm-zoom" src="/{SLUG}/fotos/{x}" alt="{e(m["name"])} 2027 · {i+1}" loading="lazy">' for i, x in enumerate(gal)) +
                 f'</div><p class="mf-cred">{GAL[lang][1]}</p></div></section>') if gal else ''
     src = open(os.path.join(ROOT, p.lstrip('/'), SLUG, 'index.html'), encoding='utf-8').read()
     head_top = src[:src.index('<title>')]
