@@ -286,3 +286,6 @@
 
 /* financiación orientativa en barcos nuevos */
 (function(){if(!/^\/(ca\/|en\/|fr\/)?(skipper|marco|catharsis|seastorm|squama|kattum)(\/|$)/.test(location.pathname))return;if(document.getElementById("pm-finnew-js"))return;var s=document.createElement("script");s.id="pm-finnew-js";s.src="/barcos-nuevos/fin-new.js?v=20261029";s.defer=true;document.head.appendChild(s);})();
+
+/* idiomas dentro del menú móvil */
+(function(){function go(){var p=document.querySelector(".pmx-panel .pmx-in"),l=document.querySelector("header .langsw");if(!p||!l||p.querySelector(".pmx-langs"))return;var g=document.createElement("div");g.className="pmx-grp pmx-langs";var t={es:"Idioma",ca:"Idioma",en:"Language",fr:"Langue"}[(document.documentElement.lang||"es").slice(0,2)]||"Idioma";g.innerHTML="<p>"+t+"</p>";var r=document.createElement("div");r.className="pmx-lrow";l.querySelectorAll("a").forEach(function(a){var c=a.cloneNode(true),s=c.querySelector(".sr-only");if(s){s.className="pmx-lcode";}r.appendChild(c);});g.appendChild(r);p.insertBefore(g,p.firstChild);}if(document.readyState!="loading")go();else document.addEventListener("DOMContentLoaded",go);})();
