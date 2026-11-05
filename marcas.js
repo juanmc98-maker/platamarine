@@ -9,7 +9,9 @@
     { slug: 'catharsis', name: 'Catharsis (Avila Marin)',      logo: '/barcos-nuevos/logos/avila-marin-blanco.png',  h: 54 },
     { slug: 'kattum',    name: 'Kattum Yachts',                logo: '/barcos-nuevos/logos/kattum-blanco.png',       h: 40 },
     { slug: 'squama',    name: 'Squama (Pičuljan Pro-Nautic)', logo: '/barcos-nuevos/logos/piculjan-blanco.png',     h: 34 },
-    { slug: 'seastorm',  name: 'SeaStorm',                     logo: '/seastorm/fotos/seastorm-logo.png',            h: 18 }
+    { slug: 'seastorm',  name: 'SeaStorm',                     logo: '/seastorm/fotos/seastorm-logo.png',            h: 18 },
+    { slug: 'motos-de-agua-nuevas', href: '/motos-de-agua-nuevas/#sea-doo', name: 'Sea-Doo', logo: '/barcos-nuevos/logos/sea-doo-blanco.png', h: 18 },
+    { slug: 'motos-de-agua-nuevas', href: '/motos-de-agua-nuevas/#kawasaki', name: 'Kawasaki', logo: '/barcos-nuevos/logos/kawasaki-blanco.png', h: 34 }
   ];
   var box = document.querySelector('[data-marcas]');
   if (!box) return;
@@ -22,7 +24,7 @@
     MARCAS.forEach(function (m) {
       var li = document.createElement('li');
       var a = document.createElement('a');
-      a.href = pre + '/' + m.slug + '/';
+      a.href = pre + (m.href || '/' + m.slug + '/');
       if (oculta) a.tabIndex = -1;
       var img = document.createElement('img');
       img.src = m.logo; img.alt = oculta ? '' : m.name; img.style.height = m.h + 'px';
