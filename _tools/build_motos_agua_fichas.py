@@ -2,7 +2,7 @@
 """Fichas de modelo de motos de agua nuevas (ES/CA/EN/FR): /motos-de-agua-nuevas/<slug>/.
 Datos técnicos del fabricante (fichas oficiales); precio "desde" = PVP recomendado 2027.
 Uso: python3 _tools/build_motos_agua_fichas.py  (después: clean_urls.py)"""
-import json, os, sys, html
+import json, os, sys, html, re
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import build_motos_agua_nuevas as B
 
@@ -93,20 +93,37 @@ M = [
                    ['Compresseur avec intercooler, 300 ch', 'Écran TFT couleur 7" avec Bluetooth', 'Audio JETSOUND 4s', 'Caméra arrière', 'Marche arrière intelligente avec décélération (KSRD)', 'Régulateur de vitesse', 'Selle ERGO-FIT LXury 3 positions'], 'Sea-Doo GTX Limited 350')}),
 ]
 
+GAL = {'es': ('Fotos', 'Fotos del fabricante. El color y el equipamiento pueden variar según la versión.'),
+       'ca': ('Fotos', 'Fotos del fabricant. El color i l\'equipament poden variar segons la versió.'),
+       'en': ('Photos', 'Manufacturer photos. Colour and equipment may vary by version.'),
+       'fr': ('Photos', 'Photos du fabricant. La couleur et l\'équipement peuvent varier selon la version.')}
+
+import motos_agua_modelos as MM
+M = M + MM.build(B.PRICE, B.money, B.FROM)
+
 
 def page(m, lang):
     t, l, p = B.T[lang], L[lang], PFX[lang]
     title, desc, who, eq, alt = m['txt'][lang]
-    url = f'{BASE}{p}/{SLUG}/{m["slug"]}/'
+    tail = m['slug'] + ('' if m.get('flat') else '/')
+    url = f'{BASE}{p}/{SLUG}/{tail}'
     pr = B.FROM[lang].format(p=B.money(m['price'], lang))
+    if 'rows' in m:
+        rows, key4 = m['rows'][lang], m['key4'][lang]
+    else:
+        rows = list(zip(l['rows'], m['spec'][lang])); key4 = [rows[j] for j in (1, 8, 6, 7)]
+    gal = sorted(x for x in os.listdir(os.path.join(ROOT, SLUG, 'fotos')) if re.fullmatch(rf'g-{re.escape(m["key"])}-\d+\.jpg', x))
+    gal_html = (f'<section class="rm-sec"><div class="wrap"><h2>{GAL[lang][0]}</h2><div class="mf-gal">' +
+                ''.join(f'<img src="/{SLUG}/fotos/{x}" alt="{e(m["name"])} 2027 · {i+1}" loading="lazy">' for i, x in enumerate(gal)) +
+                f'</div><p class="mf-cred">{GAL[lang][1]}</p></div></section>') if gal else ''
     src = open(os.path.join(ROOT, p.lstrip('/'), SLUG, 'index.html'), encoding='utf-8').read()
     head_top = src[:src.index('<title>')]
     styles = src[src.index('<style>'):src.index('</head>')]
     body_top = src[src.index('</head>'):src.index('<main')]
     for l2 in LANGS:  # selector de idioma a la ficha
-        body_top = body_top.replace(f'{BASE}{PFX[l2]}/{SLUG}/"', f'{BASE}{PFX[l2]}/{SLUG}/{m["slug"]}/"')
+        body_top = body_top.replace(f'{BASE}{PFX[l2]}/{SLUG}/"', f'{BASE}{PFX[l2]}/{SLUG}/{tail}"')
     foot = src[src.index('</main>'):]
-    alt_links = ''.join(f'<link rel="alternate" hreflang="{x}" href="{BASE}{PFX[x]}/{SLUG}/{m["slug"]}/">\n' for x in LANGS) + f'<link rel="alternate" hreflang="x-default" href="{BASE}/{SLUG}/{m["slug"]}/">\n'
+    alt_links = ''.join(f'<link rel="alternate" hreflang="{x}" href="{BASE}{PFX[x]}/{SLUG}/{tail}">\n' for x in LANGS) + f'<link rel="alternate" hreflang="x-default" href="{BASE}/{SLUG}/{tail}">\n'
     img = f'{BASE}/{SLUG}/fotos/{m["key"]}.jpg'
     ld = [{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Plata Marine", "item": f'{BASE}{p}/'},
@@ -122,25 +139,31 @@ def page(m, lang):
             '<link rel="icon" type="image/png" href="/logo-plata-marine.png">\n<link rel="stylesheet" href="/barcos/barcos.css">\n'
             '<script src="/consent.js?v=20261006" defer></script>\n<script src="/analytics.js?v=20261006" defer></script>\n<link rel="stylesheet" href="/nav.css?v=20261019">\n'
             + ''.join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>\n' for x in ld) + styles +
-            '<style>.mf-dl{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;max-width:760px;margin-top:14px}.mf-dl div{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #e3e9ec}.mf-dl dt{color:#5b6b75}.mf-dl dd{margin:0;font-weight:600;text-align:right}.mf-ul{columns:2;gap:28px;max-width:760px;padding-left:18px;line-height:1.7;color:#33474f}.mf-pr{font-size:1.5rem;font-weight:700;margin:4px 0 2px}.mf-pvp{font-size:.82rem;color:#5b6b75;margin:0 0 18px;max-width:52ch}@media(max-width:700px){.mf-dl{grid-template-columns:1fr}.mf-ul{columns:1}}</style>\n')
+            '<style>.mf-hero{padding:8px 0 30px}.mf-hin{display:grid;grid-template-columns:1.15fr 1fr;gap:36px;align-items:center}.mf-img{background:#fff;border-radius:18px;box-shadow:0 1px 2px rgba(14,48,66,.06),0 18px 40px -24px rgba(14,48,66,.4);padding:18px}.mf-img img{width:100%;height:auto;display:block}.mf-logo{height:30px;width:auto;margin:0 0 10px}.mf-logo.sd{height:20px}.mf-tx h1{font-family:var(--display);font-weight:800;font-stretch:72%;text-transform:uppercase;font-size:clamp(2.6rem,6vw,4.4rem);line-height:.95;margin:6px 0 14px}.mf-tit{font-weight:600;margin:0 0 18px}.mf-all{color:#0E3042;font-weight:600;text-decoration:underline;padding:10px 6px}.mf-dl{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;max-width:760px;margin-top:14px}.mf-dl div{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #e3e9ec}.mf-dl dt{color:#5b6b75}.mf-dl dd{margin:0;font-weight:600;text-align:right}.mf-ul{columns:2;gap:28px;max-width:760px;padding-left:18px;line-height:1.7;color:#33474f}.mf-pr{font-family:var(--display);font-weight:800;font-stretch:80%;font-size:2.4rem;margin:0 0 4px;color:#0E3042}.mf-pvp{font-size:.82rem;color:#5b6b75;margin:0 0 18px;max-width:52ch}@media(max-width:860px){.mf-hin{grid-template-columns:1fr}}@media(max-width:700px){.mf-dl{grid-template-columns:1fr}.mf-ul{columns:1}}.mf-key{list-style:none;padding:0;margin:0 0 18px;display:grid;grid-template-columns:repeat(4,max-content);gap:8px;max-width:540px}.mf-key li{background:#fff;border-radius:12px;padding:9px 12px;min-width:0;box-shadow:0 1px 2px rgba(14,48,66,.06),0 8px 20px -14px rgba(14,48,66,.35)}.mf-key span{display:block;font-family:var(--display);font-size:.64rem;font-weight:600;color:#5b6b75;text-transform:uppercase;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mf-key b{font-family:var(--display);font-size:1rem;color:#0E3042}.mf-img{background:radial-gradient(circle at 50% 42%,#fff 0,#eef3f6 60%,#d9e3e9 100%)!important}.mf-img img{mix-blend-mode:multiply}.mf-gal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:14px}.mf-gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;background:#fff;cursor:zoom-in;display:block}.mf-cred{font-size:.8rem;color:#5b6b75;margin-top:8px}@media(max-width:700px){.mf-gal{grid-template-columns:repeat(2,minmax(0,1fr))}}.mf-sticky{display:none}@media(max-width:700px){.mf-key{grid-template-columns:repeat(2,minmax(0,1fr))}.mf-sticky{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;min-height:54px;border-radius:14px;box-shadow:0 10px 30px -8px rgba(0,0,0,.45)}body{padding-bottom:78px}}</style>\n')
     wa = B.wa(l['wa'].format(m=m['name']))
     vs_href = f'{p}/{SLUG}/#comparar' if m['slug'] != 'sea-doo-spark' else f'{p}/{SLUG}/#sea-doo'
     main = ('<main class="rm">'
-            f'<div class="wrap"><p class="rm-crumb"><a href="{p}/">{l["home"]}</a> · <a href="{p}/{SLUG}/">{l["sec"]}</a> · {e(m["name"])} 2027</p></div>'
-            f'<section class="wrap rm-hero"><div><p class="k">{e(m["brand"])} · 2027</p><h1>{e(m["name"])} 2027</h1>'
-            f'<p class="mf-pr">{pr}</p><p class="mf-pvp">{l["pvp"]}</p><p style="font-weight:600;margin:0 0 16px">{l["tit"]}</p>'
-            f'<div class="mj-jump"><a class="btn btn-wa" href="{e(wa)}" target="_blank" rel="noopener" data-wa-context="moto_agua_ficha">{l["btn"]}</a>'
-            f'<a class="btn" href="{p}/{SLUG}/">{l["all"]}</a></div></div>'
-            f'<div><img class="mj-hero-img" src="/{SLUG}/fotos/{m["key"]}.jpg" alt="{e(m["name"])} 2027" width="900" height="675"></div></section>'
+            f'<div class="wrap"><p class="rm-crumb" style="margin-bottom:14px"><a href="{p}/">{l["home"]}</a> · <a href="{p}/{SLUG}/">{l["sec"]}</a> · {e(m["name"])} 2027</p></div>'
+            f'<section class="mf-hero"><div class="wrap mf-hin"><div class="mf-img"><img src="/{SLUG}/fotos/{m["key"]}.jpg" alt="{e(m["name"])} 2027" width="900" height="675" fetchpriority="high"></div>'
+            f'<div class="mf-tx"><img class="mf-logo{" sd" if m["brand"]=="Sea-Doo" else ""}" src="/barcos-nuevos/logos/{"sea-doo" if m["brand"]=="Sea-Doo" else "kawasaki"}.png" alt="{e(m["brand"])}"><p class="mj-k">{e(m["brand"])} · 2027</p><h1>{e(m["name"].split(" ",1)[1])}</h1>'
+            f'<ul class="mf-key">' + ''.join(f'<li><span>{a}</span><b>{b}</b></li>' for a, b in key4) + f'</ul><p class="mf-pr">{pr}</p><p class="mf-pvp">{l["pvp"]}</p><p class="mf-tit">{l["tit"]}</p>'
+            f'<div class="mj-hbt"><a class="mj-wa" href="{e(wa)}" target="_blank" rel="noopener" data-wa-context="moto_agua_ficha">{B.WAI}{l["btn"]}</a>'
+            f'<a class="mf-all" href="{p}/{SLUG}/">{l["all"]}</a></div></div></div></section>'
+            + gal_html +
             f'<section class="rm-sec"><div class="wrap"><h2>{l["who"]}</h2><p>{who}</p></div></section>'
             f'<section class="rm-sec"><div class="wrap"><h2>{l["spec"]}</h2><dl class="mf-dl">'
-            + ''.join(f'<div><dt>{k}</dt><dd>{v}</dd></div>' for k, v in zip(l['rows'], m['spec'][lang])) + '</dl></div></section>'
-            f'<section class="rm-sec"><div class="wrap"><h2>{l["eq"]}</h2><ul class="mf-ul">' + ''.join(f'<li>{x}</li>' for x in eq) + '</ul>'
+            + ''.join(f'<div><dt>{k}</dt><dd>{v}</dd></div>' for k, v in rows) + '</dl></div></section>'
+            + (f'<section class="rm-sec"><div class="wrap"><h2>{l["eq"]}</h2><ul class="mf-ul">' + ''.join(f'<li>{x}</li>' for x in eq) + '</ul>' if eq else '<section class="rm-sec"><div class="wrap">') +
             f'<p style="margin-top:18px"><b>{l["cmp"]}:</b> {alt}. <a href="{vs_href}">{l["see"]} →</a></p></div></section>'
             f'<div class="wrap"><div class="rm-end"><h2>{e(m["name"])} 2027 · {pr}</h2><a class="btn btn-wa" href="{e(wa)}" target="_blank" rel="noopener" data-wa-context="moto_agua_ficha">{l["btn"]}</a></div>'
             f'<p style="text-align:center;margin:-16px 0 28px">{l["sell"]} <a href="{p}/{SLUG}/#vender">{l["sell_l"]}</a></p>'
+            f'<a class="mj-wa mf-sticky" href="{e(wa)}" target="_blank" rel="noopener" data-wa-context="moto_agua_ficha">{B.WAI}{l["btn"]} · {pr}</a>'
             f'<p class="rm-small">{B.T[lang]["small"].split(". ")[0]}. {l["small"]}</p></div>\n')
     out = head + body_top + main + foot
+    if m.get('flat'):
+        d = os.path.join(ROOT, p.lstrip('/'), SLUG, m['slug'] + '.html')
+        open(d, 'w', encoding='utf-8').write(out)
+        return d
     d = os.path.join(ROOT, p.lstrip('/'), SLUG, m['slug']); os.makedirs(d, exist_ok=True)
     open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(out)
     return d
