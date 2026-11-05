@@ -27,11 +27,11 @@ KAWA = [
 T = {
  'es': dict(
   tit='Titulación: Licencia de Navegación o superior.',
-  title='Motos de agua nuevas Sea-Doo y Kawasaki en Barcelona',
-  desc='Toda la gama 2027 de motos de agua Sea-Doo y Kawasaki: Spark, GTI, GTX, RXP-X, Ultra, STX y SX-R. Pide precio por escrito, con lo que incluye y el plazo.',
+  title='Motos de agua nuevas 2027: Sea-Doo y Kawasaki en Barcelona',
+  desc='Motos de agua nuevas Sea-Doo y Kawasaki 2027: Spark, GTI, GTX, RXP-X, Ultra, STX y SX-R. Compara modelos y pide presupuesto por WhatsApp en Barcelona.',
   home='Inicio', nb='Barcos nuevos', crumb='Motos de agua nuevas',
-  kick='Motos de agua nuevas', h1='Motos de agua nuevas Sea-Doo y Kawasaki',
-  lead='Toda la gama 2027 de las dos marcas, de la Spark para empezar a la Ultra para hacer millas. Me dices cuál te interesa y te paso el precio por escrito, con lo que incluye y el plazo de entrega.',
+  kick='Motos de agua nuevas', h1='Motos de agua nuevas Sea-Doo y Kawasaki 2027',
+  lead='La gama 2027 de las dos marcas, de la Spark para empezar a la Ultra para hacer millas. Me dices cuál te interesa y te paso el precio por escrito, con lo que incluye y el plazo de entrega.',
   ask='Precio a consultar', btn='Pedir precio', jump_sd='Ver gama Sea-Doo', jump_kw='Ver gama Kawasaki',
   cv='cv', seats='{n} plazas', stand='De pie',
   wa='Hola Juan, quiero precio de la moto de agua nueva {m}.', wa_gen='Hola Juan, quiero información sobre una moto de agua nueva.',
@@ -56,11 +56,11 @@ T = {
   list_name='Motos de agua nuevas Sea-Doo y Kawasaki'),
  'ca': dict(
   tit='Titulació: Llicència de Navegació o superior.',
-  title="Motos d'aigua noves Sea-Doo i Kawasaki a Barcelona",
-  desc="Tota la gamma 2027 de motos d'aigua Sea-Doo i Kawasaki: Spark, GTI, GTX, RXP-X, Ultra, STX i SX-R. Demana preu per escrit, amb el que inclou i el termini.",
+  title="Motos d'aigua noves 2027: Sea-Doo i Kawasaki a Barcelona",
+  desc="Motos d'aigua noves Sea-Doo i Kawasaki 2027: Spark, GTI, GTX, RXP-X, Ultra, STX i SX-R. Compara models i demana pressupost per WhatsApp a Barcelona.",
   home='Inici', nb='Vaixells nous', crumb="Motos d'aigua noves",
-  kick="Motos d'aigua noves", h1="Motos d'aigua noves Sea-Doo i Kawasaki",
-  lead="Tota la gamma 2027 de les dues marques, de la Spark per començar a la Ultra per fer milles. Em dius quina t'interessa i et passo el preu per escrit, amb el que inclou i el termini de lliurament.",
+  kick="Motos d'aigua noves", h1="Motos d'aigua noves Sea-Doo i Kawasaki 2027",
+  lead="La gamma 2027 de les dues marques, de la Spark per començar a la Ultra per fer milles. Em dius quina t'interessa i et passo el preu per escrit, amb el que inclou i el termini de lliurament.",
   ask='Preu a consultar', btn='Demanar preu', jump_sd='Veure gamma Sea-Doo', jump_kw='Veure gamma Kawasaki',
   cv='cv', seats='{n} places', stand='Dempeus',
   wa="Hola Juan, vull preu de la moto d'aigua nova {m}.", wa_gen="Hola Juan, vull informació sobre una moto d'aigua nova.",
@@ -85,11 +85,11 @@ T = {
   list_name="Motos d'aigua noves Sea-Doo i Kawasaki"),
  'en': dict(
   tit='Licence: Spanish Licencia de Navegación (LN) or higher.',
-  title='New Sea-Doo and Kawasaki jet skis in Barcelona',
-  desc='The full 2027 Sea-Doo and Kawasaki jet ski range: Spark, GTI, GTX, RXP-X, Ultra, STX and SX-R. Ask for a written price, with what it includes and delivery time.',
+  title='New 2027 Sea-Doo and Kawasaki jet skis in Barcelona',
+  desc='New 2027 Sea-Doo and Kawasaki jet skis: Spark, GTI, GTX, RXP-X, Ultra, STX and SX-R. Compare models and ask for a quote on WhatsApp in Barcelona.',
   home='Home', nb='New boats', crumb='New jet skis',
-  kick='New jet skis', h1='New Sea-Doo and Kawasaki jet skis',
-  lead="The full 2027 range from both brands, from the Spark to get started to the Ultra for long rides. Tell me which one you like and I'll send you the price in writing, with what it includes and the delivery time.",
+  kick='New jet skis', h1='New 2027 Sea-Doo and Kawasaki jet skis',
+  lead="The 2027 range from both brands, from the Spark to get started to the Ultra for long rides. Tell me which one you like and I'll send you the price in writing, with what it includes and the delivery time.",
   ask='Price on request', btn='Ask for price', jump_sd='See Sea-Doo range', jump_kw='See Kawasaki range',
   cv='hp', seats='{n} seats', stand='Stand-up',
   wa="Hi Juan, I'd like the price of the new {m} jet ski.", wa_gen="Hi Juan, I'd like information about a new jet ski.",
@@ -114,11 +114,11 @@ T = {
   list_name='New Sea-Doo and Kawasaki jet skis'),
  'fr': dict(
   tit='Permis : Licencia de Navegación espagnole (LN) ou supérieure.',
-  title='Jet-skis neufs Sea-Doo et Kawasaki à Barcelone',
-  desc='Toute la gamme 2027 de jet-skis Sea-Doo et Kawasaki : Spark, GTI, GTX, RXP-X, Ultra, STX et SX-R. Demandez un prix écrit, avec ce qui est inclus et le délai.',
+  title='Jet-skis neufs 2027 Sea-Doo et Kawasaki à Barcelone',
+  desc='Jet-skis neufs Sea-Doo et Kawasaki 2027 : Spark, GTI, GTX, RXP-X, Ultra, STX et SX-R. Comparez les modèles et demandez un devis par WhatsApp à Barcelone.',
   home='Accueil', nb='Bateaux neufs', crumb='Jet-skis neufs',
-  kick='Jet-skis neufs', h1='Jet-skis neufs Sea-Doo et Kawasaki',
-  lead="Toute la gamme 2027 des deux marques, du Spark pour débuter à l'Ultra pour faire des milles. Dites-moi lequel vous intéresse et je vous envoie le prix par écrit, avec ce qui est inclus et le délai de livraison.",
+  kick='Jet-skis neufs', h1='Jet-skis neufs Sea-Doo et Kawasaki 2027',
+  lead="La gamme 2027 des deux marques, du Spark pour débuter à l'Ultra pour faire des milles. Dites-moi lequel vous intéresse et je vous envoie le prix par écrit, avec ce qui est inclus et le délai de livraison.",
   ask='Prix sur demande', btn='Demander le prix', jump_sd='Voir la gamme Sea-Doo', jump_kw='Voir la gamme Kawasaki',
   cv='ch', seats='{n} places', stand='Debout',
   wa='Bonjour Juan, je voudrais le prix du jet-ski neuf {m}.', wa_gen="Bonjour Juan, je voudrais des informations sur un jet-ski neuf.",
@@ -143,6 +143,68 @@ T = {
   list_name='Jet-skis neufs Sea-Doo et Kawasaki'),
 }
 
+for _l, _g in (('es', 'Gama {b} 2027'), ('ca', 'Gamma {b} 2027'), ('en', '{b} 2027 range'), ('fr', 'Gamme {b} 2027')):
+    T[_l]['gama'] = _g
+
+X = {
+ 'es': dict(
+  uso_h='¿Qué moto de agua comprar según el uso?',
+  uso=[('Para empezar o salir de vez en cuando', 'Sea-Doo Spark y Spark X: ligeras, fáciles de llevar y de remolcar. Si buscas algo más juguetón, la Spark Trixx.'),
+       ('Para la familia y el verano', 'Sea-Doo GTI 130 y GTI SE 170, o Kawasaki STX 160: tres plazas, estables y cómodas para dar vueltas cerca de la costa.'),
+       ('Para hacer millas en pareja', 'Sea-Doo GTX 170 y GTX 230, o Kawasaki Ultra 160LX: más asiento, más estabilidad y más capacidad de depósito.'),
+       ('Lo más cómodo y potente', 'Sea-Doo GTX Limited 350 y Kawasaki Ultra 310LX: el equipamiento más completo de cada marca para quien sale a menudo y lejos.'),
+       ('Deportivas', 'Sea-Doo RXP-X 350 y RXT-X 350, Kawasaki STX 310R: pensadas para acelerar y girar fuerte. No son las más cómodas para pasear.'),
+       ('Esquí, wake, pesca y travesía', 'Sea-Doo Wake 170 y Wake Pro 230 o Kawasaki Ultra 160LX-S Wakesport para tirar; Fish Pro Trophy 170 para pescar; Explorer Pro 230 para rutas largas.')],
+  sell_h='¿Quieres vender tu moto de agua?',
+  sell='Tengas una Sea-Doo, una Kawasaki, una Yamaha u otra marca: te la gestiono o te la compro, según el modelo, el año y el estado. Mándame fotos y las horas y te digo cómo lo vemos.',
+  b_g='Que me la gestionéis', b_c='Que me hagáis una oferta',
+  wa_g='Hola Juan, quiero vender mi moto de agua y que me gestionéis la venta.', wa_c='Hola Juan, quiero vender mi moto de agua y que me hagáis una oferta de compra.',
+  faq2=[('¿Qué gastos hay además del precio de la moto?', 'La matriculación, el seguro de responsabilidad civil (obligatorio), el remolque si la vas a llevar tú, el mantenimiento anual y dónde guardarla. Te lo detallo en el presupuesto para que no haya sorpresas. Si necesitas remolque, mira los <a href="/remolques/">remolques Goliath</a>.'),
+        ('¿Sois concesionario oficial?', 'No. Te ayudo a elegir y gestiono el pedido con un concesionario oficial de la marca. En el presupuesto por escrito consta quién factura y entrega la moto, y la garantía es la del fabricante.')]),
+ 'ca': dict(
+  uso_h="Quina moto d'aigua comprar segons l'ús?",
+  uso=[('Per començar o sortir de tant en tant', 'Sea-Doo Spark i Spark X: lleugeres, fàcils de portar i de remolcar. Si busques alguna cosa més juganera, la Spark Trixx.'),
+       ("Per a la família i l'estiu", 'Sea-Doo GTI 130 i GTI SE 170, o Kawasaki STX 160: tres places, estables i còmodes per voltar a prop de la costa.'),
+       ('Per fer milles en parella', 'Sea-Doo GTX 170 i GTX 230, o Kawasaki Ultra 160LX: més seient, més estabilitat i més capacitat de dipòsit.'),
+       ('El més còmode i potent', "Sea-Doo GTX Limited 350 i Kawasaki Ultra 310LX: l'equipament més complet de cada marca per a qui surt sovint i lluny."),
+       ('Esportives', 'Sea-Doo RXP-X 350 i RXT-X 350, Kawasaki STX 310R: pensades per accelerar i girar fort. No són les més còmodes per passejar.'),
+       ('Esquí, wake, pesca i travessia', 'Sea-Doo Wake 170 i Wake Pro 230 o Kawasaki Ultra 160LX-S Wakesport per arrossegar; Fish Pro Trophy 170 per pescar; Explorer Pro 230 per a rutes llargues.')],
+  sell_h="Vols vendre la teva moto d'aigua?",
+  sell="Tant si tens una Sea-Doo, una Kawasaki, una Yamaha o una altra marca: te la gestiono o te la compro, segons el model, l'any i l'estat. Envia'm fotos i les hores i et dic com ho veiem.",
+  b_g="Que me la gestioneu", b_c="Que em feu una oferta",
+  wa_g="Hola Juan, vull vendre la meva moto d'aigua i que me'n gestioneu la venda.", wa_c="Hola Juan, vull vendre la meva moto d'aigua i que em feu una oferta de compra.",
+  faq2=[('Quines despeses hi ha a més del preu de la moto?', 'La matriculació, l\'assegurança de responsabilitat civil (obligatòria), el remolc si la portaràs tu, el manteniment anual i on guardar-la. T\'ho detallo al pressupost perquè no hi hagi sorpreses. Si necessites remolc, mira els <a href="/ca/remolques/">remolcs Goliath</a>.'),
+        ('Sou concessionari oficial?', 'No. T\'ajudo a triar i gestiono la comanda amb un concessionari oficial de la marca. Al pressupost per escrit hi consta qui factura i lliura la moto, i la garantia és la del fabricant.')]),
+ 'en': dict(
+  uso_h='Which jet ski should you buy for your use?',
+  uso=[('To get started or ride now and then', 'Sea-Doo Spark and Spark X: light and easy to ride and tow. If you want something more playful, the Spark Trixx.'),
+       ('For the family and summer', 'Sea-Doo GTI 130 and GTI SE 170, or Kawasaki STX 160: three seats, stable and comfortable for rides near the coast.'),
+       ('For long rides two-up', 'Sea-Doo GTX 170 and GTX 230, or Kawasaki Ultra 160LX: bigger seat, more stability and a larger fuel tank.'),
+       ('Maximum comfort and power', "Sea-Doo GTX Limited 350 and Kawasaki Ultra 310LX: each brand's most complete equipment for those who ride often and far."),
+       ('Sporty', 'Sea-Doo RXP-X 350 and RXT-X 350, Kawasaki STX 310R: built to accelerate and turn hard. Not the most comfortable for cruising.'),
+       ('Skiing, wake, fishing and touring', 'Sea-Doo Wake 170 and Wake Pro 230 or Kawasaki Ultra 160LX-S Wakesport for towing; Fish Pro Trophy 170 for fishing; Explorer Pro 230 for long trips.')],
+  sell_h='Want to sell your jet ski?',
+  sell='Whether it is a Sea-Doo, a Kawasaki, a Yamaha or another brand: I can sell it for you or buy it from you, depending on model, year and condition. Send me photos and the engine hours and I will tell you what we think.',
+  b_g='Sell it for me', b_c='Make me an offer',
+  wa_g="Hi Juan, I'd like to sell my jet ski and have you handle the sale.", wa_c="Hi Juan, I'd like to sell my jet ski and get a purchase offer from you.",
+  faq2=[('What costs are there besides the price?', 'Registration, third-party liability insurance (mandatory), a trailer if you will tow it yourself, yearly servicing and storage. I detail it in the quote so there are no surprises. If you need a trailer, see the <a href="/en/remolques/">Goliath trailers</a>.'),
+        ('Are you an official dealer?', 'No. I help you choose and handle the order with an official dealer of the brand. The written quote states who invoices and delivers the jet ski, and the warranty is the manufacturer\'s.')]),
+ 'fr': dict(
+  uso_h='Quel jet-ski acheter selon votre usage ?',
+  uso=[('Pour débuter ou sortir de temps en temps', 'Sea-Doo Spark et Spark X : légers, faciles à piloter et à remorquer. Pour plus de jeu, le Spark Trixx.'),
+       ("Pour la famille et l'été", 'Sea-Doo GTI 130 et GTI SE 170, ou Kawasaki STX 160 : trois places, stables et confortables pour se balader près de la côte.'),
+       ('Pour faire des milles à deux', 'Sea-Doo GTX 170 et GTX 230, ou Kawasaki Ultra 160LX : selle plus grande, plus de stabilité et plus grand réservoir.'),
+       ('Le plus confortable et puissant', "Sea-Doo GTX Limited 350 et Kawasaki Ultra 310LX : l'équipement le plus complet de chaque marque pour qui sort souvent et loin."),
+       ('Sportifs', 'Sea-Doo RXP-X 350 et RXT-X 350, Kawasaki STX 310R : faits pour accélérer et virer fort. Pas les plus confortables pour se balader.'),
+       ('Ski, wake, pêche et randonnée', 'Sea-Doo Wake 170 et Wake Pro 230 ou Kawasaki Ultra 160LX-S Wakesport pour tracter ; Fish Pro Trophy 170 pour pêcher ; Explorer Pro 230 pour les longues sorties.')],
+  sell_h='Vous voulez vendre votre jet-ski ?',
+  sell="Sea-Doo, Kawasaki, Yamaha ou autre marque : je m'occupe de la vente ou je vous l'achète, selon le modèle, l'année et l'état. Envoyez-moi des photos et les heures moteur et je vous dis ce qu'on en pense.",
+  b_g='Que vous gériez la vente', b_c='Recevoir une offre',
+  wa_g="Bonjour Juan, je voudrais vendre mon jet-ski et que vous gériez la vente.", wa_c="Bonjour Juan, je voudrais vendre mon jet-ski et recevoir une offre d'achat.",
+  faq2=[('Quels frais en plus du prix ?', 'L\'immatriculation, l\'assurance responsabilité civile (obligatoire), une remorque si vous le transportez vous-même, l\'entretien annuel et le stockage. Je le détaille dans le devis pour éviter les surprises. Pour une remorque, voir les <a href="/fr/remolques/">remorques Goliath</a>.'),
+        ('Êtes-vous concessionnaire officiel ?', 'Non. Je vous aide à choisir et je gère la commande avec un concessionnaire officiel de la marque. Le devis écrit indique qui facture et livre le jet-ski, et la garantie est celle du fabricant.')]),
+}
+
 CSS = """<style>
 .mj-brand{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:0 0 6px}.mj-brand img{height:30px;width:auto;max-width:44%}.mj-brand img.sd{height:22px}
 .mj-blogo{display:block;height:40px;width:auto;max-width:70%;margin:0 0 4px}.mj-blogo.sd{height:28px}
@@ -155,6 +217,10 @@ CSS = """<style>
 .mj-c>div{padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1}
 .mj-c h4{font-size:1.05rem;margin:0}.mj-c .sp{font-size:.9rem;color:#5b6b75;flex:1}.mj-c .pr{font-weight:700;font-size:.95rem}
 .mj-c .btn{margin-top:8px;text-align:center;padding:9px 12px;font-size:.92rem}
+.mj-bh{font-size:1.5rem;margin:10px 0 0}
+.mj-uso{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px}.mj-uso>div{border:1px solid #e3e9ec;border-radius:14px;padding:16px;background:#fff}.mj-uso h3{font-size:1.02rem;margin:0 0 6px}.mj-uso p{margin:0;color:#33474f;line-height:1.5;font-size:.95rem}
+.mj-sell{background:#fff;border-left:3px solid #0B766B;border-radius:0 14px 14px 0;padding:22px 24px;max-width:780px}.mj-sell h2{margin:0 0 8px}.mj-sell p{color:#33474f;line-height:1.6;margin:0 0 6px}
+@media(max-width:820px){.mj-uso{grid-template-columns:1fr}}
 .mj-hero-img{width:100%;height:auto;border-radius:14px;background:#fff}
 @media(max-width:980px){.mj-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:720px){.mj-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -179,7 +245,7 @@ def card(t, key, name, brand, cv, seats):
 
 
 def brand_sec(t, bid, brand, logo, fams):
-    out = [f'<section class="rm-sec" id="{bid}"><div class="wrap"><img class="mj-blogo{' sd' if bid=='sea-doo' else ''}" src="/barcos-nuevos/logos/{logo}" alt="{brand}">']
+    out = [f'<section class="rm-sec" id="{bid}"><div class="wrap"><img class="mj-blogo{' sd' if bid=='sea-doo' else ''}" src="/barcos-nuevos/logos/{logo}" alt="{brand}"><h2 class="mj-bh">{t['gama'].format(b=brand)}</h2>']
     for fk, models in fams:
         n, d = t['fam'][fk]
         out.append(f'<div class="mj-fam"><h3>{brand} {n}</h3><p>{d}</p><div class="mj-grid">' +
@@ -209,7 +275,7 @@ def build(lang):
                 i += 1; items.append({"@type": "ListItem", "position": i, "name": f'{brand} {m}'})
     ilist = {"@context": "https://schema.org", "@type": "ItemList", "name": t['list_name'], "numberOfItems": i, "itemListElement": items}
     faq = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": re.sub('<[^>]+>', '', a)}} for q, a in t['faq']]}
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": re.sub('<[^>]+>', '', a)}} for q, a in t['faq']+X[lang]['faq2']]}
     ld = ''.join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>\n' for x in (crumbs, ilist, faq))
     head = (head_top + f'<title>{e(t["title"])}</title>\n<meta name="description" content="{e(t["desc"])}">\n'
             f'<link rel="canonical" href="{url}">\n{alt}'
@@ -228,10 +294,15 @@ def build(lang):
             f'<div><img class="mj-hero-img" src="/{SLUG}/fotos/sd-gtx-limited.jpg" alt="Sea-Doo GTX Limited 350" width="900" height="636"></div></section>',
             brand_sec(t, 'sea-doo', 'Sea-Doo', 'sea-doo.png', SEADOO),
             brand_sec(t, 'kawasaki', 'Kawasaki', 'kawasaki.png', KAWA),
+            f'<section class="rm-sec" id="cual"><div class="wrap"><h2>{X[lang]["uso_h"]}</h2><div class="mj-uso">' +
+            ''.join(f'<div><h3>{h}</h3><p>{d}</p></div>' for h, d in X[lang]['uso']) + '</div></div></section>',
             f'<section class="rm-sec"><div class="wrap"><h2>{t["how_h"]}</h2><div class="rm-grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">' +
             ''.join(f'<div><span class="n">{n}</span><h3>{h}</h3><p>{d}</p></div>' for n, (h, d) in enumerate(t['how'], 1)) + '</div></div></section>',
+            f'<section class="rm-sec" id="vender"><div class="wrap"><div class="mj-sell"><h2>{X[lang]["sell_h"]}</h2><p>{X[lang]["sell"]}</p><div class="mj-jump">'
+            f'<a class="btn btn-wa" href="{e(wa(X[lang]["wa_g"]))}" target="_blank" rel="noopener" data-wa-context="moto_agua_vender_gestion">{X[lang]["b_g"]}</a>'
+            f'<a class="btn btn-wa" href="{e(wa(X[lang]["wa_c"]))}" target="_blank" rel="noopener" data-wa-context="moto_agua_vender_compra">{X[lang]["b_c"]}</a></div></div></div></section>',
             f'<section class="rm-sec rm-faq"><div class="wrap"><h2>{t["faq_h"]}</h2>' +
-            ''.join(f'<details><summary>{q}</summary><p>{a}</p></details>' for q, a in t['faq']) + '</div></section>',
+            ''.join(f'<details><summary>{q}</summary><p>{a}</p></details>' for q, a in t['faq']+X[lang]['faq2']) + '</div></section>',
             f'<div class="wrap"><div class="rm-end"><h2>{t["end_h"]}</h2><a class="btn btn-wa" href="{e(wa(t["wa_gen"]))}" target="_blank" rel="noopener" data-wa-context="moto_agua_nueva">{t["btn"]}</a> '
             f'<a class="btn" style="background:#fff;color:#0E3042;margin-left:8px" href="{p}/comprar/motos-de-agua-segunda-mano">{t["used"]}</a></div>',
             f'<p class="rm-small">{t["small"]}</p></div>', '']
