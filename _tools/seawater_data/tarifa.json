@@ -1,0 +1,1565 @@
+[
+ {
+  "name": "Phantom 230",
+  "slug": "phantom-230",
+  "price": 47000,
+  "std": [
+   "Hull, deck and deck accessories in Gelcoat - colour: white",
+   "non-slip finish on deck",
+   "centre console with bow seat, plexiglass windscreen and stainless steel handrail",
+   "ORCA 866® Hypalon® tubes - colour OFF WHITE",
+   "Grey side bumpers and Sea Water rubber plates with white logo on grey background",
+   "complete SILVERTEX® cushions - colour TAUPE",
+   "stainless steel bollards (1 bow, 2 stern)",
+   "tube safety ropes (2)",
+   "transom platforms with retractable swim ladder with integrated handrails (1)",
+   "electric windlass",
+   "stainless steel anchor (10kg)",
+   "galvanised chain (35m)",
+   "bow sundeck with main storage locker underneath",
+   "insulated locker under bow seat in console",
+   "driver’s seat with tilting lumbar support and under-seat locker",
+   "stern seat with backrests and technical locker",
+   "stern hand shower",
+   "compass",
+   "Carling Switch button controls",
+   "personalised steering wheel with embroidered Sea Water logo",
+   "backlit USB socket",
+   "navigation lights and horn (1) with helm control",
+   "automatic bilge pump (1) and blower with helm control",
+   "basic electrical system",
+   "water system and shower with autoclave and fresh water tank (40 lts)",
+   "fuel system with stainless steel tank (190 lts)"
+  ],
+  "opt": [
+   {
+    "n": "Gelcoat, tube and upholstery colour customisation",
+    "p": 4000
+   },
+   {
+    "n": "metallic paint on deck and composite accessories (available only with *Gelcoat, tube and upholstery colour customisation*)",
+    "p": 7500
+   },
+   {
+    "n": "solid 12mm teak deck",
+    "p": 10650
+   },
+   {
+    "n": "customised EVA or Flexiteek deck",
+    "p": 8000
+   },
+   {
+    "n": "non-skid stripe on tube",
+    "p": 2000
+   },
+   {
+    "n": "stainless steel roll-bar with t-top and plexiglass windscreen",
+    "p": 5000
+   },
+   {
+    "n": "powder-coating steelwork",
+    "p": 1400
+   },
+   {
+    "n": "folding backrests on aft seat",
+    "p": 1500
+   },
+   {
+    "n": "Phantom 260 driver’s seat modification",
+    "p": 2600
+   },
+   {
+    "n": "boat covers kit",
+    "p": 2000
+   },
+   {
+    "n": "bow sunshade",
+    "p": 2000
+   },
+   {
+    "n": "aft sunshade with carbon poles",
+    "p": 3000
+   },
+   {
+    "n": "stainless steel flag holder pole or water ski pole",
+    "p": 3000
+   },
+   {
+    "n": "three-point stainless steel tender towing kit",
+    "p": 3100
+   },
+   {
+    "n": "additional stainless steel ladder on aft platform",
+    "p": 1000
+   },
+   {
+    "n": "wireless anchor windlass control",
+    "p": 1500
+   },
+   {
+    "n": "anchor windlass camera",
+    "p": 1000
+   },
+   {
+    "n": "battery charger and shore line",
+    "p": 1500
+   },
+   {
+    "n": "deck LED lights",
+    "p": 700
+   },
+   {
+    "n": "underwater stern light (1)",
+    "p": 1250
+   },
+   {
+    "n": "fridge",
+    "p": 2500
+   },
+   {
+    "n": "boat installations (basic electrical system, battery switches, battery tank)",
+    "p": 1500
+   },
+   {
+    "n": "hydraulic steering - single engine (if not included in the chosen engine)",
+    "p": 1500
+   },
+   {
+    "n": "engines installation - single engine (rigging installation, no.1 engine battery, no.1 services battery)",
+    "p": 1500
+   },
+   {
+    "n": "antifouling paint on hull",
+    "p": 1100
+   },
+   {
+    "n": "safety equipment within 12 nm",
+    "p": 2500
+   },
+   {
+    "n": "Sea Water beach kit (6 customised towels with custom towel holder)",
+    "p": 1000
+   }
+  ],
+  "req": [
+   "GARMIN® navigation instruments and FUSION® audio packs",
+   "transport, launch and delivery assistance at Port of Cagliari"
+  ]
+ },
+ {
+  "name": "Phantom 260",
+  "slug": "phantom-260",
+  "price": 60000,
+  "std": [
+   "Hull, deck and deck accessories in Gelcoat - colour: white",
+   "non-slip finish on deck",
+   "centre console with bow seat, plexiglass windscreen and stainless steel handrail",
+   "ORCA 866® Hypalon® tubes - colour OFF WHITE",
+   "Grey side bumpers and Sea Water rubber plates with white logo on grey background",
+   "complete SILVERTEX® cushions - colour TAUPE",
+   "stainless steel bollards (1 bow, 2 stern)",
+   "tube safety ropes (2)",
+   "transom platforms with retractable swim ladder with integrated handrails (1)",
+   "electric windlass",
+   "stainless steel anchor (10kg)",
+   "galvanised chain (30m)",
+   "bow sundeck with main storage locker underneath",
+   "insulated locker under bow seat in console",
+   "driver’s seat with tilting lumbar support and under-seat locker",
+   "stern seat with backrests and technical locker",
+   "stern hand shower",
+   "compass",
+   "Carling Switch button controls",
+   "personalised steering wheel with embroidered Sea Water logo",
+   "backlit USB socket",
+   "navigation lights and horn (1) with helm control",
+   "automatic bilge pump (1) and blower with helm control",
+   "basic electrical system",
+   "water system and shower with autoclave and fresh water tank (60 lts)",
+   "fuel system with stainless steel tank (245 lts)"
+  ],
+  "opt": [
+   {
+    "n": "Gelcoat, tube and upholstery colour customisation",
+    "p": 5000
+   },
+   {
+    "n": "metallic paint on deck and composite accessories (available only with *Gelcoat, tube and upholstery colour customisation*)",
+    "p": 8500
+   },
+   {
+    "n": "solid 12mm teak deck",
+    "p": 13500
+   },
+   {
+    "n": "customised EVA or Flexiteek deck",
+    "p": 10000
+   },
+   {
+    "n": "non-skid stripe on tube",
+    "p": 2500
+   },
+   {
+    "n": "stainless steel roll-bar with t-top and plexiglass windscreen",
+    "p": 6000
+   },
+   {
+    "n": "powder-coating steelwork",
+    "p": 1600
+   },
+   {
+    "n": "folding backrests on aft seat",
+    "p": 2000
+   },
+   {
+    "n": "boat covers kit",
+    "p": 2200
+   },
+   {
+    "n": "bow sunshade",
+    "p": 2200
+   },
+   {
+    "n": "aft sunshade with carbon poles",
+    "p": 3000
+   },
+   {
+    "n": "stainless steel flag holder pole or water ski pole",
+    "p": 3000
+   },
+   {
+    "n": "three-point stainless steel tender towing kit",
+    "p": 3100
+   },
+   {
+    "n": "additional stainless steel ladder on aft platform",
+    "p": 1000
+   },
+   {
+    "n": "wireless anchor windlass control",
+    "p": 1500
+   },
+   {
+    "n": "anchor windlass camera",
+    "p": 1000
+   },
+   {
+    "n": "battery charger and shore line",
+    "p": 1500
+   },
+   {
+    "n": "deck LED lights",
+    "p": 800
+   },
+   {
+    "n": "underwater stern light (1)",
+    "p": 1250
+   },
+   {
+    "n": "fridge",
+    "p": 2500
+   },
+   {
+    "n": "boat installations (basic electrical system, battery switches, battery tank)",
+    "p": 2500
+   },
+   {
+    "n": "hydraulic steering - single engine (if not included in the chosen engine)",
+    "p": 1500
+   },
+   {
+    "n": "engines installation - single engine (rigging installation, no.1 engine battery, no.1 services battery)",
+    "p": 1500
+   },
+   {
+    "n": "antifouling paint on hull",
+    "p": 1500
+   },
+   {
+    "n": "safety equipment within 12 nm",
+    "p": 2500
+   },
+   {
+    "n": "Sea Water beach kit (6 customised towels with custom towel holder)",
+    "p": 1000
+   }
+  ],
+  "req": [
+   "GARMIN® navigation instruments and FUSION® audio packs",
+   "transport, launch and delivery assistance at Port of Cagliari"
+  ]
+ },
+ {
+  "name": "Phantom 280",
+  "slug": "phantom-280",
+  "price": 90000,
+  "std": [
+   "Hull, deck and deck accessories in Gelcoat - colour: white",
+   "non-slip finish on deck",
+   "centre console with bow seat, plexiglass windscreen and stainless steel handrail",
+   "ORCA 866® Hypalon® tubes - colour OFF WHITE",
+   "Grey side bumpers and Sea Water rubber plates with white logo on grey background",
+   "complete SILVERTEX® cushions - colour TAUPE",
+   "stainless steel bollards (1 bow, 2 stern)",
+   "tube safety ropes (2) and stainless steel handrails on kidney (2)",
+   "transom platforms with retractable swim ladder with integrated handrails (1)",
+   "electric windlass",
+   "stainless steel anchor (10kg)",
+   "galvanised chain (40m)",
+   "bow sundeck with main storage locker underneath",
+   "insulated locker under bow seat in console",
+   "driver’s seat with tilting lumbar support and under-seat locker",
+   "stern seat with backrest and access to technical locker",
+   "stern piston table",
+   "stern hand shower",
+   "compass",
+   "Carling Switch button controls",
+   "personalised steering wheel with embroidered Sea Water logo",
+   "backlit USB socket",
+   "navigation lights and horn (1) with helm control",
+   "automatic bilge pump (1) and blower with helm control",
+   "basic electrical system",
+   "water system and shower with autoclave and fresh water tank (60 lts)",
+   "fuel system with stainless steel tank (245 lts)"
+  ],
+  "opt": [
+   {
+    "n": "Gelcoat, tube and upholstery colour customisation",
+    "p": 6800
+   },
+   {
+    "n": "metallic paint on deck and composite accessories (available only with *Gelcoat, tube and upholstery colour customisation*)",
+    "p": 10000
+   },
+   {
+    "n": "solid 12mm teak deck",
+    "p": 16650
+   },
+   {
+    "n": "customised EVA or Flexiteek deck",
+    "p": 12000
+   },
+   {
+    "n": "non-skid stripe on tube",
+    "p": 2800
+   },
+   {
+    "n": "stainless steel roll-bar with t-top and plexiglass windscreen",
+    "p": 6000
+   },
+   {
+    "n": "powder-coating steelwork",
+    "p": 1750
+   },
+   {
+    "n": "folding backrests on aft seat",
+    "p": 2000
+   },
+   {
+    "n": "boat covers kit",
+    "p": 2600
+   },
+   {
+    "n": "bow sunshade",
+    "p": 3000
+   },
+   {
+    "n": "aft sunshade with carbon poles",
+    "p": 3200
+   },
+   {
+    "n": "stainless steel flag holder pole or water ski pole",
+    "p": 3000
+   },
+   {
+    "n": "three-point stainless steel tender towing kit",
+    "p": 3100
+   },
+   {
+    "n": "additional stainless steel ladder on aft platform",
+    "p": 1000
+   },
+   {
+    "n": "wireless anchor windlass control",
+    "p": 1500
+   },
+   {
+    "n": "anchor windlass camera",
+    "p": 1000
+   },
+   {
+    "n": "battery charger and shore line",
+    "p": 1800
+   },
+   {
+    "n": "deck LED lights",
+    "p": 900
+   },
+   {
+    "n": "underwater stern light (1)",
+    "p": 1250
+   },
+   {
+    "n": "fridge",
+    "p": 2500
+   },
+   {
+    "n": "boat installations (basic electrical system, battery switches, battery tank)",
+    "p": 2500
+   },
+   {
+    "n": "hydraulic steering - single engine (if not included in the chosen engine)",
+    "p": 1500
+   },
+   {
+    "n": "hydraulic steering - twin engines (if not included in the chosen engines)",
+    "p": 3000
+   },
+   {
+    "n": "engines installation - single engine (rigging installation, no.1 engine battery, no.1 services battery)",
+    "p": 1500
+   },
+   {
+    "n": "engines installation - twin engines (rigging installation, no. 2 engine batteries, no.1 services battery)",
+    "p": 3000
+   },
+   {
+    "n": "antifouling paint on hull",
+    "p": 1900
+   },
+   {
+    "n": "safety equipment within 12 nm",
+    "p": 2500
+   },
+   {
+    "n": "Sea Water beach kit (6 customised towels with custom towel holder)",
+    "p": 1000
+   }
+  ],
+  "req": [
+   "GARMIN® navigation instruments and FUSION® audio packs",
+   "transport, launch and delivery assistance at Port of Cagliari"
+  ]
+ },
+ {
+  "name": "Phantom 300",
+  "slug": "phantom-300",
+  "price": 112000,
+  "std": [
+   "Hull, deck and deck accessories in Gelcoat - colour: white",
+   "non-slip finish on deck",
+   "centre console with bow seat, stainless steel roll-bar with t-top and plexiglass windscreen",
+   "kidney with counter seat and lockers underneath",
+   "ORCA 866® Hypalon® tubes - colour OFF WHITE",
+   "Grey side bumpers and Sea Water rubber plates with white logo on grey background",
+   "complete SILVERTEX® cushions - colour TAUPE",
+   "stainless steel bollards (1 bow, 2 stern)",
+   "tube safety ropes (2) and stainless steel handrails on kidney (2)",
+   "transom platforms with retractable swim ladder with integrated handrails (1)",
+   "electric windlass",
+   "stainless steel anchor (10kg)",
+   "galvanised chain (40m)",
+   "bow sundeck with main storage locker underneath",
+   "fridge under bow seat in console",
+   "driver’s seat with tilting lumbar support and under-seat locker",
+   "u-shape stern seat with backrests, piston table, side lockers and technical locker",
+   "stern hand shower",
+   "compass",
+   "on-board utilities control via 5” LCD touchscreen display Garmin® TD50",
+   "personalised steering wheel with embroidered Sea Water logo",
+   "key-locked storage compartment",
+   "backlit USB socket",
+   "navigation lights and horn (1) with helm control",
+   "LED lights on deck",
+   "automatic bilge pump (2) and blower with helm control",
+   "basic electrical system and EmpirBus® on-board boat automation",
+   "water system and shower with autoclave and double fresh water tank (60 lts each)",
+   "fuel system with double stainless steel tank (230 lts each)"
+  ],
+  "opt": [
+   {
+    "n": "Gelcoat, tube and upholstery colour customisation",
+    "p": 7700
+   },
+   {
+    "n": "metallic paint on deck and composite accessories (available only with *Gelcoat, tube and upholstery colour customisation*)",
+    "p": 13000
+   },
+   {
+    "n": "solid 12mm teak deck",
+    "p": 19400
+   },
+   {
+    "n": "customised EVA or Flexiteek deck",
+    "p": 14000
+   },
+   {
+    "n": "non-skid stripe on tube",
+    "p": 3000
+   },
+   {
+    "n": "powder-coating steelwork",
+    "p": 3000
+   },
+   {
+    "n": "folding backrests on aft seat",
+    "p": 2000
+   },
+   {
+    "n": "boat covers kit",
+    "p": 3000
+   },
+   {
+    "n": "bow sunshade",
+    "p": 3400
+   },
+   {
+    "n": "aft sunshade with carbon poles",
+    "p": 3500
+   },
+   {
+    "n": "stainless steel flag holder pole or water ski pole",
+    "p": 3000
+   },
+   {
+    "n": "three-point stainless steel tender towing kit",
+    "p": 3100
+   },
+   {
+    "n": "additional stainless steel ladder on aft platform",
+    "p": 1000
+   },
+   {
+    "n": "wireless anchor windlass control",
+    "p": 1500
+   },
+   {
+    "n": "anchor windlass camera",
+    "p": 1000
+   },
+   {
+    "n": "battery charger and shore line",
+    "p": 1800
+   },
+   {
+    "n": "underwater stern light (1)",
+    "p": 1250
+   },
+   {
+    "n": "additional fridge",
+    "p": 2500
+   },
+   {
+    "n": "boat installations (basic electrical system, battery switches, battery tank)",
+    "p": 2500
+   },
+   {
+    "n": "hydraulic steering - single engine (if not included in the chosen engine)",
+    "p": 1500
+   },
+   {
+    "n": "hydraulic steering - twin engines (if not included in the chosen engines)",
+    "p": 3000
+   },
+   {
+    "n": "engines installation - single engine (rigging installation, no.1 engine battery, no.1 services battery)",
+    "p": 1500
+   },
+   {
+    "n": "engines installation - twin engines (rigging installation, no. 2 engine batteries, no.1 services battery)",
+    "p": 3000
+   },
+   {
+    "n": "antifouling paint on hull",
+    "p": 2100
+   },
+   {
+    "n": "safety equipment within 12 nm",
+    "p": 2500
+   },
+   {
+    "n": "Sea Water beach kit (6 customised towels with custom towel holder)",
+    "p": 1000
+   }
+  ],
+  "req": [
+   "GARMIN® navigation instruments and FUSION® audio packs",
+   "transport, launch and delivery assistance at Port of Cagliari"
+  ]
+ },
+ {
+  "name": "Ghost 320",
+  "slug": "ghost-320",
+  "price": 165000,
+  "std": [
+   "hull, deck and deck accessories in Gelcoat - colour: WHITE",
+   "non-slip finish on deck",
+   "console with triple windscreen in double tempered glass and bow seat",
+   "ORCA 866® Hypalon® tubes - colour OFF WHITE",
+   "GREY side bumpers and Sea Water rubber plates with white logo on GREY background",
+   "complete SILVERTEX® cushions - colour TAUPE",
+   "stainless steel bollards (1 at bow, 2 at stern)",
+   "tube safety ropes (2) and stainless steel handrails (2 on console side, 2 on cockpit, 2 on kidney)",
+   "transom platforms with retractable swim ladder with integrated handrails (2)",
+   "electric windlass with stainless steel anchor (10kg) and galvanised chain (45m)",
+   "bow sundeck with main storage locker underneath",
+   "triple driver’s seat with tilting lumbar support and folding footrest in console",
+   "kidney with side shoe rack, worktop, washbasin, drawer fridge (42 lts) and storage locker",
+   "stern seat with backrests and access to technical locker",
+   "stern hand shower",
+   "Gelcoat dashboard - colour: white",
+   "compass",
+   "on-board utilities control via 5” LCD touchscreen display Garmin® TD50",
+   "personalised steering wheel with embroidered Sea Water logo",
+   "backlit USB socket and hard-top stripe LED courtesy lights",
+   "navigation lights, and horns (2) with helm control and LED lights on deck",
+   "automatic bilge pump (3) and blower with vapour detection instrument on helm station",
+   "basic electrical system with EmpirBus® on-board automation (incl. 2 service batteries)",
+   "water system and shower with autoclave and double fresh water tank (140 lts)",
+   "fuel system with double stainless steel tank (860 lts)"
+  ],
+  "opt": [
+   {
+    "n": "Gelcoat, tube and upholstery colour customisation",
+    "p": 12000
+   },
+   {
+    "n": "metallic paint on deck and composite accessories (available only with *Gelcoat, tube and upholstery colour customisation*)",
+    "p": 17000
+   },
+   {
+    "n": "solid 12mm teak deck",
+    "p": 20000
+   },
+   {
+    "n": "customised EVA or Flexiteek deck",
+    "p": 15000
+   },
+   {
+    "n": "carbon fiber hard-top with Gelcoat finish and stainless steel uprights",
+    "p": 12000
+   },
+   {
+    "n": "non-skid stripe on tube",
+    "p": 3800
+   },
+   {
+    "n": "powder-coated steelwork",
+    "p": 4500
+   },
+   {
+    "n": "folding backrests on aft seat",
+    "p": 2200
+   },
+   {
+    "n": "u-shape stern seat kit with piston table",
+    "p": 2900
+   },
+   {
+    "n": "boat covers kit",
+    "p": 4000
+   },
+   {
+    "n": "bow sunshade",
+    "p": 3500
+   },
+   {
+    "n": "aft sunshade with carbon poles",
+    "p": 3500
+   },
+   {
+    "n": "stainless steel flag holder pole or water ski pole",
+    "p": 3500
+   },
+   {
+    "n": "three-point stainless steel tender towing kit",
+    "p": 3100
+   },
+   {
+    "n": "additional drawer fridge (42 lts)",
+    "p": 3000
+   },
+   {
+    "n": "underwater stern light",
+    "p": 1500
+   },
+   {
+    "n": "wireless anchor windlass control",
+    "p": 1500
+   },
+   {
+    "n": "anchor windlass camera",
+    "p": 1500
+   },
+   {
+    "n": "Inverter 230V - 2kW",
+    "p": 3500
+   },
+   {
+    "n": "bow thruster",
+    "p": 11000
+   },
+   {
+    "n": "boiler (30 lts)",
+    "p": 3000
+   },
+   {
+    "n": "black water tank (30 lts)",
+    "p": 2500
+   },
+   {
+    "n": "battery charger and shore line",
+    "p": 2800
+   },
+   {
+    "n": "boat installations (basic electrical system, battery switches, battery tank)",
+    "p": 4500
+   },
+   {
+    "n": "engines installation - twin engines (rigging installation, no.2 engine batteries, no.3 services battery)",
+    "p": 3500
+   },
+   {
+    "n": "antifouling paint on hull",
+    "p": 2500
+   },
+   {
+    "n": "safety equipment within 12 nm",
+    "p": 2500
+   },
+   {
+    "n": "Sea Water beach kit (6 customised towels with custom towel holder)",
+    "p": 1000
+   }
+  ],
+  "req": [
+   "GARMIN® navigation instruments and FUSION® audio packs",
+   "transport, launch and delivery assistance at Port of Cagliari"
+  ]
+ },
+ {
+  "name": "Ghost 350",
+  "slug": "ghost-350",
+  "price": 230000,
+  "std": [
+   "hull, deck and deck accessories in Gelcoat - colour: WHITE",
+   "non-slip finish on deck",
+   "carbon fibre hard-top with white Gelcoat finish and stainless steel uprights",
+   "console with triple windscreen in double tempered glass and bow seat",
+   "ORCA 866® Hypalon® tubes - colour OFF WHITE",
+   "GREY side bumpers and Sea Water rubber plates with white logo on GREY background",
+   "complete SILVERTEX® cushions - colour TAUPE",
+   "stainless steel bollards (1 at bow, 2 at stern)",
+   "stainless steel handrails (2 on console sides, 2 on dashboard, 2 on kidney)",
+   "transom platforms with retractable swim ladder with integrated handrails (2)",
+   "electric windlass with stainless steel anchor (10kg) and galvanised chain (45m)",
+   "bow sundeck with main storage locker underneath",
+   "triple driver’s seat with tilting lumbar support and folding footrest in console",
+   "kidney with side shoe rack, worktop, washbasin, drawer fridge (42 lts) and storage locker",
+   "stern seat with backrests and access to technical locker",
+   "stern hand shower",
+   "compass",
+   "Gelcoat dashboard - colour: white",
+   "personalised steering wheel with embroidered Sea Water logo",
+   "backlit USB socket",
+   "navigation lights, and horns (2) with helm control and LED lights on deck",
+   "automatic bilge pump (3) and blower with vapour detection instrument on helm station",
+   "basic electrical system with EmpirBus® on-board automation (incl. 2 service batteries)",
+   "water system and shower with autoclave and double fresh water tank (140 lts)",
+   "fuel system with double stainless steel tank (860 lts)"
+  ],
+  "opt": [
+   {
+    "n": "Gelcoat, tube and upholstery colour customisation",
+    "p": 12000
+   },
+   {
+    "n": "metallic paint on deck and composite accessories (available only with *Gelcoat, tube and upholstery colour customisation*)",
+    "p": 17000
+   },
+   {
+    "n": "cabin interior customization",
+    "p": 15000
+   },
+   {
+    "n": "solid 12mm teak deck",
+    "p": 20000
+   },
+   {
+    "n": "customised EVA or Flexiteek deck",
+    "p": 15000
+   },
+   {
+    "n": "non-skid stripe on tube",
+    "p": 3800
+   },
+   {
+    "n": "powder-coated steelwork",
+    "p": 4500
+   },
+   {
+    "n": "folding backrests on aft seat",
+    "p": 2200
+   },
+   {
+    "n": "u-shape stern seat kit with piston table",
+    "p": 2900
+   },
+   {
+    "n": "boat covers kit",
+    "p": 4500
+   },
+   {
+    "n": "bow sunshade",
+    "p": 3500
+   },
+   {
+    "n": "aft sunshade with carbon poles",
+    "p": 3500
+   },
+   {
+    "n": "stainless steel flag holder pole or water ski pole",
+    "p": 3500
+   },
+   {
+    "n": "three-point stainless steel tender towing kit",
+    "p": 3100
+   },
+   {
+    "n": "additional drawer fridge (42 lts)",
+    "p": 3000
+   },
+   {
+    "n": "underwater stern light",
+    "p": 1500
+   },
+   {
+    "n": "wireless anchor windlass control",
+    "p": 1500
+   },
+   {
+    "n": "anchor windlass camera",
+    "p": 1500
+   },
+   {
+    "n": "Inverter 230V - 2kW",
+    "p": 3500
+   },
+   {
+    "n": "bow thruster",
+    "p": 11000
+   },
+   {
+    "n": "boiler (30 lts)",
+    "p": 3000
+   },
+   {
+    "n": "black water tank (30 lts)",
+    "p": 2500
+   },
+   {
+    "n": "battery charger and shore line",
+    "p": 2800
+   },
+   {
+    "n": "boat installations (basic electrical system, battery switches, battery tank)",
+    "p": 4500
+   },
+   {
+    "n": "stainless steel bracket for twin engines",
+    "p": 10000
+   },
+   {
+    "n": "engines installation - twin engines (rigging installation, no.2 engine batteries, no.3 services battery)",
+    "p": 3500
+   },
+   {
+    "n": "antifouling paint on hull",
+    "p": 2500
+   },
+   {
+    "n": "safety equipment within 12 nm",
+    "p": 2500
+   },
+   {
+    "n": "Sea Water beach kit (6 customised towels with custom towel holder)",
+    "p": 1000
+   }
+  ],
+  "req": [
+   "GARMIN® navigation instruments and FUSION® audio packs",
+   "transport, launch and delivery assistance at Port of Cagliari"
+  ]
+ },
+ {
+  "name": "Ghost 420",
+  "slug": "ghost-420",
+  "price": 420000,
+  "std": [
+   "hull, deck and deck accessories in Gelcoat - colour: WHITE",
+   "non-slip finish on deck",
+   "carbon fibre hard-top with WHITE Gelcoat finish and powder coated stainless steel uprights",
+   "console with triple windscreen in double tempered glass",
+   "ORCA 866® Hypalon® tubes - colour OFF WHITE",
+   "GREY side bumpers and Sea Water rubber plates with white logo on GREY background",
+   "complete SILVERTEX® cushions - colour TAUPE",
+   "powder coated stainless steel bollards (1 at bow, 2 at stern)",
+   "tube safety ropes (2) and stainless steel handrails on kidney (2)",
+   "stainless steelswim ladder (2)",
+   "electric windlass with stainless steel anchor (10kg) and galvanised chain (45m)",
+   "bow sundeck",
+   "triple driver’s seat with tilting lumbar support and folding footrest in console",
+   "kidney with worktop, washbasin, drawer fridge (65 lts) and storage locker",
+   "stern u-shape seat with piston table, backrests, lockers and access to technical locker",
+   "stern hand shower",
+   "compass",
+   "on-board utilities control via 5” LCD touchscreen display Garmin® TD50",
+   "personalised steering wheel with embroidered Sea Water logo",
+   "backlit USB socket and hard-top stripe LED courtesy lights",
+   "navigation lights on hard-top and horns (2) with helm control and LED lights on deck",
+   "automatic bilge pump (2) and blower with vapour detection instrument on helm station",
+   "basic electrical system with EmpirBus® on-board automation (incl. 2 service batteries)",
+   "water system and shower with autoclave and double fresh water tank (240 lts)",
+   "fuel system with double stainless steel tank (1040 lts)"
+  ],
+  "opt": [
+   {
+    "n": "Gelcoat, tube and upholstery colour customisation",
+    "p": 18000
+   },
+   {
+    "n": "metallic paint on deck and composite accessories (available only with *Gelcoat, tube and upholstery colour customisation*)",
+    "p": 21000
+   },
+   {
+    "n": "cabin customization",
+    "p": 25000
+   },
+   {
+    "n": "solid 12mm teak deck",
+    "p": 25000
+   },
+   {
+    "n": "customised EVA or Flexiteek deck",
+    "p": 20000
+   },
+   {
+    "n": "non-skid stripe on tube",
+    "p": 4000
+   },
+   {
+    "n": "folding backrests on aft seat",
+    "p": 3000
+   },
+   {
+    "n": "boat covers kit",
+    "p": 8000
+   },
+   {
+    "n": "bow sunshade",
+    "p": 5000
+   },
+   {
+    "n": "aft sunshade with carbon poles",
+    "p": 6000
+   },
+   {
+    "n": "electric aft sunshade",
+    "p": 30000
+   },
+   {
+    "n": "stainless steel flag holder pole or water ski pole",
+    "p": 4000
+   },
+   {
+    "n": "three-point stainless steel tender towing kit",
+    "p": 3100
+   },
+   {
+    "n": "additional drawer fridge (65 lts)",
+    "p": 3000
+   },
+   {
+    "n": "underwater stern light (2)",
+    "p": 3000
+   },
+   {
+    "n": "electric aft table",
+    "p": 3500
+   },
+   {
+    "n": "cabin air conditioning",
+    "p": 15000
+   },
+   {
+    "n": "wireless anchor windlass control",
+    "p": 1500
+   },
+   {
+    "n": "anchor windlass camera",
+    "p": 1500
+   },
+   {
+    "n": "Inverter 230V - 2kW",
+    "p": 5000
+   },
+   {
+    "n": "bow thruster",
+    "p": 13000
+   },
+   {
+    "n": "boiler (40 lts)",
+    "p": 3000
+   },
+   {
+    "n": "battery charger and shore line",
+    "p": 4000
+   },
+   {
+    "n": "transom platforms w/integrated swimming ladders (2) (available only with twin engines)",
+    "p": 5000
+   },
+   {
+    "n": "engines installation - twin engines (rigging installation, no.2 engine batteries, no.3 services battery)",
+    "p": 5000
+   },
+   {
+    "n": "engines installation - triple engines (rigging installation, no.3 engine battery, no.3 services battery)",
+    "p": 7500
+   },
+   {
+    "n": "antifouling paint on hull",
+    "p": 3000
+   },
+   {
+    "n": "safety equipment within 12 nm",
+    "p": 2500
+   },
+   {
+    "n": "Sea Water beach kit (6 customised towels with custom towel holder)",
+    "p": 1000
+   }
+  ],
+  "req": [
+   "GARMIN® navigation instruments and FUSION® audio packs",
+   "transport, launch and delivery assistance at Port of Cagliari"
+  ]
+ },
+ {
+  "name": "Phantom 500",
+  "slug": "phantom-500",
+  "price": 480000,
+  "std": [
+   "Hull, deck and deck accessories in Gelcoat - colour: white",
+   "solid 12mm teak or Flexiteek deck",
+   "carbon fibre hard-top with white Gelcoat finish and powder coated stainless steel uprights",
+   "console with triple windscreen in double tempered glass and bow chaise longue and seat",
+   "ORCA 866® Hypalon® tubes - colour OFF WHITE",
+   "Grey side bumpers and Sea Water rubber plates with white logo on grey background",
+   "complete SILVERTEX® cushions - colour TAUPE",
+   "powder coated stainless steel bollards (1 bow, 2 stern) and stainless steel swim ladders (2)",
+   "powder coated stainless steel handrails (2 on console sides, 2 on dashboard, 2 on kidney)",
+   "electric windlass, stainless steel anchor (15kg) and galvanised chain (60m)",
+   "bow sundeck with locker underneath",
+   "driver’s seat with folding footrest in console",
+   "kidney with washbasin, chopping board and drawer fridge (42 lts)",
+   "stern u-shape seat with piston table and access to technical locker and stern hand shower",
+   "compass and backlit USB socket",
+   "on-board utilities control via 5” LCD touchscreen display Garmin® TD50",
+   "personalised steering wheel with embroidered Sea Water logo",
+   "teak flooring (cabin) and resin flooring (bathroom) with non-slip finish and floor drain",
+   "separate bathroom with electric toilet, backlit mirror, washbasin and hand shower",
+   "sleeping area with double bed and storage lockers",
+   "LED courtesy lights, adjustable reading lights and electrical socket with integrated USB port",
+   "navigation lights on hard-top and horn (2) with helm control",
+   "automatic bilge pump (4) and blower with vapour detection instrument on helm station",
+   "deck LED lights",
+   "basic electrical system with EmpirBus® on-board automation (incl. 2 service batteries)",
+   "black water tank (40 lts)",
+   "water system and shower with autoclave and fresh water stainless steel tank (380 lts)",
+   "fuel system with double stainless steel tank (1440 lts)"
+  ],
+  "opt": [
+   {
+    "n": "Gelcoat, tube and upholstery colour customisation",
+    "p": 20000
+   },
+   {
+    "n": "metallic paint on deck and composite accessories (available only with *Gelcoat, tube and upholstery colour customisation*)",
+    "p": 35000
+   },
+   {
+    "n": "cabin interior customization",
+    "p": 25000
+   },
+   {
+    "n": "non-skid stripe on tube",
+    "p": 4500
+   },
+   {
+    "n": "aft platform with retracting swim ladder (2) (only available with twin engines)",
+    "p": 2500
+   },
+   {
+    "n": "folding backrests on aft seat",
+    "p": 3000
+   },
+   {
+    "n": "boat covers kit",
+    "p": 8000
+   },
+   {
+    "n": "bow sunshade",
+    "p": 5000
+   },
+   {
+    "n": "aft sunshade with carbon poles",
+    "p": 6000
+   },
+   {
+    "n": "electric aft sunshade",
+    "p": 45000
+   },
+   {
+    "n": "electric lift table",
+    "p": 3500
+   },
+   {
+    "n": "stainless steel flag holder pole or water ski pole",
+    "p": 3500
+   },
+   {
+    "n": "three-point stainless steel tender towing kit",
+    "p": 3100
+   },
+   {
+    "n": "wireless anchor windlass control",
+    "p": 1500
+   },
+   {
+    "n": "anchor windlass camera",
+    "p": 1500
+   },
+   {
+    "n": "battery charger and shore line",
+    "p": 4000
+   },
+   {
+    "n": "underwater stern lights (2)",
+    "p": 3000
+   },
+   {
+    "n": "inverter 230V - 2kW",
+    "p": 5000
+   },
+   {
+    "n": "hot water boiler (30 lts)",
+    "p": 3000
+   },
+   {
+    "n": "hard-top deck shower",
+    "p": 2500
+   },
+   {
+    "n": "cabin air conditioning",
+    "p": 15000
+   },
+   {
+    "n": "additional deck/cabin fridge",
+    "p": 3000
+   },
+   {
+    "n": "bow thruster",
+    "p": 15000
+   },
+   {
+    "n": "engines installation - twin engines (rigging installation, no. 2 engine batteries, no.2 services battery)",
+    "p": 5000
+   },
+   {
+    "n": "engines installation - triple engines (rigging installation, no. 3 engine batteries, no.2 services battery)",
+    "p": 7500
+   },
+   {
+    "n": "engines installation - quad engines (rigging installation, no. 3 engine batteries, no.2 services battery)",
+    "p": 10000
+   },
+   {
+    "n": "antifouling paint on hull",
+    "p": 3500
+   },
+   {
+    "n": "safety equipment",
+    "p": 2500
+   },
+   {
+    "n": "transport, launch and delivery assistance at Port of Cagliari",
+    "p": 6000
+   },
+   {
+    "n": "Sea Water beach kit (6 customised towels with custom towel holder)",
+    "p": 1000
+   }
+  ],
+  "req": [
+   "GARMIN® navigation instruments and FUSION® audio packs su richiesta /"
+  ]
+ },
+ {
+  "name": "Phantom 500 Yachting",
+  "slug": "phantom-500-yachting",
+  "price": 390000,
+  "std": [
+   "Hull, deck and deck accessories in Gelcoat - colour: white",
+   "non-slip finish on deck",
+   "carbon fibre hard-top with white Gelcoat finish and powder coated stainless steel uprights",
+   "console with triple windscreen in double tempered glass and bow seat",
+   "ORCA 866® Hypalon® tubes - colour OFF WHITE",
+   "Grey side bumpers and Sea Water rubber plates with white logo on grey background",
+   "complete SILVERTEX® cushions - colour TAUPE",
+   "powder coated stainless steel bollards (1 bow, 2 stern) and stainless steel swim ladders (2)",
+   "powder coated stainless steel handrails (2 on console sides, 2 on dashboard, 2 on kidney)",
+   "electric windlass, stainless steel anchor (15kg) and galvanised chain (60m)",
+   "bow sundeck with locker underneath and u-shape seat",
+   "triple driver’s seat with folding footrest in console",
+   "kidney with washbasin, chopping board and drawer fridge (42 lts)",
+   "stern u-shape seat with piston table and access to technical locker and stern hand shower",
+   "compass and backlit USB socket",
+   "Gelcoat dashboard - colour: white",
+   "personalised steering wheel with embroidered Sea Water logo",
+   "LED courtesy light on hard-top",
+   "resin flooring with floor drain",
+   "Fenix® furniture, backlit mirror, washbasin, hand shower and electric toilet",
+   "LED courtesy lights, adjustable reading lights and electrical socket with integrated USB port",
+   "portholes (2)",
+   "navigation lights on hard-top and horn (2) with helm control",
+   "automatic bilge pump (4) and blower with vapour detection instrument on helm station",
+   "deck LED lights",
+   "basic electrical system with EmpirBus® on-board automation (incl. 2 service batteries)",
+   "black water tank (40 lts)",
+   "water system and shower with autoclave and fresh water stainless steel tank (380 lts)",
+   "fuel system with double stainless steel tank (1440 lts)"
+  ],
+  "opt": [
+   {
+    "n": "Gelcoat, tube and upholstery colour customisation",
+    "p": 18000
+   },
+   {
+    "n": "metallic paint on deck and composite accessories (available only with *Gelcoat, tube and upholstery colour customisation*)",
+    "p": 30000
+   },
+   {
+    "n": "toliet interior customization",
+    "p": 15000
+   },
+   {
+    "n": "solid 12mm teak deck",
+    "p": 35000
+   },
+   {
+    "n": "customised EVA or Flexiteek deck",
+    "p": 25000
+   },
+   {
+    "n": "non-skid stripe on tube",
+    "p": 4500
+   },
+   {
+    "n": "aft platform with retracting swim ladder (2) (only available with twin engines)",
+    "p": 2500
+   },
+   {
+    "n": "boat covers kit",
+    "p": 10000
+   },
+   {
+    "n": "bow sunshade",
+    "p": 5000
+   },
+   {
+    "n": "aft sunshade with carbon poles",
+    "p": 6000
+   },
+   {
+    "n": "single stern seat extension",
+    "p": 1000
+   },
+   {
+    "n": "electric lift table",
+    "p": 3500
+   },
+   {
+    "n": "stainless steel flag holder pole or water ski pole",
+    "p": 3500
+   },
+   {
+    "n": "three-point stainless steel tender towing kit",
+    "p": 3100
+   },
+   {
+    "n": "wireless anchor windlass control",
+    "p": 1500
+   },
+   {
+    "n": "anchor windlass camera",
+    "p": 1500
+   },
+   {
+    "n": "battery charger and shore line",
+    "p": 4000
+   },
+   {
+    "n": "underwater stern lights (2)",
+    "p": 3000
+   },
+   {
+    "n": "inverter 230V - 2kW",
+    "p": 5000
+   },
+   {
+    "n": "hot water boiler (30 lts)",
+    "p": 3000
+   },
+   {
+    "n": "hard-top deck shower",
+    "p": 2500
+   },
+   {
+    "n": "cabin air conditioning",
+    "p": 15000
+   },
+   {
+    "n": "additional deck/cabin fridge",
+    "p": 3000
+   },
+   {
+    "n": "bow thruster",
+    "p": 15000
+   },
+   {
+    "n": "engines installation - twin engines (rigging installation, no. 2 engine batteries, no.2 services battery)",
+    "p": 5000
+   },
+   {
+    "n": "engines installation - triple engines (rigging installation, no. 3 engine batteries, no.2 services battery)",
+    "p": 7500
+   },
+   {
+    "n": "antifouling paint on hull",
+    "p": 3500
+   },
+   {
+    "n": "safety equipment",
+    "p": 2500
+   },
+   {
+    "n": "transport, launch and delivery assistance at Port of Cagliari",
+    "p": 6000
+   },
+   {
+    "n": "Sea Water beach kit (6 customised towels with custom towel holder)",
+    "p": 1000
+   }
+  ],
+  "req": [
+   "GARMIN® navigation instruments and FUSION® audio packs su richiesta /"
+  ]
+ },
+ {
+  "name": "Kymera 43",
+  "slug": "kymera-43",
+  "price": 480000,
+  "std": [
+   "carena, coperta e accessori di coperta in Gelcoat - colorazione BIANCO • hull, deck and deck accessories in Gelcoat - colour: WHITE",
+   "pavimento con finitura antiscivolo in coperta • non-slip finish on deck",
+   "hard-top in fibra di carbonio, finitura in Gelcoat BIANCO e montanti INOX verniciati a polvere • carbon fibre hard-top with WHITE Gelcoat finish and powder-coated stainless steel uprights",
+   "consolle con chaise longue, completa di triplo parabrezza in doppio vetro temperato • console with chaise longue and triple windscreen in double tempered glass",
+   "bottazzo NERO e targhe Sea Water con logo BIANCO su fondo NERO • BLACK side bumpers and Sea Water rubber plates with white logo on black background",
+   "cuscineria completa SILVERTEX® - colorazione TAUPE • complete SILVERTEX® cushions - colour TAUPE",
+   "bitte in acciaio INOX verniciate a polvere (1 prua, 2 centro barca a scomparsa, 2 poppa a scomparsa) • powder-coated stainless steel bollards (1 bow, 2 midships retractable, 2 stern retractable)",
+   "tientibene in acciaio INOX verniciati a polvere (2 in consolle, 2 in corridoi laterali, 2 in plancia, 2 su renale) • powder-coated stainless steel handrails (2 on console, 2 on walkways, 2 on dashboard, 2 on kidney)",
+   "doppia scaletta INOX con maniglie di risalita in murata • double swim ladder with handrails",
+   "verricello elettrico, piastra salvaprua, ancora INOX (10kg) e catena zincata (40m) • electric windlass, bow protection, stainless steel anchor (10kg) and galvanised chain (40m)",
+   "prendisole di prua con gavone sottostante • bow sundeck with main storage locker underneath",
+   "tripla seduta di guida con poggiareni basculante e battitacco richiudibile in consolle • fridge under bow seat in console",
+   "renale completo di lavabo, tagliere e frigorifero a cassetto (42lt) • driver’s seat with tilting lumbar support and under-seat locker",
+   "seduta di poppa u-shape con tavolo a pistone, gavoni sotto sedute e gavone tecnico • u-shape stern seat with piston table, lockers under side seats and stern technical locker",
+   "doccino di poppa a scomparsa • stern hand shower",
+   "bussola analogica, presa USB retroilluminata e luci di cortesia LED su hard-top • compass, backlit USB socket and hard-top LED courtesy lights",
+   "controllo utenze di bordo tramite display 5” touchscreen Garmin® TD50 • on-board utilities control via 5” LCD touchscreen display Garmin® TD50",
+   "volante personalizzato con logo Sea Water ricamato • personalised steering wheel with embroidered Sea Water logo",
+   "pavimentazione in Gelcoat con finitura antiscivolo - colorazione BIANCO • Gelcoat flooring with non-slip finish - colour: white",
+   "bagno separato con WC elettrico, specchio retroilluminato, lavandino, doccia a scomparsa • bathroom with electric WC, backlit mirror, washbasin, drawers and hand shower with floor drain",
+   "vasca acque nere (30 lt) • black water tank (30 lts)",
+   "dinette con seduta u-shape e tavolo a pistone richiudibile completo di cuscineria • dinette with u-shape seat and folding piston table with cushions",
+   "luci di cortesia orientabili e presa elettrica con porta USB integrata • LED courtesy lights, adjustable reading lights and electrical socket with integrated USB port",
+   "luci di navigazione e tromba ad incasso in consolle (2) con comando in plancia • navigation lights on hard-top and horn (2) with helm control",
+   "luci LED di cortesia in coperta • deck LED lights",
+   "pompa di sentina con automatismo (3) e blower con strumento rilevazione vapori in plancia • automatic bilge pump (3) and blower with vapour detection instrument on helm station",
+   "impianto elettrico di base con domotica di bordo EmpirBus® (incluse 2 batterie servizi) • basic electrical system with EmpirBus® on-board automation (incl. 2 service batteries)",
+   "impianto idraulico e doccia con autoclave e serbatoio acqua dolce (220 lt) • water system and shower with autoclave and fresh water stainless steel tank (220 lts)",
+   "impianto carburante con doppio serbatoio INOX (1480 lt) • fuel system with double stainless steel tank (740 lts)"
+  ],
+  "opt": [
+   {
+    "n": "Gelcoat and upholstery colour customisation",
+    "p": 35000
+   },
+   {
+    "n": "metallic paint on deck and composite accessories (available only with *Gelcoat, tube and upholstery colour customisation*)",
+    "p": 30000
+   },
+   {
+    "n": "cabin interior customization",
+    "p": 25000
+   },
+   {
+    "n": "solid 12mm teak deck",
+    "p": 35000
+   },
+   {
+    "n": "bow cabin/bathroom modification",
+    "p": 15000
+   },
+   {
+    "n": "aft platform with retracting swim ladder (2) (only available with twin engines)",
+    "p": 2500
+   },
+   {
+    "n": "folding backrests on aft seat",
+    "p": 3000
+   },
+   {
+    "n": "boat covers kit",
+    "p": 8000
+   },
+   {
+    "n": "bow sunshade with carbon poles",
+    "p": 4500
+   },
+   {
+    "n": "aft sunshade with carbon poles",
+    "p": 3800
+   },
+   {
+    "n": "electric aft sunshade",
+    "p": 45000
+   },
+   {
+    "n": "electric lift table",
+    "p": 3500
+   },
+   {
+    "n": "stainless steel flag holder pole or water ski pole",
+    "p": 4000
+   },
+   {
+    "n": "three-point stainless steel tender towing kit",
+    "p": 3500
+   },
+   {
+    "n": "wireless anchor windlass control",
+    "p": 1500
+   },
+   {
+    "n": "anchor windlass camera",
+    "p": 1500
+   },
+   {
+    "n": "battery charger and shore line",
+    "p": 4000
+   },
+   {
+    "n": "underwater stern lights (2)",
+    "p": 3000
+   },
+   {
+    "n": "diesel genset 6kW",
+    "p": 15000
+   },
+   {
+    "n": "inverter 230V - 2kW",
+    "p": 5000
+   },
+   {
+    "n": "hot water boiler (30 lts)",
+    "p": 3000
+   },
+   {
+    "n": "hard-top deck shower",
+    "p": 2500
+   },
+   {
+    "n": "cabin air conditioning",
+    "p": 15000
+   },
+   {
+    "n": "additional deck/cabin fridge",
+    "p": 3000
+   },
+   {
+    "n": "bow thruster",
+    "p": 16000
+   },
+   {
+    "n": "engines installation - twin engines (rigging installation, no. 2 engine batteries, no.2 services battery)",
+    "p": 5000
+   },
+   {
+    "n": "engines installation - triple engines (rigging installation, no. 3 engine batteries, no.2 services battery)",
+    "p": 7500
+   },
+   {
+    "n": "antifouling paint on hull",
+    "p": 3000
+   },
+   {
+    "n": "safety equipment",
+    "p": 2500
+   },
+   {
+    "n": "transport, launch and delivery assistance at Port of Cagliari",
+    "p": 6000
+   },
+   {
+    "n": "Sea Water beach kit (6 customised towels with custom towel holder)",
+    "p": 1000
+   }
+  ],
+  "req": [
+   "GARMIN® navigation instruments and FUSION® audio packs su richiesta /"
+  ]
+ },
+ {
+  "name": "Kymera 53",
+  "slug": "kymera-53",
+  "price": 1050000,
+  "std": [
+   "hull, deck and deck accessories in Gelcoat - colour: white",
+   "solid 12mm teak deck",
+   "carbon fibre hard-top with white Gelcoat finish and powder-coated stainless steel uprights",
+   "console with triple windscreen in double tempered glass, bow sunpad and cabin",
+   "black side bumpers and Sea Water rubber plates with white logo on black background",
+   "complete SILVERTEX® cushions - colour TAUPE",
+   "powder coated stainless steel bollards (1 bow, 2 midships retractable, 2 stern retractable)",
+   "powder coated stainless steel handrails (2 on console, 2 on walkways, 2 on dashboard, 2 on kidney)",
+   "transom platform with retractable swim ladder with handrails (2) (only with triple engine)",
+   "electric windlass with stainless steel anchor (15kg) and galvanised chain (60m)",
+   "bow sundeck with main storage locker underneath and console bow chaise longue",
+   "triple driver’s seat with tilting lumbar support and folding footrest in console",
+   "kidney w/ worktop, washbasin, induction cooktop, freezer (55 lts) & drawer fridge (85 lts)",
+   "stern u-shape seat with piston table, backrests, sunpad and access to technical locker",
+   "stern hand shower",
+   "compass",
+   "Gelcoat dashboard - colour: white",
+   "personalised steering wheel with embroidered Sea Water logo",
+   "backlit USB socket and hard-top stripe LED courtesy lights",
+   "navigation lights and horn (1) with helm control and LED lights on deck",
+   "automatic bilge pump (2) and blower with helm control",
+   "basic electrical system and EmpirBus® on-board boat automation"
+  ],
+  "opt": [],
+  "req": []
+ }
+]

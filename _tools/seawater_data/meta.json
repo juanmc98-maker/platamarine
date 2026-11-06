@@ -1,0 +1,79 @@
+{
+ "phantom-230": {
+  "loa": 7.19,
+  "lh": 6.99,
+  "eng": "Mercury V250 HD/Yamaha F250",
+  "n": 1,
+  "hp": 250
+ },
+ "phantom-260": {
+  "loa": 8.19,
+  "lh": 7.92,
+  "eng": "Mercury V350 HD/Yamaha F350",
+  "n": 1,
+  "hp": 350
+ },
+ "phantom-280": {
+  "loa": 8.9,
+  "lh": 8.5,
+  "eng": "Mercury V250 HD/Yamaha F250",
+  "n": 2,
+  "hp": 500
+ },
+ "phantom-300": {
+  "loa": 9.99,
+  "lh": 9.5,
+  "eng": "Mercury V350 V10/Yamaha F350 V6",
+  "n": 2,
+  "hp": 700
+ },
+ "ghost-320": {
+  "loa": 10.82,
+  "lh": 9.99,
+  "eng": "Yamaha XF450/Mercury V425 V10",
+  "n": 2,
+  "hp": 900
+ },
+ "ghost-350": {
+  "loa": 10.82,
+  "lh": 9.99,
+  "eng": "Yamaha XF450/Mercury V425 V10",
+  "n": 2,
+  "hp": 900
+ },
+ "ghost-420": {
+  "loa": 12.97,
+  "lh": 12.07,
+  "eng": "Mercury V600 V12",
+  "n": 2,
+  "hp": 1200
+ },
+ "phantom-500": {
+  "loa": 15.09,
+  "lh": 14.3,
+  "eng": "Mercury V600 V12",
+  "n": 3,
+  "hp": 1800
+ },
+ "phantom-500-yachting": {
+  "loa": 15.09,
+  "lh": 14.3,
+  "eng": "Mercury V600 V12",
+  "n": 3,
+  "hp": 1800
+ },
+ "kymera-43": {
+  "loa": 13.76,
+  "lh": 13.06,
+  "eng": "Mercury V600 V12",
+  "n": 3,
+  "hp": 1800
+ },
+ "kymera-53": {
+  "loa": 16.15,
+  "lh": 15.69,
+  "eng": "Mercury V600 V12",
+  "n": 4,
+  "hp": 2400
+ }
+}

@@ -1,0 +1,812 @@
+{
+ "seawater-phantom-230": {
+  "es": {
+   "p": [
+    "Semirrígida de consola central de 7,19 m: flotadores ORCA Hypalon®, solárium de proa, molinete eléctrico, ducha de popa y escalera de baño de serie. Para un motor de hasta 250 cv."
+   ],
+   "dl": {
+    "Eslora total": "7,19 m",
+    "Eslora de casco": "6,99 m",
+    "Manga": "2,95 m",
+    "Homologación CE": "16 personas*",
+    "Potencia máxima": "250 cv",
+    "Combustible": "190 l",
+    "Agua dulce": "40 l",
+    "Ángulo de la V": "19°",
+    "Categoría de diseño CE": "C",
+    "Titulación": "PNB o superior"
+   }
+  },
+  "ca": {
+   "p": [
+    "Semirígida de consola central de 7,19 m: flotadors ORCA Hypalon®, solàrium de proa, molinet elèctric, dutxa de popa i escala de bany de sèrie. Per a un motor de fins a 250 CV."
+   ],
+   "dl": {
+    "Eslora total": "7,19 m",
+    "Eslora de buc": "6,99 m",
+    "Mànega": "2,95 m",
+    "Homologació CE": "16 persones*",
+    "Potència màxima": "250 CV",
+    "Combustible": "190 l",
+    "Aigua dolça": "40 l",
+    "Angle de la V": "19°",
+    "Categoria de disseny CE": "C",
+    "Titulació": "PNB o superior"
+   }
+  },
+  "en": {
+   "p": [
+    "A 7.19 m centre-console RIB: ORCA Hypalon® tubes, bow sundeck, electric windlass, stern shower and swim ladder as standard. For a single engine up to 250 hp."
+   ],
+   "dl": {
+    "Length overall": "7.19 m",
+    "Hull length": "6.99 m",
+    "Beam": "2.95 m",
+    "CE rating": "16 people*",
+    "Maximum power": "250 hp",
+    "Fuel": "190 l",
+    "Fresh water": "40 l",
+    "Deadrise": "19°",
+    "CE design category": "C",
+    "Licence": "Spanish PNB licence or higher"
+   }
+  },
+  "fr": {
+   "p": [
+    "Semi-rigide à console centrale de 7,19 m : boudins ORCA Hypalon®, bain de soleil avant, guindeau électrique, douche de poupe et échelle de bain de série. Pour un moteur jusqu’à 250 ch."
+   ],
+   "dl": {
+    "Longueur hors tout": "7,19 m",
+    "Longueur de coque": "6,99 m",
+    "Largeur": "2,95 m",
+    "Homologation CE": "16 personnes*",
+    "Puissance maximale": "250 ch",
+    "Carburant": "190 l",
+    "Eau douce": "40 l",
+    "Angle de V": "19°",
+    "Catégorie de conception CE": "C",
+    "Permis": "PNB espagnol ou supérieur"
+   }
+  }
+ },
+ "seawater-phantom-260": {
+  "es": {
+   "p": [
+    "Semirrígida de 8,19 m (7,92 m de casco): consola central con asiento de proa, solárium, molinete eléctrico y ducha de popa de serie. Para un motor de hasta 350 cv."
+   ],
+   "dl": {
+    "Eslora total": "8,19 m",
+    "Eslora de casco": "7,92 m",
+    "Manga": "3,03 m",
+    "Homologación CE": "16 personas*",
+    "Potencia máxima": "350 cv",
+    "Combustible": "245 l",
+    "Agua dulce": "60 l",
+    "Peso en vacío": "1,5 t",
+    "Ángulo de la V": "16°",
+    "Categoría de diseño CE": "C",
+    "Titulación": "PNB o superior"
+   }
+  },
+  "ca": {
+   "p": [
+    "Semirígida de 8,19 m (7,92 m de buc): consola central amb seient de proa, solàrium, molinet elèctric i dutxa de popa de sèrie. Per a un motor de fins a 350 CV."
+   ],
+   "dl": {
+    "Eslora total": "8,19 m",
+    "Eslora de buc": "7,92 m",
+    "Mànega": "3,03 m",
+    "Homologació CE": "16 persones*",
+    "Potència màxima": "350 CV",
+    "Combustible": "245 l",
+    "Aigua dolça": "60 l",
+    "Pes en buit": "1,5 t",
+    "Angle de la V": "16°",
+    "Categoria de disseny CE": "C",
+    "Titulació": "PNB o superior"
+   }
+  },
+  "en": {
+   "p": [
+    "An 8.19 m RIB (7.92 m hull): centre console with bow seat, sundeck, electric windlass and stern shower as standard. For a single engine up to 350 hp."
+   ],
+   "dl": {
+    "Length overall": "8.19 m",
+    "Hull length": "7.92 m",
+    "Beam": "3.03 m",
+    "CE rating": "16 people*",
+    "Maximum power": "350 hp",
+    "Fuel": "245 l",
+    "Fresh water": "60 l",
+    "Dry weight": "1.5 t",
+    "Deadrise": "16°",
+    "CE design category": "C",
+    "Licence": "Spanish PNB licence or higher"
+   }
+  },
+  "fr": {
+   "p": [
+    "Semi-rigide de 8,19 m (7,92 m de coque) : console centrale avec siège avant, bain de soleil, guindeau électrique et douche de poupe de série. Pour un moteur jusqu’à 350 ch."
+   ],
+   "dl": {
+    "Longueur hors tout": "8,19 m",
+    "Longueur de coque": "7,92 m",
+    "Largeur": "3,03 m",
+    "Homologation CE": "16 personnes*",
+    "Puissance maximale": "350 ch",
+    "Carburant": "245 l",
+    "Eau douce": "60 l",
+    "Poids lège": "1,5 t",
+    "Angle de V": "16°",
+    "Catégorie de conception CE": "C",
+    "Permis": "PNB espagnol ou supérieur"
+   }
+  }
+ },
+ "seawater-phantom-280": {
+  "es": {
+   "p": [
+    "Semirrígida de 8,90 m para dos motores de hasta 250 cv: consola central con asiento de proa, mesa de popa con pistón, asideros de acero inoxidable y molinete eléctrico de serie."
+   ],
+   "dl": {
+    "Eslora total": "8,90 m",
+    "Eslora de casco": "8,50 m",
+    "Manga": "3,40 m",
+    "Homologación CE": "20 personas*",
+    "Potencia máxima": "2 × 250 cv (500 cv)",
+    "Combustible": "460 l",
+    "Agua dulce": "60 l",
+    "Peso en vacío": "2,1 t",
+    "Ángulo de la V": "16°",
+    "Categoría de diseño CE": "C",
+    "Titulación": "PER o superior"
+   }
+  },
+  "ca": {
+   "p": [
+    "Semirígida de 8,90 m per a dos motors de fins a 250 CV: consola central amb seient de proa, taula de popa amb pistó, agafadors d’acer inoxidable i molinet elèctric de sèrie."
+   ],
+   "dl": {
+    "Eslora total": "8,90 m",
+    "Eslora de buc": "8,50 m",
+    "Mànega": "3,40 m",
+    "Homologació CE": "20 persones*",
+    "Potència màxima": "2 × 250 CV (500 CV)",
+    "Combustible": "460 l",
+    "Aigua dolça": "60 l",
+    "Pes en buit": "2,1 t",
+    "Angle de la V": "16°",
+    "Categoria de disseny CE": "C",
+    "Titulació": "PER o superior"
+   }
+  },
+  "en": {
+   "p": [
+    "An 8.90 m RIB for twin engines up to 250 hp: centre console with bow seat, piston table aft, stainless steel handrails and electric windlass as standard."
+   ],
+   "dl": {
+    "Length overall": "8.90 m",
+    "Hull length": "8.50 m",
+    "Beam": "3.40 m",
+    "CE rating": "20 people*",
+    "Maximum power": "2 × 250 hp (500 hp)",
+    "Fuel": "460 l",
+    "Fresh water": "60 l",
+    "Dry weight": "2.1 t",
+    "Deadrise": "16°",
+    "CE design category": "C",
+    "Licence": "Spanish PER licence or higher"
+   }
+  },
+  "fr": {
+   "p": [
+    "Semi-rigide de 8,90 m pour deux moteurs jusqu’à 250 ch : console centrale avec siège avant, table de poupe sur vérin, mains courantes inox et guindeau électrique de série."
+   ],
+   "dl": {
+    "Longueur hors tout": "8,90 m",
+    "Longueur de coque": "8,50 m",
+    "Largeur": "3,40 m",
+    "Homologation CE": "20 personnes*",
+    "Puissance maximale": "2 × 250 ch (500 ch)",
+    "Carburant": "460 l",
+    "Eau douce": "60 l",
+    "Poids lège": "2,1 t",
+    "Angle de V": "16°",
+    "Catégorie de conception CE": "C",
+    "Permis": "PER espagnol ou supérieur"
+   }
+  }
+ },
+ "seawater-phantom-300": {
+  "es": {
+   "p": [
+    "Semirrígida de 9,99 m con T-top de acero inoxidable, nevera en la consola, pantalla táctil Garmin® TD50 y automatización EmpirBus® de serie. Para dos motores de hasta 350 cv."
+   ],
+   "dl": {
+    "Eslora total": "9,99 m",
+    "Eslora de casco": "9,50 m",
+    "Manga": "3,40 m",
+    "Homologación CE": "20 personas*",
+    "Potencia máxima": "2 × 350 cv (700 cv)",
+    "Combustible": "460 l",
+    "Agua dulce": "60 l",
+    "Peso en vacío": "3,9 t",
+    "Ángulo de la V": "22°",
+    "Categoría de diseño CE": "B",
+    "Titulación": "PER o superior"
+   }
+  },
+  "ca": {
+   "p": [
+    "Semirígida de 9,99 m amb T-top d’acer inoxidable, nevera a la consola, pantalla tàctil Garmin® TD50 i automatització EmpirBus® de sèrie. Per a dos motors de fins a 350 CV."
+   ],
+   "dl": {
+    "Eslora total": "9,99 m",
+    "Eslora de buc": "9,50 m",
+    "Mànega": "3,40 m",
+    "Homologació CE": "20 persones*",
+    "Potència màxima": "2 × 350 CV (700 CV)",
+    "Combustible": "460 l",
+    "Aigua dolça": "60 l",
+    "Pes en buit": "3,9 t",
+    "Angle de la V": "22°",
+    "Categoria de disseny CE": "B",
+    "Titulació": "PER o superior"
+   }
+  },
+  "en": {
+   "p": [
+    "A 9.99 m RIB with stainless steel T-top, fridge in the console, Garmin® TD50 touchscreen and EmpirBus® automation as standard. For twin engines up to 350 hp."
+   ],
+   "dl": {
+    "Length overall": "9.99 m",
+    "Hull length": "9.50 m",
+    "Beam": "3.40 m",
+    "CE rating": "20 people*",
+    "Maximum power": "2 × 350 hp (700 hp)",
+    "Fuel": "460 l",
+    "Fresh water": "60 l",
+    "Dry weight": "3.9 t",
+    "Deadrise": "22°",
+    "CE design category": "B",
+    "Licence": "Spanish PER licence or higher"
+   }
+  },
+  "fr": {
+   "p": [
+    "Semi-rigide de 9,99 m avec T-top inox, réfrigérateur dans la console, écran tactile Garmin® TD50 et automatisme EmpirBus® de série. Pour deux moteurs jusqu’à 350 ch."
+   ],
+   "dl": {
+    "Longueur hors tout": "9,99 m",
+    "Longueur de coque": "9,50 m",
+    "Largeur": "3,40 m",
+    "Homologation CE": "20 personnes*",
+    "Puissance maximale": "2 × 350 ch (700 ch)",
+    "Carburant": "460 l",
+    "Eau douce": "60 l",
+    "Poids lège": "3,9 t",
+    "Angle de V": "22°",
+    "Catégorie de conception CE": "B",
+    "Permis": "PER espagnol ou supérieur"
+   }
+  }
+ },
+ "seawater-ghost-320": {
+  "es": {
+   "p": [
+    "Semirrígida de 10,82 m con parabrisas triple de cristal templado, módulo con lavabo y nevera de cajón de 42 l, asiento triple de gobierno y pantalla Garmin® TD50 de serie. Para dos motores de hasta 450 cv."
+   ],
+   "dl": {
+    "Eslora total": "10,82 m",
+    "Eslora de casco": "9,99 m",
+    "Manga": "3,90 m",
+    "Homologación CE": "25 personas*",
+    "Potencia máxima": "2 × 450 cv (900 cv)",
+    "Combustible": "860 l",
+    "Agua dulce": "140 l",
+    "Peso en vacío": "3,6 t",
+    "Ángulo de la V": "16°",
+    "Categoría de diseño CE": "B",
+    "Titulación": "PER o superior"
+   }
+  },
+  "ca": {
+   "p": [
+    "Semirígida de 10,82 m amb parabrisa triple de vidre temperat, mòdul amb lavabo i nevera de calaix de 42 l, seient triple de govern i pantalla Garmin® TD50 de sèrie. Per a dos motors de fins a 450 CV."
+   ],
+   "dl": {
+    "Eslora total": "10,82 m",
+    "Eslora de buc": "9,99 m",
+    "Mànega": "3,90 m",
+    "Homologació CE": "25 persones*",
+    "Potència màxima": "2 × 450 CV (900 CV)",
+    "Combustible": "860 l",
+    "Aigua dolça": "140 l",
+    "Pes en buit": "3,6 t",
+    "Angle de la V": "16°",
+    "Categoria de disseny CE": "B",
+    "Titulació": "PER o superior"
+   }
+  },
+  "en": {
+   "p": [
+    "A 10.82 m RIB with triple tempered-glass windscreen, wet bar with washbasin and 42 l drawer fridge, triple helm seat and Garmin® TD50 display as standard. For twin engines up to 450 hp."
+   ],
+   "dl": {
+    "Length overall": "10.82 m",
+    "Hull length": "9.99 m",
+    "Beam": "3.90 m",
+    "CE rating": "25 people*",
+    "Maximum power": "2 × 450 hp (900 hp)",
+    "Fuel": "860 l",
+    "Fresh water": "140 l",
+    "Dry weight": "3.6 t",
+    "Deadrise": "16°",
+    "CE design category": "B",
+    "Licence": "Spanish PER licence or higher"
+   }
+  },
+  "fr": {
+   "p": [
+    "Semi-rigide de 10,82 m avec pare-brise triple en verre trempé, meuble avec lavabo et réfrigérateur à tiroir de 42 l, siège de pilotage triple et écran Garmin® TD50 de série. Pour deux moteurs jusqu’à 450 ch."
+   ],
+   "dl": {
+    "Longueur hors tout": "10,82 m",
+    "Longueur de coque": "9,99 m",
+    "Largeur": "3,90 m",
+    "Homologation CE": "25 personnes*",
+    "Puissance maximale": "2 × 450 ch (900 ch)",
+    "Carburant": "860 l",
+    "Eau douce": "140 l",
+    "Poids lège": "3,6 t",
+    "Angle de V": "16°",
+    "Catégorie de conception CE": "B",
+    "Permis": "PER espagnol ou supérieur"
+   }
+  }
+ },
+ "seawater-ghost-350": {
+  "es": {
+   "p": [
+    "Semirrígida de 10,82 m con hard-top de fibra de carbono, parabrisas triple de cristal templado, módulo con lavabo y nevera de cajón de 42 l y asiento triple de gobierno de serie. Para dos motores de hasta 450 cv."
+   ],
+   "dl": {
+    "Eslora total": "10,82 m",
+    "Eslora de casco": "9,99 m",
+    "Manga": "3,90 m",
+    "Homologación CE": "25 personas*",
+    "Potencia máxima": "2 × 450 cv (900 cv)",
+    "Combustible": "860 l",
+    "Agua dulce": "140 l",
+    "Peso en vacío": "3,6 t",
+    "Ángulo de la V": "16°",
+    "Categoría de diseño CE": "B",
+    "Titulación": "PER o superior"
+   }
+  },
+  "ca": {
+   "p": [
+    "Semirígida de 10,82 m amb hard-top de fibra de carboni, parabrisa triple de vidre temperat, mòdul amb lavabo i nevera de calaix de 42 l i seient triple de govern de sèrie. Per a dos motors de fins a 450 CV."
+   ],
+   "dl": {
+    "Eslora total": "10,82 m",
+    "Eslora de buc": "9,99 m",
+    "Mànega": "3,90 m",
+    "Homologació CE": "25 persones*",
+    "Potència màxima": "2 × 450 CV (900 CV)",
+    "Combustible": "860 l",
+    "Aigua dolça": "140 l",
+    "Pes en buit": "3,6 t",
+    "Angle de la V": "16°",
+    "Categoria de disseny CE": "B",
+    "Titulació": "PER o superior"
+   }
+  },
+  "en": {
+   "p": [
+    "A 10.82 m RIB with carbon-fibre hard-top, triple tempered-glass windscreen, wet bar with washbasin and 42 l drawer fridge, and triple helm seat as standard. For twin engines up to 450 hp."
+   ],
+   "dl": {
+    "Length overall": "10.82 m",
+    "Hull length": "9.99 m",
+    "Beam": "3.90 m",
+    "CE rating": "25 people*",
+    "Maximum power": "2 × 450 hp (900 hp)",
+    "Fuel": "860 l",
+    "Fresh water": "140 l",
+    "Dry weight": "3.6 t",
+    "Deadrise": "16°",
+    "CE design category": "B",
+    "Licence": "Spanish PER licence or higher"
+   }
+  },
+  "fr": {
+   "p": [
+    "Semi-rigide de 10,82 m avec hard-top en carbone, pare-brise triple en verre trempé, meuble avec lavabo et réfrigérateur à tiroir de 42 l et siège de pilotage triple de série. Pour deux moteurs jusqu’à 450 ch."
+   ],
+   "dl": {
+    "Longueur hors tout": "10,82 m",
+    "Longueur de coque": "9,99 m",
+    "Largeur": "3,90 m",
+    "Homologation CE": "25 personnes*",
+    "Puissance maximale": "2 × 450 ch (900 ch)",
+    "Carburant": "860 l",
+    "Eau douce": "140 l",
+    "Poids lège": "3,6 t",
+    "Angle de V": "16°",
+    "Catégorie de conception CE": "B",
+    "Permis": "PER espagnol ou supérieur"
+   }
+  }
+ },
+ "seawater-ghost-420": {
+  "es": {
+   "p": [
+    "Semirrígida de 12,97 m con hard-top de fibra de carbono, módulo con lavabo y nevera de cajón de 65 l, asiento de popa en U con mesa y depósito de 1.040 l. Para dos motores de hasta 600 cv."
+   ],
+   "dl": {
+    "Eslora total": "12,97 m",
+    "Eslora de casco": "12,07 m",
+    "Manga": "4,30 m",
+    "Homologación CE": "30 personas*",
+    "Potencia máxima": "2 × 600 cv (1.200 cv)",
+    "Combustible": "1.040 l",
+    "Agua dulce": "290 l",
+    "Peso en vacío": "5,2 t",
+    "Ángulo de la V": "17°",
+    "Categoría de diseño CE": "B",
+    "Titulación": "PER o superior"
+   }
+  },
+  "ca": {
+   "p": [
+    "Semirígida de 12,97 m amb hard-top de fibra de carboni, mòdul amb lavabo i nevera de calaix de 65 l, seient de popa en U amb taula i dipòsit de 1.040 l. Per a dos motors de fins a 600 CV."
+   ],
+   "dl": {
+    "Eslora total": "12,97 m",
+    "Eslora de buc": "12,07 m",
+    "Mànega": "4,30 m",
+    "Homologació CE": "30 persones*",
+    "Potència màxima": "2 × 600 CV (1.200 CV)",
+    "Combustible": "1.040 l",
+    "Aigua dolça": "290 l",
+    "Pes en buit": "5,2 t",
+    "Angle de la V": "17°",
+    "Categoria de disseny CE": "B",
+    "Titulació": "PER o superior"
+   }
+  },
+  "en": {
+   "p": [
+    "A 12.97 m RIB with carbon-fibre hard-top, wet bar with washbasin and 65 l drawer fridge, U-shaped stern seating with table and a 1,040 l fuel tank. For twin engines up to 600 hp."
+   ],
+   "dl": {
+    "Length overall": "12.97 m",
+    "Hull length": "12.07 m",
+    "Beam": "4.30 m",
+    "CE rating": "30 people*",
+    "Maximum power": "2 × 600 hp (1,200 hp)",
+    "Fuel": "1,040 l",
+    "Fresh water": "290 l",
+    "Dry weight": "5.2 t",
+    "Deadrise": "17°",
+    "CE design category": "B",
+    "Licence": "Spanish PER licence or higher"
+   }
+  },
+  "fr": {
+   "p": [
+    "Semi-rigide de 12,97 m avec hard-top en carbone, meuble avec lavabo et réfrigérateur à tiroir de 65 l, banquette de poupe en U avec table et réservoir de 1 040 l. Pour deux moteurs jusqu’à 600 ch."
+   ],
+   "dl": {
+    "Longueur hors tout": "12,97 m",
+    "Longueur de coque": "12,07 m",
+    "Largeur": "4,30 m",
+    "Homologation CE": "30 personnes*",
+    "Puissance maximale": "2 × 600 ch (1 200 ch)",
+    "Carburant": "1 040 l",
+    "Eau douce": "290 l",
+    "Poids lège": "5,2 t",
+    "Angle de V": "17°",
+    "Catégorie de conception CE": "B",
+    "Permis": "PER espagnol ou supérieur"
+   }
+  }
+ },
+ "seawater-phantom-500": {
+  "es": {
+   "p": [
+    "Semirrígida de 15,09 m con camarote: cama doble, baño separado con WC eléctrico, cubierta de teca y hard-top de fibra de carbono de serie. Para tres motores de hasta 600 cv."
+   ],
+   "dl": {
+    "Eslora total": "15,09 m",
+    "Eslora de casco": "14,30 m",
+    "Manga": "4,69 m",
+    "Homologación CE": "30 personas*",
+    "Potencia máxima": "3 × 600 cv (1.800 cv)",
+    "Combustible": "1.440 l",
+    "Agua dulce": "380 l",
+    "Peso en vacío": "8,3 t",
+    "Ángulo de la V": "16°",
+    "Categoría de diseño CE": "A",
+    "Titulación": "PER o superior"
+   }
+  },
+  "ca": {
+   "p": [
+    "Semirígida de 15,09 m amb cabina: llit doble, bany separat amb WC elèctric, coberta de teca i hard-top de fibra de carboni de sèrie. Per a tres motors de fins a 600 CV."
+   ],
+   "dl": {
+    "Eslora total": "15,09 m",
+    "Eslora de buc": "14,30 m",
+    "Mànega": "4,69 m",
+    "Homologació CE": "30 persones*",
+    "Potència màxima": "3 × 600 CV (1.800 CV)",
+    "Combustible": "1.440 l",
+    "Aigua dolça": "380 l",
+    "Pes en buit": "8,3 t",
+    "Angle de la V": "16°",
+    "Categoria de disseny CE": "A",
+    "Titulació": "PER o superior"
+   }
+  },
+  "en": {
+   "p": [
+    "A 15.09 m cabin RIB: double bed, separate bathroom with electric WC, teak deck and carbon-fibre hard-top as standard. For three engines up to 600 hp."
+   ],
+   "dl": {
+    "Length overall": "15.09 m",
+    "Hull length": "14.30 m",
+    "Beam": "4.69 m",
+    "CE rating": "30 people*",
+    "Maximum power": "3 × 600 hp (1,800 hp)",
+    "Fuel": "1,440 l",
+    "Fresh water": "380 l",
+    "Dry weight": "8.3 t",
+    "Deadrise": "16°",
+    "CE design category": "A",
+    "Licence": "Spanish PER licence or higher"
+   }
+  },
+  "fr": {
+   "p": [
+    "Semi-rigide de 15,09 m avec cabine : lit double, salle de bains séparée avec WC électrique, pont en teck et hard-top en carbone de série. Pour trois moteurs jusqu’à 600 ch."
+   ],
+   "dl": {
+    "Longueur hors tout": "15,09 m",
+    "Longueur de coque": "14,30 m",
+    "Largeur": "4,69 m",
+    "Homologation CE": "30 personnes*",
+    "Puissance maximale": "3 × 600 ch (1 800 ch)",
+    "Carburant": "1 440 l",
+    "Eau douce": "380 l",
+    "Poids lège": "8,3 t",
+    "Angle de V": "16°",
+    "Catégorie de conception CE": "A",
+    "Permis": "PER espagnol ou supérieur"
+   }
+  }
+ },
+ "seawater-phantom-500-yachting": {
+  "es": {
+   "p": [
+    "Versión Yachting de la Phantom 500 (15,09 m): hard-top de fibra de carbono, baño con mobiliario Fenix®, ojos de buey y solárium de proa con asiento en U de serie. Para tres motores de hasta 600 cv."
+   ],
+   "dl": {
+    "Eslora total": "15,09 m",
+    "Eslora de casco": "14,30 m",
+    "Manga": "4,69 m",
+    "Homologación CE": "30 personas*",
+    "Potencia máxima": "3 × 600 cv (1.800 cv)",
+    "Combustible": "1.440 l",
+    "Agua dulce": "380 l",
+    "Peso en vacío": "8,3 t",
+    "Ángulo de la V": "16°",
+    "Categoría de diseño CE": "A",
+    "Titulación": "PER o superior"
+   }
+  },
+  "ca": {
+   "p": [
+    "Versió Yachting de la Phantom 500 (15,09 m): hard-top de fibra de carboni, bany amb mobiliari Fenix®, ulls de bou i solàrium de proa amb seient en U de sèrie. Per a tres motors de fins a 600 CV."
+   ],
+   "dl": {
+    "Eslora total": "15,09 m",
+    "Eslora de buc": "14,30 m",
+    "Mànega": "4,69 m",
+    "Homologació CE": "30 persones*",
+    "Potència màxima": "3 × 600 CV (1.800 CV)",
+    "Combustible": "1.440 l",
+    "Aigua dolça": "380 l",
+    "Pes en buit": "8,3 t",
+    "Angle de la V": "16°",
+    "Categoria de disseny CE": "A",
+    "Titulació": "PER o superior"
+   }
+  },
+  "en": {
+   "p": [
+    "The Yachting version of the Phantom 500 (15.09 m): carbon-fibre hard-top, bathroom with Fenix® furniture, portholes and bow sundeck with U-shaped seat as standard. For three engines up to 600 hp."
+   ],
+   "dl": {
+    "Length overall": "15.09 m",
+    "Hull length": "14.30 m",
+    "Beam": "4.69 m",
+    "CE rating": "30 people*",
+    "Maximum power": "3 × 600 hp (1,800 hp)",
+    "Fuel": "1,440 l",
+    "Fresh water": "380 l",
+    "Dry weight": "8.3 t",
+    "Deadrise": "16°",
+    "CE design category": "A",
+    "Licence": "Spanish PER licence or higher"
+   }
+  },
+  "fr": {
+   "p": [
+    "Version Yachting du Phantom 500 (15,09 m) : hard-top en carbone, salle de bains en mobilier Fenix®, hublots et bain de soleil avant avec banquette en U de série. Pour trois moteurs jusqu’à 600 ch."
+   ],
+   "dl": {
+    "Longueur hors tout": "15,09 m",
+    "Longueur de coque": "14,30 m",
+    "Largeur": "4,69 m",
+    "Homologation CE": "30 personnes*",
+    "Puissance maximale": "3 × 600 ch (1 800 ch)",
+    "Carburant": "1 440 l",
+    "Eau douce": "380 l",
+    "Poids lège": "8,3 t",
+    "Angle de V": "16°",
+    "Catégorie de conception CE": "A",
+    "Permis": "PER espagnol ou supérieur"
+   }
+  }
+ },
+ "seawater-kymera-43": {
+  "es": {
+   "p": [
+    "Kymera 43, de 13,76 m: hard-top de fibra de carbono, chaise longue en la consola, baño separado con WC eléctrico y dinette con mesa de serie. Para tres motores de hasta 600 cv."
+   ],
+   "dl": {
+    "Eslora total": "13,76 m",
+    "Eslora de casco": "13,06 m",
+    "Manga": "4,13 m",
+    "Homologación CE": "25 personas*",
+    "Potencia máxima": "3 × 600 cv (1.800 cv)",
+    "Combustible": "1.480 l",
+    "Agua dulce": "220 l",
+    "Peso en vacío": "5,8 t",
+    "Ángulo de la V": "19°",
+    "Categoría de diseño CE": "A",
+    "Titulación": "PER o superior"
+   }
+  },
+  "ca": {
+   "p": [
+    "Kymera 43, de 13,76 m: hard-top de fibra de carboni, chaise longue a la consola, bany separat amb WC elèctric i dinette amb taula de sèrie. Per a tres motors de fins a 600 CV."
+   ],
+   "dl": {
+    "Eslora total": "13,76 m",
+    "Eslora de buc": "13,06 m",
+    "Mànega": "4,13 m",
+    "Homologació CE": "25 persones*",
+    "Potència màxima": "3 × 600 CV (1.800 CV)",
+    "Combustible": "1.480 l",
+    "Aigua dolça": "220 l",
+    "Pes en buit": "5,8 t",
+    "Angle de la V": "19°",
+    "Categoria de disseny CE": "A",
+    "Titulació": "PER o superior"
+   }
+  },
+  "en": {
+   "p": [
+    "The 13.76 m Kymera 43: carbon-fibre hard-top, chaise longue on the console, separate bathroom with electric WC and dinette with table as standard. For three engines up to 600 hp."
+   ],
+   "dl": {
+    "Length overall": "13.76 m",
+    "Hull length": "13.06 m",
+    "Beam": "4.13 m",
+    "CE rating": "25 people*",
+    "Maximum power": "3 × 600 hp (1,800 hp)",
+    "Fuel": "1,480 l",
+    "Fresh water": "220 l",
+    "Dry weight": "5.8 t",
+    "Deadrise": "19°",
+    "CE design category": "A",
+    "Licence": "Spanish PER licence or higher"
+   }
+  },
+  "fr": {
+   "p": [
+    "Le Kymera 43 de 13,76 m : hard-top en carbone, chaise longue sur la console, salle de bains séparée avec WC électrique et carré avec table de série. Pour trois moteurs jusqu’à 600 ch."
+   ],
+   "dl": {
+    "Longueur hors tout": "13,76 m",
+    "Longueur de coque": "13,06 m",
+    "Largeur": "4,13 m",
+    "Homologation CE": "25 personnes*",
+    "Puissance maximale": "3 × 600 ch (1 800 ch)",
+    "Carburant": "1 480 l",
+    "Eau douce": "220 l",
+    "Poids lège": "5,8 t",
+    "Angle de V": "19°",
+    "Catégorie de conception CE": "A",
+    "Permis": "PER espagnol ou supérieur"
+   }
+  }
+ },
+ "seawater-kymera-53": {
+  "es": {
+   "p": [
+    "Kymera 53, de 16,15 m: cubierta de teca maciza, hard-top de fibra de carbono y módulo con placa de inducción y congelador de serie. Para cuatro motores de hasta 600 cv."
+   ],
+   "dl": {
+    "Eslora total": "16,15 m",
+    "Eslora de casco": "15,69 m",
+    "Manga": "4,39 m",
+    "Homologación CE": "25 personas*",
+    "Potencia máxima": "4 × 600 cv (2.400 cv)",
+    "Combustible": "2.680 l",
+    "Agua dulce": "400 l",
+    "Peso en vacío": "11,7 t",
+    "Ángulo de la V": "22°",
+    "Categoría de diseño CE": "A",
+    "Titulación": "PER con ampliación a 24 m o superior"
+   }
+  },
+  "ca": {
+   "p": [
+    "Kymera 53, de 16,15 m: coberta de teca massissa, hard-top de fibra de carboni i mòdul amb placa d’inducció i congelador de sèrie. Per a quatre motors de fins a 600 CV."
+   ],
+   "dl": {
+    "Eslora total": "16,15 m",
+    "Eslora de buc": "15,69 m",
+    "Mànega": "4,39 m",
+    "Homologació CE": "25 persones*",
+    "Potència màxima": "4 × 600 CV (2.400 CV)",
+    "Combustible": "2.680 l",
+    "Aigua dolça": "400 l",
+    "Pes en buit": "11,7 t",
+    "Angle de la V": "22°",
+    "Categoria de disseny CE": "A",
+    "Titulació": "PER amb ampliació a 24 m o superior"
+   }
+  },
+  "en": {
+   "p": [
+    "The 16.15 m Kymera 53: solid teak deck, carbon-fibre hard-top and a wet bar with induction hob and freezer as standard. For four engines up to 600 hp."
+   ],
+   "dl": {
+    "Length overall": "16.15 m",
+    "Hull length": "15.69 m",
+    "Beam": "4.39 m",
+    "CE rating": "25 people*",
+    "Maximum power": "4 × 600 hp (2,400 hp)",
+    "Fuel": "2,680 l",
+    "Fresh water": "400 l",
+    "Dry weight": "11.7 t",
+    "Deadrise": "22°",
+    "CE design category": "A",
+    "Licence": "Spanish PER licence extended to 24 m or higher"
+   }
+  },
+  "fr": {
+   "p": [
+    "Le Kymera 53 de 16,15 m : pont en teck massif, hard-top en carbone et meuble avec plaque à induction et congélateur de série. Pour quatre moteurs jusqu’à 600 ch."
+   ],
+   "dl": {
+    "Longueur hors tout": "16,15 m",
+    "Longueur de coque": "15,69 m",
+    "Largeur": "4,39 m",
+    "Homologation CE": "25 personnes*",
+    "Puissance maximale": "4 × 600 ch (2 400 ch)",
+    "Carburant": "2 680 l",
+    "Eau douce": "400 l",
+    "Poids lège": "11,7 t",
+    "Angle de V": "22°",
+    "Catégorie de conception CE": "A",
+    "Permis": "PER espagnol étendu à 24 m ou supérieur"
+   }
+  }
+ }
+}
