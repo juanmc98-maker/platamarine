@@ -368,6 +368,29 @@ def excl(n):
         if re.search(rx, l): return g
     return ''
 
+
+NOIE = {
+ 'es': [('Impuesto de matriculación: depende de la eslora que figure en los papeles del barco; te lo confirmo en el presupuesto', 'No sujeto al impuesto especial de matriculación por su eslora de casco (hasta 8 m), salvo que concurra otro supuesto legal'),
+        ('Motores, transporte desde fábrica e impuesto de matriculación, aparte', 'Motores y transporte desde fábrica, aparte'),
+        ('el IVA, el impuesto de matriculación y la matriculación van aparte', 'el IVA y los gastos de matriculación van aparte (por su eslora de casco no está sujeto al impuesto especial de matriculación)'),
+        ('No incluyen motores, transporte, impuesto de matriculación (IEDMT) ni matriculación', 'No incluyen motores, transporte ni gastos de matriculación. Por su eslora de casco (hasta 8 m) no está sujeto al impuesto especial de matriculación (IEDMT)')],
+ 'ca': [('Impost de matriculació: depèn de l’eslora que consti als papers del vaixell; t’ho confirmo al pressupost', 'No subjecte a l’impost especial de matriculació per la seva eslora de buc (fins a 8 m), llevat que hi concorri un altre supòsit legal'),
+        ('Motors, transport des de fàbrica i impost de matriculació, a part', 'Motors i transport des de fàbrica, a part'),
+        ('l’IVA, l’impost de matriculació i la matriculació van a part', 'l’IVA i les despeses de matriculació van a part (per la seva eslora de buc no està subjecte a l’impost especial de matriculació)'),
+        ('No inclouen motors, transport, impost de matriculació (IEDMT) ni matriculació', 'No inclouen motors, transport ni despeses de matriculació. Per la seva eslora de buc (fins a 8 m) no està subjecte a l’impost especial de matriculació (IEDMT)')],
+ 'en': [('Registration tax: depends on the length stated in the boat’s papers; I will confirm it in the quote', 'Not subject to the Spanish registration tax (IEDMT) because of its hull length (up to 8 m), unless another legal case applies'),
+        ('Engines, transport from the factory and registration tax are extra', 'Engines and transport from the factory are extra'),
+        ('They do not include engines, transport, Spanish registration tax (IEDMT) or registration', 'They do not include engines, transport or registration fees. With a hull length of up to 8 m, it is not subject to the Spanish registration tax (IEDMT)')],
+ 'fr': [('Taxe d’immatriculation : dépend de la longueur indiquée dans les papiers du bateau ; je vous la confirme dans le devis', 'Non soumis à la taxe d’immatriculation espagnole (IEDMT) en raison de sa longueur de coque (jusqu’à 8 m), sauf autre cas prévu par la loi'),
+        ('Moteurs, transport depuis l’usine et taxe d’immatriculation en sus', 'Moteurs et transport depuis l’usine en sus'),
+        ('Ils n’incluent pas les moteurs, le transport, la taxe d’immatriculation espagnole (IEDMT) ni l’immatriculation', 'Ils n’incluent pas les moteurs, le transport ni les frais d’immatriculation. Avec une longueur de coque jusqu’à 8 m, il n’est pas soumis à la taxe d’immatriculation espagnole (IEDMT)')],
+}
+TRFIX = {
+ 'en': [('When for?', 'When would you like delivery?'), ('It can be looked at.', 'We can check compatibility.'),
+        ('Kidney', 'Wet-bar unit'), ('kidney', 'wet-bar unit'), ('stainless steel bollards', 'stainless steel cleats'), ('Stainless steel bollards', 'Stainless steel cleats')],
+ 'ca': [('Guardamans de cap', 'Passamans de corda')],
+}
+
 def lic(lg, eslora):
     return T[lg]['lic_pnb'] if eslora <= 8.0 else (T[lg]['lic_per'] if eslora <= 15.0 else T[lg]['lic_per24'])
 
@@ -658,7 +681,7 @@ def page(lg, mi):
             (sv('manga', 'mànega', 'beam', 'largeur'), {'es': 'Manga', 'ca': 'Mànega', 'en': 'Beam', 'fr': 'Largeur'}[lg]),
             ((sv(*CAP_K).rstrip('*'), next(kk for kk in sp if kk.lower().startswith(CAP_K)) + '*') if any(kk.lower().startswith(CAP_K) for kk in sp) else (sv('personas', 'persones', 'people', 'personnes'), {'es': 'Personas', 'ca': 'Persones', 'en': 'People', 'fr': 'Personnes'}[lg])) if slug != 'e-motion-44' else (sv('camarotes', 'cabines', 'cabins'), {'es': 'Camarotes', 'ca': 'Cabines', 'en': 'Cabins', 'fr': 'Cabines'}[lg]),
             (maxpow(slug, lg).split(' (')[0] if '(' in maxpow(slug, lg) and 'kW' in maxpow(slug, lg) else maxpow(slug, lg), {'es': 'Potencia máx.', 'ca': 'Potència màx.', 'en': 'Max. power', 'fr': 'Puiss. max.'}[lg]),
-            (lic(lg, LH[slug]).replace(' o superior', '').replace(' or higher', '').replace(' ou supérieur', '').replace('Spanish ', '').replace(' espagnol', ''), {'es': 'Titulación', 'ca': 'Titulació', 'en': 'Licence', 'fr': 'Permis'}[lg])]
+            (lic(lg, LH[slug]).replace('Spanish ', '').replace(' espagnol', ''), {'es': 'Titulación', 'ca': 'Titulació', 'en': 'Licence', 'fr': 'Permis'}[lg])]
     # power in cv for kW values
     mp = maxpow(slug, lg)
     m_cv = re.search(r'≈\s*([\d\.]+)\s*(cv|CV|hp)', mp)
@@ -815,6 +838,11 @@ def page(lg, mi):
     out = ''.join(o)
     if not out.rstrip().endswith('</html>'):
         out = out.rstrip() + '\n</html>\n'
+    if slug not in IEDMT:
+        for a, b in NOIE[lg]:
+            out = out.replace(a, b)
+    for a, b in TRFIX.get(lg, []):
+        out = out.replace(a, b)
     dst = os.path.join(ROOT, P.lstrip('/'), 'seawater', slug) if P else os.path.join(ROOT, 'seawater', slug)
     os.makedirs(dst, exist_ok=True)
     open(os.path.join(dst, 'index.html'), 'w').write(out)
